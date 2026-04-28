@@ -17,7 +17,7 @@ const contactInfo = [
   },
   {
     title: "Call Us",
-    description: "Mon-Sat from 8am to 8pm IST",
+    description: "Mon-Fri from 8am to 8pm IST",
     value: "+91 915 746 0525",
     icon: Phone,
   },
@@ -27,12 +27,12 @@ const contactInfo = [
     value: "1002, Neptune Edge, Sarabhai Campus, Alkapuri, Vadodara – 390007",
     icon: MapPin,
   },
-  {
-    title: "Working Hours",
-    description: "We operate across time zones",
-    value: "Mon - Sat: 8:00 AM - 8:00 PM IST",
-    icon: Clock,
-  },
+  // {
+  //   title: "Working Hours",
+  //   description: "We operate across time zones",
+  //   value: "Mon - Sat: 8:00 AM - 8:00 PM IST",
+  //   icon: Clock,
+  // },
 ]
 
 export default function ContactPage() {
@@ -71,10 +71,10 @@ export default function ContactPage() {
               <p className="text-muted-foreground mb-8">
                 Reach out to us through any of these channels.
               </p>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
                 {contactInfo.map((info) => (
                   <Card key={info.title} className="border-border/50">
-                    <CardHeader className="pb-2">
+                    <CardHeader className="pb-0">
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                           <info.icon className="h-5 w-5" />
