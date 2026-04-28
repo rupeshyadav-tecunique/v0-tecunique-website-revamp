@@ -11,7 +11,7 @@ export function CTASection() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl tracking-tight text-primary-foreground sm:text-4xl text-balance">
+          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl text-balance">
             Looking for Expert Software Services?
           </h2>
           <p className="mt-6 text-lg text-primary-foreground/85 leading-relaxed">

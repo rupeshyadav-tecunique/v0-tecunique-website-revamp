@@ -52,12 +52,11 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="border-b border-border/50 py-12 lg:py-16">
+      <section className="bg-gradient-to-b from-muted/50 to-background py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Who We Are</p>
-            <h1 className="mt-3 font-display text-4xl tracking-tight text-foreground sm:text-5xl text-balance">
-              About TECUNIQUE
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
+              About Us
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
               Since our inception in 2010, TECUNIQUE has been delivering IT solutions and services worldwide. We combine business domain knowledge, proven methodologies, and the technical expertise of highly skilled software professionals to yield high-quality solutions that add value to businesses.
@@ -71,7 +70,7 @@ export default function AboutPage() {
                 key={stat.label}
                 className="rounded-xl border border-border/50 bg-card p-8 text-center"
               >
-                <p className="font-display text-4xl text-primary lg:text-5xl">{stat.value}</p>
+                <p className="text-4xl font-bold text-primary lg:text-5xl">{stat.value}</p>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-muted-foreground">
                   {stat.label}
                 </p>
@@ -82,11 +81,11 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div>
-              <h2 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl text-balance">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
                 We are relentless in our pursuit of customer success
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -99,7 +98,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 p-8 flex items-center justify-center">
                 <div className="text-center">
-                  <p className="font-display text-6xl text-primary">15+</p>
+                  <p className="text-6xl font-bold text-primary">15+</p>
                   <p className="mt-2 text-lg font-medium text-foreground">Years of Excellence</p>
                   <p className="mt-1 text-sm text-muted-foreground">Delivering Quality Software Solutions</p>
                 </div>
@@ -110,10 +109,10 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="bg-muted/30 py-16 lg:py-20">
+      <section className="bg-muted/30 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
               Our Core Values
             </h2>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
@@ -138,10 +137,10 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
               Our Team
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -152,10 +151,10 @@ export default function AboutPage() {
       </section>
 
       {/* Culture Section */}
-      <section className="bg-primary py-16 lg:py-20">
+      <section className="bg-primary py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-3xl tracking-tight text-primary-foreground sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl text-balance">
               Our Culture
             </h2>
             <p className="mt-2 text-xl text-primary-foreground/90">

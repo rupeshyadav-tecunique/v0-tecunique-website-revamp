@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { ContactForm } from "@/components/contact/contact-form"
 
@@ -9,22 +10,26 @@ export const metadata: Metadata = {
 
 const contactInfo = [
   {
-    title: "Email",
+    title: "Email Us",
+    description: "Our team will respond within 24 hours",
     value: "sales@tecunique.com",
     icon: Mail,
   },
   {
-    title: "Phone",
+    title: "Call Us",
+    description: "Mon-Sat from 8am to 8pm IST",
     value: "+91 915 746 0525",
     icon: Phone,
   },
   {
-    title: "Address",
+    title: "Visit Us",
+    description: "Our headquarters",
     value: "1002, Neptune Edge, Sarabhai Campus, Alkapuri, Vadodara – 390007",
     icon: MapPin,
   },
   {
-    title: "Hours",
+    title: "Working Hours",
+    description: "We operate across time zones",
     value: "Mon - Sat: 8:00 AM - 8:00 PM IST",
     icon: Clock,
   },
@@ -34,71 +39,89 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="border-b border-border/50 py-12 lg:py-16">
+      <section className="bg-gradient-to-b from-muted/50 to-background py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-primary">Get in Touch</p>
-            <h1 className="mt-3 font-display text-4xl tracking-tight text-foreground sm:text-5xl">
-              {"Let's build something great together"}
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
+              {"Let's Talk"}
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Ready to transform your software development journey? We&apos;d love to hear from you.
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              {"Ready to transform your software development journey? Get in touch with us to discuss how TECUNIQUE can help you build dedicated teams, develop quality software, and scale your business."}
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-12 lg:py-16">
+      <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-5">
-            {/* Contact Information - Left Side */}
-            <div className="lg:col-span-2">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Contact Details</h2>
-              <div className="mt-6 space-y-6">
-                {contactInfo.map((info) => (
-                  <div key={info.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <info.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-foreground">{info.title}</p>
-                      <p className="mt-0.5 text-sm text-muted-foreground">{info.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="mt-10 border-t border-border/50 pt-8">
-                <h2 className="text-sm font-medium uppercase tracking-widest text-muted-foreground">Why Partner With Us</h2>
-                <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <p className="font-display text-3xl text-primary">95%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">Client Retention</p>
-                  </div>
-                  <div>
-                    <p className="font-display text-3xl text-primary">15+</p>
-                    <p className="mt-1 text-xs text-muted-foreground">Years Experience</p>
-                  </div>
-                  <div>
-                    <p className="font-display text-3xl text-primary">92%</p>
-                    <p className="mt-1 text-xs text-muted-foreground">Team Retention</p>
-                  </div>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Contact Form */}
+            <div>
+              <h2 className="text-2xl font-bold text-foreground mb-2">Send Us a Message</h2>
+              <p className="text-muted-foreground mb-8">
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
+              </p>
+              <ContactForm />
             </div>
 
-            {/* Contact Form - Right Side */}
-            <div className="lg:col-span-3">
-              <div className="rounded-2xl border border-border/50 bg-card p-6 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground">Send us a message</h2>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Fill out the form and we&apos;ll get back to you within 24 hours.
+            {/* Contact Information */}
+            <div>
+              <h2 className="text-2xl font-bold text-foreground mb-2">Contact Information</h2>
+              <p className="text-muted-foreground mb-8">
+                Reach out to us through any of these channels.
+              </p>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+                {contactInfo.map((info) => (
+                  <Card key={info.title} className="border-border/50">
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                          <info.icon className="h-5 w-5" />
+                        </div>
+                        <CardTitle className="text-base">{info.title}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">{info.description}</p>
+                      <p className="mt-1 font-medium text-foreground">{info.value}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="bg-muted/30 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+              Why Partner with TECUNIQUE?
+            </h2>
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              With 15+ years of engineering excellence, we bring transparency, collaboration, and domain expertise to every project. Our cost-effective, professional, and proactive software service delivery makes us one of the best-in-class software services companies.
+            </p>
+            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary">95%</p>
+                <p className="mt-2 text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                  Customer Retention
                 </p>
-                <div className="mt-6">
-                  <ContactForm />
-                </div>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary">92%</p>
+                <p className="mt-2 text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                  Employee Retention
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary">15+</p>
+                <p className="mt-2 text-sm font-medium text-muted-foreground uppercase tracking-wide">
+                  Years in Business
+                </p>
               </div>
             </div>
           </div>

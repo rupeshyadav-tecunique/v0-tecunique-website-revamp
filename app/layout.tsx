@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Geist_Mono, DM_Serif_Display } from 'next/font/google'
+import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
@@ -13,12 +13,6 @@ const inter = Inter({
 const geistMono = Geist_Mono({ 
   subsets: ["latin"],
   variable: '--font-geist-mono'
-})
-
-const dmSerif = DM_Serif_Display({ 
-  weight: "400",
-  subsets: ["latin"],
-  variable: '--font-display'
 })
 
 export const metadata: Metadata = {
@@ -42,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistMono.variable} ${dmSerif.variable} bg-background`}>
+    <html lang="en" className={`${inter.variable} ${geistMono.variable} bg-background`}>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">

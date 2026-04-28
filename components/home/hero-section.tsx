@@ -15,7 +15,7 @@ export function HeroSection() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
             15+ Years of Excellence
           </p>
-          <h1 className="font-display text-4xl tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
             Trusted Software Engineering & Atlassian Apps Expertise
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground lg:text-xl max-w-2xl mx-auto">

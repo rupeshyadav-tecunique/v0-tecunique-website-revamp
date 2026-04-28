@@ -14,7 +14,7 @@ export function StatsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
               Trusted Software Services Company Since 2010
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
@@ -42,7 +42,7 @@ export function StatsSection() {
                 key={stat.label}
                 className="rounded-xl border border-border/50 bg-card p-6 text-center lg:text-left"
               >
-                <p className="font-display text-4xl text-primary lg:text-5xl">{stat.value}</p>
+                <p className="text-4xl font-bold text-primary lg:text-5xl">{stat.value}</p>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-muted-foreground">
                   {stat.label}
                 </p>
