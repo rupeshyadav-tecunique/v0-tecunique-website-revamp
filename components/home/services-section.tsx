@@ -26,10 +26,10 @@ export function ServicesSection() {
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-primary">Our Services</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">Our Services</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
             Offshore Software Development IT Outsourcing Services
-          </p>
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
             We can build a dedicated team of talented engineers to build reliable, scalable, and quality software solutions based on the technology stack of your preference.
           </p>

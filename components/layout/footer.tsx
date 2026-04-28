@@ -19,7 +19,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-muted/30">
+    <footer className="border-t border-border bg-foreground">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Logo and description */}
@@ -33,7 +33,7 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="mt-4 max-w-md text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-4 max-w-md text-sm text-background/70 leading-relaxed">
               Trusted Software Engineering & Atlassian Apps Expertise. Scale with confidence. Dedicated teams delivering Atlassian apps and high-quality software at speed since 2010.
             </p>
             <div className="mt-6 flex gap-4">
@@ -41,7 +41,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-background/60 hover:text-background transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -50,14 +50,14 @@ export function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-background/60 hover:text-background transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
                 href="mailto:contact@tecunique.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-background/60 hover:text-background transition-colors"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
@@ -67,13 +67,13 @@ export function Footer() {
 
           {/* Company links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Company</h3>
+            <h3 className="text-sm font-semibold text-background">Company</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-background/60 hover:text-background transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -84,13 +84,13 @@ export function Footer() {
 
           {/* Services links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Services</h3>
+            <h3 className="text-sm font-semibold text-background">Services</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-background/60 hover:text-background transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -100,8 +100,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8">
-          <p className="text-center text-sm text-muted-foreground">
+        <div className="mt-12 border-t border-background/20 pt-8">
+          <p className="text-center text-sm text-background/50">
             &copy; {new Date().getFullYear()} TECUNIQUE. All rights reserved.
           </p>
         </div>

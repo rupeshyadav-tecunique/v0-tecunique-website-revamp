@@ -34,18 +34,19 @@ export function TestimonialsSection() {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="bg-muted/40 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">Testimonials</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
             What Our Clients are Saying
           </h2>
         </div>
 
         <div className="mt-16 relative">
           <div className="mx-auto max-w-3xl">
-            <div className="relative rounded-2xl bg-muted/50 p-8 lg:p-12">
-              <Quote className="absolute top-6 left-6 h-10 w-10 text-primary/20" />
+            <div className="relative rounded-2xl bg-card border border-border/50 p-8 lg:p-12 shadow-sm">
+              <Quote className="absolute top-6 left-6 h-10 w-10 text-primary/15" />
               <blockquote className="relative z-10">
                 <p className="text-lg text-foreground leading-relaxed lg:text-xl">
                   {testimonials[current].quote}
