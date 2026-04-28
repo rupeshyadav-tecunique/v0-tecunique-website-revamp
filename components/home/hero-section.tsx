@@ -7,7 +7,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-gradient-to-br from-muted via-background to-accent/30 py-24 lg:py-36">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-1/4 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
-        <div className="absolute bottom-20 right-1/4 h-72 w-72 rounded-full bg-secondary/10 blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
       </div>
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

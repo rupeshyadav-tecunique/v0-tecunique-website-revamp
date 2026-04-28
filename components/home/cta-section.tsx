@@ -7,7 +7,7 @@ export function CTASection() {
     <section className="relative overflow-hidden bg-primary py-20 lg:py-28">
       <div className="absolute inset-0 -z-10 opacity-30">
         <div className="absolute top-0 right-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-secondary/20 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-primary-foreground/10 blur-3xl" />
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -24,7 +24,7 @@ export function CTASection() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
+            <Button size="lg" variant="outline" className="border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
               <Link href="/services">Explore Services</Link>
             </Button>
           </div>

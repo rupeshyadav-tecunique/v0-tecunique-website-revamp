@@ -12,25 +12,25 @@ const contactInfo = [
   {
     title: "Email Us",
     description: "Our team will respond within 24 hours",
-    value: "contact@tecunique.com",
+    value: "sales@tecunique.com",
     icon: Mail,
   },
   {
     title: "Call Us",
-    description: "Mon-Fri from 9am to 6pm IST",
-    value: "+91-XXX-XXX-XXXX",
+    description: "Mon-Sat from 8am to 8pm IST",
+    value: "+91 915 746 0525",
     icon: Phone,
   },
   {
     title: "Visit Us",
     description: "Our headquarters",
-    value: "Vadodara, Gujarat, India",
+    value: "1002, Neptune Edge, Sarabhai Campus, Alkapuri, Vadodara – 390007",
     icon: MapPin,
   },
   {
     title: "Working Hours",
     description: "We operate across time zones",
-    value: "Mon - Fri: 9:00 AM - 6:00 PM IST",
+    value: "Mon - Sat: 8:00 AM - 8:00 PM IST",
     icon: Clock,
   },
 ]

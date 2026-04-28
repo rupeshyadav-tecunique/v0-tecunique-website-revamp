@@ -56,7 +56,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="mailto:contact@tecunique.com"
+                href="mailto:sales@tecunique.com"
                 className="text-background/60 hover:text-background transition-colors"
                 aria-label="Email"
               >

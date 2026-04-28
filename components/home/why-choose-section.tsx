@@ -25,7 +25,7 @@ export function WhyChooseSection() {
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-secondary">Why Choose Us</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">Why Choose Us</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
             Your Trusted Technology Partner
           </h2>
@@ -37,7 +37,7 @@ export function WhyChooseSection() {
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
           {reasons.map((reason) => (
             <div key={reason.title} className="relative text-center p-6 rounded-xl border border-border/50 bg-card hover:shadow-md transition-shadow">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <reason.icon className="h-7 w-7" />
               </div>
               <h3 className="mt-5 text-lg font-semibold text-foreground">{reason.title}</h3>
