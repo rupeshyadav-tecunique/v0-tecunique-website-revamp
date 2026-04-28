@@ -38,7 +38,7 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Testimonials</p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+          <h2 className="mt-2 font-display text-3xl tracking-tight text-foreground sm:text-4xl text-balance">
             What Our Clients are Saying
           </h2>
         </div>
