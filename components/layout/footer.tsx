@@ -28,12 +28,12 @@ const socialLinks = [
 ]
 
 const reviewLinks = [
-  {
-    name: "Google",
-    rating: "4.9",
-    href: "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEkzLkjJKCg2YLRSNagwtjRNS7ZIsjA2MTVNTLQ0tQIKJZsnGxubJRsZWyYBSUMv6ZLU5NK8zMLSVIXi_LSS8sQiICO1qCwzObUYAPf2GiQ&q=tecunique+software+services&oq=tec&aqs=chrome.1.69i60j46i39i175i199j69i59j69i57j69i60l4.4886j0j7&sourceid=chrome&ie=UTF-8#lrd=0x395fc8b83455aa95:0x3c7c336c239b6c21,1,,,",
-    color: "#ffffff"
-  },
+  // {
+  //   name: "Google",
+  //   rating: "4.9",
+  //   href: "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEkzLkjJKCg2YLRSNagwtjRNS7ZIsjA2MTVNTLQ0tQIKJZsnGxubJRsZWyYBSUMv6ZLU5NK8zMLSVIXi_LSS8sQiICO1qCwzObUYAPf2GiQ&q=tecunique+software+services&oq=tec&aqs=chrome.1.69i60j46i39i175i199j69i59j69i57j69i60l4.4886j0j7&sourceid=chrome&ie=UTF-8#lrd=0x395fc8b83455aa95:0x3c7c336c239b6c21,1,,,",
+  //   color: "#ffffff"
+  // },
   {
     name: "glassdoor",
     rating: "4.9",

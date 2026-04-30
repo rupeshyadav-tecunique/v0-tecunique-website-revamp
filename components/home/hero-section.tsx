@@ -5,12 +5,13 @@ import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
 import { useEffect, useRef } from "react"
 
 const trustedBy = [
-  "Innovalog",
+  "Appfire",
   "OPPSCIENCE",
-  "Midtrans",
-  "Gartner",
-  "Contegra",
-  "Atlassian Partners",
+  "CustomerMatrix",
+  "Qotilabs",
+  "SkySelect",
+  // "Innovalog",
+  "Validat"
 ]
 
 export function HeroSection() {

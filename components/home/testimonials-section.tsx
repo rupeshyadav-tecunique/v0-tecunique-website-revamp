@@ -45,10 +45,19 @@ const testimonials = [
   {
     quote: "Their expertise and dedication in architectural design, development, and QA have been very valuable to our team.",
     author: "Ajay Singh",
-    role: "Client",
-    company: "",
+    role: "Architect",
+    company: "Appfire",
     image: "/images/testimonial/ajay.webp",
     color: "#0891b2",
+    rating: 5,
+  },
+  {
+    quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team in enhancing our platform.",
+    author: "Dan Mihalache",
+    role: "Founder & CEO",
+    company: "Qotilabs",
+    image: "/images/testimonial/den.webp",
+    color: "#f43f5e",
     rating: 5,
   },
 ]

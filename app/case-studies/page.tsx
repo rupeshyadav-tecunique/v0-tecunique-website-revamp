@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Clock, Users, TrendingUp, Star, ExternalLink, CheckCircle2, Sparkles } from "lucide-react"
+import { ArrowRight, Clock, Users, TrendingUp, Star, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Case Studies",
@@ -9,62 +9,134 @@ export const metadata: Metadata = {
 
 const caseStudies = [
   {
-    id: "oppscience",
-    company: "OPPSCIENCE",
-    industry: "AI & Data Analytics",
+    id: "appfire-1",
+    company: "Appfire",
+    industry: "Atlassian Ecosystem",
     category: "Software Development & QA",
-    partnership: "10+ Years",
-    location: "France",
-    initials: "OP",
+    partnership: "3+ Years",
+    location: "Global",
+    initials: "AF",
     color: "#6366f1",
     gradient: "from-indigo-500 to-violet-600",
-    tagline: "A decade-long partnership powering AI-driven enterprise analytics",
-    challenge:
-      "OPPSCIENCE needed to rapidly scale their engineering and QA capabilities to support a growing AI analytics platform serving enterprise clients across Europe. Finding top-tier talent locally was slow and expensive, creating delivery bottlenecks.",
-    solution:
-      "TECUNIQUE built and embedded a dedicated cross-functional team of software engineers and QA specialists directly into OPPSCIENCE's workflows. The team worked across the full product lifecycle — feature development, performance tuning, automated testing, and ongoing platform reliability.",
+    tagline: "Fueling the growth of the world's leading Jira app provider",
+    challenge: "Appfire needed to rapidly scale their engineering and QA capabilities to manage a massive portfolio of Atlassian apps. They required a partner who could seamlessly integrate into their culture and maintain high velocity across multiple product lines.",
+    solution: "TECUNIQUE provided a dedicated team of engineers and QA specialists who became an extension of Appfire's core team. We focused on architectural design, feature development, and rigorous QA automation, helping them maintain their 'Top Rated' status on the Atlassian Marketplace.",
     results: [
-      { metric: "10+ Years", label: "Continuous Partnership" },
-      { metric: "3x", label: "Team Scale Achieved" },
-      { metric: "99.9%", label: "Platform Uptime" },
-      { metric: "40%", label: "Faster Release Cycles" },
+      { metric: "3+ Years", label: "Partnership" },
+      { metric: "Top Rated", label: "App Status" },
+      { metric: "200+", label: "Apps Managed" },
+      { metric: "Scalable", label: "Velocity" },
     ],
     testimonial: {
-      quote:
-        "TECUNIQUE has been an integral part of our journey for more than a decade, and we are committed to further expanding our collaborative efforts. Their invaluable expertise and contributions have been central to our success.",
-      author: "Gilles Andre",
-      role: "Founder & CEO, OPPSCIENCE",
+      quote: "Their expertise and dedication in architectural design, development, and QA have been very valuable to our team.",
+      author: "Ajay Singh",
+      role: "Appfire",
     },
-    tags: ["Software Engineering", "QA & Testing", "Dedicated Team", "AI Platform"],
+    tags: ["Atlassian", "Jira Apps", "Dedicated Team", "QA Automation"],
+    image: "https://tecunique.com/wp-content/uploads/2023/11/Appfire-Case-Study.jpg"
   },
   {
-    id: "validat",
-    company: "Validat",
-    industry: "Compliance & RegTech",
-    category: "Dedicated Team & Quality Assurance",
-    partnership: "3+ Years",
-    location: "Europe",
-    initials: "VL",
-    color: "#06b6d4",
-    gradient: "from-cyan-500 to-blue-600",
-    tagline: "Building a robust compliance platform with zero-defect delivery standards",
-    challenge:
-      "Validat required a highly reliable compliance validation platform with strict regulatory requirements. Their internal team lacked the bandwidth for comprehensive QA coverage, and any defects in the compliance logic could have serious business consequences.",
-    solution:
-      "TECUNIQUE provided a dedicated QA and software engineering team that integrated with Validat's product team. We established rigorous automated testing frameworks, implemented compliance-specific test scenarios, and maintained continuous quality gates throughout every release cycle.",
+    id: "oppscience-1",
+    company: "OPPSCIENCE",
+    industry: "AI & Intelligence",
+    category: "Software Engineering & Testing",
+    partnership: "15+ Years",
+    location: "France",
+    initials: "OS",
+    color: "#8b5cf6",
+    gradient: "from-violet-500 to-purple-600",
+    tagline: "Powering complex intelligence analysis platforms with engineering excellence",
+    challenge: "OPPSCIENCE develops sophisticated intelligence analysis platforms that require extreme reliability and performance. They needed a partner capable of handling complex data structures and high-security requirements while maintaining rapid release cycles.",
+    solution: "We deployed a specialized team that integrated deeply with OPPSCIENCE's CTO and product leads. Our involvement spanned from core backend engineering to end-to-end software testing, ensuring that every release met the stringent quality standards of intelligence agencies and enterprise clients.",
     results: [
-      { metric: "0", label: "Critical Defects in Production" },
-      { metric: "85%", label: "Test Automation Coverage" },
-      { metric: "2x", label: "Deployment Frequency" },
-      { metric: "100%", label: "Regulatory Compliance" },
+      { metric: "15+ Years", label: "Collaboration" },
+      { metric: "Zero", label: "Critical Bugs" },
+      { metric: "High", label: "Security" },
+      { metric: "AI-Ready", label: "Architecture" },
     ],
     testimonial: {
-      quote:
-        "The TECUNIQUE team brought a level of rigor and professionalism to our QA process that we hadn't experienced before. Their attention to compliance-critical scenarios gave us the confidence to ship faster without compromising quality.",
-      author: "Product Lead",
-      role: "Validat",
+      quote: "TECUNIQUE has consistently helped us deliver top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
+      author: "Mickael Augello",
+      role: "CTO, OPPSCIENCE",
     },
-    tags: ["Quality Assurance", "Compliance Testing", "Automation", "RegTech"],
+    tags: ["AI Platform", "Intelligence", "Software Engineering", "QA"],
+    image: "https://tecunique.com/wp-content/uploads/2023/11/Oppscience-Case-Study.jpg"
+  },
+  {
+    id: "customermatrix",
+    company: "CustomerMatrix",
+    industry: "Enterprise AI",
+    category: "Cognitive Computing",
+    partnership: "2+ Years",
+    location: "USA / Global",
+    initials: "CM",
+    color: "#06b6d4",
+    gradient: "from-cyan-500 to-blue-600",
+    tagline: "Accelerating the delivery of cognitive computing solutions for global enterprises",
+    challenge: "CustomerMatrix needed to accelerate the development of their cognitive computing platform which helps sales teams prioritize opportunities. They required high-level engineering skills and a proactive approach to quality assurance.",
+    solution: "TECUNIQUE provided a dedicated engineering hub that worked across the platform's lifecycle. We implemented automated testing frameworks and contributed to core product features, allowing CustomerMatrix to scale their client base without compromising on platform stability.",
+    results: [
+      { metric: "2+ Years", label: "Partnership" },
+      { metric: "Faster", label: "Time to Market" },
+      { metric: "Robust", label: "QA Pipeline" },
+      { metric: "Global", label: "Deployment" },
+    ],
+    testimonial: {
+      quote: "The involvement displayed by the TECUNIQUE team has solidified our perception of them as a true partner, not just a service provider.",
+      author: "Christophe Favart",
+      role: "CEO, CustomerMatrix",
+    },
+    tags: ["Cognitive Computing", "Sales Tech", "Automation", "Engineering"],
+    image: "https://tecunique.com/wp-content/uploads/2023/11/CustomerMatrix-Case-Study.jpg"
+  },
+  {
+    id: "qotilabs",
+    company: "Qotilabs",
+    industry: "Dev Tools",
+    category: "Plugin Development",
+    partnership: "3+ Years",
+    location: "Europe",
+    initials: "QL",
+    color: "#f43f5e",
+    gradient: "from-rose-500 to-pink-600",
+    tagline: "Enhancing developer productivity through high-quality Atlassian plugins",
+    challenge: "Qotilabs focuses on niche, high-performance developer tools. They needed a partner who understood the intricacies of the Atlassian SDK and could provide high-coverage QA for complex plugin interactions.",
+    solution: "We established a specialized QA and development unit for Qotilabs. Our team performed deep integration testing and helped optimize plugin performance, ensuring seamless experiences for developers using their tools globally.",
+    results: [
+      { metric: "3+ Years", label: "Continuous Work" },
+      { metric: "100%", label: "User Trust" },
+      { metric: "Smooth", label: "Integrations" },
+      { metric: "Reliable", label: "Releases" },
+    ],
+    testimonial: {
+      quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team in enhancing our platform.",
+      author: "Dan Mihalache",
+      role: "Founder, Qotilabs",
+    },
+    tags: ["DevOps", "Atlassian SDK", "Plugin Testing", "Agile"],
+    image: "https://tecunique.com/wp-content/uploads/2023/11/Qotilabs-Case-Study.jpg"
+  },
+  {
+    id: "skyselect",
+    company: "SkySelect",
+    industry: "Aviation / Supply Chain",
+    category: "Marketplace Platform",
+    partnership: "2+ Years",
+    location: "USA",
+    initials: "SS",
+    color: "#f59e0b",
+    gradient: "from-amber-500 to-orange-600",
+    tagline: "Digitizing aviation supply chains with a robust procurement marketplace",
+    challenge: "SkySelect is revolutionizing aircraft parts procurement. They needed a scalable platform capable of handling millions of dollars in transactions with perfect accuracy and high availability.",
+    solution: "TECUNIQUE's engineers and QA experts helped build and test the core marketplace engine. We focused on data integrity, transaction reliability, and user experience, enabling SkySelect to become a dominant player in aviation procurement.",
+    results: [
+      { metric: "2+ Years", label: "Partnership" },
+      { metric: "Millions", label: "GMV Handled" },
+      { metric: "99.9%", label: "Availability" },
+      { metric: "Critical", label: "Systems" },
+    ],
+    tags: ["Aviation", "Marketplace", "Fintech", "Enterprise QA"],
+    image: "https://tecunique.com/wp-content/uploads/2023/11/SkySelect-Case-Study.jpg"
   },
 ]
 
@@ -101,12 +173,12 @@ export default function CaseStudiesPage() {
               <Sparkles className="h-3 w-3" />
               Client Success Stories
             </span>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight text-balance">
               Real Results,{" "}
               <span className="gradient-text">Real Impact</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Explore how TECUNIQUE has partnered with companies around the world to build scalable software, ship faster, and maintain uncompromising quality.
+              Explore how TECUNIQUE has partnered with industry leaders around the world to build scalable software, ship faster, and maintain uncompromising quality.
             </p>
           </div>
 
@@ -132,7 +204,7 @@ export default function CaseStudiesPage() {
       {/* Case Study Cards */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
-          {caseStudies.map((study, i) => (
+          {caseStudies.map((study) => (
             <article
               key={study.id}
               className="group relative rounded-3xl border border-border/60 bg-white overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
@@ -227,20 +299,20 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Results grid */}
-                  <div className="grid grid-cols-2 gap-3 mb-8 sm:grid-cols-4">
+                  <div className="grid grid-cols-2 gap-1.5 mb-8 sm:grid-cols-4">
                     {study.results.map((result) => (
                       <div
                         key={result.label}
-                        className="rounded-xl p-4 text-center border border-border/50"
+                        className="rounded-2xl py-6 px-4 flex flex-col items-center justify-center text-center border border-border/50 min-h-[120px] transition-colors hover:border-border"
                         style={{ background: `${study.color}06` }}
                       >
                         <p
-                          className="font-display text-2xl font-extrabold"
+                          className="font-display text-2xl font-extrabold leading-[1.1] mb-2"
                           style={{ color: study.color }}
                         >
                           {result.metric}
                         </p>
-                        <p className="mt-1 text-[11px] font-medium text-muted-foreground leading-tight">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/80 leading-none">
                           {result.label}
                         </p>
                       </div>
@@ -248,38 +320,40 @@ export default function CaseStudiesPage() {
                   </div>
 
                   {/* Testimonial */}
-                  <div
-                    className="rounded-2xl p-5 border"
-                    style={{
-                      borderColor: `${study.color}25`,
-                      background: `${study.color}05`,
-                    }}
-                  >
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <p className="text-sm text-foreground leading-relaxed italic">
-                      &ldquo;{study.testimonial.quote}&rdquo;
-                    </p>
-                    <div className="mt-3 flex items-center gap-3">
-                      <div
-                        className="flex h-8 w-8 items-center justify-center rounded-full text-white text-xs font-bold shrink-0"
-                        style={{ background: `linear-gradient(135deg, ${study.color}, ${study.color}99)` }}
-                      >
-                        {study.testimonial.author.split(" ").map(n => n[0]).join("")}
+                  {study.testimonial && (
+                    <div
+                      className="rounded-2xl p-5 border"
+                      style={{
+                        borderColor: `${study.color}25`,
+                        background: `${study.color}05`,
+                      }}
+                    >
+                      <div className="flex gap-1 mb-3">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                        ))}
                       </div>
-                      <div>
-                        <p className="text-xs font-semibold text-foreground leading-none">
-                          {study.testimonial.author}
-                        </p>
-                        <p className="text-[11px] text-muted-foreground mt-0.5">
-                          {study.testimonial.role}
-                        </p>
+                      <p className="text-sm text-foreground leading-relaxed italic">
+                        &ldquo;{study.testimonial.quote}&rdquo;
+                      </p>
+                      <div className="mt-3 flex items-center gap-3">
+                        <div
+                          className="flex h-8 w-8 items-center justify-center rounded-full text-white text-xs font-bold shrink-0"
+                          style={{ background: `linear-gradient(135deg, ${study.color}, ${study.color}99)` }}
+                        >
+                          {study.testimonial.author.split(" ").map(n => n[0]).join("")}
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold text-foreground leading-none">
+                            {study.testimonial.author}
+                          </p>
+                          <p className="text-[11px] text-muted-foreground mt-0.5">
+                            {study.testimonial.role}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </article>

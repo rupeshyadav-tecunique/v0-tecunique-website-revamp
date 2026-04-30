@@ -92,6 +92,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground">
             {post.content.split("\n\n").map((paragraph, index) => {
+              const renderFormattedText = (text: string) => {
+                const parts = text.split(/(\*\*[^*]+\*\*)/g)
+                return parts.map((part, i) => {
+                  if (part.startsWith("**") && part.endsWith("**")) {
+                    return <strong key={i} className="text-foreground font-bold">{part.slice(2, -2)}</strong>
+                  }
+                  return part
+                })
+              }
+
               if (paragraph.startsWith("## ")) {
                 return (
                   <h2 key={index} className="text-2xl font-bold text-foreground mt-8 mb-4">
@@ -99,33 +109,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   </h2>
                 )
               }
+
               if (paragraph.startsWith("- ")) {
                 const items = paragraph.split("\n").filter((item) => item.startsWith("- "))
                 return (
                   <ul key={index} className="list-disc pl-6 space-y-2 my-4">
                     {items.map((item, i) => (
                       <li key={i} className="text-muted-foreground">
-                        {item.replace("- ", "")}
+                        {renderFormattedText(item.replace("- ", ""))}
                       </li>
                     ))}
                   </ul>
                 )
               }
+
               if (paragraph.match(/^\d+\./)) {
                 const items = paragraph.split("\n").filter((item) => item.match(/^\d+\./))
                 return (
                   <ol key={index} className="list-decimal pl-6 space-y-2 my-4">
                     {items.map((item, i) => (
                       <li key={i} className="text-muted-foreground">
-                        {item.replace(/^\d+\.\s*\*\*([^*]+)\*\*:?\s*/, "<strong>$1:</strong> ").replace(/^\d+\.\s*/, "")}
+                        {renderFormattedText(item.replace(/^\d+\.\s*/, ""))}
                       </li>
                     ))}
                   </ol>
                 )
               }
+
               return (
                 <p key={index} className="text-muted-foreground leading-relaxed my-4">
-                  {paragraph}
+                  {renderFormattedText(paragraph)}
                 </p>
               )
             })}
