@@ -1,7 +1,8 @@
 "use client"
 
+import Image from "next/image"
 import { useState, useEffect, useCallback } from "react"
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
+import { ChevronLeft, ChevronRight, Quote, Star, StarHalf } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const testimonials = [
@@ -10,32 +11,45 @@ const testimonials = [
     author: "David Fischer",
     role: "Founder & CEO",
     company: "Innovalog",
-    initials: "DF",
+    image: "/images/testimonial/david.webp",
     color: "#6366f1",
+    rating: 5,
   },
   {
     quote: "TECUNIQUE has been an integral part of our journey for more than a decade, and we are committed to further expanding our collaborative efforts. Our association with TECUNIQUE is not merely driven by financial considerations; it's centered on the invaluable expertise and contributions that the team brings to the table.",
     author: "Gilles Andre",
     role: "Founder & CEO",
     company: "OPPSCIENCE",
-    initials: "GA",
+    image: "/images/testimonial/gilles.jpg",
     color: "#8b5cf6",
+    rating: 5,
   },
   {
     quote: "TECUNIQUE has been a key partner for OPPSCIENCE over the years. As a CTO, I've collaborated with TECUNIQUE on various projects for an extended duration. They have consistently helped us deliver top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
     author: "Mickael Augello",
     role: "CTO",
     company: "OPPSCIENCE",
-    initials: "MA",
+    image: "/images/testimonial/mickael.webp",
     color: "#06b6d4",
+    rating: 4.5,
   },
   {
     quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team. Their consistent efforts to enhance our platform and deliver an exceptional experience to our customers have solidified our perception of TECUNIQUE not just as a service provider but as a true partner.",
     author: "Guillaume Brejaud",
     role: "COO",
     company: "OPPSCIENCE",
-    initials: "GB",
+    image: "/images/testimonial/guillaume.webp",
     color: "#7c3aed",
+    rating: 5,
+  },
+  {
+    quote: "Their expertise and dedication in architectural design, development, and QA have been very valuable to our team.",
+    author: "Ajay Singh",
+    role: "Client",
+    company: "",
+    image: "/images/testimonial/ajay.webp",
+    color: "#0891b2",
+    rating: 5,
   },
 ]
 
@@ -89,7 +103,7 @@ export function TestimonialsSection() {
         {/* Testimonial card */}
         <div className="mt-14 mx-auto max-w-4xl reveal">
           <div
-            className="relative rounded-3xl border border-border/60 bg-white p-8 lg:p-12 shadow-lg transition-all duration-300"
+            className="relative flex flex-col justify-between rounded-3xl border border-border/60 bg-white p-8 lg:p-12 shadow-lg transition-all duration-300 min-h-[420px] md:min-h-[380px]"
             style={{ boxShadow: `0 20px 60px ${t.color}18, 0 4px 16px rgba(0,0,0,0.06)` }}
           >
             {/* Large decorative quote */}
@@ -98,21 +112,30 @@ export function TestimonialsSection() {
               aria-hidden
             />
 
-            {/* Stars */}
-            <div className="flex gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
+            <div>
+              {/* Stars */}
+              <div className="flex gap-1 mb-6">
+                {[...Array(5)].map((_, i) => {
+                  const starValue = i + 1;
+                  if (t.rating >= starValue) {
+                    return <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />;
+                  } else if (t.rating >= starValue - 0.5) {
+                    return <StarHalf key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />;
+                  } else {
+                    return <Star key={i} className="h-4 w-4 text-border" />;
+                  }
+                })}
+              </div>
 
-            {/* Quote */}
-            <blockquote
-              className={`text-lg text-foreground leading-relaxed lg:text-xl transition-opacity duration-200 ${
-                isTransitioning ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              &ldquo;{t.quote}&rdquo;
-            </blockquote>
+              {/* Quote */}
+              <blockquote
+                className={`text-lg text-foreground leading-relaxed lg:text-xl transition-opacity duration-200 ${
+                  isTransitioning ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+            </div>
 
             {/* Author */}
             <footer
@@ -120,32 +143,42 @@ export function TestimonialsSection() {
                 isTransitioning ? "opacity-0" : "opacity-100"
               }`}
             >
-              {/* Avatar */}
+              {/* Avatar — real photo in circle */}
               <div
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white text-sm font-bold"
-                style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}99)` }}
+                className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-offset-2"
+                style={{ ringColor: t.color, boxShadow: `0 0 0 2px white, 0 0 0 4px ${t.color}40` }}
               >
-                {t.initials}
+                <Image
+                  src={t.image}
+                  alt={t.author}
+                  fill
+                  className="object-cover"
+                  sizes="48px"
+                />
               </div>
 
               <div>
                 <p className="font-semibold text-foreground">{t.author}</p>
                 <p className="text-sm text-muted-foreground">
-                  {t.role},{" "}
-                  <span
-                    className="font-semibold"
-                    style={{ color: t.color }}
-                  >
-                    {t.company}
-                  </span>
+                  {t.role}
+                  {t.company && (
+                    <>
+                      ,{" "}
+                      <span className="font-semibold" style={{ color: t.color }}>
+                        {t.company}
+                      </span>
+                    </>
+                  )}
                 </p>
               </div>
 
               {/* Company badge */}
-              <div className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5">
-                <div className="h-2 w-2 rounded-full" style={{ background: t.color }} />
-                <span className="text-xs font-semibold text-muted-foreground">{t.company}</span>
-              </div>
+              {t.company && (
+                <div className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5">
+                  <div className="h-2 w-2 rounded-full" style={{ background: t.color }} />
+                  <span className="text-xs font-semibold text-muted-foreground">{t.company}</span>
+                </div>
+              )}
             </footer>
 
             {/* Accent line */}
