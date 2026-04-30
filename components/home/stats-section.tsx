@@ -9,8 +9,8 @@ const stats = [
   { value: 95, suffix: "%", label: "Customer Retention", desc: "Clients who keep coming back" },
   { value: 92, suffix: "%", label: "Employee Retention", desc: "Team stability you can rely on" },
   { value: 15, suffix: "+", label: "Years in Business", desc: "A decade and a half of excellence" },
-  { value: 50, suffix: "+", label: "Global Clients", desc: "Served across 20+ countries" },
-  { value: 200, suffix: "+", label: "Projects Delivered", desc: "On time and on budget" },
+  { value: 25, suffix: "+", label: "Global Clients", desc: "Served across 20+ countries" },
+  { value: 50, suffix: "+", label: "Projects Delivered", desc: "On time and on budget" },
 ]
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {

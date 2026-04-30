@@ -38,7 +38,7 @@ export function HeroSection() {
     <section
       ref={heroRef}
       className="relative overflow-hidden py-20 lg:py-28"
-      style={{ background: "linear-gradient(135deg, #f8f7ff 0%, #ede9fe 35%, #f0f9ff 70%, #faf5ff 100%)" }}
+      style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
     >
       {/* Animated blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -202,7 +202,7 @@ export function HeroSection() {
                   <span className="text-xs text-muted-foreground font-medium">Active projects</span>
                   <div className="flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-xs font-bold text-foreground">12 running</span>
+                    <span className="text-xs font-bold text-foreground">7 running</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export function HeroSection() {
 
             {/* Floating badge — top right */}
             <div
-              className="absolute -top-4 -right-4 z-20 glass-card rounded-xl px-4 py-2.5 animate-float"
+              className="absolute -top-6 -right-4 z-20 glass-card rounded-xl px-4 py-2.5 animate-float"
               style={{ animationDelay: "1.5s" }}
             >
               <div className="flex items-center gap-2">
@@ -222,19 +222,6 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Floating badge — bottom left */}
-            <div
-              className="absolute -bottom-4 left-0 z-20 glass-card rounded-xl px-4 py-2.5 animate-float"
-              style={{ animationDelay: "3s" }}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-lg">⚡</span>
-                <div>
-                  <p className="text-xs font-bold text-foreground leading-none">15+ Years</p>
-                  <p className="text-[10px] text-muted-foreground">In Business</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
