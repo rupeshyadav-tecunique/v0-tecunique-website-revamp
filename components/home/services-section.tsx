@@ -104,9 +104,12 @@ export function ServicesSection() {
                 </p>
 
                 {/* Learn more link */}
-                <div className="mt-5 flex items-center gap-1 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                <div
+                  className="mt-5 flex items-center gap-1 text-sm font-semibold transition-all duration-200 translate-y-0 group-hover:-translate-y-0.5"
+                  style={{ color: "#6366f1" }}
+                >
                   Learn more
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
               </div>
             </div>

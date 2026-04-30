@@ -32,17 +32,16 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-border/60 shadow-sm"
-          : "bg-transparent border-b border-transparent"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
+        ? "bg-white/90 backdrop-blur-md border-b border-border/60 shadow-sm"
+        : "bg-transparent border-b border-transparent"
+        }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <Image
-            src="/images/logo.png"
+            src="/images/teclogo.png"
             alt="TecUnique Logo"
             width={180}
             height={50}
@@ -59,11 +58,10 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                  isActive
-                    ? "text-primary bg-accent"
-                    : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
-                }`}
+                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
+                  ? "text-primary bg-accent"
+                  : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
+                  }`}
               >
                 {item.name}
                 {isActive && (
@@ -103,9 +101,8 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="border-t border-border bg-white/95 backdrop-blur-md">
           <div className="space-y-1 px-6 py-4">
@@ -115,11 +112,10 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`flex items-center py-3 px-3 rounded-xl text-base font-medium transition-colors ${
-                    isActive
-                      ? "text-primary bg-accent"
-                      : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
-                  }`}
+                  className={`flex items-center py-3 px-3 rounded-xl text-base font-medium transition-colors ${isActive
+                    ? "text-primary bg-accent"
+                    : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
+                    }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

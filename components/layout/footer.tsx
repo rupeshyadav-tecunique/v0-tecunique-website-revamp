@@ -36,18 +36,13 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/">
-              {/* Logo on dark bg — use a simple text logo as fallback, but try image first */}
-              <div className="flex items-center gap-2">
-                <div
-                  className="flex h-9 w-9 items-center justify-center rounded-xl text-white font-display text-sm font-extrabold"
-                  style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
-                >
-                  T
-                </div>
-                <span className="font-display text-lg font-bold text-white tracking-tight">
-                  TECUNIQUE
-                </span>
-              </div>
+              <Image
+                src="/images/teclogo.png"
+                alt="TecUnique Logo"
+                width={180}
+                height={50}
+                className="h-10 w-auto  mb-4"
+              />
             </Link>
             <p className="max-w-xs text-sm text-slate-400 leading-relaxed">
               Trusted Software Engineering & Atlassian Apps Expertise. Dedicated teams delivering high-quality software at speed since 2010.
