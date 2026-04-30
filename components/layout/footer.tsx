@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Linkedin, Twitter, Mail, Github, MapPin, Phone, ArrowRight } from "lucide-react"
+import { Linkedin, Twitter, Mail, Github, Star, MapPin, Phone, ArrowRight } from "lucide-react"
 
 const footerLinks = {
   company: [
@@ -25,6 +25,39 @@ const socialLinks = [
   { Icon: Twitter, href: "https://twitter.com/tecunique", label: "Twitter" },
   { Icon: Github, href: "https://github.com/tecunique", label: "GitHub" },
   { Icon: Mail, href: "mailto:sales@tecunique.com", label: "Email" },
+]
+
+const reviewLinks = [
+  {
+    name: "Google",
+    rating: "4.9",
+    href: "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEkzLkjJKCg2YLRSNagwtjRNS7ZIsjA2MTVNTLQ0tQIKJZsnGxubJRsZWyYBSUMv6ZLU5NK8zMLSVIXi_LSS8sQiICO1qCwzObUYAPf2GiQ&q=tecunique+software+services&oq=tec&aqs=chrome.1.69i60j46i39i175i199j69i59j69i57j69i60l4.4886j0j7&sourceid=chrome&ie=UTF-8#lrd=0x395fc8b83455aa95:0x3c7c336c239b6c21,1,,,",
+    color: "#ffffff"
+  },
+  {
+    name: "glassdoor",
+    rating: "4.9",
+    href: "https://www.glassdoor.co.in/Reviews/TecUnique-Reviews-E2503526.htm",
+    color: "#0CAA41"
+  },
+  {
+    name: "AmbitionBox",
+    rating: "4.9",
+    href: "https://www.ambitionbox.com/reviews/tecunique-reviews",
+    color: "#ffffff"
+  },
+  {
+    name: "Clutch",
+    rating: "4.9",
+    href: "https://clutch.co/profile/tecunique-private#highlights",
+    color: "#ffffff"
+  },
+  {
+    name: "GoodFirms",
+    rating: "4.8",
+    href: "https://www.goodfirms.co/company/tecunique-private-limited",
+    color: "#1d66c1"
+  },
 ]
 
 export function Footer() {
@@ -71,20 +104,61 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Social icons */}
-            <div className="flex gap-3">
-              {socialLinks.map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 text-slate-400 transition-all hover:border-indigo-500/60 hover:bg-indigo-500/10 hover:text-indigo-400"
-                  aria-label={label}
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+            {/* Social and Review icons */}
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                {socialLinks.map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 text-slate-400 transition-all hover:border-indigo-500/60 hover:bg-indigo-500/10 hover:text-indigo-400"
+                    aria-label={label}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+              <div className="pt-6 border-t border-slate-800/60 flex flex-wrap items-center gap-y-3">
+                {reviewLinks.map((link, i) => (
+                  <div key={link.name} className="flex items-center">
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-1.5"
+                    >
+                      <div className="flex items-center gap-0.5">
+                        <span className="text-[12px] font-bold text-white leading-none">{link.rating}</span>
+                        <Star className="h-2.5 w-2.5 fill-amber-500 text-amber-500" />
+                      </div>
+                      <div className="flex items-center">
+                        {link.name === "Google" ? (
+                          <span className="text-[11px] font-bold tracking-tight">
+                            <span style={{ color: "#4285F4" }}>G</span>
+                            <span style={{ color: "#EA4335" }}>o</span>
+                            <span style={{ color: "#FBBC05" }}>o</span>
+                            <span style={{ color: "#4285F4" }}>g</span>
+                            <span style={{ color: "#34A853" }}>l</span>
+                            <span style={{ color: "#EA4335" }}>e</span>
+                          </span>
+                        ) : (
+                          <span
+                            className="text-[11px] font-bold tracking-tight transition-colors group-hover:opacity-80"
+                            style={{ color: link.color }}
+                          >
+                            {link.name}
+                          </span>
+                        )}
+                      </div>
+                    </a>
+                    {i < reviewLinks.length - 1 && (
+                      <span className="mx-3 text-slate-800 font-extralight text-sm">|</span>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

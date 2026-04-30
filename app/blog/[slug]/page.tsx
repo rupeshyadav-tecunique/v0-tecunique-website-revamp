@@ -48,13 +48,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article Header */}
       <section className="bg-gradient-to-b from-muted/50 to-background py-16 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
-          </Link>
+          <div className="mb-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Blog
+            </Link>
+          </div>
 
           <Badge variant="secondary" className="mb-4">
             {post.category}
