@@ -139,32 +139,52 @@ export default function AboutPage() {
       {/* Team Section */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Our Team
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              We are led by dexterous and ingenious information technology experts, business strategists, and solution architects, who provide in-depth industry experience and form the core of our commitment to innovation. Together we help our clients to accelerate growth and be future-ready with our reliable solutions.
-            </p>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+                Our Expert Team
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                We are a dedicated team of 30+ professionals, led by industry veterans and solution architects who form the core of our commitment to innovation. Our team's strength lies in its stability and deep-rooted expertise.
+              </p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                With a significant number of our members having been with us for over a decade, we provide an unparalleled level of continuity and institutional knowledge to our clients.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { count: "3", label: "14+ Years", sub: "Core Leadership" },
+                { count: "2", label: "12+ Years", sub: "Senior Architects" },
+                { count: "5", label: "7+ Years", sub: "Technical Leads" },
+                { count: "20+", label: "2+ Years", sub: "Expert Engineers" },
+              ].map((group) => (
+                <div key={group.label} className="rounded-2xl border border-border/50 bg-card p-6 text-center shadow-sm">
+                  <p className="text-3xl font-bold text-primary">{group.count}</p>
+                  <p className="text-sm font-bold text-foreground mt-1">{group.label}</p>
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">{group.sub}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Culture Section */}
-      <section className="bg-primary py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-primary py-20 lg:py-28 overflow-hidden relative">
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl text-balance">
-              Our Culture
+              Vibrant Work Culture
             </h2>
-            <p className="mt-2 text-xl text-primary-foreground/90">
-              Your IDEA + Our Policy = Employee-centric WORK CULTURE
+            <p className="mt-2 text-xl text-primary-foreground/90 font-medium">
+              We Celebrate Life, Festivals & Milestones Together
             </p>
             <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-              We believe work culture doesn&apos;t just help attract amazing people, it amplifies their abilities and allows them to do their best. We are UNIQUENS. We dare to be different.
+              At TECUNIQUE, we believe that a team that celebrates together stays together. From colorful Holi to lit-up Diwali, our team of 30+ "Uniquens" celebrates every festival with immense joy and spirit.
             </p>
             <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-              We believe an organization with employee-centric culture welcomes open communication, encourages feedback, provides psychological safety, and inspires innovation. We put our workforce on top priority.
+              Our employee-centric culture welcomes open communication and inspires innovation. Whether it's our veterans of 14 years or our newest joiners, everyone is family here. We put our workforce on top priority, ensuring a workplace that is both productive and emotionally fulfilling.
             </p>
           </div>
         </div>

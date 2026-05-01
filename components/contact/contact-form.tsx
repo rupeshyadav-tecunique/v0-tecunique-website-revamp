@@ -26,11 +26,37 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    }
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        import("sonner").then(({ toast }) => toast.success("Message sent successfully!"))
+      } else {
+        const errorData = await response.json()
+        import("sonner").then(({ toast }) => toast.error(errorData.error || "Failed to send message."))
+      }
+    } catch (error) {
+      import("sonner").then(({ toast }) => toast.error("An unexpected error occurred."))
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
