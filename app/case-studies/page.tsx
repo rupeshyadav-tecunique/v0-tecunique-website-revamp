@@ -307,7 +307,7 @@ export default function CaseStudiesPage() {
                         style={{ background: `${study.color}06` }}
                       >
                         <p
-                          className="font-display text-2xl font-extrabold leading-[1.1] mb-2"
+                          className="font-display text-[18px] font-extrabold leading-[1.1] mb-2"
                           style={{ color: study.color }}
                         >
                           {result.metric}
