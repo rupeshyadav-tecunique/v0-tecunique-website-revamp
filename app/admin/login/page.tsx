@@ -27,14 +27,15 @@ export default function AdminLoginPage() {
       })
 
       if (res.ok) {
-        toast.success("Login successful")
+        toast.success("Authentication successful! Welcome back.")
         router.push("/admin")
         router.refresh()
       } else {
-        toast.error("Invalid password")
+        const data = await res.json()
+        toast.error(data.error || "Authentication failed. Please try again.")
       }
     } catch (error) {
-      toast.error("Something went wrong")
+      toast.error("Network error. Please check your connection.")
     } finally {
       setIsLoading(false)
     }
