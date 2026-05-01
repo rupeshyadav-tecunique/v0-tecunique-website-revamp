@@ -2,15 +2,42 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { blogPosts } from "@/lib/blog-data"
+import { blogPosts as staticBlogs } from "@/lib/blog-data"
 import { CalendarDays, Clock, ArrowRight } from "lucide-react"
+import clientPromise from "@/lib/db"
 
 export const metadata: Metadata = {
   title: "Blog & Articles",
   description: "Tech Trends Unwrapped: A Dive into Modern Software Engineering Articles. Insights on software development, quality assurance, and technology trends.",
 }
 
-export default function BlogPage() {
+async function getBlogs() {
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const dbBlogs = await db.collection("blogs").find({}).sort({ createdAt: -1 }).toArray()
+    
+    // Convert Mongo objects to plain JS objects (serializable)
+    const formattedDbBlogs = dbBlogs.map(blog => ({
+      ...blog,
+      _id: blog._id.toString(),
+      createdAt: blog.createdAt?.toISOString(),
+    }))
+
+    // Filter static blogs that are already in DB (by slug)
+    const dbSlugs = new Set(formattedDbBlogs.map(b => b.slug))
+    const uniqueStaticBlogs = staticBlogs.filter(b => !dbSlugs.has(b.slug))
+
+    return [...formattedDbBlogs, ...uniqueStaticBlogs]
+  } catch (e) {
+    console.error(e)
+    return staticBlogs
+  }
+}
+
+export default async function BlogPage() {
+  const blogs = await getBlogs()
+
   return (
     <>
       {/* Hero Section */}
@@ -34,8 +61,8 @@ export default function BlogPage() {
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
-              <Card key={post.slug} className="group flex flex-col overflow-hidden border-border/50 bg-card transition-all hover:border-primary/30 hover:shadow-lg">
+            {blogs.map((post: any) => (
+              <Card key={post._id || post.slug} className="group flex flex-col overflow-hidden border-border/50 bg-card transition-all hover:border-primary/30 hover:shadow-lg">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2 mb-3">
                     <Badge variant="secondary" className="text-xs">

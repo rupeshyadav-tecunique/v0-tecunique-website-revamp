@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { getJob, jobs } from "@/lib/jobs-data"
+import { getJob as getStaticJob, jobs as staticJobs } from "@/lib/jobs-data"
 import { ShareJob } from "@/components/careers/share-job"
 import { 
   ArrowLeft, 
@@ -13,34 +13,49 @@ import {
   CalendarDays, 
   CheckCircle2 
 } from "lucide-react"
+import clientPromise from "@/lib/db"
 
 interface JobPageProps {
   params: Promise<{ slug: string }>
 }
 
+async function getJob(slug: string) {
+  // Check static data first
+  const staticJob = getStaticJob(slug)
+  if (staticJob) return staticJob
+
+  // Check MongoDB
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const dbJob = await db.collection("jobs").findOne({ slug })
+    return dbJob ? {
+      ...dbJob,
+      _id: dbJob._id.toString(),
+      createdAt: dbJob.createdAt?.toISOString(),
+    } : null
+  } catch (e) {
+    return null
+  }
+}
+
 export async function generateMetadata({ params }: JobPageProps): Promise<Metadata> {
   const { slug } = await params
-  const job = getJob(slug)
+  const job = await getJob(slug)
 
   if (!job) {
     return { title: "Job Not Found" }
   }
 
   return {
-    title: `${job.title} | Careers`,
-    description: job.description,
+    title: `${(job as any).title} | Careers`,
+    description: (job as any).description,
   }
-}
-
-export function generateStaticParams() {
-  return jobs.map((job) => ({
-    slug: job.slug,
-  }))
 }
 
 export default async function JobPage({ params }: JobPageProps) {
   const { slug } = await params
-  const job = getJob(slug)
+  const job = await getJob(slug)
 
   if (!job) {
     notFound()
@@ -61,25 +76,25 @@ export default async function JobPage({ params }: JobPageProps) {
 
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">{job.department}</Badge>
-              <Badge variant="outline">{job.type}</Badge>
+              <Badge variant="secondary">{(job as any).department}</Badge>
+              <Badge variant="outline">{(job as any).type}</Badge>
             </div>
             <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
-              {job.title}
+              {(job as any).title}
             </h1>
             
             <div className="flex flex-wrap gap-x-6 gap-y-3 mt-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                {job.location}
+                {(job as any).location}
               </span>
               <span className="flex items-center gap-2">
                 <GraduationCap className="h-4 w-4" />
-                {job.experience}
+                {(job as any).experience}
               </span>
               <span className="flex items-center gap-2">
                 <CalendarDays className="h-4 w-4" />
-                Posted on {new Date(job.postedDate).toLocaleDateString("en-US", {
+                Posted on {new Date((job as any).postedDate).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
                   year: "numeric"
@@ -100,14 +115,14 @@ export default async function JobPage({ params }: JobPageProps) {
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-4">Description</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  {job.description}
+                  {(job as any).description}
                 </p>
               </div>
 
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-4">Requirements</h2>
                 <ul className="space-y-3">
-                  {job.requirements.map((req, i) => (
+                  {(job as any).requirements.map((req: string, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-muted-foreground">
                       <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                       <span>{req}</span>
@@ -123,11 +138,11 @@ export default async function JobPage({ params }: JobPageProps) {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button size="lg" className="rounded-xl px-8" asChild>
-                    <a href={`mailto:careers@tecunique.com?subject=Application for ${job.title}`}>
+                    <a href={`mailto:careers@tecunique.com?subject=Application for ${(job as any).title}`}>
                       Apply Now
                     </a>
                   </Button>
-                  <ShareJob title={job.title} />
+                  <ShareJob title={(job as any).title} />
                 </div>
               </div>
             </div>
@@ -141,21 +156,21 @@ export default async function JobPage({ params }: JobPageProps) {
                     <Briefcase className="h-4 w-4 text-primary shrink-0 mt-1" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Job Type</p>
-                      <p className="text-sm font-medium">{job.type}</p>
+                      <p className="text-sm font-medium">{(job as any).type}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="h-4 w-4 text-primary shrink-0 mt-1" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Location</p>
-                      <p className="text-sm font-medium">{job.location}</p>
+                      <p className="text-sm font-medium">{(job as any).location}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <GraduationCap className="h-4 w-4 text-primary shrink-0 mt-1" />
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">Experience</p>
-                      <p className="text-sm font-medium">{job.experience}</p>
+                      <p className="text-sm font-medium">{(job as any).experience}</p>
                     </div>
                   </div>
                 </div>
@@ -164,7 +179,7 @@ export default async function JobPage({ params }: JobPageProps) {
                 
                 <div className="space-y-4">
                   <p className="text-sm font-medium text-foreground">Know someone for this role?</p>
-                  <ShareJob title={job.title} label="Refer a Friend" className="w-full text-xs" />
+                  <ShareJob title={(job as any).title} label="Refer a Friend" className="w-full text-xs" />
                 </div>
               </div>
 

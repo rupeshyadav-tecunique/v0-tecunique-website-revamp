@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { jobs } from "@/lib/jobs-data"
+import { jobs as staticJobs } from "@/lib/jobs-data"
 import {
   Briefcase,
   MapPin,
@@ -16,6 +16,7 @@ import {
   GraduationCap,
   Globe
 } from "lucide-react"
+import clientPromise from "@/lib/db"
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -61,7 +62,32 @@ const benefits = [
   }
 ]
 
-export default function CareersPage() {
+async function getJobs() {
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const dbJobs = await db.collection("jobs").find({}).sort({ createdAt: -1 }).toArray()
+    
+    const formattedDbJobs = dbJobs.map(job => ({
+      ...job,
+      _id: job._id.toString(),
+      createdAt: job.createdAt?.toISOString(),
+    }))
+
+    // Filter static jobs that are already in DB (by slug)
+    const dbSlugs = new Set(formattedDbJobs.map(j => j.slug))
+    const uniqueStaticJobs = staticJobs.filter(j => !dbSlugs.has(j.slug))
+
+    return [...formattedDbJobs, ...uniqueStaticJobs]
+  } catch (e) {
+    console.error(e)
+    return staticJobs
+  }
+}
+
+export default async function CareersPage() {
+  const jobs = await getJobs()
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -161,13 +187,13 @@ export default function CareersPage() {
             </div>
             <div className="flex items-center gap-3 text-sm text-muted-foreground italic">
               <Clock className="h-4 w-4" />
-              Updated as of May 1, 2024
+              Updated as of {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-6">
-            {jobs.map((job) => (
-              <Card key={job.id} className="group border-border/50 bg-card hover:border-primary/30 hover:shadow-md transition-all overflow-hidden">
+            {jobs.map((job: any) => (
+              <Card key={job._id || job.id} className="group border-border/50 bg-card hover:border-primary/30 hover:shadow-md transition-all overflow-hidden">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>

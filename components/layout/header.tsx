@@ -21,6 +21,9 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
+  // Hide header on admin pages
+  if (pathname?.startsWith("/admin")) return null
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll, { passive: true })
@@ -55,7 +58,9 @@ export function Header() {
         {/* Desktop navigation */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-1">
           {navigation.map((item) => {
-            const isActive = pathname === item.href
+            const isActive = item.href === "/" 
+              ? pathname === "/" 
+              : pathname.startsWith(item.href)
             return (
               <Link
                 key={item.name}
@@ -109,7 +114,9 @@ export function Header() {
         <div className="border-t border-border bg-white/95 backdrop-blur-md">
           <div className="space-y-1 px-6 py-4">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = item.href === "/" 
+                ? pathname === "/" 
+                : pathname.startsWith(item.href)
               return (
                 <Link
                   key={item.name}

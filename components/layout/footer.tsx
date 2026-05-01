@@ -66,7 +66,14 @@ const reviewLinks = [
   },
 ]
 
+import { usePathname } from "next/navigation"
+
 export function Footer() {
+  const pathname = usePathname()
+
+  // Hide footer on admin pages
+  if (pathname?.startsWith("/admin")) return null
+
   return (
     <footer className="border-t border-border bg-[#0f172a]">
       {/* Main footer content */}

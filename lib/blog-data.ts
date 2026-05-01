@@ -1,4 +1,5 @@
 export interface BlogPost {
+  id: string
   slug: string
   title: string
   excerpt: string
@@ -7,10 +8,12 @@ export interface BlogPost {
   author: string
   category: string
   readTime: string
+  image: string
 }
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "1",
     slug: "embracing-autonomous-self-organized-professionals",
     title: "Embracing Autonomous and Self-Organized Professionals",
     excerpt: "Autonomous professionals are more inclined to think outside the box, challenge existing norms, and explore unconventional solutions, leading to the development of cutting-edge technologies.",
@@ -36,8 +39,10 @@ Creating an environment that supports autonomous professionals requires trust, c
     author: "TECUNIQUE Team",
     category: "Leadership",
     readTime: "5 min read",
+    image: "/images/blog/blog1.jpg"
   },
   {
+    id: "2",
     slug: "test-automation-modern-software-development",
     title: "Test Automation in Modern Software Development",
     excerpt: "In the dynamic world of software creation, it's crucial to be fast, deliver quality, and ensure reliability. Test automation has emerged as a vital tool to help achieve these goals.",
@@ -69,8 +74,10 @@ Successful test automation requires careful planning and execution. Teams should
     author: "TECUNIQUE Team",
     category: "Quality Assurance",
     readTime: "6 min read",
+    image: "/images/blog/blog2.jpg"
   },
   {
+    id: "3",
     slug: "artificial-intelligence-threat-or-boon",
     title: "Artificial Intelligence - A Threat or Boon?",
     excerpt: "Artificial intelligence is a buzzword for the current decade. As in every field, from finance to education, AI is becoming an essential part of every aspect of our lives.",
@@ -101,8 +108,10 @@ The key lies in responsible AI development and deployment. Organizations must pr
     author: "TECUNIQUE Team",
     category: "Technology",
     readTime: "7 min read",
+    image: "/images/blog/blog3.jpg"
   },
   {
+    id: "4",
     slug: "why-not-typescript",
     title: "WHY NOT TYPESCRIPT?",
     excerpt: "TypeScript, a programming language developed by Microsoft, is making waves in the software development community. It serves as an extension of JavaScript with static typing.",
@@ -133,8 +142,10 @@ Transitioning to TypeScript doesn't have to be all-or-nothing. You can gradually
     author: "TECUNIQUE Team",
     category: "Development",
     readTime: "5 min read",
+    image: "/images/blog/blog1.jpg"
   },
   {
+    id: "5",
     slug: "rise-of-cyborg-developer",
     title: "Artificial Intelligence: The Rise of the Cyborg Developer",
     excerpt: "In the ever-evolving landscape of software development, artificial intelligence tools are emerging as essential allies for developers.",
@@ -165,8 +176,10 @@ As AI continues to evolve, we can expect even more sophisticated tools that will
     author: "TECUNIQUE Team",
     category: "Technology",
     readTime: "6 min read",
+    image: "/images/blog/blog2.jpg"
   },
   {
+    id: "6",
     slug: "secret-to-happy-employees",
     title: "The Secret to Happy Employees: A Winning Recipe for Workplace Satisfaction",
     excerpt: "Happy employees are the lifeblood of any successful organization. When employees are content, motivated, and engaged, they tend to be more productive and creative.",
@@ -198,8 +211,10 @@ At TECUNIQUE, we believe work culture doesn't just help attract amazing peopleâ€
     author: "TECUNIQUE Team",
     category: "Culture",
     readTime: "5 min read",
+    image: "/images/blog/blog3.jpg"
   },
   {
+    id: "7",
     slug: "embarking-quality-assurance-journey",
     title: "Embarking on a Quality Assurance Journey",
     excerpt: "In the fast-paced realm of software development, Quality Assurance takes center stage, ensuring not just bug-free code but an immersive user experience.",
@@ -232,8 +247,10 @@ Quality is everyone's responsibility. Building a QA culture means integrating qu
     author: "TECUNIQUE Team",
     category: "Quality Assurance",
     readTime: "6 min read",
+    image: "/images/blog/blog1.jpg"
   },
   {
+    id: "8",
     slug: "india-dominance-global-it-industry",
     title: "Accelerating India's Dominance in the Global IT Industry",
     excerpt: "In recent years, India has emerged as a dominant player in the global IT industry, leveraging its skilled workforce and technological expertise.",
@@ -265,6 +282,7 @@ To maintain and enhance its position, India must continue investing in education
     author: "TECUNIQUE Team",
     category: "Industry",
     readTime: "7 min read",
+    image: "/images/blog/blog2.jpg"
   },
 ]
 

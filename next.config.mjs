@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
+  // Removed output: 'export' to enable server-side features like cookies, middleware, and API routes.
 }
 
 export default nextConfig

@@ -4,16 +4,37 @@ import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { blogPosts, getBlogPost, getRecentPosts } from "@/lib/blog-data"
+import { getBlogPost as getStaticBlogPost, getRecentPosts } from "@/lib/blog-data"
 import { CalendarDays, Clock, ArrowLeft, ArrowRight, User } from "lucide-react"
+import clientPromise from "@/lib/db"
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
 
+async function getBlogPost(slug: string) {
+  // Check static data first
+  const staticPost = getStaticBlogPost(slug)
+  if (staticPost) return staticPost
+
+  // Check MongoDB
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const dbPost = await db.collection("blogs").findOne({ slug })
+    return dbPost ? {
+      ...dbPost,
+      _id: dbPost._id.toString(),
+      createdAt: dbPost.createdAt?.toISOString(),
+    } : null
+  } catch (e) {
+    return null
+  }
+}
+
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await getBlogPost(slug)
 
   if (!post) {
     return {
@@ -22,20 +43,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: (post as any).title,
+    description: (post as any).excerpt,
   }
-}
-
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }))
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await getBlogPost(slug)
 
   if (!post) {
     notFound()
@@ -59,21 +74,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <Badge variant="secondary" className="mb-4">
-            {post.category}
+            {(post as any).category}
           </Badge>
 
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-            {post.title}
+            {(post as any).title}
           </h1>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <User className="h-4 w-4" />
-              {post.author}
+              {(post as any).author}
             </span>
             <span className="flex items-center gap-2">
               <CalendarDays className="h-4 w-4" />
-              {new Date(post.date).toLocaleDateString("en-US", {
+              {new Date((post as any).date).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
@@ -81,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </span>
             <span className="flex items-center gap-2">
               <Clock className="h-4 w-4" />
-              {post.readTime}
+              {(post as any).readTime}
             </span>
           </div>
         </div>
@@ -91,7 +106,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground">
-            {post.content.split("\n\n").map((paragraph, index) => {
+            {(post as any).content.split("\n\n").map((paragraph: string, index: number) => {
               const renderFormattedText = (text: string) => {
                 const parts = text.split(/(\*\*[^*]+\*\*)/g)
                 return parts.map((part, i) => {
