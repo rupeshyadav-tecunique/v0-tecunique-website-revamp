@@ -13,10 +13,6 @@ interface BlogPostPageProps {
 }
 
 async function getBlogPost(slug: string) {
-  // Check static data first
-  const staticPost = getStaticBlogPost(slug)
-  if (staticPost) return staticPost
-
   // Check MongoDB
   try {
     const client = await clientPromise

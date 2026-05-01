@@ -41,7 +41,7 @@ export default function NewBlogPostPage() {
       category: formData.get("category"),
       date: formData.get("date"),
       readTime: "5 min read", // Simple mock for now
-      image: previewImage,
+      image: "/images/blog/blog1.jpg", // Default placeholder
       slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
     }
 
@@ -155,19 +155,16 @@ export default function NewBlogPostPage() {
 
             <Card className="border-border/60 shadow-sm">
               <CardHeader>
-                <CardTitle className="text-sm font-bold uppercase tracking-wider">Cover Image</CardTitle>
+                <CardTitle className="text-sm font-bold uppercase tracking-wider">Blog Image</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="aspect-video rounded-xl bg-muted overflow-hidden relative border border-border/40 group">
-                   <Image src={previewImage} alt="Preview" fill className="object-cover" />
-                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <Button type="button" variant="secondary" size="sm" className="rounded-full">
-                        <ImageIcon className="mr-2 h-4 w-4" />
-                        Change Image
-                      </Button>
+                <div className="aspect-video rounded-xl bg-muted flex items-center justify-center border border-dashed border-border/60">
+                   <div className="text-center">
+                     <ImageIcon className="mx-auto h-8 w-8 text-muted-foreground/40 mb-2" />
+                     <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground/60">Image Coming Soon</p>
                    </div>
                 </div>
-                <p className="text-[10px] text-muted-foreground text-center uppercase tracking-widest font-bold">Recommended: 1200 x 630px</p>
+                <p className="text-[10px] text-muted-foreground text-center leading-relaxed">Image upload will be available in a future update. For now, a default placeholder will be used.</p>
               </CardContent>
             </Card>
 

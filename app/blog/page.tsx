@@ -18,20 +18,15 @@ async function getBlogs() {
     const dbBlogs = await db.collection("blogs").find({}).sort({ createdAt: -1 }).toArray()
     
     // Convert Mongo objects to plain JS objects (serializable)
-    const formattedDbBlogs = dbBlogs.map(blog => ({
+    return dbBlogs.map(blog => ({
       ...blog,
       _id: blog._id.toString(),
       createdAt: blog.createdAt?.toISOString(),
+      date: blog.date || new Date().toISOString()
     }))
-
-    // Filter static blogs that are already in DB (by slug)
-    const dbSlugs = new Set(formattedDbBlogs.map(b => b.slug))
-    const uniqueStaticBlogs = staticBlogs.filter(b => !dbSlugs.has(b.slug))
-
-    return [...formattedDbBlogs, ...uniqueStaticBlogs]
   } catch (e) {
     console.error(e)
-    return staticBlogs
+    return []
   }
 }
 

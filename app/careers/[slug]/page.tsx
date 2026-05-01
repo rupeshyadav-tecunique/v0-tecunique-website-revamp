@@ -20,10 +20,6 @@ interface JobPageProps {
 }
 
 async function getJob(slug: string) {
-  // Check static data first
-  const staticJob = getStaticJob(slug)
-  if (staticJob) return staticJob
-
   // Check MongoDB
   try {
     const client = await clientPromise

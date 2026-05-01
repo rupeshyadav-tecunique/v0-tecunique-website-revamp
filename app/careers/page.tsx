@@ -68,20 +68,14 @@ async function getJobs() {
     const db = client.db("tecunique")
     const dbJobs = await db.collection("jobs").find({}).sort({ createdAt: -1 }).toArray()
     
-    const formattedDbJobs = dbJobs.map(job => ({
+    return dbJobs.map(job => ({
       ...job,
       _id: job._id.toString(),
       createdAt: job.createdAt?.toISOString(),
     }))
-
-    // Filter static jobs that are already in DB (by slug)
-    const dbSlugs = new Set(formattedDbJobs.map(j => j.slug))
-    const uniqueStaticJobs = staticJobs.filter(j => !dbSlugs.has(j.slug))
-
-    return [...formattedDbJobs, ...uniqueStaticJobs]
   } catch (e) {
     console.error(e)
-    return staticJobs
+    return []
   }
 }
 
