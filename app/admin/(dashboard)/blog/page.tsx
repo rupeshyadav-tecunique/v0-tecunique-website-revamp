@@ -43,16 +43,6 @@ export default async function ManageBlogs() {
       </div>
 
       <Card className="border-border/60 shadow-sm overflow-hidden">
-        <div className="p-4 border-b border-border/40 bg-muted/20 flex items-center gap-3">
-          <div className="relative flex-1 max-w-sm">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Search posts..."
-              className="w-full bg-white border border-border/60 rounded-lg py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-            />
-          </div>
-        </div>
         <BlogTable blogs={blogs} />
       </Card>
     </div>

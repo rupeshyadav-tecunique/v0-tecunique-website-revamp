@@ -27,6 +27,18 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     const formData = new FormData(e.currentTarget)
+    
+    // Honeypot check
+    const honeypot = formData.get("confirm_email")
+    if (honeypot) {
+      // It's a bot! Silently fail but show success to the bot
+      setTimeout(() => {
+        setIsSubmitted(true)
+        setIsSubmitting(false)
+      }, 1000)
+      return
+    }
+
     const data = {
       firstName: formData.get("firstName"),
       lastName: formData.get("lastName"),
@@ -137,6 +149,16 @@ export function ContactForm() {
             ))}
           </SelectContent>
         </Select>
+      </div>
+
+      {/* Honeypot field — hidden from users, but bots will fill it */}
+      <div className="hidden" aria-hidden="true">
+        <input
+          type="text"
+          name="confirm_email"
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       <div className="space-y-2">
