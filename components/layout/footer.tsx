@@ -18,6 +18,11 @@ const footerLinks = {
     { name: "Quality Assurance", href: "/services#qa" },
     { name: "Staff Augmentation", href: "/services#augmentation" },
   ],
+  legal: [
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms of Service", href: "/terms-of-service" },
+    { name: "Cookie Policy", href: "/cookie-policy" },
+  ],
 }
 
 const socialLinks = [
@@ -100,7 +105,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-2 text-sm text-slate-400">
                 <MapPin className="h-4 w-4 mt-0.5 text-slate-500 shrink-0" />
-                <span>Neptune Edge, Alkapuri, Vadodara – 390007</span>
+                <span>1002 Neptune Edge, Alkapuri, Vadodara – 390007</span>
               </div>
             </div>
 
@@ -234,9 +239,9 @@ export function Footer() {
             &copy; {new Date().getFullYear()} TECUNIQUE. All rights reserved.
           </p>
           <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-              <Link key={item} href="#" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">
-                {item}
+            {footerLinks.legal.map((item) => (
+              <Link key={item.name} href={item.href} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">
+                {item.name}
               </Link>
             ))}
           </div>
