@@ -10,7 +10,8 @@ const trustedBy = [
   "CustomerMatrix",
   "Qotilabs",
   "SkySelect",
-  // "Innovalog",
+  "PolySpot",
+  "eXtensi",
   "Validat"
 ]
 
@@ -130,20 +131,27 @@ export function HeroSection() {
               </Link>
             </div>
 
-            {/* Trusted by strip */}
+            {/* Trusted by strip — Marquee effect */}
             <div className="hero-reveal mt-12 border-t border-border/50 pt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-6">
                 Trusted by leading companies
               </p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
-                {trustedBy.map((name) => (
-                  <span
-                    key={name}
-                    className="text-sm font-medium text-foreground/40 hover:text-foreground/70 transition-colors cursor-default"
-                  >
-                    {name}
-                  </span>
-                ))}
+              
+              <div className="relative overflow-hidden -mx-4 px-4">
+                {/* Gradient fade edges */}
+                <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+
+                <div className="flex animate-marquee py-2">
+                  {[...trustedBy, ...trustedBy].map((name, i) => (
+                    <span
+                      key={`${name}-${i}`}
+                      className="mx-6 shrink-0 text-[13px] font-bold text-foreground/30 hover:text-foreground/60 transition-colors cursor-default whitespace-nowrap tracking-wider uppercase"
+                    >
+                      {name}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
