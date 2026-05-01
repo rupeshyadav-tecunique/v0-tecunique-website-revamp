@@ -28,8 +28,8 @@ const footerLinks = {
 
 const socialLinks = [
   { Icon: Linkedin, href: "https://linkedin.com/company/tecunique", label: "LinkedIn" },
-  { Icon: Twitter, href: "https://twitter.com/tecunique", label: "Twitter" },
-  { Icon: Github, href: "https://github.com/tecunique", label: "GitHub" },
+  // { Icon: Twitter, href: "https://twitter.com/tecunique", label: "Twitter" },
+  // { Icon: Github, href: "https://github.com/tecunique", label: "GitHub" },
   { Icon: Mail, href: "mailto:sales@tecunique.com", label: "Email" },
 ]
 
