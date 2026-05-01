@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Award, Shield, Users, Lightbulb, Fingerprint, ArrowRight } from "lucide-react"
+import CultureGallery from "@/components/about/culture-gallery"
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -136,57 +137,77 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 lg:py-28">
+      {/* Leadership Section */}
+      <section className="py-20 lg:py-28 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-                Our Expert Team
-              </h2>
-              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                We are a dedicated team of 30+ professionals, led by industry veterans and solution architects who form the core of our commitment to innovation. Our team's strength lies in its stability and deep-rooted expertise.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                With a significant number of our members having been with us for over a decade, we provide an unparalleled level of continuity and institutional knowledge to our clients.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { count: "3", label: "14+ Years", sub: "Core Leadership" },
-                { count: "2", label: "12+ Years", sub: "Senior Architects" },
-                { count: "5", label: "7+ Years", sub: "Technical Leads" },
-                { count: "20+", label: "2+ Years", sub: "Expert Engineers" },
-              ].map((group) => (
-                <div key={group.label} className="rounded-2xl border border-border/50 bg-card p-6 text-center shadow-sm">
-                  <p className="text-3xl font-bold text-primary">{group.count}</p>
-                  <p className="text-sm font-bold text-foreground mt-1">{group.label}</p>
-                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground mt-1">{group.sub}</p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Leadership</h2>
+            <p className="mt-4 text-lg text-muted-foreground">The strategic vision and wisdom behind TecUnique</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {[1, 2].map((i) => (
+              <div key={i} className="flex flex-col md:flex-row gap-8 items-center bg-muted/20 p-8 rounded-3xl border border-border/50 transition-all hover:shadow-lg">
+                <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-2xl bg-muted">
+                  <img src={`https://placehold.co/400x400/png?text=Director+${i}`} alt={`Director ${i}`} className="h-full w-full object-cover" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground">Director Name {i}</h3>
+                  <p className="text-primary font-semibold mb-4">Managing Director</p>
+                  <p className="text-muted-foreground italic text-sm leading-relaxed">
+                    "Leading with integrity and a commitment to excellence has always been our core philosophy. We take pride in the family we've built here at TecUnique."
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Culture Section */}
-      <section className="bg-primary py-20 lg:py-28 overflow-hidden relative">
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl text-balance">
-              Vibrant Work Culture
-            </h2>
-            <p className="mt-2 text-xl text-primary-foreground/90 font-medium">
-              We Celebrate Life, Festivals & Milestones Together
-            </p>
-            <p className="mt-6 text-lg text-primary-foreground/80 leading-relaxed">
-              At TECUNIQUE, we believe that a team that celebrates together stays together. From colorful Holi to lit-up Diwali, our team of 30+ "Uniquens" celebrates every festival with immense joy and spirit.
-            </p>
-            <p className="mt-4 text-primary-foreground/80 leading-relaxed">
-              Our employee-centric culture welcomes open communication and inspires innovation. Whether it's our veterans of 14 years or our newest joiners, everyone is family here. We put our workforce on top priority, ensuring a workplace that is both productive and emotionally fulfilling.
-            </p>
+      {/* Veterans Section - 15+ Years */}
+      <section className="py-20 lg:py-28 bg-muted/10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">The Core Pillars</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Celebrating our members with 15+ years of dedicated service</p>
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex flex-col sm:flex-row gap-6 bg-card p-6 rounded-2xl border border-border/40 shadow-sm transition-all hover:border-primary/30">
+                <div className="h-32 w-32 shrink-0 rounded-xl bg-muted overflow-hidden">
+                  <img src={`https://placehold.co/200x200/png?text=Veteran+${i}`} alt={`Veteran ${i}`} className="h-full w-full object-cover" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-foreground">Expert Name {i}</h4>
+                  <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">15+ Years at TecUnique</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    "Being part of this journey for over 15 years has been incredibly fulfilling. I've watched us grow from a small group to a global engineering powerhouse, all while maintaining our unique culture."
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cultural Corner - Dummy Gallery */}
+      <section className="py-20 lg:py-28 overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Cultural Corner</h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                Life at TecUnique is about more than just code. We celebrate every milestone, festival, and achievement as one big family.
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">30+</div>
+              <div className="text-sm font-medium">Uniquens <br /><span className="text-muted-foreground">Celebrating Together</span></div>
+            </div>
+          </div>
+
+          <CultureGallery />
         </div>
       </section>
 
