@@ -12,6 +12,7 @@ const services = [
     gradient: "from-indigo-500 to-violet-600",
     lightBg: "from-indigo-50 to-violet-50",
     tag: "Most Popular",
+    href: "/services#dedicated-teams"
   },
   {
     title: "Software Development",
@@ -20,6 +21,7 @@ const services = [
     gradient: "from-violet-500 to-purple-600",
     lightBg: "from-violet-50 to-purple-50",
     tag: null,
+    href: "/services"
   },
   {
     title: "Quality Assurance",
@@ -28,6 +30,7 @@ const services = [
     gradient: "from-cyan-500 to-blue-600",
     lightBg: "from-cyan-50 to-blue-50",
     tag: null,
+    href: "/services#qa"
   },
   {
     title: "Staff Augmentation",
@@ -36,6 +39,7 @@ const services = [
     gradient: "from-blue-500 to-indigo-600",
     lightBg: "from-blue-50 to-indigo-50",
     tag: "New",
+    href: "/services#augmentation"
   },
 ]
 
@@ -104,13 +108,14 @@ export function ServicesSection() {
                 </p>
 
                 {/* Learn more link */}
-                <div
+                <Link
+                  href={service.href}
                   className="mt-5 flex items-center gap-1 text-sm font-semibold transition-all duration-200 translate-y-0 group-hover:-translate-y-0.5"
                   style={{ color: "#6366f1" }}
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </div>
+                </Link>
               </div>
             </div>
           ))}
