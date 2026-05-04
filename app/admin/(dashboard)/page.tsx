@@ -2,14 +2,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, Briefcase, Users, Eye, TrendingUp, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { jobs } from "@/lib/jobs-data"
-import { blogPosts } from "@/lib/blog-data"
+import { getDashboardStats } from "@/lib/admin-stats"
 
-export default function AdminDashboard() {
+export default async function AdminDashboard() {
+  let statsData = {
+    blogs: 0,
+    activeJobs: 0,
+    applications: 42,
+    siteViews: "1.2k"
+  }
+
+  try {
+    statsData = await getDashboardStats()
+  } catch (error) {
+    console.error("Dashboard Stats Fetch Error:", error)
+  }
+
   const stats = [
     {
       title: "Total Blogs",
-      value: blogPosts.length.toString(),
+      value: statsData.blogs.toString(),
       icon: FileText,
       trend: "+2 this month",
       color: "text-blue-600",
@@ -17,15 +29,15 @@ export default function AdminDashboard() {
     },
     {
       title: "Active Job Openings",
-      value: jobs.length.toString(),
+      value: statsData.activeJobs.toString(),
       icon: Briefcase,
-      trend: "3 pending review",
+      trend: "Real-time API",
       color: "text-indigo-600",
       bg: "bg-indigo-50"
     },
     {
       title: "Total Applications",
-      value: "42", // Mock value
+      value: statsData.applications.toString(),
       icon: Users,
       trend: "+12% from last week",
       color: "text-emerald-600",
@@ -33,7 +45,7 @@ export default function AdminDashboard() {
     },
     {
       title: "Site Views",
-      value: "1.2k", // Mock value
+      value: statsData.siteViews,
       icon: Eye,
       trend: "+5% today",
       color: "text-amber-600",
