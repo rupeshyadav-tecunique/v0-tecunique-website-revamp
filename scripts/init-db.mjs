@@ -376,19 +376,19 @@ async function run() {
     const db = client.db('tecunique');
 
     // 1. Create Admin User
-    console.log('Ensuring Admin User exists...');
-    // We don't want to delete admins every time, just ensure one exists
-    const adminExists = await db.collection('admins').findOne({ username: 'admin' });
-    if (!adminExists) {
-      await db.collection('admins').insertOne({
-        username: 'admin',
-        password: 'admintec12',
-        createdAt: new Date()
-      });
-      console.log('Admin user created successfully!');
-    } else {
-      console.log('Admin user already exists.');
-    }
+    // console.log('Ensuring Admin User exists...');
+    // // We don't want to delete admins every time, just ensure one exists
+    // const adminExists = await db.collection('admins').findOne({ username: 'admin' });
+    // if (!adminExists) {
+    //   await db.collection('admins').insertOne({
+    //     username: '*************',
+    //     password: '*************',
+    //     createdAt: new Date()
+    //   });
+    //   console.log('Admin user created successfully!');
+    // } else {
+    //   console.log('Admin user already exists.');
+    // }
 
     // 2. Insert Blogs
     console.log('Seeding Blogs...');

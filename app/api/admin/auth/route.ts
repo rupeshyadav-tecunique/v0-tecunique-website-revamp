@@ -5,20 +5,20 @@ import clientPromise from '@/lib/db'
 export async function POST(req: Request) {
   try {
     const { username, password } = await req.json()
-    
+
     const client = await clientPromise
     const db = client.db("tecunique")
     const admin = await db.collection("admins").findOne({ username, password })
 
     if (admin) {
       const cookieStore = await cookies()
-      
+
       // Set the admin token cookie
       cookieStore.set('admin_token', password, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
-        maxAge: 60 * 60 * 24 * 7, // 1 week
+        maxAge: 60 * 60 * 2, // 2 hours
         path: '/',
       })
 
