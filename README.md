@@ -1,35 +1,83 @@
-# v0-tecunique-website-revamp
+# TecUnique Website Revamp
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+A modern, high-performance web platform for **TecUnique**, a leading software engineering firm specializing in custom solutions and Atlassian ecosystem expertise.
 
-## Built with v0
+## 🚀 Key Features
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+- **Admin CMS**: Robust dashboard to manage Blog posts and Career openings.
+- **Dynamic Search**: Real-time searching and filtering for blogs and jobs across both admin and public interfaces.
+- **Advanced SEO**: Automated `sitemap.xml` and `robots.txt` generation with SEO-friendly metadata for all pages.
+- **Modern UI/UX**: Premium design with high-end animations using **Framer Motion** and **Tailwind CSS**.
+- **Security**: 
+  - Dual-credential Admin authentication (Username/Password).
+  - Silent Honeypot spam protection on the Contact Form.
+  - Secure, HTTP-only session cookies with configurable timeouts.
+- **Responsiveness**: Fully optimized for mobile, tablet, and desktop views.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_bmutVUy2De8tIiSBGrNBx8dqxWJU)
+## 🛠️ Tech Stack
 
-## Getting Started
+- **Framework**: [Next.js 15+](https://nextjs.org) (App Router)
+- **Database**: [MongoDB](https://www.mongodb.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Forms & UI**: [Shadcn UI](https://ui.shadcn.com/)
+- **Email**: [Resend](https://resend.com/)
 
-First, run the development server:
+## ⚙️ Configuration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Create a `.env.local` file in the root directory and add the following:
+
+```env
+# Database
+MONGODB_URI=your_mongodb_connection_string
+
+# Base URL (for SEO)
+NEXT_PUBLIC_BASE_URL=https://tecunique.com
+
+# Email (Resend)
+RESEND_API_KEY=your_resend_api_key
+CONTACT_RECEIVER_EMAILS=info@tecunique.com
+
+# Node Environment
+NODE_ENV=development
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🗄️ Database Seeding
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To initialize the database with default blogs, job openings, and the admin user, run:
 
-## Learn More
+```bash
+node scripts/init-db.mjs
+```
 
-To learn more, take a look at the following resources:
+> **Note**: Ensure your `MONGODB_URI` is correctly set before running the script.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+## 🔐 Administrative Access
 
-<a href="https://v0.app/chat/api/kiro/clone/yadavji18092002-lang/v0-tecunique-website-revamp" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+Access the admin dashboard at `/admin`.
+
+- **Username**: Managed via the `admins` collection.
+- **Password**: Securely stored in the database.
+- **Session Timeout**: Configured for 2 hours for enhanced security.
+
+## 📈 Getting Started
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+## 📄 License
+
+Internal project for **TecUnique Private Limited**. All rights reserved.
