@@ -66,7 +66,7 @@ async function getJobs() {
   try {
     const client = await clientPromise
     const db = client.db("tecunique")
-    const dbJobs = await db.collection("jobs").find({}).sort({ createdAt: -1 }).toArray()
+    const dbJobs = await db.collection("jobs").find({ isActive: true }).sort({ createdAt: -1 }).toArray()
     
     return dbJobs.map(job => ({
       ...job,

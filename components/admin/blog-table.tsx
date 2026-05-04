@@ -116,7 +116,11 @@ export default function BlogTable({ blogs }: { blogs: any[] }) {
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50">Published</Badge>
+                    {post.isDraft ? (
+                      <Badge variant="outline" className="text-muted-foreground border-border bg-muted/50">Draft</Badge>
+                    ) : (
+                      <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50">Published</Badge>
+                    )}
                   </td>
                   <td className="px-6 py-4">
                     <span className="text-sm text-muted-foreground">{post.category}</span>

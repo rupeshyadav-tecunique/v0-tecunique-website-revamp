@@ -39,7 +39,8 @@ Creating an environment that supports autonomous professionals requires trust, c
     category: "Leadership",
     readTime: "5 min read",
     image: "/images/blog/blog1.jpg",
-    createdAt: new Date("2024-03-15")
+    createdAt: new Date("2024-03-15"),
+    isDraft: false
   },
   {
     id: "2",
@@ -75,7 +76,8 @@ Successful test automation requires careful planning and execution. Teams should
     category: "Quality Assurance",
     readTime: "6 min read",
     image: "/images/blog/blog2.jpg",
-    createdAt: new Date("2024-02-28")
+    createdAt: new Date("2024-02-28"),
+    isDraft: false
   },
   {
     id: "3",
@@ -110,7 +112,8 @@ The key lies in responsible AI development and deployment. Organizations must pr
     category: "Technology",
     readTime: "7 min read",
     image: "/images/blog/blog3.jpg",
-    createdAt: new Date("2024-02-10")
+    createdAt: new Date("2024-02-10"),
+    isDraft: false
   },
   {
     id: "4",
@@ -145,7 +148,8 @@ Transitioning to TypeScript doesn't have to be all-or-nothing. You can gradually
     category: "Development",
     readTime: "5 min read",
     image: "/images/blog/blog1.jpg",
-    createdAt: new Date("2024-01-25")
+    createdAt: new Date("2024-01-25"),
+    isDraft: false
   },
   {
     id: "5",
@@ -180,7 +184,8 @@ As AI continues to evolve, we can expect even more sophisticated tools that will
     category: "Technology",
     readTime: "6 min read",
     image: "/images/blog/blog2.jpg",
-    createdAt: new Date("2024-01-10")
+    createdAt: new Date("2024-01-10"),
+    isDraft: false
   },
   {
     id: "6",
@@ -216,7 +221,8 @@ At TECUNIQUE, we believe work culture doesn't just help attract amazing peopleâ€
     category: "Culture",
     readTime: "5 min read",
     image: "/images/blog/blog3.jpg",
-    createdAt: new Date("2023-12-20")
+    createdAt: new Date("2023-12-20"),
+    isDraft: false
   },
   {
     id: "7",
@@ -253,7 +259,8 @@ Quality is everyone's responsibility. Building a QA culture means integrating qu
     category: "Quality Assurance",
     readTime: "6 min read",
     image: "/images/blog/blog1.jpg",
-    createdAt: new Date("2023-12-05")
+    createdAt: new Date("2023-12-05"),
+    isDraft: false
   },
   {
     id: "8",
@@ -289,7 +296,8 @@ To maintain and enhance its position, India must continue investing in education
     category: "Industry",
     readTime: "7 min read",
     image: "/images/blog/blog2.jpg",
-    createdAt: new Date("2023-11-15")
+    createdAt: new Date("2023-11-15"),
+    isDraft: false
   },
 ];
 
@@ -311,7 +319,8 @@ const jobs = [
     ],
     postedDate: "2024-04-20",
     slug: "senior-full-stack-developer",
-    createdAt: new Date("2024-04-20")
+    createdAt: new Date("2024-04-20"),
+    isActive: true
   },
   {
     id: "2",
@@ -330,7 +339,8 @@ const jobs = [
     ],
     postedDate: "2024-04-25",
     slug: "qa-engineer",
-    createdAt: new Date("2024-04-25")
+    createdAt: new Date("2024-04-25"),
+    isActive: true
   },
   {
     id: "3",
@@ -349,7 +359,8 @@ const jobs = [
     ],
     postedDate: "2024-05-01",
     slug: "atlassian-consultant",
-    createdAt: new Date("2024-05-01")
+    createdAt: new Date("2024-05-01"),
+    isActive: true
   },
   {
     id: "4",
@@ -362,7 +373,8 @@ const jobs = [
     requirements: ["Test Requirement 1"],
     postedDate: "2024-05-02",
     slug: "lead-architect-with-extensive-experience-in-modern-web-technologies-and-cloud-native-distributed-systems-for-global-enterprise-scale-applications",
-    createdAt: new Date("2024-05-02")
+    createdAt: new Date("2024-05-02"),
+    isActive: true
   }
 ];
 

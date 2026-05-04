@@ -25,6 +25,7 @@ export default function NewJobPage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const [requirements, setRequirements] = useState<string[]>([""])
+  const [isActive, setIsActive] = useState(true)
 
   const addRequirement = () => setRequirements([...requirements, ""])
   const removeRequirement = (index: number) => {
@@ -53,7 +54,8 @@ export default function NewJobPage() {
       description: formData.get("description"),
       requirements: requirements.filter(r => r.trim() !== ""),
       postedDate: new Date().toISOString().split('T')[0],
-      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+      isActive: isActive
     }
 
     try {
@@ -130,6 +132,18 @@ export default function NewJobPage() {
                   <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input id="experience" name="experience" className="pl-10" placeholder="e.g. 5+ Years, Senior" required />
                 </div>
+              </div>
+              <div className="flex items-center space-x-2 pt-8">
+                <input 
+                  type="checkbox" 
+                  id="isActive" 
+                  checked={isActive} 
+                  onChange={(e) => setIsActive(e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                />
+                <Label htmlFor="isActive" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  Active (Visible on careers page)
+                </Label>
               </div>
             </div>
           </CardContent>

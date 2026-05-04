@@ -40,9 +40,10 @@ export default function NewBlogPostPage() {
       author: formData.get("author"),
       category: formData.get("category"),
       date: formData.get("date"),
-      readTime: "5 min read", // Simple mock for now
-      image: "/images/blog/blog1.jpg", // Default placeholder
-      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+      readTime: "5 min read", 
+      image: "/images/blog/blog1.jpg", 
+      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+      isDraft: (e.nativeEvent as any).submitter.name === "draft"
     }
 
     try {
@@ -53,11 +54,11 @@ export default function NewBlogPostPage() {
       })
 
       if (res.ok) {
-        toast.success("Blog post published successfully!")
+        toast.success(blogData.isDraft ? "Draft saved successfully!" : "Blog post published successfully!")
         router.push("/admin/blog")
         router.refresh()
       } else {
-        toast.error("Failed to publish blog post")
+        toast.error("Failed to save blog post")
       }
     } catch (error) {
       toast.error("Something went wrong")
@@ -169,7 +170,7 @@ export default function NewBlogPostPage() {
             </Card>
 
             <div className="flex flex-col gap-3">
-              <Button type="submit" disabled={isLoading} className="w-full rounded-xl py-6 shadow-lg shadow-primary/20">
+              <Button type="submit" name="publish" disabled={isLoading} className="w-full rounded-xl py-6 shadow-lg shadow-primary/20">
                 {isLoading ? "Publishing..." : (
                   <>
                     <Save className="mr-2 h-4 w-4" />
@@ -177,8 +178,8 @@ export default function NewBlogPostPage() {
                   </>
                 )}
               </Button>
-              <Button variant="ghost" type="button" asChild className="w-full">
-                <Link href="/admin/blog">Save as Draft</Link>
+              <Button variant="ghost" type="submit" name="draft" disabled={isLoading} className="w-full">
+                {isLoading ? "Saving..." : "Save as Draft"}
               </Button>
             </div>
           </div>

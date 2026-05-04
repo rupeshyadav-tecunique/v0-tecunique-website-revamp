@@ -89,6 +89,7 @@ export default function JobTable({ jobs }: { jobs: any[] }) {
               <th className="px-6 py-4">Department</th>
               <th className="px-6 py-4">Location</th>
               <th className="px-6 py-4">Type</th>
+              <th className="px-6 py-4">Status</th>
               <th className="px-6 py-4 text-right">Actions</th>
             </tr>
           </thead>
@@ -109,6 +110,13 @@ export default function JobTable({ jobs }: { jobs: any[] }) {
                   </td>
                   <td className="px-6 py-4 text-sm text-muted-foreground">{job.location}</td>
                   <td className="px-6 py-4 text-sm text-muted-foreground">{job.type}</td>
+                  <td className="px-6 py-4">
+                    {job.isActive ? (
+                      <Badge variant="outline" className="text-emerald-600 border-emerald-200 bg-emerald-50">Active</Badge>
+                    ) : (
+                      <Badge variant="outline" className="text-muted-foreground border-border bg-muted/50">Inactive</Badge>
+                    )}
+                  </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
                       <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary" asChild>

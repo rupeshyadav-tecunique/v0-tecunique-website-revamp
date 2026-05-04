@@ -23,6 +23,7 @@ import { toast } from "sonner"
 export default function EditJobForm({ job }: { job: any }) {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
+  const [isActive, setIsActive] = useState(job.isActive ?? true)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,7 +40,8 @@ export default function EditJobForm({ job }: { job: any }) {
       experience: formData.get("experience"),
       description: formData.get("description"),
       requirements: (formData.get("requirements") as string).split("\n").filter(r => r.trim() !== ""),
-      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+      isActive: isActive
     }
 
     try {
@@ -153,6 +155,18 @@ export default function EditJobForm({ job }: { job: any }) {
                     <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input id="experience" name="experience" defaultValue={job.experience} className="pl-10" placeholder="e.g. 5+ Years" required />
                   </div>
+                </div>
+                <div className="flex items-center space-x-2 pt-4">
+                  <input 
+                    type="checkbox" 
+                    id="isActive" 
+                    checked={isActive} 
+                    onChange={(e) => setIsActive(e.target.checked)}
+                    className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                  />
+                  <Label htmlFor="isActive" className="text-sm font-medium leading-none">
+                    Active (Visible on careers page)
+                  </Label>
                 </div>
               </CardContent>
             </Card>

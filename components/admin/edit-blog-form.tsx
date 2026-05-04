@@ -38,7 +38,8 @@ export default function EditBlogForm({ blog }: { blog: any }) {
       author: formData.get("author"),
       category: formData.get("category"),
       date: formData.get("date"),
-      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+      slug: title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, ''),
+      isDraft: (e.nativeEvent as any).submitter.name === "draft"
     }
 
     try {
@@ -157,15 +158,18 @@ export default function EditBlogForm({ blog }: { blog: any }) {
             </Card>
 
             <div className="flex flex-col gap-3">
-              <Button type="submit" disabled={isLoading} className="w-full rounded-xl py-6 shadow-lg shadow-primary/20">
+              <Button type="submit" name="publish" disabled={isLoading} className="w-full rounded-xl py-6 shadow-lg shadow-primary/20">
                 {isLoading ? "Saving..." : (
                   <>
                     <Save className="mr-2 h-4 w-4" />
-                    Save Changes
+                    Update & Publish
                   </>
                 )}
               </Button>
-              <Button variant="ghost" type="button" asChild className="w-full">
+              <Button variant="ghost" type="submit" name="draft" disabled={isLoading} className="w-full">
+                {isLoading ? "Saving..." : "Save as Draft"}
+              </Button>
+              <Button variant="outline" type="button" asChild className="w-full border-dashed">
                 <Link href="/admin/blog">Cancel</Link>
               </Button>
             </div>

@@ -13,7 +13,7 @@ async function getBlogs() {
   try {
     const client = await clientPromise
     const db = client.db("tecunique")
-    const dbBlogs = await db.collection("blogs").find({}).sort({ createdAt: -1 }).toArray()
+    const dbBlogs = await db.collection("blogs").find({ isDraft: false }).sort({ createdAt: -1 }).toArray()
     
     // Convert Mongo objects to plain JS objects (serializable)
     return dbBlogs.map(blog => ({
