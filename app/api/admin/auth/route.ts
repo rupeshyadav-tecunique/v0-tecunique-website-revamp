@@ -4,11 +4,11 @@ import clientPromise from '@/lib/db'
 
 export async function POST(req: Request) {
   try {
-    const { password } = await req.json()
+    const { username, password } = await req.json()
     
     const client = await clientPromise
     const db = client.db("tecunique")
-    const admin = await db.collection("admins").findOne({ password })
+    const admin = await db.collection("admins").findOne({ username, password })
 
     if (admin) {
       const cookieStore = await cookies()
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true })
     }
 
-    return NextResponse.json({ error: 'Invalid password' }, { status: 401 })
+    return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 })
   } catch (error) {
     console.error("Auth Error:", error)
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })

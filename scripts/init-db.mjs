@@ -378,9 +378,10 @@ async function run() {
     // 1. Create Admin User
     console.log('Ensuring Admin User exists...');
     // We don't want to delete admins every time, just ensure one exists
-    const adminExists = await db.collection('admins').findOne({ password: 'admintec12' });
+    const adminExists = await db.collection('admins').findOne({ username: 'admin' });
     if (!adminExists) {
       await db.collection('admins').insertOne({
+        username: 'admin',
         password: 'admintec12',
         createdAt: new Date()
       });
