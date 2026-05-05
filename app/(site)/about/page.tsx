@@ -1,11 +1,9 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Award, Shield, Users, Lightbulb, Fingerprint, ArrowRight } from "lucide-react"
 import CultureGallery from "@/components/about/culture-gallery"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { cn } from "@/lib/utils"
 import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
@@ -224,8 +222,13 @@ export default function AboutPage() {
             {[1, 2, 3, 4].map((i) => (
               <SectionReveal key={i} delay={i * 100}>
                 <div className="flex flex-col sm:flex-row gap-8 bg-white p-8 rounded-3xl border border-border/40 shadow-sm transition-all hover:border-primary/40 group">
-                  <div className="h-36 w-36 shrink-0 rounded-2xl bg-muted overflow-hidden shadow-inner group-hover:scale-105 transition-transform duration-500">
-                    <img src={`https://placehold.co/200x200/f5f3ff/8b5cf6?text=Veteran+${i}`} alt={`Veteran ${i}`} className="h-full w-full object-cover" />
+                  <div className="h-36 w-36 shrink-0 rounded-2xl bg-muted overflow-hidden shadow-inner group-hover:scale-105 transition-transform duration-500 relative">
+                    <Image
+                      src={`https://placehold.co/200x200/f5f3ff/8b5cf6?text=Veteran+${i}`}
+                      alt={`Veteran ${i}`}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div className="flex flex-col justify-center">
                     <h4 className="text-xl font-bold text-foreground mb-1">Expert Name {i}</h4>

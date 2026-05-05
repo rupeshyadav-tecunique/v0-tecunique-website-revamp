@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState, useEffect } from "react"
 
 const categories = [
@@ -73,13 +74,20 @@ function AutoCarouselSlot({ category, interval = 3000 }: { category: typeof cate
   return (
     <div className={`relative overflow-hidden rounded-2xl bg-muted aspect-square ${category.className} group shadow-sm`}>
       {category.images.map((img, i) => (
-        <img
+        <div
           key={i}
-          src={img}
-          alt={category.label}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-110"
+          className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ${i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-110"
             }`}
-        />
+        >
+          <Image
+            src={img}
+            alt={category.label}
+            fill
+            sizes={category.className.includes("col-span-2") ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+            className="object-cover"
+            priority={i === 0}
+          />
+        </div>
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-end p-6">
         <p className="text-white font-semibold text-sm md:text-base">{category.label}</p>
@@ -92,7 +100,7 @@ export default function CultureGallery() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {categories.map((cat, i) => (
-        <AutoCarouselSlot key={cat.id} category={cat} interval={3000 + i * 500} />
+        <AutoCarouselSlot key={cat.id} category={cat} interval={5000 + i * 500} />
       ))}
     </div>
   )
