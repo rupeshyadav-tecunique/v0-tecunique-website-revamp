@@ -59,14 +59,19 @@
   --sidebar-border: oklch(0.91 0.008 265);
   --sidebar-ring: oklch(0.55 0.22 265);
 
-  /* Custom design tokens */
-  --gradient-primary: linear-gradient(135deg, oklch(0.55 0.22 265) 0%, oklch(0.58 0.20 290) 100%);
-  --gradient-hero: linear-gradient(135deg, #f8f7ff 0%, #ede9fe 35%, #f0f9ff 70%, #faf5ff 100%);
-  --gradient-section: linear-gradient(180deg, #ffffff 0%, #f8f7ff 100%);
-  --gradient-text: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(99,102,241,0.08);
-  --shadow-card-hover: 0 8px 30px rgba(99,102,241,0.18), 0 2px 8px rgba(0,0,0,0.06);
-  --shadow-glow: 0 0 40px rgba(99,102,241,0.15);
+  /* Custom design tokens — Lavender Infusion */
+  --lavender-light: oklch(0.92 0.05 285);
+  --lavender-base: oklch(0.75 0.15 285);
+  --lavender-rich: oklch(0.60 0.22 285);
+  
+  --gradient-primary: linear-gradient(135deg, oklch(0.55 0.22 265) 0%, oklch(0.60 0.19 290) 100%);
+  --gradient-lavender: linear-gradient(135deg, oklch(0.85 0.12 285) 0%, oklch(0.70 0.18 290) 100%);
+  --gradient-hero: linear-gradient(135deg, oklch(0.98 0.01 285) 0%, oklch(0.95 0.03 285) 35%, oklch(0.97 0.02 270) 70%, oklch(0.98 0.02 290) 100%);
+  --gradient-section: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.01 285) 100%);
+  --gradient-text: linear-gradient(135deg, oklch(0.55 0.22 265), oklch(0.60 0.22 285), oklch(0.50 0.18 240));
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(139,92,246,0.06);
+  --shadow-card-hover: 0 10px 40px rgba(139,92,246,0.15), 0 2px 10px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 50px rgba(139,92,246,0.12);
 }
 
 @theme inline {
@@ -299,9 +304,9 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
-  border: 1px solid rgba(99,102,241,0.2);
-  color: oklch(0.55 0.22 265);
+  background: linear-gradient(135deg, oklch(0.92 0.05 285), oklch(0.90 0.08 290));
+  border: 1px solid oklch(0.85 0.10 285);
+  color: oklch(0.60 0.22 285);
 }
 
 /* Premium card hover */

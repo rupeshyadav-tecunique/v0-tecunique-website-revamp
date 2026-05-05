@@ -58,8 +58,8 @@ export function Header() {
         {/* Desktop navigation */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-1">
           {navigation.map((item) => {
-            const isActive = item.href === "/" 
-              ? pathname === "/" 
+            const isActive = item.href === "/"
+              ? pathname === "/"
               : pathname.startsWith(item.href)
             return (
               <Link
@@ -114,8 +114,8 @@ export function Header() {
         <div className="border-t border-border bg-white/95 backdrop-blur-md">
           <div className="space-y-1 px-6 py-4">
             {navigation.map((item) => {
-              const isActive = item.href === "/" 
-                ? pathname === "/" 
+              const isActive = item.href === "/"
+                ? pathname === "/"
                 : pathname.startsWith(item.href)
               return (
                 <Link
