@@ -15,10 +15,11 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   services: [
-    { name: "Dedicated Teams", href: "/services#dedicated-teams" },
+    { name: "Dedicated Teams", href: "/services/dedicated-teams" },
     { name: "Software Development", href: "/services#development" },
-    { name: "Quality Assurance", href: "/services#qa" },
-    { name: "Staff Augmentation", href: "/services#augmentation" },
+    { name: "Quality Assurance", href: "/services/qa" },
+    { name: "Staff Augmentation", href: "/services/augmentation" },
+    { name: "Offshore Development", href: "/services/offshore" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy-policy" },

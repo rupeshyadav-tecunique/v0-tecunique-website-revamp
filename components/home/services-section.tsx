@@ -12,7 +12,7 @@ const services = [
     gradient: "from-indigo-500 to-violet-600",
     lightBg: "from-indigo-50 to-violet-50",
     tag: "Most Popular",
-    href: "/services#dedicated-teams"
+    href: "/services/dedicated-teams"
   },
   {
     title: "Software Development",
@@ -30,7 +30,7 @@ const services = [
     gradient: "from-cyan-500 to-blue-600",
     lightBg: "from-cyan-50 to-blue-50",
     tag: null,
-    href: "/services#qa"
+    href: "/services/qa"
   },
   {
     title: "Staff Augmentation",
@@ -39,7 +39,7 @@ const services = [
     gradient: "from-blue-500 to-indigo-600",
     lightBg: "from-blue-50 to-indigo-50",
     tag: "New",
-    href: "/services#augmentation"
+    href: "/services/augmentation"
   },
 ]
 

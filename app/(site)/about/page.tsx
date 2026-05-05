@@ -182,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-24 lg:py-32 bg-white relative">
+      <section id="team" className="py-24 lg:py-32 bg-white relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="text-center mb-20">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Leadership</h2>
@@ -272,7 +272,7 @@ export default function AboutPage() {
         title="Join Our Unique Culture"
         description="We're always looking for passionate individuals to join our global team. Explore how you can make a difference with us and grow your career."
         primaryAction={{ label: "View Open Positions", href: "/careers" }}
-        secondaryAction={{ label: "Meet the Team", href: "#team" }}
+        secondaryAction={{ label: "Meet the Team", href: "/about#team" }}
       />
     </div>
   )

@@ -19,6 +19,7 @@ const mainServices = [
     description: "Custom-made software development teams of experienced, skilled, reliable, & professional resources, built specific to your requirements, enables building scalable, secure, and robust software solutions.",
     details: "In the past 15 years, we have developed custom dedicated software development and quality assurance teams for a diverse array of industry verticals, including ISVs, start-ups, and enterprises.",
     icon: Users,
+    href: "/services/dedicated-teams",
   },
   {
     id: "qa",
@@ -26,6 +27,7 @@ const mainServices = [
     description: "Custom-made software QA teams of experienced, skilled, reliable, & professional resources, built specific to your requirements, enables delivering scalable, secure, and robust software solutions.",
     details: "In the past 15 years, we have built custom dedicated software quality assurance teams for a diverse array of industry verticals, including ISVs, start-ups, and enterprises.",
     icon: TestTube,
+    href: "/services/qa",
   },
   {
     id: "augmentation",
@@ -33,6 +35,7 @@ const mainServices = [
     description: "Overcome the gap between demand and supply for skilled teams through an innovative and best recruiting model backed by a dedicated client-centric software team.",
     details: "We offer staff augmentation services, which help to revamp your team and boost the development process.",
     icon: Building,
+    href: "/services/augmentation",
   },
   {
     id: "offshore",
@@ -40,6 +43,7 @@ const mainServices = [
     description: "Ramp up your software development and scale up quickly. With 15+ years of expertise in the software industry, we can help set up offshore teams while ensuring quick turn-around and high quality development.",
     details: "You can set up offshore development centers in India with TECUNIQUE for developing, testing, and deploying software solutions.",
     icon: Globe,
+    href: "/services/offshore",
   },
 ]
 
@@ -165,6 +169,16 @@ export default function ServicesPage() {
                     <p className="text-slate-500 leading-relaxed italic border-l-4 border-primary/20 pl-6 py-2 bg-white/50 rounded-r-xl">
                       {service.details}
                     </p>
+                    {service.href && (
+                      <div className="pt-4">
+                        <Button variant="outline" className="rounded-xl group/btn" asChild>
+                          <Link href={service.href}>
+                            Learn More
+                            <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                          </Link>
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className={cn("relative group", index % 2 === 1 ? "lg:order-1" : "")}>
