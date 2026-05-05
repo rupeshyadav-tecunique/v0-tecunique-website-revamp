@@ -192,7 +192,12 @@ export default function AboutPage() {
               <SectionReveal key={i} direction={i === 1 ? "right" : "left"} className="h-full">
                 <div className="flex flex-col md:flex-row gap-10 items-center bg-gradient-to-br from-white to-primary/5 p-10 rounded-[2.5rem] border border-primary/10 shadow-sm transition-all hover:shadow-md h-full">
                   <div className="relative h-56 w-56 shrink-0 overflow-hidden rounded-[2rem] bg-muted shadow-inner ring-8 ring-white/50">
-                    <img src={`https://placehold.co/400x400/ede9fe/6366f1?text=Director+${i}`} alt={`Director ${i}`} className="h-full w-full object-cover" />
+                    <Image 
+                      src={`https://placehold.co/400x400/ede9fe/6366f1?text=Director+${i}`} 
+                      alt={`Director ${i}`} 
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-1">Director Name {i}</h3>
