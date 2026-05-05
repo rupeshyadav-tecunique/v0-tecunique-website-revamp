@@ -21,6 +21,8 @@ const categories = [
     images: [
       "/images/events/christmas/christmas2024.jpg",
       "/images/events/christmas/christmas2025.jpg",
+      "/images/events/christmas/christmas6.jfif",
+      "/images/events/christmas/christmas7.jfif",
       "/images/events/christmas/christmasgifts.jpeg",
     ],
     className: "col-span-1 row-span-1",
@@ -30,6 +32,9 @@ const categories = [
     label: "Diwali Festivities",
     images: [
       "/images/events/diwali/Diwali2025.jpg",
+      "/images/events/diwali/diwali2023.jfif",
+      "/images/events/diwali/Diwali20231.png",
+      "/images/events/diwali/Diwali20232.jfif",
     ],
     className: "col-span-1 row-span-1",
   },
@@ -48,6 +53,7 @@ const categories = [
     label: "Special Moments",
     images: [
       "/images/events/miscellanious/mensday.jpg",
+      "/images/events/miscellanious/funfriday.png",
       "/images/events/miscellanious/womensday.jpg",
     ],
     className: "col-span-1 row-span-1",
@@ -71,9 +77,8 @@ function AutoCarouselSlot({ category, interval = 3000 }: { category: typeof cate
           key={i}
           src={img}
           alt={category.label}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-            i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-110"
-          }`}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-110"
+            }`}
         />
       ))}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-end p-6">
