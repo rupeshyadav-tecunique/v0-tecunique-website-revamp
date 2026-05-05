@@ -34,8 +34,8 @@ const categories = [
     images: [
       "/images/events/diwali/Diwali2025.jpg",
       "/images/events/diwali/diwali2023.jfif",
-      "/images/events/diwali/Diwali20231.png",
-      "/images/events/diwali/Diwali20232.jfif",
+      "/images/events/diwali/diwali20231.png",
+      "/images/events/diwali/diwali20232.jfif",
     ],
     className: "col-span-1 row-span-1",
   },
