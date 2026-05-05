@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
 import { useEffect, useRef } from "react"
+import { Button } from "../ui/button"
 
 const trustedBy = [
   "Appfire",
@@ -115,14 +116,12 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-start gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98]"
-                style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
-              >
-                {"Start a Project"}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <Button className="rounded-xl px-7 h-12 text-sm font-semibold" asChild>
+                <Link href="/contact">
+                  Start a Project
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/80 px-7 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-white hover:shadow-md"
@@ -136,7 +135,7 @@ export function HeroSection() {
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-6">
                 Trusted by leading companies
               </p>
-              
+
               <div className="relative overflow-hidden -mx-4 px-4">
                 {/* Gradient fade edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-background to-transparent pointer-events-none" />

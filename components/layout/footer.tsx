@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Linkedin, Twitter, Mail, Github, Star, MapPin, Phone, ArrowRight } from "lucide-react"
+import { Button } from "../ui/button"
 
 const footerLinks = {
   company: [
@@ -227,14 +228,13 @@ export function Footer() {
                 placeholder="your@email.com"
                 className="w-full rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:border-indigo-500/60 focus:outline-none focus:ring-1 focus:ring-indigo-500/40 transition-all"
               />
-              <button
+              <Button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90"
-                style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+                className="w-full rounded-xl h-10"
               >
                 Subscribe
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </Button>
             </form>
           </div>
         </div>

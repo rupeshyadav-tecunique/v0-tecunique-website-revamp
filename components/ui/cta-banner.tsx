@@ -39,7 +39,7 @@ export function CTABanner({
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button size="default" className="rounded-xl px-10 shadow-lg h-12 text-sm bg-primary hover:bg-primary/90 text-white border-none transition-all hover:scale-105 active:scale-95" asChild>
+              <Button size="default" className="rounded-xl px-10 h-12 text-sm" asChild>
                 <Link href={primaryAction.href}>
                   {primaryAction.label}
                   <ArrowRight className="ml-1 h-5 w-5" />

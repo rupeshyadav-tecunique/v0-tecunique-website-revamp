@@ -126,7 +126,7 @@ export default function ServicesPage() {
               We build custom dedicated teams specifically for your needs, holding deep expertise in the technologies that drive your business forward.
             </p>
             <div className="mt-12 flex items-center justify-center gap-6">
-              <Button size="lg" className="rounded-2xl px-10 shadow-lg h-16 text-lg bg-primary hover:bg-primary/90 text-white" asChild>
+              <Button size="lg" className="rounded-xl px-10 h-12 text-lg" asChild>
                 <Link href="/contact">
                   Start Your Project
                   <ArrowRight className="ml-2 h-5 w-5" />

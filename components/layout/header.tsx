@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X, ArrowRight } from "lucide-react"
+import { Button } from "../ui/button"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -81,14 +82,12 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
-            style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
-          >
-            {"Let's Talk"}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <Button size="default" className="rounded-xl px-5 h-10" asChild>
+            <Link href="/contact">
+              Let's Talk
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
 
         {/* Mobile menu button */}
@@ -132,15 +131,12 @@ export function Header() {
               )
             })}
             <div className="pt-3 pb-1">
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-2 w-full rounded-xl px-5 py-3 text-sm font-semibold text-white"
-                style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {"Let's Talk"}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <Button size="default" className="w-full rounded-xl h-12" asChild>
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Let's Talk
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
