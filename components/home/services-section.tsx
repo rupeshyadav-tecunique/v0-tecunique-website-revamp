@@ -76,11 +76,11 @@ export function ServicesSection() {
               {/* Top gradient bar */}
               <div className={`h-1 w-full bg-gradient-to-r ${service.gradient}`} />
 
-              <div className="flex flex-col flex-1 p-6">
+              <div className="flex flex-col items-center text-center flex-1 p-8">
                 {/* Icon */}
-                <div className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${service.lightBg} transition-transform duration-300 group-hover:scale-110`}>
+                <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.lightBg} transition-transform duration-300 group-hover:scale-110 shadow-sm`}>
                   <service.icon
-                    className="h-6 w-6"
+                    className="h-7 w-7"
                     style={{ stroke: "url(#iconGrad)" }}
                   />
                   <svg width="0" height="0">
@@ -95,26 +95,26 @@ export function ServicesSection() {
 
                 {/* Tag badge */}
                 {service.tag && (
-                  <span className="mb-3 self-start rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
+                  <span className="mb-4 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
                     {service.tag}
                   </span>
                 )}
 
-                <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">
                   {service.description}
                 </p>
 
                 {/* Learn more link */}
                 <Link
                   href={service.href}
-                  className="mt-5 flex items-center gap-1 text-sm font-semibold transition-all duration-200 translate-y-0 group-hover:-translate-y-0.5"
+                  className="flex items-center justify-center gap-2 text-sm font-bold transition-all duration-200 group/link"
                   style={{ color: "#6366f1" }}
                 >
                   Learn more
-                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
                 </Link>
               </div>
             </div>

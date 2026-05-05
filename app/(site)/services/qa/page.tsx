@@ -234,8 +234,8 @@ export default function QAPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {qaServices.map((service, i) => (
               <SectionReveal key={service.title} delay={i * 100} className="h-full">
-                <div className="premium-card p-8 rounded-[2.5rem] border border-slate-100 flex flex-col h-full group hover:shadow-2xl transition-all duration-500">
-                  <div className="h-14 w-14 rounded-2xl bg-slate-50 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
+                <div className="premium-card p-8 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center h-full group hover:shadow-2xl transition-all duration-500">
+                  <div className="h-14 w-14 rounded-2xl bg-slate-50 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0 shadow-sm">
                     <service.icon className="h-7 w-7" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>

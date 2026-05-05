@@ -211,9 +211,9 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {additionalServices.map((service, i) => (
               <SectionReveal key={service.title} delay={i * 100}>
-                <Card className="h-full border-border/40 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group rounded-[2.5rem] premium-card overflow-hidden">
-                  <CardHeader className="p-10 pb-4 relative z-10">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 text-primary mb-6 shadow-sm border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <Card className="h-full border-border/40 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group rounded-[2.5rem] premium-card overflow-hidden flex flex-col items-center text-center">
+                  <CardHeader className="p-10 pb-4 relative z-10 flex flex-col items-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 text-primary mb-6 shadow-sm border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
                       <service.icon className="h-8 w-8" />
                     </div>
                     <CardTitle className="text-2xl font-bold pt-4">{service.title}</CardTitle>
