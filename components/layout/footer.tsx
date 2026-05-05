@@ -231,10 +231,10 @@ export function Footer() {
               />
               <Button
                 type="submit"
-                className="w-full rounded-xl h-10"
+                className="w-full rounded-xl h-10 group"
               >
                 Subscribe
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </form>
           </div>

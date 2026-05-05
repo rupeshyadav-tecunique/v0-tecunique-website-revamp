@@ -102,10 +102,10 @@ export default async function CareersPage() {
               Be a part of a self-organized team that dares to be different. We put our workforce on top priority and value uniqueness in every individual.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="rounded-xl shadow-lg hover:shadow-xl transition-all" asChild>
+              <Button size="lg" className="rounded-xl shadow-lg hover:shadow-xl transition-all group" asChild>
                 <Link href="#openings">
                   View Openings
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="rounded-xl bg-white/50 backdrop-blur-sm" asChild>

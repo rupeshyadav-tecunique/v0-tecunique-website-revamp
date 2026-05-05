@@ -164,10 +164,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   Back to Blog
                 </Link>
               </Button>
-              <Button asChild>
+              <Button className="group" asChild>
                 <Link href="/contact">
                   Contact Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
@@ -201,10 +201,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     </p>
                     <Link
                       href={`/blog/${relatedPost.slug}`}
-                      className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                      className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors group/link"
                     >
                       Read More
-                      <ArrowRight className="ml-1 h-4 w-4" />
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                     </Link>
                   </CardContent>
                 </Card>

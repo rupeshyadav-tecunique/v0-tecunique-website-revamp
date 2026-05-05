@@ -82,10 +82,10 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button size="default" className="rounded-xl px-5 h-10" asChild>
+          <Button size="default" className="rounded-xl px-5 h-10 group" asChild>
             <Link href="/contact">
               Let's Talk
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
@@ -131,10 +131,10 @@ export function Header() {
               )
             })}
             <div className="pt-3 pb-1">
-              <Button size="default" className="w-full rounded-xl h-12" asChild>
+              <Button size="default" className="w-full rounded-xl h-12 group" asChild>
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                   Let's Talk
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

@@ -116,10 +116,10 @@ export function HeroSection() {
 
             {/* CTAs */}
             <div className="hero-reveal mt-10 flex flex-col sm:flex-row items-start gap-4">
-              <Button className="rounded-xl px-7 h-12 text-sm font-semibold" asChild>
+              <Button className="rounded-xl px-7 h-12 text-sm font-semibold group" asChild>
                 <Link href="/contact">
                   Start a Project
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Link

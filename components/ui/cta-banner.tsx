@@ -42,7 +42,7 @@ export function CTABanner({
               <Button size="default" className="rounded-xl px-10 h-12 text-sm" asChild>
                 <Link href={primaryAction.href}>
                   {primaryAction.label}
-                  <ArrowRight className="ml-1 h-5 w-5" />
+                  <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Link

@@ -98,10 +98,10 @@ export function StatsSection() {
             <div className="mt-6">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 rounded-xl bg-white/15 border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/25 backdrop-blur-sm"
+                className="inline-flex items-center gap-2 rounded-xl bg-white/15 border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-white/25 backdrop-blur-sm group"
               >
                 Our Story
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
