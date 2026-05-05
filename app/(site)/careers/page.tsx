@@ -67,7 +67,7 @@ async function getJobs() {
     const client = await clientPromise
     const db = client.db("tecunique")
     const dbJobs = await db.collection("jobs").find({ isActive: true }).sort({ createdAt: -1 }).toArray()
-    
+
     return dbJobs.map(job => ({
       ...job,
       _id: job._id.toString(),
@@ -132,13 +132,13 @@ export default async function CareersPage() {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => (
-              <Card key={benefit.title} className="group border-border/50 bg-card hover:border-primary/20 transition-all duration-300">
-                <CardContent className="pt-8">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${benefit.color}`}>
-                    <benefit.icon className="h-6 w-6" />
+              <Card key={benefit.title} className="group border-border/40 bg-white/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-500 hover:shadow-xl hover:-translate-y-1.5 rounded-3xl overflow-hidden">
+                <CardContent className="p-2 flex flex-col items-center text-center">
+                  <div className={`flex h-14 w-14 items-center justify-center rounded-2xl mb-4 shadow-sm transition-transform duration-500 group-hover:scale-110 ${benefit.color}`}>
+                    <benefit.icon className="h-8 w-8" />
                   </div>
-                  <h3 className="mt-6 text-xl font-bold text-foreground">{benefit.title}</h3>
-                  <p className="mt-3 text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">{benefit.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </CardContent>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, Code, TestTube, Building, Laptop, Globe, ArrowRight, CheckCircle, Sparkles } from "lucide-react"
@@ -19,6 +20,7 @@ const mainServices = [
     description: "Custom-made software development teams of experienced, skilled, reliable, & professional resources, built specific to your requirements, enables building scalable, secure, and robust software solutions.",
     details: "In the past 15 years, we have developed custom dedicated software development and quality assurance teams for a diverse array of industry verticals, including ISVs, start-ups, and enterprises.",
     icon: Users,
+    image: "/images/services/bespoke-dev.png",
     href: "/services/dedicated-teams",
   },
   {
@@ -27,6 +29,7 @@ const mainServices = [
     description: "Custom-made software QA teams of experienced, skilled, reliable, & professional resources, built specific to your requirements, enables delivering scalable, secure, and robust software solutions.",
     details: "In the past 15 years, we have built custom dedicated software quality assurance teams for a diverse array of industry verticals, including ISVs, start-ups, and enterprises.",
     icon: TestTube,
+    image: "/images/services/qa-testing.png",
     href: "/services/qa",
   },
   {
@@ -35,6 +38,7 @@ const mainServices = [
     description: "Overcome the gap between demand and supply for skilled teams through an innovative and best recruiting model backed by a dedicated client-centric software team.",
     details: "We offer staff augmentation services, which help to revamp your team and boost the development process.",
     icon: Building,
+    image: "/images/services/team-aug.png",
     href: "/services/augmentation",
   },
   {
@@ -43,25 +47,28 @@ const mainServices = [
     description: "Ramp up your software development and scale up quickly. With 15+ years of expertise in the software industry, we can help set up offshore teams while ensuring quick turn-around and high quality development.",
     details: "You can set up offshore development centers in India with TECUNIQUE for developing, testing, and deploying software solutions.",
     icon: Globe,
+    image: "/images/services/offshore.png",
     href: "/services/offshore",
   },
 ]
-
 const additionalServices = [
   {
     title: "Product Development",
     description: "Our product design and development services ensure iterative development using advanced technologies for faster time-to-market, robustness, and scalability.",
     icon: Laptop,
+    image: "/images/services/bespoke-dev.png",
   },
   {
-    title: "Application Development",
-    description: "We have 15+ years of experience in building & delivering reliable B2B & B2C web applications for many startups and enterprises across diverse domains.",
+    title: "Atlassian Consulting",
+    description: "Certified expertise in Jira, Confluence, and the Atlassian ecosystem to optimize your team's workflow and agile processes.",
     icon: Code,
+    image: "/images/services/atlassian.png",
   },
   {
-    title: "Software QA and Testing",
-    description: "We are a highly rated and experienced software quality assurance & testing company, leveraging our potential and expertise to deliver quality tested applications.",
+    title: "Software QA & Testing",
+    description: "Leveraging our potential and expertise to deliver quality tested applications through rigorous manual and automated testing cycles.",
     icon: TestTube,
+    image: "/images/services/qa-testing.png",
   },
 ]
 
@@ -183,13 +190,20 @@ export default function ServicesPage() {
                 </div>
                 <div className={cn("relative group", index % 2 === 1 ? "lg:order-1" : "")}>
                   <div className="aspect-[4/3] rounded-[3rem] bg-white border border-slate-100 flex items-center justify-center shadow-xl group-hover:scale-[1.02] transition-all duration-700 overflow-hidden relative isolate">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-50" />
-                    <div className="absolute inset-0 bg-grid-slate-100/[0.03] [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))]" />
-                    <service.icon className="h-32 w-32 text-primary/10 group-hover:text-primary/20 transition-colors duration-700 relative z-10" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-dashed border-primary/10 rounded-full animate-spin-slow pointer-events-none" />
-
-                    {/* Decorative element */}
-                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      priority={index < 2}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    {/* Floating icon on hover */}
+                    <div className="absolute bottom-8 left-8 p-4 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                      <service.icon className="h-8 w-8 text-primary" />
+                    </div>
                   </div>
                 </div>
               </SectionReveal>
@@ -212,16 +226,25 @@ export default function ServicesPage() {
             {additionalServices.map((service, i) => (
               <SectionReveal key={service.title} delay={i * 100}>
                 <Card className="h-full border-border/40 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group rounded-[2.5rem] premium-card overflow-hidden flex flex-col items-center text-center">
-                  <CardHeader className="p-10 pb-4 relative z-10 flex flex-col items-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 text-primary mb-6 shadow-sm border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
+                  <div className="relative w-full aspect-video overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+                  </div>
+                  <CardHeader className="p-6 pt-0 w-full relative z-10 flex flex-col items-center -mt-8">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary mb-6 shadow-xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
                       <service.icon className="h-8 w-8" />
                     </div>
-                    <CardTitle className="text-2xl font-bold pt-4">{service.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-10 pt-4 relative z-10">
+                  <CardContent className="p-6 pt-0 relative z-10">
                     <p className="text-slate-600 leading-relaxed">{service.description}</p>
                   </CardContent>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </SectionReveal>
             ))}

@@ -164,12 +164,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value, i) => (
               <SectionReveal key={value.title} delay={i * 100} className="h-full">
-                <Card className="h-full border-border/40 bg-white/80 backdrop-blur-sm transition-all hover:shadow-lg hover:-translate-y-1">
-                  <CardContent className="pt-8">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-6">
-                      <value.icon className="h-7 w-7" />
+                <Card className="h-full border-border/40 bg-white/80 backdrop-blur-sm transition-all hover:shadow-lg hover:-translate-y-1 group">
+                  <CardContent className="pt-2 pb-2 px-8 flex flex-col items-center text-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-[2rem] bg-primary/10 text-primary mb-8 group-hover:scale-110 transition-transform duration-300 shadow-inner">
+                      <value.icon className="h-8 w-8" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-4">{value.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                   </CardContent>
                 </Card>
@@ -192,9 +192,9 @@ export default function AboutPage() {
               <SectionReveal key={i} direction={i === 1 ? "right" : "left"} className="h-full">
                 <div className="flex flex-col md:flex-row gap-10 items-center bg-gradient-to-br from-white to-primary/5 p-10 rounded-[2.5rem] border border-primary/10 shadow-sm transition-all hover:shadow-md h-full">
                   <div className="relative h-56 w-56 shrink-0 overflow-hidden rounded-[2rem] bg-muted shadow-inner ring-8 ring-white/50">
-                    <Image 
-                      src={`https://placehold.co/400x400/ede9fe/6366f1?text=Director+${i}`} 
-                      alt={`Director ${i}`} 
+                    <Image
+                      src={`https://placehold.co/400x400/ede9fe/6366f1?text=Director+${i}`}
+                      alt={`Director ${i}`}
                       fill
                       className="object-cover"
                     />

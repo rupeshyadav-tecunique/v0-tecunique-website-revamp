@@ -100,19 +100,19 @@ export function ExpertiseSection() {
           {expertise.map((item, i) => (
             <div
               key={item.title}
-              className="reveal group glass-card rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="reveal group glass-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center text-center"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div
-                className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110"
+                className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 shadow-sm"
                 style={{ background: `${item.color}15` }}
               >
-                <item.icon className="h-5 w-5" style={{ color: item.color }} />
+                <item.icon className="h-6 w-6" style={{ color: item.color }} />
               </div>
-              <h3 className="font-display text-sm font-bold text-foreground mb-1.5">
+              <h3 className="font-display text-base font-bold text-foreground mb-2">
                 {item.title}
               </h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {item.desc}
               </p>
             </div>
