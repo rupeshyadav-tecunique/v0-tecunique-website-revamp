@@ -41,11 +41,11 @@ export function WhyChooseSection() {
 
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center reveal">
-          <span className="section-pill">
+          <span className="section-pill mb-6 inline-flex">
             <Sparkles className="h-3 w-3" />
             Why Choose Us
           </span>
-          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Your Trusted{" "}
             <span className="gradient-text">Technology Partner</span>
           </h2>

@@ -118,7 +118,7 @@ export default function AugmentationPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <SectionReveal>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-8">
+              <div className="section-pill mb-8">
                 <Sparkles className="h-3 w-3" />
                 Talent on Demand
               </div>

@@ -125,7 +125,7 @@ export default function ServicesPage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
           <SectionReveal className="mx-auto max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-8">
+            <div className="section-pill mb-8">
               <Sparkles className="h-3 w-3" />
               Our Expertise
             </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle, Layers, Clock, Shield, Lock, Zap, Globe, Award } from "lucide-react"
+import { CheckCircle, Layers, Clock, Shield, Lock, Zap, Globe, Award, Sparkles } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const expertise = [
@@ -86,6 +86,10 @@ export function ExpertiseSection() {
 
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center reveal">
+          <span className="section-pill mb-6 inline-flex">
+            <Sparkles className="h-3 w-3" />
+            Our Expertise
+          </span>
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Outsource to{" "}
             <span className="gradient-text">TECUNIQUE</span>

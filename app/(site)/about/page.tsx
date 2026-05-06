@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Heart, Award, Shield, Users, Lightbulb, Fingerprint, ArrowRight } from "lucide-react"
+import { Heart, Award, Shield, Users, Lightbulb, Fingerprint, ArrowRight, Sparkles } from "lucide-react"
 import CultureGallery from "@/components/about/culture-gallery"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import { CTABanner } from "@/components/ui/cta-banner"
@@ -92,7 +92,10 @@ export default function AboutPage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <SectionReveal className="mx-auto max-w-3xl text-center">
-            <span className="section-pill mb-6">Our Story</span>
+            <span className="section-pill mb-6 inline-flex">
+              <Sparkles className="h-3 w-3" />
+              Our Story
+            </span>
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl text-balance leading-[1.1]">
               Driven by Passion, <br />
               <span className="gradient-text">Defined by Excellence</span>
@@ -157,6 +160,10 @@ export default function AboutPage() {
       <section className="bg-muted/30 py-24 lg:py-32 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="mx-auto max-w-2xl text-center mb-20">
+            <span className="section-pill mb-6 inline-flex">
+              <Sparkles className="h-3 w-3" />
+              Our Values
+            </span>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Core Values</h2>
             <p className="mt-4 text-lg text-muted-foreground">The principles that guide everything we do</p>
           </SectionReveal>
@@ -183,6 +190,10 @@ export default function AboutPage() {
       <section id="team" className="py-24 lg:py-32 bg-white relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="text-center mb-20">
+            <span className="section-pill mb-6 inline-flex">
+              <Sparkles className="h-3 w-3" />
+              Expert Leadership
+            </span>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Leadership</h2>
             <p className="mt-4 text-lg text-muted-foreground">The strategic vision and wisdom behind TECUNIQUE</p>
           </SectionReveal>
@@ -219,6 +230,10 @@ export default function AboutPage() {
       <section className="py-24 lg:py-32 bg-muted/20 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="text-center mb-20">
+            <span className="section-pill mb-6 inline-flex">
+              <Sparkles className="h-3 w-3" />
+              Honoring Experience
+            </span>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">The Core Pillars</h2>
             <p className="mt-4 text-lg text-muted-foreground">Celebrating our members with 15+ years of dedicated service</p>
           </SectionReveal>
@@ -254,7 +269,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-16">
             <div className="max-w-2xl">
-              <span className="section-pill mb-6">Our Vibe</span>
+              <span className="section-pill mb-6 inline-flex">
+                <Sparkles className="h-3 w-3" />
+                Our Vibe
+              </span>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">Cultural Corner</h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 Life at TECUNIQUE is more than just code. We celebrate every milestone, festival, and achievement as one big family.

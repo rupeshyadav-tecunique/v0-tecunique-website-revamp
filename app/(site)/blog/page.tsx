@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import clientPromise from "@/lib/db"
 import BlogList from "@/components/blog/blog-list"
-import { ArrowRight } from "lucide-react"
+import { SectionReveal } from "@/components/ui/section-reveal"
+import { CTABanner } from "@/components/ui/cta-banner"
+import { Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Blog & Articles",
@@ -34,19 +35,42 @@ export default async function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-muted/50 to-background py-20 lg:py-28">
+      <section 
+        className="relative overflow-hidden py-20 lg:py-28"
+        style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
+      >
+        {/* Animated blobs */}
+        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div
+            className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
+            style={{ background: "radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%)" }}
+          />
+          <div
+            className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
+            style={{
+              background: "radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%)",
+              animationDelay: "4s",
+              animationDuration: "16s",
+            }}
+          />
+        </div>
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-              Tech Trends Unwrapped
+          <SectionReveal className="mx-auto max-w-3xl text-center">
+            <span className="section-pill mb-6 inline-flex">
+              <Sparkles className="h-3 w-3" />
+              Tech Trends
+            </span>
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-tight text-balance">
+              Tech Trends <span className="gradient-text">Unwrapped</span>
             </h1>
-            <p className="mt-2 text-xl text-primary font-medium">
+            <p className="mt-6 text-xl text-primary font-medium">
               A Dive into Modern Software Engineering Articles
             </p>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
               Embark on a Journey of Technological Discovery with Our Insightful Blogs and Articles. Navigating the Digital Landscape, We Unveil Tomorrow&apos;s Tech Today, Offering In-Depth Analysis, Expert Perspectives, and Cutting-Edge Insights.
             </p>
-          </div>
+          </SectionReveal>
         </div>
       </section>
 
@@ -58,27 +82,11 @@ export default async function BlogPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-muted/30 py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Looking for Expert Software Services?
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Unlock our capabilities of custom software development services, product development, and quality assurance for businesses of all sizes and shapes.
-            </p>
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 group"
-              >
-                Contact Us
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTABanner
+        title="Looking for Expert Software Services?"
+        description="Unlock our capabilities of custom software development services, product development, and quality assurance for businesses of all sizes and shapes."
+        primaryAction={{ label: "Contact Us", href: "/contact" }}
+      />
     </>
   )
 }
