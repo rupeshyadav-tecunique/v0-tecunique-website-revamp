@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Sparkles } from "lucide-react"
 import { ContactForm } from "@/components/contact/contact-form"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -144,12 +143,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <CTABanner
-        title="Ready to Start Your Project?"
-        description="Let's build something amazing together. Our team is ready to help you scale your engineering capabilities."
-        primaryAction={{ label: "Get a Quote", href: "/contact" }}
-        secondaryAction={{ label: "View Case Studies", href: "/case-studies" }}
-      />
-    </>
+          </>
   )
 }

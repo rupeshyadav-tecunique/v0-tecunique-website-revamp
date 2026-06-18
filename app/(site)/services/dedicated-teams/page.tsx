@@ -22,7 +22,6 @@ import {
   MonitorCheck
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
   title: "Dedicated Development Teams | TECUNIQUE",
@@ -337,13 +336,6 @@ export default function DedicatedTeamsPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner
-        title="Ready to Build Your Dedicated Team?"
-        description="Let's discuss how our specialized software engineers can help you accelerate your development roadmap and deliver high-quality solutions."
-        primaryAction={{ label: "Get Started Now", href: "/contact" }}
-        secondaryAction={{ label: "View Our Expertise", href: "/about#team" }}
-      />
-    </div>
+          </div>
   )
 }

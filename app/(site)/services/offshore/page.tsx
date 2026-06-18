@@ -19,7 +19,6 @@ import {
   Users2
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
   title: "Offshore Development Center (ODC) | TECUNIQUE",
@@ -269,13 +268,6 @@ export default function OffshorePage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner
-        title="Ready to Build Your Offshore Center?"
-        description="Let's discuss how we can help you set up a high-performing offshore development team that drives your business forward."
-        primaryAction={{ label: "Consult Our Experts", href: "/contact" }}
-        secondaryAction={{ label: "View Our Services", href: "/services" }}
-      />
-    </div>
+          </div>
   )
 }

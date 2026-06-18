@@ -20,7 +20,6 @@ import {
   Database
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
   title: "IT Staff Augmentation | TECUNIQUE",
@@ -267,13 +266,6 @@ export default function AugmentationPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner
-        title="Need Specific Skills Right Now?"
-        description="Connect with our talent specialists to find the exact engineering expertise your project needs to succeed."
-        primaryAction={{ label: "Request a CV", href: "/contact" }}
-        secondaryAction={{ label: "View Our Team", href: "/about#team" }}
-      />
-    </div>
+          </div>
   )
 }

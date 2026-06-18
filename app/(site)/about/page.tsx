@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Award, Shield, Users, Lightbulb, Fingerprint, ArrowRight, Sparkles } from "lucide-react"
 import CultureGallery from "@/components/about/culture-gallery"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -293,13 +292,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner
-        title="Join Our Unique Culture"
-        description="We're always looking for passionate individuals to join our global team. Explore how you can make a difference with us and grow your career."
-        primaryAction={{ label: "View Open Positions", href: "/careers" }}
-        secondaryAction={{ label: "Meet the Team", href: "/about#team" }}
-      />
-    </div>
+          </div>
   )
 }

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Users, Code, TestTube, Building, Laptop, Globe, ArrowRight, CheckCircle, Sparkles } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -281,13 +280,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner
-        title="Ready to Transform Your Vision?"
-        description="Whether you need a dedicated development team or specialized QA expertise, we're ready to help you scale your business with confidence and technical excellence."
-        primaryAction={{ label: "Get a Free Quote", href: "/contact" }}
-        secondaryAction={{ label: "Browse Case Studies", href: "/case-studies" }}
-      />
-    </div>
+          </div>
   )
 }

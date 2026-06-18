@@ -23,7 +23,6 @@ import {
   Heart
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 
 export const metadata: Metadata = {
   title: "Software QA & Testing Teams | TECUNIQUE",
@@ -390,14 +389,7 @@ export default function QAPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner
-        title="Ready to Elevate Your Software Quality?"
-        description="Let's build a dedicated QA team that ensures your product is error-free, secure, and ready for global scaling."
-        primaryAction={{ label: "Start Quality Audit", href: "/contact" }}
-        secondaryAction={{ label: "Explore Case Studies", href: "/case-studies" }}
-      />
-    </div>
+          </div>
   )
 }
 

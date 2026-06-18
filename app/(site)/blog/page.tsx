@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import clientPromise from "@/lib/db"
 import BlogList from "@/components/blog/blog-list"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CTABanner } from "@/components/ui/cta-banner"
 import { Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -82,11 +81,6 @@ export default async function BlogPage() {
       </section>
 
       {/* CTA Section */}
-      <CTABanner
-        title="Looking for Expert Software Services?"
-        description="Unlock our capabilities of custom software development services, product development, and quality assurance for businesses of all sizes and shapes."
-        primaryAction={{ label: "Contact Us", href: "/contact" }}
-      />
-    </>
+          </>
   )
 }
