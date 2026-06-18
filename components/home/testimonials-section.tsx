@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { useState, useEffect, useCallback } from "react"
-import { ChevronLeft, ChevronRight, Quote, Star, StarHalf } from "lucide-react"
+import Link from "next/link"
+import { ChevronLeft, ChevronRight, Quote, Star, StarHalf, ArrowRight } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const testimonials = [
@@ -11,6 +12,7 @@ const testimonials = [
     author: "David Fischer",
     role: "Founder & CEO",
     company: "Innovalog",
+    caseStudyId: "appfire-1",
     image: "/images/testimonial/david.webp",
     color: "#6366f1",
     rating: 5,
@@ -20,6 +22,7 @@ const testimonials = [
     author: "Gilles Andre",
     role: "Founder & CEO",
     company: "OPPSCIENCE",
+    caseStudyId: "oppscience-1",
     image: "/images/testimonial/gilles.jpg",
     color: "#8b5cf6",
     rating: 5,
@@ -29,6 +32,7 @@ const testimonials = [
     author: "Mickael Augello",
     role: "CTO",
     company: "OPPSCIENCE",
+    caseStudyId: "oppscience-1",
     image: "/images/testimonial/mickael.webp",
     color: "#06b6d4",
     rating: 4.5,
@@ -38,6 +42,7 @@ const testimonials = [
     author: "Guillaume Brejaud",
     role: "COO",
     company: "OPPSCIENCE",
+    caseStudyId: "oppscience-1",
     image: "/images/testimonial/guillaume.webp",
     color: "#7c3aed",
     rating: 5,
@@ -47,6 +52,7 @@ const testimonials = [
     author: "Ajay Singh",
     role: "Architect",
     company: "Appfire",
+    caseStudyId: "appfire-1",
     image: "/images/testimonial/ajay.webp",
     color: "#0891b2",
     rating: 5,
@@ -56,6 +62,7 @@ const testimonials = [
     author: "Dan Mihalache",
     role: "Founder & CEO",
     company: "Qotilabs",
+    caseStudyId: "qotilabs",
     image: "/images/testimonial/den.webp",
     color: "#f43f5e",
     rating: 5,
@@ -183,10 +190,21 @@ export function TestimonialsSection() {
 
               {/* Company badge */}
               {t.company && (
-                <div className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5">
-                  <div className="h-2 w-2 rounded-full" style={{ background: t.color }} />
-                  <span className="text-xs font-semibold text-muted-foreground">{t.company}</span>
-                </div>
+                t.caseStudyId ? (
+                  <Link 
+                    href={`/case-studies#${t.caseStudyId}`}
+                    className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5 hover:bg-muted/80 hover:border-primary/30 transition-colors group/company"
+                  >
+                    <div className="h-2 w-2 rounded-full" style={{ background: t.color }} />
+                    <span className="text-xs font-semibold text-muted-foreground group-hover/company:text-foreground transition-colors">{t.company}</span>
+                    <ArrowRight className="h-3 w-3 text-muted-foreground group-hover/company:translate-x-0.5 transition-transform" />
+                  </Link>
+                ) : (
+                  <div className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5">
+                    <div className="h-2 w-2 rounded-full" style={{ background: t.color }} />
+                    <span className="text-xs font-semibold text-muted-foreground">{t.company}</span>
+                  </div>
+                )
               )}
             </footer>
 

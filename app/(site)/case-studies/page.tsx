@@ -156,7 +156,8 @@ export default function CaseStudiesPage() {
           {caseStudies.map((study) => (
             <article
               key={study.id}
-              className="group relative rounded-3xl border border-border/60 bg-white overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              id={study.id}
+              className="group relative rounded-3xl border border-border/60 bg-white overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 scroll-mt-24"
             >
               {/* Top accent bar */}
               <div className={`h-1.5 w-full bg-gradient-to-r ${study.gradient}`} />
