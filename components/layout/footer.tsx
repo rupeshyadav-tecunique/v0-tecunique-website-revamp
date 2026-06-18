@@ -80,7 +80,7 @@ export function Footer() {
     <footer className="border-t border-border bg-[#0f172a]">
       {/* Main footer content */}
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-4">
 
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-5">
@@ -215,28 +215,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Stay Updated</h3>
-            <p className="text-sm text-slate-400 mb-4 leading-relaxed">
-              Get the latest insights on software engineering and tech outsourcing.
-            </p>
-            <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="w-full rounded-xl border border-slate-700 bg-slate-800/60 px-4 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:border-indigo-500/60 focus:outline-none focus:ring-1 focus:ring-indigo-500/40 transition-all"
-              />
-              <Button
-                type="submit"
-                className="w-full rounded-xl h-10 group"
-              >
-                Subscribe
-                <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </form>
           </div>
         </div>
       </div>

@@ -252,7 +252,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Benefits */}
-      <section className="pt-24 lg:pt-32 pb-12 lg:pb-16 bg-slate-900 overflow-hidden relative isolate">
+      <section className="py-24 lg:py-32 bg-slate-900 overflow-hidden relative isolate">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,theme(colors.primary.500/0.1),transparent_50%)]" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-20 lg:grid-cols-2 items-center">
