@@ -33,45 +33,10 @@ const contactInfo = [
 export default function ContactPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section 
-        className="relative overflow-hidden py-20 lg:py-28"
-        style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
-      >
-        {/* Animated blobs */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div
-            className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
-            style={{ background: "radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%)" }}
-          />
-          <div
-            className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
-            style={{
-              background: "radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%)",
-              animationDelay: "4s",
-              animationDuration: "16s",
-            }}
-          />
-        </div>
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionReveal className="mx-auto max-w-3xl text-center">
-            <span className="section-pill mb-6 inline-flex">
-              <Sparkles className="h-3 w-3" />
-              Get in Touch
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-tight text-balance">
-              Let&apos;s <span className="gradient-text">Talk</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Ready to transform your software development journey? Get in touch with us to discuss how TECUNIQUE can help you build dedicated teams, develop quality software, and scale your business.
-            </p>
-          </SectionReveal>
-        </div>
-      </section>
 
       {/* Contact Section */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-4 lg:py-6 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Contact Form */}
@@ -112,37 +77,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section 
-        className="relative overflow-hidden py-20 lg:py-28"
-        style={{ background: "linear-gradient(170deg, #f8f7ff 0%, #ede9fe 45%, #f0f9ff 100%)" }}
-      >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionReveal className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
-              Why Partner with <span className="gradient-text">TECUNIQUE?</span>
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              With 15+ years of engineering excellence, we bring transparency, collaboration, and domain expertise to every project. Our cost-effective, professional, and proactive software service delivery makes us one of the best-in-class software services companies.
-            </p>
-            <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {[
-                { value: "95%", label: "Customer Retention" },
-                { value: "92%", label: "Employee Retention" },
-                { value: "15+", label: "Years in Business" },
-              ].map((stat, i) => (
-                <div key={i} className="glass-card p-8 rounded-2xl border-white/60 shadow-sm transition-transform hover:-translate-y-1">
-                  <p className="text-4xl font-bold text-primary">{stat.value}</p>
-                  <p className="mt-2 text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
 
-          </>
+
+    </>
   )
 }
