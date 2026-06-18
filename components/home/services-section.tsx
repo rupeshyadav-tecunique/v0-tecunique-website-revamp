@@ -47,7 +47,7 @@ export function ServicesSection() {
   const sectionRef = useScrollReveal()
 
   return (
-    <section ref={sectionRef as React.RefObject<HTMLElement>} className="py-20 lg:py-28 bg-white">
+    <section ref={sectionRef as React.RefObject<HTMLElement>} className="py-16 lg:py-20 bg-accent/30 border-b border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Header */}
@@ -66,7 +66,7 @@ export function ServicesSection() {
         </div>
 
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => (
             <div
               key={service.title}
@@ -76,7 +76,7 @@ export function ServicesSection() {
               {/* Top gradient bar */}
               <div className={`h-1 w-full bg-gradient-to-r ${service.gradient}`} />
 
-              <div className="flex flex-col items-center text-center flex-1 p-8">
+              <div className="flex flex-col items-center text-center flex-1 p-6">
                 {/* Icon */}
                 <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.lightBg} transition-transform duration-300 group-hover:scale-110 shadow-sm`}>
                   <service.icon

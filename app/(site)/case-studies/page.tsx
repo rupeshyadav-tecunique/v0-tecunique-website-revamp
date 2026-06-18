@@ -150,59 +150,8 @@ const stats = [
 export default function CaseStudiesPage() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden py-20 lg:py-28"
-        style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
-      >
-        {/* Blobs */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div
-            className="absolute -top-24 -left-24 h-72 w-72 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #a5b4fc 0%, transparent 70%)" }}
-          />
-          <div
-            className="absolute top-1/2 -right-32 h-80 w-80 rounded-full opacity-25 blur-3xl"
-            style={{ background: "radial-gradient(circle, #67e8f9 0%, transparent 70%)" }}
-          />
-        </div>
-
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="section-pill mb-6 inline-flex">
-              <Sparkles className="h-3 w-3" />
-              Client Success Stories
-            </span>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight text-balance">
-              Real Results,{" "}
-              <span className="gradient-text">Real Impact</span>
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Explore how TECUNIQUE has partnered with industry leaders around the world to build scalable software, ship faster, and maintain uncompromising quality.
-            </p>
-          </div>
-
-          {/* Stats strip */}
-          <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="glass-card rounded-2xl p-6 text-center"
-              >
-                <p className="font-display text-3xl font-extrabold" style={{ color: "#6366f1" }}>
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Case Study Cards */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
           {caseStudies.map((study) => (
             <article

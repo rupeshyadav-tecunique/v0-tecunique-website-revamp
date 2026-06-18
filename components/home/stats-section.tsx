@@ -60,7 +60,7 @@ export function StatsSection() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="relative overflow-hidden py-20 lg:py-28"
+      className="relative overflow-hidden py-16 lg:py-20"
       style={{ background: "linear-gradient(135deg, #6366f1 0%, #7c3aed 50%, #4f46e5 100%)" }}
     >
       {/* Background decoration */}

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { value: "13+", label: "Years Experience" },
+  { value: "15+", label: "Years Experience" },
   { value: "50+", label: "Software Experts" },
   { value: "96%", label: "Employee Retention" },
 ]
