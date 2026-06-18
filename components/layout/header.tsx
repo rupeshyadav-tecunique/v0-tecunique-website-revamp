@@ -14,7 +14,7 @@ const navigation = [
   { name: "Case Studies", href: "/case-studies" },
   { name: "Blog", href: "/blog" },
   { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact" },
+  // { name: "Contact", href: "/contact" },
 ]
 
 export function Header() {
