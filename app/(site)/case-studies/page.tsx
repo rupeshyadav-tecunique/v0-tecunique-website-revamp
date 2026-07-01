@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock, Users, TrendingUp, Star, Sparkles, Shield, FileCheck, Clock3 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
@@ -12,6 +13,7 @@ const caseStudies = [
   {
     id: "appfire-1",
     company: "Appfire",
+    logo: "",
     industry: "Atlassian Ecosystem",
     category: "Software Development & QA",
     partnership: "3+ Years",
@@ -39,6 +41,7 @@ const caseStudies = [
   {
     id: "oppscience-1",
     company: "OPPSCIENCE",
+    logo: "/images/companies/oppscience.svg",
     industry: "AI & Intelligence",
     category: "Software Engineering & Testing",
     partnership: "15+ Years",
@@ -66,6 +69,7 @@ const caseStudies = [
   {
     id: "customermatrix",
     company: "CustomerMatrix",
+    logo: "/images/companies/customer_matrix.webp",
     industry: "Enterprise AI",
     category: "Cognitive Computing",
     partnership: "2+ Years",
@@ -93,6 +97,7 @@ const caseStudies = [
   {
     id: "qotilabs",
     company: "Qotilabs",
+    logo: "/images/companies/quotilabs.png",
     industry: "Dev Tools",
     category: "Plugin Development",
     partnership: "3+ Years",
@@ -120,6 +125,7 @@ const caseStudies = [
   {
     id: "skyselect",
     company: "SkySelect",
+    logo: "/images/companies/skyselect.svg",
     industry: "Aviation / Supply Chain",
     category: "Marketplace Platform",
     partnership: "2+ Years",
@@ -198,12 +204,18 @@ export default function CaseStudiesPage() {
                   <div>
                     {/* Company avatar + name */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div
-                        className="flex h-14 w-14 items-center justify-center rounded-2xl text-white font-display text-lg font-extrabold shrink-0"
-                        style={{ background: `linear-gradient(135deg, ${study.color}, ${study.color}cc)` }}
-                      >
-                        {study.initials}
-                      </div>
+                      {study.logo ? (
+                        <div className="relative h-14 w-14 shrink-0 rounded-xl bg-white border border-border shadow-sm p-1.5 flex items-center justify-center overflow-hidden">
+                          <Image src={study.logo} alt={study.company} fill className="object-contain p-1.5" sizes="56px" />
+                        </div>
+                      ) : (
+                        <div
+                          className="flex h-14 w-14 items-center justify-center rounded-xl text-white font-display text-lg font-extrabold shrink-0 shadow-sm"
+                          style={{ background: `linear-gradient(135deg, ${study.color}, ${study.color}cc)` }}
+                        >
+                          {study.initials}
+                        </div>
+                      )}
                       <div>
                         <h2 className="font-display text-2xl font-bold text-foreground">
                           {study.company}
