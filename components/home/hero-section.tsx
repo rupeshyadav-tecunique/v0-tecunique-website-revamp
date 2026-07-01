@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
 import { useEffect, useRef } from "react"
 import { Button } from "../ui/button"
 import { WordRotate } from "../ui/word-rotate"
+import { HeroMarquee } from "./hero-marquee"
 
 const trustedBy = [
   "Appfire",
@@ -138,9 +139,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right — Placeholder for future content */}
+          {/* Right — Hero Marquee Component */}
           <div className="relative flex items-center justify-center lg:justify-end hero-reveal">
-            {/* Empty space for now as requested */}
+            <HeroMarquee />
           </div>
         </div>
 
