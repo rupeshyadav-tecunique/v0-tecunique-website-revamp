@@ -35,7 +35,7 @@ export default async function BlogPage() {
     <>
       {/* Hero Section */}
       <section 
-        className="relative overflow-hidden py-20 lg:py-28"
+        className="relative overflow-hidden py-20 lg:py-32 flex items-center min-h-[60vh]"
         style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
       >
         {/* Animated blobs */}
@@ -54,20 +54,13 @@ export default async function BlogPage() {
           />
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
           <SectionReveal className="mx-auto max-w-3xl text-center">
-            <span className="section-pill mb-6 inline-flex">
-              <Sparkles className="h-3 w-3" />
-              Tech Trends
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-tight text-balance">
-              Tech Trends <span className="gradient-text">Unwrapped</span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-tight text-balance">
+              Engineering <span className="gradient-text">Insights.</span>
             </h1>
-            <p className="mt-6 text-xl text-primary font-medium">
-              A Dive into Modern Software Engineering Articles
-            </p>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Embark on a Journey of Technological Discovery with Our Insightful Blogs and Articles. Navigating the Digital Landscape, We Unveil Tomorrow&apos;s Tech Today, Offering In-Depth Analysis, Expert Perspectives, and Cutting-Edge Insights.
+            <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              Deep-dive technical articles, architectural patterns, and industry insights from our senior engineering team.
             </p>
           </SectionReveal>
         </div>

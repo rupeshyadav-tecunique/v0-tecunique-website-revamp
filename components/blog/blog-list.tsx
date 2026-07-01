@@ -19,9 +19,9 @@ export default function BlogList({ initialBlogs }: { initialBlogs: any[] }) {
 
   return (
     <div className="space-y-8">
-      {/* Search Bar - Compact and Right Aligned */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-        <div className="text-sm text-muted-foreground order-2 sm:order-1">
+      {/* Search Filter Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12 pb-6 border-b border-border/60">
+        <div className="text-sm text-muted-foreground font-medium order-2 sm:order-1">
           {filteredBlogs.length === 0 ? (
             "No articles match your search."
           ) : (
@@ -29,15 +29,15 @@ export default function BlogList({ initialBlogs }: { initialBlogs: any[] }) {
           )}
         </div>
         
-        <div className="relative w-full sm:max-w-xs order-1 sm:order-2 group">
-          <div className="absolute inset-0 bg-primary/10 blur-lg rounded-xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
-          <div className="relative bg-white border border-border/60 rounded-xl shadow-sm overflow-hidden flex items-center p-1">
-            <div className="flex h-8 w-8 items-center justify-center text-muted-foreground ml-1">
+        <div className="relative w-full sm:max-w-md order-1 sm:order-2 group">
+          <div className="absolute inset-0 bg-primary/10 blur-md rounded-xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
+          <div className="relative bg-slate-50 border border-border/80 rounded-xl shadow-sm overflow-hidden flex items-center p-1.5 focus-within:bg-white focus-within:border-primary/40 transition-colors">
+            <div className="flex h-9 w-9 items-center justify-center text-muted-foreground ml-1">
               <Search className="h-4 w-4" />
             </div>
             <input
               type="text"
-              placeholder="Search articles..."
+              placeholder="Search articles, insights, tech trends..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="flex-1 bg-transparent border-none outline-none px-2 py-1.5 text-sm text-foreground placeholder:text-muted-foreground/60"
@@ -45,9 +45,9 @@ export default function BlogList({ initialBlogs }: { initialBlogs: any[] }) {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="p-1.5 hover:bg-muted rounded-lg transition-colors mr-1"
+                className="p-1.5 hover:bg-slate-200 rounded-lg transition-colors mr-1"
               >
-                <X className="h-3.5 w-3.5 text-muted-foreground" />
+                <X className="h-4 w-4 text-slate-500" />
               </button>
             )}
           </div>
@@ -55,16 +55,25 @@ export default function BlogList({ initialBlogs }: { initialBlogs: any[] }) {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredBlogs.map((post: any) => (
           <Card key={post._id || post.slug} className="group flex flex-col overflow-hidden border-border/50 bg-card transition-all hover:border-primary/30 hover:shadow-lg hover:-translate-y-1">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-2 mb-3">
-                <Badge variant="secondary" className="text-[10px] font-bold uppercase tracking-wider bg-primary/5 text-primary border-primary/10">
+                <Badge 
+                  variant="secondary" 
+                  className={`text-[10px] font-bold uppercase tracking-wider ${
+                    post.category?.toLowerCase().includes("atlassian") || 
+                    post.category?.toLowerCase().includes("jira") || 
+                    post.category?.toLowerCase().includes("confluence")
+                      ? "bg-[#0052CC] text-white border-transparent hover:bg-[#0052CC]/90"
+                      : "bg-primary/5 text-primary border-primary/10"
+                  }`}
+                >
                   {post.category}
                 </Badge>
               </div>
-              <Link href={`/blog/${post.slug}`} className="block">
+              <Link href={`/blog/${post.slug}`} className="block min-h-[3.5rem]">
                 <h2 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight">
                   {post.title}
                 </h2>
