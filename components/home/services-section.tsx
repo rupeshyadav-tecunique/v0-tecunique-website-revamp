@@ -30,7 +30,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           
           {/* Column A: Core Engineering */}
-          <div className="glass-card rounded-3xl p-8 lg:p-10 border border-border/60 bg-white relative overflow-hidden group">
+          <div className="glass-card flex flex-col h-full rounded-3xl p-8 lg:p-10 border border-border/60 bg-white relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-indigo-600" />
             <h3 className="font-display text-2xl font-bold text-foreground mb-6">Core Engineering</h3>
             
@@ -75,7 +75,20 @@ export function ServicesSection() {
               </div>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-border/50">
+            <ul className="mt-8 space-y-3">
+              {[
+                "Trusted by enterprises like OPPSCIENCE & Validat",
+                "Deep expertise in React, Node.js, and Cloud-native stack",
+                "Scalable architectures with uncompromising quality"
+              ].map((point) => (
+                <li key={point} className="flex items-start gap-3 text-sm text-muted-foreground font-medium">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-auto pt-8 border-t border-border/50">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 transition-colors hover:text-indigo-700 group/link"
@@ -87,7 +100,7 @@ export function ServicesSection() {
           </div>
 
           {/* Column B: Atlassian Ecosystem */}
-          <div className="glass-card rounded-3xl p-8 lg:p-10 border border-border/60 bg-white relative overflow-hidden group">
+          <div className="glass-card flex flex-col h-full rounded-3xl p-8 lg:p-10 border border-border/60 bg-white relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#0052CC] to-[#2684FF]" />
             <div className="flex items-center gap-3 mb-6">
               <h3 className="font-display text-2xl font-bold text-foreground">Atlassian Ecosystem</h3>
@@ -131,7 +144,7 @@ export function ServicesSection() {
               ))}
             </ul>
 
-            <div className="mt-8 pt-8 border-t border-border/50">
+            <div className="mt-auto pt-8 border-t border-border/50">
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#0052CC] transition-colors hover:text-[#0047b3] group/link"

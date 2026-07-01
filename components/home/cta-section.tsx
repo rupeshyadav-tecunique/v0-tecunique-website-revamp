@@ -66,7 +66,7 @@ export function CTASection() {
                 boxShadow: "0 8px 30px rgba(99,102,241,0.35)",
               }}
             >
-              Start a Project
+              Book a Call
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

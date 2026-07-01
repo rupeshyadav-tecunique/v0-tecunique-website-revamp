@@ -125,7 +125,7 @@ export function HeroSection() {
             <div className="hero-reveal mt-8 flex flex-col sm:flex-row items-start gap-4">
               <Button className="rounded-xl px-7 h-12 text-sm font-semibold group" asChild>
                 <Link href="/contact">
-                  Start a Project
+                  Book a Call
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -138,79 +138,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right — Prominent IDE / Code Visual */}
+          {/* Right — Placeholder for future content */}
           <div className="relative flex items-center justify-center lg:justify-end hero-reveal">
-            {/* Background decorative circle */}
-            <div
-              className="absolute h-[500px] w-[500px] rounded-full opacity-20 blur-3xl"
-              style={{ background: "radial-gradient(circle, #8b5cf6 0%, transparent 70%)" }}
-            />
-
-            {/* IDE Mockup */}
-            <div className="relative z-10 w-full max-w-lg rounded-2xl bg-[#0f172a] shadow-2xl overflow-hidden border border-slate-800 animate-float" style={{ filter: "drop-shadow(0 25px 50px rgba(99,102,241,0.25))" }}>
-              {/* Window header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="px-3 py-1 rounded-md bg-slate-800/50 text-[11px] text-slate-400 font-mono tracking-wider">
-                  src/scale-team.ts
-                </div>
-                <div className="w-12" /> {/* Spacer to center the title */}
-              </div>
-
-              {/* Content */}
-              <div className="p-6 text-[13px] sm:text-sm font-mono text-slate-300 overflow-x-auto">
-                <div className="flex gap-4">
-                  <div className="flex flex-col text-slate-600 select-none text-right">
-                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-                  </div>
-                  <div>
-                    <div className="text-pink-400">import <span className="text-slate-300">{`{`}</span> <span className="text-blue-300">Scale</span>, <span className="text-blue-300">Quality</span> <span className="text-slate-300">{`}`}</span> from <span className="text-green-300">'@tecunique/core'</span>;</div>
-                    <br />
-                    <div className="text-pink-400">const <span className="text-blue-300">buildProject</span> = <span className="text-pink-400">async</span> () <span className="text-pink-400">{`=>`}</span> {`{`}</div>
-                    <div className="pl-4">
-                      <span className="text-pink-400">await</span> <span className="text-blue-300">Scale</span>.withTeam({`{`} <br />
-                      <span className="pl-4 text-orange-300">engineers:</span> <span className="text-purple-300">30+</span>,<br />
-                      <span className="pl-4 text-orange-300">expertise:</span> [<span className="text-green-300">'Atlassian'</span>, <span className="text-green-300">'React'</span>, <span className="text-green-300">'Node'</span>],<br />
-                      <span className="pl-4 text-orange-300">security:</span> <span className="text-green-300">'ISO-27001'</span>,<br />
-                      <span className="pl-4 text-orange-300">quality:</span> <span className="text-blue-300">Quality</span>.UNCOMPROMISING<br />
-                      <span className="text-slate-300">{`});`}</span>
-                    </div>
-                    <div className="text-slate-300">{`};`}</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Overlay stats card inside the visual */}
-              <div className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 shadow-xl flex items-center gap-4 hidden sm:flex">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">95%</div>
-                  <div className="text-[10px] text-slate-300 uppercase tracking-widest font-sans font-semibold">Retention</div>
-                </div>
-                <div className="w-px h-8 bg-white/20" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">15+</div>
-                  <div className="text-[10px] text-slate-300 uppercase tracking-widest font-sans font-semibold">Years Exp</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Small floating Atlassian badge */}
-            <div
-              className="absolute -top-6 -right-4 z-20 glass-card rounded-xl px-4 py-2.5 animate-float hidden sm:block"
-              style={{ animationDelay: "1.5s", background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)" }}
-            >
-              <div className="flex items-center gap-2">
-                <img src="https://cdn.simpleicons.org/atlassian/0052CC" alt="Atlassian" className="w-5 h-5" />
-                <div>
-                  <p className="text-xs font-bold text-foreground leading-none">Top Rated</p>
-                  <p className="text-[10px] text-muted-foreground">Atlassian Partner</p>
-                </div>
-              </div>
-            </div>
+            {/* Empty space for now as requested */}
           </div>
         </div>
 
