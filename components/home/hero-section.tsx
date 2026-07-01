@@ -145,24 +145,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Trusted By Strip */}
-        <div className="mt-20 pt-10 border-t border-border/50 hero-reveal">
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-6 text">
-            Trusted by leading companies
-          </p>
-          <div className="relative overflow-hidden -mx-4 px-4 lg:mx-0 lg:px-0">
-            <div className="flex animate-marquee py-2">
-              {[...trustedBy, ...trustedBy, ...trustedBy, ...trustedBy, ...trustedBy].map((name, i) => (
-                <span
-                  key={`${name}-${i}`}
-                  className="mx-8 shrink-0 text-lg font-black text-foreground/40 hover:text-foreground transition-all cursor-default whitespace-nowrap tracking-widest uppercase"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>
