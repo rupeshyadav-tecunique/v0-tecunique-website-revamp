@@ -16,6 +16,7 @@ const testimonials = [
     image: "/images/testimonial/david.webp",
     color: "#6366f1",
     rating: 5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/271417",
   },
   {
     quote: "TECUNIQUE has been an integral part of our journey for more than a decade, and we are committed to further expanding our collaborative efforts. Our association with TECUNIQUE is not merely driven by financial considerations; it's centered on the invaluable expertise and contributions that the team brings to the table.",
@@ -26,6 +27,7 @@ const testimonials = [
     image: "/images/testimonial/gilles.jpg",
     color: "#8b5cf6",
     rating: 5,
+    clutchUrl: "https://clutch.co/profile/tecunique-private#reviews", // generic as none was provided
   },
   {
     quote: "TECUNIQUE has been a key partner for OPPSCIENCE over the years. As a CTO, I've collaborated with TECUNIQUE on various projects for an extended duration. They have consistently helped us deliver top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
@@ -36,6 +38,7 @@ const testimonials = [
     image: "/images/testimonial/mickael.webp",
     color: "#06b6d4",
     rating: 4.5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/248407",
   },
   {
     quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team. Their consistent efforts to enhance our platform and deliver an exceptional experience to our customers have solidified our perception of TECUNIQUE not just as a service provider but as a true partner.",
@@ -46,6 +49,7 @@ const testimonials = [
     image: "/images/testimonial/guillaume.webp",
     color: "#7c3aed",
     rating: 5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/265083",
   },
   {
     quote: "Their expertise and dedication in architectural design, development, and QA have been very valuable to our team.",
@@ -56,6 +60,7 @@ const testimonials = [
     image: "/images/testimonial/ajay.webp",
     color: "#0891b2",
     rating: 5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/189526",
   },
   {
     quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team in enhancing our platform.",
@@ -66,6 +71,7 @@ const testimonials = [
     image: "/images/testimonial/den.webp",
     color: "#f43f5e",
     rating: 5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/270284",
   },
 ]
 
@@ -130,7 +136,13 @@ export function TestimonialsSection() {
 
             <div>
               {/* Stars */}
-              <div className="flex gap-1 mb-6">
+              <Link 
+                href={t.clutchUrl || "https://clutch.co/profile/tecunique-private#reviews"} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex gap-1 mb-6 hover:opacity-80 transition-opacity"
+                title="Read reviews on Clutch"
+              >
                 {[...Array(5)].map((_, i) => {
                   const starValue = i + 1;
                   if (t.rating >= starValue) {
@@ -141,7 +153,7 @@ export function TestimonialsSection() {
                     return <Star key={i} className="h-4 w-4 text-border" />;
                   }
                 })}
-              </div>
+              </Link>
 
               {/* Quote */}
               <blockquote
