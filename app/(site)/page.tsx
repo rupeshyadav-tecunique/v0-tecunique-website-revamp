@@ -1,9 +1,8 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { ServicesSection } from "@/components/home/services-section"
-import { StatsSection } from "@/components/home/stats-section"
-import { WhyChooseSection } from "@/components/home/why-choose-section"
-import { ExpertiseSection } from "@/components/home/expertise-section"
+import { WhyUsSection } from "@/components/home/why-us-section"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
+import { TechStackDivider } from "@/components/home/tech-stack-divider"
 import { CTASection } from "@/components/home/cta-section"
 
 export default function HomePage() {
@@ -11,10 +10,9 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ServicesSection />
-      <StatsSection />
-      <WhyChooseSection />
-      <ExpertiseSection />
+      <WhyUsSection />
       <TestimonialsSection />
+      <TechStackDivider />
       <CTASection />
     </>
   )

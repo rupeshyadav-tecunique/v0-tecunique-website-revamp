@@ -52,8 +52,8 @@ export function CTASection() {
             {" "}Your Product?
           </h2>
 
-          <p className="reveal mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Unlock our capabilities in custom software development, product engineering, and quality assurance. We offer full-cycle development services enabling businesses to be agile, futuristic, and high-performing.
+          <p className="reveal mt-6 text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            Let's build your next big idea together. We provide the expertise, you provide the vision.
           </p>
 
           {/* CTAs */}

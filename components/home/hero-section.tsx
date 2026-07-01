@@ -105,22 +105,24 @@ export function HeroSection() {
               Scale with confidence. Dedicated teams delivering Atlassian apps and high-quality software at speed — since 2010.
             </p>
 
-            {/* Feature bullets */}
-            <ul className="hero-reveal mt-4 space-y-2">
-              {[
-                "Offshore Software Development & IT Outsourcing",
-                "95% Customer Retention · 92% Employee Retention",
-                "ISO-certified Processes & NDA-protected Engagements",
-              ].map((point) => (
-                <li key={point} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {point}
-                </li>
-              ))}
-            </ul>
+            {/* Metrics Trust Badges */}
+            <div className="hero-reveal mt-6 grid grid-cols-3 gap-3 max-w-lg">
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-2xl font-black text-foreground">15+</div>
+                <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider mt-1">Years Exp</div>
+              </div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-2xl font-black text-foreground">95%</div>
+                <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider mt-1">Retention</div>
+              </div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-2xl font-black text-foreground">25+</div>
+                <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider mt-1">Clients</div>
+              </div>
+            </div>
 
             {/* CTAs */}
-            <div className="hero-reveal mt-6 flex flex-col sm:flex-row items-start gap-4">
+            <div className="hero-reveal mt-8 flex flex-col sm:flex-row items-start gap-4">
               <Button className="rounded-xl px-7 h-12 text-sm font-semibold group" asChild>
                 <Link href="/contact">
                   Start a Project

@@ -1,135 +1,147 @@
 "use client"
 
 import Link from "next/link"
-import { Users, Code2, TestTube2, UserPlus, ArrowRight, Sparkles } from "lucide-react"
+import { Users, Code2, TestTube2, Puzzle, ArrowRight, Sparkles, CheckCircle2, Webhook } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-
-const services = [
-  {
-    title: "Dedicated Teams",
-    description: "Engage cost-effective, fully managed software teams — developers, QA engineers, and technical support — seamlessly integrated into your workflow.",
-    icon: Users,
-    gradient: "from-indigo-500 to-violet-600",
-    lightBg: "from-indigo-50 to-violet-50",
-    tag: "Most Popular",
-    href: "/services/dedicated-teams"
-  },
-  {
-    title: "Software Development",
-    description: "Product design and development using advanced technologies for faster time-to-market, robustness, and scalability with iterative delivery.",
-    icon: Code2,
-    gradient: "from-violet-500 to-purple-600",
-    lightBg: "from-violet-50 to-purple-50",
-    tag: null,
-    href: "/services"
-  },
-  {
-    title: "Quality Assurance",
-    description: "Fully customized managed testing services. We take end-to-end responsibility for quality assurance of your software products.",
-    icon: TestTube2,
-    gradient: "from-cyan-500 to-blue-600",
-    lightBg: "from-cyan-50 to-blue-50",
-    tag: null,
-    href: "/services/qa"
-  },
-  {
-    title: "Staff Augmentation",
-    description: "Quickly scale your existing team with our senior engineers and QA specialists — on-demand, no long-term commitment required.",
-    icon: UserPlus,
-    gradient: "from-blue-500 to-indigo-600",
-    lightBg: "from-blue-50 to-indigo-50",
-    tag: "New",
-    href: "/services/augmentation"
-  },
-]
 
 export function ServicesSection() {
   const sectionRef = useScrollReveal()
 
   return (
-    <section ref={sectionRef as React.RefObject<HTMLElement>} className="py-16 lg:py-20 bg-accent/30 border-b border-border/50">
+    <section ref={sectionRef as React.RefObject<HTMLElement>} className="py-24 lg:py-32 bg-accent/30 border-b border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Header */}
-        <div className="mx-auto max-w-2xl text-center reveal">
+        <div className="mx-auto max-w-2xl text-center reveal mb-16">
           <span className="section-pill mb-6 inline-flex">
             <Sparkles className="h-3 w-3" />
             Our Services
           </span>
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Offshore Software Development{" "}
-            <span className="gradient-text">& IT Outsourcing</span>
+            Engineering &{" "}
+            <span className="gradient-text">Atlassian Expertise</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            Build a dedicated team of talented engineers to deliver reliable, scalable, and quality software solutions on the technology stack of your preference.
+            From building dedicated offshore engineering teams to developing top-rated Jira plugins, we scale your capabilities with precision.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, i) => (
-            <div
-              key={service.title}
-              className="reveal premium-card group relative flex flex-col rounded-2xl border border-border/60 bg-white overflow-hidden"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              {/* Top gradient bar */}
-              <div className={`h-1 w-full bg-gradient-to-r ${service.gradient}`} />
-
-              <div className="flex flex-col items-center text-center flex-1 p-6">
-                {/* Icon */}
-                <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.lightBg} transition-transform duration-300 group-hover:scale-110 shadow-sm`}>
-                  <service.icon
-                    className="h-7 w-7"
-                    style={{ stroke: "url(#iconGrad)" }}
-                  />
-                  <svg width="0" height="0">
-                    <defs>
-                      <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#6366f1" />
-                        <stop offset="100%" stopColor="#8b5cf6" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          
+          {/* Column A: Core Engineering */}
+          <div className="glass-card rounded-3xl p-8 lg:p-10 border border-border/60 bg-white relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-indigo-600" />
+            <h3 className="font-display text-2xl font-bold text-foreground mb-6">Core Engineering</h3>
+            
+            <div className="space-y-8">
+              {/* Service 1 */}
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <Users className="h-6 w-6" />
                 </div>
+                <div>
+                  <h4 className="font-bold text-foreground text-lg mb-1">Dedicated Teams & Augmentation</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Quickly scale your existing team with our senior engineers and QA specialists — on-demand, fully managed, and seamlessly integrated into your workflow.
+                  </p>
+                </div>
+              </div>
 
-                {/* Tag badge */}
-                {service.tag && (
-                  <span className="mb-4 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
-                    {service.tag}
-                  </span>
-                )}
+              {/* Service 2 */}
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <Code2 className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground text-lg mb-1">Custom Software Development</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    End-to-end product design and development using advanced technologies for faster time-to-market, robustness, and scalability.
+                  </p>
+                </div>
+              </div>
 
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">
-                  {service.description}
-                </p>
-
-                {/* Learn more link */}
-                <Link
-                  href={service.href}
-                  className="flex items-center justify-center gap-2 text-sm font-bold transition-all duration-200 group/link"
-                  style={{ color: "#6366f1" }}
-                >
-                  Learn more
-                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" />
-                </Link>
+              {/* Service 3 */}
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <TestTube2 className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground text-lg mb-1">Quality Assurance</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Fully customized managed testing services. We take end-to-end responsibility for quality assurance of your software products.
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center reveal">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5 group"
-          >
-            View All Services
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+            <div className="mt-8 pt-8 border-t border-border/50">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 transition-colors hover:text-indigo-700 group/link"
+              >
+                Explore Engineering Services
+                <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Column B: Atlassian Ecosystem */}
+          <div className="glass-card rounded-3xl p-8 lg:p-10 border border-border/60 bg-white relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#0052CC] to-[#2684FF]" />
+            <div className="flex items-center gap-3 mb-6">
+              <h3 className="font-display text-2xl font-bold text-foreground">Atlassian Ecosystem</h3>
+              <span className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm bg-[#0052CC]">
+                Specialty
+              </span>
+            </div>
+            
+            <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
+              We are a trusted partner for top-tier Atlassian marketplace vendors, helping them architect, build, and maintain high-performing Jira and Confluence apps.
+            </p>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-colors hover:bg-slate-100/80 hover:border-slate-200">
+                <Puzzle className="h-6 w-6 text-[#0052CC] shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Jira Plugin Development</h4>
+                  <p className="text-sm text-muted-foreground">Custom Jira apps, Forge, and Connect development to extend Atlassian capabilities.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-colors hover:bg-slate-100/80 hover:border-slate-200">
+                <Webhook className="h-6 w-6 text-[#2684FF] shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-foreground mb-1">Integrations & Customizations</h4>
+                  <p className="text-sm text-muted-foreground">Seamlessly connect Atlassian products with your existing enterprise systems and workflows.</p>
+                </div>
+              </div>
+            </div>
+
+            <ul className="mt-8 space-y-3">
+              {[
+                "Trusted by vendors like Appfire & Innovalog",
+                "Deep expertise in Atlassian SDK & Forge",
+                "Dedicated QA for Atlassian marketplace compliance"
+              ].map((point) => (
+                <li key={point} className="flex items-start gap-3 text-sm text-muted-foreground font-medium">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0052CC]" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 pt-8 border-t border-border/50">
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#0052CC] transition-colors hover:text-[#0047b3] group/link"
+              >
+                Learn More About Atlassian Services
+                <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
