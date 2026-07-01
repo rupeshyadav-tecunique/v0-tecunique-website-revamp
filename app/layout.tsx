@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
+import { Manrope, Sora, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const manrope = Manrope({ 
   subsets: ["latin"],
-  variable: '--font-inter'
+  variable: '--font-manrope'
+})
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: '--font-sora'
 })
 
 const geistMono = Geist_Mono({ 
@@ -34,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistMono.variable} bg-background`}>
+    <html lang="en" className={`${manrope.variable} ${sora.variable} ${geistMono.variable} bg-background`}>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

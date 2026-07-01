@@ -137,7 +137,7 @@ export default function DedicatedTeamsPage() {
                 <Sparkles className="h-3 w-3" />
                 Dedicated Service
               </div>
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl leading-[1.1] mb-8">
+              <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-8">
                 Bespoke <span className="gradient-text">Dedicated</span> Software Teams
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed mb-10">

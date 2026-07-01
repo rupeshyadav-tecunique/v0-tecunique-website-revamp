@@ -95,7 +95,7 @@ export default async function CareersPage() {
             <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium">
               We're Hiring!
             </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl text-balance">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
               Build Your Future with <span className="gradient-text">TECUNIQUE</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed">

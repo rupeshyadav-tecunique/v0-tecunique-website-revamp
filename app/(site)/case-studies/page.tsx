@@ -165,7 +165,7 @@ export default function CaseStudiesPage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
           <SectionReveal className="mx-auto max-w-4xl">
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-tight mb-6 font-display">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
               Proven Results & <br className="hidden sm:block"/>
               <span className="gradient-text">Success Stories</span>
             </h1>

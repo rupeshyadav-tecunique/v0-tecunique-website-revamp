@@ -121,7 +121,7 @@ export default function AugmentationPage() {
                 <Sparkles className="h-3 w-3" />
                 Talent on Demand
               </div>
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl leading-[1.1] mb-8 text-balance">
+              <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-8">
                 Scale Your Team with <span className="gradient-text">Top IT Talent</span>
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed mb-10">

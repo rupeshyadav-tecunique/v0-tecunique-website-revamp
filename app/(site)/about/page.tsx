@@ -63,7 +63,7 @@ export default function AboutPage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
           <SectionReveal className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl text-balance leading-[1.1]">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
               Engineering Maturity. <br className="hidden sm:block" />
               <span className="gradient-text">Enterprise-Grade Execution.</span>
             </h1>

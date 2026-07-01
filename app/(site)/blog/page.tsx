@@ -56,7 +56,7 @@ export default async function BlogPage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
           <SectionReveal className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-tight text-balance">
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance">
               Engineering <span className="gradient-text">Insights.</span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
