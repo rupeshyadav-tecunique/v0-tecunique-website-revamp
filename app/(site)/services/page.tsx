@@ -288,7 +288,7 @@ export default function ServicesPage() {
               <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
                 {[
                   { icon: Shield, label: "NDA Protected" },
-                  { icon: FileCheck, label: "ISO Aligned" },
+                  { icon: FileCheck, label: "Strict Quality Control" },
                   { icon: Clock3, label: "On-Time Delivery" },
                 ].map((badge) => (
                   <div

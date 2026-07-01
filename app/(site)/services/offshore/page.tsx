@@ -44,7 +44,7 @@ const odcFeatures = [
   },
   {
     title: "Strict Compliance",
-    desc: "Adherence to international data security and IP protection standards (ISO, GDPR).",
+    desc: "Adherence to international data security and IP protection standards.",
     icon: ShieldCheck
   },
   {

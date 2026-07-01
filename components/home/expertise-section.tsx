@@ -30,7 +30,7 @@ const expertise = [
   },
   {
     title: "Guaranteed Security",
-    desc: "NDA-protected engagements and ISO-aligned security practices.",
+    desc: "NDA-protected engagements and strict enterprise security practices.",
     icon: Lock,
     color: "#7c3aed",
   },

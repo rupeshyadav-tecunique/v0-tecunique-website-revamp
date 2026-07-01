@@ -25,7 +25,7 @@ const propositions = [
   },
   {
     title: "Guaranteed Security",
-    description: "ISO-aligned security practices and NDA-protected engagements. Strict data governance and privacy controls.",
+    description: "Enterprise-grade security practices and NDA-protected engagements. Strict data governance and privacy controls.",
     icon: Lock,
     color: "#7c3aed",
   },
