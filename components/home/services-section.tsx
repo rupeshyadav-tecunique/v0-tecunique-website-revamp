@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Users, Code2, TestTube2, Puzzle, ArrowRight, Sparkles, CheckCircle2, Webhook } from "lucide-react"
+import { Users, Code2, TestTube2, Puzzle, ArrowRight, Sparkles, CheckCircle2, Webhook, Bot } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 export function ServicesSection() {
@@ -109,24 +109,40 @@ export function ServicesSection() {
               </span>
             </div>
             
-            <p className="text-muted-foreground mb-8 text-sm leading-relaxed">
-              We are a trusted partner for top-tier Atlassian marketplace vendors, helping them architect, build, and maintain high-performing Jira and Confluence apps.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-colors hover:bg-slate-100/80 hover:border-slate-200">
-                <Puzzle className="h-6 w-6 text-[#0052CC] shrink-0 mt-1" />
+            <div className="space-y-8 mt-4">
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#0052CC] shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <Puzzle className="h-6 w-6" />
+                </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-1">Jira Plugin Development</h4>
-                  <p className="text-sm text-muted-foreground">Custom Jira apps, Forge, and Connect development to extend Atlassian capabilities.</p>
+                  <h4 className="font-bold text-foreground text-lg mb-1">Jira Plugin Development</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Custom Jira apps, Forge, and Connect development to extend Atlassian capabilities.
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-colors hover:bg-slate-100/80 hover:border-slate-200">
-                <Webhook className="h-6 w-6 text-[#2684FF] shrink-0 mt-1" />
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2684FF]/10 text-[#2684FF] shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <Webhook className="h-6 w-6" />
+                </div>
                 <div>
-                  <h4 className="font-bold text-foreground mb-1">Integrations & Customizations</h4>
-                  <p className="text-sm text-muted-foreground">Seamlessly connect Atlassian products with your existing enterprise systems and workflows.</p>
+                  <h4 className="font-bold text-foreground text-lg mb-1">Integrations & Customizations</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Seamlessly connect Atlassian products with your existing enterprise systems and workflows.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  <Bot className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground text-lg mb-1">Rovo Integration</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Unlock Atlassian's AI capabilities by integrating Rovo to accelerate knowledge discovery and automate tasks.
+                  </p>
                 </div>
               </div>
             </div>
@@ -146,7 +162,7 @@ export function ServicesSection() {
 
             <div className="mt-auto pt-8 border-t border-border/50">
               <Link
-                href="/services"
+                href="/services/atlassian"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#0052CC] transition-colors hover:text-[#0047b3] group/link"
               >
                 Learn More About Atlassian Services
