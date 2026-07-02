@@ -8,70 +8,81 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const testimonials = [
   {
-    quote: "Our top-selling and top-rated Jira app, JMWE, owes much of its success to our partnership with TECUNIQUE. Their dedicated engineers in both software development and QA seamlessly integrated into our company, playing a crucial role in our achievements.",
+    quote: "Our top-selling and top-rated Jira app, JMWE, owes much of its success to our partnership with TECUNIQUE. Their dedicated engineers in both software development and QA seamlessly integrated into our company, playing a crucial role in our achievements. As a founder and CEO of Innovalog, I highly recommend TECUNIQUE to any agile software company looking for a reliable partner, and am thankful for their tech-savvy and comprehensive support.",
     author: "David Fischer",
     role: "Founder & CEO",
     company: "Innovalog",
-    caseStudyId: "appfire-1",
+    caseStudyId: "appfire",
     image: "/images/testimonial/david.webp",
     color: "#6366f1",
     rating: 5,
     clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/271417",
   },
   {
-    quote: "TECUNIQUE has been an integral part of our journey for more than a decade, and we are committed to further expanding our collaborative efforts. Our association with TECUNIQUE is not merely driven by financial considerations; it's centered on the invaluable expertise and contributions that the team brings to the table.",
+    quote: "TECUNIQUE has been an integral part of our journey for more than a decade, and we are committed to further expanding our collaborative efforts. Our association with TECUNIQUE is not merely driven by financial considerations; it's centered on the invaluable expertise and contributions that team brings to the table. We share the sentiment that, in today's realm, it's not just about cost-effectiveness but about securing the right talent. I express my sincere appreciation for your relentless efforts over the years and emphasize the importance of your continued partnership as we navigate the future together.",
     author: "Gilles Andre",
     role: "Founder & CEO",
-    company: "OPPSCIENCE",
-    caseStudyId: "oppscience-1",
+    company: "OPPSCIENCE, POLYSPOT",
+    caseStudyId: "oppscience",
     image: "/images/testimonial/gilles.jpg",
     color: "#8b5cf6",
     rating: 5,
-    clutchUrl: "https://clutch.co/profile/tecunique-private#reviews", // generic as none was provided
+    clutchUrl: "https://clutch.co/profile/tecunique-private#reviews",
   },
   {
-    quote: "TECUNIQUE has been a key partner for OPPSCIENCE over the years. As a CTO, I've collaborated with TECUNIQUE on various projects for an extended duration. They have consistently helped us deliver top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
-    author: "Mickael Augello",
-    role: "CTO",
-    company: "OPPSCIENCE",
-    caseStudyId: "oppscience-1",
-    image: "/images/testimonial/mickael.webp",
-    color: "#06b6d4",
-    rating: 4.5,
-    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/248407",
-  },
-  {
-    quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team. Their consistent efforts to enhance our platform and deliver an exceptional experience to our customers have solidified our perception of TECUNIQUE not just as a service provider but as a true partner.",
-    author: "Guillaume Brejaud",
-    role: "COO",
-    company: "OPPSCIENCE",
-    caseStudyId: "oppscience-1",
-    image: "/images/testimonial/guillaume.webp",
-    color: "#7c3aed",
-    rating: 5,
-    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/265083",
-  },
-  {
-    quote: "Their expertise and dedication in architectural design, development, and QA have been very valuable to our team.",
+    quote: "Since 2020, Appfire and TECUNIQUE have been engaged in business, and throughout this period, the TECUNIQUE team has consistently impressed us with their exceptional services. Their expertise and dedication in architectural design, development, and quality assurance have been very valuable to our team. Additionally, their HR team has demonstrated a tried-and-true process for recruiting the ideal QA engineers for our intricate products.",
     author: "Ajay Singh",
-    role: "Architect",
+    role: "Director - Product Engineering",
     company: "Appfire",
-    caseStudyId: "appfire-1",
+    caseStudyId: "appfire",
     image: "/images/testimonial/ajay.webp",
     color: "#0891b2",
     rating: 5,
     clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/189526",
   },
   {
-    quote: "I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team in enhancing our platform.",
+    quote: "TECUNIQUE has been a key partner for OPPSCIENCE over the years. As a CTO, I've collaborated with TECUNIQUE on various projects for an extended duration. They have consistently helped us deliver top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
+    author: "Mickael Augello",
+    role: "CTO",
+    company: "OPPSCIENCE",
+    caseStudyId: "oppscience",
+    image: "/images/testimonial/mickael.webp",
+    color: "#06b6d4",
+    rating: 4.5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/248407",
+  },
+  {
+    quote: "Along my time at CustomerMatrix as CTO, it has been a pleasure to work with TECUNIQUE as a contractor and even more as a partner. I always considered the TECUNIQUE consultants as a natural extension of my team. The Indian squad has been very professional, committed, and easy to work with in software development, QA, or data quality. The contribution and facility to adapt have been key to reaching the objectives of my R&D group in an ever-changing startup world. I want to thank all the people onboarded at that time for that. All the best to all of you.",
+    author: "Christophe Favart",
+    role: "CTO",
+    company: "CustomerMatrix",
+    caseStudyId: "customermatrix",
+    image: "/images/testimonial/default.webp", // Fallback if image is missing
+    color: "#f59e0b",
+    rating: 5,
+    clutchUrl: "https://clutch.co/profile/tecunique-private#reviews",
+  },
+  {
+    quote: "We had an excellent experience working with TECUNIQUE- their commitment to providing tailored solutions for our specific needs was highly appreciated. I was particularly impressed by Jaydeep's direct involvement in understanding our exact requirements, dedication to recruiting the perfect candidates to meet our needs and drive to achieve results. The professionalism and expertise of TECUNIQUE's QA consultants have played a key role in improving our operational efficiency and in delivering outstanding apps appreciated by thousands of customers. We recommend TECUNIQUE to any company seeking top-tier QA services and dedicated professionals.",
     author: "Dan Mihalache",
-    role: "Founder & CEO",
+    role: "CEO",
     company: "Qotilabs",
     caseStudyId: "qotilabs",
     image: "/images/testimonial/den.webp",
     color: "#f43f5e",
     rating: 5,
     clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/270284",
+  },
+  {
+    quote: "TECUNIQUE has been a reliable partner for many years, supporting our evolution from PolySpot to OppScience via CustomerMatrix. Quite unique in this sector, we have actually the same contacts for over 10 years! I am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team. Their consistent efforts to enhance our platform and deliver an exceptional experience to our customers have solidified our perception of TECUNIQUE not just as a service provider but as a true partner.",
+    author: "Guillaume Bréjaud",
+    role: "COO",
+    company: "OPPSCIENCE",
+    caseStudyId: "oppscience",
+    image: "/images/testimonial/guillaume.webp",
+    color: "#7c3aed",
+    rating: 5,
+    clutchUrl: "https://clutch.co/go-to-review/017a278f-b286-46a0-9c2d-fc9642351a56/265083",
   },
 ]
 
@@ -136,9 +147,9 @@ export function TestimonialsSection() {
 
             <div>
               {/* Stars */}
-              <Link 
-                href={t.clutchUrl || "https://clutch.co/profile/tecunique-private#reviews"} 
-                target="_blank" 
+              <Link
+                href={t.clutchUrl || "https://clutch.co/profile/tecunique-private#reviews"}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex gap-1 mb-6 hover:opacity-80 transition-opacity"
                 title="Read reviews on Clutch"
@@ -157,9 +168,8 @@ export function TestimonialsSection() {
 
               {/* Quote */}
               <blockquote
-                className={`text-lg text-foreground leading-relaxed lg:text-xl transition-opacity duration-200 ${
-                  isTransitioning ? "opacity-0" : "opacity-100"
-                }`}
+                className={`text-lg text-foreground leading-relaxed lg:text-xl transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"
+                  }`}
               >
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
@@ -167,9 +177,8 @@ export function TestimonialsSection() {
 
             {/* Author */}
             <footer
-              className={`mt-8 flex items-center gap-4 transition-opacity duration-200 ${
-                isTransitioning ? "opacity-0" : "opacity-100"
-              }`}
+              className={`mt-8 flex items-center gap-4 transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"
+                }`}
             >
               {/* Avatar — real photo in circle */}
               <div
@@ -203,7 +212,7 @@ export function TestimonialsSection() {
               {/* Company badge */}
               {t.company && (
                 t.caseStudyId ? (
-                  <Link 
+                  <Link
                     href={`/case-studies#${t.caseStudyId}`}
                     className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5 hover:bg-muted/80 hover:border-primary/30 transition-colors group/company"
                   >
@@ -243,11 +252,10 @@ export function TestimonialsSection() {
                 <button
                   key={index}
                   onClick={() => goTo(index)}
-                  className={`rounded-full transition-all duration-300 ${
-                    index === current
-                      ? "w-6 h-2.5 bg-primary"
-                      : "w-2.5 h-2.5 bg-border hover:bg-primary/40"
-                  }`}
+                  className={`rounded-full transition-all duration-300 ${index === current
+                    ? "w-6 h-2.5 bg-primary"
+                    : "w-2.5 h-2.5 bg-border hover:bg-primary/40"
+                    }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}

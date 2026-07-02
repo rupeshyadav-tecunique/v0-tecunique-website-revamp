@@ -99,8 +99,8 @@ export function HeroSection() {
             {/* Dynamic Expertise */}
             <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex items-center gap-2">
               <span className="text-slate-600">Specializing in</span>
-              <WordRotate 
-                words={["Custom Development", "Dedicated Teams", "Cloud Solutions", "Product Design"]} 
+              <WordRotate
+                words={["Custom Development", "Dedicated Teams", "Cloud Solutions", "Product Design"]}
                 className="gradient-text"
               />
             </div>
@@ -121,7 +121,7 @@ export function HeroSection() {
                 <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Retention</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-xl font-black text-foreground">25+</div>
+                <div className="text-xl font-black text-foreground">15+</div>
                 <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Clients</div>
               </div>
             </div>
