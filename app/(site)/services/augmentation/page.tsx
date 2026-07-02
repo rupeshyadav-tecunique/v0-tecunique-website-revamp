@@ -27,7 +27,6 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { value: "500+", label: "Verified Experts" },
   { value: "48h", label: "Quick Turnaround" },
   { value: "100%", label: "Skill Matching" },
 ]

@@ -16,10 +16,7 @@ const footerLinks = {
   ],
   services: [
     { name: "Dedicated Teams", href: "/services/dedicated-teams" },
-    { name: "Software Development", href: "/services#development" },
-    { name: "Quality Assurance", href: "/services/qa" },
-    { name: "Staff Augmentation", href: "/services/augmentation" },
-    { name: "Offshore Development", href: "/services/offshore" },
+    { name: "Atlassian Services", href: "/services/atlassian" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy-policy" },

@@ -144,13 +144,13 @@ export default function AtlassianServicesPage() {
                     <div className="text-4xl font-black text-[#0052CC] font-display mb-2">15+</div>
                     <div className="text-sm font-semibold text-slate-600">Years Experience</div>
                   </div>
-                  <div className="text-center p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                    <div className="text-4xl font-black text-[#0052CC] font-display mb-2">50+</div>
-                    <div className="text-sm font-semibold text-slate-600">Apps Built</div>
+                  <div className="text-center p-6 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col items-center justify-center">
+                    <Layers className="h-8 w-8 text-[#0052CC] mb-2" />
+                    <div className="text-sm font-semibold text-slate-600">Hands-on experience with Jira & Confluence apps</div>
                   </div>
-                  <div className="text-center p-6 bg-slate-50 rounded-2xl border border-slate-100 col-span-2">
-                    <div className="text-4xl font-black text-[#0052CC] font-display mb-2">100%</div>
-                    <div className="text-sm font-semibold text-slate-600">Marketplace Approval Rate</div>
+                  <div className="text-center p-6 bg-slate-50 rounded-2xl border border-slate-100 col-span-2 flex flex-col items-center justify-center">
+                    <CheckCircle2 className="h-8 w-8 text-[#0052CC] mb-2" />
+                    <div className="text-sm font-semibold text-slate-600">QA-focused development aligned with Marketplace expectations</div>
                   </div>
                 </div>
               </div>
