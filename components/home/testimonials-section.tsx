@@ -213,7 +213,7 @@ export function TestimonialsSection() {
               {t.company && (
                 t.caseStudyId ? (
                   <Link
-                    href={`/case-studies#${t.caseStudyId}`}
+                    href={`/case-studies/${t.caseStudyId}`}
                     className="ml-auto hidden sm:flex items-center gap-2 rounded-full border border-border/60 bg-muted/40 px-4 py-1.5 hover:bg-muted/80 hover:border-primary/30 transition-colors group/company"
                   >
                     <div className="h-2 w-2 rounded-full" style={{ background: t.color }} />
