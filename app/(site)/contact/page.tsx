@@ -1,84 +1,157 @@
 import type { Metadata } from "next"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Sparkles } from "lucide-react"
 import { ContactForm } from "@/components/contact/contact-form"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { MapPin, Mail, Phone, Globe2 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with TECUNIQUE. Let's discuss how we can help with your software development, quality assurance, and IT outsourcing needs.",
 }
 
-const contactInfo = [
+const offices = [
   {
-    title: "Email Us",
-    description: "Our team will respond within 24 hours",
-    value: "sales@tecunique.com",
-    icon: Mail,
+    country: "INDIA",
+    type: "Headquarters",
+    flag: "in",
+    address: "1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007.",
+    email: "info@tecunique.com",
+    phone: "+91 982 544 6570"
   },
   {
-    title: "Call Us",
-    description: "Mon-Fri from 8am to 8pm IST",
-    value: "+91 915 746 0525",
-    icon: Phone,
+    country: "USA",
+    type: "Sales Office",
+    flag: "us",
+    address: "104 Bramble Bush Ln Victoria, Texas 77904",
+    email: "sales@tecunique.com",
+    phone: "+1 361 571 5589"
   },
   {
-    title: "Visit Us",
-    description: "Our headquarters",
-    value: "1002, Neptune Edge, Sarabhai Campus, Alkapuri, Vadodara – 390007",
-    icon: MapPin,
+    country: "CANADA",
+    type: "Sales Office",
+    flag: "ca",
+    address: "102-213 Willis Crescent, Saskatoon - S7T 0L9",
+    email: "sales@tecunique.com",
+    phone: "+1 306 891 4647"
   },
+  {
+    country: "AUSTRALIA",
+    type: "Sales Office",
+    flag: "au",
+    address: "50 Grandeur Parade, Riverstone, NSW - 2765",
+    email: "sales@tecunique.com",
+    phone: "+61 421 826 596"
+  }
 ]
 
 export default function ContactPage() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-slate-50/30">
+      
+      <section className="relative py-12 lg:py-20 overflow-hidden">
+        {/* Soft Background Accents */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-blob" />
+        <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-secondary/5 rounded-full blur-3xl -z-10 animate-blob delay-200" />
 
-
-      {/* Contact Section */}
-      <section className="py-4 lg:py-6 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Contact Form */}
-            <SectionReveal direction="right">
-              <h2 className="text-2xl font-bold text-foreground mb-2">Send Us a Message</h2>
-              <p className="text-muted-foreground mb-8">
-                Fill out the form below and we&apos;ll get back to you as soon as possible.
-              </p>
-              <ContactForm />
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 lg:gap-16 items-start">
+            
+            {/* Left: Contact Form */}
+            <SectionReveal direction="right" className="w-full max-w-3xl mx-auto xl:max-w-none">
+              <div className="mb-10">
+                <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                  Let's Build Something <span className="gradient-text">Great</span>
+                </h1>
+                <p className="text-muted-foreground text-lg max-w-xl">
+                  Whether you need a dedicated team, bespoke software, or just want to explore possibilities, we're here to help.
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-3xl shadow-xl shadow-primary/5 border border-border/60 p-6 md:p-8 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 gradient-primary" />
+                <ContactForm />
+              </div>
             </SectionReveal>
 
-            {/* Contact Information */}
-            <SectionReveal direction="left">
-              <h2 className="text-2xl font-bold text-foreground mb-2">Contact Information</h2>
-              <p className="text-muted-foreground mb-8">
-                Reach out to us through any of these channels.
-              </p>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                {contactInfo.map((info) => (
-                  <Card key={info.title} className="border-border/50 transition-all hover:shadow-md group">
-                    <CardHeader className="pb-0">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-                          <info.icon className="h-5 w-5" />
+            {/* Right: Global Presence */}
+            <SectionReveal direction="left" className="w-full max-w-3xl mx-auto xl:max-w-none xl:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="flex items-center justify-center p-3 bg-primary/10 rounded-2xl text-primary">
+                  <Globe2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-display font-bold text-foreground">
+                    Our Global Presence
+                  </h2>
+                  <p className="text-muted-foreground mt-1">
+                    Operating across multiple time zones for seamless support.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-5">
+                {offices.map((office, idx) => (
+                  <div 
+                    key={office.country} 
+                    className="group relative bg-white border border-border/60 rounded-2xl p-6 xl:p-5 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col xl:flex-row items-start xl:items-center gap-0 xl:gap-6"
+                    style={{ animationDelay: `${idx * 100}ms` }}
+                  >
+                    {/* Subtle Gradient Glow on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br xl:bg-gradient-to-r from-primary/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Header: Flag and Title */}
+                    <div className="relative flex flex-col gap-3 mb-5 xl:mb-0 w-full xl:w-36 shrink-0">
+                      <div className="flex items-start justify-between w-full">
+                        <div className="w-12 h-9 xl:w-14 xl:h-10 rounded-md overflow-hidden shadow-sm border border-border shrink-0">
+                          <img 
+                            src={`https://flagcdn.com/w80/${office.flag}.png`} 
+                            alt={`${office.country} flag`} 
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
                         </div>
-                        <CardTitle className="text-base">{info.title}</CardTitle>
+                        <span className="xl:hidden text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">
+                          {office.type}
+                        </span>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{info.description}</p>
-                      <p className="mt-1 font-medium text-foreground">{info.value}</p>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="text-xl font-display font-bold text-foreground">{office.country}</h3>
+                        <span className="hidden xl:inline-block text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap mt-1">
+                          {office.type}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Details */}
+                    <div className="relative flex-1 flex flex-col gap-4 xl:gap-3 text-sm text-muted-foreground w-full xl:border-l xl:border-border/60 xl:pl-5">
+                      <div className="flex gap-3 items-start group/item">
+                        <div className="p-2 xl:p-1.5 rounded-lg bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white transition-colors duration-300 shrink-0">
+                          <MapPin className="w-3.5 h-3.5" />
+                        </div>
+                        <p className="leading-relaxed pt-0.5 pr-2">{office.address}</p>
+                      </div>
+                      
+                      <div className="flex gap-3 items-center group/item">
+                        <div className="p-2 xl:p-1.5 rounded-lg bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white transition-colors duration-300 shrink-0">
+                          <Mail className="w-3.5 h-3.5" />
+                        </div>
+                        <a href={`mailto:${office.email}`} className="hover:text-foreground font-medium transition-colors truncate">{office.email}</a>
+                      </div>
+                      
+                      <div className="flex gap-3 items-center group/item">
+                        <div className="p-2 xl:p-1.5 rounded-lg bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white transition-colors duration-300 shrink-0">
+                          <Phone className="w-3.5 h-3.5" />
+                        </div>
+                        <a href={`tel:${office.phone.replace(/\s+/g, '')}`} className="hover:text-foreground font-medium transition-colors">{office.phone}</a>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
+
           </div>
         </div>
       </section>
-
-
-
-    </>
+    </div>
   )
 }
