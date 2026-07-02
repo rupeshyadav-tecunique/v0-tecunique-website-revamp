@@ -42,7 +42,7 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden pt-4 pb-16 lg:pt-6 lg:pb-20"
+      className="relative overflow-hidden pt-4 pb-12 lg:pt-6 lg:pb-16"
       style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
     >
       {/* Animated blobs */}
@@ -78,12 +78,12 @@ export function HeroSection() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
 
           {/* Left — Text content */}
           <div className="relative">
             {/* Badge pill */}
-            <div className="hero-reveal mb-3 inline-flex">
+            <div className="hero-reveal mb-2 inline-flex">
               <span className="section-pill">
                 <Sparkles className="h-3 w-3" />
                 15+ Years of Software Excellence
@@ -91,40 +91,44 @@ export function HeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="hero-reveal font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-5xl xl:text-[3.4rem] leading-tight">
-              Trusted {" "}
-              <WordRotate 
-                words={["Development", "Dedicated Teams", "Cloud Solutions", "Product Design"]} 
-                className="gradient-text"
-              />
-              <br className="hidden sm:block" />
-              {" "}& Atlassian Apps Expertise
+            <h1 className="hero-reveal font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl leading-tight">
+              Trusted Software Engineering <br className="hidden sm:block" />
+              & <span className="text-[#0052CC]">Atlassian Apps</span> Expertise
             </h1>
 
+            {/* Dynamic Expertise */}
+            <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex items-center gap-2">
+              <span className="text-slate-600">Specializing in</span>
+              <WordRotate 
+                words={["Custom Development", "Dedicated Teams", "Cloud Solutions", "Product Design"]} 
+                className="gradient-text"
+              />
+            </div>
+
             {/* Subheadline */}
-            <p className="hero-reveal mt-3 text-base leading-relaxed text-muted-foreground lg:text-lg max-w-lg">
+            <p className="hero-reveal mt-2 text-sm leading-relaxed text-muted-foreground lg:text-base max-w-lg">
               Scale with confidence. Dedicated teams delivering Atlassian apps and high-quality software at speed — since 2010.
             </p>
 
             {/* Metrics Trust Badges */}
-            <div className="hero-reveal mt-6 grid grid-cols-3 gap-3 max-w-lg">
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-2xl font-black text-foreground">15+</div>
-                <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider mt-1">Years Exp</div>
+            <div className="hero-reveal mt-4 grid grid-cols-3 gap-2 max-w-md">
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-xl font-black text-foreground">15+</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years Exp</div>
               </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-2xl font-black text-foreground">95%</div>
-                <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider mt-1">Retention</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-xl font-black text-foreground">95%</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Retention</div>
               </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-3 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-2xl font-black text-foreground">25+</div>
-                <div className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider mt-1">Clients</div>
+              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-xl font-black text-foreground">25+</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Clients</div>
               </div>
             </div>
 
             {/* CTAs */}
-            <div className="hero-reveal mt-8 flex flex-col sm:flex-row items-start gap-4">
-              <Button className="rounded-xl px-7 h-12 text-sm font-semibold group" asChild>
+            <div className="hero-reveal mt-6 flex flex-col sm:flex-row items-start gap-3">
+              <Button className="rounded-xl px-6 h-10 text-sm font-semibold group" asChild>
                 <Link href="/contact">
                   Book a Call
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -132,7 +136,7 @@ export function HeroSection() {
               </Button>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/80 px-7 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-white hover:shadow-md"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-white/80 px-6 py-2 h-10 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-white hover:shadow-md"
               >
                 Explore Services
               </Link>
@@ -140,7 +144,7 @@ export function HeroSection() {
           </div>
 
           {/* Right — Dashboard Visual */}
-          <div className="relative flex items-center justify-center lg:justify-end hero-reveal mt-12 lg:mt-0">
+          <div className="relative flex items-center justify-center lg:justify-end hero-reveal mt-8 lg:mt-0">
             <HeroDashboard />
           </div>
         </div>
