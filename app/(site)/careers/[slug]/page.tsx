@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { getJob as getStaticJob, jobs as staticJobs } from "@/lib/jobs-data"
 import { ShareJob } from "@/components/careers/share-job"
+import { ApplicationModal } from "@/components/careers/application-modal"
 import { 
   ArrowLeft, 
   MapPin, 
@@ -130,14 +131,14 @@ export default async function JobPage({ params }: JobPageProps) {
               <div className="pt-8 border-t border-border">
                 <h2 className="text-xl font-bold text-foreground mb-4">How to Apply</h2>
                 <p className="text-muted-foreground mb-6">
-                  Interested in this role? Please send your updated resume and portfolio (if applicable) to our careers team. Mention the job title in the subject line.
+                  Interested in this role? Please click below to fill out the application form and attach your updated resume.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="rounded-xl px-8" asChild>
-                    <a href={`mailto:careers@tecunique.com?subject=Application for ${(job as any).title}`}>
+                  <ApplicationModal jobTitle={(job as any).title}>
+                    <Button size="lg" className="rounded-xl px-8">
                       Apply Now
-                    </a>
-                  </Button>
+                    </Button>
+                  </ApplicationModal>
                   <ShareJob title={(job as any).title} />
                 </div>
               </div>
