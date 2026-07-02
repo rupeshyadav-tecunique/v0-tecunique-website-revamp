@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { ClientMarquee } from "@/components/home/client-marquee"
 import { ServicesSection } from "@/components/home/services-section"
+import { DedicatedTeamsSection } from "@/components/home/dedicated-teams-section"
 import { WhyUsSection } from "@/components/home/why-us-section"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { TechStackDivider } from "@/components/home/tech-stack-divider"
@@ -12,6 +13,7 @@ export default function HomePage() {
       <HeroSection />
       <ClientMarquee />
       <ServicesSection />
+      <DedicatedTeamsSection />
       <WhyUsSection />
       <TestimonialsSection />
       <TechStackDivider />
