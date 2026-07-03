@@ -7,17 +7,18 @@ import { Button } from "@/components/ui/button"
 import { MoreHorizontal, Pencil, Trash2, Link as LinkIcon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog"
 
 export default function CaseStudyTable({ caseStudies }: { caseStudies: any[] }) {
   const router = useRouter()
   const [isDeleting, setIsDeleting] = useState<string | null>(null)
+  const [deleteId, setDeleteId] = useState<string | null>(null)
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this case study? This cannot be undone.")) return
-    
-    setIsDeleting(id)
+  const handleDelete = async () => {
+    if (!deleteId) return
+    setIsDeleting(deleteId)
     try {
-      const res = await fetch(`/api/admin/case-studies/${id}`, {
+      const res = await fetch(`/api/admin/case-studies/${deleteId}`, {
         method: "DELETE",
       })
       
@@ -29,6 +30,7 @@ export default function CaseStudyTable({ caseStudies }: { caseStudies: any[] }) 
       alert("Failed to delete case study")
     } finally {
       setIsDeleting(null)
+      setDeleteId(null)
     }
   }
 
@@ -88,7 +90,7 @@ export default function CaseStudyTable({ caseStudies }: { caseStudies: any[] }) 
                       </DropdownMenuItem>
                       <DropdownMenuItem 
                         className="text-red-600 focus:text-red-600 focus:bg-red-50"
-                        onClick={() => handleDelete(study.id)}
+                        onClick={() => setDeleteId(study.id)}
                       >
                         <Trash2 className="mr-2 h-4 w-4" />
                         Delete
@@ -101,6 +103,30 @@ export default function CaseStudyTable({ caseStudies }: { caseStudies: any[] }) 
           )}
         </TableBody>
       </Table>
+      
+      <AlertDialog open={!!deleteId} onOpenChange={(open) => !open && setDeleteId(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete the case study from the database.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={!!isDeleting}>Cancel</AlertDialogCancel>
+            <AlertDialogAction 
+              onClick={(e) => {
+                e.preventDefault()
+                handleDelete()
+              }} 
+              disabled={!!isDeleting}
+              className="bg-red-600 hover:bg-red-700"
+            >
+              {isDeleting ? "Deleting..." : "Delete"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }
