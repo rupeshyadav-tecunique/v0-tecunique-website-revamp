@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Real-world success stories from TECUNIQUE's partnerships — how we helped companies scale, deliver quality software, and achieve lasting results.",
 }
 
-import { caseStudies } from "@/lib/data/case-studies"
+import clientPromise from "@/lib/db"
 
 const stats = [
   { value: "20+", label: "Clients Served" },
@@ -18,7 +18,25 @@ const stats = [
   { value: "95%", label: "Client Retention" },
 ]
 
-export default function CaseStudiesPage() {
+async function getCaseStudies() {
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const dbCaseStudies = await db.collection("case-studies").find({}).sort({ createdAt: -1 }).toArray()
+    
+    return dbCaseStudies.map(study => ({
+      ...study,
+      _id: study._id.toString(),
+      createdAt: study.createdAt?.toISOString(),
+    }))
+  } catch (e) {
+    console.error(e)
+    return []
+  }
+}
+
+export default async function CaseStudiesPage() {
+  const caseStudies = await getCaseStudies()
   return (
     <div className="flex flex-col w-full bg-slate-50">
       

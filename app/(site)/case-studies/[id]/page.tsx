@@ -4,22 +4,39 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, ArrowRight, Clock, Users, TrendingUp, Star, CheckCircle2, Building2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { caseStudies } from "@/lib/data/case-studies"
+import clientPromise from "@/lib/db"
 import { Button } from "@/components/ui/button"
 
 interface Props {
   params: Promise<{ id: string }>
 }
 
-export function generateStaticParams() {
-  return caseStudies.map((study) => ({
-    id: study.id,
-  }))
+export async function generateStaticParams() {
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const dbCaseStudies = await db.collection("case-studies").find({}, { projection: { id: 1 } }).toArray()
+    return dbCaseStudies.map((study) => ({ id: study.id }))
+  } catch (e) {
+    return []
+  }
+}
+
+async function getCaseStudy(id: string) {
+  try {
+    const client = await clientPromise
+    const db = client.db("tecunique")
+    const study = await db.collection("case-studies").findOne({ id })
+    if (!study) return null
+    return { ...study, _id: study._id.toString() }
+  } catch (e) {
+    return null
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params
-  const study = caseStudies.find((s) => s.id === resolvedParams.id)
+  const study = await getCaseStudy(resolvedParams.id)
   
   if (!study) {
     return { title: "Case Study Not Found" }
@@ -27,13 +44,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${study.company} Case Study | TECUNIQUE`,
-    description: study.tagline,
+    description: study.tagline || study.description,
   }
 }
 
 export default async function CaseStudyPage({ params }: Props) {
   const resolvedParams = await params
-  const study = caseStudies.find((s) => s.id === resolvedParams.id)
+  const study = await getCaseStudy(resolvedParams.id)
 
   if (!study) {
     notFound()

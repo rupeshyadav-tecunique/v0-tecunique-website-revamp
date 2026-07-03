@@ -10,7 +10,8 @@ import {
   ChevronRight,
   Menu,
   X,
-  User
+  User,
+  FolderKanban
 } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -20,6 +21,7 @@ const menuItems = [
   { name: "Overview", href: "/admin", icon: LayoutDashboard },
   { name: "Manage Blogs", href: "/admin/blog", icon: FileText },
   { name: "Manage Careers", href: "/admin/jobs", icon: Briefcase },
+  { name: "Manage Case Studies", href: "/admin/case-studies", icon: FolderKanban },
 ]
 
 export function AdminSidebar() {
