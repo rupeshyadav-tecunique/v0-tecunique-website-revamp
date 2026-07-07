@@ -114,15 +114,15 @@ export function HeroSection() {
             <div className="hero-reveal mt-4 grid grid-cols-3 gap-2 max-w-md">
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-xl font-black text-foreground">15+</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years Exp</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years in IT</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-xl font-black text-foreground">95%</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Retention</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Team Retention</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-xl font-black text-foreground">15+</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Clients</div>
+                <div className="text-xl font-black text-foreground">Long-Term</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Relationships</div>
               </div>
             </div>
 

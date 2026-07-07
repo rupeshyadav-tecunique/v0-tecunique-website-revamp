@@ -22,7 +22,7 @@ export function ServicesSection() {
             <span className="gradient-text">Atlassian Expertise</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            From building dedicated offshore engineering teams to developing top-rated Jira plugins, we scale your capabilities with precision.
+            From building dedicated offshore engineering teams to supporting Jira app development, QA, automation, and long-term product engineering, we help software companies scale with practical execution.
           </p>
         </div>
 

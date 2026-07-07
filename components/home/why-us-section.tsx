@@ -6,26 +6,26 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const propositions = [
   {
-    title: "No Black-Box Transparency",
-    description: "Full transparency in process, communication, and code ownership. You have complete visibility into every sprint.",
+    title: "Full Visibility, No Black Box",
+    description: "Direct communication, transparent processes, and clear visibility into work progress.",
     icon: Layers,
     color: "#6366f1",
   },
   {
-    title: "Atlassian Apps Expertise",
-    description: "Deep domain knowledge in Jira plugin development, app customization, and seamless Atlassian ecosystem integrations.",
+    title: "Atlassian Apps Experience",
+    description: "Hands-on experience with Jira apps, Forge, Connect, REST APIs, app QA, and long-term product support.",
     icon: Puzzle,
     color: "#8b5cf6",
   },
   {
-    title: "Global SLA Delivery",
-    description: "100% Client Satisfaction with an SLA-driven approach. Remote-ready teams ensuring on-time delivery across time zones.",
+    title: "Remote-Ready Delivery",
+    description: "Teams aligned with your tools, workflows, time-zone needs, and delivery expectations.",
     icon: Globe,
     color: "#06b6d4",
   },
   {
-    title: "Guaranteed Security",
-    description: "Enterprise-grade security practices and NDA-protected engagements. Strict data governance and privacy controls.",
+    title: "Security-Conscious Engagements",
+    description: "NDA-backed work, controlled access, and responsible handling of client systems and data.",
     icon: Lock,
     color: "#7c3aed",
   },
@@ -58,7 +58,7 @@ export function WhyUsSection() {
         </div>
 
         {/* Propositions Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {propositions.map((item, i) => (
             <div
               key={item.title}

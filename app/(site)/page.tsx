@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/home/hero-section"
-import { ClientMarquee } from "@/components/home/client-marquee"
 import { ServicesSection } from "@/components/home/services-section"
 import { DedicatedTeamsSection } from "@/components/home/dedicated-teams-section"
 import { WhyUsSection } from "@/components/home/why-us-section"
@@ -11,7 +10,6 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ClientMarquee />
       <ServicesSection />
       <DedicatedTeamsSection />
       <WhyUsSection />

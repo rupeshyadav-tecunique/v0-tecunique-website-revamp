@@ -11,10 +11,8 @@ const cards = [
     color: "text-blue-600",
     bg: "bg-blue-50",
     items: [
-      "We understand your requirements in detail.",
-      "We shortlist the right candidates from our talent network.",
-      "You interview, evaluate, and select the team members.",
-      "You get the right skills and the right fit for your team."
+      "You interview, evaluate, and approve the professionals before onboarding.",
+      "We shortlist candidates based on skills, project needs, and working style.",
     ]
   },
   {
@@ -24,9 +22,7 @@ const cards = [
     bg: "bg-emerald-50",
     items: [
       "Selected professionals work exclusively for your projects.",
-      "They become an extended part of your in-house team.",
-      "Aligned with your processes, tools, and communication.",
-      "You have complete control over priorities and deliverables."
+      "They align with your tools, communication, sprint planning, and delivery priorities.",
     ]
   },
   {
@@ -35,10 +31,8 @@ const cards = [
     color: "text-orange-500",
     bg: "bg-orange-50",
     items: [
-      "We handle recruitment, onboarding, payroll, HR & compliance.",
-      "Infrastructure, laptops, tools, and secure environment provided.",
-      "NDA-backed engagement with strict data security.",
-      "You focus on your product. We take care of the rest."
+      "TECUNIQUE handles recruitment, onboarding, payroll, HR, NDA, and infrastructure.",
+      "You focus on the product while we manage the operational side.",
     ]
   },
   {
@@ -47,10 +41,8 @@ const cards = [
     color: "text-purple-600",
     bg: "bg-purple-50",
     items: [
-      "We focus on team continuity and knowledge retention.",
-      "Low attrition through career growth and engagement.",
-      "Consistent performance and predictable delivery.",
-      "A reliable offshore partner for years, not just projects."
+      "We focus on continuity, ownership, and retention.",
+      "This helps preserve product knowledge and reduce repeated onboarding.",
     ]
   }
 ]
