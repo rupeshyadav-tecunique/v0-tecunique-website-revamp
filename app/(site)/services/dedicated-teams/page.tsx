@@ -1,423 +1,540 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Users,
-  Code,
-  TestTube,
-  Layout,
-  Settings,
-  ShieldCheck,
-  CheckCircle2,
-  ArrowRight,
-  Sparkles,
-  Zap,
-  Globe,
-  Layers,
-  Heart,
-  TrendingUp,
-  LineChart,
-  HardHat,
-  MonitorCheck,
-  Shield,
-  FileCheck,
-  Clock3
-} from "lucide-react"
+import Image from "next/image"
+import { Users, Code2, ShieldCheck, Cpu, Cloud, HeadphonesIcon, SearchCheck, CheckCircle2, ChevronRight, Sparkles, FileCheck, Layers, Building2, MapPin, Clock, ArrowRight, ArrowDown, ArrowLeft } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
 export const metadata: Metadata = {
-  title: "Dedicated Development Teams | TECUNIQUE",
-  description: "Bespoke Dedicated Software Development Teams of experienced, skilled, reliable, & professional resources built specific to your requirements.",
+  title: "Dedicated Software Teams in India | TECUNIQUE",
+  description: "Build dedicated software development, QA, automation, DevOps, and support teams in India with TECUNIQUE. Client-selected talent, managed operations, NDA-backed engagement, and long-term team continuity.",
 }
 
-const stats = [
-  { value: "15+", label: "Years Experience" },
-  { value: "50+", label: "Software Experts" },
-  { value: "96%", label: "Employee Retention" },
-]
-
-const roles = [
-  { title: "Front-end Engineers", icon: Layout },
-  { title: "Back-end Engineers", icon: Settings },
-  { title: "QA Engineers", icon: TestTube },
-  { title: "UX / UI Designers", icon: Code },
-  { title: "DevOps Engineers", icon: HardHat },
-  { title: "Project Managers", icon: MonitorCheck },
-]
-
-const benefits = [
-  { title: "Ease of management", icon: Settings },
-  { title: "High flexibility", icon: Zap },
-  { title: "Scalability", icon: TrendingUp },
-  { title: "Strong technical pool", icon: Users },
-  { title: "Customized processes", icon: LineChart },
-  { title: "Diverse cultural expertise", icon: Globe },
-  { title: "Critical offshore layers", icon: Layers },
-  { title: "Technical acumen", icon: Zap },
-]
-
-const goodFit = [
-  "For long-term projects with broad scopes and potential changes in requirements.",
-  "For product development projects needing a consistent and stable long-term team.",
-  "For cost-effective, well-budgeted development and management of software products.",
-  "When the internal team concentrates on other projects and cannot carry more work.",
-  "When your internal team lacks experience or knowledge of specific technologies.",
-]
-
-const whyUs = [
+const teamRoles = [
   {
-    title: "Access to Talent Pool",
-    description: "You get access to a vast talent pool of software experts. Our experience enables you to hire and build a team of engineers, interview & test them, and choose the best candidates.",
-    icon: Users
+    title: "Frontend Engineers",
+    description: "React, Angular, Vue, TypeScript, UI implementation, product interfaces.",
+    icon: Code2,
+    color: "from-blue-500 to-cyan-400"
   },
   {
-    title: "Easy Administration",
-    description: "We manage everything from contracts to team setup, employee retention, employee benefits, payroll operations, infrastructure, and Non-Disclosure Agreements.",
-    icon: ShieldCheck
+    title: "Backend Engineers",
+    description: "Java, Spring Boot, Node.js, APIs, integrations, microservices, databases.",
+    icon: Layers,
+    color: "from-indigo-500 to-purple-400"
   },
   {
-    title: "Excellent Infrastructure",
-    description: "Our reliable infrastructure is well-equipped with advanced IT tools, processes, and systems. When you hire development teams, you get a quick start.",
-    icon: Layout
+    title: "QA Engineers",
+    description: "Manual QA, regression testing, test planning, release validation.",
+    icon: FileCheck,
+    color: "from-emerald-500 to-teal-400"
   },
   {
-    title: "Talent Management",
-    description: "We help transfer product and domain knowledge to align teams with your in-house staff, keeping people motivated and ensuring personal development and growth.",
-    icon: Heart
+    title: "Automation QA Engineers",
+    description: "Playwright, Selenium, JUnit, API testing, CI/CD test integration.",
+    icon: ShieldCheck,
+    color: "from-rose-500 to-orange-400"
   },
   {
-    title: "Delivery Management",
-    description: "Coordinate and streamline the software development and delivery processes from beginning to end, ensuring high efficiency throughout the entire cycle.",
-    icon: MonitorCheck
+    title: "DevOps Engineers",
+    description: "Cloud environments, deployment pipelines, Docker, Kubernetes, AWS support.",
+    icon: Cloud,
+    color: "from-sky-500 to-blue-400"
   },
   {
-    title: "Cost Effectiveness",
-    description: "Highly cost-effective solutions with assured transparency to build a dedicated team of talented, skilled, and experienced engineers.",
-    icon: TrendingUp
+    title: "Support Engineers",
+    description: "L2/L3 product support, issue analysis, maintenance, customer-facing technical support.",
+    icon: HeadphonesIcon,
+    color: "from-fuchsia-500 to-pink-400"
   }
 ]
 
-export default function DedicatedTeamsPage() {
+const buildSteps = [
+  {
+    step: "01",
+    title: "Requirement Discussion",
+    description: "We understand the roles, skillset, technology stack, team size, experience level, and engagement expectations."
+  },
+  {
+    step: "02",
+    title: "Talent Shortlisting",
+    description: "TECUNIQUE identifies suitable candidates through internal capability and recruitment support."
+  },
+  {
+    step: "03",
+    title: "Client Evaluation",
+    description: "You interview, test, and approve the professionals before onboarding."
+  },
+  {
+    step: "04",
+    title: "Team Onboarding",
+    description: "We handle employment, NDA, HR, payroll, infrastructure, access setup, and onboarding support."
+  },
+  {
+    step: "05",
+    title: "Ongoing Collaboration",
+    description: "The team works full-time with your tools, communication channels, sprint process, and delivery priorities."
+  },
+  {
+    step: "06",
+    title: "Scale or Adjust",
+    description: "You can expand the team, adjust roles, or add QA, DevOps, automation, or support as needs evolve."
+  }
+]
+
+const rightFitscenarios = [
+  {
+    title: "Long-Term Product Development",
+    description: "When you need engineers who can understand your product deeply and stay involved over time."
+  },
+  {
+    title: "Expanding an Existing Team",
+    description: "When your internal team needs more capacity without increasing local hiring overhead."
+  },
+  {
+    title: "QA or Automation Scaling",
+    description: "When releases are growing and you need dedicated QA or automation support."
+  },
+  {
+    title: "Specialized Product Knowledge",
+    description: "When repeated onboarding is costly and continuity matters."
+  },
+  {
+    title: "Cost-Efficient Engineering Capacity",
+    description: "When you want a stable offshore team with transparent operations from India."
+  },
+  {
+    title: "Atlassian or SaaS Product Support",
+    description: "When you need development, QA, automation, or support engineers for product-led work."
+  }
+]
+
+const whyChooseUs = [
+  {
+    title: "Client-Selected Talent",
+    description: "You are involved in evaluating and approving team members before onboarding.",
+    icon: SearchCheck
+  },
+  {
+    title: "Long-Term Team Stability",
+    description: "We focus on retention, continuity, and product knowledge, not short-term staffing.",
+    icon: Clock
+  },
+  {
+    title: "Managed Operations in India",
+    description: "We handle HR, payroll, infrastructure, contracts, NDA, and administration.",
+    icon: MapPin
+  },
+  {
+    title: "Engineering + QA Capability",
+    description: "Build teams across development, QA, automation, DevOps, support, and product engineering.",
+    icon: Code2
+  },
+  {
+    title: "Remote-Ready Collaboration",
+    description: "Teams work with your tools, communication channels, sprint process, and time-zone expectations.",
+    icon: Cloud
+  },
+  {
+    title: "Practical, Transparent Engagement",
+    description: "Clear communication, simple operating model, and visibility into team performance and delivery.",
+    icon: CheckCircle2
+  }
+]
+
+export default function ServicesPage() {
   return (
-    <div className="flex flex-col w-full">
-      {/* Hero Section */}
-      <section
-        className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32"
-        style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
-      >
-        {/* Animated blobs */}
-        <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div
-            className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
-            style={{ background: "radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%)" }}
-          />
-          <div
-            className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
-            style={{
-              background: "radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%)",
-              animationDelay: "4s",
-              animationDuration: "16s",
-            }}
-          />
-          {/* Grid pattern overlay */}
-          <div
-            className="absolute inset-0 opacity-[0.025]"
-            style={{
-              backgroundImage: "linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
-          />
+    <div className="flex flex-col w-full overflow-hidden bg-slate-50">
+      
+      {/* 1. Hero Section */}
+      <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 flex items-center isolate">
+        {/* Animated Background Gradients */}
+        <div className="absolute inset-0 -z-10 bg-slate-50">
+          <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-blue-100 to-purple-100 opacity-50 blur-[80px] animate-blob" />
+          <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-indigo-100 to-cyan-100 opacity-50 blur-[80px] animate-blob animation-delay-2000" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.03]" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <SectionReveal>
-              <div className="section-pill mb-8">
-                <Sparkles className="h-3 w-3" />
-                Dedicated Service
-              </div>
-              <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-8">
-                Bespoke <span className="gradient-text">Dedicated</span> Software Teams
-              </h1>
-              <p className="text-lg text-slate-600 leading-relaxed mb-10">
-                Custom-made software development teams of experienced, skilled, reliable, & professional resources, built specific to your requirements, enable the building of scalable, secure, and robust software solutions.
-              </p>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
+          <SectionReveal className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50/80 border border-blue-100 text-blue-600 text-sm font-semibold mb-6 shadow-sm backdrop-blur-md">
+              <Sparkles className="w-4 h-4" />
+              <span>Dedicated Software Teams in India</span>
+            </div>
+            
+            <h1 className="font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl leading-[1.1] mb-6">
+              Build a Dedicated Software Team That <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Works Like Your Own</span>
+            </h1>
+            
+            <p className="mt-6 text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              TECUNIQUE helps software companies build full-time development, QA, automation, DevOps, and support teams in India. You select the team. We manage recruitment, onboarding, payroll, HR, infrastructure, NDA, and long-term team continuity.
+            </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {[
-                  "Top-notch Software Experts",
-                  "Flexible Engagement Models",
-                  "Strict Non-Disclosure Agreement",
-                  "Customized Processes",
-                  "Assured Transparency",
-                  "Complete Team Control"
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="inline-flex h-14 items-center justify-center rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-xl shadow-blue-900/20 transition-all hover:bg-blue-700 hover:scale-105"
+              >
+                Build Your Team
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </Link>
+              <Link 
+                href="/contact" 
+                className="inline-flex h-14 items-center justify-center rounded-full border-2 border-slate-200 bg-white/50 backdrop-blur-sm px-8 text-base font-bold text-slate-700 transition-all hover:bg-white hover:border-slate-300 hover:scale-105"
+              >
+                Book a Capability Call
+              </Link>
+            </div>
 
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="rounded-xl px-8 group" asChild>
-                  <Link href="/contact">
-                    Build Your Team
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
+            {/* Hero Stats */}
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-slate-200/60 max-w-4xl mx-auto">
+              <div className="flex flex-col items-center">
+                <span className="text-3xl font-black text-slate-900">15+ Years</span>
+                <span className="text-sm font-medium text-slate-500 mt-1 uppercase tracking-wider">in Software Services</span>
               </div>
-            </SectionReveal>
-
-            <SectionReveal delay={200}>
-              <div className="grid grid-cols-1 gap-6">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="glass-card p-8 rounded-3xl border border-white/50 shadow-xl flex items-center justify-between group hover:border-primary/20 transition-all">
-                    <div>
-                      <p className="text-4xl font-black text-primary mb-1">{stat.value}</p>
-                      <p className="text-xs font-bold uppercase tracking-widest text-slate-500">{stat.label}</p>
-                    </div>
-                    <div className="h-12 w-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                      <TrendingUp className="h-6 w-6" />
-                    </div>
-                  </div>
-                ))}
+              <div className="flex flex-col items-center">
+                <span className="text-3xl font-black text-slate-900">High</span>
+                <span className="text-sm font-medium text-slate-500 mt-1 uppercase tracking-wider">Team Retention</span>
               </div>
-            </SectionReveal>
-          </div>
+              <div className="flex flex-col items-center">
+                <span className="text-3xl font-black text-slate-900">Long-Term</span>
+                <span className="text-sm font-medium text-slate-500 mt-1 uppercase tracking-wider">Client Relationships</span>
+              </div>
+            </div>
+          </SectionReveal>
         </div>
       </section>
 
-      {/* What We Offer Section */}
-      <section className="py-24 lg:py-32 bg-white">
+      {/* 2. What Is a Dedicated Software Team? */}
+      <section className="py-20 lg:py-28 bg-white border-y border-slate-200/50">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <SectionReveal className="text-center">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-8">What Is a Dedicated Software Team?</h2>
+            <div className="space-y-6 text-xl text-slate-600 leading-relaxed text-left bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm">
+              <p>
+                A dedicated software team is a full-time team of engineers who work exclusively on your product, project, or platform. Unlike short-term outsourcing, this model is designed for continuity, product knowledge, and long-term collaboration.
+              </p>
+              <p>
+                With TECUNIQUE, clients can interview and select team members, define priorities, manage delivery direction, and work directly with the team, while TECUNIQUE handles the operational responsibilities in India.
+              </p>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* 3. Build the Team You Need */}
+      <section className="py-24 lg:py-32 bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionReveal className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">What TECUNIQUE Offers</h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              TECUNIQUE’s dedicated teams service offers a cost-effective solution for engaging different kinds of software workforce – development, quality assurance, and technical support teams. The team size is adjustable and depends on your current needs.
+          <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">Build the Team You Need</h2>
+            <p className="text-xl text-slate-600">
+              We provide specific engineering disciplines to plug directly into your technical organization.
             </p>
           </SectionReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {roles.map((role, i) => (
-              <SectionReveal key={role.title} delay={i * 100} className="h-full">
-                <div className="premium-card p-6 rounded-3xl border border-slate-100 flex flex-col items-center justify-center text-center group h-full min-h-[160px]">
-                  <div className="h-14 w-14 rounded-2xl bg-slate-50 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-500 shrink-0">
-                    <role.icon className="h-7 w-7" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {teamRoles.map((role, i) => (
+              <SectionReveal key={role.title} delay={i * 100}>
+                <div className="relative overflow-hidden h-full rounded-3xl border border-slate-200 bg-white p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${role.color} opacity-[0.03] rounded-bl-full group-hover:opacity-[0.08] transition-opacity duration-300`} />
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${role.color} text-white mb-6 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+                    <role.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 leading-tight">{role.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{role.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{role.description}</p>
                 </div>
               </SectionReveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16 p-10 lg:p-16 rounded-[3rem] bg-slate-50 border border-slate-200/60 relative overflow-hidden">
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Extended Team Support</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  It will provide extended team support for your software development projects off-site or offshore as per your specific business needs and provide you with complete control over your project and operations.
-                </p>
-                <p className="text-slate-600 leading-relaxed">
-                  We will also ensure transparent communications and close collaboration over the period of engagement.
-                </p>
-              </div>
-              <div className="relative">
-                <div className="aspect-video rounded-3xl bg-white shadow-xl flex items-center justify-center border border-slate-200 overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-50" />
-                  <Users className="h-20 w-20 text-primary/20 group-hover:scale-110 transition-transform duration-700" />
-                </div>
-              </div>
-            </div>
+      {/* 4. How the Model Works */}
+      <section className="py-24 lg:py-32 bg-white border-y border-slate-200/50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionReveal className="mx-auto max-w-3xl text-center mb-20">
+            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">How We Build Your Dedicated Team</h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mx-auto">
+            {buildSteps.map((step, index) => {
+              let orderClass = "";
+              if (index === 0) orderClass = "order-1";
+              if (index === 1) orderClass = "order-2";
+              if (index === 2) orderClass = "order-3 md:order-4 lg:order-3";
+              if (index === 3) orderClass = "order-4 md:order-3 lg:order-6";
+              if (index === 4) orderClass = "order-5 md:order-5 lg:order-5";
+              if (index === 5) orderClass = "order-6 md:order-6 lg:order-4";
+              
+              return (
+                <SectionReveal key={step.step} delay={index * 100} className={`relative group h-full ${orderClass}`}>
+                  <div className="flex flex-col h-full bg-[#0052CC] text-white p-8 lg:p-10 relative overflow-hidden transition-transform duration-300 rounded-xl hover:-translate-y-1 hover:shadow-xl shadow-[#0052CC]/20">
+                    {/* Chevron Background Element */}
+                    <div 
+                      className="absolute inset-0 bg-white/10 transition-transform duration-700 group-hover:translate-x-2"
+                      style={{ clipPath: 'polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%)' }}
+                    />
+                    
+                    <div className="relative z-10 flex-1 flex flex-col">
+                      <h3 className="text-2xl font-bold font-display mb-6 tracking-tight">
+                        <span className="block text-blue-200 mb-1 font-semibold tracking-normal uppercase text-sm">Step {step.step}</span>
+                        {step.title}
+                      </h3>
+                      <p className="text-blue-100 text-base leading-relaxed mb-10 flex-1">
+                        {step.description}
+                      </p>
+                      <div className="flex justify-end mt-auto">
+                        {index === 5 ? (
+                          <CheckCircle2 className="h-6 w-6 text-blue-300 group-hover:text-white transition-all" />
+                        ) : (
+                          <>
+                            {/* Mobile (1 col): All Down */}
+                            <ArrowDown className="md:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />
+                            
+                            {/* Tablet (md, 2 cols): 1=Right, 2=Down, 3=Left, 4=Down, 5=Right */}
+                            {index === 0 && <ArrowRight className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-x-1 transition-all" />}
+                            {index === 1 && <ArrowDown className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />}
+                            {index === 2 && <ArrowLeft className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:-translate-x-1 transition-all" />}
+                            {index === 3 && <ArrowDown className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />}
+                            {index === 4 && <ArrowRight className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-x-1 transition-all" />}
+
+                            {/* Desktop (lg, 3 cols): 1=Right, 2=Right, 3=Down, 4=Left, 5=Left */}
+                            {(index === 0 || index === 1) && <ArrowRight className="hidden lg:block h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-x-1 transition-all" />}
+                            {index === 2 && <ArrowDown className="hidden lg:block h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />}
+                            {(index === 3 || index === 4) && <ArrowLeft className="hidden lg:block h-6 w-6 text-blue-300 group-hover:text-white group-hover:-translate-x-1 transition-all" />}
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </SectionReveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24 lg:py-32 bg-slate-50/50">
+      {/* 5. What TECUNIQUE Manages */}
+      <section className="py-24 lg:py-32 bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.05]" />
+        
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+          <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6">You Manage the Product. <span className="text-blue-400">We Manage the Operations.</span></h2>
+            <p className="text-xl text-slate-400">This clear division of responsibility is the core of our successful model.</p>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+            {/* Client Controls */}
+            <SectionReveal delay={100} className="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-slate-700">
+              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-slate-700/50">
+                <div className="h-12 w-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                  <CheckCircle2 className="h-6 w-6 text-blue-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Client Controls</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "Product roadmap", "Sprint priorities", "Technical direction",
+                  "Daily collaboration", "Task allocation", "Performance feedback", "Delivery expectations"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <ArrowRight className="h-5 w-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span className="text-slate-300 text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </SectionReveal>
+
+            {/* TECUNIQUE Handles */}
+            <SectionReveal delay={200} className="bg-blue-600 rounded-3xl p-8 lg:p-10 border border-blue-500 shadow-2xl shadow-blue-900/50">
+              <div className="flex items-center gap-4 mb-8 pb-6 border-b border-blue-500/50">
+                <div className="h-12 w-12 rounded-xl bg-white/20 flex items-center justify-center">
+                  <Building2 className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">TECUNIQUE Handles</h3>
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "Recruitment support", "Employment and payroll", "HR and employee engagement",
+                  "NDA and contracts", "Infrastructure and work environment", "Attendance and administration",
+                  "Retention support", "Replacement/backfill coordination where needed"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-200 shrink-0 mt-0.5" />
+                    <span className="text-blue-50 text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. When This Model Works Best */}
+      <section className="py-24 lg:py-32 bg-slate-50 border-b border-slate-200/50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionReveal className="text-center mb-20">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">Benefits of Our Dedicated Teams</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Embrace capabilities of custom software development services, product development, and quality assurance for businesses of all sizes and shapes.
+          <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">When Dedicated Teams Are the Right Fit</h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {rightFitscenarios.map((item, i) => (
+              <SectionReveal key={item.title} delay={i * 100}>
+                <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 h-full group relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-50 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="h-1.5 w-12 bg-blue-600 rounded-full mb-6 group-hover:w-24 transition-all duration-300" />
+                  <h4 className="text-xl font-bold text-slate-900 mb-3 relative z-10">{item.title}</h4>
+                  <p className="text-slate-600 leading-relaxed relative z-10">{item.description}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Why TECUNIQUE */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Why Companies Choose TECUNIQUE for Dedicated Teams</h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {whyChooseUs.map((item, i) => (
+              <SectionReveal key={item.title} delay={i * 100}>
+                <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 h-full group relative overflow-hidden">
+                  {/* Decorative background circle */}
+                  <div className="absolute -right-6 -top-6 w-32 h-32 bg-slate-50 rounded-full group-hover:bg-blue-50 transition-colors duration-500 z-0" />
+                  
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 relative z-10 shadow-sm">
+                    <item.icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 relative z-10">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed relative z-10">{item.description}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Relevant Experience / Trust Proof */}
+      <section className="py-24 lg:py-32 bg-slate-50 border-t border-slate-200/50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-6">Built Through Long-Term Client Relationships</h2>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              TECUNIQUE has supported international software companies across Atlassian apps, product engineering, QA, data platforms, and offshore development teams. Our dedicated team model has been used for long-term development, QA, automation, support, and product maintenance engagements.
             </p>
           </SectionReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, i) => (
-              <SectionReveal key={benefit.title} delay={i * 100} className="h-full">
-                <div className="bg-white p-6 rounded-2xl border border-slate-200/60 shadow-sm flex items-center gap-4 hover:border-primary/30 hover:shadow-md transition-all h-full">
-                  <div className="h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary shrink-0">
-                    <benefit.icon className="h-5 w-5" />
-                  </div>
-                  <span className="font-bold text-slate-900 text-sm">{benefit.title}</span>
+            {[
+              { category: "Atlassian App Vendors", companies: ["Appfire", "Innovalog", "Qotilabs"] },
+              { category: "Product Engineering & Data Platforms", companies: ["OPPSCIENCE", "CustomerMatrix", "PolySpot"] },
+              { category: "ODC / Offshore Team Setup", companies: ["SkySelect"] },
+              { category: "Product Development & Support", companies: ["eXtensi", "Validat"] }
+            ].map((block, i) => (
+              <SectionReveal key={block.category} delay={i * 100} className="bg-white p-8 rounded-3xl border border-slate-200 text-center flex flex-col justify-center">
+                <h4 className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-6">{block.category}</h4>
+                <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6">
+                  {block.companies.map((company) => {
+                    const companyLogos: Record<string, string> = {
+                      "Innovalog": "/images/companies/innovalog.png",
+                      "Qotilabs": "/images/companies/quotilabs.png",
+                      "OPPSCIENCE": "/images/companies/oppscience.svg",
+                      "CustomerMatrix": "/images/companies/customer_matrix.webp",
+                      "PolySpot": "/images/companies/polyspot.webp",
+                      "SkySelect": "/images/companies/skyselect.svg"
+                    };
+
+                    return (
+                      <div key={company} className="flex flex-col items-center group">
+                        {companyLogos[company] ? (
+                          <div className="relative h-10 w-28">
+                            <Image 
+                              src={companyLogos[company]} 
+                              alt={company} 
+                              fill 
+                              className="object-contain transition-transform duration-300 group-hover:scale-110" 
+                            />
+                          </div>
+                        ) : (
+                          <div className="h-10 w-auto min-w-[80px] bg-slate-100 border border-slate-200 rounded flex items-center justify-center px-3 group-hover:border-blue-300 transition-colors">
+                            <span className="text-sm font-bold text-slate-400 group-hover:text-blue-500 transition-colors">{company}</span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </SectionReveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <SectionReveal className="mt-20">
-            <div className="max-w-3xl mx-auto text-center p-12 bg-white rounded-[2.5rem] border border-primary/10 shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center justify-center gap-3">
-                <Settings className="h-6 w-6 text-primary" />
-                Ease of Management
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-lg">
-                The range of the Indian talent market and regulatory framework allows ease and flexibility in managing your dedicated team of software engineers.
-              </p>
+      {/* 9. Testimonial (David Fischer) */}
+      <section className="py-24 lg:py-32 bg-white border-t border-slate-200/50 relative overflow-hidden">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 relative z-10">
+          <SectionReveal className="text-center">
+            <svg className="mx-auto h-12 w-12 text-blue-200 mb-8" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+            </svg>
+            <p className="text-2xl font-medium leading-relaxed text-slate-900 mb-8">
+              "TECUNIQUE has been a reliable partner for us. Their dedicated team model provided the exact engineering continuity we needed for our long-term product development, allowing us to scale our capacity seamlessly without the overhead of local hiring."
+            </p>
+            <div className="flex flex-col items-center justify-center">
+              <div className="h-14 w-14 rounded-full mb-4 border-2 border-white shadow-md overflow-hidden relative">
+                <Image src="/images/testimonial/david.webp" alt="David Fischer" fill className="object-cover" />
+              </div>
+              <div className="font-bold text-slate-900">David Fischer</div>
+              <div className="text-blue-600 font-medium text-sm">Innovalog</div>
             </div>
           </SectionReveal>
         </div>
       </section>
 
-      {/* When to Choose Section */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <SectionReveal>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-8">When is the Dedicated Team Model a good fit?</h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                The Dedicated Team model is ideal for projects where you need consistency, flexibility, and scalability.
-              </p>
-              <div className="space-y-4">
-                {goodFit.map((text, i) => (
-                  <div key={i} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 transition-colors hover:bg-white hover:border-primary/20">
-                    <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 mt-1">
-                      <span className="text-xs font-bold">{i + 1}</span>
-                    </div>
-                    <p className="text-slate-700 font-medium leading-relaxed">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </SectionReveal>
-
-            <SectionReveal delay={200} className="relative">
-              <div className="aspect-square rounded-[3rem] bg-gradient-to-br from-primary/5 to-secondary/5 border border-slate-200 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(#6366f1 2px, transparent 2px)", backgroundSize: "30px 30px" }} />
-                <div className="relative z-10 text-center p-12">
-                  <div className="h-24 w-24 rounded-full bg-white shadow-xl flex items-center justify-center text-primary mx-auto mb-8 animate-bounce-slow">
-                    <Sparkles className="h-12 w-12" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Strategic Partnership</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    We don't just provide resources; we provide a foundation for long-term growth and technical excellence.
-                  </p>
-                </div>
-              </div>
-            </SectionReveal>
-          </div>
+      {/* 10. Final CTA */}
+      <section className="py-24 lg:py-32 bg-blue-600 relative overflow-hidden">
+        {/* Abstract Background Patterns */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800" />
+        <div className="absolute inset-0 opacity-20">
+          <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid-pattern-cta" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M0 40V0H40" fill="none" stroke="white" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid-pattern-cta)" />
+          </svg>
         </div>
-      </section>
-
-      {/* Why TECUNIQUE Section */}
-      <section className="py-24 lg:py-32 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,theme(colors.primary.500/0.1),transparent_50%)]" />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-          <SectionReveal className="text-center mb-20">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6">Why TECUNIQUE for Dedicated Teams</h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              Custom-built dedicated team, adapted to the processes and principals defined by you.
+        <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-white/10 blur-[80px]" />
+        
+        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center z-10">
+          <SectionReveal>
+            <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-8">
+              Ready to Build a Dedicated Software Team?
+            </h2>
+            <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-12">
+              Tell us the roles, skills, and team size you need. We will help you evaluate the right professionals and set up a dedicated team that works with your tools, processes, and product goals.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-base font-bold text-indigo-700 shadow-xl shadow-indigo-900/20 transition-all hover:bg-slate-50 hover:scale-105"
+              >
+                Book a Capability Call
+                <ChevronRight className="ml-2 w-5 h-5" />
+              </Link>
+              <Link 
+                href="/services" 
+                className="inline-flex h-14 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 text-base font-bold text-white transition-all hover:bg-white/20 hover:scale-105"
+              >
+                Explore All Services
+              </Link>
+            </div>
           </SectionReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyUs.map((item, i) => (
-              <SectionReveal key={item.title} delay={i * 100} className="h-full">
-                <div className="h-full p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 group">
-                  <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-widest text-[10px]">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
-                </div>
-              </SectionReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section
-        className="relative overflow-hidden py-20 lg:py-28"
-        style={{ background: "linear-gradient(135deg, #f8f7ff 0%, #ede9fe 40%, #f0f9ff 100%)" }}
-      >
-        {/* Decorative elements */}
-        <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
-          <div
-            className="absolute -top-20 left-1/4 h-72 w-72 rounded-full opacity-40 blur-3xl"
-            style={{ background: "radial-gradient(circle, #a5b4fc 0%, transparent 70%)" }}
-          />
-          <div
-            className="absolute -bottom-20 right-1/4 h-64 w-64 rounded-full opacity-30 blur-3xl"
-            style={{ background: "radial-gradient(circle, #67e8f9 0%, transparent 70%)" }}
-          />
-          {/* Grid */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: "linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-
-            <SectionReveal>
-              {/* Main heading */}
-              <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-tight">
-                Ready to{" "}
-                <span className="gradient-text">Build</span>
-                {" "}Your Team?
-              </h2>
-
-              <p className="mt-6 text-xl text-slate-600 leading-relaxed max-w-xl mx-auto">
-                Let's discuss how our expert software engineers can seamlessly integrate with your operations.
-              </p>
-
-              {/* CTAs */}
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] group"
-                  style={{
-                    background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
-                    boxShadow: "0 8px 30px rgba(99,102,241,0.35)",
-                  }}
-                >
-                  Book a Capability Call
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white/80 px-8 py-4 text-base font-semibold text-slate-900 shadow-sm transition-all duration-200 hover:border-indigo-200 hover:bg-white hover:shadow-md backdrop-blur-sm"
-                >
-                  Explore Services
-                </Link>
-              </div>
-
-              {/* Trust badges */}
-              <div className="mt-12 flex flex-wrap items-center justify-center gap-6">
-                {[
-                  { icon: Shield, label: "NDA Protected" },
-                  { icon: FileCheck, label: "Strict Quality Control" },
-                  { icon: Clock3, label: "On-Time Delivery" },
-                ].map((badge) => (
-                  <div
-                    key={badge.label}
-                    className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-5 py-2.5 backdrop-blur-sm shadow-sm"
-                  >
-                    <badge.icon className="h-4 w-4 text-indigo-600" />
-                    <span className="text-sm font-medium text-slate-700">{badge.label}</span>
-                  </div>
-                ))}
-              </div>
-            </SectionReveal>
-          </div>
         </div>
       </section>
 
