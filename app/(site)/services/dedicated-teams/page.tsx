@@ -174,14 +174,14 @@ export default function ServicesPage() {
                 href="/contact" 
                 className="inline-flex h-14 items-center justify-center rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-xl shadow-blue-900/20 transition-all hover:bg-blue-700 hover:scale-105"
               >
-                Build Your Team
+                Build Your Dedicated Team
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Link>
               <Link 
                 href="/contact" 
                 className="inline-flex h-14 items-center justify-center rounded-full border-2 border-slate-200 bg-white/50 backdrop-blur-sm px-8 text-base font-bold text-slate-700 transition-all hover:bg-white hover:border-slate-300 hover:scale-105"
               >
-                Book a Capability Call
+                Discuss Team Requirements
               </Link>
             </div>
 
@@ -227,7 +227,7 @@ export default function ServicesPage() {
           <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
             <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">Build the Team You Need</h2>
             <p className="text-xl text-slate-600">
-              We provide specific engineering disciplines to plug directly into your technical organization.
+              Build a full-time team across the engineering, QA, automation, DevOps, and support roles your product needs.
             </p>
           </SectionReveal>
 
@@ -325,7 +325,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
             {/* Client Controls */}
-            <SectionReveal delay={100} className="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-slate-700">
+            <SectionReveal delay={100} className="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-slate-700 hover:-translate-y-1 hover:border-slate-500 hover:shadow-2xl transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-8 pb-6 border-b border-slate-700/50">
                 <div className="h-12 w-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
                   <CheckCircle2 className="h-6 w-6 text-blue-400" />
@@ -346,7 +346,7 @@ export default function ServicesPage() {
             </SectionReveal>
 
             {/* TECUNIQUE Handles */}
-            <SectionReveal delay={200} className="bg-blue-600 rounded-3xl p-8 lg:p-10 border border-blue-500 shadow-2xl shadow-blue-900/50">
+            <SectionReveal delay={200} className="bg-blue-600 rounded-3xl p-8 lg:p-10 border border-blue-500 shadow-2xl shadow-blue-900/50 hover:-translate-y-1 hover:border-blue-400 hover:shadow-blue-900/80 transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-8 pb-6 border-b border-blue-500/50">
                 <div className="h-12 w-12 rounded-xl bg-white/20 flex items-center justify-center">
                   <Building2 className="h-6 w-6 text-white" />
@@ -478,18 +478,19 @@ export default function ServicesPage() {
       <section className="py-24 lg:py-32 bg-white border-t border-slate-200/50 relative overflow-hidden">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 relative z-10">
           <SectionReveal className="text-center">
-            <svg className="mx-auto h-12 w-12 text-blue-200 mb-8" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-              <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-            </svg>
-            <p className="text-2xl font-medium leading-relaxed text-slate-900 mb-8">
-              "TECUNIQUE has been a reliable partner for us. Their dedicated team model provided the exact engineering continuity we needed for our long-term product development, allowing us to scale our capacity seamlessly without the overhead of local hiring."
+            <div className="flex flex-col items-center mb-8">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-semibold mb-6">
+                Client Relationship Highlight
+              </span>
+            </div>
+            <p className="text-2xl font-medium leading-relaxed text-slate-900 mb-8 max-w-3xl mx-auto">
+              TECUNIQUE’s long-term collaboration with Innovalog included dedicated development and QA support for Atlassian Marketplace products, helping preserve product knowledge and engineering continuity over time.
             </p>
             <div className="flex flex-col items-center justify-center">
               <div className="h-14 w-14 rounded-full mb-4 border-2 border-white shadow-md overflow-hidden relative">
-                <Image src="/images/testimonial/david.webp" alt="David Fischer" fill className="object-cover" />
+                <Image src="/images/companies/innovalog.png" alt="Innovalog" fill className="object-contain p-2" />
               </div>
-              <div className="font-bold text-slate-900">David Fischer</div>
-              <div className="text-blue-600 font-medium text-sm">Innovalog</div>
+              <div className="font-bold text-slate-900">Innovalog</div>
             </div>
           </SectionReveal>
         </div>
@@ -524,14 +525,14 @@ export default function ServicesPage() {
                 href="/contact" 
                 className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-base font-bold text-indigo-700 shadow-xl shadow-indigo-900/20 transition-all hover:bg-slate-50 hover:scale-105"
               >
-                Book a Capability Call
+                Build Your Dedicated Team
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Link>
               <Link 
-                href="/services" 
+                href="/contact" 
                 className="inline-flex h-14 items-center justify-center rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 text-base font-bold text-white transition-all hover:bg-white/20 hover:scale-105"
               >
-                Explore All Services
+                Discuss Team Requirements
               </Link>
             </div>
           </SectionReveal>

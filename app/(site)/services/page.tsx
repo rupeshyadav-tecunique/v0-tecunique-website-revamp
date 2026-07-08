@@ -39,7 +39,7 @@ const executionSteps = [
 export default function ServicesPage() {
   return (
     <div className="flex flex-col w-full bg-slate-50">
-      
+
       {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 bg-white"
@@ -58,7 +58,7 @@ export default function ServicesPage() {
               Our Services
             </div>
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-4">
-              On-Demand Engineering Teams & <br className="hidden lg:block"/>
+              On-Demand Engineering Teams & <br className="hidden lg:block" />
               <span className="gradient-text">Custom Atlassian Solutions</span>
             </h1>
             <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -67,7 +67,7 @@ export default function ServicesPage() {
             <div className="mt-8 flex items-center justify-center gap-6">
               <Button size="lg" className="rounded-xl px-10 h-12 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5" asChild>
                 <Link href="/contact">
-                  Book a Capability Call
+                  Discuss Your Requirement
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -79,20 +79,20 @@ export default function ServicesPage() {
       {/* Two Pillars Section */}
       <section className="py-24 lg:py-32 bg-slate-50 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            
+
             {/* Pillar 1 */}
             <SectionReveal direction="left" className="flex flex-col h-full bg-white rounded-[2rem] p-10 lg:p-14 border border-slate-200 shadow-xl shadow-slate-200/50 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 to-purple-600" />
-              
+
               <div className="flex items-center gap-4 mb-8">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 shrink-0">
                   <Code className="h-8 w-8" />
                 </div>
                 <h2 className="text-3xl font-bold font-display text-slate-900">Dedicated Software Teams</h2>
               </div>
-              
+
               <p className="text-slate-600 leading-relaxed mb-12 text-lg">
                 Scale your engineering capacity instantly with our specialized software teams. We build secure, robust, and custom digital products from the ground up.
               </p>
@@ -132,14 +132,14 @@ export default function ServicesPage() {
             {/* Pillar 2 */}
             <SectionReveal direction="right" className="flex flex-col h-full bg-white rounded-[2rem] p-10 lg:p-14 border border-slate-200 shadow-xl shadow-slate-200/50 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#0052CC] to-[#2684FF]" />
-              
+
               <div className="flex items-center gap-4 mb-8">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-[#0052CC] shrink-0">
                   <Layers className="h-8 w-8" />
                 </div>
                 <h2 className="text-3xl font-bold font-display text-slate-900">Atlassian Enterprise Services</h2>
               </div>
-              
+
               <p className="text-slate-600 leading-relaxed mb-12 text-lg">
                 We help top-tier marketplace vendors and enterprises architect, build, and optimize high-performing Atlassian applications.
               </p>
@@ -198,11 +198,11 @@ export default function ServicesPage() {
                 <SectionReveal key={step.id} delay={index * 100} className="relative group h-full">
                   <div className="flex flex-col h-full bg-[#0052CC] text-white p-8 lg:p-10 relative overflow-hidden transition-transform duration-300 rounded-xl hover:-translate-y-1 hover:shadow-xl shadow-[#0052CC]/20">
                     {/* Chevron Background Element */}
-                    <div 
+                    <div
                       className="absolute inset-0 bg-white/10 transition-transform duration-700 group-hover:translate-x-2"
                       style={{ clipPath: 'polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%)' }}
                     />
-                    
+
                     <div className="relative z-10 flex-1 flex flex-col">
                       <h3 className="text-2xl font-bold font-display mb-6 tracking-tight">
                         <span className="block text-blue-200 text-lg mb-1 font-semibold tracking-normal uppercase text-sm">Phase {step.id}</span>
@@ -273,7 +273,7 @@ export default function ServicesPage() {
                     boxShadow: "0 8px 30px rgba(99,102,241,0.35)",
                   }}
                 >
-                  Book a Capability Call
+                  Discuss Your Requirement
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
