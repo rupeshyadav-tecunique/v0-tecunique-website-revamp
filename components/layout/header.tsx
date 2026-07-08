@@ -47,7 +47,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <Image
-            src="/images/teclogo.png"
+            src="/images/logos/tecunique-logo-modern-refresh.svg"
             alt="TecUnique Logo"
             width={180}
             height={50}

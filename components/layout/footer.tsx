@@ -83,7 +83,7 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-5">
             <Link href="/">
               <Image
-                src="/images/teclogo.png"
+                src="/images/logos/tecunique-logo-white.svg"
                 alt="TecUnique Logo"
                 width={180}
                 height={50}

@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'TECUNIQUE',
   },
+  icons: {
+    icon: '/images/logos/tecunique-icon-modern-refresh.svg',
+    shortcut: '/images/logos/tecunique-icon-modern-refresh-favicon-512px.png',
+    apple: '/images/logos/tecunique-icon-modern-refresh-favicon-512px.png',
+  },
 }
 
 export default function RootLayout({
