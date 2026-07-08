@@ -113,12 +113,6 @@ const atlassianExperience = [
   }
 ]
 
-const leaders = [
-  { name: "Jaydeep", role: "CEO", experience: "16 yrs", image: "/images/leaders/default.jpg" },
-  { name: "Ankur", role: "TL", experience: "16 yrs", image: "/images/leaders/default.jpg" },
-  { name: "Ashish", role: "QA Lead", experience: "15 yrs", image: "/images/leaders/default.jpg" },
-  { name: "Ankita", role: "Developer", experience: "14 yrs", image: "/images/leaders/default.jpg" },
-]
 
 export default function AboutPage() {
   return (
@@ -177,8 +171,8 @@ export default function AboutPage() {
           <SectionReveal className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">
               <div className="aspect-square rounded-3xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-indigo-600 opacity-90 z-10 mix-blend-multiply" />
-                <Image src="/images/hero-1.webp" alt="Our Story" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-10" />
+                <Image src="/images/events/AnnualMeet/annualmeet1.JPG" alt="Our Story" fill className="object-cover" />
                 <div className="absolute inset-0 z-20 p-10 flex flex-col justify-end text-white">
                   <QuoteIcon className="w-12 h-12 text-white/30 mb-4" />
                   <p className="text-2xl font-medium leading-snug">"Software companies need reliable engineering teams, not just temporary resources."</p>
@@ -266,7 +260,7 @@ export default function AboutPage() {
 
             <div className="relative hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-3xl transform rotate-3 scale-105" />
-              <Image src="/images/services/team.webp" alt="How we work" width={600} height={700} className="rounded-3xl relative z-10 shadow-2xl object-cover h-[700px] w-full" />
+              <Image src="/images/services/team-aug.png" alt="How we work" width={600} height={700} className="rounded-3xl relative z-10 shadow-2xl object-cover h-[700px] w-full" />
             </div>
           </SectionReveal>
         </div>
@@ -337,7 +331,7 @@ export default function AboutPage() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-start sm:gap-12 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                      <div className="hidden sm:block w-24 shrink-0 text-right">
+                      <div className="hidden sm:block w-24 shrink-0 text-right" aria-hidden="true">
                         <span className="text-3xl font-black text-slate-200 group-hover:text-blue-500 transition-colors duration-300">{event.year}</span>
                       </div>
 
@@ -420,24 +414,26 @@ export default function AboutPage() {
             </div>
           </SectionReveal>
 
-          {/* Leaders Grid (Enhanced Hover Effects) */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {leaders.map((leader, i) => (
-              <SectionReveal key={leader.name} delay={i * 100} className="flex flex-col items-center text-center group">
-                <div className="relative h-32 w-32 sm:h-48 sm:w-48 mb-6 overflow-hidden rounded-[2rem] border-4 border-white shadow-lg group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500">
-                  <div className="absolute inset-0 bg-blue-600/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10" />
-                  <Image
-                    src={leader.image}
-                    alt={leader.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900">{leader.name}</h3>
-                <p className="text-blue-600 font-semibold mt-1">{leader.role}</p>
-                <p className="text-sm font-medium text-slate-500 mt-1">{leader.experience} with TECUNIQUE</p>
-              </SectionReveal>
-            ))}
+          {/* Founder Section and Proof Points */}
+          <div className="max-w-4xl mx-auto text-left flex flex-col md:flex-row gap-12">
+            <div className="md:w-1/2">
+              <p className="text-xl font-medium text-slate-900 mt-6">Jaydeep Chhasatia</p>
+              <p className="text-slate-500">Founder / Managing Director, TECUNIQUE</p>
+            </div>
+            <div className="md:w-1/2 space-y-6 border-t md:border-t-0 md:border-l border-slate-200 pt-8 md:pt-0 md:pl-10">
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Stable Core Team</h4>
+                <p className="text-slate-600 text-sm">Long-tenured people with deep product and client context.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Low-Attrition Culture</h4>
+                <p className="text-slate-600 text-sm">A work environment built around trust, flexibility, and ownership.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Client Continuity</h4>
+                <p className="text-slate-600 text-sm">Teams are structured to preserve knowledge and reduce repeated onboarding.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -471,7 +467,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-base font-bold text-indigo-700 shadow-xl shadow-indigo-900/20 transition-all hover:bg-slate-50 hover:scale-105"
               >
-                Book a Call
+                Discuss Your Requirement
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Link>
               <Link

@@ -91,7 +91,7 @@ export function Footer() {
               />
             </Link>
             <p className="max-w-xs text-sm text-slate-400 leading-relaxed">
-              Trusted Software Engineering & Atlassian Apps Expertise. Dedicated teams delivering high-quality software at speed since 2010.
+              Trusted software engineering and dedicated teams for product companies. Supporting development, QA, automation, and Atlassian app work since 2010.
             </p>
 
             {/* Contact quick info */}
