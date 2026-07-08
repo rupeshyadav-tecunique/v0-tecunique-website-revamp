@@ -88,6 +88,7 @@ const techCategories: TechCategory[] = [
       { name: "Confluence", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg" },
       { name: "Forge", icon: Blocks },
       { name: "Connect", icon: Plug },
+      { name: "Rovo", icon: Brain },
     ]
   }
 ]

@@ -52,8 +52,8 @@ export function CTASection() {
             {" "}Your Product?
           </h2>
 
-          <p className="reveal mt-6 text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            Let's build your next big idea together. We provide the expertise, you provide the vision.
+          <p className="reveal mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Looking to build a dedicated team or strengthen your product engineering capacity? Let's discuss how TECUNIQUE can support your development, QA, automation, or Atlassian app needs.
           </p>
 
           {/* CTAs */}
@@ -66,7 +66,7 @@ export function CTASection() {
                 boxShadow: "0 8px 30px rgba(99,102,241,0.35)",
               }}
             >
-              Book a Call
+              Discuss Your Requirement
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

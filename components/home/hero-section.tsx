@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react"
 import { Button } from "../ui/button"
 import { WordRotate } from "../ui/word-rotate"
 import { HeroDashboard } from "./hero-dashboard"
+import { HeroVisual } from "./hero-visual"
 
 const trustedBy = [
   "Appfire",
@@ -86,35 +87,35 @@ export function HeroSection() {
             <div className="hero-reveal mb-2 inline-flex">
               <span className="section-pill">
                 <Sparkles className="h-3 w-3" />
-                15+ Years of Software Excellence
+                15+ Years in Software Services
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="hero-reveal font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl leading-tight">
               Trusted Software Engineering <br className="hidden sm:block" />
-              & <span className="text-[#0052CC]">Atlassian Apps</span> Expertise
+              & <span className="text-[#0052CC]">Dedicated Teams</span>
             </h1>
 
             {/* Dynamic Expertise */}
             <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex items-center gap-2">
               <span className="text-slate-600">Specializing in</span>
               <WordRotate
-                words={["Custom Development", "Dedicated Teams", "Cloud Solutions", "Product Design"]}
+                words={["Dedicated Teams", "Product Engineering", "QA Automation", "Cloud Solutions", "Atlassian Apps"]}
                 className="gradient-text"
               />
             </div>
 
             {/* Subheadline */}
             <p className="hero-reveal mt-2 text-sm leading-relaxed text-muted-foreground lg:text-base max-w-lg">
-              Scale with confidence. Dedicated teams delivering Atlassian apps and high-quality software at speed — since 2010.
+              Scale with confidence. TECUNIQUE helps software companies build dedicated development, QA, automation, and support teams in India — with proven experience across product engineering, cloud solutions, and Atlassian apps.
             </p>
 
             {/* Metrics Trust Badges */}
             <div className="hero-reveal mt-4 grid grid-cols-3 gap-2 max-w-md">
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-xl font-black text-foreground">15+</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years in IT</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years in Software Services</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-xl font-black text-foreground">95%</div>
@@ -122,7 +123,7 @@ export function HeroSection() {
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-xl font-black text-foreground">Long-Term</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Relationships</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Client Relationships</div>
               </div>
             </div>
 
@@ -130,7 +131,7 @@ export function HeroSection() {
             <div className="hero-reveal mt-6 flex flex-col sm:flex-row items-start gap-3">
               <Button className="rounded-xl px-6 h-10 text-sm font-semibold group" asChild>
                 <Link href="/contact">
-                  Book a Call
+                  Discuss Your Requirement
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
@@ -145,7 +146,7 @@ export function HeroSection() {
 
           {/* Right — Dashboard Visual */}
           <div className="relative flex items-center justify-center lg:justify-end hero-reveal mt-8 lg:mt-0">
-            <HeroDashboard />
+            <HeroVisual />
           </div>
         </div>
 

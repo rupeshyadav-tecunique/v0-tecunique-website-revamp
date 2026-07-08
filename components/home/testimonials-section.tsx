@@ -35,14 +35,6 @@ const testimonialSlides = [
         image: "/images/testimonial/den.webp",
         color: "#f43f5e"
       },
-      {
-        quote: "I always considered the TECUNIQUE consultants as a natural extension of my team. The Indian squad has been very professional, committed, and easy to work with.",
-        name: "Christophe Favart",
-        company: "CustomerMatrix",
-        category: "Data Platform",
-        image: "/images/testimonial/christophe.webp",
-        color: "#f59e0b"
-      }
     ]
   },
   {
@@ -211,8 +203,8 @@ export function TestimonialsSection() {
                   key={index}
                   onClick={() => goTo(index)}
                   className={`rounded-full transition-all duration-300 ${index === current
-                      ? "w-8 h-2.5 bg-blue-600"
-                      : "w-2.5 h-2.5 bg-slate-300 hover:bg-blue-400"
+                    ? "w-8 h-2.5 bg-blue-600"
+                    : "w-2.5 h-2.5 bg-slate-300 hover:bg-blue-400"
                     }`}
                   aria-label={`Go to testimonial slide ${index + 1}`}
                 />
