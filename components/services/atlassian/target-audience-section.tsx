@@ -9,7 +9,7 @@ const whoIsThisFor = [
   },
   {
     title: "SaaS / ISV Teams",
-    description: "For software companies integrating their products with Jira or Atlassian Cloud.",
+    description: "For software companies integrating their products with Jira, Atlassian Cloud, or Marketplace app workflows.",
     icon: Cloud
   },
   {

@@ -18,7 +18,7 @@ export function AtlassianExperience() {
               {
                 company: "Innovalog / JMWE",
                 logo: "/images/companies/innovalog.png",
-                desc: "Long-term development and QA support around Jira workflow app work."
+                desc: "Long-term development and QA support around Jira workflow app work. Experience included automation QA support using tools and frameworks such as ACLI, GINT, Groovy, Gradle, Selenium, and Playwright where applicable."
               },
               {
                 company: "Appfire",

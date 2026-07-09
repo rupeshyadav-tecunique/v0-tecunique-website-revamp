@@ -27,6 +27,9 @@ export function AtlassianHero() {
           <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
             TECUNIQUE helps Atlassian Marketplace vendors and software product companies build, test, automate, and maintain Jira apps. Our teams support app development, QA, automation, integrations, Forge/Connect work, and long-term product maintenance.
           </p>
+          <p className="mt-4 text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto font-medium">
+            Engagements can be structured as dedicated developers, QA engineers, automation engineers, or support engineers working as an extension of your product team.
+          </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/contact" 
@@ -44,7 +47,7 @@ export function AtlassianHero() {
           </div>
           
           <div className="mt-12 flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {["Jira Apps", "Forge & Connect", "Marketplace QA", "Automation Testing", "REST APIs", "Long-Term Support"].map(chip => (
+            {["Jira Apps", "Forge & Connect", "Marketplace App QA", "Automation Testing", "REST APIs", "Long-Term Support"].map(chip => (
               <span key={chip} className="px-4 py-2 rounded-full bg-white/60 border border-slate-200 text-slate-700 text-sm font-medium shadow-sm backdrop-blur-sm">
                 {chip}
               </span>
