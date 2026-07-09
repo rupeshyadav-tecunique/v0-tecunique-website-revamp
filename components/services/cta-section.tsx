@@ -33,13 +33,12 @@ export function ServicesCTA() {
           <SectionReveal>
             {/* Main heading */}
             <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-tight">
-              Ready to{" "}
-              <span className="gradient-text">Scale</span>
-              {" "}Your Engineering?
+              Need help choosing the <br className="hidden sm:block" />
+              <span className="gradient-text">right engagement model?</span>
             </h2>
 
-            <p className="mt-6 text-xl text-slate-600 leading-relaxed max-w-xl mx-auto">
-              Let's discuss how our dedicated teams and Atlassian expertise can accelerate your product roadmap.
+            <p className="mt-6 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              Tell us about your product, team structure, technology stack, and current delivery challenges. We can help you identify the right mix of dedicated development, QA, automation, Atlassian, or product engineering support.
             </p>
 
             {/* CTAs */}

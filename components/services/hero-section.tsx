@@ -19,20 +19,25 @@ export function ServicesHero() {
         <SectionReveal className="mx-auto max-w-4xl">
           <div className="section-pill mb-6 mx-auto inline-flex">
             <Sparkles className="h-3 w-3" />
-            Our Services
+            Services Built Around Long-Term Software Teams
           </div>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-4">
-            On-Demand Engineering Teams & <br className="hidden lg:block" />
-            <span className="gradient-text">Custom Atlassian Solutions</span>
+          <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
+            Engineering, QA, automation, and <br className="hidden lg:block" />
+            <span className="gradient-text">Atlassian app support</span> for product companies.
           </h1>
-          <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            We empower industry leaders with dedicated software talent and specialized Atlassian ecosystem expertise to accelerate growth.
+          <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+            TECUNIQUE helps software companies build dedicated teams, strengthen product quality, support Atlassian app development, and extend engineering capacity from India. Choose the service area that best matches your current need.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-6">
-            <Button size="lg" className="rounded-xl px-10 h-12 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5" asChild>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button size="lg" className="rounded-xl px-10 h-12 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 w-full sm:w-auto bg-blue-600 hover:bg-blue-700" asChild>
               <Link href="/contact">
                 Discuss Your Requirement
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-xl px-10 h-12 text-lg font-semibold group hover:bg-slate-50 transition-all hover:-translate-y-0.5 w-full sm:w-auto" asChild>
+              <Link href="#services">
+                Explore Services Below
               </Link>
             </Button>
           </div>
