@@ -68,7 +68,7 @@ const caseStudies = [
     location: "France",
     initials: "IN",
     color: "#3b82f6",
-    gradient: "from-blue-500 to-cyan-600",
+    gradient: "from-blue-500 to-indigo-600",
     tagline: "How one engineer and TECUNIQUE's dedicated workforce took JMWE to the top",
     description: "David Fischer started alone but had a big vision to automate Jira workflows. As demand for JMWE grew rapidly, he needed to scale his development team quickly with engineers who could challenge solutions, communicate openly, and ensure customers' problems were solved in the best possible way.",
     sections: [
@@ -172,7 +172,7 @@ const caseStudies = [
     location: "USA / France",
     initials: "CM",
     color: "#06b6d4",
-    gradient: "from-cyan-500 to-blue-600",
+    gradient: "from-indigo-500 to-blue-600",
     tagline: "Transforming Innovation with TECUNIQUE's Expertise",
     description: "Following acquisition by Medtech Group, CustomerMatrix needed to elevate its development and testing capabilities for its Cognitive Computing platform. They sought a reliable partner to contribute to the design, development, testing, and maintenance of their dynamic platform.",
     sections: [
@@ -336,7 +336,7 @@ const caseStudies = [
     location: "France",
     initials: "PS",
     color: "#10b981",
-    gradient: "from-emerald-500 to-teal-600",
+    gradient: "from-emerald-500 to-blue-600",
     tagline: "Transforming Challenges into Excellence",
     description: "PolySpot aimed to build an advanced search solution for businesses to extract actionable insights. They presented the challenge of building a dedicated team proficient in Java and GWT to develop and assure the quality of this highly scalable platform.",
     sections: [

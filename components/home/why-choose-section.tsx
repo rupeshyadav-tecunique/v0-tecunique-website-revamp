@@ -24,7 +24,7 @@ const reasons = [
     title: "Long-term Commitment",
     description: "Dedicated to delivering excellence and maintaining long-term partnerships. Many of our clients have been with us for over a decade.",
     icon: Award,
-    gradient: "from-cyan-500 to-indigo-500",
+    gradient: "from-indigo-500 to-indigo-500",
   },
 ]
 

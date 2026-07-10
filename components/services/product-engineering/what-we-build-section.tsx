@@ -33,9 +33,9 @@ export function WhatWeBuild() {
           {/* Left Column - Sticky Heading */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <SectionReveal>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-100 border border-cyan-200 mb-6">
-                <LayoutTemplate className="h-4 w-4 text-cyan-700" />
-                <span className="text-sm font-semibold text-cyan-900">What We Build</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 mb-6">
+                <LayoutTemplate className="h-4 w-4 text-indigo-700" />
+                <span className="text-sm font-semibold text-indigo-900">What We Build</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6 leading-tight">
                 Software Built Around Product Goals
@@ -51,11 +51,11 @@ export function WhatWeBuild() {
             {buildAreas.map((area, index) => (
               <SectionReveal key={area.title} delay={index * 100}>
                 <div className="group flex flex-col sm:flex-row items-start gap-6 py-8 border-b border-border/60 hover:bg-slate-50 transition-colors px-6 -mx-6 rounded-2xl">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-500 shadow-sm">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-500 shadow-sm">
                     <area.icon className="h-7 w-7" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-cyan-700 transition-colors">{area.title}</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-indigo-700 transition-colors">{area.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{area.description}</p>
                   </div>
                 </div>

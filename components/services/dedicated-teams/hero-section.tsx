@@ -8,7 +8,7 @@ export function DedicatedTeamsHero() {
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 -z-10 bg-slate-50">
         <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-blue-100 to-purple-100 opacity-50 blur-[80px] animate-blob" />
-        <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-indigo-100 to-cyan-100 opacity-50 blur-[80px] animate-blob animation-delay-2000" />
+        <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-indigo-100 to-indigo-100 opacity-50 blur-[80px] animate-blob animation-delay-2000" />
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.03]" />
       </div>
 

@@ -63,7 +63,7 @@ export function ServicesSection() {
 
               {/* Service 3 */}
               <div className="flex gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 shadow-sm transition-transform duration-300 group-hover:scale-105">
                   <TestTube2 className="h-6 w-6" />
                 </div>
                 <div>

@@ -6,7 +6,7 @@ const teamRoles = [
     title: "Frontend Engineers",
     description: "Experts in React, Angular, Vue, TypeScript. Building responsive, accessible, and high-performance user interfaces and product experiences.",
     icon: Code2,
-    color: "from-blue-500 to-cyan-400"
+    color: "from-blue-500 to-indigo-400"
   },
   {
     title: "Backend Engineers",
@@ -18,7 +18,7 @@ const teamRoles = [
     title: "QA Engineers",
     description: "Manual QA, regression testing, and release validation.",
     icon: FileCheck,
-    color: "from-emerald-500 to-teal-400"
+    color: "from-emerald-500 to-blue-400"
   },
   {
     title: "Automation QA Engineers",

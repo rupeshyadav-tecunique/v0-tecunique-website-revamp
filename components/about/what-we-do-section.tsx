@@ -7,7 +7,7 @@ const whatWeDo = [
     title: "Dedicated Software Teams",
     description: "We help clients build full-time development, QA, automation, support, and product engineering teams that work as an extension of their in-house team.",
     icon: Users,
-    color: "from-blue-500 to-cyan-400"
+    color: "from-blue-500 to-indigo-400"
   },
   {
     title: "Custom Software Development",
@@ -19,7 +19,7 @@ const whatWeDo = [
     title: "QA & Automation",
     description: "Our QA teams support manual testing, regression testing, automation frameworks, release validation, and ongoing product quality improvement.",
     icon: ShieldCheck,
-    color: "from-emerald-500 to-teal-400"
+    color: "from-emerald-500 to-blue-400"
   },
   {
     title: "Atlassian App Engineering",
