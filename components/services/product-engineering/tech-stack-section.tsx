@@ -51,7 +51,7 @@ const techCategories = [
     ]
   },
   {
-    category: "Atlassian Ecosystem",
+    category: "Atlassian",
     technologies: [
       { name: "Jira", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
       { name: "Forge", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg" },
@@ -63,37 +63,37 @@ const techCategories = [
 
 export function TechStack() {
   return (
-    <section className="py-24 bg-white relative border-t border-slate-200">
+    <section className="py-24 bg-white relative border-t border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
+        <div className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
           <SectionReveal>
-            <span className="section-pill mb-6 mx-auto inline-flex">
-              <Code2 className="h-4 w-4" />
-              Technology Stack
-            </span>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-display mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-6">
+              <Code2 className="h-4 w-4 text-slate-700" />
+              <span className="text-sm font-semibold text-slate-900">Technology Stack</span>
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6">
               Technology Stack We Work With
             </h2>
-            <p className="text-lg leading-8 text-slate-600">
+            <p className="text-lg leading-relaxed text-muted-foreground">
               We leverage modern and reliable technologies to build scalable, secure, and high-performing products.
             </p>
           </SectionReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto flex flex-col gap-10">
           {techCategories.map((group, index) => (
-            <SectionReveal key={group.category} delay={index * 100}>
-              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-sm h-full flex flex-col">
-                <h3 className="text-lg font-bold font-display text-slate-900 mb-6 pb-4 border-b border-slate-200">
+            <SectionReveal key={group.category} delay={index * 50}>
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 pb-10 border-b border-border/50 last:border-0 last:pb-0">
+                <h3 className="text-xl font-bold font-display text-foreground shrink-0 md:w-48">
                   {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {group.technologies.map((tech) => (
                     <span 
                       key={tech.name} 
-                      className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 shadow-sm hover:border-blue-300 hover:text-blue-600 transition-colors cursor-default"
+                      className="inline-flex items-center gap-2.5 px-4 py-2 bg-white border border-border/60 rounded-xl text-sm font-medium text-foreground shadow-sm hover:border-blue-300 hover:bg-blue-50/50 hover:text-blue-600 hover:-translate-y-0.5 transition-all cursor-default group"
                     >
-                      <img src={tech.logo} alt={tech.name} className="w-4 h-4 object-contain" />
+                      <img src={tech.logo} alt={tech.name} className="w-5 h-5 object-contain group-hover:scale-110 transition-transform" />
                       {tech.name}
                     </span>
                   ))}

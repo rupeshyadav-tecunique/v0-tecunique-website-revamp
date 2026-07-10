@@ -227,15 +227,15 @@ export default function OffshorePage() {
       </section>
 
       {/* Why India Section */}
-      <section className="py-24 lg:py-32 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,theme(colors.primary.500/0.1),transparent_50%)]" />
+      <section className="py-24 lg:py-32 bg-slate-50 text-slate-900 overflow-hidden relative border-t border-slate-200">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,theme(colors.primary.500/0.03),transparent_50%)]" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <SectionReveal>
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8 leading-tight">
                 Scale Efficiently with <br /><span className="text-primary">TECUNIQUE India</span>
               </h2>
-              <p className="text-xl text-slate-400 leading-relaxed mb-8">
+              <p className="text-xl text-slate-600 leading-relaxed mb-8">
                 The Indian talent market and regulatory framework allow for unmatched ease and flexibility in managing offshore software teams.
               </p>
               <div className="space-y-4">
@@ -247,7 +247,7 @@ export default function OffshorePage() {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
-                    <span className="text-slate-300 font-medium">{item}</span>
+                    <span className="text-slate-700 font-medium">{item}</span>
                   </div>
                 ))}
               </div>

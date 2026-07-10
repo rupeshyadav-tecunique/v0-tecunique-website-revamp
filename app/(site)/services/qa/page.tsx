@@ -7,7 +7,7 @@ import { QAForProductCompanies } from "@/components/services/qa/qa-product-compa
 import { QAAtlassian } from "@/components/services/qa/qa-atlassian-section"
 import { QAHowWeWork } from "@/components/services/qa/how-we-work-section"
 import { QAExperience } from "@/components/services/qa/experience-section"
-import { QACTA } from "@/components/services/qa/cta-section"
+import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Software QA & Automation Testing Services | TECUNIQUE",
@@ -25,7 +25,7 @@ export default function QAServicePage() {
       <QAAtlassian />
       <QAHowWeWork />
       <QAExperience />
-      <QACTA />
+      <UnifiedCTA />
     </div>
   )
 }

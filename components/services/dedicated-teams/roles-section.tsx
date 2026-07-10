@@ -1,40 +1,40 @@
-import { Code2, Layers, FileCheck, ShieldCheck, Cloud, HeadphonesIcon } from "lucide-react"
+import { Code2, Layers, FileCheck, ShieldCheck, Cloud, HeadphonesIcon, Users } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
 const teamRoles = [
   {
     title: "Frontend Engineers",
-    description: "React, Angular, Vue, TypeScript, UI implementation, product interfaces.",
+    description: "Experts in React, Angular, Vue, TypeScript. Building responsive, accessible, and high-performance user interfaces and product experiences.",
     icon: Code2,
     color: "from-blue-500 to-cyan-400"
   },
   {
     title: "Backend Engineers",
-    description: "Java, Spring Boot, Node.js, APIs, integrations, microservices, databases.",
+    description: "Java, Spring Boot, Node.js. Building scalable APIs, microservices, and databases.",
     icon: Layers,
     color: "from-indigo-500 to-purple-400"
   },
   {
     title: "QA Engineers",
-    description: "Manual QA, regression testing, test planning, release validation.",
+    description: "Manual QA, regression testing, and release validation.",
     icon: FileCheck,
     color: "from-emerald-500 to-teal-400"
   },
   {
     title: "Automation QA Engineers",
-    description: "Playwright, Selenium, JUnit, API testing, CI/CD test integration.",
+    description: "Playwright, Selenium, JUnit, API testing, CI/CD integrations. Ensuring continuous quality with robust automation frameworks.",
     icon: ShieldCheck,
     color: "from-rose-500 to-orange-400"
   },
   {
     title: "DevOps Engineers",
-    description: "Cloud environments, deployment pipelines, Docker, Kubernetes, AWS support.",
+    description: "Docker, Kubernetes, AWS, deployment pipelines.",
     icon: Cloud,
     color: "from-sky-500 to-blue-400"
   },
   {
     title: "Support Engineers",
-    description: "L2/L3 product support, issue analysis, maintenance, customer-facing technical support.",
+    description: "L2/L3 product support and issue analysis.",
     icon: HeadphonesIcon,
     color: "from-fuchsia-500 to-pink-400"
   }
@@ -42,25 +42,35 @@ const teamRoles = [
 
 export function DedicatedTeamsRoles() {
   return (
-    <section className="py-24 lg:py-32 bg-slate-50">
+    <section className="py-24 lg:py-32 bg-slate-50 border-t border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
-          <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">Build the Team You Need</h2>
-          <p className="text-xl text-slate-600">
-            Build a full-time team across the engineering, QA, automation, DevOps, and support roles your product needs.
+        <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100 border border-purple-200 mb-6">
+            <Users className="h-4 w-4 text-purple-700" />
+            <span className="text-sm font-semibold text-purple-900">Team Composition</span>
+          </div>
+          <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Build the Team You Need</h2>
+          <p className="text-xl text-muted-foreground">
+            Assemble a full-time, dedicated team across engineering, QA, DevOps, and support roles.
           </p>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {teamRoles.map((role, i) => (
-            <SectionReveal key={role.title} delay={i * 100}>
-              <div className="relative overflow-hidden h-full rounded-3xl border border-slate-200 bg-white p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${role.color} opacity-[0.03] rounded-bl-full group-hover:opacity-[0.08] transition-opacity duration-300`} />
-                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${role.color} text-white mb-6 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
-                  <role.icon className="h-6 w-6" />
+            <SectionReveal key={role.title} delay={i * 100} className="md:col-span-1">
+              <div className="relative overflow-hidden h-full rounded-[2rem] border border-border/60 bg-white p-8 lg:p-10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col gap-6 items-start text-left">
+                
+                {/* Subtle Background Gradient on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${role.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
+                
+                <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${role.color} text-white shadow-md group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+                  <role.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{role.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{role.description}</p>
+                
+                <div className="relative z-10">
+                  <h3 className="font-bold text-foreground mb-3 text-xl">{role.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{role.description}</p>
+                </div>
               </div>
             </SectionReveal>
           ))}

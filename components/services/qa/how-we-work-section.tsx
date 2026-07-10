@@ -1,121 +1,85 @@
+import { CheckCircle2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { CheckCircle2, ArrowRight, ArrowDown, ArrowLeft } from "lucide-react"
 
 const steps = [
   {
-    step: 1,
+    step: "01",
     title: "Understand Needs",
-    description: "We learn your product, users, and quality goals.",
-    // desktop: right, tablet: right, mobile: down
-    ArrowDesktop: ArrowRight,
-    ArrowTablet: ArrowRight,
-    ArrowMobile: ArrowDown,
-    orderDesktop: "lg:order-1",
-    orderTablet: "md:order-1",
-    orderMobile: "order-1",
+    description: "We learn your product, users, and quality goals."
   },
   {
-    step: 2,
+    step: "02",
     title: "Define Scope",
-    description: "We define test scope, priorities, and success criteria.",
-    // desktop: right, tablet: down, mobile: down
-    ArrowDesktop: ArrowRight,
-    ArrowTablet: ArrowDown,
-    ArrowMobile: ArrowDown,
-    orderDesktop: "lg:order-2",
-    orderTablet: "md:order-2",
-    orderMobile: "order-2",
+    description: "We define test scope, priorities, and success criteria."
   },
   {
-    step: 3,
+    step: "03",
     title: "Assign QA Talent",
-    description: "We assign experienced QA engineers aligned to your requirements.",
-    // desktop: down, tablet: left, mobile: down
-    ArrowDesktop: ArrowDown,
-    ArrowTablet: ArrowLeft,
-    ArrowMobile: ArrowDown,
-    orderDesktop: "lg:order-3",
-    orderTablet: "md:order-4", // visually under 2 on tablet
-    orderMobile: "order-3",
+    description: "We assign experienced QA engineers aligned to your requirements."
   },
   {
-    step: 4,
+    step: "04",
     title: "Align With Tools",
-    description: "We integrate with your tools and communication channels.",
-    // desktop: left, tablet: down, mobile: down
-    ArrowDesktop: ArrowLeft,
-    ArrowTablet: ArrowDown,
-    ArrowMobile: ArrowDown,
-    orderDesktop: "lg:order-6", // visually under 3 on desktop
-    orderTablet: "md:order-3", // visually next to 3 on tablet
-    orderMobile: "order-4",
+    description: "We integrate with your tools and communication channels."
   },
   {
-    step: 5,
+    step: "05",
     title: "Execute & Report",
-    description: "We execute tests, report defects, and provide clear insights.",
-    // desktop: left, tablet: right, mobile: down
-    ArrowDesktop: ArrowLeft,
-    ArrowTablet: ArrowRight,
-    ArrowMobile: ArrowDown,
-    orderDesktop: "lg:order-5",
-    orderTablet: "md:order-5",
-    orderMobile: "order-5",
+    description: "We execute tests, report defects, and provide clear insights."
   },
   {
-    step: 6,
+    step: "06",
     title: "Improve Coverage",
-    description: "We enhance automation coverage, and overall product quality.",
-    // desktop: none, tablet: none, mobile: none
-    ArrowDesktop: null,
-    ArrowTablet: null,
-    ArrowMobile: null,
-    orderDesktop: "lg:order-4",
-    orderTablet: "md:order-6",
-    orderMobile: "order-6",
+    description: "We enhance automation coverage, and overall product quality."
   }
 ]
 
 export function QAHowWeWork() {
   return (
-    <section className="py-24 lg:py-32 bg-white relative">
+    <section className="py-24 lg:py-32 bg-white relative overflow-hidden border-y border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionReveal className="text-center max-w-2xl mx-auto mb-20">
-          <span className="section-pill mb-6 mx-auto inline-flex">
-            <CheckCircle2 className="h-3 w-3" />
-            How We Work
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-bold font-display text-slate-900 mb-6">Our QA Workflow</h2>
-          <p className="text-lg text-slate-600">A streamlined process to integrate our testing experts seamlessly with your team.</p>
+        <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-24">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
+            <CheckCircle2 className="h-4 w-4 text-blue-700" />
+            <span className="text-sm font-semibold text-blue-900">How We Work</span>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold font-display text-foreground mb-6">
+            Our QA Workflow
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            A streamlined process to integrate our testing experts seamlessly with your team.
+          </p>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-3 relative z-10">
-          {steps.map((step, index) => (
-            <SectionReveal key={step.step} delay={index * 100} className={`relative group h-full ${step.orderMobile} ${step.orderTablet} ${step.orderDesktop}`}>
-              <div className="flex flex-col h-full bg-[#0052CC] text-white p-8 lg:p-10 relative overflow-hidden transition-transform duration-300 rounded-xl hover:-translate-y-1 hover:shadow-xl shadow-[#0052CC]/20">
-                {/* Chevron Background Element */}
-                <div
-                  className="absolute inset-0 bg-white/10 transition-transform duration-700 group-hover:translate-x-2"
-                  style={{ clipPath: 'polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%)' }}
-                />
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Line */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border/60 md:-translate-x-1/2" />
 
-                <div className="relative z-10 flex-1 flex flex-col">
-                  <h3 className="text-2xl font-bold font-display mb-6 tracking-tight">
-                    <span className="block text-blue-200 text-lg mb-1 font-semibold tracking-normal uppercase text-sm">Phase {step.step}</span>
-                    {step.title}
-                  </h3>
-                  <p className="text-blue-100 text-base leading-relaxed mb-10 flex-1">
-                    {step.description}
-                  </p>
-                  <div className="flex justify-end mt-auto h-6">
-                    {step.ArrowMobile && <step.ArrowMobile className="h-6 w-6 text-blue-300 group-hover:text-white group-hover:scale-110 transition-all md:hidden" />}
-                    {step.ArrowTablet && <step.ArrowTablet className="h-6 w-6 text-blue-300 group-hover:text-white group-hover:scale-110 transition-all hidden md:block lg:hidden" />}
-                    {step.ArrowDesktop && <step.ArrowDesktop className="h-6 w-6 text-blue-300 group-hover:text-white group-hover:scale-110 transition-all hidden lg:block" />}
+          <div className="space-y-12">
+            {steps.map((step, index) => {
+              const isEven = index % 2 !== 0
+              return (
+                <SectionReveal key={step.step} delay={100} className="relative">
+                  <div className={`flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''} gap-8 md:gap-16`}>
+                    
+                    {/* Content */}
+                    <div className={`flex-1 w-full pl-20 md:pl-0 ${isEven ? 'md:text-left' : 'md:text-right'}`}>
+                      <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
+                    </div>
+
+                    {/* Number / Node */}
+                    <div className="absolute left-0 md:left-1/2 top-0 md:top-2 md:-translate-x-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-blue-50 z-10 shadow-sm text-blue-600 font-display text-xl font-bold">
+                      {step.step}
+                    </div>
+
+                    {/* Empty Space for Grid Alignment */}
+                    <div className="hidden md:block flex-1" />
                   </div>
-                </div>
-              </div>
-            </SectionReveal>
-          ))}
+                </SectionReveal>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

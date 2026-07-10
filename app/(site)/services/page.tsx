@@ -4,7 +4,7 @@ import { ServicesCards } from "@/components/services/service-cards"
 import { DecisionGuide } from "@/components/services/decision-guide"
 import { ServicesExecutionModel } from "@/components/services/execution-model-section"
 import { ServicesTrustProof } from "@/components/services/trust-proof"
-import { ServicesCTA } from "@/components/services/cta-section"
+import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Services | TECUNIQUE",
@@ -19,7 +19,7 @@ export default function ServicesPage() {
       <DecisionGuide />
       <ServicesExecutionModel />
       <ServicesTrustProof />
-      <ServicesCTA />
+      <UnifiedCTA />
     </div>
   )
 }

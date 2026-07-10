@@ -76,7 +76,7 @@ export function CTABanner({
                   <span className="text-xs font-bold">{user.label}</span>
                 </div>
               ))}
-              <div className="inline-flex h-12 w-12 rounded-full ring-4 ring-white items-center justify-center bg-slate-900 text-white shadow-sm">
+              <div className="inline-flex h-12 w-12 rounded-full ring-4 ring-white items-center justify-center bg-primary text-white shadow-sm">
                 <span className="text-[10px] font-bold">+15</span>
               </div>
             </div>

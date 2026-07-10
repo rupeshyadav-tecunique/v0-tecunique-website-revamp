@@ -7,7 +7,7 @@ import { DedicatedTeamsComparison } from "@/components/services/dedicated-teams/
 import { DedicatedTeamsScenarios } from "@/components/services/dedicated-teams/scenarios-section"
 import { DedicatedTeamsBenefits } from "@/components/services/dedicated-teams/benefits-section"
 import { DedicatedTeamsExperience } from "@/components/services/dedicated-teams/experience-section"
-import { DedicatedTeamsCTA } from "@/components/services/dedicated-teams/cta-section"
+import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Dedicated Software Teams in India | TECUNIQUE",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col w-full overflow-hidden bg-slate-50">
+    <div className="flex flex-col w-full bg-slate-50">
       <DedicatedTeamsHero />
       <DedicatedTeamsIntro />
       <DedicatedTeamsRoles />
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <DedicatedTeamsScenarios />
       <DedicatedTeamsBenefits />
       <DedicatedTeamsExperience />
-      <DedicatedTeamsCTA />
+      <UnifiedCTA />
     </div>
   )
 }

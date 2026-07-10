@@ -7,7 +7,7 @@ import { IntegrationsBackend } from "@/components/services/product-engineering/i
 import { ProductEngineeringHowWeWork } from "@/components/services/product-engineering/how-we-work-section"
 import { TechStack } from "@/components/services/product-engineering/tech-stack-section"
 import { ProductEngineeringExperience } from "@/components/services/product-engineering/experience-section"
-import { ProductEngineeringCTA } from "@/components/services/product-engineering/cta-section"
+import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Product Engineering & Custom Software Development | TECUNIQUE",
@@ -25,7 +25,7 @@ export default function ProductEngineeringPage() {
       <ProductEngineeringHowWeWork />
       <TechStack />
       <ProductEngineeringExperience />
-      <ProductEngineeringCTA />
+      <UnifiedCTA />
     </div>
   )
 }

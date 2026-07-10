@@ -4,7 +4,7 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 
 export function DedicatedTeamsHero() {
   return (
-    <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 flex items-center isolate">
+    <section className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 flex items-center isolate overflow-hidden">
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 -z-10 bg-slate-50">
         <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] rounded-full bg-gradient-to-tr from-blue-100 to-purple-100 opacity-50 blur-[80px] animate-blob" />

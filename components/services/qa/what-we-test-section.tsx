@@ -1,4 +1,4 @@
-import { LayoutGrid, Cloud, Code2, PlaySquare } from "lucide-react"
+import { LayoutGrid, Cloud, Code2, PlaySquare, CheckCircle2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
 const testTargets = [
@@ -26,32 +26,43 @@ const testTargets = [
 
 export function WhatWeTest() {
   return (
-    <section className="py-24 bg-white relative border-b border-slate-100">
+    <section className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start mb-16">
-          <SectionReveal className="lg:w-1/2">
-            <h2 className="text-sm font-bold tracking-widest text-[#0052CC] uppercase mb-3">WHAT WE TEST</h2>
-            <h3 className="text-3xl sm:text-4xl font-bold font-display text-slate-900">Testing Built Around Real Product Workflows</h3>
-          </SectionReveal>
-          <SectionReveal delay={100} className="lg:w-1/2">
-            <p className="text-lg text-slate-600 leading-relaxed pt-2">
-              We test the applications, integrations, and experiences your users rely on every day—across web, SaaS, APIs, and Atlassian / Jira ecosystems.
-            </p>
-          </SectionReveal>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testTargets.map((target, index) => (
-            <SectionReveal key={target.title} delay={index * 100} className="relative group">
-              <div className="h-full bg-slate-50 border border-slate-100 rounded-[2rem] p-8 hover:shadow-xl hover:border-[#0052CC]/20 transition-all duration-300">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-[#0052CC] mb-6 group-hover:scale-110 group-hover:bg-[#0052CC] group-hover:text-white transition-all duration-300">
-                  <target.icon className="h-7 w-7" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{target.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{target.description}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column - Sticky Heading */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <SectionReveal>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
+                <CheckCircle2 className="h-4 w-4 text-blue-700" />
+                <span className="text-sm font-semibold text-blue-900">What We Test</span>
               </div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6 leading-tight">
+                Testing Built Around Real Product Workflows
+              </h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                We test the applications, integrations, and experiences your users rely on every day—across web, SaaS, APIs, and Atlassian / Jira ecosystems.
+              </p>
             </SectionReveal>
-          ))}
+          </div>
+          
+          {/* Right Column - Capabilities List */}
+          <div className="lg:col-span-7 flex flex-col border-t border-border/60">
+            {testTargets.map((target, index) => (
+              <SectionReveal key={target.title} delay={index * 100}>
+                <div className="group flex flex-col sm:flex-row items-start gap-6 py-8 border-b border-border/60 hover:bg-slate-50 transition-colors px-6 -mx-6 rounded-2xl">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm">
+                    <target.icon className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-blue-700 transition-colors">{target.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{target.description}</p>
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+          
         </div>
       </div>
     </section>

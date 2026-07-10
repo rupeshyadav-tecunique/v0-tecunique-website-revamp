@@ -1,4 +1,4 @@
-import { CheckCircle2, ArrowDown, ArrowRight, ArrowLeft } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
 const buildSteps = [
@@ -36,66 +36,46 @@ const buildSteps = [
 
 export function DedicatedTeamsProcess() {
   return (
-    <section className="py-24 lg:py-32 bg-white border-y border-slate-200/50">
+    <section className="py-24 lg:py-32 bg-white relative overflow-hidden border-y border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionReveal className="mx-auto max-w-3xl text-center mb-20">
-          <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">How We Build Your Dedicated Team</h2>
+        <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-24">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
+            <CheckCircle2 className="h-4 w-4 text-blue-700" />
+            <span className="text-sm font-semibold text-blue-900">How We Work</span>
+          </div>
+          <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">How We Build Your Dedicated Team</h2>
+          <p className="mt-4 text-lg text-muted-foreground">A streamlined, transparent process designed to get you the right talent quickly.</p>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mx-auto">
-          {buildSteps.map((step, index) => {
-            let orderClass = "";
-            if (index === 0) orderClass = "order-1";
-            if (index === 1) orderClass = "order-2";
-            if (index === 2) orderClass = "order-3 md:order-4 lg:order-3";
-            if (index === 3) orderClass = "order-4 md:order-3 lg:order-6";
-            if (index === 4) orderClass = "order-5 md:order-5 lg:order-5";
-            if (index === 5) orderClass = "order-6 md:order-6 lg:order-4";
-            
-            return (
-              <SectionReveal key={step.step} delay={index * 100} className={`relative group h-full ${orderClass}`}>
-                <div className="flex flex-col h-full bg-[#0052CC] text-white p-8 lg:p-10 relative overflow-hidden transition-transform duration-300 rounded-xl hover:-translate-y-1 hover:shadow-xl shadow-[#0052CC]/20">
-                  {/* Chevron Background Element */}
-                  <div 
-                    className="absolute inset-0 bg-white/10 transition-transform duration-700 group-hover:translate-x-2"
-                    style={{ clipPath: 'polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%)' }}
-                  />
-                  
-                  <div className="relative z-10 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold font-display mb-6 tracking-tight">
-                      <span className="block text-blue-200 mb-1 font-semibold tracking-normal uppercase text-sm">Step {step.step}</span>
-                      {step.title}
-                    </h3>
-                    <p className="text-blue-100 text-base leading-relaxed mb-10 flex-1">
-                      {step.description}
-                    </p>
-                    <div className="flex justify-end mt-auto">
-                      {index === 5 ? (
-                        <CheckCircle2 className="h-6 w-6 text-blue-300 group-hover:text-white transition-all" />
-                      ) : (
-                        <>
-                          {/* Mobile (1 col): All Down */}
-                          <ArrowDown className="md:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />
-                          
-                          {/* Tablet (md, 2 cols): 1=Right, 2=Down, 3=Left, 4=Down, 5=Right */}
-                          {index === 0 && <ArrowRight className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-x-1 transition-all" />}
-                          {index === 1 && <ArrowDown className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />}
-                          {index === 2 && <ArrowLeft className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:-translate-x-1 transition-all" />}
-                          {index === 3 && <ArrowDown className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />}
-                          {index === 4 && <ArrowRight className="hidden md:block lg:hidden h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-x-1 transition-all" />}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Line */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border/60 md:-translate-x-1/2" />
 
-                          {/* Desktop (lg, 3 cols): 1=Right, 2=Right, 3=Down, 4=Left, 5=Left */}
-                          {(index === 0 || index === 1) && <ArrowRight className="hidden lg:block h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-x-1 transition-all" />}
-                          {index === 2 && <ArrowDown className="hidden lg:block h-6 w-6 text-blue-300 group-hover:text-white group-hover:translate-y-1 transition-all" />}
-                          {(index === 3 || index === 4) && <ArrowLeft className="hidden lg:block h-6 w-6 text-blue-300 group-hover:text-white group-hover:-translate-x-1 transition-all" />}
-                        </>
-                      )}
+          <div className="space-y-12">
+            {buildSteps.map((step, index) => {
+              const isEven = index % 2 !== 0
+              return (
+                <SectionReveal key={step.step} delay={100} className="relative">
+                  <div className={`flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''} gap-8 md:gap-16`}>
+                    
+                    {/* Content */}
+                    <div className={`flex-1 w-full pl-20 md:pl-0 ${isEven ? 'md:text-left' : 'md:text-right'}`}>
+                      <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
                     </div>
+
+                    {/* Number / Node */}
+                    <div className="absolute left-0 md:left-1/2 top-0 md:top-2 md:-translate-x-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-blue-50 z-10 shadow-sm text-blue-600 font-display text-xl font-bold">
+                      {step.step}
+                    </div>
+
+                    {/* Empty Space for Grid Alignment */}
+                    <div className="hidden md:block flex-1" />
                   </div>
-                </div>
-              </SectionReveal>
-            );
-          })}
+                </SectionReveal>
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>

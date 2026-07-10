@@ -65,68 +65,67 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop navigation */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-1 lg:mr-6">
-          {navigation.map((item) => {
-            const isActive = item.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(item.href)
+        {/* Desktop navigation and CTA grouped on the right */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-6">
+          <div className="flex items-center gap-x-1">
+            {navigation.map((item) => {
+              const isActive = item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href)
 
-            if (item.children) {
-              return (
-                <div key={item.name} className="relative group">
-                  <Link
-                    href={item.href}
-                    className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
-                      ? "text-primary bg-accent"
-                      : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
-                      }`}
-                  >
-                    {item.name}
-                    <ChevronDown className="h-3 w-3 opacity-70 transition-transform group-hover:rotate-180" />
-                    {isActive && (
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-primary" />
-                    )}
-                  </Link>
+              if (item.children) {
+                return (
+                  <div key={item.name} className="relative group">
+                    <Link
+                      href={item.href}
+                      className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
+                        ? "text-primary bg-accent"
+                        : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
+                        }`}
+                    >
+                      {item.name}
+                      <ChevronDown className="h-3 w-3 opacity-70 transition-transform group-hover:rotate-180" />
+                      {isActive && (
+                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-primary" />
+                      )}
+                    </Link>
 
-                  {/* Dropdown menu */}
-                  <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                    <div className="w-64 rounded-xl bg-white p-2 shadow-xl ring-1 ring-black/5 border border-slate-100">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="block rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
+                    {/* Dropdown menu */}
+                    <div className="absolute right-0 lg:left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                      <div className="w-64 rounded-xl bg-white p-2 shadow-xl ring-1 ring-black/5 border border-slate-100">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            className="block rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors"
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )
+              }
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
+                    ? "text-primary bg-accent"
+                    : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
+                    }`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-primary" />
+                  )}
+                </Link>
               )
-            }
+            })}
+          </div>
 
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
-                  ? "text-primary bg-accent"
-                  : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
-                  }`}
-              >
-                {item.name}
-                {isActive && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-primary" />
-                )}
-              </Link>
-            )
-          })}
-        </div>
-
-        {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-3">
           <Button size="default" className="rounded-xl px-5 h-10 group" asChild>
             <Link href="/contact">
               Let's Talk

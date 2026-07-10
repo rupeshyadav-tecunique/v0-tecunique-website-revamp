@@ -76,44 +76,41 @@ export function Footer() {
   if (pathname?.startsWith("/admin")) return null
 
   return (
-    <footer className="border-t border-border bg-[#0f172a]">
+    <footer className="border-t border-border bg-slate-50">
       {/* Main footer content */}
-      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-4">
 
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/">
               <Image
-                src="/images/logos/tecunique-logo-white.svg"
+                src="/images/logos/tecunique-logo-modern-refresh.svg"
                 alt="TecUnique Logo"
                 width={180}
                 height={50}
-                className="h-10 w-auto  mb-4"
+                className="h-10 w-auto mb-4"
               />
             </Link>
-            <p className="max-w-xs text-sm text-slate-400 leading-relaxed">
-              Trusted software engineering and dedicated teams for product companies. Supporting development, QA, automation, and Atlassian app work since 2010.
-            </p>
 
             {/* Contact quick info */}
             <div className="space-y-2">
               <a
                 href="mailto:sales@tecunique.com"
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors"
               >
-                <Mail className="h-4 w-4 text-slate-500" />
+                <Mail className="h-4 w-4 text-slate-400" />
                 sales@tecunique.com
               </a>
               <a
                 href="tel:+919157460525"
-                className="flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
+                className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors"
               >
-                <Phone className="h-4 w-4 text-slate-500" />
+                <Phone className="h-4 w-4 text-slate-400" />
                 +91 915 746 0525
               </a>
-              <div className="flex items-start gap-2 text-sm text-slate-400">
-                <MapPin className="h-4 w-4 mt-0.5 text-slate-500 shrink-0" />
+              <div className="flex items-start gap-2 text-sm text-slate-600">
+                <MapPin className="h-4 w-4 mt-0.5 text-slate-400 shrink-0" />
                 <span>1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007, Gujarat, India</span>
               </div>
             </div>
@@ -127,14 +124,14 @@ export function Footer() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-700 text-slate-400 transition-all hover:border-indigo-500/60 hover:bg-indigo-500/10 hover:text-indigo-400"
+                    className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 bg-white transition-all hover:border-primary/60 hover:bg-primary/5 hover:text-primary shadow-sm"
                     aria-label={label}
                   >
                     <Icon className="h-4 w-4" />
                   </a>
                 ))}
               </div>
-              <div className="pt-6 border-t border-slate-800/60 flex flex-wrap items-center gap-y-3">
+              <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-y-3">
                 {reviewLinks.map((link, i) => (
                   <div key={link.name} className="flex items-center">
                     <a
@@ -144,7 +141,7 @@ export function Footer() {
                       className="group flex items-center gap-1.5"
                     >
                       <div className="flex items-center gap-0.5">
-                        <span className="text-[12px] font-bold text-white leading-none">{link.rating}</span>
+                        <span className="text-[12px] font-bold text-slate-700 leading-none">{link.rating}</span>
                         <Star className="h-2.5 w-2.5 fill-amber-500 text-amber-500" />
                       </div>
                       <div className="flex items-center">
@@ -168,7 +165,7 @@ export function Footer() {
                       </div>
                     </a>
                     {i < reviewLinks.length - 1 && (
-                      <span className="mx-3 text-slate-800 font-extralight text-sm">|</span>
+                      <span className="mx-3 text-slate-300 font-extralight text-sm">|</span>
                     )}
                   </div>
                 ))}
@@ -178,16 +175,16 @@ export function Footer() {
 
           {/* Company links */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Company</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-900 mb-5">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 group"
+                    className="text-sm text-slate-600 hover:text-primary transition-colors flex items-center gap-1 group"
                   >
                     <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-200">
-                      <ArrowRight className="h-3 w-3 text-indigo-400" />
+                      <ArrowRight className="h-3 w-3 text-primary" />
                     </span>
                     {link.name}
                   </Link>
@@ -198,16 +195,16 @@ export function Footer() {
 
           {/* Services links */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">Services</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-900 mb-5">Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1 group"
+                    className="text-sm text-slate-600 hover:text-primary transition-colors flex items-center gap-1 group"
                   >
                     <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-200">
-                      <ArrowRight className="h-3 w-3 text-indigo-400" />
+                      <ArrowRight className="h-3 w-3 text-primary" />
                     </span>
                     {link.name}
                   </Link>
@@ -219,14 +216,14 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-slate-200 bg-slate-100/50">
         <div className="mx-auto max-w-7xl px-6 py-5 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
             &copy; {new Date().getFullYear()} TECUNIQUE. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((item) => (
-              <Link key={item.name} href={item.href} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">
+              <Link key={item.name} href={item.href} className="text-xs text-slate-500 hover:text-slate-900 transition-colors">
                 {item.name}
               </Link>
             ))}

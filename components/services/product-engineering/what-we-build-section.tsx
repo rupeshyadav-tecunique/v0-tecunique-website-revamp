@@ -26,39 +26,43 @@ const buildAreas = [
 
 export function WhatWeBuild() {
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <SectionReveal>
-            <span className="section-pill mb-6 mx-auto inline-flex">
-              <LayoutTemplate className="h-4 w-4" />
-              What We Build
-            </span>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-display mb-6">
-              Software Built Around Product Goals
-            </h2>
-            <p className="text-lg leading-8 text-slate-600">
-              We support product companies that need dependable engineering capacity for new development, product enhancements, integrations, maintenance, and platform evolution. Our focus is not just writing code, but understanding the product context and delivering work that fits the client’s roadmap.
-            </p>
-          </SectionReveal>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {buildAreas.map((area, index) => (
-            <SectionReveal key={area.title} delay={index * 100} className="h-full">
-              <div className="group bg-white rounded-[2rem] p-8 lg:p-10 border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                  <area.icon className="h-7 w-7" />
-                </div>
-                <h3 className="text-xl font-bold font-display text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {area.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed text-base flex-1">
-                  {area.description}
-                </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column - Sticky Heading */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <SectionReveal>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-100 border border-cyan-200 mb-6">
+                <LayoutTemplate className="h-4 w-4 text-cyan-700" />
+                <span className="text-sm font-semibold text-cyan-900">What We Build</span>
               </div>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6 leading-tight">
+                Software Built Around Product Goals
+              </h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                We support product companies that need dependable engineering capacity for new development, product enhancements, integrations, maintenance, and platform evolution. Our focus is not just writing code, but understanding the product context and delivering work that fits the client's roadmap.
+              </p>
             </SectionReveal>
-          ))}
+          </div>
+          
+          {/* Right Column - Capabilities List */}
+          <div className="lg:col-span-7 flex flex-col border-t border-border/60">
+            {buildAreas.map((area, index) => (
+              <SectionReveal key={area.title} delay={index * 100}>
+                <div className="group flex flex-col sm:flex-row items-start gap-6 py-8 border-b border-border/60 hover:bg-slate-50 transition-colors px-6 -mx-6 rounded-2xl">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-500 shadow-sm">
+                    <area.icon className="h-7 w-7" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-cyan-700 transition-colors">{area.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+          
         </div>
       </div>
     </section>

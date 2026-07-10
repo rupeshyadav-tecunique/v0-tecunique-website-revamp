@@ -4,7 +4,7 @@ import { AtlassianTargetAudience } from "@/components/services/atlassian/target-
 import { AtlassianCapabilities } from "@/components/services/atlassian/capabilities-section"
 import { AtlassianProcessAndSupport } from "@/components/services/atlassian/process-and-support-section"
 import { AtlassianExperience } from "@/components/services/atlassian/experience-section"
-import { AtlassianCTA } from "@/components/services/atlassian/cta-section"
+import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Atlassian App Development & QA | Jira App Engineering | TECUNIQUE",
@@ -19,7 +19,7 @@ export default function AtlassianServicesPage() {
       <AtlassianCapabilities />
       <AtlassianProcessAndSupport />
       <AtlassianExperience />
-      <AtlassianCTA />
+      <UnifiedCTA />
     </div>
   )
 }
