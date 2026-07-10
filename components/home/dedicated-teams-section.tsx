@@ -105,7 +105,7 @@ export function DedicatedTeamsSection() {
               </div>
               <div className="flex flex-wrap justify-center items-center gap-6">
                 <div className="font-bold text-xl text-slate-800 flex items-center gap-1.5">
-                  <span className="text-orange-500 text-2xl">▲</span> appfire
+                  <span className="text-orange-500 text-2xl" aria-hidden="true">▲</span> Appfire
                 </div>
                 <Image src="/images/companies/innovalog.png" alt="Innovalog" width={110} height={35} className="h-6 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
                 <Image src="/images/companies/quotilabs.png" alt="Qotilabs" width={110} height={35} className="h-6 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
@@ -144,7 +144,7 @@ export function DedicatedTeamsSection() {
               </div>
               <div className="flex flex-wrap justify-center items-center gap-6">
                 <span className="font-bold text-lg text-slate-800">eXtensi</span>
-                <span className="font-bold text-lg text-slate-800 flex items-center gap-1"><span className="text-blue-500">✓</span> validat</span>
+                <span className="font-bold text-lg text-slate-800 flex items-center gap-1"><span className="text-blue-500" aria-hidden="true">✓</span> Validat</span>
               </div>
             </div>
           </div>

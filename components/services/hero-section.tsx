@@ -37,7 +37,7 @@ export function ServicesHero() {
             </Button>
             <Button size="lg" variant="outline" className="rounded-xl px-10 h-12 text-lg font-semibold group hover:bg-slate-50 transition-all hover:-translate-y-0.5 w-full sm:w-auto" asChild>
               <Link href="#services">
-                Explore Services Below
+                View Service Areas
               </Link>
             </Button>
           </div>

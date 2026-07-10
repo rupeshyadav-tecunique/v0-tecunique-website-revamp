@@ -98,12 +98,19 @@ export function HeroSection() {
             </h1>
 
             {/* Dynamic Expertise */}
-            <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex items-center gap-2">
-              <span className="text-slate-600">Specializing in</span>
-              <WordRotate
-                words={["Dedicated Teams", "Product Engineering", "QA Automation", "Cloud Solutions", "Atlassian Apps"]}
-                className="gradient-text"
-              />
+            <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-slate-600" aria-hidden="true">Specializing in</span>
+              
+              {/* Screen reader text (reads the full sentence naturally) */}
+              <span className="sr-only">Specializing in Dedicated Teams, Product Engineering, QA Automation, Cloud Solutions, and Atlassian Apps.</span>
+
+              {/* Visual rotating text */}
+              <div aria-hidden="true">
+                <WordRotate
+                  words={["Dedicated Teams", "Product Engineering", "QA Automation", "Cloud Solutions", "Atlassian Apps"]}
+                  className="gradient-text"
+                />
+              </div>
             </div>
 
             {/* Subheadline */}
@@ -118,8 +125,8 @@ export function HeroSection() {
                 <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years in Software Services</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-xl font-black text-foreground">95%</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Team Retention</div>
+                <div className="text-xl font-black text-foreground">Strong</div>
+                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Team Continuity</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
                 <div className="text-xl font-black text-foreground">Long-Term</div>

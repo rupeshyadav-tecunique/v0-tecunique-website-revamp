@@ -114,7 +114,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-2 text-sm text-slate-400">
                 <MapPin className="h-4 w-4 mt-0.5 text-slate-500 shrink-0" />
-                <span>1002 Neptune Edge, Alkapuri, Vadodara – 390007</span>
+                <span>1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007, Gujarat, India</span>
               </div>
             </div>
 

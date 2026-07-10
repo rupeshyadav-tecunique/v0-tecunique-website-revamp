@@ -13,7 +13,7 @@ const offices = [
     country: "INDIA",
     type: "Headquarters",
     flag: "in",
-    address: "1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007.",
+    address: "1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007, Gujarat, India",
     email: "info@tecunique.com",
     phone: "+91 982 544 6570"
   },

@@ -9,13 +9,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { CheckCircle, Send } from "lucide-react"
 
 const services = [
-  "Dedicated Development Team",
-  "Software QA Team",
-  "IT Staff Augmentation",
-  "Offshore Development",
-  "Product Development",
-  "Application Development",
-  "Other",
+  "Dedicated Software Teams",
+  "Product Engineering",
+  "QA & Automation",
+  "Atlassian App Engineering",
+  "Not Sure / Need Guidance",
 ]
 
 export function ContactForm() {

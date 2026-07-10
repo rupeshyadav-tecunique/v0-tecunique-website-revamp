@@ -82,12 +82,12 @@ export function HeroTechVisual() {
            
            {/* Bottom Mid Left */}
            <div className="absolute top-[85%] left-[25%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-slate-50">
-              <span className="text-[10px] font-bold text-slate-700">🎭 Playwright</span>
+              <span className="text-[10px] font-bold text-slate-700"><span aria-hidden="true">🎭</span> Playwright</span>
            </div>
 
            {/* Bottom Mid Right */}
            <div className="absolute top-[75%] right-[25%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-slate-50">
-              <span className="text-[10px] font-bold text-slate-700">✅ Selenium</span>
+              <span className="text-[10px] font-bold text-slate-700"><span aria-hidden="true">✅</span> Selenium</span>
            </div>
 
            {/* Bottom Right */}
@@ -109,13 +109,13 @@ export function HeroTechVisual() {
 
            {/* Top Right */}
            <div className="absolute top-[25%] right-[12%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-slate-50">
-              <span className="text-[#0052CC] font-bold text-[10px]">♦</span>
+              <span className="text-[#0052CC] font-bold text-[10px]" aria-hidden="true">♦</span>
               <span className="text-[10px] font-bold text-slate-700">Jira</span>
            </div>
 
            {/* Top Mid Right */}
            <div className="absolute top-[10%] right-[30%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-slate-50">
-              <span className="text-[#0052CC] font-bold text-[10px]">≈</span>
+              <span className="text-[#0052CC] font-bold text-[10px]" aria-hidden="true">≈</span>
               <span className="text-[10px] font-bold text-slate-700">Confluence</span>
            </div>
         </div>

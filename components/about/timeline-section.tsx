@@ -65,7 +65,10 @@ export function AboutTimeline() {
                     </div>
 
                     <div className="flex-1">
-                      <div className="sm:hidden mb-2">
+                      {/* Visually hidden year for screen readers (read exactly once) */}
+                      <span className="sr-only">Year {event.year}: </span>
+                      
+                      <div className="sm:hidden mb-2" aria-hidden="true">
                         <span className="text-2xl font-black text-blue-500">{event.year}</span>
                       </div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{event.title}</h3>

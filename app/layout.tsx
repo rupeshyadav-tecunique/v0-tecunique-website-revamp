@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'TECUNIQUE - Trusted Software Engineering & Atlassian Apps Expertise',
+    default: 'TECUNIQUE | Software Engineering & Dedicated Teams in India',
     template: '%s | TECUNIQUE',
   },
-  description: 'Scale with confidence. Dedicated teams delivering Atlassian apps and high-quality software at speed. Offshore software development and IT outsourcing services since 2010.',
+  description: 'TECUNIQUE helps software companies build dedicated development, QA, automation, and support teams in India, with experience across product engineering, cloud solutions, and Atlassian apps.',
   keywords: ['software development', 'Atlassian apps', 'IT outsourcing', 'dedicated teams', 'quality assurance', 'offshore development'],
   authors: [{ name: 'TECUNIQUE' }],
   openGraph: {

@@ -105,11 +105,11 @@ export function QAHero() {
               {/* Tools visual row */}
               <div className="mt-12 pt-8 border-t border-slate-100 grid grid-cols-3 gap-6">
                  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-600">
-                   <span className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center text-white text-[10px]">P</span>
+                   <span className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center text-white text-[10px]" aria-hidden="true">P</span>
                    Playwright
                  </div>
                  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-600">
-                   <span className="w-5 h-5 bg-green-600 rounded flex items-center justify-center text-white text-[10px]">Se</span>
+                   <span className="w-5 h-5 bg-green-600 rounded flex items-center justify-center text-white text-[10px]" aria-hidden="true">Se</span>
                    Selenium
                  </div>
                  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-600">
@@ -120,7 +120,7 @@ export function QAHero() {
                    API Testing
                  </div>
                  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-600">
-                   <span className="text-[#0052CC] font-bold text-lg">▲</span>
+                   <span className="text-[#0052CC] font-bold text-lg" aria-hidden="true">▲</span>
                    Jira Apps
                  </div>
                  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-slate-600">

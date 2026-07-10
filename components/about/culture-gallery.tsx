@@ -81,7 +81,7 @@ function AutoCarouselSlot({ category, interval = 3000 }: { category: typeof cate
         >
           <Image
             src={img}
-            alt={i === 0 ? category.label : ""}
+            alt={i === 0 ? `TECUNIQUE team during ${category.label}` : ""}
             fill
             sizes={category.className.includes("col-span-2") ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
             className="object-cover"

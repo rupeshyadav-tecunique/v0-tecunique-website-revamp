@@ -33,7 +33,7 @@ export function AboutHero() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
             {[
               { icon: Clock, title: "Since 2010", subtitle: "Long-term software engineering experience", color: "text-blue-500", bg: "bg-blue-50" },
-              { icon: Users, title: "High Team Retention", subtitle: "Stable teams with continuity of product knowledge", color: "text-purple-500", bg: "bg-purple-50" },
+              { icon: Users, title: "Strong Team Continuity", subtitle: "Stable teams with continuity of product knowledge", color: "text-purple-500", bg: "bg-purple-50" },
               { icon: Cpu, title: "Atlassian Ecosystem", subtitle: "Hands-on experience with Jira apps & support", color: "text-indigo-500", bg: "bg-indigo-50" },
               { icon: ShieldCheck, title: "NDA-Backed", subtitle: "Confidential, client-controlled collaboration", color: "text-emerald-500", bg: "bg-emerald-50" },
             ].map((badge, i) => (

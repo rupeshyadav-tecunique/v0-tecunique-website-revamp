@@ -7,7 +7,10 @@ const services = [
     id: "dedicated-teams",
     title: "Dedicated Software Teams",
     icon: Users,
-    color: "indigo",
+    color: "from-indigo-500 to-blue-600",
+    bgLight: "bg-indigo-500/10",
+    textLight: "text-indigo-600",
+    shadow: "shadow-indigo-500/20",
     text: "Build full-time development, QA, automation, DevOps, or support teams in India. You select the team; TECUNIQUE manages recruitment, onboarding, HR, payroll, infrastructure, NDA, and continuity.",
     bestFor: [
       "Long-term product development",
@@ -22,7 +25,10 @@ const services = [
     id: "atlassian",
     title: "Atlassian App Development & QA",
     icon: Layers,
-    color: "blue",
+    color: "from-blue-500 to-cyan-500",
+    bgLight: "bg-blue-500/10",
+    textLight: "text-blue-600",
+    shadow: "shadow-blue-500/20",
     text: "Build, test, automate, and support Jira apps with dedicated engineering and QA teams. We support Forge, Connect, REST APIs, Marketplace app QA, integrations, and long-term product maintenance.",
     bestFor: [
       "Atlassian Marketplace vendors",
@@ -37,7 +43,10 @@ const services = [
     id: "qa-automation",
     title: "Software QA & Automation Testing",
     icon: TestTube2,
-    color: "purple",
+    color: "from-purple-500 to-pink-500",
+    bgLight: "bg-purple-500/10",
+    textLight: "text-purple-600",
+    shadow: "shadow-purple-500/20",
     text: "Strengthen product quality with dedicated QA and automation teams. We support manual QA, regression testing, Playwright, Selenium, JUnit, API testing, CI/CD integration, and release validation.",
     bestFor: [
       "Product QA",
@@ -50,9 +59,12 @@ const services = [
   },
   {
     id: "product-engineering",
-    title: "Product Engineering & Custom Software Development",
+    title: "Product Engineering & Custom Software",
     icon: Code2,
-    color: "cyan",
+    color: "from-cyan-500 to-teal-500",
+    bgLight: "bg-cyan-500/10",
+    textLight: "text-cyan-600",
+    shadow: "shadow-cyan-500/20",
     text: "Build, enhance, and maintain software products, web applications, backend systems, integrations, and cloud-ready platforms with dedicated engineering teams.",
     bestFor: [
       "Web applications",
@@ -67,49 +79,83 @@ const services = [
 
 export function ServicesCards() {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-slate-50 relative border-t border-slate-200">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="services" className="py-24 lg:py-32 bg-slate-50 relative border-t border-border/50 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
           <SectionReveal>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-display">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-4">
               Choose the Right Engagement Area
             </h2>
+            <p className="text-lg text-muted-foreground">
+              Select the service that aligns with your strategic goals and operational needs.
+            </p>
           </SectionReveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
               <SectionReveal key={service.id} delay={index * 100} className="h-full">
-                <div className="flex flex-col h-full bg-white rounded-3xl p-8 lg:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-all group">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl shrink-0 bg-slate-100 text-slate-600`}>
-                      <Icon className="h-7 w-7" />
+                <div className="group relative flex flex-col h-full bg-white rounded-[2rem] p-8 lg:p-10 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                  
+                  {/* Top Gradient Line */}
+                  <div className={`absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r ${service.color} opacity-80 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                  {/* Subtle Gradient Glow on Hover */}
+                  <div className={`absolute inset-0 rounded-[2rem] bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
+                  
+                  {/* Outer Border with Hover Effect */}
+                  <div className="absolute inset-0 rounded-[2rem] border border-border/60 group-hover:border-primary/20 transition-colors duration-500" />
+
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-5 mb-8">
+                      <div className={`flex h-16 w-16 items-center justify-center rounded-2xl shrink-0 ${service.bgLight} ${service.textLight} shadow-sm group-hover:scale-110 transition-transform duration-500`}>
+                        <Icon className="h-8 w-8" />
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-bold font-display text-foreground leading-tight">{service.title}</h3>
                     </div>
-                    <h3 className="text-2xl font-bold font-display text-slate-900">{service.title}</h3>
-                  </div>
 
-                  <p className="text-slate-600 leading-relaxed mb-8 text-lg">
-                    {service.text}
-                  </p>
+                    {/* Description */}
+                    <p className="text-muted-foreground leading-relaxed mb-8 text-[1.05rem]">
+                      {service.text}
+                    </p>
 
-                  <div className="mt-auto">
-                    <h4 className="font-semibold text-slate-900 mb-4">Best for:</h4>
-                    <ul className="space-y-3 mb-8">
-                      {service.bestFor.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                          <span className="text-slate-600">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Feature List */}
+                    <div className="mt-auto">
+                      <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                        <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${service.color}`} />
+                        Best for
+                      </h4>
+                      <ul className="space-y-3 mb-10 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+                        {service.bestFor.map((item) => (
+                          <li key={item} className="flex items-start gap-3">
+                            <div className={`mt-1 flex-shrink-0 w-5 h-5 rounded-full ${service.bgLight} flex items-center justify-center`}>
+                              <CheckCircle2 className={`h-3.5 w-3.5 ${service.textLight}`} />
+                            </div>
+                            <span className="text-muted-foreground font-medium text-sm leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
 
-                    <div className="pt-6 border-t border-slate-100">
-                      <Link href={service.ctaHref} className="inline-flex items-center gap-2 text-blue-600 font-bold hover:text-blue-700 transition-colors group/link">
-                        {service.ctaText}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                      </Link>
+                      {/* CTA Action */}
+                      <div className="pt-6 border-t border-border/60 flex items-center justify-between">
+                        <Link 
+                          href={service.ctaHref} 
+                          className="group/link inline-flex items-center gap-2 text-primary font-bold hover:text-primary/80 transition-colors"
+                        >
+                          {service.ctaText}
+                          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 group-hover/link:bg-primary group-hover/link:text-white transition-all duration-300">
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5" />
+                          </div>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

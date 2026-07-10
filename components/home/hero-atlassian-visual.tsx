@@ -3,7 +3,7 @@
 import { ClipboardList, Code2, ShieldCheck, Headset, Puzzle, Zap } from "lucide-react"
 
 const steps = [
-  { id: 1, name: "Plan App", desc: "Jira & Confluence use cases", icon: ClipboardList },
+  { id: 1, name: "Plan App", desc: "Jira app use cases", icon: ClipboardList },
   { id: 2, name: "Build & Integrate", desc: "Frontend, backend, APIs", icon: Code2 },
   { id: 3, name: "QA & Marketplace Release", desc: "Testing, validation, approval-ready", icon: ShieldCheck },
   { id: 4, name: "Support & Enhance", desc: "Maintenance, upgrades, improvements", icon: Headset },
@@ -105,7 +105,7 @@ export function HeroAtlassianVisual() {
       {/* Bottom Chips */}
       <div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2 relative z-10">
         {[
-          "Jira Apps", "Confluence Apps", "Forge", "Connect", "QA Automation", "REST APIs"
+          "Jira Apps", "Forge", "Connect", "QA Automation", "REST APIs", "Marketplace Apps"
         ].map((chip) => (
           <div key={chip} className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-white px-2 py-1 sm:px-2.5 sm:py-1.5 shadow-sm border border-slate-100 text-[9px] sm:text-[10px] font-bold text-slate-600">
             {chip}
