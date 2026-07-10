@@ -11,10 +11,10 @@ const steps = [
 
 export function HeroAtlassianVisual() {
   return (
-    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto h-[500px] flex flex-col bg-[#f8f9fc] rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 overflow-hidden">
+    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto h-[540px] flex flex-col bg-[#f8f9fc] rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 overflow-hidden">
       
       {/* Header */}
-      <div className="mb-6 relative z-10">
+      <div className="mb-6 relative z-10 shrink-0">
         <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 leading-[1.1] mb-2 tracking-tight">
           Atlassian <br />
           <span className="text-[#6366f1]">App Engineering</span>
@@ -25,28 +25,28 @@ export function HeroAtlassianVisual() {
       </div>
 
       {/* Content Area */}
-      <div className="relative flex flex-1">
+      <div className="relative flex flex-1 mt-2">
         
         {/* Left: Timeline & Steps */}
-        <div className="relative z-10 flex flex-col justify-between py-2 w-[60%] h-full">
+        <div className="relative z-10 flex flex-col gap-4 py-2 w-[65%] shrink-0">
           {/* Vertical dotted line */}
-          <div className="absolute left-[9px] top-4 bottom-4 w-[2px] border-l-2 border-dotted border-indigo-300 -z-10" />
+          <div className="absolute left-[11px] top-6 bottom-6 w-[2px] border-l-2 border-dotted border-indigo-300 -z-10" />
 
           {steps.map((step) => (
-            <div key={step.id} className="flex items-center gap-2 sm:gap-3">
+            <div key={step.id} className="flex items-center gap-3 sm:gap-4">
               {/* Number dot */}
-              <div className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-[#6366f1] text-[9px] font-bold text-white shadow-sm ring-4 ring-[#f8f9fc]">
+              <div className="flex h-[24px] w-[24px] shrink-0 items-center justify-center rounded-full bg-[#6366f1] text-[10px] font-bold text-white shadow-sm ring-4 ring-[#f8f9fc]">
                 {step.id}
               </div>
               
               {/* Step Card */}
-              <div className="flex flex-1 items-center gap-2.5 rounded-xl bg-white p-2 sm:p-2.5 shadow-sm border border-slate-100">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-500">
-                  <step.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <div className="flex flex-1 items-center gap-3 rounded-xl bg-white p-3 sm:p-3.5 shadow-sm border border-slate-100">
+                <div className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-500">
+                  <step.icon className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[11px] sm:text-xs font-bold text-slate-800 truncate">{step.name}</div>
-                  <div className="text-[9px] sm:text-[10px] font-medium text-slate-500 truncate">{step.desc}</div>
+                  <div className="text-xs sm:text-[13px] font-bold text-slate-800 truncate leading-tight mb-0.5">{step.name}</div>
+                  <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 truncate">{step.desc}</div>
                 </div>
               </div>
             </div>
