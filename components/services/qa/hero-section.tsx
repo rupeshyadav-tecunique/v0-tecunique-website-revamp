@@ -22,17 +22,14 @@ export function QAHero() {
             <div className="mb-4 text-[#0052CC] font-bold text-sm tracking-widest uppercase">
               QA SERVICES
             </div>
-            <div className="text-[#0052CC] font-semibold text-lg mb-4">
-              Software QA & Automation Testing
-            </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-              Strengthen Product Quality with <br className="hidden lg:block"/>
-              <span className="text-[#0052CC]">Dedicated QA & Automation Teams</span>
+              Strengthen Quality with <br className="hidden lg:block"/>
+              <span className="text-[#0052CC]">Dedicated QA Teams</span>
             </h1>
             
             <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-2xl">
-              TECUNIQUE helps software product companies build dedicated QA and automation testing teams in India. Our teams support manual testing, regression testing, automation frameworks, API testing, release validation, and long-term product quality improvement.
+              Ensure your software products are robust and bug-free with our manual testing and automation engineers.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">

@@ -1,11 +1,12 @@
 import Link from "next/link"
 import { Layers, ArrowRight } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { HeroAtlassianVisual } from "@/components/home/hero-atlassian-visual"
 
 export function AtlassianHero() {
   return (
     <section
-      className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 bg-white"
+      className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-white"
       style={{ background: "linear-gradient(170deg, #ffffff 0%, #e0f2fe 18%, #bae6fd 45%, #e0e7ff 75%, #f3e8ff 100%)" }}
     >
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -14,46 +15,42 @@ export function AtlassianHero() {
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(#0284c7 1px, transparent 1px), linear-gradient(to right, #0284c7 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-        <SectionReveal className="mx-auto max-w-4xl">
-          <div className="section-pill mb-6 mx-auto inline-flex bg-[#0052CC]/10 text-[#0052CC] border-[#0052CC]/20 px-3 py-1 rounded-full text-sm font-semibold">
-            <Layers className="h-4 w-4 mr-2" />
-            Atlassian App Development & QA
-          </div>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-            Build, Test, and Support Jira Apps with <br className="hidden lg:block"/>
-            <span className="text-[#0052CC]">Dedicated Engineering Teams</span>
-          </h1>
-          <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            TECUNIQUE helps Atlassian Marketplace vendors and software product companies build, test, automate, and maintain Jira apps. Our teams support app development, QA, automation, integrations, Forge/Connect work, and long-term product maintenance.
-          </p>
-          <p className="mt-4 text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto font-medium">
-            Engagements can be structured as dedicated developers, QA engineers, automation engineers, or support engineers working as an extension of your product team.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact" 
-              className="inline-flex h-14 items-center justify-center rounded-full bg-[#0052CC] px-8 text-base font-bold text-white shadow-xl shadow-[#0052CC]/20 transition-all hover:bg-[#0047b3] hover:scale-105"
-            >
-              Discuss Your Atlassian App Needs
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link 
-              href="/services/dedicated-teams" 
-              className="inline-flex h-14 items-center justify-center rounded-full border-2 border-[#0052CC]/20 bg-white/50 backdrop-blur-sm px-8 text-base font-bold text-[#0052CC] transition-all hover:bg-white hover:border-[#0052CC]/40 hover:scale-105"
-            >
-              Explore Dedicated Teams
-            </Link>
-          </div>
-          
-          <div className="mt-12 flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {["Jira Apps", "Forge & Connect", "Marketplace App QA", "Automation Testing", "REST APIs", "Long-Term Support"].map(chip => (
-              <span key={chip} className="px-4 py-2 rounded-full bg-white/60 border border-slate-200 text-slate-700 text-sm font-medium shadow-sm backdrop-blur-sm">
-                {chip}
-              </span>
-            ))}
-          </div>
-        </SectionReveal>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Column */}
+          <SectionReveal direction="left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0052CC] text-sm font-semibold mb-8 shadow-sm">
+              <Layers className="h-4 w-4" />
+              Atlassian App Engineering
+            </div>
+            
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
+              Build, Test, and Support <br className="hidden md:block"/>
+              <span className="text-[#0052CC]">Jira Apps at Scale</span>
+            </h1>
+            
+            <p className="text-xl text-slate-600 max-w-2xl mb-10">
+              Extend your product team with dedicated engineers and QA experts specializing in the Atlassian ecosystem.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Link 
+                href="/contact" 
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[#0052CC] px-8 text-base font-bold text-white shadow-lg transition-all hover:bg-[#0047b3] hover:scale-105 w-full sm:w-auto"
+              >
+                Discuss App Needs
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </SectionReveal>
+
+          {/* Right Column */}
+          <SectionReveal direction="right" className="relative hidden lg:block">
+             <div className="w-full max-w-[500px] ml-auto">
+                <HeroAtlassianVisual />
+             </div>
+          </SectionReveal>
+        </div>
       </div>
     </section>
   )

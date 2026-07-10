@@ -16,28 +16,30 @@ export function ServicesHero() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
-        <SectionReveal className="mx-auto max-w-4xl">
-          <div className="section-pill mb-6 mx-auto inline-flex">
-            <Sparkles className="h-3 w-3" />
-            Services Built Around Long-Term Software Teams
+        <SectionReveal className="mx-auto max-w-4xl flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0052CC] text-sm font-semibold mb-8 shadow-sm">
+            <Sparkles className="h-4 w-4" />
+            Software Services
           </div>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-            Engineering, QA, automation, and <br className="hidden lg:block" />
-            <span className="gradient-text">Atlassian app support</span> for product companies.
+          
+          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
+            Build, Scale, and Support <br className="hidden md:block" />
+            <span className="text-[#0052CC]">Your Software Products</span>
           </h1>
-          <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            TECUNIQUE helps software companies build dedicated teams, strengthen product quality, support Atlassian app development, and extend engineering capacity from India. Choose the service area that best matches your current need.
+          
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+            Extend your engineering capacity, strengthen product quality, and accelerate Atlassian app development with our dedicated teams in India.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="rounded-xl px-10 h-12 text-lg font-semibold group shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 w-full sm:w-auto bg-blue-600 hover:bg-blue-700" asChild>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <Button size="lg" className="rounded-full px-8 h-12 text-base font-bold shadow-lg hover:shadow-xl transition-all bg-[#0052CC] hover:bg-[#0047b3] w-full sm:w-auto" asChild>
               <Link href="/contact">
-                Discuss Your Requirement
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                Discuss Your Requirements
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-xl px-10 h-12 text-lg font-semibold group hover:bg-slate-50 transition-all hover:-translate-y-0.5 w-full sm:w-auto" asChild>
+            <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base font-bold border-2 border-slate-200 hover:bg-slate-50 transition-all w-full sm:w-auto text-slate-700" asChild>
               <Link href="#services">
-                View Service Areas
+                Explore Services
               </Link>
             </Button>
           </div>

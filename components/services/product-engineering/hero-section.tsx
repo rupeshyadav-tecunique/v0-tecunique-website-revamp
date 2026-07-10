@@ -22,17 +22,14 @@ export function ProductEngineeringHero() {
             <div className="mb-4 text-[#0052CC] font-bold text-sm tracking-widest uppercase">
               ENGINEERING SERVICES
             </div>
-            <div className="text-[#0052CC] font-semibold text-lg mb-4">
-              Product Engineering & Custom Software Development
-            </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-              Build, Enhance, and Maintain Software Products with <br className="hidden lg:block"/>
-              <span className="text-[#0052CC]">Dedicated Engineering Teams</span>
+              Build and Scale <br className="hidden lg:block"/>
+              <span className="text-[#0052CC]">Custom Software Products</span>
             </h1>
             
             <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-2xl">
-              TECUNIQUE helps software product companies design, develop, enhance, and maintain web applications, backend systems, integrations, and cloud-ready platforms. Our teams work as an extension of your engineering team, supporting long-term product development with practical execution and continuity.
+              Design, develop, and maintain web applications, backend systems, and cloud platforms with our expert engineering teams.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
