@@ -111,9 +111,9 @@ export function AboutWhatWeDo() {
               </div>
             </div>
 
-            <div className="relative hidden lg:block">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-3xl transform rotate-3 scale-105" />
-              <Image src="/images/services/team-aug.png" alt="How we work" width={600} height={700} className="rounded-3xl relative z-10 shadow-2xl object-cover h-[700px] w-full" />
+            <div className="lg:col-span-1 relative hidden lg:block">
+              <Image src="/images/about/about-2.png" alt="How we work" width={600} height={700} className="rounded-3xl relative z-10 shadow-2xl object-cover h-[700px] w-full" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100 to-blue-50 rounded-[2.5rem] -z-10 transform rotate-2"></div>
             </div>
           </SectionReveal>
         </div>

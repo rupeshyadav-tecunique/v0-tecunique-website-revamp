@@ -61,7 +61,7 @@ const categories = [
   },
 ]
 
-function AutoCarouselSlot({ category, interval = 3000 }: { category: typeof categories[0], interval?: number }) {
+function AutoCarouselSlot({ category, interval = 3000, className = "" }: { category: typeof categories[0], interval?: number, className?: string }) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -72,36 +72,54 @@ function AutoCarouselSlot({ category, interval = 3000 }: { category: typeof cate
   }, [category.images.length, interval])
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl bg-muted aspect-square ${category.className} group shadow-sm`}>
+    <div className={`relative overflow-hidden rounded-2xl bg-slate-100 group shadow-sm ${className}`}>
       {category.images.map((img, i) => (
         <div
           key={i}
-          className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ${i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-110"
+          className={`absolute inset-0 h-full w-full transition-opacity duration-1000 ${i === index ? "opacity-100 z-10 scale-100" : "opacity-0 z-0 scale-105"
             }`}
         >
           <Image
             src={img}
             alt={i === 0 ? `TECUNIQUE team during ${category.label}` : ""}
             fill
-            sizes={category.className.includes("col-span-2") ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+            sizes="(max-width: 768px) 50vw, 33vw"
             className="object-cover"
             priority={i === 0}
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-end p-6">
-        <p className="text-white font-semibold text-sm md:text-base">{category.label}</p>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-end p-4 lg:p-6">
+        <p className="text-white font-semibold text-sm lg:text-base leading-tight">{category.label}</p>
       </div>
     </div>
   )
 }
 
 export default function CultureGallery() {
+  const mainCategory = categories[0]
+  const smallCategories = categories.slice(1)
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {categories.map((cat, i) => (
-        <AutoCarouselSlot key={cat.id} category={cat} interval={5000 + i * 500} />
-      ))}
+    <div className="flex flex-col gap-3 lg:gap-4 h-auto lg:h-[750px]">
+      {/* Top Row: Big Image */}
+      <AutoCarouselSlot 
+        category={mainCategory} 
+        interval={5000} 
+        className="w-full h-64 sm:h-80 lg:h-[350px] shrink-0" 
+      />
+
+      {/* Bottom Row: 2x2 Grid of Small Images */}
+      <div className="grid grid-cols-2 grid-rows-2 gap-3 lg:gap-4 flex-1">
+        {smallCategories.map((cat, i) => (
+          <AutoCarouselSlot 
+            key={cat.id} 
+            category={cat} 
+            interval={5500 + i * 500} 
+            className="w-full h-full min-h-[160px] lg:min-h-0" 
+          />
+        ))}
+      </div>
     </div>
   )
 }

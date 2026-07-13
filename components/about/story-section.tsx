@@ -21,7 +21,7 @@ export function AboutStory() {
           <div className="lg:col-span-5 relative">
             <div className="aspect-square rounded-3xl overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent z-10" />
-              <Image src="/images/events/AnnualMeet/annualmeet1.JPG" alt="Our Story" fill className="object-cover" />
+              <Image src="/images/about/about-1.png" alt="Our Story" fill className="object-cover" />
               <div className="absolute inset-0 z-20 p-10 flex flex-col justify-end text-white">
                 <QuoteIcon className="w-12 h-12 text-white/30 mb-4" />
                 <p className="text-2xl font-medium leading-snug">"Software companies need reliable engineering teams, not just temporary resources."</p>
