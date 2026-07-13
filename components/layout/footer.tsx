@@ -51,13 +51,13 @@ const reviewLinks = [
     name: "AmbitionBox",
     rating: "4.9",
     href: "https://www.ambitionbox.com/reviews/tecunique-reviews",
-    color: "#ffffff"
+    color: "#334155"
   },
   {
     name: "Clutch",
     rating: "4.9",
     href: "https://clutch.co/profile/tecunique-private#highlights",
-    color: "#ffffff"
+    color: "#334155"
   },
   {
     name: "GoodFirms",
