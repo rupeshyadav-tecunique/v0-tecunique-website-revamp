@@ -41,7 +41,7 @@ const cards = [
     color: "text-purple-600",
     bg: "bg-purple-50",
     items: [
-      "We focus on continuity, ownership, and retention.",
+      "We focus on continuity, ownership, and team stability.",
       "This helps preserve product knowledge and reduce repeated onboarding.",
     ]
   }
@@ -105,10 +105,10 @@ export function DedicatedTeamsSection() {
               </div>
               <div className="flex flex-wrap justify-center items-center gap-6">
                 <div className="font-bold text-xl text-slate-800 flex items-center gap-1.5">
-                  <span className="text-orange-500 text-2xl" aria-hidden="true">▲</span> Appfire
+                  Appfire
                 </div>
-                <Image src="/images/companies/innovalog.png" alt="Innovalog" width={110} height={35} className="h-6 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
-                <Image src="/images/companies/quotilabs.png" alt="Qotilabs" width={110} height={35} className="h-6 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
+                <Image src="/images/companies/innovalog.png" alt="Innovalog" width={110} height={35} className="h-6 w-auto object-contain transition-all" />
+                <Image src="/images/companies/quotilabs.png" alt="Qotilabs" width={110} height={35} className="h-6 w-auto object-contain transition-all" />
               </div>
             </div>
 
@@ -116,12 +116,12 @@ export function DedicatedTeamsSection() {
             <div className="flex flex-col items-center pt-8 md:pt-0">
               <div className="flex items-center gap-2 mb-8">
                 <Database className="w-5 h-5 text-emerald-600" />
-                <span className="font-semibold text-emerald-600">Data & AI Platforms</span>
+                <span className="font-semibold text-emerald-600 text-center">Product Engineering & Data Platforms</span>
               </div>
               <div className="flex flex-wrap justify-center items-center gap-6">
-                <Image src="/images/companies/oppscience.svg" alt="OPPSCIENCE" width={110} height={35} className="h-5 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
-                <Image src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" width={110} height={35} className="h-6 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
-                <Image src="/images/companies/polyspot.webp" alt="PolySpot" width={110} height={35} className="h-7 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
+                <Image src="/images/companies/oppscience.svg" alt="OPPSCIENCE" width={110} height={35} className="h-5 w-auto object-contain transition-all" />
+                <Image src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" width={110} height={35} className="h-6 w-auto object-contain transition-all" />
+                <Image src="/images/companies/polyspot.webp" alt="PolySpot" width={110} height={35} className="h-7 w-auto object-contain transition-all" />
               </div>
             </div>
 
@@ -132,7 +132,7 @@ export function DedicatedTeamsSection() {
                 <span className="font-semibold text-purple-600">ODC Setup & Scaling</span>
               </div>
               <div className="flex justify-center items-center">
-                <Image src="/images/companies/skyselect.svg" alt="SkySelect" width={110} height={35} className="h-8 w-auto object-contain grayscale opacity-80 hover:grayscale-0 transition-all" />
+                <Image src="/images/companies/skyselect.svg" alt="SkySelect" width={110} height={35} className="h-8 w-auto object-contain transition-all" />
               </div>
             </div>
 
@@ -140,11 +140,11 @@ export function DedicatedTeamsSection() {
             <div className="flex flex-col items-center pt-8 md:pt-0">
               <div className="flex items-center gap-2 mb-8">
                 <Lightbulb className="w-5 h-5 text-orange-500" />
-                <span className="font-semibold text-orange-500">Product Engineering</span>
+                <span className="font-semibold text-orange-500">Product Engineering & Support</span>
               </div>
               <div className="flex flex-wrap justify-center items-center gap-6">
                 <span className="font-bold text-lg text-slate-800">eXtensi</span>
-                <span className="font-bold text-lg text-slate-800 flex items-center gap-1"><span className="text-blue-500" aria-hidden="true">✓</span> Validat</span>
+                <span className="font-bold text-lg text-slate-800 flex items-center gap-1">Validat</span>
               </div>
             </div>
           </div>

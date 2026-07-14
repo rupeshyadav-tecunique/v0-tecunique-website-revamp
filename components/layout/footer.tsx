@@ -94,23 +94,29 @@ export function Footer() {
             </Link>
 
             {/* Contact quick info */}
-            <div className="space-y-2">
-              <a
-                href="mailto:sales@tecunique.com"
-                className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors"
-              >
-                <Mail className="h-4 w-4 text-slate-400" />
-                sales@tecunique.com
-              </a>
-              <a
-                href="tel:+919157460525"
-                className="flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors"
-              >
-                <Phone className="h-4 w-4 text-slate-400" />
-                +91 915 746 0525
-              </a>
+            <div className="space-y-3">
+              <div>
+                <a
+                  href="mailto:sales@tecunique.com"
+                  className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors"
+                  aria-label="Email us at sales@tecunique.com"
+                >
+                  <Mail className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                  <span>sales@tecunique.com</span>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="tel:+919157460525"
+                  className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-primary transition-colors"
+                  aria-label="Call us at +91 915 746 0525"
+                >
+                  <Phone className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                  <span>+91 915 746 0525</span>
+                </a>
+              </div>
               <div className="flex items-start gap-2 text-sm text-slate-600">
-                <MapPin className="h-4 w-4 mt-0.5 text-slate-400 shrink-0" />
+                <MapPin className="h-4 w-4 mt-0.5 text-slate-400 shrink-0" aria-hidden="true" />
                 <span>1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007, Gujarat, India</span>
               </div>
             </div>

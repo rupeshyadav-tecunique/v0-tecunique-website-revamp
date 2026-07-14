@@ -5,9 +5,9 @@ import { ArrowRight, Shield, FileCheck, Clock3 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const trustBadges = [
-  { icon: Shield, label: "NDA Protected" },
-  { icon: FileCheck, label: "Strict Quality Control" },
-  { icon: Clock3, label: "On-Time Delivery" },
+  { icon: Shield, label: "NDA-Backed Engagements" },
+  { icon: FileCheck, label: "Structured Quality Practices" },
+  { icon: Clock3, label: "Delivery Discipline" },
 ]
 
 export function CTASection() {
@@ -47,9 +47,7 @@ export function CTASection() {
 
           {/* Main heading */}
           <h2 className="reveal font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight">
-            Ready to{" "}
-            <span className="gradient-text">Scale</span>
-            {" "}Your Product?
+            Ready to Strengthen Your <span className="gradient-text">Engineering</span> Team?
           </h2>
 
           <p className="reveal mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">

@@ -53,7 +53,7 @@ export function WhyUsSection() {
             <span className="gradient-text">2010</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            With 15+ years of engineering excellence, TECUNIQUE brings transparency, collaboration, and domain expertise to every project. We deliver top-notch IT services globally — building relationships that stand the test of time.
+            Since 2010, TECUNIQUE has supported software companies with dedicated engineering, QA, automation, support, and product development capacity from India. Our strength is practical execution, transparent collaboration, and long-term continuity.
           </p>
         </div>
 

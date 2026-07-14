@@ -99,10 +99,10 @@ export function HeroSection() {
 
             {/* Dynamic Expertise */}
             <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-slate-600" aria-hidden="true">Specializing in</span>
+              <span className="text-slate-600">Specializing in</span>
               
-              {/* Screen reader text (reads the full sentence naturally) */}
-              <span className="sr-only">Specializing in Dedicated Teams, Product Engineering, QA Automation, Cloud Solutions, and Atlassian Apps.</span>
+              {/* Screen reader text (reads the full sentence naturally with the visible text) */}
+              <span className="sr-only">Dedicated Teams, Product Engineering, QA Automation, Cloud Solutions, and Atlassian Apps.</span>
 
               {/* Visual rotating text */}
               <div aria-hidden="true">
