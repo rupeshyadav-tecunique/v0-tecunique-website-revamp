@@ -96,55 +96,59 @@ export function DedicatedTeamsSection() {
           <h3 className="text-2xl font-bold text-slate-900 mb-3">Trusted through long-term relationships</h3>
           <p className="text-slate-600 mb-10">Across Atlassian apps, product engineering, QA, data platforms, and offshore development teams.</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Col 1 */}
-            <div className="flex flex-col items-center pt-8 md:pt-0">
-              <div className="flex items-center gap-2 mb-8">
-                <AppWindow className="w-5 h-5 text-blue-600" />
-                <span className="font-semibold text-blue-600">Atlassian Apps</span>
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-6">
-                <div className="font-bold text-xl text-slate-800 flex items-center gap-1.5">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider">Atlassian App Vendors</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
                   Appfire
-                </div>
-                <Image src="/images/companies/innovalog.png" alt="Innovalog" width={110} height={35} className="h-6 w-auto object-contain transition-all" />
-                <Image src="/images/companies/quotilabs.png" alt="Qotilabs" width={110} height={35} className="h-6 w-auto object-contain transition-all" />
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                  <Image src="/images/companies/innovalog.png" alt="Innovalog" width={110} height={35} className="h-5 w-auto object-contain" />
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                  <Image src="/images/companies/quotilabs.png" alt="Qotilabs" width={110} height={35} className="h-5 w-auto object-contain" />
+                </span>
               </div>
             </div>
 
             {/* Col 2 */}
-            <div className="flex flex-col items-center pt-8 md:pt-0">
-              <div className="flex items-center gap-2 mb-8">
-                <Database className="w-5 h-5 text-emerald-600" />
-                <span className="font-semibold text-emerald-600 text-center">Product Engineering & Data Platforms</span>
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-6">
-                <Image src="/images/companies/oppscience.svg" alt="OPPSCIENCE" width={110} height={35} className="h-5 w-auto object-contain transition-all" />
-                <Image src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" width={110} height={35} className="h-6 w-auto object-contain transition-all" />
-                <Image src="/images/companies/polyspot.webp" alt="PolySpot" width={110} height={35} className="h-7 w-auto object-contain transition-all" />
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Engineering & Data Platforms</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                  <Image src="/images/companies/oppscience.svg" alt="OPPSCIENCE" width={110} height={35} className="h-4 w-auto object-contain" />
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                  <Image src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" width={110} height={35} className="h-4 w-auto object-contain" />
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                  <Image src="/images/companies/polyspot.webp" alt="PolySpot" width={110} height={35} className="h-4 w-auto object-contain" />
+                </span>
               </div>
             </div>
 
             {/* Col 3 */}
-            <div className="flex flex-col items-center pt-8 md:pt-0">
-              <div className="flex items-center gap-2 mb-8">
-                <Globe className="w-5 h-5 text-purple-600" />
-                <span className="font-semibold text-purple-600">ODC Setup & Scaling</span>
-              </div>
-              <div className="flex justify-center items-center">
-                <Image src="/images/companies/skyselect.svg" alt="SkySelect" width={110} height={35} className="h-8 w-auto object-contain transition-all" />
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">ODC / Offshore Team Setup</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                  <Image src="/images/companies/skyselect.svg" alt="SkySelect" width={110} height={35} className="h-5 w-auto object-contain" />
+                </span>
               </div>
             </div>
 
             {/* Col 4 */}
-            <div className="flex flex-col items-center pt-8 md:pt-0">
-              <div className="flex items-center gap-2 mb-8">
-                <Lightbulb className="w-5 h-5 text-orange-500" />
-                <span className="font-semibold text-orange-500">Product Engineering & Support</span>
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-6">
-                <span className="font-bold text-lg text-slate-800">eXtensi</span>
-                <span className="font-bold text-lg text-slate-800 flex items-center gap-1">Validat</span>
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Development & Support</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
+                  eXtensi
+                </span>
+                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
+                  Validat
+                </span>
               </div>
             </div>
           </div>

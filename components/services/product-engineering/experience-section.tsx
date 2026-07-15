@@ -20,64 +20,47 @@ export function ProductEngineeringExperience() {
           </SectionReveal>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <SectionReveal delay={100} className="h-full">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all h-full flex flex-col">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                <Database className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold font-display text-slate-900 mb-4 text-lg">Product Engineering & Data Platforms</h3>
-              <div className="mt-auto">
-                <p className="text-sm font-medium text-slate-500 mb-3 uppercase tracking-wider">Trusted By</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                    <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-4 object-contain" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <SectionReveal delay={100} className="h-full">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+                <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Engineering & Data Platforms</h3>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                    <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-4 w-auto object-contain" />
                   </span>
-                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                    <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-5 object-contain" />
+                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                    <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-4 w-auto object-contain" />
                   </span>
-                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                    <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-4 object-contain" />
+                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                    <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-4 w-auto object-contain" />
                   </span>
                 </div>
               </div>
-            </div>
-          </SectionReveal>
+            </SectionReveal>
 
-          <SectionReveal delay={200} className="h-full">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all h-full flex flex-col">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                <AppWindow className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold font-display text-slate-900 mb-4 text-lg">Atlassian App Products</h3>
-              <div className="mt-auto">
-                <p className="text-sm font-medium text-slate-500 mb-3 uppercase tracking-wider">Trusted By</p>
-                <div className="flex flex-wrap gap-2">
+            <SectionReveal delay={200} className="h-full">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+                <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Atlassian App Products</h3>
+                <div className="flex flex-wrap gap-2 mt-auto">
                   <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
                     Appfire
                   </span>
-                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                    <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-6 object-contain" />
+                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                    <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-5 w-auto object-contain" />
                   </span>
-                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                    <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-6 object-contain" />
+                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                    <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-5 w-auto object-contain" />
                   </span>
                 </div>
               </div>
-            </div>
-          </SectionReveal>
+            </SectionReveal>
 
-          <SectionReveal delay={300} className="h-full">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all h-full flex flex-col">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold font-display text-slate-900 mb-4 text-lg">Dedicated / Offshore Teams</h3>
-              <div className="mt-auto">
-                <p className="text-sm font-medium text-slate-500 mb-3 uppercase tracking-wider">Trusted By</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                    <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-4 object-contain" />
+            <SectionReveal delay={300} className="h-full">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+                <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Dedicated / Offshore Teams</h3>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded h-10">
+                    <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-5 w-auto object-contain" />
                   </span>
                   <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
                     eXtensi
@@ -87,23 +70,19 @@ export function ProductEngineeringExperience() {
                   </span>
                 </div>
               </div>
-            </div>
-          </SectionReveal>
+            </SectionReveal>
 
-          <SectionReveal delay={400} className="h-full">
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all h-full flex flex-col">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                <TestTube2 className="w-6 h-6" />
+            <SectionReveal delay={400} className="h-full">
+              <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
+                <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">QA & Automation Support</h3>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Dedicated QA and automation teams across long-term product work.
+                  </p>
+                </div>
               </div>
-              <h3 className="font-bold font-display text-slate-900 mb-4 text-lg">QA & Automation Support</h3>
-              <div className="mt-auto">
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Dedicated QA and automation teams across long-term product work.
-                </p>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
+            </SectionReveal>
+          </div>
       </div>
     </section>
   )
