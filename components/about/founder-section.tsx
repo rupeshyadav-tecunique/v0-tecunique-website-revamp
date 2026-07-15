@@ -30,7 +30,7 @@ export function AboutFounder() {
               <p className="text-slate-600 text-sm">Long-tenured people with deep product and client context.</p>
             </div>
             <div>
-              <h4 className="font-bold text-slate-900 mb-1">Low-Attrition Culture</h4>
+              <h4 className="font-bold text-slate-900 mb-1">Stable Work Culture</h4>
               <p className="text-slate-600 text-sm">A work environment built around trust, flexibility, and ownership.</p>
             </div>
             <div>

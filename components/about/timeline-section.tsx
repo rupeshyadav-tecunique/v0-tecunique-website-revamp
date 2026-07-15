@@ -60,17 +60,11 @@ export function AboutTimeline() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start sm:gap-12 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div className="hidden sm:block w-24 shrink-0 text-right" aria-hidden="true">
-                      <span className="text-3xl font-black text-slate-200 group-hover:text-blue-500 transition-colors duration-300">{event.year}</span>
+                    <div className="mb-2 sm:mb-0 sm:w-24 shrink-0 sm:text-right">
+                      <span className="text-2xl sm:text-3xl font-black text-blue-500 sm:text-slate-200 group-hover:text-blue-500 transition-colors duration-300">{event.year}</span>
                     </div>
 
                     <div className="flex-1">
-                      {/* Visually hidden year for screen readers (read exactly once) */}
-                      <span className="sr-only">Year {event.year}: </span>
-                      
-                      <div className="sm:hidden mb-2" aria-hidden="true">
-                        <span className="text-2xl font-black text-blue-500">{event.year}</span>
-                      </div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{event.title}</h3>
                       <p className="text-slate-600 leading-relaxed text-lg">{event.description}</p>
                     </div>

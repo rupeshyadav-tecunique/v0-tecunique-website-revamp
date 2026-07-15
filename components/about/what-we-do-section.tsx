@@ -10,8 +10,8 @@ const whatWeDo = [
     color: "from-blue-500 to-indigo-400"
   },
   {
-    title: "Custom Software Development",
-    description: "We support web applications, backend systems, integrations, cloud platforms, data-driven products, and long-term product enhancement work.",
+    title: "Product Engineering & Custom Software Development",
+    description: "We support web applications, backend systems, integrations, cloud-ready platforms, data-driven products, and long-term product enhancement work.",
     icon: Code2,
     color: "from-purple-500 to-fuchsia-400"
   },
@@ -42,7 +42,7 @@ const howWeWork = [
   },
   {
     title: "Managed Operations in India",
-    description: "TECUNIQUE handles recruitment support, HR, payroll, infrastructure, contracts, NDA, and retention support.",
+    description: "TECUNIQUE handles recruitment support, HR, payroll, infrastructure, contracts, NDA, and team continuity support.",
     icon: MapPin
   },
   {

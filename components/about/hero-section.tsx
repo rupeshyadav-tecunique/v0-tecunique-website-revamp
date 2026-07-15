@@ -34,7 +34,7 @@ export function AboutHero() {
             {[
               { icon: Clock, title: "Since 2010", subtitle: "Long-term software engineering experience", color: "text-blue-500", bg: "bg-blue-50" },
               { icon: Users, title: "Strong Team Continuity", subtitle: "Stable teams with continuity of product knowledge", color: "text-purple-500", bg: "bg-purple-50" },
-              { icon: Cpu, title: "Atlassian Ecosystem", subtitle: "Hands-on experience with Jira apps & support", color: "text-indigo-500", bg: "bg-indigo-50" },
+              { icon: Cpu, title: "Atlassian App Experience", subtitle: "Hands-on experience with Jira app work, QA, automation, and support", color: "text-indigo-500", bg: "bg-indigo-50" },
               { icon: ShieldCheck, title: "NDA-Backed", subtitle: "Confidential, client-controlled collaboration", color: "text-emerald-500", bg: "bg-emerald-50" },
             ].map((badge, i) => (
               <div key={badge.title} className="group flex flex-col p-5 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">

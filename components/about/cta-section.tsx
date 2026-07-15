@@ -25,7 +25,7 @@ export function AboutCTA() {
             Looking for a long-term engineering partner?
           </h2>
           <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-12">
-            Whether you need a dedicated team, QA automation support, Atlassian app expertise, or product engineering capacity, TECUNIQUE can help you build a stable team from India.
+            Whether you need a dedicated team, QA automation support, Atlassian app engineering support, or product engineering capacity, TECUNIQUE can help you build a stable team from India.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
