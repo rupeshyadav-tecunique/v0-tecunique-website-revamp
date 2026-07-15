@@ -37,7 +37,7 @@ async function getCaseStudy(id: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params
   const study = await getCaseStudy(resolvedParams.id)
-  
+
   if (!study) {
     return { title: "Case Study Not Found" }
   }
@@ -108,9 +108,9 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* Content Section */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
+
             {/* Main Content Area */}
             <div className="lg:col-span-8 space-y-12">
               <SectionReveal>
@@ -172,7 +172,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
             {/* Sidebar */}
             <div className="lg:col-span-4 space-y-8">
-              
+
               {/* At a Glance */}
               <SectionReveal>
                 <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 md:p-8 shadow-sm">
@@ -240,7 +240,7 @@ export default async function CaseStudyPage({ params }: Props) {
               {/* Key Results */}
               <SectionReveal>
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
-                  <h3 className="text-lg font-bold text-slate-900 mb-6 font-display">Key Results</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-6 font-display">Engagement Highlights</h3>
                   <div className="grid grid-cols-2 gap-3">
                     {study.results.map((result) => (
                       <div
