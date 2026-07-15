@@ -22,58 +22,46 @@ export function ServicesTrustProof() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <SectionReveal delay={100} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider">Atlassian Apps</h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Atlassian Apps</h3>
+              <div className="flex flex-wrap items-center gap-6 mt-auto">
+                <span className="text-slate-600 font-medium whitespace-nowrap">
                   Appfire
                 </span>
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                  <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-5 object-contain" />
-                </span>
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                  <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-5 object-contain" />
-                </span>
+                <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-8 w-auto object-contain" />
+                <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-8 w-auto object-contain" />
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={200} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider">Product Engineering & Data Platforms</h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                  <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-4 object-contain" />
-                </span>
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                  <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-4 object-contain" />
-                </span>
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                  <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-3 object-contain" />
-                </span>
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Engineering & Data Platforms</h3>
+              <div className="flex flex-wrap items-center gap-6 mt-auto">
+                <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-7 w-auto object-contain" />
+                <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-7 w-auto object-contain" />
+                <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-8 w-auto object-contain" />
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={300} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider">ODC / Offshore Teams</h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
-                  <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-4 object-contain" />
-                </span>
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">ODC / Offshore Teams</h3>
+              <div className="flex flex-wrap items-center gap-6 mt-auto">
+                <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-8 w-auto object-contain" />
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={400} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider">Product Development & Support</h3>
-              <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
+              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Development & Support</h3>
+              <div className="flex flex-wrap items-center gap-6 mt-auto">
+                <span className="text-slate-600 font-medium whitespace-nowrap">
                   eXtensi
                 </span>
-                <span className="inline-flex items-center justify-center px-3 py-2 bg-slate-100 rounded text-sm text-slate-700 font-medium h-10">
+                <span className="text-slate-600 font-medium whitespace-nowrap">
                   Validat
                 </span>
               </div>

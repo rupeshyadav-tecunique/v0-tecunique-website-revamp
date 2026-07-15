@@ -10,7 +10,7 @@ export function AboutStory() {
         <SectionReveal className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 relative">
             <div className="aspect-square rounded-3xl overflow-hidden relative">
-              <Image src="/images/about/about-3.png" alt="Our Story" fill className="object-cover" />
+              <Image src="/images/about/about-4.png" alt="Our Story" fill className="object-cover" />
             </div>
             {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[url('/grid.svg')] bg-center opacity-30 z-0" />
