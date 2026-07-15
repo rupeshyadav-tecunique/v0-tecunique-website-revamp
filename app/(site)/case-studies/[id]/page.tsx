@@ -118,7 +118,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   {study.sections?.map((section, index) => (
                     <div key={index} className="mb-10 last:mb-0">
                       <h2 className="text-3xl font-display font-bold text-slate-900 mb-6">{section.title}</h2>
-                      <div className="leading-relaxed whitespace-pre-wrap">{section.content}</div>
+                      <div className="leading-relaxed whitespace-pre-wrap">{section.content?.replace(/\\n/g, '\n')}</div>
                     </div>
                   ))}
                 </div>

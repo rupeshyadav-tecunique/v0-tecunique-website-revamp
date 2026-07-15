@@ -54,11 +54,11 @@ export default async function CaseStudiesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
           <SectionReveal className="mx-auto max-w-4xl">
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-              Proven Results & <br className="hidden sm:block"/>
-              <span className="gradient-text">Success Stories</span>
+              Client Work & <br className="hidden sm:block"/>
+              <span className="gradient-text">Long-Term Engineering Partnerships</span>
             </h1>
             <p className="mt-4 text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              How we help top-tier vendors and enterprise clients scale their engineering capabilities and achieve measurable business impact.
+              A look at how TECUNIQUE has supported software product companies, Atlassian app vendors, data platforms, and technology businesses through dedicated teams, QA, automation, support, and long-term engineering collaboration.
             </p>
           </SectionReveal>
         </div>
