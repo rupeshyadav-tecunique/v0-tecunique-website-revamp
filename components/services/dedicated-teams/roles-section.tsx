@@ -10,31 +10,31 @@ const teamRoles = [
   },
   {
     title: "Backend Engineers",
-    description: "Java, Spring Boot, Node.js. Building scalable APIs, microservices, and databases.",
+    description: "Java, Spring Boot, Node.js. Building scalable APIs, robust microservices, and high-concurrency databases.",
     icon: Layers,
     color: "from-indigo-500 to-purple-400"
   },
   {
     title: "QA Engineers",
-    description: "Manual QA, regression testing, and release validation.",
+    description: "Manual QA, regression testing, and comprehensive release validation to ensure flawless product delivery.",
     icon: FileCheck,
     color: "from-emerald-500 to-blue-400"
   },
   {
-    title: "Automation QA Engineers",
-    description: "Playwright, Selenium, JUnit, API testing, CI/CD integrations. Ensuring continuous quality with robust automation frameworks.",
+    title: "Automation QA",
+    description: "Playwright, Selenium, JUnit, API testing, CI/CD integrations. Ensuring continuous quality with robust frameworks.",
     icon: ShieldCheck,
     color: "from-rose-500 to-orange-400"
   },
   {
     title: "DevOps Engineers",
-    description: "Docker, Kubernetes, AWS, deployment pipelines.",
+    description: "Docker, Kubernetes, AWS, deployment pipelines. Orchestrating seamless infrastructure and automation.",
     icon: Cloud,
     color: "from-sky-500 to-blue-400"
   },
   {
     title: "Support Engineers",
-    description: "L2/L3 product support and issue analysis.",
+    description: "L2/L3 product support and deep issue analysis to maintain customer satisfaction and product health.",
     icon: HeadphonesIcon,
     color: "from-fuchsia-500 to-pink-400"
   }
@@ -67,7 +67,7 @@ export function DedicatedTeamsRoles() {
                   <role.icon className="h-8 w-8" />
                 </div>
                 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1 w-full">
                   <h3 className="font-bold text-foreground mb-3 text-xl">{role.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{role.description}</p>
                 </div>
