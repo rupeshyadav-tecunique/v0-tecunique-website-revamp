@@ -5,14 +5,9 @@ import { HeroAtlassianVisual } from "@/components/home/hero-atlassian-visual"
 
 export function AtlassianHero() {
   return (
-    <section
-      className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-white"
-      style={{ background: "linear-gradient(170deg, #ffffff 0%, #e0f2fe 18%, #bae6fd 45%, #e0e7ff 75%, #f3e8ff 100%)" }}
-    >
+    <section className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-slate-50/50">
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 blur-3xl" style={{ background: "radial-gradient(circle, #38bdf8 0%, transparent 70%)" }} />
-        <div className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, #818cf8 0%, transparent 70%)" }} />
-        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(#0284c7 1px, transparent 1px), linear-gradient(to right, #0284c7 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(#0284c7 1px, transparent 1px), linear-gradient(to right, #0284c7 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">
@@ -36,10 +31,15 @@ export function AtlassianHero() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link 
                 href="/contact" 
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[#0052CC] px-8 text-base font-bold text-white shadow-lg transition-all hover:bg-[#0047b3] hover:scale-105 w-full sm:w-auto"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[#0052CC] px-8 text-base font-bold text-white shadow-md transition-all hover:bg-[#0047b3] hover:scale-105 w-full sm:w-auto"
               >
-                Discuss App Needs
-                <ArrowRight className="ml-2 w-5 h-5" />
+                Schedule a call
+              </Link>
+              <Link 
+                href="#capabilities" 
+                className="inline-flex h-12 items-center justify-center rounded-full bg-white border border-slate-300 px-8 text-base font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:scale-105 w-full sm:w-auto"
+              >
+                Explore Capabilities
               </Link>
             </div>
           </SectionReveal>

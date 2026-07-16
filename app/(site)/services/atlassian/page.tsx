@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import { AtlassianHero } from "@/components/services/atlassian/hero-section"
+import { AtlassianLifecycle } from "@/components/services/atlassian/lifecycle-section"
 import { AtlassianTargetAudience } from "@/components/services/atlassian/target-audience-section"
 import { AtlassianCapabilities } from "@/components/services/atlassian/capabilities-section"
+import { AtlassianLongTermSupport } from "@/components/services/atlassian/long-term-support-section"
 import { AtlassianProcessAndSupport } from "@/components/services/atlassian/process-and-support-section"
 import { AtlassianExperience } from "@/components/services/atlassian/experience-section"
 import { UnifiedCTA } from "@/components/services/unified-cta"
@@ -15,8 +17,10 @@ export default function AtlassianServicesPage() {
   return (
     <div className="flex flex-col w-full bg-slate-50">
       <AtlassianHero />
+      <AtlassianLifecycle />
       <AtlassianTargetAudience />
       <AtlassianCapabilities />
+      <AtlassianLongTermSupport />
       <AtlassianProcessAndSupport />
       <AtlassianExperience />
       <UnifiedCTA />

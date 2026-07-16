@@ -1,66 +1,83 @@
-import { Store, Cloud, Users, RefreshCcw, Target } from "lucide-react"
+import { Store, Cloud, Users, RefreshCcw } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-
-const whoIsThisFor = [
-  {
-    title: "Marketplace App Vendors",
-    description: "For teams building or maintaining Jira apps listed on the Atlassian Marketplace.",
-    icon: Store,
-    gradient: "from-blue-500/10 to-indigo-500/10",
-    iconBg: "bg-blue-500/20 text-blue-700",
-  },
-  {
-    title: "SaaS / ISV Teams",
-    description: "For software companies integrating their products with Jira, Atlassian Cloud, or Marketplace app workflows.",
-    icon: Cloud,
-    gradient: "from-sky-500/10 to-blue-500/10",
-    iconBg: "bg-sky-500/20 text-sky-700",
-  },
-  {
-    title: "Product Engineering Leaders",
-    description: "For teams that need dedicated developers, QA engineers, or automation specialists.",
-    icon: Users,
-    gradient: "from-indigo-500/10 to-purple-500/10",
-    iconBg: "bg-indigo-500/20 text-indigo-700",
-  },
-  {
-    title: "App Modernization Teams",
-    description: "For teams improving older apps, moving toward Forge, or strengthening Cloud readiness.",
-    icon: RefreshCcw,
-    gradient: "from-purple-500/10 to-fuchsia-500/10",
-    iconBg: "bg-purple-500/20 text-purple-700",
-  }
-]
 
 export function AtlassianTargetAudience() {
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 relative border-b border-border/50">
+    <section className="py-24 lg:py-32 bg-slate-50/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionReveal className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200/50 border border-slate-300 mb-6">
-            <Target className="h-4 w-4 text-slate-700" />
-            <span className="text-sm font-semibold text-slate-900">Who Is This For?</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">
-            Built for Atlassian App Vendors and Product Teams
-          </h2>
-        </SectionReveal>
+        <div className="mb-16">
+          <SectionReveal>
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#0052CC] mb-4">
+              Built for Atlassian App Vendors
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl">
+              Specialized support for teams who value technical rigor and marketplace success.
+            </p>
+          </SectionReveal>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-          {whoIsThisFor.map((card, index) => (
-            <SectionReveal key={card.title} delay={index * 100}>
-              <div className={`relative h-full overflow-hidden rounded-[2rem] border border-border/60 bg-white p-8 lg:p-10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}>
-                <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className={`flex h-16 w-16 items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform duration-300 ${card.iconBg}`}>
-                    <card.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">{card.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed flex-1">{card.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          {/* Card 1: Marketplace App Vendors (White, 7 cols) */}
+          <div className="md:col-span-7">
+            <SectionReveal className="h-full">
+              <div className="bg-white rounded-xl border border-slate-200 p-8 lg:p-10 h-full flex flex-col hover:shadow-lg transition-shadow">
+                <div className="mb-6">
+                  <Store className="h-8 w-8 text-[#0052CC]" />
                 </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Marketplace App Vendors</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  For teams building or maintaining complex apps targeting the Atlassian Marketplace. We handle the heavy lifting in engineering so you can focus on product vision.
+                </p>
               </div>
             </SectionReveal>
-          ))}
+          </div>
+
+          {/* Card 2: SaaS / ISV Teams (Blue, 5 cols) */}
+          <div className="md:col-span-5">
+            <SectionReveal delay={100} className="h-full">
+              <div className="bg-[#0052CC] rounded-xl p-8 lg:p-10 h-full flex flex-col text-white shadow-md hover:shadow-xl hover:bg-[#0047b3] transition-all">
+                <div className="mb-6">
+                  <div className="inline-flex items-center justify-center bg-white/20 p-3 rounded-lg">
+                    <Cloud className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">SaaS / ISV Teams</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  Software companies integrating their flagship products with Atlassian Cloud or Marketplace workflows.
+                </p>
+              </div>
+            </SectionReveal>
+          </div>
+
+          {/* Card 3: Product Engineering Leaders (Dark Slate, 5 cols) */}
+          <div className="md:col-span-5">
+            <SectionReveal delay={200} className="h-full">
+              <div className="bg-slate-900 rounded-xl p-8 lg:p-10 h-full flex flex-col text-white shadow-md hover:shadow-xl transition-all">
+                <div className="mb-6">
+                  <Users className="h-8 w-8 text-blue-400" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Product Engineering Leaders</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Scaling capacity with dedicated developers, QA engineers, and automation specialists that map to your sprint cycles.
+                </p>
+              </div>
+            </SectionReveal>
+          </div>
+
+          {/* Card 4: App Modernization Teams (White with Blue Border, 7 cols) */}
+          <div className="md:col-span-7">
+            <SectionReveal delay={300} className="h-full">
+              <div className="bg-white rounded-xl border-2 border-blue-100 p-8 lg:p-10 h-full flex flex-col hover:border-blue-300 hover:shadow-md transition-all">
+                <div className="mb-6">
+                  <RefreshCcw className="h-8 w-8 text-blue-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">App Modernization Teams</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Modernize legacy apps, move toward Forge or strengthen Cloud readiness with architectural guidance and robust tech support.
+                </p>
+              </div>
+            </SectionReveal>
+          </div>
         </div>
       </div>
     </section>
