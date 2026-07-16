@@ -34,7 +34,7 @@ const categories = [
     images: [
       "/images/events/diwali/Diwali2025.jpg",
       "/images/events/diwali/diwali2023.jfif",
-      "/images/events/diwali/diwali20231.png",
+      "/images/events/diwali/diwali20231.jpg",
       "/images/events/diwali/diwali20232.jfif",
     ],
     className: "col-span-1 row-span-1",
@@ -103,20 +103,20 @@ export default function CultureGallery() {
   return (
     <div className="flex flex-col gap-3 lg:gap-4 h-auto lg:h-[750px]">
       {/* Top Row: Big Image */}
-      <AutoCarouselSlot 
-        category={mainCategory} 
-        interval={5000} 
-        className="w-full h-64 sm:h-80 lg:h-[350px] shrink-0" 
+      <AutoCarouselSlot
+        category={mainCategory}
+        interval={5000}
+        className="w-full h-64 sm:h-80 lg:h-[350px] shrink-0"
       />
 
       {/* Bottom Row: 2x2 Grid of Small Images */}
       <div className="grid grid-cols-2 grid-rows-2 gap-3 lg:gap-4 flex-1">
         {smallCategories.map((cat, i) => (
-          <AutoCarouselSlot 
-            key={cat.id} 
-            category={cat} 
-            interval={5500 + i * 500} 
-            className="w-full h-full min-h-[160px] lg:min-h-0" 
+          <AutoCarouselSlot
+            key={cat.id}
+            category={cat}
+            interval={5500 + i * 500}
+            className="w-full h-full min-h-[160px] lg:min-h-0"
           />
         ))}
       </div>
