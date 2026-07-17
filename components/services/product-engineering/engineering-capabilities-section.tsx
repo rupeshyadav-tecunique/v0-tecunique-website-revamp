@@ -41,15 +41,15 @@ export function EngineeringCapabilities() {
   const [openIndex, setOpenIndex] = useState<number>(0)
 
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 relative border-t border-border/50">
+    <section className="py-24 lg:py-32 bg-[var(--neutral-slate-50)] relative border-t border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <SectionReveal>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
-                <ShieldCheck className="h-4 w-4 text-blue-700" />
-                <span className="text-sm font-semibold text-blue-900">Expertise</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-blue-strong)]/30 border border-[var(--surface-blue-strong)] mb-6">
+                <ShieldCheck className="h-4 w-4 text-[var(--brand-blue)]" />
+                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">Expertise</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl font-display mb-6">
                 Engineering Capabilities We Provide
@@ -68,17 +68,17 @@ export function EngineeringCapabilities() {
                   return (
                     <div 
                       key={cap.title} 
-                      className={`border border-border/60 rounded-2xl overflow-hidden transition-all duration-300 bg-white shadow-sm hover:border-blue-200 ${isOpen ? 'ring-1 ring-blue-500/20' : ''}`}
+                      className={`border border-border/60 rounded-2xl overflow-hidden transition-all duration-300 bg-white shadow-sm hover:border-[var(--brand-blue)]/30 ${isOpen ? 'ring-1 ring-[var(--brand-blue)]/20' : ''}`}
                     >
                       <button
                         onClick={() => setOpenIndex(isOpen ? -1 : index)}
                         className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                       >
                         <div className="flex items-center gap-4">
-                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600'}`}>
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? 'bg-[var(--brand-blue)] text-white' : 'bg-[var(--surface-blue)] text-[var(--brand-blue)]'}`}>
                             <cap.icon className="h-6 w-6" />
                           </div>
-                          <h3 className={`text-xl font-bold transition-colors ${isOpen ? 'text-blue-600' : 'text-foreground'}`}>
+                          <h3 className={`text-xl font-bold transition-colors ${isOpen ? 'text-[var(--brand-blue)]' : 'text-foreground'}`}>
                             {cap.title}
                           </h3>
                         </div>

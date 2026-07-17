@@ -31,10 +31,10 @@ export function CTABanner({
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-50" />
 
           <div className="mx-auto max-w-3xl text-center relative z-10">
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl text-balance leading-[1.1] mb-8">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance leading-[1.1] mb-8">
               {title}
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               {description}
             </p>
 
@@ -47,7 +47,7 @@ export function CTABanner({
               </Button>
               <Link
                 href={secondaryAction.href}
-                className="text-sm font-bold leading-6 text-slate-900 hover:text-primary transition-colors flex items-center group"
+                className="text-sm font-bold leading-6 text-foreground hover:text-primary transition-colors flex items-center group"
               >
                 {secondaryAction.label}
                 <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
@@ -59,16 +59,16 @@ export function CTABanner({
           <div className="mt-16 flex flex-col items-center justify-center gap-4 relative z-10">
             <div className="flex -space-x-4">
               {[
-                { bg: "bg-indigo-100", text: "text-indigo-600", label: "JD" },
-                { bg: "bg-rose-100", text: "text-rose-600", label: "AS" },
-                { bg: "bg-emerald-100", text: "text-emerald-600", label: "MK" },
-                { bg: "bg-amber-100", text: "text-amber-600", label: "RL" },
-                { bg: "bg-sky-100", text: "text-sky-600", label: "TW" },
+                { bg: "bg-[var(--surface-violet-strong)]", text: "text-brand-indigo", label: "JD" },
+                { bg: "bg-[var(--surface-lavender)]", text: "text-brand-purple", label: "AS" },
+                { bg: "bg-[var(--surface-sky)]", text: "text-brand-cyan", label: "MK" },
+                { bg: "bg-[var(--surface-blue-strong)]", text: "text-brand-blue", label: "RL" },
+                { bg: "bg-[var(--surface-sky)]", text: "text-brand-cyan", label: "TW" },
               ].map((user, i) => (
                 <div
                   key={i}
                   className={cn(
-                    "inline-flex h-12 w-12 rounded-full ring-4 ring-white items-center justify-center overflow-hidden border border-slate-200/50 shadow-sm",
+                    "inline-flex h-12 w-12 rounded-full ring-4 ring-white items-center justify-center overflow-hidden border border-[var(--neutral-slate-200)]/50 shadow-sm",
                     user.bg,
                     user.text
                   )}
@@ -80,9 +80,9 @@ export function CTABanner({
                 <span className="text-[10px] font-bold">+15</span>
               </div>
             </div>
-            <p className="text-sm font-medium text-slate-500 flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              Trusted by <span className="text-slate-900 font-bold">20+</span> companies worldwide
+            <p className="text-sm font-medium text-[var(--neutral-slate-500)] flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-brand-cyan" />
+              Trusted by <span className="text-foreground font-bold">20+</span> companies worldwide
             </p>
           </div>
         </SectionReveal>

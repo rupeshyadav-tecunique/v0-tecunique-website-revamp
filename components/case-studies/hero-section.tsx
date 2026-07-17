@@ -3,13 +3,12 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 export function CaseStudiesHero() {
   return (
     <section
-      className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-white"
-      style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
+      className="brand-hero-bg relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-white"
     >
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 blur-3xl" style={{ background: "radial-gradient(circle, #a5b4fc 0%, transparent 70%)" }} />
-        <div className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, #93c5fd 0%, transparent 70%)" }} />
-        <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="brand-orb-indigo-simple absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 blur-3xl" />
+        <div className="brand-orb-blue absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 blur-3xl" />
+        <div className="brand-grid-bg absolute inset-0 opacity-[0.025]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">

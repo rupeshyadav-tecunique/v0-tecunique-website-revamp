@@ -35,19 +35,16 @@ export default async function BlogPage() {
     <>
       {/* Hero Section */}
       <section 
-        className="relative overflow-hidden py-20 lg:py-32 flex items-center min-h-[60vh]"
-        style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
+        className="brand-hero-bg relative overflow-hidden py-20 lg:py-32 flex items-center min-h-[60vh]"
       >
         {/* Animated blobs */}
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
           <div
-            className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
-            style={{ background: "radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%)" }}
+            className="brand-orb-indigo absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
           />
           <div
-            className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
+            className="brand-orb-blue absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
             style={{
-              background: "radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%)",
               animationDelay: "4s",
               animationDuration: "16s",
             }}

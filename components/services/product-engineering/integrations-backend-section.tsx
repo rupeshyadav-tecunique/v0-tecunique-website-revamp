@@ -26,21 +26,21 @@ const backendServices = [
 
 export function IntegrationsBackend() {
   return (
-    <section className="py-24 bg-[#0052CC] relative overflow-hidden">
+    <section className="py-24 bg-[var(--brand-blue)] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <SectionReveal>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-blue-100 ring-1 ring-inset ring-white/20 mb-6 text-sm font-medium backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/80 ring-1 ring-inset ring-white/20 mb-6 text-sm font-medium backdrop-blur-sm">
               <Blocks className="h-4 w-4" />
               Core Infrastructure
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-6">
               Backend Systems and Integrations That Connect Your Product
             </h2>
-            <p className="text-lg leading-8 text-blue-100">
+            <p className="text-lg leading-8 text-white/80">
               We help product teams build and maintain the backend services and integrations that keep software products connected, reliable, and useful.
             </p>
           </SectionReveal>
@@ -57,7 +57,7 @@ export function IntegrationsBackend() {
                   <h3 className="text-xl font-bold font-display text-white mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-blue-100 leading-relaxed text-base">
+                  <p className="text-white/80 leading-relaxed text-base">
                     {service.description}
                   </p>
                 </div>

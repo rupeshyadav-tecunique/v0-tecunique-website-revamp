@@ -32,10 +32,10 @@ export function EnhancementModernization() {
           
           <SectionReveal>
             <div className="max-w-xl">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-display mb-6">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6">
                 Enhance Existing Products Without Losing Continuity
               </h2>
-              <p className="text-lg leading-relaxed text-slate-600 mb-8">
+              <p className="text-lg leading-relaxed text-muted-foreground mb-8">
                 Many product companies do not need a one-time build. They need a stable engineering team that can understand the existing codebase, improve features, fix issues, modernize parts of the platform, and continue supporting the product over time.
               </p>
             </div>
@@ -44,14 +44,14 @@ export function EnhancementModernization() {
           <div className="grid sm:grid-cols-2 gap-6">
             {enhancementPoints.map((point, index) => (
               <SectionReveal key={point.title} delay={index * 100}>
-                <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all duration-300 h-full flex flex-col group">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-blue-600 mb-5 group-hover:scale-110 transition-transform">
+                <div className="bg-[var(--neutral-slate-50)] rounded-2xl p-6 border border-[var(--neutral-slate-100)] hover:border-[var(--brand-blue)]/30 hover:bg-[var(--brand-blue)]/5 transition-all duration-300 h-full flex flex-col group">
+                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-[var(--brand-blue)] mb-5 group-hover:scale-110 transition-transform">
                     <point.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold font-display text-slate-900 mb-2">
+                  <h3 className="text-lg font-bold font-display text-foreground mb-2">
                     {point.title}
                   </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed flex-1">
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">
                     {point.description}
                   </p>
                 </div>

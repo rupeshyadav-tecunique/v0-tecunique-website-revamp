@@ -41,8 +41,8 @@ export function ContactSection() {
   return (
     <section className="relative py-12 lg:py-20 overflow-hidden">
       {/* Soft Background Accents */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-blob" />
-      <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-secondary/5 rounded-full blur-3xl -z-10 animate-blob delay-200" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[var(--brand-blue)]/5 rounded-full blur-3xl -z-10 animate-blob" />
+      <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-[var(--tangerine)]/5 rounded-full blur-3xl -z-10 animate-blob delay-200" />
 
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -51,15 +51,15 @@ export function ContactSection() {
           <SectionReveal direction="right" className="w-full max-w-3xl mx-auto xl:max-w-none">
             <div className="mb-10">
               <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                Let's Build Something <span className="gradient-text">Great</span>
+                Let's Build Something <span className="text-[var(--brand-blue)]">Great</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-xl">
                 Whether you need a dedicated team, bespoke software, or just want to explore possibilities, we're here to help.
               </p>
             </div>
             
-            <div className="bg-white rounded-3xl shadow-xl shadow-primary/5 border border-border/60 p-6 md:p-8 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 gradient-primary" />
+            <div className="bg-white rounded-3xl shadow-xl shadow-[var(--brand-blue)]/5 border border-border/60 p-6 md:p-8 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-blue-hover)]" />
               <ContactForm />
             </div>
           </SectionReveal>
@@ -67,7 +67,7 @@ export function ContactSection() {
           {/* Right: Global Presence */}
           <SectionReveal direction="left" className="w-full max-w-3xl mx-auto xl:max-w-none xl:pt-4">
             <div className="flex items-center gap-4 mb-10">
-              <div className="flex items-center justify-center p-3 bg-primary/10 rounded-2xl text-primary">
+              <div className="flex items-center justify-center p-3 bg-[var(--brand-blue)]/10 rounded-2xl text-[var(--brand-blue)]">
                 <Globe2 className="w-6 h-6" />
               </div>
               <div>
@@ -88,13 +88,13 @@ export function ContactSection() {
                     key={office.country} 
                     className={`group relative rounded-2xl p-6 xl:p-5 transition-all duration-300 overflow-hidden flex flex-col xl:flex-row items-start xl:items-center gap-0 xl:gap-6 ${
                       isIndia 
-                        ? 'bg-gradient-to-r from-blue-50/50 to-indigo-50/50 border-2 border-primary/30 shadow-lg shadow-primary/10 xl:scale-[1.03] z-10' 
-                        : 'bg-white border border-border/60 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1'
+                        ? 'bg-white border-2 border-[var(--brand-blue)] shadow-xl shadow-[var(--brand-blue)]/10 scale-[1.02] xl:scale-[1.05] z-10' 
+                        : 'bg-white border border-border/60 hover:shadow-xl hover:shadow-[var(--brand-blue)]/10 hover:-translate-y-1'
                     }`}
                     style={{ animationDelay: `${idx * 100}ms` }}
                   >
                     {/* Subtle Gradient Glow on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br xl:bg-gradient-to-r from-primary/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br xl:bg-gradient-to-r from-[var(--brand-blue)]/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     {/* Header: Flag and Title */}
                     <div className="relative flex flex-col gap-3 mb-5 xl:mb-0 w-full xl:w-36 shrink-0">
@@ -107,13 +107,13 @@ export function ContactSection() {
                             loading="lazy"
                           />
                         </div>
-                        <span className={`xl:hidden text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap ${isIndia ? 'text-primary bg-primary/20' : 'text-primary bg-primary/10'}`}>
+                        <span className={`xl:hidden text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap ${isIndia ? 'text-[var(--brand-blue)] bg-[var(--brand-blue)]/20' : 'text-[var(--brand-blue)] bg-[var(--brand-blue)]/10'}`}>
                           {office.type}
                         </span>
                       </div>
                       <div>
                         <h3 className="text-xl font-display font-bold text-foreground">{office.country}</h3>
-                        <span className={`hidden xl:inline-block text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap mt-1 ${isIndia ? 'text-primary bg-primary/20' : 'text-primary bg-primary/10'}`}>
+                        <span className={`hidden xl:inline-block text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap mt-1 ${isIndia ? 'text-[var(--brand-blue)] bg-[var(--brand-blue)]/20' : 'text-[var(--brand-blue)] bg-[var(--brand-blue)]/10'}`}>
                           {office.type}
                         </span>
                       </div>
@@ -122,24 +122,24 @@ export function ContactSection() {
                     {/* Details */}
                     <div className="relative flex-1 flex flex-col gap-4 xl:gap-3 text-sm text-muted-foreground w-full xl:border-l xl:border-border/60 xl:pl-5">
                       <div className="flex gap-3 items-start group/item">
-                        <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-primary text-white group-hover/item:bg-primary/90' : 'bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white'}`}>
+                        <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-[var(--brand-blue)] text-white group-hover/item:bg-[var(--brand-blue-hover)]' : 'bg-[var(--tangerine)]/10 text-[var(--tangerine)] group-hover/item:bg-[var(--tangerine)] group-hover/item:text-white'}`}>
                           <MapPin className="w-3.5 h-3.5" />
                         </div>
-                        <p className={`leading-relaxed pt-0.5 pr-2 ${isIndia ? 'text-slate-700 font-medium' : ''}`}>{office.address}</p>
+                        <p className={`leading-relaxed pt-0.5 pr-2 ${isIndia ? 'text-[var(--neutral-slate-700)] font-medium' : ''}`}>{office.address}</p>
                       </div>
                       
                       <div className="flex gap-3 items-center group/item">
-                        <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-primary text-white group-hover/item:bg-primary/90' : 'bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white'}`}>
+                        <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-[var(--brand-blue)] text-white group-hover/item:bg-[var(--brand-blue-hover)]' : 'bg-[var(--tangerine)]/10 text-[var(--tangerine)] group-hover/item:bg-[var(--tangerine)] group-hover/item:text-white'}`}>
                           <Mail className="w-3.5 h-3.5" />
                         </div>
-                        <a href={`mailto:${office.email}`} className={`hover:text-foreground font-medium transition-colors truncate ${isIndia ? 'text-slate-700' : ''}`}>{office.email}</a>
+                        <a href={`mailto:${office.email}`} className={`hover:text-foreground font-medium transition-colors truncate ${isIndia ? 'text-[var(--neutral-slate-700)]' : ''}`}>{office.email}</a>
                       </div>
                       
                       <div className="flex gap-3 items-center group/item">
-                        <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-primary text-white group-hover/item:bg-primary/90' : 'bg-secondary/10 text-secondary group-hover/item:bg-secondary group-hover/item:text-white'}`}>
+                        <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-[var(--brand-blue)] text-white group-hover/item:bg-[var(--brand-blue-hover)]' : 'bg-[var(--tangerine)]/10 text-[var(--tangerine)] group-hover/item:bg-[var(--tangerine)] group-hover/item:text-white'}`}>
                           <Phone className="w-3.5 h-3.5" />
                         </div>
-                        <a href={`tel:${office.phone.replace(/\s+/g, '')}`} className={`hover:text-foreground font-medium transition-colors ${isIndia ? 'text-slate-700' : ''}`}>{office.phone}</a>
+                        <a href={`tel:${office.phone.replace(/\s+/g, '')}`} className={`hover:text-foreground font-medium transition-colors ${isIndia ? 'text-[var(--neutral-slate-700)]' : ''}`}>{office.phone}</a>
                       </div>
                     </div>
                   </div>

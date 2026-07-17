@@ -16,29 +16,22 @@ export function CTASection() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="relative overflow-hidden py-20 lg:py-28"
-      style={{ background: "linear-gradient(135deg, #f8f7ff 0%, #ede9fe 40%, #f0f9ff 100%)" }}
+      className="brand-cta-bg relative overflow-hidden py-20 lg:py-28"
     >
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute -top-20 left-1/4 h-72 w-72 rounded-full opacity-40 blur-3xl animate-blob"
-          style={{ background: "radial-gradient(circle, #a5b4fc 0%, transparent 70%)" }}
+          className="brand-orb-indigo-simple absolute -top-20 left-1/4 h-72 w-72 rounded-full opacity-40 blur-3xl animate-blob"
         />
         <div
-          className="absolute -bottom-20 right-1/4 h-64 w-64 rounded-full opacity-30 blur-3xl animate-blob"
+          className="brand-orb-cyan-simple absolute -bottom-20 right-1/4 h-64 w-64 rounded-full opacity-30 blur-3xl animate-blob"
           style={{
-            background: "radial-gradient(circle, #67e8f9 0%, transparent 70%)",
             animationDelay: "5s",
           }}
         />
         {/* Grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: "linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+          className="brand-grid-bg absolute inset-0 opacity-[0.03]"
         />
       </div>
 
@@ -58,11 +51,7 @@ export function CTASection() {
           <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] group"
-              style={{
-                background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
-                boxShadow: "0 8px 30px rgba(99,102,241,0.35)",
-              }}
+              className="brand-button-gradient inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-2xl hover:scale-[1.03] active:scale-[0.98] group"
             >
               Discuss Your Requirement
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

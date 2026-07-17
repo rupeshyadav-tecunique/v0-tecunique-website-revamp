@@ -26,12 +26,12 @@ const automationCards = [
 
 export function AutomationCapability() {
   return (
-    <section className="py-24 bg-[#0052CC] text-white relative overflow-hidden">
+    <section className="py-24 bg-[var(--brand-blue)] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.1]" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">Automation QA for Faster, Safer Releases</h2>
-          <p className="text-blue-100 text-lg leading-relaxed">
+          <p className="text-white/80 text-lg leading-relaxed">
             We build maintainable automation frameworks and test suites that speed up testing, reduce risk, and improve long-term quality.
           </p>
         </SectionReveal>
@@ -44,7 +44,7 @@ export function AutomationCapability() {
                   <card.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-blue-100 text-sm leading-relaxed">{card.description}</p>
+                <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
               </div>
             </SectionReveal>
           ))}

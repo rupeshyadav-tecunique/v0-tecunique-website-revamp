@@ -14,14 +14,14 @@ export function AtlassianHero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <SectionReveal direction="left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0052CC] text-sm font-semibold mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-sm font-semibold mb-8 shadow-sm">
               <Layers className="h-4 w-4" />
               Atlassian App Engineering
             </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
               Build, Test, and Support <br className="hidden md:block"/>
-              <span className="text-[#0052CC]">Jira Apps at Scale</span>
+              <span className="text-brand-blue">Jira Apps at Scale</span>
             </h1>
             
             <p className="text-xl text-slate-600 max-w-2xl mb-10">
@@ -31,7 +31,7 @@ export function AtlassianHero() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link 
                 href="/contact" 
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[#0052CC] px-8 text-base font-bold text-white shadow-md transition-all hover:bg-[#0047b3] hover:scale-105 w-full sm:w-auto"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-brand-blue px-8 text-base font-bold text-white shadow-md transition-all hover:bg-brand-blue-hover hover:scale-105 w-full sm:w-auto"
               >
                 Schedule a call
               </Link>

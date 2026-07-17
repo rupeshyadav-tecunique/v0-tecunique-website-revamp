@@ -39,9 +39,9 @@ export function DedicatedTeamsProcess() {
     <section className="py-24 lg:py-32 bg-white relative overflow-hidden border-y border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
-            <CheckCircle2 className="h-4 w-4 text-blue-700" />
-            <span className="text-sm font-semibold text-blue-900">How We Work</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-blue-strong)] border border-[var(--surface-blue-strong)] mb-6">
+            <CheckCircle2 className="h-4 w-4 text-brand-blue" />
+            <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">How We Work</span>
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">How We Build Your Dedicated Team</h2>
           <p className="mt-4 text-lg text-muted-foreground">A streamlined, transparent process designed to get you the right talent quickly.</p>
@@ -65,7 +65,7 @@ export function DedicatedTeamsProcess() {
                     </div>
 
                     {/* Number / Node */}
-                    <div className="absolute left-0 md:left-1/2 top-0 md:top-2 md:-translate-x-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-blue-50 z-10 shadow-sm text-blue-600 font-display text-xl font-bold">
+                    <div className="absolute left-0 md:left-1/2 top-0 md:top-2 md:-translate-x-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-[var(--surface-blue)] z-10 shadow-sm text-brand-blue font-display text-xl font-bold">
                       {step.step}
                     </div>
 

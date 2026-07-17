@@ -117,15 +117,15 @@ export function TechStackDivider() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="py-16 bg-slate-50/50 border-y border-border/50"
+      className="py-16 bg-[var(--neutral-slate-50)]/50 border-y border-border/50"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="reveal">
           <div className="text-center mb-10">
-            <h2 className="text-2xl lg:text-3xl font-display font-bold text-slate-900 mb-3">Powered by Modern Technology</h2>
-            <p className="text-base text-slate-600 max-w-2xl mx-auto">We leverage best-in-class tools and frameworks to build scalable, secure, and high-performance software solutions.</p>
+            <h2 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-3">Powered by Modern Technology</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">We leverage best-in-class tools and frameworks to build scalable, secure, and high-performance software solutions.</p>
           </div>
 
           {/* Tabs */}
@@ -135,8 +135,8 @@ export function TechStackDivider() {
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === category.id
-                    ? "bg-blue-600 text-white shadow-md scale-105"
-                    : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 hover:text-slate-900"
+                    ? "bg-brand-blue text-white shadow-md scale-105"
+                    : "bg-white text-muted-foreground border border-[var(--neutral-slate-200)] hover:bg-[var(--neutral-slate-100)] hover:text-foreground"
                   }`}
               >
                 {category.label}
@@ -151,14 +151,14 @@ export function TechStackDivider() {
                 key={`${activeTab}-${tech.name}`}
                 className="flex flex-col items-center gap-3 animate-in fade-in zoom-in slide-in-from-bottom-4 duration-500 w-[80px] sm:w-[100px]"
               >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center p-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-[var(--neutral-slate-100)] shadow-sm flex items-center justify-center p-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                   {tech.logo ? (
                     <img src={tech.logo} alt={tech.name} className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-300" />
                   ) : tech.icon ? (
-                    <tech.icon className="w-8 h-8 text-slate-400 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300" strokeWidth={1.5} />
+                    <tech.icon className="w-8 h-8 text-[var(--neutral-slate-400)] group-hover:text-brand-blue group-hover:scale-110 transition-all duration-300" strokeWidth={1.5} />
                   ) : null}
                 </div>
-                <span className="text-xs font-bold text-slate-700 text-center leading-tight">{tech.name}</span>
+                <span className="text-xs font-bold text-[var(--neutral-slate-700)] text-center leading-tight">{tech.name}</span>
               </div>
             ))}
           </div>

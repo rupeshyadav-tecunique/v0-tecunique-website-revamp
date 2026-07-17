@@ -42,12 +42,12 @@ const teamRoles = [
 
 export function DedicatedTeamsRoles() {
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 border-t border-border/50">
+    <section className="py-24 lg:py-32 bg-[var(--neutral-slate-50)] border-t border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100 border border-purple-200 mb-6">
-            <Users className="h-4 w-4 text-purple-700" />
-            <span className="text-sm font-semibold text-purple-900">Team Composition</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-violet-strong)] border border-[var(--surface-violet-strong)] mb-6">
+            <Users className="h-4 w-4 text-brand-purple" />
+            <span className="text-sm font-semibold text-brand-purple">Team Composition</span>
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Build the Team You Need</h2>
           <p className="text-xl text-muted-foreground">
@@ -61,7 +61,7 @@ export function DedicatedTeamsRoles() {
               <div className="relative overflow-hidden h-full rounded-[2rem] border border-border/60 bg-white p-8 lg:p-10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col gap-6 items-start text-left">
                 
                 {/* Subtle Background Gradient on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${role.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${role.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 
                 <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${role.color} text-white shadow-md group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                   <role.icon className="h-8 w-8" />

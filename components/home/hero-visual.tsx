@@ -28,8 +28,8 @@ export function HeroVisual() {
     >
       {/* Background glowing effects */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="absolute w-[120%] h-[120%] bg-blue-100/30 rounded-full blur-3xl" />
-        <div className="absolute w-[80%] h-[80%] bg-indigo-100/40 rounded-full blur-2xl" />
+        <div className="absolute w-[120%] h-[120%] bg-[var(--surface-blue-strong)]/30 rounded-full blur-3xl" />
+        <div className="absolute w-[80%] h-[80%] bg-[var(--surface-violet-strong)]/40 rounded-full blur-2xl" />
       </div>
 
       <div className="relative w-full h-full p-2 sm:p-4">
@@ -68,7 +68,7 @@ export function HeroVisual() {
               key={idx}
               onClick={() => setActiveCard(idx)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                activeCard === idx ? "w-8 bg-indigo-600" : "w-2 bg-slate-300 hover:bg-slate-400"
+                activeCard === idx ? "w-8 bg-[var(--brand-indigo)]" : "w-2 bg-[var(--neutral-slate-300)] hover:bg-[var(--neutral-slate-400)]"
               }`}
               aria-label={`Show card ${idx + 1}`}
             />

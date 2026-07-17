@@ -4,6 +4,35 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Brand palette */
+  --brand-blue: #0052cc;
+  --brand-blue-hover: #0047b3;
+  --brand-indigo: #6366f1;
+  --brand-violet: #8b5cf6;
+  --brand-purple: #7c3aed;
+  --brand-cyan: #06b6d4;
+  --brand-sky: #67e8f9;
+
+  /* Neutral palette */
+  --neutral-white: #ffffff;
+  --neutral-slate-50: #f8fafc;
+  --neutral-slate-100: #f1f5f9;
+  --neutral-slate-200: #e2e8f0;
+  --neutral-slate-500: #64748b;
+  --neutral-slate-600: #475569;
+  --neutral-slate-700: #334155;
+  --neutral-slate-800: #1e293b;
+  --neutral-slate-900: #0f172a;
+
+  /* Surface tints */
+  --surface-lavender: #f8f7ff;
+  --surface-violet: #f4f3ff;
+  --surface-violet-strong: #ede9fe;
+  --surface-sky: #f0f9ff;
+  --surface-blue: #f0f7ff;
+  --surface-blue-strong: #e0f2fe;
+  --surface-blue-soft: #eff6ff;
+
   /* Base */
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.025 265);
@@ -66,13 +95,31 @@
   --ocean-rich: oklch(0.62 0.15 259);
 
   --gradient-primary: linear-gradient(135deg, oklch(0.546 0.145 258.877) 0%, oklch(0.623 0.146 259.088) 100%);
+  --gradient-brand: linear-gradient(135deg, var(--brand-indigo), var(--brand-violet));
+  --gradient-brand-strong: linear-gradient(135deg, var(--brand-indigo) 0%, var(--brand-purple) 50%, #4f46e5 100%);
   --gradient-ocean: linear-gradient(135deg, oklch(0.85 0.08 259) 0%, oklch(0.75 0.12 259) 100%);
-  --gradient-hero: linear-gradient(135deg, oklch(0.99 0.005 259) 0%, oklch(0.96 0.02 259) 35%, oklch(0.97 0.01 259) 70%, oklch(0.98 0.01 163) 100%);
+  --gradient-hero: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-violet) 18%, var(--surface-violet-strong) 45%, var(--surface-sky) 75%, #faf5ff 100%);
+  --gradient-hero-blue: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-blue) 18%, var(--surface-blue-strong) 45%, var(--surface-blue-soft) 75%, var(--neutral-slate-50) 100%);
+  --gradient-cta: linear-gradient(135deg, var(--surface-lavender) 0%, var(--surface-violet-strong) 40%, var(--surface-sky) 100%);
+  --gradient-subtle: linear-gradient(180deg, var(--surface-lavender) 0%, var(--neutral-white) 100%);
   --gradient-section: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.01 259) 100%);
   --gradient-text: linear-gradient(135deg, oklch(0.546 0.145 258.877), oklch(0.623 0.146 259.088), oklch(0.525 0.123 162.775));
+  --orb-indigo: radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%);
+  --orb-blue: radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%);
+  --orb-cyan: radial-gradient(circle, var(--brand-sky) 0%, #a5b4fc 50%, transparent 70%);
+  --orb-blue-simple: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+  --orb-violet-simple: radial-gradient(circle, var(--brand-violet) 0%, transparent 70%);
+  --orb-indigo-simple: radial-gradient(circle, #a5b4fc 0%, transparent 70%);
+  --orb-cyan-simple: radial-gradient(circle, var(--brand-sky) 0%, transparent 70%);
+  --grid-indigo: linear-gradient(var(--brand-indigo) 1px, transparent 1px), linear-gradient(to right, var(--brand-indigo) 1px, transparent 1px);
+  --grid-blue: linear-gradient(#2563eb 1px, transparent 1px), linear-gradient(to right, #2563eb 1px, transparent 1px);
+  --body-dot: radial-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px);
+  --glass-background: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.6);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(37, 99, 235, 0.06);
   --shadow-card-hover: 0 10px 40px rgba(37, 99, 235, 0.15), 0 2px 10px rgba(0, 0, 0, 0.04);
   --shadow-glow: 0 0 50px rgba(37, 99, 235, 0.12);
+  --shadow-brand-button: 0 8px 30px rgba(99, 102, 241, 0.35);
 }
 
 @theme inline {
@@ -81,6 +128,13 @@
   --font-mono: 'Geist Mono', 'Courier New', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-hover: var(--brand-blue-hover);
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-sky: var(--brand-sky);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -282,32 +336,74 @@
    UTILITY CLASSES
    ===================== */
 
-.font-display {
-  font-family: var(--font-sora), system-ui, sans-serif;
-}
-
-.gradient-text {
-  background: var(--gradient-text);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 4s ease infinite;
-}
-
-.gradient-bg {
-  background: var(--gradient-primary);
-}
-
 .gradient-hero-bg {
   background: var(--gradient-hero);
 }
 
+.brand-hero-bg {
+  background: var(--gradient-hero);
+}
+
+.brand-hero-blue-bg {
+  background: var(--gradient-hero-blue);
+}
+
+.brand-cta-bg {
+  background: var(--gradient-cta);
+}
+
+.brand-subtle-bg {
+  background: var(--gradient-subtle);
+}
+
+.brand-grid-bg {
+  background-image: var(--grid-indigo);
+  background-size: 60px 60px;
+}
+
+.brand-grid-blue-bg {
+  background-image: var(--grid-blue);
+  background-size: 60px 60px;
+}
+
+.brand-orb-indigo {
+  background: var(--orb-indigo);
+}
+
+.brand-orb-blue {
+  background: var(--orb-blue);
+}
+
+.brand-orb-cyan {
+  background: var(--orb-cyan);
+}
+
+.brand-orb-blue-simple {
+  background: var(--orb-blue-simple);
+}
+
+.brand-orb-violet-simple {
+  background: var(--orb-violet-simple);
+}
+
+.brand-orb-indigo-simple {
+  background: var(--orb-indigo-simple);
+}
+
+.brand-orb-cyan-simple {
+  background: var(--orb-cyan-simple);
+}
+
+.brand-button-gradient {
+  background: var(--gradient-brand);
+  box-shadow: var(--shadow-brand-button);
+}
+
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--glass-background);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-card);
 }
 
@@ -423,9 +519,9 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, oklch(0.92 0.05 285), oklch(0.90 0.08 290));
-  border: 1px solid oklch(0.85 0.10 285);
-  color: oklch(0.60 0.22 285);
+  background: linear-gradient(135deg, color-mix(in oklch, var(--brand-violet) 12%, white), color-mix(in oklch, var(--brand-purple) 14%, white));
+  border: 1px solid color-mix(in oklch, var(--brand-violet) 28%, white);
+  color: var(--brand-purple);
 }
 
 /* Premium card hover */
@@ -439,7 +535,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: var(--gradient-brand);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -454,7 +550,7 @@
 
 .premium-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(99, 102, 241, 0.35) !important;
+  border-color: color-mix(in srgb, var(--brand-indigo) 35%, transparent) !important;
   box-shadow: 0 12px 40px rgba(99, 102, 241, 0.14), 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -474,7 +570,7 @@
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, var(--brand-indigo), var(--brand-violet), var(--brand-cyan));
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -497,7 +593,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-manrope), system-ui, sans-serif;
-    background-image: radial-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px);
+    background-image: var(--body-dot);
     background-size: 24px 24px;
   }
 

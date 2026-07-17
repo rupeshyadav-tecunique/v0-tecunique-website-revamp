@@ -100,7 +100,7 @@ export function TestimonialsSection() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="py-20 lg:py-28 bg-slate-50/30"
+      className="py-20 lg:py-28 bg-[var(--neutral-slate-50)]/30"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -112,10 +112,10 @@ export function TestimonialsSection() {
             <Star className="h-3 w-3 fill-current" />
             Client Success
           </span>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl mb-6">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl mb-6">
             Trusted Through <span className="gradient-text">Long-Term</span> Client Relationships
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Our work has grown through stable engineering partnerships across Atlassian apps, product engineering, QA, data platforms, and offshore development teams.
           </p>
         </div>
@@ -128,29 +128,29 @@ export function TestimonialsSection() {
 
             {/* Left: Featured Testimonial (58%) */}
             <div className="lg:col-span-7 flex">
-              <div className="relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] w-full transition-transform hover:-translate-y-1 duration-300">
-                <Quote className="absolute top-8 right-8 h-12 w-12 text-slate-100" aria-hidden />
+              <div className="relative flex flex-col justify-between rounded-3xl border border-[var(--neutral-slate-200)] bg-white p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] w-full transition-transform hover:-translate-y-1 duration-300">
+                <Quote className="absolute top-8 right-8 h-12 w-12 text-[var(--neutral-slate-100)]" aria-hidden />
 
                 <div className="mb-8 relative z-10">
-                  <blockquote className="text-xl sm:text-2xl font-medium text-slate-800 leading-snug">
+                  <blockquote className="text-xl sm:text-2xl font-medium text-[var(--neutral-slate-800)] leading-snug">
                     &ldquo;{slide.featured.quote}&rdquo;
                   </blockquote>
                 </div>
 
-                <div className="mt-auto pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-end justify-between gap-6 relative z-10">
+                <div className="mt-auto pt-6 border-t border-[var(--neutral-slate-100)] flex flex-col sm:flex-row sm:items-end justify-between gap-6 relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-slate-100">
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--neutral-slate-100)]">
                       <Image src={slide.featured.image} alt={slide.featured.name} fill className="object-cover" sizes="56px" />
                     </div>
                     <div>
-                      <p className="font-bold text-slate-900">{slide.featured.name}</p>
-                      <p className="text-sm text-slate-500">{slide.featured.role} <span className="font-semibold" style={{ color: slide.featured.color }}>@ {slide.featured.company}</span></p>
+                      <p className="font-bold text-foreground">{slide.featured.name}</p>
+                      <p className="text-sm text-[var(--neutral-slate-500)]">{slide.featured.role} <span className="font-semibold" style={{ color: slide.featured.color }}>@ {slide.featured.company}</span></p>
                     </div>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
                     {slide.featured.tags.map(tag => (
-                      <span key={tag} className="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">
+                      <span key={tag} className="inline-flex items-center rounded-full bg-[var(--neutral-slate-50)] px-3 py-1 text-xs font-medium text-muted-foreground border border-[var(--neutral-slate-200)]">
                         {tag}
                       </span>
                     ))}
@@ -162,21 +162,21 @@ export function TestimonialsSection() {
             {/* Right: Short Testimonials (42%) */}
             <div className="lg:col-span-5 flex flex-col gap-4 justify-center">
               {slide.shortTestimonials.map((short, idx) => (
-                <div key={idx} className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <blockquote className="text-sm sm:text-base text-slate-700 italic mb-4">
+                <div key={idx} className="flex flex-col justify-between rounded-2xl border border-[var(--neutral-slate-200)] bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <blockquote className="text-sm sm:text-base text-[var(--neutral-slate-700)] italic mb-4">
                     &ldquo;{short.quote}&rdquo;
                   </blockquote>
                   <div className="flex items-center justify-between gap-4 mt-auto">
                     <div className="flex items-center gap-3">
-                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-slate-100">
+                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[var(--neutral-slate-100)]">
                         <Image src={short.image} alt={short.name} fill className="object-cover" sizes="40px" />
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-slate-900">{short.name}</p>
-                        <p className="text-xs text-slate-500">{short.company}</p>
+                        <p className="text-sm font-bold text-foreground">{short.name}</p>
+                        <p className="text-xs text-[var(--neutral-slate-500)]">{short.company}</p>
                       </div>
                     </div>
-                    <span className="shrink-0 rounded bg-slate-50 px-2 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 border border-slate-100">
+                    <span className="shrink-0 rounded bg-[var(--neutral-slate-50)] px-2 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[var(--neutral-slate-500)] border border-[var(--neutral-slate-100)]">
                       {short.category}
                     </span>
                   </div>
@@ -190,10 +190,10 @@ export function TestimonialsSection() {
           <div className="mt-12 flex items-center justify-center gap-6">
             <button
               onClick={prev}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition-all hover:bg-slate-50 hover:scale-105"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--neutral-slate-200)] bg-white shadow-sm transition-all hover:bg-[var(--neutral-slate-50)] hover:scale-105"
               aria-label="Previous testimonials"
             >
-              <ChevronLeft className="h-5 w-5 text-slate-600" />
+              <ChevronLeft className="h-5 w-5 text-muted-foreground" />
             </button>
 
             {/* Dots */}
@@ -203,8 +203,8 @@ export function TestimonialsSection() {
                   key={index}
                   onClick={() => goTo(index)}
                   className={`rounded-full transition-all duration-300 ${index === current
-                    ? "w-8 h-2.5 bg-blue-600"
-                    : "w-2.5 h-2.5 bg-slate-300 hover:bg-blue-400"
+                    ? "w-8 h-2.5 bg-brand-blue"
+                    : "w-2.5 h-2.5 bg-[var(--neutral-slate-300)] hover:bg-[var(--brand-blue-hover)]"
                     }`}
                   aria-label={`Go to testimonial slide ${index + 1}`}
                 />
@@ -213,10 +213,10 @@ export function TestimonialsSection() {
 
             <button
               onClick={next}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition-all hover:bg-slate-50 hover:scale-105"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--neutral-slate-200)] bg-white shadow-sm transition-all hover:bg-[var(--neutral-slate-50)] hover:scale-105"
               aria-label="Next testimonials"
             >
-              <ChevronRight className="h-5 w-5 text-slate-600" />
+              <ChevronRight className="h-5 w-5 text-muted-foreground" />
             </button>
           </div>
 

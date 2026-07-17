@@ -67,9 +67,9 @@ export function TechStack() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
           <SectionReveal>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 mb-6">
-              <Code2 className="h-4 w-4 text-slate-700" />
-              <span className="text-sm font-semibold text-slate-900">Technology Stack</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--neutral-slate-100)] border border-[var(--neutral-slate-200)] mb-6">
+              <Code2 className="h-4 w-4 text-[var(--neutral-slate-700)]" />
+              <span className="text-sm font-semibold text-foreground">Technology Stack</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6">
               Technology Stack We Work With
@@ -91,7 +91,7 @@ export function TechStack() {
                   {group.technologies.map((tech) => (
                     <span 
                       key={tech.name} 
-                      className="inline-flex items-center gap-2.5 px-4 py-2 bg-white border border-border/60 rounded-xl text-sm font-medium text-foreground shadow-sm hover:border-blue-300 hover:bg-blue-50/50 hover:text-blue-600 hover:-translate-y-0.5 transition-all cursor-default group"
+                      className="inline-flex items-center gap-2.5 px-4 py-2 bg-white border border-border/60 rounded-xl text-sm font-medium text-foreground shadow-sm hover:border-[var(--brand-blue)]/30 hover:bg-[var(--brand-blue)]/5 hover:text-[var(--brand-blue)] hover:-translate-y-0.5 transition-all cursor-default group"
                     >
                       <img src={tech.logo} alt={tech.name} className="w-5 h-5 object-contain group-hover:scale-110 transition-transform" />
                       {tech.name}

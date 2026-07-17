@@ -8,19 +8,19 @@ export function AboutCulture() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center mb-16">
           <div className="lg:w-1/2">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-sm font-semibold mb-6 border border-rose-100">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-lavender)] text-brand-purple text-sm font-semibold mb-6 border border-[var(--surface-violet-strong)]">
               <Heart className="h-4 w-4" />
               <span>Our Culture</span>
             </span>
-            <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-8">
+            <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-8">
               People, Stability, and Culture
             </h2>
-            <div className="prose prose-lg text-slate-600 mb-10">
+            <div className="prose prose-lg text-muted-foreground mb-10">
               <p>
                 At TECUNIQUE, we believe stable teams are built through trust, respect, flexibility, and ownership. Our culture is intentionally low on hierarchy and high on responsibility, helping people stay engaged and clients retain product knowledge over time.
               </p>
-              <p className="font-medium text-slate-900 bg-slate-50 p-4 rounded-xl border border-slate-100 mt-6">
-                We call our team members <strong className="text-blue-600">UNIQUENS</strong> — people who bring their own uniqueness, discipline, and ownership to the work they do.
+              <p className="font-medium text-foreground bg-[var(--neutral-slate-50)] p-4 rounded-xl border border-[var(--neutral-slate-200)] mt-6">
+                We call our team members <strong className="text-brand-blue">UNIQUENS</strong> — people who bring their own uniqueness, discipline, and ownership to the work they do.
               </p>
             </div>
 
@@ -31,9 +31,9 @@ export function AboutCulture() {
                 { title: "Work-Life Balance", desc: "We believe sustainable delivery comes from stable, motivated people." },
                 { title: "Celebrating Together", desc: "Festivals, milestones, achievements, and team moments are part of how we build connection." },
               ].map((item) => (
-                <div key={item.title} className="relative pl-4 border-l-2 border-blue-200 hover:border-blue-500 transition-colors">
-                  <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                  <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
+                <div key={item.title} className="relative pl-4 border-l-2 border-[var(--surface-blue-strong)] hover:border-brand-blue transition-colors">
+                  <h4 className="font-bold text-foreground mb-2">{item.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -41,7 +41,7 @@ export function AboutCulture() {
 
           <div className="lg:w-1/2 w-full max-w-2xl mx-auto">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-rose-100 to-orange-100 rounded-[3rem] transform -rotate-3 opacity-50 blur-lg" />
+              <div className="brand-orb-indigo absolute -inset-4 rounded-[3rem] transform -rotate-3 opacity-50 blur-lg" />
               <CultureGallery />
             </div>
           </div>

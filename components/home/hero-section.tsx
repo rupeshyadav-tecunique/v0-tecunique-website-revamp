@@ -43,38 +43,30 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-hidden pt-4 pb-12 lg:pt-6 lg:pb-16"
-      style={{ background: "linear-gradient(170deg, #ffffff 0%, #f4f3ff 18%, #ede9fe 45%, #f0f9ff 75%, #faf5ff 100%)" }}
+      className="brand-hero-bg relative overflow-hidden pt-4 pb-12 lg:pt-6 lg:pb-16"
     >
       {/* Animated blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div
-          className="absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
-          style={{ background: "radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%)" }}
+          className="brand-orb-indigo absolute -top-32 -left-32 h-96 w-96 rounded-full opacity-40 animate-blob"
         />
         <div
-          className="absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
+          className="brand-orb-blue absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
           style={{
-            background: "radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%)",
             animationDelay: "4s",
             animationDuration: "16s",
           }}
         />
         <div
-          className="absolute -bottom-40 left-1/3 h-80 w-80 rounded-full opacity-25 animate-blob"
+          className="brand-orb-cyan absolute -bottom-40 left-1/3 h-80 w-80 rounded-full opacity-25 animate-blob"
           style={{
-            background: "radial-gradient(circle, #67e8f9 0%, #a5b4fc 50%, transparent 70%)",
             animationDelay: "8s",
             animationDuration: "20s",
           }}
         />
         {/* Grid pattern overlay */}
         <div
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage: "linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
+          className="brand-grid-bg absolute inset-0 opacity-[0.025]"
         />
       </div>
 
@@ -94,12 +86,12 @@ export function HeroSection() {
             {/* Headline */}
             <h1 className="hero-reveal font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl leading-tight">
               Trusted Software Engineering <br className="hidden sm:block" />
-              & <span className="text-[#0052CC]">Dedicated Teams</span>
+              & <span className="text-brand-blue">Dedicated Teams</span>
             </h1>
 
             {/* Dynamic Expertise */}
             <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-slate-600">Specializing in</span>
+              <span className="text-muted-foreground">Specializing in</span>
               
               {/* Screen reader text (reads the full sentence naturally with the visible text) */}
               <span className="sr-only">Dedicated Teams, Product Engineering, QA Automation, Cloud Solutions, and Atlassian Apps.</span>
