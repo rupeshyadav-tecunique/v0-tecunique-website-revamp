@@ -68,7 +68,7 @@ export function HeroVisual() {
               key={idx}
               onClick={() => setActiveCard(idx)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                activeCard === idx ? "w-8 bg-[var(--brand-indigo)]" : "w-2 bg-[var(--neutral-slate-300)] hover:bg-[var(--neutral-slate-400)]"
+                activeCard === idx ? "w-8 bg-[var(--brand-blue)]" : "w-2 bg-slate-200 hover:bg-slate-300"
               }`}
               aria-label={`Show card ${idx + 1}`}
             />

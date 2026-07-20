@@ -1,49 +1,29 @@
 "use client"
 
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { CheckCircle2, UserSearch, Users, Settings, TrendingUp, ShieldCheck, AppWindow, Database, Globe, Lightbulb } from "lucide-react"
+import { CheckCircle2, UserSearch, Users, Settings, TrendingUp, ShieldCheck, AppWindow, Database, Globe, Lightbulb, Clock } from "lucide-react"
 import Image from "next/image"
 
 const cards = [
   {
     title: "Client-Selected Talent",
-    icon: UserSearch,
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-    items: [
-      "You interview, evaluate, and approve the professionals before onboarding.",
-      "We shortlist candidates based on skills, project needs, and working style.",
-    ]
+    icon: Users,
+    description: "You interview and select from our vetted pool of experienced professionals."
   },
   {
     title: "Full-Time Dedicated Teams",
-    icon: Users,
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-    items: [
-      "Selected professionals work exclusively for your projects.",
-      "They align with your tools, communication, sprint planning, and delivery priorities.",
-    ]
+    icon: Clock,
+    description: "100% focus on your projects with flexible scaling as your needs evolve."
   },
   {
     title: "Managed Operations",
     icon: Settings,
-    color: "text-orange-500",
-    bg: "bg-orange-50",
-    items: [
-      "TECUNIQUE handles recruitment, onboarding, payroll, HR, NDA, and infrastructure.",
-      "You focus on the product while we manage the operational side.",
-    ]
+    description: "We handle HR, IT, facilities, and compliance so you can focus on product and growth."
   },
   {
     title: "Long-Term Stability",
-    icon: TrendingUp,
-    color: "text-purple-600",
-    bg: "bg-purple-50",
-    items: [
-      "We focus on continuity, ownership, and team stability.",
-      "This helps preserve product knowledge and reduce repeated onboarding.",
-    ]
+    icon: ShieldCheck,
+    description: "Low attrition, consistent delivery, and teams that grow with your business."
   }
 ]
 
@@ -51,42 +31,40 @@ export function DedicatedTeamsSection() {
   const sectionRef = useScrollReveal()
 
   return (
-    <section ref={sectionRef as React.RefObject<HTMLElement>} className="py-24 bg-white">
+    <section ref={sectionRef as React.RefObject<HTMLElement>} className="py-24 bg-[var(--neutral-slate-50)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 reveal">
-          <div className="inline-flex items-center rounded-full bg-blue-50 px-4 py-1.5 mb-6">
-            <span className="text-sm font-bold text-blue-600 tracking-wider uppercase">Built for long-term success</span>
+        <div className="text-center max-w-4xl mx-auto mb-16 reveal">
+          <div className="mb-4">
+            <span className="text-sm font-bold text-[var(--brand-blue)] tracking-widest uppercase">Our Strength</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 mb-6 leading-tight">
-            Built for Long-Term <span className="text-blue-600">Dedicated Software Teams</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 leading-tight">
+            Built for Long-Term Dedicated Software Teams
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Since 2010, TECUNIQUE has helped international software companies build stable, full-time development and QA teams in India — with practical engineering support, transparent collaboration, and long-term continuity.
-          </p>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* 4 Cards Grid - Boxless Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12 mb-20">
           {cards.map((card, idx) => (
             <div 
               key={idx} 
-              className="reveal bg-white rounded-2xl p-6 md:p-8 shadow-[0_2px_20px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col h-full"
+              className={`reveal flex items-start gap-4 px-2 sm:px-6 ${
+                idx % 4 !== 0 ? 'lg:border-l lg:border-border/60' : ''
+              } ${
+                idx % 2 !== 0 ? 'md:border-l md:border-border/60 lg:border-l-0' : ''
+              }`}
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
-              <div className={`w-16 h-16 rounded-full ${card.bg} flex items-center justify-center mb-6 mx-auto`}>
-                <card.icon className={`w-8 h-8 ${card.color}`} />
+              <div className="shrink-0 mt-0.5">
+                <card.icon className="w-8 h-8 text-[var(--brand-green)]" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 text-center mb-6">{card.title}</h3>
-              <ul className="space-y-4 flex-1">
-                {card.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                    <span className="text-sm text-slate-600 leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <h3 className="text-base font-bold text-foreground mb-2 leading-tight">{card.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
