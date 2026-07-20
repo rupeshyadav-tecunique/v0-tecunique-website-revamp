@@ -60,13 +60,12 @@ export function StatsSection() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="relative overflow-hidden py-16 lg:py-20"
-      style={{ background: "linear-gradient(135deg, #6366f1 0%, #7c3aed 50%, #4f46e5 100%)" }}
+      className="brand-stats-bg relative overflow-hidden py-16 lg:py-20"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 -z-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full opacity-20 blur-3xl" style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }} />
-        <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full opacity-15 blur-3xl" style={{ background: "radial-gradient(circle, #67e8f9 0%, transparent 70%)" }} />
+        <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full opacity-15 blur-3xl brand-orb-cyan-simple" />
         {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.06]"

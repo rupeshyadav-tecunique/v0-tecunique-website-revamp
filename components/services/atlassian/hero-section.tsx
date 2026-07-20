@@ -7,7 +7,7 @@ export function AtlassianHero() {
   return (
     <section className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-slate-50/50">
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "linear-gradient(#0284c7 1px, transparent 1px), linear-gradient(to right, #0284c7 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="absolute inset-0 opacity-[0.02] brand-grid-blue-bg" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 w-full">

@@ -1,7 +1,37 @@
 const fs = require('fs');
 const path = require('path');
 
-const exactMatches = {
+const hexMatches = {
+  '#0052CC': 'brand-blue',
+  '#0052cc': 'brand-blue',
+  '#0047b3': 'brand-blue-hover',
+  '#6366f1': 'brand-indigo',
+  '#8b5cf6': 'brand-violet',
+  '#7c3aed': 'brand-purple',
+  '#0891b2': 'brand-teal',
+  '#06b6d4': 'brand-cyan',
+  '#4f46e5': 'brand-indigo-deep',
+  '#f8f9fc': 'surface-dashboard',
+  '#F8FAFC': 'neutral-slate-50',
+  '#f8f7ff': 'surface-lavender',
+};
+
+const hexClassPatterns = [
+  { from: /bg-\[#0052CC\]/gi, to: 'bg-brand-blue' },
+  { from: /bg-\[#0052cc\]/gi, to: 'bg-brand-blue' },
+  { from: /text-\[#0052CC\]/gi, to: 'text-brand-blue' },
+  { from: /text-\[#0052cc\]/gi, to: 'text-brand-blue' },
+  { from: /hover:bg-\[#0047b3\]/gi, to: 'hover:bg-brand-blue-hover' },
+  { from: /hover:bg-\[#0052CC\]\/90/gi, to: 'hover:bg-brand-blue/90' },
+  { from: /bg-\[#6366f1\]/gi, to: 'bg-brand-indigo' },
+  { from: /text-\[#6366f1\]/gi, to: 'text-brand-indigo' },
+  { from: /bg-\[#f8f9fc\]/gi, to: 'bg-surface-dashboard' },
+  { from: /ring-\[#f8f9fc\]/gi, to: 'ring-surface-dashboard' },
+  { from: /from-\[#6366f1\]/gi, to: 'from-brand-indigo' },
+  { from: /to-\[#8b5cf6\]/gi, to: 'to-brand-violet' },
+  { from: /bg-\[#F8FAFC\]/gi, to: 'bg-neutral-slate-50' },
+];
+
   // Gradients and orbs that the user already defined custom classes for
   'bg-gradient-to-tr from-blue-100 to-purple-100 opacity-50 blur-[80px] animate-blob': 'brand-orb-blue opacity-50 blur-[80px] animate-blob',
   'bg-gradient-to-br from-indigo-100 to-indigo-100 opacity-50 blur-[80px] animate-blob animation-delay-2000': 'brand-orb-indigo opacity-50 blur-[80px] animate-blob animation-delay-2000'

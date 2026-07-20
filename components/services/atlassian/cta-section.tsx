@@ -6,7 +6,7 @@ export function AtlassianCTA() {
     <section className="py-24 bg-slate-50 relative">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionReveal>
-          <div className="bg-[#0052CC] rounded-3xl p-12 lg:p-20 text-center text-white shadow-xl relative overflow-hidden">
+          <div className="bg-brand-blue rounded-3xl p-12 lg:p-20 text-center text-white shadow-xl relative overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at center, #ffffff 2px, transparent 2px)", backgroundSize: "32px 32px" }} />
             
@@ -21,7 +21,7 @@ export function AtlassianCTA() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact" 
-                  className="inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-bold text-[#0052CC] shadow-md transition-all hover:bg-slate-50 hover:scale-105"
+                  className="inline-flex h-14 items-center justify-center rounded-lg bg-white px-8 text-base font-bold text-brand-blue shadow-md transition-all hover:bg-slate-50 hover:scale-105"
                 >
                   Schedule Your Free Consultation
                 </Link>

@@ -21,13 +21,13 @@ export function HeroDashboard() {
   return (
     <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto">
       {/* Main Card */}
-      <div className="bg-[#f8f9fc] rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 relative overflow-hidden">
+      <div className="bg-surface-dashboard rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 relative overflow-hidden">
         
         {/* Header */}
         <div className="mb-6 relative z-10">
           <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 leading-[1.1] mb-2 tracking-tight">
             Build Your <br />
-            <span className="text-[#6366f1]">Dedicated Team</span>
+            <span className="text-brand-indigo">Dedicated Team</span>
           </h3>
           <p className="text-xs text-slate-500 font-medium max-w-[220px] leading-relaxed">
             Selected, onboarded, and managed for long-term collaboration.
@@ -45,7 +45,7 @@ export function HeroDashboard() {
             {steps.map((step) => (
               <div key={step.id} className="flex items-center gap-2 sm:gap-3">
                 {/* Number dot */}
-                <div className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-[#6366f1] text-[9px] font-bold text-white shadow-sm ring-4 ring-[#f8f9fc]">
+                <div className="flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-brand-indigo text-[9px] font-bold text-white shadow-sm ring-4 ring-surface-dashboard">
                   {step.id}
                 </div>
                 
@@ -75,7 +75,7 @@ export function HeroDashboard() {
                 <div className="h-1.5 w-16 bg-slate-200 rounded-full" />
                 <div className="h-1.5 w-10 bg-slate-100 rounded-full" />
               </div>
-              <div className="flex h-4 w-4 rounded-full bg-[#6366f1] items-center justify-center shrink-0">
+              <div className="flex h-4 w-4 rounded-full bg-brand-indigo items-center justify-center shrink-0">
                  <CheckCircle2 className="h-2.5 w-2.5 text-white" />
               </div>
             </div>
@@ -86,7 +86,7 @@ export function HeroDashboard() {
                 <div className="h-1.5 w-14 bg-slate-200 rounded-full" />
                 <div className="h-1.5 w-12 bg-slate-100 rounded-full" />
               </div>
-              <div className="flex h-4 w-4 rounded-full bg-[#6366f1] items-center justify-center shrink-0">
+              <div className="flex h-4 w-4 rounded-full bg-brand-indigo items-center justify-center shrink-0">
                  <CheckCircle2 className="h-2.5 w-2.5 text-white" />
               </div>
             </div>
@@ -97,13 +97,13 @@ export function HeroDashboard() {
                 <div className="h-1.5 w-16 bg-slate-200 rounded-full" />
                 <div className="h-1.5 w-8 bg-slate-100 rounded-full" />
               </div>
-              <div className="flex h-4 w-4 rounded-full bg-[#6366f1] items-center justify-center shrink-0">
+              <div className="flex h-4 w-4 rounded-full bg-brand-indigo items-center justify-center shrink-0">
                  <CheckCircle2 className="h-2.5 w-2.5 text-white" />
               </div>
             </div>
 
             {/* Big purple icon box */}
-            <div className="absolute bottom-6 right-6 h-16 w-16 rounded-2xl bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] shadow-[0_10px_30px_rgba(99,102,241,0.3)] flex items-center justify-center transform rotate-[-5deg] animate-float delay-300">
+            <div className="absolute bottom-6 right-6 h-16 w-16 rounded-2xl brand-button-gradient flex items-center justify-center transform rotate-[-5deg] animate-float delay-300">
               <Users className="h-8 w-8 text-white" />
               {/* Star sparkle */}
               <Sparkles className="absolute -right-4 -top-3 h-6 w-6 text-purple-300 fill-purple-300/20" />
@@ -115,7 +115,7 @@ export function HeroDashboard() {
         <div className="mt-8 relative z-10 flex flex-wrap gap-2 pr-20">
           {chips.map((chip) => (
             <div key={chip.name} className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-bold text-slate-700 shadow-sm border border-slate-100 hover:border-indigo-200 transition-colors">
-              <chip.icon className="h-3 w-3 text-[#6366f1]" />
+              <chip.icon className="h-3 w-3 text-brand-indigo" />
               {chip.name}
             </div>
           ))}
@@ -127,9 +127,9 @@ export function HeroDashboard() {
             {/* Decorative curve line (approximated with SVG) */}
             <svg className="absolute -left-16 top-1/2 -z-10 h-10 w-20 -translate-y-1/2 overflow-visible stroke-indigo-200/60" fill="none" viewBox="0 0 100 50">
               <path d="M 0 50 Q 50 60 100 25" strokeWidth="1.5" strokeDasharray="3 3" />
-              <circle cx="0" cy="50" r="3" fill="#c7d2fe" stroke="none" />
+              <circle cx="0" cy="50" r="3" fill="var(--accent-indigo-light)" stroke="none" />
             </svg>
-            <div className="flex items-center gap-1.5 rounded-full bg-[#f8f9fc]/80 backdrop-blur-md px-3 py-1.5 text-[10px] font-bold text-[#6366f1] border border-indigo-100/50 shadow-sm">
+            <div className="flex items-center gap-1.5 rounded-full bg-surface-dashboard/80 backdrop-blur-md px-3 py-1.5 text-[10px] font-bold text-brand-indigo border border-indigo-100/50 shadow-sm">
               <Sparkles className="h-3 w-3" />
               Since 2010
             </div>

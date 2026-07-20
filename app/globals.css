@@ -11,7 +11,11 @@
   --brand-violet: #8b5cf6;
   --brand-purple: #7c3aed;
   --brand-cyan: #06b6d4;
+  --brand-teal: #0891b2;
   --brand-sky: #67e8f9;
+  --brand-indigo-deep: #4f46e5;
+  --brand-rose: #f43f5e;
+  --accent-indigo-light: #c7d2fe;
 
   /* Neutral palette */
   --neutral-white: #ffffff;
@@ -32,6 +36,7 @@
   --surface-blue: #f0f7ff;
   --surface-blue-strong: #e0f2fe;
   --surface-blue-soft: #eff6ff;
+  --surface-dashboard: #f8f9fc;
 
   /* Base */
   --background: oklch(1 0 0);
@@ -96,23 +101,23 @@
 
   --gradient-primary: linear-gradient(135deg, oklch(0.546 0.145 258.877) 0%, oklch(0.623 0.146 259.088) 100%);
   --gradient-brand: linear-gradient(135deg, var(--brand-indigo), var(--brand-violet));
-  --gradient-brand-strong: linear-gradient(135deg, var(--brand-indigo) 0%, var(--brand-purple) 50%, #4f46e5 100%);
+  --gradient-brand-strong: linear-gradient(135deg, var(--brand-indigo) 0%, var(--brand-purple) 50%, var(--brand-indigo-deep) 100%);
   --gradient-ocean: linear-gradient(135deg, oklch(0.85 0.08 259) 0%, oklch(0.75 0.12 259) 100%);
-  --gradient-hero: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-violet) 18%, var(--surface-violet-strong) 45%, var(--surface-sky) 75%, #faf5ff 100%);
+  --gradient-hero: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-violet) 18%, var(--surface-violet-strong) 45%, var(--surface-sky) 75%, var(--surface-lavender) 100%);
   --gradient-hero-blue: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-blue) 18%, var(--surface-blue-strong) 45%, var(--surface-blue-soft) 75%, var(--neutral-slate-50) 100%);
   --gradient-cta: linear-gradient(135deg, var(--surface-lavender) 0%, var(--surface-violet-strong) 40%, var(--surface-sky) 100%);
   --gradient-subtle: linear-gradient(180deg, var(--surface-lavender) 0%, var(--neutral-white) 100%);
   --gradient-section: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.01 259) 100%);
   --gradient-text: linear-gradient(135deg, oklch(0.546 0.145 258.877), oklch(0.623 0.146 259.088), oklch(0.525 0.123 162.775));
-  --orb-indigo: radial-gradient(circle, #a5b4fc 0%, #c4b5fd 50%, transparent 70%);
-  --orb-blue: radial-gradient(circle, #93c5fd 0%, #a5b4fc 50%, transparent 70%);
-  --orb-cyan: radial-gradient(circle, var(--brand-sky) 0%, #a5b4fc 50%, transparent 70%);
-  --orb-blue-simple: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+  --orb-indigo: radial-gradient(circle, var(--accent-indigo-light) 0%, color-mix(in srgb, var(--brand-violet) 60%, white) 50%, transparent 70%);
+  --orb-blue: radial-gradient(circle, color-mix(in srgb, var(--brand-blue) 50%, white) 0%, var(--accent-indigo-light) 50%, transparent 70%);
+  --orb-cyan: radial-gradient(circle, var(--brand-sky) 0%, var(--accent-indigo-light) 50%, transparent 70%);
+  --orb-blue-simple: radial-gradient(circle, var(--brand-blue) 0%, transparent 70%);
   --orb-violet-simple: radial-gradient(circle, var(--brand-violet) 0%, transparent 70%);
-  --orb-indigo-simple: radial-gradient(circle, #a5b4fc 0%, transparent 70%);
+  --orb-indigo-simple: radial-gradient(circle, var(--accent-indigo-light) 0%, transparent 70%);
   --orb-cyan-simple: radial-gradient(circle, var(--brand-sky) 0%, transparent 70%);
   --grid-indigo: linear-gradient(var(--brand-indigo) 1px, transparent 1px), linear-gradient(to right, var(--brand-indigo) 1px, transparent 1px);
-  --grid-blue: linear-gradient(#2563eb 1px, transparent 1px), linear-gradient(to right, #2563eb 1px, transparent 1px);
+  --grid-blue: linear-gradient(var(--brand-blue) 1px, transparent 1px), linear-gradient(to right, var(--brand-blue) 1px, transparent 1px);
   --body-dot: radial-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px);
   --glass-background: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(255, 255, 255, 0.6);
@@ -134,7 +139,27 @@
   --color-brand-violet: var(--brand-violet);
   --color-brand-purple: var(--brand-purple);
   --color-brand-cyan: var(--brand-cyan);
+  --color-brand-teal: var(--brand-teal);
   --color-brand-sky: var(--brand-sky);
+  --color-brand-indigo-deep: var(--brand-indigo-deep);
+  --color-brand-rose: var(--brand-rose);
+  --color-accent-indigo-light: var(--accent-indigo-light);
+  --color-surface-lavender: var(--surface-lavender);
+  --color-surface-violet: var(--surface-violet);
+  --color-surface-violet-strong: var(--surface-violet-strong);
+  --color-surface-sky: var(--surface-sky);
+  --color-surface-blue: var(--surface-blue);
+  --color-surface-blue-strong: var(--surface-blue-strong);
+  --color-surface-blue-soft: var(--surface-blue-soft);
+  --color-surface-dashboard: var(--surface-dashboard);
+  --color-neutral-slate-50: var(--neutral-slate-50);
+  --color-neutral-slate-100: var(--neutral-slate-100);
+  --color-neutral-slate-200: var(--neutral-slate-200);
+  --color-neutral-slate-500: var(--neutral-slate-500);
+  --color-neutral-slate-600: var(--neutral-slate-600);
+  --color-neutral-slate-700: var(--neutral-slate-700);
+  --color-neutral-slate-800: var(--neutral-slate-800);
+  --color-neutral-slate-900: var(--neutral-slate-900);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -354,6 +379,17 @@
 
 .brand-subtle-bg {
   background: var(--gradient-subtle);
+}
+
+.brand-stats-bg {
+  background: var(--gradient-brand-strong);
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .brand-grid-bg {

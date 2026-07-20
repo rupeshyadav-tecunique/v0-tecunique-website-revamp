@@ -15,7 +15,7 @@ export function QAExperience() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <SectionReveal delay={100}>
             <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center flex flex-col items-center h-full hover:shadow-md transition-shadow">
-              <div className="h-12 w-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 text-[#0052CC]">
+              <div className="h-12 w-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 text-brand-blue">
                 <Cpu className="h-6 w-6" />
               </div>
               <h4 className="font-bold text-slate-900 mb-3 text-lg">Atlassian App QA</h4>

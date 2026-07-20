@@ -11,13 +11,13 @@ const steps = [
 
 export function HeroAtlassianVisual() {
   return (
-    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto h-[540px] flex flex-col bg-[#f8f9fc] rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 overflow-hidden">
+    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto h-[540px] flex flex-col bg-surface-dashboard rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 overflow-hidden">
       
       {/* Header */}
       <div className="mb-6 relative z-10 shrink-0">
         <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 leading-[1.1] mb-2 tracking-tight">
           Atlassian <br />
-          <span className="text-[#6366f1]">App Engineering</span>
+          <span className="text-brand-indigo">App Engineering</span>
         </h3>
         <p className="text-xs text-slate-500 font-medium max-w-[220px] leading-relaxed">
           From app idea to release, QA, and long-term support.
@@ -35,7 +35,7 @@ export function HeroAtlassianVisual() {
           {steps.map((step) => (
             <div key={step.id} className="flex items-center gap-3 sm:gap-4">
               {/* Number dot */}
-              <div className="flex h-[24px] w-[24px] shrink-0 items-center justify-center rounded-full bg-[#6366f1] text-[10px] font-bold text-white shadow-sm ring-4 ring-[#f8f9fc]">
+              <div className="flex h-[24px] w-[24px] shrink-0 items-center justify-center rounded-full bg-brand-indigo text-[10px] font-bold text-white shadow-sm ring-4 ring-surface-dashboard">
                 {step.id}
               </div>
               

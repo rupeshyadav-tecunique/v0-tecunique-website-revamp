@@ -84,7 +84,7 @@ export function DedicatedTeamsComparison() {
           </SectionReveal>
 
           {/* Box 3: TECUNIQUE-Managed Operations */}
-          <SectionReveal delay={300} className="bg-[#F8FAFC] rounded-3xl p-8 lg:p-10 border border-blue-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-xl hover:border-blue-300 hover:bg-blue-50/30 transition-all duration-300 relative">
+          <SectionReveal delay={300} className="bg-neutral-slate-50 rounded-3xl p-8 lg:p-10 border border-blue-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-xl hover:border-blue-300 hover:bg-blue-50/30 transition-all duration-300 relative">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent rounded-3xl pointer-events-none" />
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-6">

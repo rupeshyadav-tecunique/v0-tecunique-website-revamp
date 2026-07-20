@@ -66,7 +66,7 @@ export default function BlogList({ initialBlogs }: { initialBlogs: any[] }) {
                     post.category?.toLowerCase().includes("atlassian") || 
                     post.category?.toLowerCase().includes("jira") || 
                     post.category?.toLowerCase().includes("confluence")
-                      ? "bg-[#0052CC] text-white border-transparent hover:bg-[#0052CC]/90"
+                      ? "bg-brand-blue text-white border-transparent hover:bg-brand-blue/90"
                       : "bg-primary/5 text-primary border-primary/10"
                   }`}
                 >

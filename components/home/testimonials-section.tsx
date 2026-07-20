@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useState, useEffect, useCallback } from "react"
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { brand } from "@/lib/design-tokens"
 
 const testimonialSlides = [
   {
@@ -16,7 +17,7 @@ const testimonialSlides = [
       company: "Innovalog",
       tags: ["Atlassian Apps", "Jira Workflows", "Long-Term QA"],
       image: "/images/testimonial/david.webp",
-      color: "#6366f1"
+      color: brand.indigo
     },
     shortTestimonials: [
       {
@@ -25,7 +26,7 @@ const testimonialSlides = [
         company: "Appfire",
         category: "Development + QA",
         image: "/images/testimonial/ajay.webp",
-        color: "#0891b2"
+        color: brand.teal
       },
       {
         quote: "The professionalism and expertise of TECUNIQUE's QA consultants have played a key role in improving our operational efficiency and delivering outstanding apps.",
@@ -33,7 +34,7 @@ const testimonialSlides = [
         company: "Qotilabs",
         category: "Atlassian QA",
         image: "/images/testimonial/den.webp",
-        color: "#f43f5e"
+        color: brand.rose
       },
     ]
   },
@@ -47,7 +48,7 @@ const testimonialSlides = [
       company: "OPPSCIENCE",
       tags: ["Product Engineering", "Dedicated Teams", "Long-Term Support"],
       image: "/images/testimonial/mickael.webp",
-      color: "#06b6d4"
+      color: brand.cyan
     },
     shortTestimonials: [
       {
@@ -56,7 +57,7 @@ const testimonialSlides = [
         company: "OPPSCIENCE",
         category: "Long-Term Support",
         image: "/images/testimonial/guillaume.webp",
-        color: "#7c3aed"
+        color: brand.purple
       },
       {
         quote: "TECUNIQUE has been an integral part of our journey for more than a decade. Our association is centered on the invaluable expertise and contributions that team brings to the table.",
@@ -64,7 +65,7 @@ const testimonialSlides = [
         company: "POLYSPOT",
         category: "ODC Setup",
         image: "/images/testimonial/gilles.jpg",
-        color: "#8b5cf6"
+        color: brand.violet
       }
     ]
   }

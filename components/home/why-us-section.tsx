@@ -3,31 +3,32 @@
 import Link from "next/link"
 import { Layers, Puzzle, Globe, Lock, ArrowRight, Sparkles } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { brand } from "@/lib/design-tokens"
 
 const propositions = [
   {
     title: "Full Visibility, No Black Box",
     description: "Direct communication, transparent processes, and clear visibility into work progress.",
     icon: Layers,
-    color: "#6366f1",
+    color: brand.indigo,
   },
   {
     title: "Atlassian Apps Experience",
     description: "Hands-on experience with Jira apps, Forge, Connect, REST APIs, app QA, and long-term product support.",
     icon: Puzzle,
-    color: "#8b5cf6",
+    color: brand.violet,
   },
   {
     title: "Remote-Ready Delivery",
     description: "Teams aligned with your tools, workflows, time-zone needs, and delivery expectations.",
     icon: Globe,
-    color: "#06b6d4",
+    color: brand.cyan,
   },
   {
     title: "Security-Conscious Engagements",
     description: "NDA-backed work, controlled access, and responsible handling of client systems and data.",
     icon: Lock,
-    color: "#7c3aed",
+    color: brand.purple,
   },
 ]
 
@@ -37,8 +38,7 @@ export function WhyUsSection() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="py-24 lg:py-32"
-      style={{ background: "linear-gradient(180deg, #f8f7ff 0%, #ffffff 100%)" }}
+      className="brand-subtle-bg py-24 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 

@@ -4,7 +4,7 @@ import { Code2, Database, FileCheck } from "lucide-react"
 
 export function HeroTechVisual() {
   return (
-    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto h-[500px] flex flex-col bg-[#f8f9fc] rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 overflow-hidden">
+    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto h-[500px] flex flex-col bg-surface-dashboard rounded-[2rem] p-6 lg:p-8 shadow-2xl shadow-indigo-500/10 border border-white/50 overflow-hidden">
       
       {/* Header */}
       <div className="mb-6 relative z-20 text-center">

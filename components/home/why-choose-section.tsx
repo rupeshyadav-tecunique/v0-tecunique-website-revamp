@@ -34,8 +34,7 @@ export function WhyChooseSection() {
   return (
     <section
       ref={sectionRef as React.RefObject<HTMLElement>}
-      className="py-20 lg:py-28"
-      style={{ background: "linear-gradient(180deg, #f8f7ff 0%, #ffffff 100%)" }}
+      className="brand-subtle-bg py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -71,13 +70,8 @@ export function WhyChooseSection() {
               </span>
 
               {/* Number pill */}
-              <div
-                className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl text-white font-display text-sm font-extrabold"
-                style={{ background: `linear-gradient(135deg, var(--from, #6366f1), var(--to, #8b5cf6))` }}
-              >
-                <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${reason.gradient} text-white`}>
-                  <reason.icon className="h-6 w-6" />
-                </div>
+              <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${reason.gradient} text-white`}>
+                <reason.icon className="h-6 w-6" />
               </div>
 
               {/* Small number label */}

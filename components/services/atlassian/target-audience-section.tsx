@@ -7,7 +7,7 @@ export function AtlassianTargetAudience() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-16">
           <SectionReveal>
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#0052CC] mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-blue mb-4">
               Built for Atlassian App Vendors
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl">
@@ -22,7 +22,7 @@ export function AtlassianTargetAudience() {
             <SectionReveal className="h-full">
               <div className="bg-white rounded-xl border border-slate-200 p-8 lg:p-10 h-full flex flex-col hover:shadow-lg transition-shadow">
                 <div className="mb-6">
-                  <Store className="h-8 w-8 text-[#0052CC]" />
+                  <Store className="h-8 w-8 text-brand-blue" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Marketplace App Vendors</h3>
                 <p className="text-slate-600 leading-relaxed">
@@ -35,7 +35,7 @@ export function AtlassianTargetAudience() {
           {/* Card 2: SaaS / ISV Teams (Blue, 5 cols) */}
           <div className="md:col-span-5">
             <SectionReveal delay={100} className="h-full">
-              <div className="bg-[#0052CC] rounded-xl p-8 lg:p-10 h-full flex flex-col text-white shadow-md hover:shadow-xl hover:bg-[#0047b3] transition-all">
+              <div className="bg-brand-blue rounded-xl p-8 lg:p-10 h-full flex flex-col text-white shadow-md hover:shadow-xl hover:bg-brand-blue-hover transition-all">
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center bg-white/20 p-3 rounded-lg">
                     <Cloud className="h-6 w-6 text-white" />

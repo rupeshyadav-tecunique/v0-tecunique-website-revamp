@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { defaultAccentColor } from "@/lib/design-tokens"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
@@ -16,7 +17,7 @@ export default function CaseStudyForm({ initialData = null }: { initialData?: an
   const [formData, setFormData] = useState({
     id: initialData?.id || "",
     client: initialData?.client || "",
-    color: initialData?.color || "#3b82f6",
+    color: initialData?.color || defaultAccentColor,
     industry: initialData?.industry || "",
     partnership: initialData?.partnership || "",
     category: initialData?.category || "",

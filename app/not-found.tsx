@@ -7,14 +7,8 @@ export default function NotFound() {
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-12 pb-24">
       {/* Background blobs to match the site aesthetic */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full opacity-20 blur-3xl"
-          style={{ background: "radial-gradient(circle, #6366f1 0%, #8b5cf6 50%, transparent 70%)" }}
-        />
-        <div
-          className="absolute -top-24 -right-24 h-96 w-96 rounded-full opacity-10 blur-3xl"
-          style={{ background: "radial-gradient(circle, #06b6d4 0%, transparent 70%)" }}
-        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full opacity-20 blur-3xl brand-orb-indigo" />
+        <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full opacity-10 blur-3xl brand-orb-cyan-simple" />
       </div>
 
       <div className="text-center max-w-2xl mx-auto reveal animate-fade-up">

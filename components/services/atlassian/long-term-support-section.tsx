@@ -31,7 +31,7 @@ export function AtlassianLongTermSupport() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Content */}
           <SectionReveal>
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#0052CC] mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-blue mb-6">
               Long-Term Support for Marketplace Products
             </h2>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">

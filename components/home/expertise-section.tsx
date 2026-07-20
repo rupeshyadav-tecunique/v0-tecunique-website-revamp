@@ -2,55 +2,56 @@
 
 import { CheckCircle, Layers, Clock, Shield, Lock, Zap, Globe, Award, Sparkles } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { brand } from "@/lib/design-tokens"
 
 const expertise = [
   {
     title: "100% Client Satisfaction",
     desc: "Our SLA-driven approach ensures every deliverable meets or exceeds expectations.",
     icon: CheckCircle,
-    color: "#6366f1",
+    color: brand.indigo,
   },
   {
     title: "No Black-Box Approach",
     desc: "Full transparency in process, communication, and code ownership.",
     icon: Layers,
-    color: "#8b5cf6",
+    color: brand.violet,
   },
   {
     title: "Shorter Time to Market",
     desc: "Agile sprints and lean workflows accelerate product delivery.",
     icon: Clock,
-    color: "#06b6d4",
+    color: brand.cyan,
   },
   {
     title: "Data Privacy",
     desc: "GDPR-compliant processes with strict data governance and access controls.",
     icon: Shield,
-    color: "#6366f1",
+    color: brand.indigo,
   },
   {
     title: "Guaranteed Security",
     desc: "NDA-protected engagements and strict enterprise security practices.",
     icon: Lock,
-    color: "#7c3aed",
+    color: brand.purple,
   },
   {
     title: "High Performance",
     desc: "Optimized architectures built to scale with your business growth.",
     icon: Zap,
-    color: "#0891b2",
+    color: brand.teal,
   },
   {
     title: "Global Delivery",
     desc: "Remote-ready teams that work seamlessly across time zones.",
     icon: Globe,
-    color: "#8b5cf6",
+    color: brand.violet,
   },
   {
     title: "Proven Excellence",
     desc: "15+ years of consistent delivery with 95% customer retention.",
     icon: Award,
-    color: "#6366f1",
+    color: brand.indigo,
   },
 ]
 

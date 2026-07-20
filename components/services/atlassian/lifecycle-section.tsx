@@ -29,7 +29,7 @@ export function AtlassianLifecycle() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <SectionReveal>
-            <h2 className="text-3xl font-bold font-display text-[#0052CC] mb-4">
+            <h2 className="text-3xl font-bold font-display text-brand-blue mb-4">
               Atlassian App Engineering Lifecycle
             </h2>
             <p className="text-lg text-slate-600">
@@ -42,7 +42,7 @@ export function AtlassianLifecycle() {
           {steps.map((step, index) => (
             <SectionReveal key={step.id} delay={index * 100}>
               <div className="bg-white rounded-lg border border-slate-200 p-8 text-center h-full flex flex-col items-center hover:shadow-lg hover:border-slate-300 transition-all">
-                <div className="w-12 h-12 bg-[#0052CC] rounded-lg text-white font-bold flex items-center justify-center mb-6 text-lg">
+                <div className="w-12 h-12 bg-brand-blue rounded-lg text-white font-bold flex items-center justify-center mb-6 text-lg">
                   {parseInt(step.id)}
                 </div>
                 <h3 className="font-bold text-slate-900 text-lg mb-3">{step.title}</h3>

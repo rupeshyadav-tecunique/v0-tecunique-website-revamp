@@ -29,7 +29,7 @@ export function AtlassianProcessAndSupport() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <SectionReveal>
-            <h2 className="text-3xl sm:text-4xl font-bold font-display text-[#0052CC] mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-blue mb-6">
               Dedicated Teams for Atlassian App Work
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
@@ -42,7 +42,7 @@ export function AtlassianProcessAndSupport() {
           {processSteps.map((card, index) => (
             <SectionReveal key={card.title} delay={index * 100}>
               <div className="bg-white rounded-xl border border-slate-200 p-8 h-full flex flex-col hover:shadow-lg transition-all group">
-                <div className="text-4xl font-light text-slate-300 mb-6 group-hover:text-[#0052CC] transition-colors">
+                <div className="text-4xl font-light text-slate-300 mb-6 group-hover:text-brand-blue transition-colors">
                   {card.step}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{card.title}</h3>
