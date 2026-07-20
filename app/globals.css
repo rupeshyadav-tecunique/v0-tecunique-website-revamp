@@ -5,17 +5,17 @@
 
 :root {
   /* Brand palette */
-  --brand-blue: #0052cc;
-  --brand-blue-hover: #0047b3;
-  --brand-indigo: #6366f1;
-  --brand-violet: #8b5cf6;
-  --brand-purple: #7c3aed;
+  --brand-blue: #3F63C8;
+  --brand-blue-hover: #3151A8;
+  --brand-indigo: #3F63C8; /* Replaced purple with TECUNIQUE Blue */
+  --brand-violet: #4F75E0; /* Slightly lighter blue */
+  --brand-purple: #2D4C9E; /* Slightly darker blue */
   --brand-cyan: #06b6d4;
   --brand-teal: #0891b2;
   --brand-sky: #67e8f9;
-  --brand-indigo-deep: #4f46e5;
+  --brand-indigo-deep: #223D8A; /* Dark blue */
   --brand-rose: #f43f5e;
-  --accent-indigo-light: #c7d2fe;
+  --accent-indigo-light: #D5E1FB; /* Very light blue */
 
   /* Neutral palette */
   --neutral-white: #ffffff;
@@ -49,14 +49,12 @@
   --popover-foreground: oklch(0.13 0.025 265);
 
   /* Primary — TecUnique Blue */
-  --primary: oklch(0.546 0.145 258.877);
-  /* close to #1268C3 */
-  --primary-foreground: oklch(1 0 0);
+  --primary: #3F63C8;
+  --primary-foreground: #ffffff;
 
   /* Secondary — TecUnique Green */
-  --secondary: oklch(61.558% 0.16897 271.143);
-  /* close to #2E7D60 */
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: #3F8B5B;
+  --secondary-foreground: #ffffff;
 
   /* Muted */
   --muted: oklch(0.97 0.01 259);
@@ -87,28 +85,28 @@
   /* Sidebar */
   --sidebar: oklch(0.98 0.01 259);
   --sidebar-foreground: oklch(0.13 0.02 259);
-  --sidebar-primary: oklch(0.546 0.145 258.877);
+  --sidebar-primary: #3F63C8;
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.96 0.02 259);
   --sidebar-accent-foreground: oklch(0.40 0.10 259);
   --sidebar-border: oklch(0.91 0.02 259);
-  --sidebar-ring: oklch(0.546 0.145 258.877);
+  --sidebar-ring: #3F63C8;
 
   /* Custom design tokens — Ocean Infusion */
   --ocean-light: oklch(0.94 0.04 259);
   --ocean-base: oklch(0.80 0.10 259);
   --ocean-rich: oklch(0.62 0.15 259);
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.546 0.145 258.877) 0%, oklch(0.623 0.146 259.088) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-cyan) 100%);
   --gradient-brand: linear-gradient(135deg, var(--brand-indigo), var(--brand-violet));
   --gradient-brand-strong: linear-gradient(135deg, var(--brand-indigo) 0%, var(--brand-purple) 50%, var(--brand-indigo-deep) 100%);
   --gradient-ocean: linear-gradient(135deg, oklch(0.85 0.08 259) 0%, oklch(0.75 0.12 259) 100%);
-  --gradient-hero: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-violet) 18%, var(--surface-violet-strong) 45%, var(--surface-sky) 75%, var(--surface-lavender) 100%);
+  --gradient-hero: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-blue) 18%, var(--surface-blue-strong) 45%, var(--surface-sky) 75%, var(--surface-blue-soft) 100%);
   --gradient-hero-blue: linear-gradient(170deg, var(--neutral-white) 0%, var(--surface-blue) 18%, var(--surface-blue-strong) 45%, var(--surface-blue-soft) 75%, var(--neutral-slate-50) 100%);
-  --gradient-cta: linear-gradient(135deg, var(--surface-lavender) 0%, var(--surface-violet-strong) 40%, var(--surface-sky) 100%);
-  --gradient-subtle: linear-gradient(180deg, var(--surface-lavender) 0%, var(--neutral-white) 100%);
+  --gradient-cta: linear-gradient(135deg, var(--surface-blue-soft) 0%, var(--surface-blue-strong) 40%, var(--surface-sky) 100%);
+  --gradient-subtle: linear-gradient(180deg, var(--surface-blue-soft) 0%, var(--neutral-white) 100%);
   --gradient-section: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.98 0.01 259) 100%);
-  --gradient-text: linear-gradient(135deg, oklch(0.546 0.145 258.877), oklch(0.623 0.146 259.088), oklch(0.525 0.123 162.775));
+  --gradient-text: linear-gradient(135deg, var(--brand-blue), var(--brand-indigo), var(--brand-cyan));
   --orb-indigo: radial-gradient(circle, var(--accent-indigo-light) 0%, color-mix(in srgb, var(--brand-violet) 60%, white) 50%, transparent 70%);
   --orb-blue: radial-gradient(circle, color-mix(in srgb, var(--brand-blue) 50%, white) 0%, var(--accent-indigo-light) 50%, transparent 70%);
   --orb-cyan: radial-gradient(circle, var(--brand-sky) 0%, var(--accent-indigo-light) 50%, transparent 70%);
@@ -118,7 +116,7 @@
   --orb-cyan-simple: radial-gradient(circle, var(--brand-sky) 0%, transparent 70%);
   --grid-indigo: linear-gradient(var(--brand-indigo) 1px, transparent 1px), linear-gradient(to right, var(--brand-indigo) 1px, transparent 1px);
   --grid-blue: linear-gradient(var(--brand-blue) 1px, transparent 1px), linear-gradient(to right, var(--brand-blue) 1px, transparent 1px);
-  --body-dot: radial-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px);
+  --body-dot: radial-gradient(rgba(63, 99, 200, 0.07) 1px, transparent 1px);
   --glass-background: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(255, 255, 255, 0.6);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(37, 99, 235, 0.06);
