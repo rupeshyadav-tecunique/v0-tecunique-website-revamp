@@ -37,7 +37,7 @@ export function AtlassianLongTermSupport() {
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
               Many Atlassian apps need ongoing engineering effort long after the first release. We support long-term development, bug fixing, and support workflows for product teams.
             </p>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {supportItems.map((item, index) => (
                 <div key={item.title} className="flex gap-4">
@@ -58,9 +58,9 @@ export function AtlassianLongTermSupport() {
           {/* Right Image */}
           <SectionReveal delay={200} direction="right" className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-              <img 
-                src="/images/about/about-4.png" 
-                alt="Long-term Support" 
+              <img
+                src="/images/about/about-5.png"
+                alt="Long-term Support"
                 className="w-full h-full object-cover"
               />
             </div>
