@@ -117,7 +117,7 @@ export function TestimonialsSection() {
             Trusted Through <span className="gradient-text">Long-Term</span> Client Relationships
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Our work has grown through stable engineering partnerships across Atlassian apps, product engineering, QA, data platforms, and offshore development teams.
+            Our work has grown through long-term engineering partnerships across dedicated teams, product engineering, QA & automation, and Atlassian app development.
           </p>
         </div>
 

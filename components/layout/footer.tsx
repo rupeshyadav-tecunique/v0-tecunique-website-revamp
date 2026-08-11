@@ -35,33 +35,23 @@ const socialLinks = [
 ]
 
 const reviewLinks = [
-  // {
-  //   name: "Google",
-  //   rating: "4.9",
-  //   href: "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEkzLkjJKCg2YLRSNagwtjRNS7ZIsjA2MTVNTLQ0tQIKJZsnGxubJRsZWyYBSUMv6ZLU5NK8zMLSVIXi_LSS8sQiICO1qCwzObUYAPf2GiQ&q=tecunique+software+services&oq=tec&aqs=chrome.1.69i60j46i39i175i199j69i59j69i57j69i60l4.4886j0j7&sourceid=chrome&ie=UTF-8#lrd=0x395fc8b83455aa95:0x3c7c336c239b6c21,1,,,",
-  //   color: "#ffffff"
-  // },
   {
-    name: "glassdoor",
-    rating: "4.9",
+    name: "Glassdoor",
     href: "https://www.glassdoor.co.in/Reviews/TecUnique-Reviews-E2503526.htm",
     color: "#0CAA41"
   },
   {
     name: "AmbitionBox",
-    rating: "4.9",
     href: "https://www.ambitionbox.com/reviews/tecunique-reviews",
     color: "#334155"
   },
   {
     name: "Clutch",
-    rating: "4.9",
     href: "https://clutch.co/profile/tecunique-private#highlights",
     color: "#334155"
   },
   {
     name: "GoodFirms",
-    rating: "4.8",
     href: "https://www.goodfirms.co/company/tecunique-private-limited",
     color: "#1d66c1"
   },
@@ -137,44 +127,33 @@ export function Footer() {
                   </a>
                 ))}
               </div>
-              <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-y-3">
-                {reviewLinks.map((link, i) => (
-                  <div key={link.name} className="flex items-center">
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-1.5"
-                    >
-                      <div className="flex items-center gap-0.5">
-                        <span className="text-[12px] font-bold text-slate-700 leading-none">{link.rating}</span>
-                        <Star className="h-2.5 w-2.5 fill-amber-500 text-amber-500" />
-                      </div>
-                      <div className="flex items-center">
-                        {link.name === "Google" ? (
-                          <span className="text-[11px] font-bold tracking-tight">
-                            <span style={{ color: "#4285F4" }}>G</span>
-                            <span style={{ color: "#EA4335" }}>o</span>
-                            <span style={{ color: "#FBBC05" }}>o</span>
-                            <span style={{ color: "#4285F4" }}>g</span>
-                            <span style={{ color: "#34A853" }}>l</span>
-                            <span style={{ color: "#EA4335" }}>e</span>
-                          </span>
-                        ) : (
-                          <span
-                            className="text-[11px] font-bold tracking-tight transition-colors group-hover:opacity-80"
-                            style={{ color: link.color }}
-                          >
-                            {link.name}
-                          </span>
-                        )}
-                      </div>
-                    </a>
-                    {i < reviewLinks.length - 1 && (
-                      <span className="mx-3 text-slate-300 font-extralight text-sm">|</span>
-                    )}
-                  </div>
-                ))}
+              <div className="pt-6 border-t border-slate-200">
+                <div className="flex items-center gap-1.5 mb-2.5">
+                  <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
+                  <span className="text-xs font-bold text-slate-700">Read our reviews on:</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-y-2">
+                  {reviewLinks.map((link, i) => (
+                    <div key={link.name} className="flex items-center">
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center transition-opacity hover:opacity-80"
+                      >
+                        <span
+                          className="text-[12px] font-bold tracking-tight"
+                          style={{ color: link.color }}
+                        >
+                          {link.name}
+                        </span>
+                      </a>
+                      {i < reviewLinks.length - 1 && (
+                        <span className="mx-2 text-slate-300 font-bold text-[14px]">&middot;</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -30,7 +30,7 @@ export function ServicesSection() {
     },
     {
       title: "Software QA & Automation Testing",
-      description: "Strengthen product quality with manual QA, regression testing, Playwright, Selenium, JUnit, API testing, CI/CD test integration, and release validation.",
+      description: "Strengthen product quality with manual QA, regression testing, test automation, API testing, CI/CD test integration, and release validation — using tools such as Playwright, Selenium, and JUnit.",
       icon: TestTube2,
       color: "text-emerald-600",
       bg: "bg-emerald-50",
@@ -40,7 +40,7 @@ export function ServicesSection() {
     },
     {
       title: "Atlassian App Development & QA",
-      description: "Support Jira app development, Forge/Connect work, REST APIs, Marketplace app QA, automation, integrations, and long-term product support.",
+      description: "Support Jira app development, Atlassian Forge and Connect, REST API integrations, Marketplace app QA, test automation, and long-term product support.",
       icon: Puzzle,
       color: "text-orange-500",
       bg: "bg-orange-50",
