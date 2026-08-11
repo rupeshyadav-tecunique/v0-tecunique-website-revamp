@@ -18,7 +18,7 @@ const footerLinks = {
     { name: "Product Engineering", href: "/services/product-engineering" },
     { name: "QA & Automation", href: "/services/qa" },
     { name: "Dedicated Teams", href: "/services/dedicated-teams" },
-    { name: "Atlassian Services", href: "/services/atlassian" },
+    { name: "Atlassian App Engineering", href: "/services/atlassian" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy-policy" },

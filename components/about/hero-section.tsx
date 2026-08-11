@@ -26,7 +26,7 @@ export function AboutHero() {
             Software engineering teams built for <span className="relative whitespace-nowrap"><span className="relative z-10">long-term</span><span className="absolute -bottom-1 left-0 w-full h-3 bg-[var(--surface-blue-strong)]/60 -rotate-1 z-0 rounded-full"></span></span> product work.
           </p>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            TECUNIQUE is a software engineering partner based in India, helping international companies build dedicated development, QA, automation, support, and Atlassian app teams. Since 2010, we have focused on stable team relationships, practical execution, and long-term client success.
+            TECUNIQUE is a software engineering partner based in India, helping international software companies build dedicated development, QA, automation, support, and Atlassian app teams. Since 2010, we have focused on stable teams, practical execution, transparent collaboration, and long-term continuity.
           </p>
 
           {/* 2. Trust Badges (Upgraded to Glass Cards) */}

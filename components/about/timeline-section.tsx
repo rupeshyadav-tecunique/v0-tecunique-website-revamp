@@ -5,31 +5,25 @@ const timelineEvents = [
   {
     year: "2010",
     title: "TECUNIQUE Begins",
-    description: "Started with a focus on offshore software engineering, custom web applications, and dedicated development support.",
+    description: "Started with offshore software engineering, custom applications, and dedicated development support.",
     icon: Building2
   },
   {
     year: "2016",
     title: "Atlassian Ecosystem Work",
-    description: "Began deeper work with Atlassian Marketplace app teams, including Jira app development support, QA, automation, and long-term product maintenance.",
+    description: "Began long-term development and QA work with Atlassian Marketplace app teams.",
     icon: Cpu
   },
   {
     year: "2020",
-    title: "Long-Term Client Expansion",
-    description: "Continued supporting product companies through dedicated teams, QA, automation, and software support across multiple international client relationships.",
+    title: "Expanded Product Partnerships",
+    description: "Expanded dedicated development, QA, automation, and support relationships with international software product companies.",
     icon: Globe
-  },
-  {
-    year: "2022",
-    title: "Stronger Delivery Operations",
-    description: "Expanded delivery maturity with more structured processes around team stability, security, documentation, QA, and remote collaboration.",
-    icon: Zap
   },
   {
     year: "Today",
     title: "Dedicated Teams for Product Companies",
-    description: "TECUNIQUE continues to help international software companies build stable, full-time engineering teams in India.",
+    description: "TECUNIQUE continues to help international software companies build stable engineering, QA, automation, and support capacity in India.",
     icon: Target
   }
 ]

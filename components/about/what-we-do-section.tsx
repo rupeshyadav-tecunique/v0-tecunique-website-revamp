@@ -10,7 +10,7 @@ const whatWeDo = [
     color: "from-blue-500 to-indigo-400"
   },
   {
-    title: "Product Engineering & Custom Software Development",
+    title: "Product Engineering",
     description: "We support web applications, backend systems, integrations, cloud-ready platforms, data-driven products, and long-term product enhancement work.",
     icon: Code2,
     color: "from-purple-500 to-fuchsia-400"

@@ -36,7 +36,7 @@ export function AboutExperience() {
           </span>
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6 text-slate-900">Experience in the Atlassian Ecosystem</h2>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Since 2016, TECUNIQUE has worked closely with teams building and supporting Atlassian Marketplace apps. Our experience includes Jira app development support, app QA, automation, REST API integrations, cloud readiness and migration-related engineering support, and long-term maintenance for Marketplace products.
+            Since 2016, TECUNIQUE has worked closely with teams building and supporting Atlassian Marketplace apps. Our experience includes Jira app development support, app QA, automation, REST API integrations, cloud readiness and modernization-related engineering support, and long-term maintenance for Marketplace products.
           </p>
         </SectionReveal>
 
