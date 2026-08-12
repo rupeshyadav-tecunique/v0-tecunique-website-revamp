@@ -20,57 +20,50 @@ export function ProductEngineeringExperience() {
           </SectionReveal>
         </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SectionReveal delay={100} className="h-full">
-              <div className="bg-white rounded-2xl p-6 border border-[var(--neutral-slate-200)] shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full flex flex-col">
-                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Engineering & Data Platforms</h3>
-                <div className="flex flex-wrap items-center gap-6 mt-auto">
-                  <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-7 w-auto object-contain" />
-                  <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-7 w-auto object-contain" />
-                  <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-8 w-auto object-contain" />
+          <SectionReveal delay={100}>
+            <div className="bg-white rounded-3xl p-8 md:p-12 border border-[var(--neutral-slate-200)]/60 shadow-sm mb-8 md:mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                
+                {/* Col 1 */}
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-6">Product Eng & Data</h3>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
+                    <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-6 w-auto max-w-[110px] object-contain" />
+                    <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-7 w-auto max-w-[110px] object-contain" />
+                    <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-7 w-auto max-w-[110px] object-contain" />
+                  </div>
                 </div>
-              </div>
-            </SectionReveal>
 
-            <SectionReveal delay={200} className="h-full">
-              <div className="bg-white rounded-2xl p-6 border border-[var(--neutral-slate-200)] shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full flex flex-col">
-                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider leading-relaxed">Atlassian App Products</h3>
-                <div className="flex flex-wrap items-center gap-6 mt-auto">
-                  <span className="text-muted-foreground font-medium whitespace-nowrap">
-                    Appfire
-                  </span>
-                  <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-8 w-auto object-contain" />
-                  <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-8 w-auto object-contain" />
+                {/* Col 2 */}
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-6">Atlassian App Products</h3>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
+                    <span className="text-xl font-bold text-slate-700 tracking-tight">Appfire</span>
+                    <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-7 w-auto max-w-[110px] object-contain" />
+                    <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-7 w-auto max-w-[110px] object-contain" />
+                  </div>
                 </div>
-              </div>
-            </SectionReveal>
 
-            <SectionReveal delay={300} className="h-full">
-              <div className="bg-white rounded-2xl p-6 border border-[var(--neutral-slate-200)] shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full flex flex-col">
-                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider leading-relaxed">Dedicated / Offshore Teams</h3>
-                <div className="flex flex-wrap items-center gap-6 mt-auto">
-                  <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-8 w-auto object-contain" />
-                  <span className="text-muted-foreground font-medium whitespace-nowrap">
-                    eXtensi
-                  </span>
-                  <span className="text-muted-foreground font-medium whitespace-nowrap">
-                    Validat
-                  </span>
+                {/* Col 3 */}
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-6">QA Automation & Support</h3>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
+                    <span className="text-xl font-bold text-slate-700 tracking-tight">eXtensi</span>
+                    <span className="text-xl font-bold text-slate-700 tracking-tight">Validat</span>
+                  </div>
                 </div>
-              </div>
-            </SectionReveal>
 
-            <SectionReveal delay={400} className="h-full">
-              <div className="bg-white rounded-2xl p-6 border border-[var(--neutral-slate-200)] shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full">
-                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider leading-relaxed">QA & Automation Support</h3>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Dedicated QA and automation teams across long-term product work.
-                  </p>
+                {/* Col 4 */}
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-6">Offshore Team Setup</h3>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
+                    <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-6 w-auto max-w-[130px] object-contain" />
+                  </div>
                 </div>
+
               </div>
-            </SectionReveal>
-          </div>
+            </div>
+          </SectionReveal>
       </div>
     </section>
   )

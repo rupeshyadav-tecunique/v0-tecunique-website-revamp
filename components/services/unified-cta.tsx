@@ -7,6 +7,8 @@ interface UnifiedCTAProps {
   title?: React.ReactNode;
   description?: React.ReactNode;
   primaryButtonText?: string;
+  secondaryButtonText?: string;
+  secondaryButtonLink?: string;
 }
 
 export function UnifiedCTA({
@@ -17,6 +19,8 @@ export function UnifiedCTA({
   ),
   description = "Whether you need a dedicated team, custom product engineering, QA automation, or Atlassian app support, we have the experts ready to help you succeed.",
   primaryButtonText = "Discuss Your Requirement",
+  secondaryButtonText = "View All Services",
+  secondaryButtonLink = "/services",
 }: UnifiedCTAProps = {}) {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-[var(--neutral-slate-50)] border-t border-border/40">
@@ -50,8 +54,8 @@ export function UnifiedCTA({
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base w-full sm:w-auto border-[var(--neutral-slate-200)] text-[var(--neutral-slate-700)] hover:bg-[var(--neutral-slate-100)] hover:text-foreground transition-colors bg-white shadow-sm" asChild>
-              <Link href="/services">
-                View All Services
+              <Link href={secondaryButtonLink}>
+                {secondaryButtonText}
               </Link>
             </Button>
           </div>

@@ -10,8 +10,8 @@ import { ProductEngineeringExperience } from "@/components/services/product-engi
 import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
-  title: "Product Engineering & Custom Software Development | TECUNIQUE",
-  description: "TECUNIQUE helps software product companies build dedicated engineering teams for web applications, backend systems, frontend development, API integrations, cloud-ready platforms, and long-term product maintenance.",
+  title: "Product Engineering & Custom Software Development",
+  description: "TECUNIQUE supports software product companies with custom development, product enhancements, backend systems, API integrations, cloud engineering, QA automation, and long-term product maintenance through engineering teams in India.",
 }
 
 export default function ProductEngineeringPage() {
@@ -25,7 +25,16 @@ export default function ProductEngineeringPage() {
       <ProductEngineeringHowWeWork />
       <TechStack />
       <ProductEngineeringExperience />
-      <UnifiedCTA />
+      <UnifiedCTA 
+        title={<>Need <span className="text-brand-blue">Product Engineering</span> Support?</>}
+        description={<>
+          <strong className="block text-xl text-foreground font-semibold mb-4">Build, Enhance, and Support Your Software Product</strong>
+          Whether you're developing new functionality, improving an existing platform, or adding long-term engineering capacity, TECUNIQUE can support development, integrations, QA, and ongoing maintenance.
+        </>}
+        primaryButtonText="Discuss Your Product Requirements"
+        secondaryButtonText="Explore Dedicated Teams"
+        secondaryButtonLink="/services/dedicated-teams"
+      />
     </div>
   )
 }

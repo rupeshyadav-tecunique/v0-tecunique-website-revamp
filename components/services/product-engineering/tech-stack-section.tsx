@@ -75,7 +75,7 @@ export function TechStack() {
               Technology Stack We Work With
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              We leverage modern and reliable technologies to build scalable, secure, and high-performing products.
+              Our teams work across a practical mix of frontend, backend, database, cloud, QA automation, and Atlassian technologies depending on the product and engagement.
             </p>
           </SectionReveal>
         </div>

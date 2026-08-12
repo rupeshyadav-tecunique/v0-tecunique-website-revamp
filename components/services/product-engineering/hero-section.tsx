@@ -19,7 +19,7 @@ export function ProductEngineeringHero() {
           {/* Left Column - Content */}
           <SectionReveal direction="left">
             <div className="mb-4 text-brand-blue font-bold text-sm tracking-widest uppercase">
-              ENGINEERING SERVICES
+              PRODUCT ENGINEERING
             </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
@@ -28,7 +28,7 @@ export function ProductEngineeringHero() {
             </h1>
             
             <p className="mt-4 text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Design, develop, and maintain web applications, backend systems, and cloud platforms with our expert engineering teams.
+              Design, develop, enhance, and maintain web applications, backend systems, integrations, and cloud-ready platforms with experienced engineering teams.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -72,30 +72,53 @@ export function ProductEngineeringHero() {
                 Engineering Delivery Lifecycle
               </h3>
               
-              <div className="grid grid-cols-2 gap-x-8 gap-y-12 relative">
-                {/* Connecting Dotted Lines */}
-                <div className="absolute top-6 left-12 right-12 border-t-2 border-dashed border-[var(--neutral-slate-200)] z-0"></div>
-                <div className="absolute top-28 left-12 right-12 border-t-2 border-dashed border-[var(--neutral-slate-200)] z-0"></div>
-                <div className="absolute top-52 left-12 right-12 border-t-2 border-dashed border-[var(--neutral-slate-200)] z-0"></div>
-                
-                {[
-                  { step: 1, text: "Product Discovery", icon: Search },
-                  { step: 2, text: "Architecture Design", icon: BoxSelect },
-                  { step: 3, text: "Agile Development", icon: GitPullRequest },
-                  { step: 4, text: "API & Integrations", icon: GitMerge },
-                  { step: 5, text: "Cloud Deployment", icon: ServerCog },
-                  { step: 6, text: "Long-Term Support", icon: Infinity },
-                ].map((item, i) => (
-                  <div key={item.step} className="flex items-start gap-4 relative z-10 bg-white pr-4">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--brand-blue)] text-white font-bold shadow-md shrink-0">
-                      {item.step}
+              <div className="relative">
+                {/* SVG Connecting Lines for Serpentine Flow */}
+                <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0, overflow: 'visible' }} preserveAspectRatio="none">
+                  <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#CBD5E1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </marker>
+                  </defs>
+
+                  {/* Row 1 arrow */}
+                  <path d="M 45% 16.66% L 50% 16.66%" stroke="#CBD5E1" strokeWidth="1.5" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+                  
+                  {/* Row 1 to Row 2 Snake */}
+                  <path d="M 95% 16.66% L 105% 16.66% Q 110% 16.66% 110% 20% L 110% 30% Q 110% 33.33% 105% 33.33% L -5% 33.33% Q -10% 33.33% -10% 36.66% L -10% 46.66% Q -10% 50% -5% 50% L -2% 50%" stroke="#CBD5E1" strokeWidth="1.5" fill="none" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+
+                  {/* Row 2 arrow */}
+                  <path d="M 45% 50% L 50% 50%" stroke="#CBD5E1" strokeWidth="1.5" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+                  
+                  {/* Row 2 to Row 3 Snake */}
+                  <path d="M 95% 50% L 105% 50% Q 110% 50% 110% 53.33% L 110% 63.33% Q 110% 66.66% 105% 66.66% L -5% 66.66% Q -10% 66.66% -10% 70% L -10% 80% Q -10% 83.33% -5% 83.33% L -2% 83.33%" stroke="#CBD5E1" strokeWidth="1.5" fill="none" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+
+                  {/* Row 3 arrow */}
+                  <path d="M 45% 83.33% L 50% 83.33%" stroke="#CBD5E1" strokeWidth="1.5" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+                </svg>
+
+                <div className="grid grid-cols-2 gap-x-6 gap-y-12 relative z-10">
+                  {[
+                    { step: "01", text: "Product Discovery", icon: Search },
+                    { step: "02", text: "Architecture & Planning", icon: BoxSelect },
+                    { step: "03", text: "Product Development", icon: Code2 },
+                    { step: "04", text: "Testing & Integration", icon: GitMerge },
+                    { step: "05", text: "Release & Deployment", icon: Cloud },
+                    { step: "06", text: "Long-Term Support", icon: Infinity },
+                  ].map((item, i) => (
+                    <div key={item.step} className="flex items-center gap-2 xl:gap-3 bg-white">
+                      <div className="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-[var(--brand-blue)] text-white font-bold shadow-md shrink-0 text-xs xl:text-sm">
+                        {item.step}
+                      </div>
+                      <div className="hidden xl:flex items-center justify-center w-10 h-10 rounded-full bg-[var(--neutral-slate-50)] border border-[var(--neutral-slate-100)] shrink-0">
+                        <item.icon className="w-4 h-4 text-[var(--neutral-slate-600)]" />
+                      </div>
+                      <div className="font-semibold text-[var(--neutral-slate-800)] text-xs xl:text-sm leading-tight max-w-[100px] xl:max-w-[120px]">
+                        {item.text}
+                      </div>
                     </div>
-                    <div>
-                      <item.icon className="w-5 h-5 text-[var(--neutral-slate-400)] mb-1" />
-                      <div className="font-semibold text-[var(--neutral-slate-800)] text-sm leading-tight max-w-[120px]">{item.text}</div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </SectionReveal>

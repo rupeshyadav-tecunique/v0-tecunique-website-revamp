@@ -4,33 +4,33 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const steps = [
   {
     step: "01",
-    title: "Understand Product Context",
-    description: "We learn your product, users, roadmap, existing systems, and development priorities."
+    title: "Understand Your Product Context",
+    description: "We learn about your product, existing architecture, roadmap, team structure, priorities, and current development process."
   },
   {
     step: "02",
-    title: "Define Engineering Scope",
-    description: "We clarify features, technical needs, integration points, delivery expectations, and team structure."
+    title: "Define Scope & Engagement",
+    description: "Together, we clarify the work, required skills, responsibilities, collaboration expectations, and the most suitable engagement structure."
   },
   {
     step: "03",
-    title: "Assign Dedicated Talent",
-    description: "You evaluate and approve developers or engineers who match your technology and working style."
+    title: "Set Up the Right Engineering Team",
+    description: "Based on the scope, we bring together the developers and engineers needed for the work. For dedicated-team engagements, you can evaluate and approve team members before onboarding."
   },
   {
     step: "04",
     title: "Align With Your Process",
-    description: "The team works with your tools, backlog, sprint process, code repositories, and communication channels."
+    description: "Our engineers work within your tools, communication channels, sprint cadence, coding practices, and agreed ways of working."
   },
   {
     step: "05",
-    title: "Build and Iterate",
-    description: "We develop, test, review, improve, and support releases in coordination with your team."
+    title: "Collaborate on Delivery",
+    description: "We work closely with your product and engineering teams on priorities, development progress, technical discussions, reviews, and issue resolution."
   },
   {
     step: "06",
-    title: "Support Continuity",
-    description: "The same team can continue with enhancements, support, maintenance, and product evolution."
+    title: "Maintain Continuity & Evolve",
+    description: "We retain product knowledge over time and continue supporting enhancements, maintenance, changing priorities, and additional engineering needs as the product evolves."
   }
 ]
 
@@ -47,7 +47,7 @@ export function ProductEngineeringHowWeWork() {
             How We Work With Product Teams
           </h2>
           <p className="text-lg text-muted-foreground">
-            A seamless integration process ensuring our developers work effectively as part of your engineering organization.
+            A practical collaboration model designed to help our engineers integrate with your product, priorities, and development process.
           </p>
         </SectionReveal>
 

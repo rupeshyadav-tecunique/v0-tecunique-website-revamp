@@ -12,17 +12,17 @@ const capabilities = [
   },
   {
     title: "Backend Development",
-    description: "Java, Spring Boot, Node.js, Python, APIs, services, microservices, and database-driven systems. We architect secure and robust backend solutions.",
+    description: "Java, Spring Boot, Node.js, Python, APIs, services, microservices, and database-driven systems.",
     icon: Server
   },
   {
     title: "API & Integration",
-    description: "REST APIs, third-party integrations, internal systems, webhooks, authentication, and data exchange. We seamlessly connect disparate platforms.",
+    description: "REST APIs, third-party integrations, internal systems, webhooks, authentication, and data exchange.",
     icon: Zap
   },
   {
     title: "Cloud & DevOps",
-    description: "Cloud-ready architecture, deployment pipelines, Docker, Kubernetes, AWS, and release support. Accelerate delivery with automated infrastructure.",
+    description: "Cloud-ready architecture, deployment pipelines, Docker, Kubernetes, AWS, and release support.",
     icon: Cloud
   },
   {
@@ -55,7 +55,7 @@ export function EngineeringCapabilities() {
                 Engineering Capabilities We Provide
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Our teams bring deep technical expertise across the full stack, ensuring your product is built on a solid, scalable, and secure foundation.
+                Our teams support full-stack product development across frontend, backend, APIs and integrations, cloud environments, databases, and long-term maintenance.
               </p>
             </SectionReveal>
           </div>

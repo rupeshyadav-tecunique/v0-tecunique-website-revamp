@@ -41,7 +41,7 @@ export function WhatWeBuild() {
                 Software Built Around Product Goals
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                We support product companies that need dependable engineering capacity for new development, product enhancements, integrations, maintenance, and platform evolution. Our focus is not just writing code, but understanding the product context and delivering work that fits the client's roadmap.
+                We support product companies that need dependable engineering capacity for new development, product enhancements, integrations, maintenance, and platform evolution. Our teams work within the product context, existing architecture, and roadmap so development stays aligned with long-term priorities.
               </p>
             </SectionReveal>
           </div>

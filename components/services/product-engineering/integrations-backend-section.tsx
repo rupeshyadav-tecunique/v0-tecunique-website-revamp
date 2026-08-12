@@ -19,7 +19,7 @@ const backendServices = [
   },
   {
     title: "Authentication & Access Control",
-    description: "Implement secure user access, roles, permissions, and integration authentication flows.",
+    description: "Support user access, roles, permissions, and authentication flows for product and integration needs.",
     icon: LockKeyhole
   }
 ]
@@ -38,7 +38,7 @@ export function IntegrationsBackend() {
               Core Infrastructure
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-6">
-              Backend Systems and Integrations That Connect Your Product
+              Backend Systems & Integrations That Keep Your Product Connected
             </h2>
             <p className="text-lg leading-8 text-white/80">
               We help product teams build and maintain the backend services and integrations that keep software products connected, reliable, and useful.
