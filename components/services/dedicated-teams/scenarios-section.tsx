@@ -14,16 +14,16 @@ const rightFitscenarios = [
     description: "When releases are growing and you need dedicated QA or automation support."
   },
   {
-    title: "Specialized Product Knowledge",
-    description: "When repeated onboarding is costly and continuity matters."
+    title: "Product Knowledge Continuity",
+    description: "When repeated onboarding is costly and retaining product context matters."
   },
   {
-    title: "Cost-Efficient Engineering Capacity",
-    description: "When you want a stable offshore team with transparent operations from India."
+    title: "Scaling Engineering Capacity in India",
+    description: "When you want a stable offshore team without building your own local hiring and employment operation."
   },
   {
-    title: "Atlassian or SaaS Product Support",
-    description: "When you need development, QA, automation, or support engineers for product-led work."
+    title: "Product Development & Support",
+    description: "When you need dedicated development, QA, automation, or support professionals for ongoing product work."
   }
 ]
 

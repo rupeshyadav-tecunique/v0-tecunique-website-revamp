@@ -3,7 +3,21 @@ import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
-export function UnifiedCTA() {
+interface UnifiedCTAProps {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  primaryButtonText?: string;
+}
+
+export function UnifiedCTA({
+  title = (
+    <>
+      Let's Build Something <span className="text-brand-blue">Great Together</span>
+    </>
+  ),
+  description = "Whether you need a dedicated team, custom product engineering, QA automation, or Atlassian app support, we have the experts ready to help you succeed.",
+  primaryButtonText = "Discuss Your Requirement",
+}: UnifiedCTAProps = {}) {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-[var(--neutral-slate-50)] border-t border-border/40">
       {/* Background Decor */}
@@ -21,17 +35,17 @@ export function UnifiedCTA() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 tracking-tight max-w-3xl mx-auto leading-tight">
-            Let's Build Something <span className="text-gradient-brand">Great Together</span>
+            {title}
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Whether you need a dedicated team, custom product engineering, QA automation, or Atlassian app support, we have the experts ready to help you succeed.
+            {description}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="rounded-full px-8 h-14 text-base group bg-primary hover:bg-primary/90 text-white border-none w-full sm:w-auto transition-all hover:scale-105 shadow-brand-button" asChild>
               <Link href="/contact">
-                Discuss Your Requirement
+                {primaryButtonText}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

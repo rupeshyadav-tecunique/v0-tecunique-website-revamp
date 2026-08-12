@@ -23,12 +23,12 @@ export function DedicatedTeamsHero() {
             </div>
 
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
-              Build a Software Team That <br className="hidden md:block" />
+              Build a Dedicated Software Team That <br className="hidden md:block" />
               <span className="text-brand-blue">Works Like Your Own</span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-2xl mb-10">
-              Scale your engineering and QA capacity with a dedicated, full-time team in India. You select the talent, we manage the operations.
+              Scale your engineering, QA, automation, and support capacity with a dedicated, full-time team in India. You select the talent and guide the work; TECUNIQUE manages the operational responsibilities in India.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

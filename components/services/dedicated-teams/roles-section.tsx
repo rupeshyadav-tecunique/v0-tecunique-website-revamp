@@ -4,37 +4,37 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const teamRoles = [
   {
     title: "Frontend Engineers",
-    description: "Experts in React, Angular, Vue, TypeScript. Building responsive, accessible, and high-performance user interfaces and product experiences.",
+    description: "React, Angular, Vue, and TypeScript for responsive, maintainable web interfaces and product experiences.",
     icon: Code2,
     color: "from-blue-500 to-indigo-400"
   },
   {
     title: "Backend Engineers",
-    description: "Java, Spring Boot, Node.js. Building scalable APIs, robust microservices, and high-concurrency databases.",
+    description: "Java, Spring Boot, and Node.js for APIs, backend services, integrations, and scalable application architecture.",
     icon: Layers,
     color: "from-indigo-500 to-purple-400"
   },
   {
     title: "QA Engineers",
-    description: "Manual QA, regression testing, and comprehensive release validation to ensure flawless product delivery.",
+    description: "Manual QA, regression testing, functional testing, and release validation to support reliable product releases.",
     icon: FileCheck,
     color: "from-emerald-500 to-blue-400"
   },
   {
     title: "Automation QA",
-    description: "Playwright, Selenium, JUnit, API testing, CI/CD integrations. Ensuring continuous quality with robust frameworks.",
+    description: "Playwright, Selenium, JUnit, API testing, and CI/CD test integration for repeatable, maintainable automation coverage.",
     icon: ShieldCheck,
     color: "from-rose-500 to-orange-400"
   },
   {
     title: "DevOps Engineers",
-    description: "Docker, Kubernetes, AWS, deployment pipelines. Orchestrating seamless infrastructure and automation.",
+    description: "AWS, Docker, Kubernetes, deployment pipelines, and release automation to support reliable software delivery.",
     icon: Cloud,
     color: "from-sky-500 to-blue-400"
   },
   {
     title: "Support Engineers",
-    description: "L2/L3 product support and deep issue analysis to maintain customer satisfaction and product health.",
+    description: "L2/L3 product support, troubleshooting, issue analysis, and product knowledge continuity.",
     icon: HeadphonesIcon,
     color: "from-fuchsia-500 to-pink-400"
   }

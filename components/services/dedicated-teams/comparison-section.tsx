@@ -71,7 +71,7 @@ export function DedicatedTeamsComparison() {
                 "Daily communication",
                 "Sprint participation",
                 "Issue tracking",
-                "Code reviews",
+                "Code collaboration & reviews",
                 "Progress visibility",
                 "Team alignment"
               ].map((item, i) => (
@@ -100,7 +100,7 @@ export function DedicatedTeamsComparison() {
               
               <ul className="space-y-4">
                 {[
-                  "Recruitment support", 
+                  "Recruitment and hiring", 
                   "Employment and payroll", 
                   "HR and employee engagement",
                   "NDA and contracts", 

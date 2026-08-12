@@ -10,8 +10,8 @@ import { DedicatedTeamsExperience } from "@/components/services/dedicated-teams/
 import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
-  title: "Dedicated Software Teams in India | TECUNIQUE",
-  description: "Build dedicated software development, QA, automation, DevOps, and support teams in India with TECUNIQUE. Client-selected talent, managed operations, NDA-backed engagement, and long-term team continuity.",
+  title: "Dedicated Software Teams in India",
+  description: "Build a dedicated software team in India with client-selected developers, QA, automation, DevOps, and support professionals. TECUNIQUE manages operations.",
 }
 
 export default function ServicesPage() {
@@ -25,7 +25,11 @@ export default function ServicesPage() {
       <DedicatedTeamsScenarios />
       <DedicatedTeamsBenefits />
       <DedicatedTeamsExperience />
-      <UnifiedCTA />
+      <UnifiedCTA 
+        title={<>Ready to Build Your <br className="hidden sm:block" /><span className="text-brand-blue whitespace-nowrap">Dedicated Software Team?</span></>}
+        description="Tell us the roles, skills, and team structure you need. We can help identify suitable professionals and manage the employment and operational setup in India."
+        primaryButtonText="Discuss Your Team Requirements"
+      />
     </div>
   )
 }

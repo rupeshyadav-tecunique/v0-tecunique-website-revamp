@@ -17,10 +17,10 @@ export function DedicatedTeamsIntro() {
             <SectionReveal delay={100}>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed bg-[var(--neutral-slate-50)]/80 p-8 sm:p-10 rounded-2xl border border-[var(--neutral-slate-200)]/60 shadow-sm">
                 <p>
-                  A dedicated software team is a full-time team of engineers who work exclusively on your product, project, or platform. Unlike short-term outsourcing, this model is designed for continuity, product knowledge, and long-term collaboration.
+                  A dedicated software team is a full-time group of software professionals who work exclusively on your product, project, or platform. Unlike short-term outsourcing, this model is designed for continuity, product knowledge, and long-term collaboration.
                 </p>
                 <p>
-                  With <span className="font-bold text-foreground">TECUNIQUE</span>, clients can interview and select team members, define priorities, manage delivery direction, and work directly with the team, while TECUNIQUE handles the operational responsibilities in India.
+                  With <span className="font-bold text-foreground">TECUNIQUE</span>, you interview and select the team members, set priorities and technical direction, and work directly with the team. We handle employment, HR, payroll, infrastructure, and operational administration in India.
                 </p>
               </div>
             </SectionReveal>

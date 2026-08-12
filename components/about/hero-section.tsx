@@ -20,7 +20,7 @@ export function AboutHero() {
             <span>Dedicated Engineering Partner</span>
           </div>
           <h1 className="font-display text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-[1.1] mb-6">
-            About <span className="text-gradient-brand font-extrabold">TECUNIQUE</span>
+            About <span className="text-brand-blue font-extrabold">TECUNIQUE</span>
           </h1>
           <p className="mt-4 text-2xl text-[var(--neutral-slate-700)] font-medium leading-relaxed max-w-3xl mx-auto">
             Software engineering teams built for <span className="relative whitespace-nowrap"><span className="relative z-10">long-term</span><span className="absolute -bottom-1 left-0 w-full h-3 bg-[var(--surface-blue-strong)]/60 -rotate-1 z-0 rounded-full"></span></span> product work.

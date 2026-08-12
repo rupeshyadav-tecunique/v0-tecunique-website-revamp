@@ -5,12 +5,12 @@ const buildSteps = [
   {
     step: "01",
     title: "Requirement Discussion",
-    description: "We understand the roles, skillset, technology stack, team size, experience level, and engagement expectations."
+    description: "We understand the roles, skill set, technology stack, team size, experience level, and engagement expectations."
   },
   {
     step: "02",
     title: "Talent Shortlisting",
-    description: "TECUNIQUE identifies suitable candidates through internal capability and recruitment support."
+    description: "TECUNIQUE identifies suitable candidates through our existing talent pool and recruitment process."
   },
   {
     step: "03",
@@ -20,7 +20,7 @@ const buildSteps = [
   {
     step: "04",
     title: "Team Onboarding",
-    description: "We handle employment, NDA, HR, payroll, infrastructure, access setup, and onboarding support."
+    description: "We handle employment, NDA, HR, payroll, infrastructure, and onboarding coordination in India."
   },
   {
     step: "05",
@@ -44,7 +44,7 @@ export function DedicatedTeamsProcess() {
             <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">How We Work</span>
           </div>
           <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">How We Build Your Dedicated Team</h2>
-          <p className="mt-4 text-lg text-muted-foreground">A streamlined, transparent process designed to get you the right talent quickly.</p>
+          <p className="mt-4 text-lg text-muted-foreground">A transparent, client-led process for identifying, evaluating, and onboarding suitable professionals for your requirements.</p>
         </SectionReveal>
 
         <div className="relative max-w-4xl mx-auto">

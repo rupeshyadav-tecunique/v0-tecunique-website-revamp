@@ -4,32 +4,32 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const whyChooseUs = [
   {
     title: "Client-Selected Talent",
-    description: "You are involved in evaluating and approving team members before onboarding.",
+    description: "You interview, test, and approve professionals before they join your team.",
     icon: SearchCheck
   },
   {
-    title: "Long-Term Team Stability",
-    description: "We focus on retention, continuity, and product knowledge, not short-term staffing.",
+    title: "Long-Term Team Continuity",
+    description: "We focus on retention, product knowledge, and continuity across longer engagements.",
     icon: Clock
   },
   {
     title: "Managed Operations in India",
-    description: "We handle HR, payroll, infrastructure, contracts, NDA, and administration.",
+    description: "We handle recruitment, employment, payroll, HR, infrastructure, NDA administration, and ongoing operational support.",
     icon: MapPin
   },
   {
-    title: "Engineering + QA Capability",
-    description: "Build teams across development, QA, automation, DevOps, support, and product engineering.",
+    title: "Multi-Disciplinary Capability",
+    description: "Build teams across development, QA, automation, DevOps, and product support.",
     icon: Code2
   },
   {
     title: "Remote-Ready Collaboration",
-    description: "Teams work with your tools, communication channels, sprint process, and time-zone expectations.",
+    description: "Teams work within your tools, communication channels, sprint process, and agreed working overlap.",
     icon: Cloud
   },
   {
     title: "Practical, Transparent Engagement",
-    description: "Clear communication, simple operating model, and visibility into team performance and delivery.",
+    description: "Direct communication, a clear operating model, and visibility into day-to-day collaboration.",
     icon: CheckCircle2
   }
 ]
@@ -50,7 +50,7 @@ export function DedicatedTeamsBenefits() {
                 Why Companies Choose TECUNIQUE for Dedicated Teams
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We provide a transparent, reliable, and scalable model for building long-term software capacity in India without the operational overhead.
+                A dedicated team model built around client-selected talent, direct collaboration, operational support in India, and long-term continuity.
               </p>
             </SectionReveal>
           </div>
