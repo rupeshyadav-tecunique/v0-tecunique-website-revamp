@@ -11,51 +11,15 @@ const services = [
     bgLight: "bg-indigo-500/10",
     textLight: "text-indigo-600",
     shadow: "shadow-indigo-500/20",
-    text: "Build full-time development, QA, automation, DevOps, or support teams in India. You select the team; TECUNIQUE manages recruitment, onboarding, HR, payroll, infrastructure, NDA, and continuity.",
+    text: "Build full-time development, QA, automation, DevOps, or support teams in India. You evaluate and approve the professionals; TECUNIQUE manages recruitment, onboarding, payroll, HR, infrastructure, NDA, and operational continuity.",
     bestFor: [
-      "Long-term product development",
+      "Long-term engineering capacity",
       "Team expansion",
-      "Offshore engineering capacity",
       "Client-selected talent",
+      "Dedicated development & QA teams",
     ],
     ctaText: "Explore Dedicated Teams",
     ctaHref: "/services/dedicated-teams",
-  },
-  {
-    id: "atlassian",
-    title: "Atlassian App Development & QA",
-    icon: Layers,
-    color: "from-blue-500 to-indigo-500",
-    bgLight: "bg-blue-500/10",
-    textLight: "text-blue-600",
-    shadow: "shadow-blue-500/20",
-    text: "Build, test, automate, and support Jira apps with dedicated engineering and QA teams. We support Forge, Connect, REST APIs, Marketplace app QA, integrations, and long-term product maintenance.",
-    bestFor: [
-      "Atlassian Marketplace vendors",
-      "Jira app teams",
-      "Forge / Connect work",
-      "Marketplace app QA",
-    ],
-    ctaText: "Explore Atlassian Services",
-    ctaHref: "/services/atlassian",
-  },
-  {
-    id: "qa-automation",
-    title: "Software QA & Automation Testing",
-    icon: TestTube2,
-    color: "from-purple-500 to-pink-500",
-    bgLight: "bg-purple-500/10",
-    textLight: "text-purple-600",
-    shadow: "shadow-purple-500/20",
-    text: "Strengthen product quality with dedicated QA and automation teams. We support manual QA, regression testing, Playwright, Selenium, JUnit, API testing, CI/CD integration, and release validation.",
-    bestFor: [
-      "Product QA",
-      "Regression ownership",
-      "Automation frameworks",
-      "Release confidence",
-    ],
-    ctaText: "Explore QA Services",
-    ctaHref: "/services/qa",
   },
   {
     id: "product-engineering",
@@ -65,15 +29,51 @@ const services = [
     bgLight: "bg-indigo-500/10",
     textLight: "text-indigo-600",
     shadow: "shadow-indigo-500/20",
-    text: "Build, enhance, and maintain software products, web applications, backend systems, integrations, and cloud-ready platforms with dedicated engineering teams.",
+    text: "Build, enhance, and maintain software products, web applications, backend systems, integrations, and cloud-ready platforms with experienced engineering teams.",
     bestFor: [
-      "Web applications",
-      "Backend systems",
-      "API integrations",
-      "Product enhancement",
+      "Product development",
+      "Product enhancements",
+      "Backend & API integrations",
+      "Long-term maintenance",
     ],
     ctaText: "Explore Product Engineering",
     ctaHref: "/services/product-engineering",
+  },
+  {
+    id: "qa-automation",
+    title: "Software QA & Automation Testing",
+    icon: TestTube2,
+    color: "from-purple-500 to-pink-500",
+    bgLight: "bg-purple-500/10",
+    textLight: "text-purple-600",
+    shadow: "shadow-purple-500/20",
+    text: "Strengthen product quality with manual QA and automation engineers supporting functional testing, regression, Playwright, Selenium, API testing, CI/CD test integration, and release validation.",
+    bestFor: [
+      "Manual & regression QA",
+      "Automation testing",
+      "API testing",
+      "Release validation",
+    ],
+    ctaText: "Explore QA Services",
+    ctaHref: "/services/qa",
+  },
+  {
+    id: "atlassian",
+    title: "Atlassian App Development & QA",
+    icon: Layers,
+    color: "from-blue-500 to-indigo-500",
+    bgLight: "bg-blue-500/10",
+    textLight: "text-blue-600",
+    shadow: "shadow-blue-500/20",
+    text: "Develop, test, automate, modernize, and support Jira apps with engineering and QA teams experienced in Forge, REST APIs, Marketplace app QA, integrations, and long-term product maintenance.",
+    bestFor: [
+      "Atlassian Marketplace vendors",
+      "Forge development",
+      "Connect modernization",
+      "Marketplace app QA",
+    ],
+    ctaText: "Explore Atlassian Services",
+    ctaHref: "/services/atlassian",
   },
 ]
 
@@ -89,10 +89,10 @@ export function ServicesCards() {
         <div className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
           <SectionReveal>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-4">
-              Choose the Right Engagement Area
+              Choose the Right Service
             </h2>
             <p className="text-lg text-muted-foreground">
-              Select the service that aligns with your strategic goals and operational needs.
+              Explore four ways TECUNIQUE can support your software product and engineering needs.
             </p>
           </SectionReveal>
         </div>
@@ -102,7 +102,7 @@ export function ServicesCards() {
             const Icon = service.icon
             return (
               <SectionReveal key={service.id} delay={index * 100} className="h-full">
-                <div className="group relative flex flex-col h-full bg-white rounded-2xl border border-[var(--neutral-slate-200)] p-8 lg:p-10 transition-all duration-300 hover:shadow-lg hover:border-[var(--brand-blue)]/30">
+                <div className="group relative flex flex-col h-full bg-white rounded-2xl border border-[var(--neutral-slate-200)] p-6 lg:p-8 transition-all duration-300 hover:shadow-lg hover:border-[var(--brand-blue)]/30">
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Header */}
                     <div className="mb-6">

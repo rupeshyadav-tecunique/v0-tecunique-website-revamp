@@ -20,48 +20,48 @@ export function ServicesTrustProof() {
           </SectionReveal>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <SectionReveal delay={100} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Atlassian Apps</h3>
-              <div className="flex flex-wrap items-center gap-6 mt-auto">
-                <span className="text-slate-600 font-medium whitespace-nowrap">
+            <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm h-full flex flex-col transition-all duration-300 hover:shadow-md hover:border-blue-200 hover:-translate-y-1">
+              <h3 className="font-bold text-slate-400 mb-8 text-xs uppercase tracking-widest leading-relaxed">Atlassian Marketplace Products</h3>
+              <div className="flex flex-wrap items-center gap-y-6 gap-x-6 mt-auto">
+                <span className="text-xl font-display font-bold text-slate-800 opacity-80 group-hover:opacity-100 transition-opacity">
                   Appfire
                 </span>
-                <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-8 w-auto object-contain" />
-                <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-8 w-auto object-contain" />
+                <img src="/images/companies/innovalog.png" alt="Innovalog" className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
+                <img src="/images/companies/quotilabs.png" alt="Qotilabs" className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={200} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Engineering & Data Platforms</h3>
-              <div className="flex flex-wrap items-center gap-6 mt-auto">
-                <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-7 w-auto object-contain" />
-                <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-7 w-auto object-contain" />
-                <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-8 w-auto object-contain" />
+            <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm h-full flex flex-col transition-all duration-300 hover:shadow-md hover:border-blue-200 hover:-translate-y-1">
+              <h3 className="font-bold text-slate-400 mb-8 text-xs uppercase tracking-widest leading-relaxed">Product Engineering & Data Platforms</h3>
+              <div className="flex flex-wrap items-center gap-y-6 gap-x-6 mt-auto">
+                <img src="/images/companies/oppscience.svg" alt="OPPSCIENCE" className="h-7 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
+                <img src="/images/companies/customer_matrix.webp" alt="CustomerMatrix" className="h-7 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
+                <img src="/images/companies/polyspot.webp" alt="PolySpot" className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={300} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">ODC / Offshore Teams</h3>
-              <div className="flex flex-wrap items-center gap-6 mt-auto">
-                <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-8 w-auto object-contain" />
+            <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm h-full flex flex-col transition-all duration-300 hover:shadow-md hover:border-blue-200 hover:-translate-y-1">
+              <h3 className="font-bold text-slate-400 mb-8 text-xs uppercase tracking-widest leading-relaxed">Dedicated Teams</h3>
+              <div className="flex flex-wrap items-center gap-y-6 gap-x-6 mt-auto">
+                <img src="/images/companies/skyselect.svg" alt="SkySelect" className="h-8 w-auto object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
               </div>
             </div>
           </SectionReveal>
 
           <SectionReveal delay={400} className="h-full">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full flex flex-col">
-              <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Development & Support</h3>
-              <div className="flex flex-wrap items-center gap-6 mt-auto">
-                <span className="text-slate-600 font-medium whitespace-nowrap">
+            <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm h-full flex flex-col transition-all duration-300 hover:shadow-md hover:border-blue-200 hover:-translate-y-1">
+              <h3 className="font-bold text-slate-400 mb-8 text-xs uppercase tracking-widest leading-relaxed">Product Development & Support</h3>
+              <div className="flex flex-wrap items-center gap-y-6 gap-x-6 mt-auto">
+                <span className="text-xl font-display font-bold text-slate-800 opacity-80 group-hover:opacity-100 transition-opacity">
                   eXtensi
                 </span>
-                <span className="text-slate-600 font-medium whitespace-nowrap">
+                <span className="text-xl font-display font-bold text-slate-800 opacity-80 group-hover:opacity-100 transition-opacity">
                   Validat
                 </span>
               </div>

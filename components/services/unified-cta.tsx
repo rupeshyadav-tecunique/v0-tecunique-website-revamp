@@ -23,6 +23,7 @@ export function UnifiedCTA({
   primaryButtonText = "Discuss Your Requirement",
   secondaryButtonText = "View All Services",
   secondaryButtonLink = "/services",
+  eyebrow,
 }: UnifiedCTAProps = {}) {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-[var(--neutral-slate-50)] border-t border-border/40">
@@ -37,7 +38,7 @@ export function UnifiedCTA({
         <SectionReveal>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[var(--neutral-slate-200)] mb-8 shadow-sm">
             <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">Ready to scale your software capabilities?</span>
+            <span className="text-sm font-medium text-muted-foreground">{eyebrow || "Ready to scale your software capabilities?"}</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 tracking-tight max-w-3xl mx-auto leading-tight">

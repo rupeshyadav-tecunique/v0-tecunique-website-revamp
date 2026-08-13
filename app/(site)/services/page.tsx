@@ -7,8 +7,8 @@ import { ServicesTrustProof } from "@/components/services/trust-proof"
 import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
-  title: "Services | TECUNIQUE",
-  description: "Explore TECUNIQUE's comprehensive software services - Dedicated teams, Atlassian Enterprise solutions, QA, and Product Engineering.",
+  title: "Software Engineering Services & Dedicated Teams | TECUNIQUE",
+  description: "TECUNIQUE supports software product companies with dedicated software teams, product engineering, QA & automation, and Atlassian app development and QA from India.",
 }
 
 export default function ServicesPage() {
@@ -19,7 +19,18 @@ export default function ServicesPage() {
       <DecisionGuide />
       <ServicesExecutionModel />
       <ServicesTrustProof />
-      <UnifiedCTA />
+      <UnifiedCTA
+        eyebrow="NEED SOFTWARE ENGINEERING SUPPORT?"
+        title={
+          <>
+            Find the Right Engineering Support <br className="hidden md:block"/>
+            <span className="text-brand-blue">for Your Product</span>
+          </>
+        }
+        description="Whether you need a dedicated team, product engineering capacity, QA & automation, or Atlassian app expertise, we can help structure an engagement around your product and team requirements."
+        secondaryButtonText="View Case Studies"
+        secondaryButtonLink="/case-studies"
+      />
     </div>
   )
 }

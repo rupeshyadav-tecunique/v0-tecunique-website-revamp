@@ -20,21 +20,19 @@ export function ServicesHero() {
             <Sparkles className="h-4 w-4" />
             Software Services
           </div>
-          
+
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
             Build, Scale, and Support <br className="hidden md:block" />
             <span className="text-brand-blue">Your Software Products</span>
           </h1>
-          
+
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-            Extend your engineering capacity, strengthen product quality, and accelerate Atlassian app development with our dedicated teams in India.
+            Extend your engineering capacity with dedicated teams in India across product engineering, QA & automation, software support, and Atlassian app development.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <Button size="lg" className="rounded-full px-8 h-12 text-base font-bold shadow-lg hover:shadow-xl transition-all bg-brand-blue hover:bg-brand-blue-hover w-full sm:w-auto" asChild>
-              <Link href="/contact">
-                Discuss Your Requirements
-              </Link>
+
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base font-bold border-2 border-slate-200 hover:bg-slate-50 transition-all w-full sm:w-auto text-slate-700" asChild>
               <Link href="#services">
@@ -43,7 +41,7 @@ export function ServicesHero() {
             </Button>
           </div>
         </SectionReveal>
-      </div>
-    </section>
+      </div >
+    </section >
   )
 }

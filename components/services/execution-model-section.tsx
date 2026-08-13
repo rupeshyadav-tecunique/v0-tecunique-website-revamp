@@ -10,20 +10,20 @@ const workingModel = [
   },
   {
     id: 2,
-    title: "Dedicated Collaboration",
-    description: "Teams align with your tools, sprint process, communication channels, and delivery priorities.",
+    title: "Integrated Collaboration",
+    description: "Engineers work within your tools, communication channels, sprint cadence, and agreed development process.",
     icon: MessageSquare,
   },
   {
     id: 3,
     title: "Managed Operations in India",
-    description: "TECUNIQUE handles HR, payroll, infrastructure, NDA, administration, and retention support.",
+    description: "TECUNIQUE handles employment, payroll, HR administration, infrastructure, NDA, and related operational support.",
     icon: Building2,
   },
   {
     id: 4,
     title: "Long-Term Continuity",
-    description: "We focus on stable teams that preserve product knowledge and reduce repeated onboarding.",
+    description: "Stable teams help preserve product knowledge and reduce repeated onboarding.",
     icon: Clock,
   },
 ]
@@ -38,10 +38,10 @@ export function ServicesExecutionModel() {
             Working Model
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold font-display text-slate-900 mb-6">
-            One Practical Working Model Across Services
+            A Practical Engagement Model
           </h2>
           <p className="text-lg text-slate-600">
-            A streamlined, transparent workflow designed to integrate seamlessly with your business from day one.
+            Our services can be delivered through dedicated engineers or teams who work within your product and development process, while TECUNIQUE manages the employment and operational side in India.
           </p>
         </SectionReveal>
 

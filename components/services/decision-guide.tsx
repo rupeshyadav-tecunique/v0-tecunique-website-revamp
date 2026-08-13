@@ -4,24 +4,24 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 
 const decisions = [
   {
-    need: "I need full-time engineers working with my team",
+    need: "I need full-time engineers working with my team.",
     service: "Dedicated Software Teams",
     href: "/services/dedicated-teams",
   },
   {
-    need: "I need Jira app development, QA, or Forge/Connect support",
-    service: "Atlassian App Development & QA",
-    href: "/services/atlassian",
+    need: "I need product development, enhancements, backend work, integrations, or maintenance.",
+    service: "Product Engineering & Custom Software",
+    href: "/services/product-engineering",
   },
   {
-    need: "I need manual QA, regression, or automation testing",
+    need: "I need manual QA, regression, automation, or release testing.",
     service: "Software QA & Automation Testing",
     href: "/services/qa",
   },
   {
-    need: "I need product features, backend work, integrations, or maintenance",
-    service: "Product Engineering & Custom Software Development",
-    href: "/services/product-engineering",
+    need: "I need Jira app development, Forge engineering, Connect modernization, or Marketplace app QA.",
+    service: "Atlassian App Development & QA",
+    href: "/services/atlassian",
   },
 ]
 
@@ -39,7 +39,7 @@ export function DecisionGuide() {
               Not Sure Which Service Fits?
             </h2>
             <p className="text-lg text-slate-600">
-              Find the right engagement model based on your current engineering needs.
+              Find the right service based on your current product and engineering needs.
             </p>
           </SectionReveal>
         </div>
