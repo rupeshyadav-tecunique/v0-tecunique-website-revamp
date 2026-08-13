@@ -1,19 +1,20 @@
 export function CareersStats() {
   return (
-    <section className="bg-primary py-16">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
-          {[
-            { label: "Growth-Mindset", value: "100%" },
-            { label: "Retention Rate", value: "92%" },
-            { label: "Years Experience", value: "15+" },
-            { label: "Team Strength", value: "30+" }
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="text-3xl font-bold text-primary-foreground">{stat.value}</p>
-              <p className="text-sm text-primary-foreground/70 uppercase tracking-widest mt-1">{stat.label}</p>
-            </div>
-          ))}
+    <section className="bg-brand-blue py-16">
+      <div className="mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/20">
+          <div className="py-4">
+            <p className="text-3xl font-display font-bold text-white mb-2">SINCE 2010</p>
+            <p className="text-sm text-white/80 uppercase tracking-widest font-semibold">Building software teams</p>
+          </div>
+          <div className="py-4">
+            <p className="text-3xl font-display font-bold text-white mb-2">92%</p>
+            <p className="text-sm text-white/80 uppercase tracking-widest font-semibold">Retention Rate</p>
+          </div>
+          <div className="py-4">
+            <p className="text-3xl font-display font-bold text-white mb-2">30+</p>
+            <p className="text-sm text-white/80 uppercase tracking-widest font-semibold">TEAM MEMBERS</p>
+          </div>
         </div>
       </div>
     </section>
