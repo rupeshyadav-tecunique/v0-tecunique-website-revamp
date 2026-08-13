@@ -20,8 +20,8 @@ export function AtlassianHero() {
             </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
-              Build, Test, and Support Jira Apps with <br className="hidden md:block"/>
-              <span className="text-brand-blue">Dedicated Engineering Teams</span>
+              Build, Test, and Support Jira Apps <br className="hidden xl:block"/>
+              <span className="whitespace-nowrap">with <span className="text-brand-blue">Dedicated</span></span> <span className="text-brand-blue">Engineering Teams</span>
             </h1>
             
             <p className="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
