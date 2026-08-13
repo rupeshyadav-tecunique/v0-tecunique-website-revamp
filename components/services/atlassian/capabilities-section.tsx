@@ -8,15 +8,15 @@ const capabilities = [
     items: [
       {
         title: "App Development",
-        desc: "Support for app features, workflows, UI, backend logic, and REST APIs.",
+        desc: "Support app functionality, workflows, UI, backend logic, REST APIs, and product enhancements.",
       },
       {
-        title: "Forge / Connect Work",
-        desc: "Modern development and maintenance support for Atlassian frameworks.",
+        title: "Forge Development & Connect Modernization",
+        desc: "Develop Forge functionality and support maintenance or modernization of existing Connect-based apps.",
       },
       {
         title: "Integrations",
-        desc: "Connect Jira apps with third-party tools, APIs, and product workflows.",
+        desc: "Integrate Jira apps with third-party products, APIs, services, and product workflows.",
       },
     ],
   },
@@ -25,16 +25,16 @@ const capabilities = [
     icon: CheckCircle2,
     items: [
       {
-        title: "Diagnostic Testing",
-        desc: "Validate app features, workflows, screens, configurations, and user journeys.",
+        title: "Functional Testing",
+        desc: "Validate app functionality, workflows, screens, configurations, and user journeys.",
       },
       {
         title: "Workflow & Permissions",
-        desc: "Test Jira-specific conditions, roles, permissions, and project configurations.",
+        desc: "Validate Jira workflows, conditions, roles, permissions, and project configurations.",
       },
       {
         title: "Release Validation",
-        desc: "Structured release cycles, defect tracking, and release readiness support.",
+        desc: "Support regression testing, defect verification, release validation, and Marketplace submission readiness.",
       },
     ],
   },
@@ -48,11 +48,11 @@ const capabilities = [
       },
       {
         title: "API Testing",
-        desc: "Validation of backend services, integrations, and REST API behavior.",
+        desc: "Validation of backend services, integrations, and REST API behaviour.",
       },
       {
         title: "CI/CD Integration",
-        desc: "Automated test execution aligned with build pipelines and deployments.",
+        desc: "Automated test execution aligned with build and release pipelines.",
       },
     ],
   },
@@ -68,7 +68,7 @@ export function AtlassianCapabilities() {
               End-to-End Support for Atlassian Apps
             </h2>
             <p className="text-lg text-slate-300 leading-relaxed">
-              We provide comprehensive engineering, functional QA, and automation services tailored specifically to the complexity of Atlassian Marketplace apps and ecosystem integrations.
+              We support Jira app development, functional QA, automation, integrations, release validation, and long-term maintenance across Atlassian Marketplace product engagements.
             </p>
           </SectionReveal>
         </div>

@@ -9,6 +9,8 @@ interface UnifiedCTAProps {
   primaryButtonText?: string;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
+  primaryButtonLink?: string;
+  eyebrow?: string;
 }
 
 export function UnifiedCTA({
@@ -37,15 +39,15 @@ export function UnifiedCTA({
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-muted-foreground">Ready to scale your software capabilities?</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 tracking-tight max-w-3xl mx-auto leading-tight">
             {title}
           </h2>
-          
+
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="rounded-full px-8 h-14 text-base group bg-primary hover:bg-primary/90 text-white border-none w-full sm:w-auto transition-all hover:scale-105 shadow-brand-button" asChild>
               <Link href="/contact">

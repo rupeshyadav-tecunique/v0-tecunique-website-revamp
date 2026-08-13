@@ -11,7 +11,7 @@ import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Software QA & Automation Testing Services | TECUNIQUE",
-  description: "Build dedicated QA and automation testing teams in India with TECUNIQUE. Manual QA, regression testing, Playwright, Selenium, JUnit, API testing, release validation, and long-term product quality support.",
+  description: "TECUNIQUE supports software product companies with manual QA, regression testing, automation testing, Playwright, Selenium, API testing, CI/CD integration, release validation, and dedicated QA teams in India.",
 }
 
 export default function QAServicePage() {
@@ -25,7 +25,15 @@ export default function QAServicePage() {
       <QAAtlassian />
       <QAHowWeWork />
       <QAExperience />
-      <UnifiedCTA />
+      <UnifiedCTA 
+        eyebrow="NEED QA OR AUTOMATION CAPACITY?"
+        title={<>Strengthen Your Product Quality with the <span className="text-[var(--brand-blue)]">Right QA Team</span></>}
+        description="Whether you need manual testing, regression coverage, automation QA, API testing, release validation, or long-term QA support, we can help structure the right engagement for your product."
+        primaryButtonText="Discuss Your QA Requirements"
+        primaryButtonLink="/contact"
+        secondaryButtonText="Explore Dedicated Teams"
+        secondaryButtonLink="/services/dedicated-teams"
+      />
     </div>
   )
 }

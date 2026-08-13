@@ -4,33 +4,33 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const steps = [
   {
     step: "01",
-    title: "Understand Needs",
-    description: "We learn your product, users, and quality goals."
+    title: "Understand Product Context",
+    description: "We learn your product workflows, users, release patterns, risk areas, and quality priorities."
   },
   {
     step: "02",
-    title: "Define Scope",
-    description: "We define test scope, priorities, and success criteria."
+    title: "Define Test Scope & Priorities",
+    description: "We agree testing scope, environments, priorities, acceptance criteria, and reporting expectations."
   },
   {
     step: "03",
-    title: "Assign QA Talent",
-    description: "We assign experienced QA engineers aligned to your requirements."
+    title: "Set Up the Right QA Team",
+    description: "Based on the scope, we bring together manual and/or automation QA engineers. For dedicated engagements, you can evaluate and approve team members before onboarding."
   },
   {
     step: "04",
-    title: "Align With Tools",
-    description: "We integrate with your tools and communication channels."
+    title: "Align With Tools & Release Process",
+    description: "We work within your issue tracking, test management, communication, CI/CD, and release workflows."
   },
   {
     step: "05",
-    title: "Execute & Report",
-    description: "We execute tests, report defects, and provide clear insights."
+    title: "Execute, Automate & Report",
+    description: "We perform testing, maintain relevant automation, log defects clearly, and communicate findings and release risks."
   },
   {
     step: "06",
-    title: "Improve Coverage",
-    description: "We enhance automation coverage, and overall product quality."
+    title: "Improve Coverage Over Time",
+    description: "As the product evolves, we expand regression and automation coverage around recurring workflows, defects, and release priorities."
   }
 ]
 
@@ -47,7 +47,7 @@ export function QAHowWeWork() {
             Our QA Workflow
           </h2>
           <p className="text-lg text-muted-foreground">
-            A streamlined process to integrate our testing experts seamlessly with your team.
+            A practical QA collaboration model designed to align testing with your product, release process, and engineering workflow.
           </p>
         </SectionReveal>
 

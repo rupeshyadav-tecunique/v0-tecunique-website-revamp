@@ -4,22 +4,22 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const atlassianCapabilities = [
   {
     title: "Jira Workflow Testing",
-    description: "Validate app behaviour across Jira workflows, transitions, and conditions.",
+    description: "Validate app behaviour across Jira workflows, transitions, validators, conditions, and post-functions where applicable.",
     icon: CheckCircle2
   },
   {
     title: "Permission & Role Testing",
-    description: "Thorough testing of permissions, roles, and security.",
+    description: "Validate permissions, roles, access rules, and related app behaviour.",
     icon: Lock
   },
   {
     title: "Marketplace App Regression",
-    description: "Ensure stability across Jira versions and environments.",
+    description: "Regression testing across supported Jira versions and environments to identify compatibility issues.",
     icon: Cpu
   },
   {
     title: "App Automation Support",
-    description: "Automation support for Jira app flows using relevant tools.",
+    description: "Automation support for repeatable Jira app workflows using relevant frameworks and tooling.",
     icon: Infinity
   }
 ]
@@ -29,9 +29,9 @@ export function QAAtlassian() {
     <section className="py-24 bg-white relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">QA Experience for Atlassian and Jira Apps</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">Atlassian App QA Experience</h2>
           <p className="text-lg text-muted-foreground">
-            We have strong QA experience across Atlassian platforms and Marketplace apps. Relevant tool experience includes ACLI, GINT, Groovy, Gradle, Playwright, and Selenium.
+            Our experience includes long-term QA and automation support for Jira Marketplace apps, covering workflow validation, regression testing, release testing, and automated test coverage. Tooling and frameworks used across relevant engagements have included ACLI, GINT, Groovy, Gradle, Playwright, and Selenium.
           </p>
         </SectionReveal>
 

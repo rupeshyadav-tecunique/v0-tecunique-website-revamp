@@ -5,22 +5,22 @@ const supportItems = [
   {
     icon: TrendingUp,
     title: "Enhancements",
-    description: "Ongoing feature development and refinements."
+    description: "Ongoing feature development, refinements, and product improvements."
   },
   {
     icon: HeadphonesIcon,
-    title: "L2/L3 Support",
-    description: "Escalated technical issue debugging and hotfixes."
+    title: "L2/L3 Technical Support",
+    description: "Investigation and resolution of escalated technical issues where required."
   },
   {
     icon: Layers,
-    title: "Compatibility",
-    description: "Support for platform or API changes."
+    title: "Compatibility Support",
+    description: "Adapt app functionality to relevant platform, API, or environment changes."
   },
   {
     icon: RefreshCw,
-    title: "Release Cycle",
-    description: "Code and release management on Jira Cloud/DC."
+    title: "Release Support",
+    description: "Support release preparation, validation, compatibility checks, and deployment coordination."
   }
 ]
 
@@ -35,7 +35,7 @@ export function AtlassianLongTermSupport() {
               Long-Term Support for Marketplace Products
             </h2>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Many Atlassian apps need ongoing engineering effort long after the first release. We support long-term development, bug fixing, and support workflows for product teams.
+              Atlassian Marketplace products often require ongoing engineering after the initial release. We support enhancements, issue resolution, compatibility changes, release cycles, and long-term product maintenance.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

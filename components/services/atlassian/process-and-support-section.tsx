@@ -4,22 +4,22 @@ const processSteps = [
   {
     step: "01",
     title: "Understand App Context",
-    description: "We understand your app, users, Jira workflows, technology stack, and specific support needs."
+    description: "We learn your app, users, Jira workflows, architecture, technology stack, and engineering or QA requirements."
   },
   {
     step: "02",
-    title: "Build The Right Team",
-    description: "You evaluate and approve developers, QA engineers, and automation specialists that fit your culture."
+    title: "Build the Right Team",
+    description: "You evaluate and approve developers, QA engineers, and automation engineers based on the skills required for your product."
   },
   {
     step: "03",
-    title: "Align with Process",
-    description: "The team works within your existing Jira backlog, Slack/Teams channels, and sprint plans."
+    title: "Align With Your Process",
+    description: "The team works within your backlog, communication channels, sprint cadence, development practices, and release process."
   },
   {
     step: "04",
-    title: "Support Long-Term",
-    description: "We help maintain continuity, product knowledge, QA coverage, and consistent release rhythms."
+    title: "Maintain Continuity",
+    description: "Long-term teams help preserve product knowledge, QA coverage, engineering context, and release continuity."
   }
 ]
 
@@ -33,7 +33,7 @@ export function AtlassianProcessAndSupport() {
               Dedicated Teams for Atlassian App Work
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              We assemble the right expertise that seamlessly fits your tools, sprint processes, and release expectations.
+              Build a dedicated engineering and QA team that works within your tools, product processes, and release priorities.
             </p>
           </SectionReveal>
         </div>

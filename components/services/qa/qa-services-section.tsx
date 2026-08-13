@@ -4,32 +4,32 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const qaServices = [
   {
     title: "Functional Testing",
-    description: "Validate features, business workflows, and edge cases to ensure they work as intended end-to-end.",
+    description: "Validate features, business rules, user workflows, and edge cases across expected product scenarios.",
     icon: CheckSquare
   },
   {
     title: "Regression Testing",
-    description: "Ensure new code changes, integrations, or updates don't break existing product functionality.",
+    description: "Check that code changes, integrations, and updates do not introduce regressions in existing functionality.",
     icon: RefreshCcw
   },
   {
     title: "Smoke & Sanity Testing",
-    description: "Quick checks to verify build stability, critical flows, and deployment health.",
+    description: "Perform focused checks on critical workflows and build stability before broader testing or release.",
     icon: ShieldCheck
   },
   {
     title: "Compatibility Testing",
-    description: "Test across modern browsers, mobile devices, OS versions, and screen resolutions.",
+    description: "Test relevant browser, device, operating-system, and screen combinations based on product requirements.",
     icon: BoxSelect
   },
   {
     title: "Defect Reporting & Verification",
-    description: "Detailed defect logging with steps to reproduce, priority tagging, and verification until closure.",
+    description: "Document defects with reproducible steps, severity or priority context, supporting evidence, and verification after fixes.",
     icon: Search
   },
   {
     title: "Release Validation",
-    description: "Validate staging and production releases to ensure deployment readiness and overall quality.",
+    description: "Validate release candidates and critical workflows against agreed acceptance criteria before and after deployment where required.",
     icon: LayoutTemplate
   }
 ]

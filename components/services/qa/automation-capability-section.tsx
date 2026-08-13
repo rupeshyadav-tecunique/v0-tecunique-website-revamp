@@ -4,22 +4,22 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const automationCards = [
   {
     title: "Playwright / Selenium Automation",
-    description: "Browser-based automation for critical app flows and regression scenarios.",
+    description: "Automate critical browser workflows and repeatable regression scenarios.",
     icon: TestTube2
   },
   {
     title: "API Testing",
-    description: "Validation of backend services, integrations, and REST API behaviour.",
+    description: "Automated validation of REST/GraphQL APIs, backend services, and integrations where applicable.",
     icon: ServerCog
   },
   {
     title: "JUnit / Java-Based Testing",
-    description: "Support for Java-based test frameworks where applicable.",
+    description: "Java-based automated tests and supporting test frameworks where appropriate.",
     icon: FileCode2
   },
   {
     title: "CI/CD Test Integration",
-    description: "Automated test execution aligned with build and release pipelines.",
+    description: "Integrate automated test execution with build and release pipelines to provide earlier feedback.",
     icon: GitMerge
   }
 ]
@@ -32,7 +32,7 @@ export function AutomationCapability() {
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">Automation QA for Faster, Safer Releases</h2>
           <p className="text-white/80 text-lg leading-relaxed">
-            We build maintainable automation frameworks and test suites that speed up testing, reduce risk, and improve long-term quality.
+            We design and maintain automated test coverage for repeatable product workflows, helping reduce manual regression effort and provide faster feedback during release cycles.
           </p>
         </SectionReveal>
 

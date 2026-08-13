@@ -19,16 +19,16 @@ export function QAHero() {
           {/* Left Column - Content */}
           <SectionReveal direction="left">
             <div className="mb-4 text-brand-blue font-bold text-sm tracking-widest uppercase">
-              QA SERVICES
+              QA & AUTOMATION
             </div>
             
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-              Strengthen Quality with <br className="hidden lg:block"/>
-              <span className="text-brand-blue">Dedicated QA Teams</span>
+            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
+              <span className="whitespace-nowrap">Strengthen Product</span> Quality with <br className="hidden lg:block"/>
+              <span className="text-brand-blue">QA & Automation Teams</span>
             </h1>
             
             <p className="mt-4 text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Ensure your software products are robust and bug-free with our manual testing and automation engineers.
+              Support product quality with experienced manual QA and automation engineers covering functional testing, regression, API testing, test automation, and release validation.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -69,33 +69,73 @@ export function QAHero() {
           <SectionReveal direction="right" className="relative hidden lg:block">
             <div className="bg-white rounded-2xl p-8 shadow-xl border border-[var(--neutral-slate-100)]">
               <h3 className="text-lg font-bold text-foreground mb-8">
-                Product Quality Workflow
+                QA Coverage Cycle
               </h3>
               
-              <div className="grid grid-cols-2 gap-x-8 gap-y-12 relative">
-                {/* Connecting Dotted Lines */}
-                <div className="absolute top-6 left-12 right-12 border-t-2 border-dashed border-[var(--neutral-slate-200)] z-0"></div>
-                <div className="absolute top-28 left-12 right-12 border-t-2 border-dashed border-[var(--neutral-slate-200)] z-0"></div>
-                <div className="absolute top-52 left-12 right-12 border-t-2 border-dashed border-[var(--neutral-slate-200)] z-0"></div>
-                
-                {[
-                  { step: 1, text: "Understand Product", icon: Search },
-                  { step: 2, text: "Define Test Scope", icon: TestTube },
-                  { step: 3, text: "Execute Manual QA", icon: Bug },
-                  { step: 4, text: "Automate Critical Flows", icon: RefreshCcw },
-                  { step: 5, text: "Validate Releases", icon: CheckCircle2 },
-                  { step: 6, text: "Improve Coverage", icon: GitPullRequest },
-                ].map((item, i) => (
-                  <div key={item.step} className="flex items-start gap-4 relative z-10 bg-white pr-4">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--brand-blue)] text-white font-bold shadow-md shrink-0">
-                      {item.step}
+              <div className="relative">
+                {/* SVG Connecting Lines for Serpentine Flow (2x2) */}
+                <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0, overflow: 'visible' }} preserveAspectRatio="none">
+                  <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#CBD5E1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </marker>
+                  </defs>
+
+                  {/* Row 1 arrow */}
+                  <path d="M 45% 25% L 50% 25%" stroke="#CBD5E1" strokeWidth="1.5" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+                  
+                  {/* Row 1 to Row 2 Snake */}
+                  <path d="M 95% 25% L 105% 25% Q 110% 25% 110% 35% L 110% 60% Q 110% 65% 105% 65% L -5% 65% Q -10% 65% -10% 70% L -10% 75% Q -10% 75% -5% 75% L -2% 75%" stroke="#CBD5E1" strokeWidth="1.5" fill="none" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+
+                  {/* Row 2 arrow */}
+                  <path d="M 45% 75% L 50% 75%" stroke="#CBD5E1" strokeWidth="1.5" markerEnd="url(#arrow)" vectorEffect="non-scaling-stroke" />
+                </svg>
+
+                <div className="grid grid-cols-2 gap-x-6 gap-y-12 relative z-10">
+                  {[
+                    { 
+                      step: "01", 
+                      title: "Understand Product", 
+                      desc: "Learn critical workflows and risk areas.",
+                      icon: Search 
+                    },
+                    { 
+                      step: "02", 
+                      title: "Validate Core Flows", 
+                      desc: "Execute functional and regression testing.",
+                      icon: CheckCircle2 
+                    },
+                    { 
+                      step: "03", 
+                      title: "Automate Repeatable Tests", 
+                      desc: "Build automation around recurring scenarios.",
+                      icon: TestTube 
+                    },
+                    { 
+                      step: "04", 
+                      title: "Support Release Confidence", 
+                      desc: "Validate releases and improve coverage.",
+                      icon: ShieldCheck 
+                    },
+                  ].map((item, i) => (
+                    <div key={item.step} className="flex flex-col gap-3 bg-white group">
+                      <div className="flex items-center gap-2 xl:gap-3">
+                        <div className="flex items-center justify-center w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-[var(--brand-blue)] text-white font-bold shadow-md shrink-0 text-xs xl:text-sm">
+                          {item.step}
+                        </div>
+                        <div className="hidden xl:flex items-center justify-center w-10 h-10 rounded-full bg-[var(--neutral-slate-50)] border border-[var(--neutral-slate-100)] shrink-0">
+                          <item.icon className="w-4 h-4 text-[var(--neutral-slate-600)]" />
+                        </div>
+                        <div className="font-semibold text-[var(--neutral-slate-800)] text-xs xl:text-sm leading-tight max-w-[120px]">
+                          {item.title}
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground leading-relaxed pl-1 xl:pl-2">
+                        {item.desc}
+                      </p>
                     </div>
-                    <div>
-                      <item.icon className="w-5 h-5 text-[var(--neutral-slate-400)] mb-1" />
-                      <div className="font-semibold text-[var(--neutral-slate-800)] text-sm leading-tight max-w-[120px]">{item.text}</div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               {/* Tools visual row */}

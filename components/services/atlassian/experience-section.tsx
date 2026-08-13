@@ -7,7 +7,7 @@ export function AtlassianExperience() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="text-center mb-12">
           <p className="text-sm font-bold tracking-widest text-slate-400 uppercase mb-8">
-            Experience Leaders at Atlassian Marketplace Products
+            Experience Across Atlassian Marketplace Products
           </p>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
             <div className="relative h-8 w-32">
@@ -26,15 +26,15 @@ export function AtlassianExperience() {
           {[
             {
               company: "Innovalog / JMWE",
-              desc: "Long-term development and QA support around Jira workflow app work. Experience included automation QA support using tools and frameworks such as ACLI, GINT, Groovy, Gradle, Selenium, and Playwright where applicable."
+              desc: "Long-term development, QA, automation, and product support experience around Jira workflow app work. Automation QA included ACLI, GINT, Groovy, Gradle, and related testing tooling."
             },
             {
               company: "Appfire",
-              desc: "Dedicated development, QA, automation, recruitment, and product support experience across acquired Marketplace products."
+              desc: "Dedicated development, QA, automation, and product support experience across Jira Marketplace products including JMWE, JMCF, and Rich Filters."
             },
             {
-              company: "eXtensi",
-              desc: "QA and product support experience for complex Jira dashboard and reporting app work. (Quotilabs/Rich Filters)"
+              company: "Qotilabs / Rich Filters",
+              desc: "Development and QA collaboration around Rich Filters and related Jira dashboard and reporting app work."
             }
           ].map((exp, i) => (
             <SectionReveal key={exp.company} delay={i * 100}>

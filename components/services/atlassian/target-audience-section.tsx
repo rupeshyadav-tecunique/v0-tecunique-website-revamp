@@ -11,7 +11,7 @@ export function AtlassianTargetAudience() {
               Built for Atlassian App Vendors
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl">
-              Specialized support for teams who value technical rigor and marketplace success.
+              Engineering and QA support for teams building, maintaining, and evolving Jira apps and Atlassian Marketplace products.
             </p>
           </SectionReveal>
         </div>
@@ -26,7 +26,7 @@ export function AtlassianTargetAudience() {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Marketplace App Vendors</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  For teams building or maintaining complex apps targeting the Atlassian Marketplace. We handle the heavy lifting in engineering so you can focus on product vision.
+                  For teams developing and maintaining Jira apps that need ongoing engineering, QA, automation, integration, and release support.
                 </p>
               </div>
             </SectionReveal>
@@ -43,7 +43,7 @@ export function AtlassianTargetAudience() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">SaaS / ISV Teams</h3>
                 <p className="text-blue-100 leading-relaxed">
-                  Software companies integrating their flagship products with Atlassian Cloud or Marketplace workflows.
+                  For software companies integrating their products with Jira, Atlassian Cloud, or Marketplace app workflows.
                 </p>
               </div>
             </SectionReveal>
@@ -58,7 +58,7 @@ export function AtlassianTargetAudience() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Product Engineering Leaders</h3>
                 <p className="text-slate-300 leading-relaxed">
-                  Scaling capacity with dedicated developers, QA engineers, and automation specialists that map to your sprint cycles.
+                  Add dedicated developers, QA engineers, and automation specialists who can work within your existing product and sprint processes.
                 </p>
               </div>
             </SectionReveal>
@@ -73,7 +73,7 @@ export function AtlassianTargetAudience() {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">App Modernization Teams</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Modernize legacy apps, move toward Forge or strengthen Cloud readiness with architectural guidance and robust tech support.
+                  Support existing apps through architecture improvements, Forge adoption, Connect-to-Forge modernization, and Cloud readiness work.
                 </p>
               </div>
             </SectionReveal>

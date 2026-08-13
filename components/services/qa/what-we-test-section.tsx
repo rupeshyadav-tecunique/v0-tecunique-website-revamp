@@ -4,22 +4,22 @@ import { SectionReveal } from "@/components/ui/section-reveal"
 const testTargets = [
   {
     title: "Web Applications",
-    description: "Custom web apps built with modern frameworks and architectures.",
+    description: "User workflows, business rules, browser behaviour, integrations, and regression coverage across custom web applications.",
     icon: LayoutGrid
   },
   {
     title: "SaaS Products",
-    description: "Multi-tenant SaaS platforms with complex user workflows.",
+    description: "Role-based workflows, multi-tenant behaviour, integrations, edge cases, and recurring release regression.",
     icon: Cloud
   },
   {
     title: "APIs & Integrations",
-    description: "REST / GraphQL APIs and third-party integrations.",
+    description: "REST/GraphQL endpoints, data flows, error handling, backend behaviour, and third-party integrations.",
     icon: Code2
   },
   {
     title: "Atlassian / Jira Apps",
-    description: "Cloud and Data Center apps in the Atlassian ecosystem.",
+    description: "Jira workflows, permissions, app behaviour, integrations, compatibility, and Marketplace app regression.",
     icon: PlaySquare
   }
 ]

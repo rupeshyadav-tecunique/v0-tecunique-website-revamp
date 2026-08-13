@@ -10,20 +10,27 @@ import { UnifiedCTA } from "@/components/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Atlassian App Development & QA | Jira App Engineering | TECUNIQUE",
-  description: "TECUNIQUE helps Atlassian Marketplace vendors and software product companies with Jira app development, QA, automation, Forge/Connect work, integrations, and long-term product support through dedicated teams in India.",
+  description: "TECUNIQUE supports Atlassian Marketplace vendors with Jira app development, Forge engineering, Connect-to-Forge modernization, functional QA, automation testing, integrations, release validation, and dedicated engineering teams in India.",
 }
 
 export default function AtlassianServicesPage() {
   return (
     <div className="flex flex-col w-full bg-slate-50">
       <AtlassianHero />
-      <AtlassianLifecycle />
       <AtlassianTargetAudience />
       <AtlassianCapabilities />
       <AtlassianLongTermSupport />
       <AtlassianProcessAndSupport />
       <AtlassianExperience />
-      <UnifiedCTA />
+      <UnifiedCTA 
+        eyebrow="NEED ATLASSIAN APP ENGINEERING SUPPORT?"
+        title={<>Build, Test, and Evolve Your Jira App with the <span className="text-[var(--brand-blue)]">Right Team</span></>}
+        description="Whether you need Forge development, QA automation, Connect modernization, integrations, release support, or a long-term Jira app engineering team, TECUNIQUE can support your product."
+        primaryButtonText="Discuss Your Atlassian App Needs"
+        primaryButtonLink="/contact"
+        secondaryButtonText="Explore Dedicated Teams"
+        secondaryButtonLink="/services/dedicated-teams"
+      />
     </div>
   )
 }
