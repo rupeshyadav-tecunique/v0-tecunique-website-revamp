@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -10,10 +11,10 @@ import { CheckCircle, Send } from "lucide-react"
 
 const services = [
   "Dedicated Software Teams",
-  "Product Engineering",
-  "QA & Automation",
-  "Atlassian App Engineering",
-  "Not Sure / Need Guidance",
+  "Product Engineering & Custom Software",
+  "Software QA & Automation Testing",
+  "Atlassian App Development & QA",
+  "Not Sure / Other",
 ]
 
 export function ContactForm() {
@@ -38,8 +39,7 @@ export function ContactForm() {
     }
 
     const data = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
+      name: formData.get("name"),
       email: formData.get("email"),
       company: formData.get("company"),
       service: formData.get("service"),
@@ -92,29 +92,18 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="firstName">First Name *</Label>
-          <Input
-            id="firstName"
-            name="firstName"
-            placeholder="John"
-            required
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="lastName">Last Name *</Label>
-          <Input
-            id="lastName"
-            name="lastName"
-            placeholder="Doe"
-            required
-          />
-        </div>
+      <div className="space-y-2">
+        <Label htmlFor="name">Name *</Label>
+        <Input
+          id="name"
+          name="name"
+          placeholder="John Doe"
+          required
+        />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email Address *</Label>
+        <Label htmlFor="email">Work Email *</Label>
         <Input
           id="email"
           name="email"
@@ -164,7 +153,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           name="message"
-          placeholder="Tell us about your project requirements..."
+          placeholder="Tell us about your product, team requirements, or current engineering challenge..."
           rows={5}
           required
         />
@@ -182,7 +171,7 @@ export function ContactForm() {
       </Button>
 
       <p className="text-xs text-muted-foreground text-center">
-        By submitting this form, you agree to our privacy policy. We&apos;ll never share your information with third parties.
+        By submitting this form, you agree to our <Link href="/privacy-policy" className="underline hover:text-primary">Privacy Policy</Link>. Your information will be handled in accordance with our privacy practices.
       </p>
     </form>
   )

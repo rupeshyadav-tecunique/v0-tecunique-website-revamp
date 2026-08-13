@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { ContactSection } from "@/components/contact/contact-section"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with TECUNIQUE. Let's discuss how we can help with your software development, quality assurance, and IT outsourcing needs.",
+  title: "Contact Us | TECUNIQUE",
+  description: "Contact TECUNIQUE to discuss dedicated software teams, product engineering, QA & automation, or Atlassian app development and QA requirements.",
 }
 
 export default function ContactPage() {

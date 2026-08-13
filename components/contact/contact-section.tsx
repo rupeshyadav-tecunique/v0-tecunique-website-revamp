@@ -8,12 +8,12 @@ const offices = [
     type: "Headquarters",
     flag: "in",
     address: "1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007, Gujarat, India",
-    email: "info@tecunique.com",
-    phone: "+91 982 544 6570"
+    email: "sales@tecunique.com",
+    phone: "+91 915 746 0525"
   },
   {
     country: "USA",
-    type: "Sales Office",
+    type: "Sales Contact",
     flag: "us",
     address: "104 Bramble Bush Ln Victoria, Texas 77904",
     email: "sales@tecunique.com",
@@ -21,7 +21,7 @@ const offices = [
   },
   {
     country: "CANADA",
-    type: "Sales Office",
+    type: "Sales Contact",
     flag: "ca",
     address: "102-213 Willis Crescent, Saskatoon - S7T 0L9",
     email: "sales@tecunique.com",
@@ -29,7 +29,7 @@ const offices = [
   },
   {
     country: "AUSTRALIA",
-    type: "Sales Office",
+    type: "Sales Contact",
     flag: "au",
     address: "50 Grandeur Parade, Riverstone, NSW - 2765",
     email: "sales@tecunique.com",
@@ -51,10 +51,10 @@ export function ContactSection() {
           <SectionReveal direction="right" className="w-full max-w-3xl mx-auto xl:max-w-none">
             <div className="mb-10">
               <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-                Let's Build Something <span className="text-[var(--brand-blue)]">Great</span>
+                Let's Discuss Your Software <span className="text-[var(--brand-blue)]">Requirements</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-xl">
-                Whether you need a dedicated team, bespoke software, or just want to explore possibilities, we're here to help.
+                Whether you need a dedicated engineering team, product development support, QA & automation, or Atlassian app expertise, tell us what you're working on and how we can help.
               </p>
             </div>
             
@@ -72,10 +72,10 @@ export function ContactSection() {
               </div>
               <div>
                 <h2 className="text-3xl font-display font-bold text-foreground">
-                  Our Global Presence
+                  Locations & Sales Contacts
                 </h2>
                 <p className="text-muted-foreground mt-1">
-                  Operating across multiple time zones for seamless support.
+                  TECUNIQUE is headquartered in Vadodara, India, with sales contacts supporting client relationships in international markets.
                 </p>
               </div>
             </div>
@@ -86,7 +86,7 @@ export function ContactSection() {
                 return (
                   <div 
                     key={office.country} 
-                    className={`group relative rounded-2xl p-6 xl:p-5 transition-all duration-300 overflow-hidden flex flex-col xl:flex-row items-start xl:items-center gap-0 xl:gap-6 ${
+                    className={`group relative rounded-2xl p-5 xl:p-4 transition-all duration-300 overflow-hidden flex flex-col xl:flex-row items-start xl:items-center gap-0 xl:gap-5 ${
                       isIndia 
                         ? 'bg-white border-2 border-[var(--brand-blue)] shadow-xl shadow-[var(--brand-blue)]/10 scale-[1.02] xl:scale-[1.05] z-10' 
                         : 'bg-white border border-border/60 hover:shadow-xl hover:shadow-[var(--brand-blue)]/10 hover:-translate-y-1'
@@ -97,9 +97,9 @@ export function ContactSection() {
                     <div className="absolute inset-0 bg-gradient-to-br xl:bg-gradient-to-r from-[var(--brand-blue)]/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     {/* Header: Flag and Title */}
-                    <div className="relative flex flex-col gap-3 mb-5 xl:mb-0 w-full xl:w-36 shrink-0">
+                    <div className="relative flex flex-col gap-3 mb-4 xl:mb-0 w-full xl:w-36 shrink-0">
                       <div className="flex items-start justify-between w-full">
-                        <div className="w-12 h-9 xl:w-14 xl:h-10 rounded-md overflow-hidden shadow-sm border border-border shrink-0">
+                        <div className="w-10 h-7 xl:w-12 xl:h-8 rounded-md overflow-hidden shadow-sm border border-border shrink-0">
                           <img 
                             src={`https://flagcdn.com/w80/${office.flag}.png`} 
                             alt={`${office.country} flag`} 
@@ -120,7 +120,7 @@ export function ContactSection() {
                     </div>
 
                     {/* Details */}
-                    <div className="relative flex-1 flex flex-col gap-4 xl:gap-3 text-sm text-muted-foreground w-full xl:border-l xl:border-border/60 xl:pl-5">
+                    <div className="relative flex-1 flex flex-col gap-3 xl:gap-2.5 text-sm text-muted-foreground w-full xl:border-l xl:border-border/60 xl:pl-5">
                       <div className="flex gap-3 items-start group/item">
                         <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-[var(--brand-blue)] text-white group-hover/item:bg-[var(--brand-blue-hover)]' : 'bg-[var(--tangerine)]/10 text-[var(--tangerine)] group-hover/item:bg-[var(--tangerine)] group-hover/item:text-white'}`}>
                           <MapPin className="w-3.5 h-3.5" />
