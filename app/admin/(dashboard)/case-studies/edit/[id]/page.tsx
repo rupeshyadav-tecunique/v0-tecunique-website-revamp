@@ -1,4 +1,4 @@
-import CaseStudyForm from "@/components/admin/case-study-form"
+﻿import CaseStudyForm from "@/components/pages/admin/case-study-form"
 import { Card } from "@/components/ui/card"
 import clientPromise from "@/lib/db"
 import { notFound } from "next/navigation"

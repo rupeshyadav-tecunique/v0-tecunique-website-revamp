@@ -1,7 +1,7 @@
-import clientPromise from "@/lib/db"
+﻿import clientPromise from "@/lib/db"
 import { ObjectId } from "mongodb"
 import { notFound } from "next/navigation"
-import EditJobForm from "@/components/admin/edit-job-form"
+import EditJobForm from "@/components/pages/admin/edit-job-form"
 
 export default async function EditJobPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params

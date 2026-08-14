@@ -1,13 +1,13 @@
-import type { Metadata } from "next"
-import { DedicatedTeamsHero } from "@/components/services/dedicated-teams/hero-section"
-import { DedicatedTeamsIntro } from "@/components/services/dedicated-teams/intro-section"
-import { DedicatedTeamsRoles } from "@/components/services/dedicated-teams/roles-section"
-import { DedicatedTeamsProcess } from "@/components/services/dedicated-teams/process-section"
-import { DedicatedTeamsComparison } from "@/components/services/dedicated-teams/comparison-section"
-import { DedicatedTeamsScenarios } from "@/components/services/dedicated-teams/scenarios-section"
-import { DedicatedTeamsBenefits } from "@/components/services/dedicated-teams/benefits-section"
-import { DedicatedTeamsExperience } from "@/components/services/dedicated-teams/experience-section"
-import { UnifiedCTA } from "@/components/services/unified-cta"
+﻿import type { Metadata } from "next"
+import { DedicatedTeamsHero } from "@/components/pages/services/dedicated-teams/hero-section"
+import { DedicatedTeamsIntro } from "@/components/pages/services/dedicated-teams/intro-section"
+import { DedicatedTeamsRoles } from "@/components/pages/services/dedicated-teams/roles-section"
+import { DedicatedTeamsProcess } from "@/components/pages/services/dedicated-teams/process-section"
+import { DedicatedTeamsComparison } from "@/components/pages/services/dedicated-teams/comparison-section"
+import { DedicatedTeamsScenarios } from "@/components/pages/services/dedicated-teams/scenarios-section"
+import { DedicatedTeamsBenefits } from "@/components/pages/services/dedicated-teams/benefits-section"
+import { DedicatedTeamsExperience } from "@/components/pages/services/dedicated-teams/experience-section"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Dedicated Software Teams in India",

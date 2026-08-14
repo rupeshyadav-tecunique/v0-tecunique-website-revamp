@@ -1,9 +1,9 @@
-import { Card } from "@/components/ui/card"
+﻿import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 import Link from "next/link"
 import clientPromise from "@/lib/db"
-import CaseStudyTable from "@/components/admin/case-study-table"
+import CaseStudyTable from "@/components/pages/admin/case-study-table"
 
 export const dynamic = "force-dynamic"
 

@@ -6,25 +6,7 @@ import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react"
 import { Button } from "../ui/button"
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  {
-    name: "Services",
-    href: "/services",
-    children: [
-      { name: "Dedicated Software Teams", href: "/services/dedicated-teams" },
-      { name: "Product Engineering", href: "/services/product-engineering" },
-      { name: "QA & Automation", href: "/services/qa" },
-      { name: "Atlassian App Engineering", href: "/services/atlassian" },
-    ]
-  },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Blog", href: "/blog" },
-  { name: "Careers", href: "/careers" },
-  // { name: "Contact", href: "/contact" },
-]
+import { navigation } from "@/lib/data/layout.data"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

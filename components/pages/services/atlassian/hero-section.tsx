@@ -1,7 +1,7 @@
-import Link from "next/link"
+﻿import Link from "next/link"
 import { Layers, ArrowRight } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { HeroAtlassianVisual } from "@/components/home/hero-atlassian-visual"
+import { HeroAtlassianVisual } from "@/components/pages/home/hero-atlassian-visual"
 
 export function AtlassianHero() {
   return (

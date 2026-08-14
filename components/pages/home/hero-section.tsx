@@ -3,10 +3,10 @@
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
 import { useEffect, useRef } from "react"
-import { Button } from "../ui/button"
-import { WordRotate } from "../ui/word-rotate"
 import { HeroDashboard } from "./hero-dashboard"
 import { HeroVisual } from "./hero-visual"
+import { Button } from "@/components/ui/button"
+import { WordRotate } from "@/components/ui/word-rotate"
 
 const trustedBy = [
   "Appfire",
@@ -92,7 +92,7 @@ export function HeroSection() {
             {/* Dynamic Expertise */}
             <div className="hero-reveal mt-3 text-lg sm:text-xl font-semibold flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
               <span className="text-muted-foreground">Specializing in</span>
-              
+
               {/* Screen reader text (reads the full sentence naturally with the visible text) */}
               <span className="sr-only">Dedicated Teams, Product Engineering, QA Automation, Cloud Solutions, and Atlassian Apps.</span>
 

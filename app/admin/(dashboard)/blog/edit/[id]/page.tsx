@@ -1,4 +1,4 @@
-import EditBlogForm from "@/components/admin/edit-blog-form"
+﻿import EditBlogForm from "@/components/pages/admin/edit-blog-form"
 import clientPromise from "@/lib/db"
 import { ObjectId } from "mongodb"
 import { notFound } from "next/navigation"

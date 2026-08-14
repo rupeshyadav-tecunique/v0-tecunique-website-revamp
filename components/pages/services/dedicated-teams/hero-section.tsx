@@ -1,7 +1,7 @@
-import Link from "next/link"
+﻿import Link from "next/link"
 import { ChevronRight, Sparkles } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { HeroDashboard } from "@/components/home/hero-dashboard"
+import { HeroDashboard } from "@/components/pages/home/hero-dashboard"
 
 export function DedicatedTeamsHero() {
   return (

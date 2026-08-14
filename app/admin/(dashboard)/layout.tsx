@@ -1,6 +1,6 @@
-import { cookies } from "next/headers"
+﻿import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
-import { AdminSidebar } from "@/components/admin/sidebar"
+import { AdminSidebar } from "@/components/pages/admin/sidebar"
 import { User } from "lucide-react"
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

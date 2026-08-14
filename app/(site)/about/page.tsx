@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
-import { AboutHero } from "@/components/about/hero-section"
-import { AboutStory } from "@/components/about/story-section"
-import { AboutWhatWeDo } from "@/components/about/what-we-do-section"
-import { AboutExperience } from "@/components/about/experience-section"
-import { AboutTimeline } from "@/components/about/timeline-section"
-import { AboutCulture } from "@/components/about/culture-section"
-import { AboutFounder } from "@/components/about/founder-section"
-import { AboutCTA } from "@/components/about/cta-section"
+﻿import type { Metadata } from "next"
+import { AboutHero } from "@/components/pages/about/hero-section"
+import { AboutStory } from "@/components/pages/about/story-section"
+import { AboutWhatWeDo } from "@/components/pages/about/what-we-do-section"
+import { AboutExperience } from "@/components/pages/about/experience-section"
+import { AboutTimeline } from "@/components/pages/about/timeline-section"
+import { AboutCulture } from "@/components/pages/about/culture-section"
+import { AboutFounder } from "@/components/pages/about/founder-section"
+import { AboutCTA } from "@/components/pages/about/cta-section"
 
 export const metadata: Metadata = {
   title: "About Us | TECUNIQUE",

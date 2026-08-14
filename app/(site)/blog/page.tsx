@@ -1,6 +1,6 @@
-import type { Metadata } from "next"
+﻿import type { Metadata } from "next"
 import clientPromise from "@/lib/db"
-import BlogList from "@/components/blog/blog-list"
+import BlogList from "@/components/pages/blog/blog-list"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import { Sparkles } from "lucide-react"
 

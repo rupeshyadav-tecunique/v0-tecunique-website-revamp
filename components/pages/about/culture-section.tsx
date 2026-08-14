@@ -1,5 +1,5 @@
-import { Heart } from "lucide-react"
-import CultureGallery from "@/components/about/culture-gallery"
+﻿import { Heart } from "lucide-react"
+import CultureGallery from "@/components/pages/about/culture-gallery"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
 export function AboutCulture() {

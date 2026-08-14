@@ -1,9 +1,9 @@
-import type { Metadata } from "next"
-import { CareersHero } from "@/components/careers/hero-section"
-import { CareersBenefits } from "@/components/careers/benefits-section"
-import { CareersStats } from "@/components/careers/stats-section"
-import { CareersOpenings } from "@/components/careers/openings-section"
-import { CareersLife } from "@/components/careers/life-section"
+﻿import type { Metadata } from "next"
+import { CareersHero } from "@/components/pages/careers/hero-section"
+import { CareersBenefits } from "@/components/pages/careers/benefits-section"
+import { CareersStats } from "@/components/pages/careers/stats-section"
+import { CareersOpenings } from "@/components/pages/careers/openings-section"
+import { CareersLife } from "@/components/pages/careers/life-section"
 import clientPromise from "@/lib/db"
 
 export const metadata: Metadata = {

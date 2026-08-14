@@ -2,62 +2,10 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Linkedin, Twitter, Mail, Github, Star, MapPin, Phone, ArrowRight } from "lucide-react"
-import { Button } from "../ui/button"
-
-const footerLinks = {
-  company: [
-    { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" },
-  ],
-  services: [
-    { name: "Dedicated Teams", href: "/services/dedicated-teams" },
-    { name: "Product Engineering", href: "/services/product-engineering" },
-    { name: "QA & Automation", href: "/services/qa" },
-    { name: "Atlassian App Engineering", href: "/services/atlassian" },
-  ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms of Service", href: "/terms-of-service" },
-    { name: "Cookie Policy", href: "/cookie-policy" },
-  ],
-}
-
-const socialLinks = [
-  { Icon: Linkedin, href: "https://linkedin.com/company/tecunique", label: "LinkedIn" },
-  // { Icon: Twitter, href: "https://twitter.com/tecunique", label: "Twitter" },
-  // { Icon: Github, href: "https://github.com/tecunique", label: "GitHub" },
-  { Icon: Mail, href: "mailto:sales@tecunique.com", label: "Email" },
-]
-
-const reviewLinks = [
-  {
-    name: "Glassdoor",
-    href: "https://www.glassdoor.co.in/Reviews/TecUnique-Reviews-E2503526.htm",
-    color: "#0CAA41"
-  },
-  {
-    name: "AmbitionBox",
-    href: "https://www.ambitionbox.com/reviews/tecunique-reviews",
-    color: "#334155"
-  },
-  {
-    name: "Clutch",
-    href: "https://clutch.co/profile/tecunique-private#highlights",
-    color: "#334155"
-  },
-  {
-    name: "GoodFirms",
-    href: "https://www.goodfirms.co/company/tecunique-private-limited",
-    color: "#1d66c1"
-  },
-]
-
 import { usePathname } from "next/navigation"
+import { Linkedin, Mail, Star, MapPin, Phone, ArrowRight } from "lucide-react"
+import { Button } from "../ui/button"
+import { footerLinks, reviewLinks, socialLinks } from "@/lib/data/layout.data"
 
 export function Footer() {
   const pathname = usePathname()
@@ -114,18 +62,21 @@ export function Footer() {
             {/* Social and Review icons */}
             <div className="space-y-4">
               <div className="flex gap-3">
-                {socialLinks.map(({ Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 bg-white transition-all hover:border-primary/60 hover:bg-primary/5 hover:text-primary shadow-sm"
-                    aria-label={label}
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                ))}
+                {socialLinks.map(({ href, label }) => {
+                  const Icon = label === "LinkedIn" ? Linkedin : Mail
+                  return (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 bg-white transition-all hover:border-primary/60 hover:bg-primary/5 hover:text-primary shadow-sm"
+                      aria-label={label}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  )
+                })}
               </div>
               <div className="pt-6 border-t border-slate-200">
                 <div className="flex items-center gap-1.5 mb-2.5">

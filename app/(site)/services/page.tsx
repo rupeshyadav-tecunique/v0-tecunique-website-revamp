@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
-import { ServicesHero } from "@/components/services/hero-section"
-import { ServicesCards } from "@/components/services/service-cards"
-import { DecisionGuide } from "@/components/services/decision-guide"
-import { ServicesExecutionModel } from "@/components/services/execution-model-section"
-import { ServicesTrustProof } from "@/components/services/trust-proof"
-import { UnifiedCTA } from "@/components/services/unified-cta"
+﻿import type { Metadata } from "next"
+import { ServicesHero } from "@/components/pages/services/hero-section"
+import { ServicesCards } from "@/components/pages/services/service-cards"
+import { DecisionGuide } from "@/components/pages/services/decision-guide"
+import { ServicesExecutionModel } from "@/components/pages/services/execution-model-section"
+import { ServicesTrustProof } from "@/components/pages/services/trust-proof"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Software Engineering Services & Dedicated Teams | TECUNIQUE",

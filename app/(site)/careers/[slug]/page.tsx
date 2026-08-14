@@ -1,11 +1,11 @@
-import type { Metadata } from "next"
+﻿import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { getJob as getStaticJob, jobs as staticJobs } from "@/lib/jobs-data"
-import { ShareJob } from "@/components/careers/share-job"
-import { ApplicationModal } from "@/components/careers/application-modal"
+import { ShareJob } from "@/components/pages/careers/share-job"
+import { ApplicationModal } from "@/components/pages/careers/application-modal"
 import { 
   ArrowLeft, 
   MapPin, 

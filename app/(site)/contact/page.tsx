@@ -1,5 +1,5 @@
-import type { Metadata } from "next"
-import { ContactSection } from "@/components/contact/contact-section"
+﻿import type { Metadata } from "next"
+import { ContactSection } from "@/components/pages/contact/contact-section"
 
 export const metadata: Metadata = {
   title: "Contact Us | TECUNIQUE",

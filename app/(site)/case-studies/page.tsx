@@ -1,7 +1,7 @@
-import type { Metadata } from "next"
-import { CaseStudiesHero } from "@/components/case-studies/hero-section"
-import { CaseStudiesList } from "@/components/case-studies/case-studies-list"
-import { UnifiedCTA } from "@/components/services/unified-cta"
+﻿import type { Metadata } from "next"
+import { CaseStudiesHero } from "@/components/pages/case-studies/hero-section"
+import { CaseStudiesList } from "@/components/pages/case-studies/case-studies-list"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Case Studies",

@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
-import { AtlassianHero } from "@/components/services/atlassian/hero-section"
-import { AtlassianLifecycle } from "@/components/services/atlassian/lifecycle-section"
-import { AtlassianTargetAudience } from "@/components/services/atlassian/target-audience-section"
-import { AtlassianCapabilities } from "@/components/services/atlassian/capabilities-section"
-import { AtlassianLongTermSupport } from "@/components/services/atlassian/long-term-support-section"
-import { AtlassianProcessAndSupport } from "@/components/services/atlassian/process-and-support-section"
-import { AtlassianExperience } from "@/components/services/atlassian/experience-section"
-import { UnifiedCTA } from "@/components/services/unified-cta"
+﻿import type { Metadata } from "next"
+import { AtlassianHero } from "@/components/pages/services/atlassian/hero-section"
+import { AtlassianLifecycle } from "@/components/pages/services/atlassian/lifecycle-section"
+import { AtlassianTargetAudience } from "@/components/pages/services/atlassian/target-audience-section"
+import { AtlassianCapabilities } from "@/components/pages/services/atlassian/capabilities-section"
+import { AtlassianLongTermSupport } from "@/components/pages/services/atlassian/long-term-support-section"
+import { AtlassianProcessAndSupport } from "@/components/pages/services/atlassian/process-and-support-section"
+import { AtlassianExperience } from "@/components/pages/services/atlassian/experience-section"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Atlassian App Development & QA | Jira App Engineering | TECUNIQUE",

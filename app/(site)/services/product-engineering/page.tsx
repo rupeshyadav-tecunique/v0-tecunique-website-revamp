@@ -1,13 +1,13 @@
-import type { Metadata } from "next"
-import { ProductEngineeringHero } from "@/components/services/product-engineering/hero-section"
-import { WhatWeBuild } from "@/components/services/product-engineering/what-we-build-section"
-import { EngineeringCapabilities } from "@/components/services/product-engineering/engineering-capabilities-section"
-import { EnhancementModernization } from "@/components/services/product-engineering/enhancement-modernization-section"
-import { IntegrationsBackend } from "@/components/services/product-engineering/integrations-backend-section"
-import { ProductEngineeringHowWeWork } from "@/components/services/product-engineering/how-we-work-section"
-import { TechStack } from "@/components/services/product-engineering/tech-stack-section"
-import { ProductEngineeringExperience } from "@/components/services/product-engineering/experience-section"
-import { UnifiedCTA } from "@/components/services/unified-cta"
+﻿import type { Metadata } from "next"
+import { ProductEngineeringHero } from "@/components/pages/services/product-engineering/hero-section"
+import { WhatWeBuild } from "@/components/pages/services/product-engineering/what-we-build-section"
+import { EngineeringCapabilities } from "@/components/pages/services/product-engineering/engineering-capabilities-section"
+import { EnhancementModernization } from "@/components/pages/services/product-engineering/enhancement-modernization-section"
+import { IntegrationsBackend } from "@/components/pages/services/product-engineering/integrations-backend-section"
+import { ProductEngineeringHowWeWork } from "@/components/pages/services/product-engineering/how-we-work-section"
+import { TechStack } from "@/components/pages/services/product-engineering/tech-stack-section"
+import { ProductEngineeringExperience } from "@/components/pages/services/product-engineering/experience-section"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Product Engineering & Custom Software Development",
