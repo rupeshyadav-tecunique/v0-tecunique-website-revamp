@@ -109,12 +109,8 @@ export function DedicatedTeamsSection() {
             <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-[0_2px_20px_rgba(0,0,0,0.02)] h-full flex flex-col">
               <h3 className="font-semibold text-slate-900 mb-4 text-sm uppercase tracking-wider leading-relaxed">Product Development & Support</h3>
               <div className="flex flex-wrap items-center gap-6 mt-auto">
-                <span className="text-slate-600 font-medium whitespace-nowrap">
-                  eXtensi
-                </span>
-                <span className="text-slate-600 font-medium whitespace-nowrap">
-                  Validat
-                </span>
+                <img src="/images/companies/extensi.png" alt="eXtensi" className="h-7 w-auto max-w-[110px] object-contain" />
+                <img src="/images/companies/Validat.png" alt="Validat" className="h-7 w-auto max-w-[110px] object-contain" />
               </div>
             </div>
           </div>

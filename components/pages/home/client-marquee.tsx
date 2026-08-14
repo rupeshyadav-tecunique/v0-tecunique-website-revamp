@@ -11,8 +11,8 @@ const trustedBy = [
   { name: "PolySpot", logo: "/images/companies/polyspot.webp", type: "logo" },
   { name: "Qotilabs", logo: "/images/companies/quotilabs.png", type: "logo" },
   { name: "SkySelect", logo: "/images/companies/skyselect.svg", type: "logo" },
-  { name: "eXtensi", logo: "", type: "text" },
-  { name: "Validat", logo: "", type: "text" },
+  { name: "eXtensi", logo: "/images/companies/extensi.png", type: "logo" },
+  { name: "Validat", logo: "/images/companies/Validat.png", type: "logo" },
 ]
 
 export function ClientMarquee() {

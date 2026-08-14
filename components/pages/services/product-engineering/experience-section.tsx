@@ -48,8 +48,8 @@ export function ProductEngineeringExperience() {
                 <div className="flex flex-col">
                   <h3 className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-6">QA Automation & Support</h3>
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-5">
-                    <span className="text-xl font-bold text-slate-700 tracking-tight">eXtensi</span>
-                    <span className="text-xl font-bold text-slate-700 tracking-tight">Validat</span>
+                    <img src="/images/companies/extensi.png" alt="eXtensi" className="h-7 w-auto max-w-[110px] object-contain" />
+                    <img src="/images/companies/Validat.png" alt="Validat" className="h-7 w-auto max-w-[110px] object-contain" />
                   </div>
                 </div>
 

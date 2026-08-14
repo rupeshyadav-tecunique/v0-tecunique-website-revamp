@@ -8,16 +8,6 @@ import { HeroVisual } from "./hero-visual"
 import { Button } from "@/components/ui/button"
 import { WordRotate } from "@/components/ui/word-rotate"
 
-const trustedBy = [
-  "Appfire",
-  "OPPSCIENCE",
-  "CustomerMatrix",
-  "Qotilabs",
-  "SkySelect",
-  "PolySpot",
-  "eXtensi",
-  "Validat"
-]
 
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null)

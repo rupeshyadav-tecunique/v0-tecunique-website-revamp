@@ -58,12 +58,8 @@ export function ServicesTrustProof() {
             <div className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm h-full flex flex-col transition-all duration-300 hover:shadow-md hover:border-blue-200 hover:-translate-y-1">
               <h3 className="font-bold text-slate-400 mb-8 text-xs uppercase tracking-widest leading-relaxed">Product Development & Support</h3>
               <div className="flex flex-wrap items-center gap-y-6 gap-x-6 mt-auto">
-                <span className="text-xl font-display font-bold text-slate-800 opacity-80 group-hover:opacity-100 transition-opacity">
-                  eXtensi
-                </span>
-                <span className="text-xl font-display font-bold text-slate-800 opacity-80 group-hover:opacity-100 transition-opacity">
-                  Validat
-                </span>
+                <img src="/images/companies/extensi.png" alt="eXtensi" className="h-8 w-auto max-w-[120px] object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
+                <img src="/images/companies/Validat.png" alt="Validat" className="h-8 w-auto max-w-[120px] object-contain opacity-80 group-hover:opacity-100 transition-all group-hover:scale-105" />
               </div>
             </div>
           </SectionReveal>
