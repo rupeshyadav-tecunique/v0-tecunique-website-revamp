@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     ).split(',');
 
     const { data, error } = await resend.emails.send({
-      from: 'Job Application <onboarding@resend.dev>',
+      from: process.env.EMAIL_FROM_ADDRESS || 'Careers <noreply@tecunique.com>',
       to: receivers,
       subject: `New Job Application: ${jobTitle} - ${firstName} ${lastName}`,
       html: `

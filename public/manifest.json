@@ -1,0 +1,24 @@
+{
+  "name": "TECUNIQUE",
+  "short_name": "TECUNIQUE",
+  "description": "Software Engineering & Dedicated Teams in India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logos/tecunique-icon-modern-refresh-favicon-512px.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "productivity"]
+}

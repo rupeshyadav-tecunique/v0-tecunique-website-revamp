@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const receivers = (process.env.CONTACT_RECEIVER_EMAILS || 'rupesh.yadav@tecunique.com').split(',');
 
     const { data, error } = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>',
+      from: process.env.EMAIL_FROM_ADDRESS || 'Contact Form <noreply@tecunique.com>',
       to: receivers,
       subject: `New Inquiry from ${firstName} ${lastName}`,
       html: `
