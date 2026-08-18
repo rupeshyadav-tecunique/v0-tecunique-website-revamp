@@ -73,18 +73,13 @@ const testimonialSlides = [
 
 export function TestimonialsSection() {
   const [current, setCurrent] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
   const sectionRef = useScrollReveal()
 
   const goTo = useCallback((index: number) => {
-    if (isTransitioning || index === current) return
-    setIsTransitioning(true)
-    setTimeout(() => {
-      setCurrent(index)
-      setIsTransitioning(false)
-    }, 300)
-  }, [isTransitioning, current])
+    if (index === current) return
+    setCurrent(index)
+  }, [current])
 
   const next = useCallback(() => goTo((current + 1) % testimonialSlides.length), [current, goTo])
   const prev = useCallback(() => goTo((current - 1 + testimonialSlides.length) % testimonialSlides.length), [current, goTo])
@@ -124,67 +119,96 @@ export function TestimonialsSection() {
         {/* Carousel Container */}
         <div className="relative mx-auto max-w-6xl reveal">
 
-          {/* Slide Content */}
-          <div className={`min-h-[850px] md:min-h-[550px] lg:min-h-[480px] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 transition-opacity duration-300 ease-in-out ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
+          {/* Slide Content — CSS Grid stacked cells for zero layout shift across varying quote lengths */}
+          <div className="grid grid-cols-1 grid-rows-1 relative">
+            {testimonialSlides.map((slide, sIndex) => {
+              const isActive = sIndex === current
+              return (
+                <div
+                  key={slide.id}
+                  className={`col-start-1 row-start-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 transition-all duration-500 ease-in-out ${
+                    isActive
+                      ? "opacity-100 translate-y-0 z-10 pointer-events-auto"
+                      : "opacity-0 translate-y-1 z-0 pointer-events-none select-none invisible"
+                  }`}
+                  aria-hidden={!isActive}
+                >
+                  {/* Left: Featured Testimonial (58%) */}
+                  <div className="lg:col-span-7 flex">
+                    <div className="relative flex flex-col justify-between rounded-3xl border border-[var(--neutral-slate-200)] bg-white p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] w-full transition-transform hover:-translate-y-1 duration-300">
+                      <Quote className="absolute top-8 right-8 h-12 w-12 text-[var(--neutral-slate-100)]" aria-hidden />
 
-            {/* Left: Featured Testimonial (58%) */}
-            <div className="lg:col-span-7 flex">
-              <div className="relative flex flex-col justify-between rounded-3xl border border-[var(--neutral-slate-200)] bg-white p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] w-full transition-transform hover:-translate-y-1 duration-300">
-                <Quote className="absolute top-8 right-8 h-12 w-12 text-[var(--neutral-slate-100)]" aria-hidden />
+                      <div className="mb-8 relative z-10">
+                        <blockquote className="text-xl sm:text-2xl font-medium text-[var(--neutral-slate-800)] leading-snug">
+                          &ldquo;{slide.featured.quote}&rdquo;
+                        </blockquote>
+                      </div>
 
-                <div className="mb-8 relative z-10">
-                  <blockquote className="text-xl sm:text-2xl font-medium text-[var(--neutral-slate-800)] leading-snug">
-                    &ldquo;{slide.featured.quote}&rdquo;
-                  </blockquote>
-                </div>
+                      <div className="mt-auto pt-6 border-t border-[var(--neutral-slate-100)] flex flex-col sm:flex-row sm:items-end justify-between gap-6 relative z-10">
+                        <div className="flex items-center gap-4">
+                          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--neutral-slate-100)] bg-slate-100">
+                            <Image
+                              src={slide.featured.image}
+                              alt={slide.featured.name}
+                              fill
+                              priority
+                              className="object-cover"
+                              sizes="56px"
+                            />
+                          </div>
+                          <div>
+                            <p className="font-bold text-foreground">{slide.featured.name}</p>
+                            <p className="text-sm text-[var(--neutral-slate-500)]">
+                              {slide.featured.role} <span className="font-semibold" style={{ color: slide.featured.color }}>@ {slide.featured.company}</span>
+                            </p>
+                          </div>
+                        </div>
 
-                <div className="mt-auto pt-6 border-t border-[var(--neutral-slate-100)] flex flex-col sm:flex-row sm:items-end justify-between gap-6 relative z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--neutral-slate-100)]">
-                      <Image src={slide.featured.image} alt={slide.featured.name} fill className="object-cover" sizes="56px" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground">{slide.featured.name}</p>
-                      <p className="text-sm text-[var(--neutral-slate-500)]">{slide.featured.role} <span className="font-semibold" style={{ color: slide.featured.color }}>@ {slide.featured.company}</span></p>
+                        <div className="flex flex-wrap gap-2">
+                          {slide.featured.tags.map(tag => (
+                            <span key={tag} className="inline-flex items-center rounded-full bg-[var(--neutral-slate-50)] px-3 py-1 text-xs font-medium text-muted-foreground border border-[var(--neutral-slate-200)]">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {slide.featured.tags.map(tag => (
-                      <span key={tag} className="inline-flex items-center rounded-full bg-[var(--neutral-slate-50)] px-3 py-1 text-xs font-medium text-muted-foreground border border-[var(--neutral-slate-200)]">
-                        {tag}
-                      </span>
+                  {/* Right: Short Testimonials (42%) */}
+                  <div className="lg:col-span-5 flex flex-col gap-4 justify-center">
+                    {slide.shortTestimonials.map((short, idx) => (
+                      <div key={idx} className="flex flex-col justify-between rounded-2xl border border-[var(--neutral-slate-200)] bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <blockquote className="text-sm sm:text-base text-[var(--neutral-slate-700)] italic mb-4">
+                          &ldquo;{short.quote}&rdquo;
+                        </blockquote>
+                        <div className="flex items-center justify-between gap-4 mt-auto">
+                          <div className="flex items-center gap-3">
+                            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[var(--neutral-slate-100)]">
+                              <Image
+                                src={short.image}
+                                alt={short.name}
+                                fill
+                                priority
+                                className="object-cover"
+                                sizes="40px"
+                              />
+                            </div>
+                            <div>
+                              <p className="text-sm font-bold text-foreground">{short.name}</p>
+                              <p className="text-xs text-[var(--neutral-slate-500)]">{short.company}</p>
+                            </div>
+                          </div>
+                          <span className="shrink-0 rounded bg-[var(--neutral-slate-50)] px-2 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[var(--neutral-slate-500)] border border-[var(--neutral-slate-100)]">
+                            {short.category}
+                          </span>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Right: Short Testimonials (42%) */}
-            <div className="lg:col-span-5 flex flex-col gap-4 justify-center">
-              {slide.shortTestimonials.map((short, idx) => (
-                <div key={idx} className="flex flex-col justify-between rounded-2xl border border-[var(--neutral-slate-200)] bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <blockquote className="text-sm sm:text-base text-[var(--neutral-slate-700)] italic mb-4">
-                    &ldquo;{short.quote}&rdquo;
-                  </blockquote>
-                  <div className="flex items-center justify-between gap-4 mt-auto">
-                    <div className="flex items-center gap-3">
-                      <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-[var(--neutral-slate-100)]">
-                        <Image src={short.image} alt={short.name} fill className="object-cover" sizes="40px" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-bold text-foreground">{short.name}</p>
-                        <p className="text-xs text-[var(--neutral-slate-500)]">{short.company}</p>
-                      </div>
-                    </div>
-                    <span className="shrink-0 rounded bg-[var(--neutral-slate-50)] px-2 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[var(--neutral-slate-500)] border border-[var(--neutral-slate-100)]">
-                      {short.category}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
+              )
+            })}
           </div>
 
           {/* Controls */}

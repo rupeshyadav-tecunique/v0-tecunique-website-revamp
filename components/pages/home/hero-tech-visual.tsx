@@ -62,63 +62,63 @@ export function HeroTechVisual() {
 
             {/* Orbiting Tech Pills */}
             <div className="absolute inset-0 pointer-events-none z-20">
-               {/* Top Left */}
-               <div className="absolute top-[10%] left-[15%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+               {/* Top Left - Java */}
+               <div className="absolute top-[8%] left-[16%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" className="w-4 h-4" />
                   <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Java</span>
                </div>
 
-               {/* Mid Left */}
-               <div className="absolute top-[35%] left-[5%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+               {/* Top Right - Confluence */}
+               <div className="absolute top-[8%] right-[24%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
+                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Confluence</span>
+               </div>
+
+               {/* Mid Upper Left - React */}
+               <div className="absolute top-[32%] left-[4%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="w-4 h-4" />
                   <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">React</span>
                </div>
 
-               {/* Bottom Left */}
-               <div className="absolute top-[65%] left-[10%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node" className="w-4 h-4" />
-                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Node.js</span>
-               </div>
-
-               {/* Bottom Mid Left */}
-               <div className="absolute top-[85%] left-[25%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
-                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Playwright</span>
-               </div>
-
-               {/* Bottom Mid Right */}
-               <div className="absolute top-[75%] right-[25%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
-                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Selenium</span>
-               </div>
-
-               {/* Bottom Right */}
-               <div className="absolute top-[90%] right-[40%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="K8s" className="w-4 h-4" />
-                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Kubernetes</span>
-               </div>
-
-               {/* Mid Right 1 */}
-               <div className="absolute top-[60%] right-[10%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" className="w-4 h-4" />
-                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Docker</span>
-               </div>
-
-               {/* Mid Right 2 */}
-               <div className="absolute top-[40%] right-[5%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" className="w-6 h-4 object-contain" />
-               </div>
-
-               {/* Top Right */}
-               <div className="absolute top-[25%] right-[12%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+               {/* Mid Upper Right - Jira */}
+               <div className="absolute top-[24%] right-[8%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
                   <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Jira</span>
                </div>
 
-               {/* Top Mid Right */}
-               <div className="absolute top-[10%] right-[30%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
-                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Confluence</span>
+               {/* Mid Right - AWS */}
+               <div className="absolute top-[40%] right-[3%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" className="w-6 h-4 object-contain" />
+               </div>
+
+               {/* Mid Lower Left - Node.js */}
+               <div className="absolute top-[60%] left-[6%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node" className="w-4 h-4" />
+                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Node.js</span>
+               </div>
+
+               {/* Mid Lower Right - Docker */}
+               <div className="absolute top-[56%] right-[6%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" className="w-4 h-4" />
+                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Docker</span>
+               </div>
+
+               {/* Bottom Right - Selenium */}
+               <div className="absolute top-[72%] right-[10%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
+                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Selenium</span>
+               </div>
+
+               {/* Bottom Left - Playwright */}
+               <div className="absolute top-[84%] left-[14%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" alt="" aria-hidden="true" className="w-4 h-4" />
+                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Playwright</span>
+               </div>
+
+               {/* Bottom Center-Right - Kubernetes (Side-by-side with Playwright) */}
+               <div className="absolute top-[84%] right-[26%] bg-white rounded-full px-3 py-1.5 shadow-md flex items-center gap-1.5 border border-[var(--neutral-slate-50)]">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="K8s" className="w-4 h-4" />
+                  <span className="text-[10px] font-bold text-[var(--neutral-slate-700)]">Kubernetes</span>
                </div>
             </div>
 
