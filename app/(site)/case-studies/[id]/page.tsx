@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Clock,
   Users,
-  TrendingUp,
   Star,
   CheckCircle2,
   Building2,
@@ -17,11 +16,13 @@ import {
   TestTube2,
   Info,
   Sparkles,
+  Workflow,
+  Cloud,
+  ShieldCheck,
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import clientPromise from "@/lib/db"
 import { Button } from "@/components/ui/button"
-import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 interface Props {
   params: Promise<{ id: string }>
@@ -59,7 +60,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: study.seoTitle || (study.id === "innovalog" ? "JMWE Development & QA Case Study" : `${study.company} Case Study`),
+    title:
+      study.seoTitle ||
+      (study.id === "innovalog"
+        ? "JMWE Development & QA Case Study"
+        : study.id === "qotilabs"
+        ? "Rich Filters QA & Automation Case Study"
+        : `${study.company} Case Study`),
     description:
       study.metaDescription ||
       study.heroSubtitle ||
@@ -77,6 +84,33 @@ export default async function CaseStudyPage({ params }: Props) {
   }
 
   const primaryColor = study.color || "#2563eb"
+
+  // Filter upper sections (e.g. The Product, The Challenge, How Relationship Started, Why TECUNIQUE)
+  const upperSections = (study.sections || []).filter((section: any) => {
+    const title = section.title.toLowerCase()
+    return (
+      !title.includes("engagement") &&
+      !title.includes("working relationship") &&
+      !title.includes("automation") &&
+      !title.includes("migration") &&
+      !title.includes("working as part") &&
+      !title.includes("supporting frequent") &&
+      !title.includes("new chapter") &&
+      !title.includes("conclusion")
+    )
+  })
+
+  // Technical & Editorial deeper sections for the lower full-width flow
+  const deeperSections = (study.sections || []).filter((section: any) => {
+    const title = section.title.toLowerCase()
+    return (
+      title.includes("automation") ||
+      title.includes("migration") ||
+      title.includes("working as part") ||
+      title.includes("supporting frequent") ||
+      title.includes("new chapter")
+    )
+  })
 
   return (
     <div className="flex flex-col w-full bg-slate-50 min-h-screen">
@@ -172,46 +206,45 @@ export default async function CaseStudyPage({ params }: Props) {
 
           {/* ─── Upper Section 1: Story Narrative + At a Glance ─── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            {/* Left Column: The Product, The Challenge, Why TECUNIQUE */}
+            {/* Left Column: Narrative Sections */}
             <div className="lg:col-span-8 space-y-10">
-              {study.sections && study.sections.length > 0 && (
-                <div className="space-y-10">
-                  {study.sections
-                    .filter((section: any) => {
-                      const title = section.title.toLowerCase()
-                      return !title.includes("engagement") && !title.includes("working relationship")
-                    })
-                    .map((section: any, index: number) => {
-                      const paragraphs = (section.content || "")
-                        .replace(/\\r\\n/g, "\n")
-                        .replace(/\\n/g, "\n")
-                        .replace(/\\r/g, "\n")
-                        .split(/\n\s*\n/)
-                        .map((p: string) => p.trim())
-                        .filter(Boolean)
+              {upperSections.map((section: any, index: number) => {
+                const paragraphs = (section.content || "")
+                  .replace(/\\r\\n/g, "\n")
+                  .replace(/\\n/g, "\n")
+                  .replace(/\\r/g, "\n")
+                  .split(/\n\s*\n/)
+                  .map((p: string) => p.trim())
+                  .filter(Boolean)
 
-                      return (
-                        <SectionReveal key={index}>
-                          <div className="space-y-3">
-                            <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
-                              {section.title}
-                            </h2>
-                            <div className="text-slate-600 leading-relaxed space-y-3 text-base">
-                              {paragraphs.map((para: string, pIdx: number) => (
-                                <p key={pIdx} className="leading-relaxed whitespace-pre-line">
-                                  {para}
-                                </p>
-                              ))}
-                            </div>
-                          </div>
-                        </SectionReveal>
-                      )
-                    })}
-                </div>
-              )}
+                return (
+                  <SectionReveal key={index}>
+                    <div className="space-y-4">
+                      <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
+                        {section.title}
+                      </h2>
+                      <div className="text-slate-600 leading-relaxed space-y-3.5 text-base">
+                        {paragraphs.map((para: string, pIdx: number) => (
+                          <p key={pIdx} className="leading-relaxed whitespace-pre-line">
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+
+                      {/* Optional enterprise customer note on Product section */}
+                      {index === 0 && study.endClientsNote && (
+                        <div className="mt-4 rounded-xl bg-slate-50 border border-slate-200/80 p-4 text-xs md:text-sm text-slate-600 leading-relaxed">
+                          <span className="font-semibold text-slate-900">Enterprise Adoption: </span>
+                          {study.endClientsNote}
+                        </div>
+                      )}
+                    </div>
+                  </SectionReveal>
+                )
+              })}
             </div>
 
-            {/* Right Column: At a Glance */}
+            {/* Right Column: At a Glance Sidebar */}
             <div className="lg:col-span-4">
               <SectionReveal>
                 <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-6 md:p-7 shadow-sm space-y-5">
@@ -240,6 +273,14 @@ export default async function CaseStudyPage({ params }: Props) {
                             {study.atAGlance.engagement}
                           </p>
                         </div>
+                        {study.atAGlance.relationship && (
+                          <div className="pb-3 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Relationship</p>
+                            <p className="text-sm font-semibold text-slate-900 mt-0.5">
+                              {study.atAGlance.relationship}
+                            </p>
+                          </div>
+                        )}
                         <div className="pb-3 border-b border-slate-200/60">
                           <p className="text-xs text-slate-500 font-medium">Location</p>
                           <p className="text-sm font-semibold text-slate-900 mt-0.5">{study.atAGlance.location}</p>
@@ -301,49 +342,58 @@ export default async function CaseStudyPage({ params }: Props) {
                     The TECUNIQUE Engagement
                   </h2>
 
-                  {/* 4 Capability Cards */}
+                  {/* Capability Blocks */}
                   {study.engagementBlocks && study.engagementBlocks.length > 0 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {study.engagementBlocks.map((block: any, bIdx: number) => (
-                        <div
-                          key={bIdx}
-                          className="rounded-2xl p-5 border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 transition-all shadow-sm flex flex-col justify-between"
-                        >
-                          <div>
-                            <div className="flex items-center justify-between mb-2.5">
-                              <span
-                                className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
-                                style={{ background: `${primaryColor}12`, color: primaryColor }}
-                              >
-                                {block.scope}
-                              </span>
+                      {study.engagementBlocks.map((block: any, bIdx: number) => {
+                        const isLastOdd =
+                          study.engagementBlocks.length % 2 !== 0 &&
+                          bIdx === study.engagementBlocks.length - 1
+                        return (
+                          <div
+                            key={bIdx}
+                            className={`rounded-2xl p-5 border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 transition-all shadow-sm flex flex-col justify-between ${
+                              isLastOdd ? "sm:col-span-2" : ""
+                            }`}
+                          >
+                            <div>
+                              <div className="flex items-center justify-between mb-2.5">
+                                <span
+                                  className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
+                                  style={{ background: `${primaryColor}12`, color: primaryColor }}
+                                >
+                                  {block.scope}
+                                </span>
+                              </div>
+                              <h3 className="font-bold text-slate-900 text-base mb-2">
+                                {block.title}
+                              </h3>
+                              <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                                {block.description}
+                              </p>
                             </div>
-                            <h3 className="font-bold text-slate-900 text-base mb-2">
-                              {block.title}
-                            </h3>
-                            <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
-                              {block.description}
-                            </p>
                           </div>
-                        </div>
-                      ))}
+                        )
+                      })}
                     </div>
                   )}
 
-                  {/* Scope Clarification Badge */}
-                  <div className="bg-blue-50/60 border border-blue-200/60 rounded-xl p-4 text-xs md:text-sm text-slate-700 flex items-center justify-between flex-wrap gap-2">
-                    <span className="font-semibold text-blue-900">Scope at a glance:</span>
-                    <div className="flex items-center gap-4 flex-wrap text-xs">
-                      <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
-                        JMWE Cloud: <strong>Development + QA</strong>
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
-                        JMWE Data Center: <strong>QA</strong>
-                      </span>
+                  {/* Scope Clarification Badge for JMWE if available */}
+                  {study.id === "innovalog" && (
+                    <div className="bg-blue-50/60 border border-blue-200/60 rounded-xl p-4 text-xs md:text-sm text-slate-700 flex items-center justify-between flex-wrap gap-2">
+                      <span className="font-semibold text-blue-900">Scope at a glance:</span>
+                      <div className="flex items-center gap-4 flex-wrap text-xs">
+                        <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+                          JMWE Cloud: <strong>Development + QA</strong>
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+                          JMWE Data Center: <strong>QA</strong>
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </SectionReveal>
             </div>
@@ -399,7 +449,7 @@ export default async function CaseStudyPage({ params }: Props) {
                     Technology & QA Stack
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                    Technologies and Atlassian platforms used across the JMWE Cloud development and JMWE Cloud/Data Center QA engagement.
+                    Product technologies, Atlassian platforms, and QA tools used across the {study.company} engagement.
                   </p>
                 </div>
 
@@ -418,7 +468,12 @@ export default async function CaseStudyPage({ params }: Props) {
                           >
                             <Icon className="h-4 w-4" />
                           </div>
-                          <h3 className="font-bold text-slate-900 text-sm sm:text-base">{group.category}</h3>
+                          <div>
+                            <h3 className="font-bold text-slate-900 text-sm sm:text-base">{group.category}</h3>
+                            {group.subtitle && (
+                              <p className="text-[11px] text-slate-400 font-medium">{group.subtitle}</p>
+                            )}
+                          </div>
                         </div>
                         <ul className="space-y-2 mt-auto">
                           {group.items.map((item: string, iIdx: number) => (
@@ -439,7 +494,127 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* 2. Client Perspective (Full-Width Sleek Dark Card) */}
+          {/* 2. Technical Feature: Automation Workflow Visual (for Qotilabs / Rich Filters) */}
+          {study.automationWorkflow && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                    <Workflow className="h-6 w-6 text-blue-600 shrink-0" />
+                    Building Repeatable Automation
+                  </h2>
+                  <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+                    Rich Filters supported complex dashboard configurations and widgets. Qotilabs utilized an in-house Java automation framework with controlled test datasets to generate widgets, capture output snapshots, and compare them against stored goldens for rapid diff identification.
+                  </p>
+                </div>
+
+                {/* Technical Workflow Pipeline */}
+                <div className="rounded-2xl border border-slate-200/90 bg-slate-50/70 p-6 md:p-8">
+                  <div className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 font-display">
+                    Automation Snapshot Comparison Workflow
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 relative">
+                    {study.automationWorkflow.map((stepItem: any, sIdx: number) => (
+                      <div
+                        key={sIdx}
+                        className="rounded-xl border border-slate-200 bg-white p-4 shadow-2xs flex flex-col justify-between relative group hover:border-blue-300 transition-colors"
+                      >
+                        <div>
+                          <span className="text-xs font-bold text-blue-600 font-mono mb-1.5 block">
+                            {stepItem.step}
+                          </span>
+                          <h4 className="text-xs font-bold text-slate-900 mb-1 leading-snug">
+                            {stepItem.title}
+                          </h4>
+                        </div>
+                        <p className="text-[11px] text-slate-500 leading-tight mt-2">
+                          {stepItem.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* 3. Technical Feature: Cloud Migration QA Approach (for Qotilabs) */}
+          {study.migrationSteps && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                    <Cloud className="h-6 w-6 text-blue-600 shrink-0" />
+                    Validating the Data Center to Cloud Migration
+                  </h2>
+                  <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+                    As Qotilabs migrated product capabilities from Jira Data Center to Cloud, TECUNIQUE QA engineers performed detailed validation comparing functionality, usability, and response behavior to safeguard feature stability across successive Cloud releases.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {study.migrationSteps.map((mStep: any, mIdx: number) => (
+                    <div
+                      key={mIdx}
+                      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs space-y-2 flex flex-col justify-between"
+                    >
+                      <div>
+                        <span className="inline-block px-2 py-0.5 rounded-md text-[11px] font-bold font-mono bg-blue-50 text-blue-600 mb-2">
+                          {mStep.step}
+                        </span>
+                        <h4 className="text-sm font-bold text-slate-900 leading-snug">
+                          {mStep.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-slate-500 leading-relaxed mt-auto pt-2">
+                        {mStep.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* 4. Deeper Narrative Sections (e.g. Working as Part of Team, Appfire Milestone) */}
+          {deeperSections.length > 0 && (
+            <div className="space-y-8 pt-6 border-t border-slate-100">
+              {deeperSections
+                .filter(
+                  (s: any) =>
+                    !s.title.toLowerCase().includes("automation") &&
+                    !s.title.toLowerCase().includes("migration")
+                )
+                .map((section: any, index: number) => {
+                  const paragraphs = (section.content || "")
+                    .replace(/\\r\\n/g, "\n")
+                    .replace(/\\n/g, "\n")
+                    .replace(/\\r/g, "\n")
+                    .split(/\n\s*\n/)
+                    .map((p: string) => p.trim())
+                    .filter(Boolean)
+
+                  return (
+                    <SectionReveal key={index}>
+                      <div className="space-y-3">
+                        <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900">
+                          {section.title}
+                        </h3>
+                        <div className="text-slate-600 leading-relaxed space-y-3 text-base">
+                          {paragraphs.map((para: string, pIdx: number) => (
+                            <p key={pIdx} className="leading-relaxed whitespace-pre-line">
+                              {para}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </SectionReveal>
+                  )
+                })}
+            </div>
+          )}
+
+          {/* 5. Client Perspective (Full-Width Sleek Dark Card) */}
           {study.testimonial && (
             <SectionReveal>
               <div className="w-full rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-800 bg-[#0b1329] text-white relative overflow-hidden shadow-xl">
@@ -474,9 +649,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
                   {/* Author */}
                   <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
-                    <div
-                      className="flex h-10 w-10 items-center justify-center rounded-full text-white text-xs font-bold shrink-0 shadow-md bg-blue-600"
-                    >
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full text-white text-xs font-bold shrink-0 shadow-md bg-blue-600">
                       {study.testimonial.author
                         .split(" ")
                         .map((n: string) => n[0])
@@ -498,7 +671,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* 3. Related Capabilities Links (Full-Width) */}
+          {/* 6. Related Capabilities Links (Full-Width) */}
           <SectionReveal>
             <div className="pt-6 border-t border-slate-200">
               <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 font-display flex items-center gap-2">
@@ -506,11 +679,13 @@ export default async function CaseStudyPage({ params }: Props) {
                 Related Capabilities
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  { title: "Dedicated Software Teams", href: "/services/dedicated-teams" },
-                  { title: "Atlassian App Development & QA", href: "/services/atlassian" },
-                  { title: "Software QA & Automation Testing", href: "/services/qa" },
-                ].map((srv, sIdx) => (
+                {(
+                  study.relatedServices || [
+                    { title: "Software QA & Automation Testing", href: "/services/qa" },
+                    { title: "Dedicated Software Teams", href: "/services/dedicated-teams" },
+                    { title: "Atlassian App Development & QA", href: "/services/atlassian" },
+                  ]
+                ).map((srv: any, sIdx: number) => (
                   <Link
                     key={sIdx}
                     href={srv.href}
@@ -527,7 +702,7 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Slim & Short Pre-Footer CTA Section */}
+      {/* 7. Slim & Short Pre-Footer CTA Section */}
       <section className="bg-slate-50 border-t border-slate-200/80 py-10 md:py-12">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <SectionReveal>
@@ -535,13 +710,14 @@ export default async function CaseStudyPage({ params }: Props) {
               <div className="space-y-1.5 text-center md:text-left">
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600">
                   <Sparkles className="h-3.5 w-3.5" />
-                  Atlassian App Engineering
+                  {study.cta?.eyebrow || "Atlassian App Engineering"}
                 </span>
                 <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 tracking-tight">
-                  Need a Long-Term Team for Your Atlassian App?
+                  {study.cta?.title || "Need a Long-Term Team for Your Atlassian App?"}
                 </h3>
                 <p className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed">
-                  Discuss your Jira app development, QA, automation, or long-term engineering requirements with TECUNIQUE.
+                  {study.cta?.description ||
+                    "Discuss your Jira app development, QA, automation, or long-term engineering requirements with TECUNIQUE."}
                 </p>
               </div>
 
@@ -551,11 +727,23 @@ export default async function CaseStudyPage({ params }: Props) {
                   className="rounded-xl px-5 h-11 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow-xs transition-all group w-full sm:w-auto"
                   asChild
                 >
-                  <Link href="/contact">
-                    Discuss Your Atlassian App Needs
+                  <Link href={study.cta?.buttonHref || "/contact"}>
+                    {study.cta?.buttonText || "Discuss Your Atlassian App Needs"}
                     <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
+                {study.cta?.secondaryText && (
+                  <Button
+                    size="default"
+                    variant="outline"
+                    className="rounded-xl px-5 h-11 border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm shadow-xs transition-all w-full sm:w-auto"
+                    asChild
+                  >
+                    <Link href={study.cta?.secondaryHref || "/services"}>
+                      {study.cta.secondaryText}
+                    </Link>
+                  </Button>
+                )}
               </div>
             </div>
           </SectionReveal>
