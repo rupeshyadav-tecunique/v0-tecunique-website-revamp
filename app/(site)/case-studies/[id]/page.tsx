@@ -12,17 +12,16 @@ import {
   CheckCircle2,
   Building2,
   Globe2,
-  Award,
   Layers,
   Code2,
   TestTube2,
   Info,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import clientPromise from "@/lib/db"
 import { Button } from "@/components/ui/button"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 interface Props {
   params: Promise<{ id: string }>
@@ -60,8 +59,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${study.heroTitle || study.company + " Case Study"} | TECUNIQUE`,
-    description: study.heroSubtitle || study.tagline || study.description,
+    title: study.seoTitle || (study.id === "innovalog" ? "JMWE Development & QA Case Study" : `${study.company} Case Study`),
+    description:
+      study.metaDescription ||
+      study.heroSubtitle ||
+      study.tagline ||
+      study.description,
   }
 }
 
@@ -163,13 +166,15 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Content Section */}
+      {/* Main Content Section */}
       <section className="py-12 lg:py-16 bg-white">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
-            {/* Main Content Area */}
-            <div className="lg:col-span-8 space-y-12">
-              {/* Story Sections */}
+        <div className="mx-auto max-w-5xl px-6 lg:px-8 space-y-16">
+
+          {/* ─── Upper Section: 2-Column Story + Sidebar ─── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+            {/* Left Column: Narrative & Engagement */}
+            <div className="lg:col-span-8 space-y-10">
               {study.sections && study.sections.length > 0 && (
                 <div className="space-y-10">
                   {study.sections.map((section: any, index: number) => {
@@ -276,130 +281,9 @@ export default async function CaseStudyPage({ params }: Props) {
                   })}
                 </div>
               )}
-
-              {/* Technology & QA Stack (3 Compact Cards) */}
-              {study.techStack && study.techStack.length > 0 && (
-                <SectionReveal>
-                  <div className="space-y-4 pt-2">
-                    <div>
-                      <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-1">
-                        Technology & QA Stack
-                      </h2>
-                      <p className="text-sm text-slate-500">
-                        Technologies and Atlassian platforms used across the JMWE Cloud development and JMWE Cloud/Data Center QA engagement.
-                      </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                      {study.techStack.map((group: any, gIdx: number) => {
-                        const Icon = gIdx === 0 ? Code2 : gIdx === 1 ? Layers : TestTube2
-                        return (
-                          <div
-                            key={gIdx}
-                            className="rounded-2xl p-5 border border-slate-200 bg-white shadow-sm flex flex-col"
-                          >
-                            <div className="flex items-center gap-2 mb-4">
-                              <div
-                                className="h-8 w-8 rounded-lg flex items-center justify-center text-blue-600"
-                                style={{ background: `${primaryColor}12` }}
-                              >
-                                <Icon className="h-4 w-4" />
-                              </div>
-                              <h3 className="font-bold text-slate-900 text-sm">{group.category}</h3>
-                            </div>
-                            <ul className="space-y-2 mt-auto">
-                              {group.items.map((item: string, iIdx: number) => (
-                                <li
-                                  key={iIdx}
-                                  className="text-xs text-slate-600 flex items-center gap-2 font-medium"
-                                >
-                                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  </div>
-                </SectionReveal>
-              )}
-
-              {/* Testimonial Block — Client Perspective */}
-              {study.testimonial && (
-                <SectionReveal>
-                  <div
-                    className="rounded-3xl p-8 md:p-10 border shadow-sm relative overflow-hidden bg-slate-900 text-white"
-                    style={{ borderColor: `${primaryColor}40` }}
-                  >
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex gap-1.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
-                        ))}
-                      </div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                        Client Perspective
-                      </span>
-                    </div>
-
-                    <blockquote className="text-lg md:text-xl text-slate-100 leading-relaxed italic mb-8 font-normal">
-                      &ldquo;{study.testimonial.quote}&rdquo;
-                    </blockquote>
-
-                    <div className="flex items-center gap-4 pt-6 border-t border-slate-800">
-                      <div
-                        className="flex h-12 w-12 items-center justify-center rounded-full text-white text-base font-bold shrink-0 shadow-md"
-                        style={{ background: `linear-gradient(135deg, ${primaryColor}, #4f46e5)` }}
-                      >
-                        {study.testimonial.author
-                          .split(" ")
-                          .map((n: string) => n[0])
-                          .join("")}
-                      </div>
-                      <div>
-                        <p className="text-base font-bold text-white">
-                          {study.testimonial.author}
-                        </p>
-                        {study.testimonial.role && (
-                          <p className="text-xs text-slate-400 font-medium mt-0.5">
-                            {study.testimonial.role}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </SectionReveal>
-              )}
-
-              {/* Related Capabilities Links */}
-              <SectionReveal>
-                <div className="pt-6 border-t border-slate-200">
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4 font-display">
-                    Related Capabilities
-                  </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    {[
-                      { title: "Dedicated Software Teams", href: "/services/dedicated-teams" },
-                      { title: "Atlassian App Development & QA", href: "/services/atlassian" },
-                      { title: "Software QA & Automation Testing", href: "/services/qa" },
-                    ].map((srv, sIdx) => (
-                      <Link
-                        key={sIdx}
-                        href={srv.href}
-                        className="group p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-white hover:border-blue-300 transition-all flex items-center justify-between text-xs font-semibold text-slate-800 shadow-sm"
-                      >
-                        <span>{srv.title}</span>
-                        <ArrowRight className="h-3.5 w-3.5 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-0.5" />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </SectionReveal>
             </div>
 
-            {/* Sidebar */}
+            {/* Right Sidebar: At a Glance + Partnership Milestones */}
             <div className="lg:col-span-4 space-y-8">
               {/* At a Glance */}
               <SectionReveal>
@@ -478,67 +362,6 @@ export default async function CaseStudyPage({ params }: Props) {
                 </div>
               </SectionReveal>
 
-              {/* Split Tags: Product & Ecosystem vs TECUNIQUE Services */}
-              <SectionReveal>
-                <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 shadow-sm space-y-6">
-                  {study.ecosystemTags ? (
-                    <div>
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 font-display">
-                        Product & Ecosystem
-                      </h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        {study.ecosystemTags.map((tag: string) => (
-                          <span
-                            key={tag}
-                            className="rounded-lg px-2.5 py-1 text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200/60"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
-
-                  {study.serviceTags ? (
-                    <div className={study.ecosystemTags ? "pt-4 border-t border-slate-100" : ""}>
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 font-display">
-                        TECUNIQUE Services
-                      </h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        {study.serviceTags.map((tag: string) => (
-                          <span
-                            key={tag}
-                            className="rounded-lg px-2.5 py-1 text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200/50"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <div>
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 font-display">
-                        Technologies & Services
-                      </h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        {study.tags?.map((tag: string) => (
-                          <span
-                            key={tag}
-                            className="rounded-full px-3 py-1 text-xs font-semibold border bg-white"
-                            style={{
-                              color: primaryColor,
-                              borderColor: `${primaryColor}30`,
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </SectionReveal>
-
               {/* Partnership Milestones */}
               <SectionReveal>
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 shadow-sm space-y-4">
@@ -576,8 +399,155 @@ export default async function CaseStudyPage({ params }: Props) {
               </SectionReveal>
             </div>
           </div>
+
+          {/* ─── Lower Section: Full-Width Layout ─── */}
+
+          {/* 1. Technology & QA Stack (Full-Width 3-Column Grid) */}
+          {study.techStack && study.techStack.length > 0 && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div className="text-center max-w-2xl mx-auto">
+                  <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-2">
+                    Technology & QA Stack
+                  </h2>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Technologies and Atlassian platforms used across the JMWE Cloud development and JMWE Cloud/Data Center QA engagement.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {study.techStack.map((group: any, gIdx: number) => {
+                    const Icon = gIdx === 0 ? Code2 : gIdx === 1 ? Layers : TestTube2
+                    return (
+                      <div
+                        key={gIdx}
+                        className="rounded-2xl p-6 border border-slate-200/90 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                      >
+                        <div className="flex items-center gap-3 mb-5">
+                          <div
+                            className="h-9 w-9 rounded-xl flex items-center justify-center text-blue-600 shrink-0"
+                            style={{ background: `${primaryColor}12` }}
+                          >
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <h3 className="font-bold text-slate-900 text-base">{group.category}</h3>
+                        </div>
+                        <ul className="space-y-2.5 mt-auto">
+                          {group.items.map((item: string, iIdx: number) => (
+                            <li
+                              key={iIdx}
+                              className="text-sm text-slate-600 flex items-center gap-2.5 font-medium"
+                            >
+                              <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* 2. Client Perspective (Modern Premium Card) */}
+          {study.testimonial && (
+            <SectionReveal>
+              <div className="pt-2">
+                <div
+                  className="max-w-3xl mx-auto rounded-3xl p-8 md:p-12 border border-slate-200/90 shadow-[0_10px_35px_rgba(37,99,235,0.06)] relative overflow-hidden bg-gradient-to-br from-slate-50/80 via-white to-blue-50/40 text-slate-900"
+                >
+                  {/* Decorative subtle ambient quote icon in background */}
+                  <div className="absolute top-6 right-8 text-blue-100/60 pointer-events-none select-none">
+                    <svg className="w-20 h-20 fill-current opacity-60" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                  </div>
+
+                  <div className="flex flex-col items-center text-center mb-6 relative z-10">
+                    <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200/60 px-3 py-1 rounded-full mb-3 shadow-xs">
+                      Client Perspective
+                    </span>
+                    <div className="flex gap-1.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400 drop-shadow-xs" />
+                      ))}
+                    </div>
+                  </div>
+
+                  <blockquote className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-800 leading-relaxed italic text-center mb-8 font-normal relative z-10">
+                    &ldquo;{study.testimonial.quote}&rdquo;
+                  </blockquote>
+
+                  <div className="flex items-center justify-center gap-4 pt-6 border-t border-slate-200/80 relative z-10">
+                    <div
+                      className="flex h-12 w-12 items-center justify-center rounded-full text-white text-base font-bold shrink-0 shadow-md"
+                      style={{ background: `linear-gradient(135deg, ${primaryColor}, #4f46e5)` }}
+                    >
+                      {study.testimonial.author
+                        .split(" ")
+                        .map((n: string) => n[0])
+                        .join("")}
+                    </div>
+                    <div className="text-left">
+                      <p className="text-base font-bold text-slate-900 leading-tight">
+                        {study.testimonial.author}
+                      </p>
+                      {study.testimonial.role && (
+                        <p className="text-xs text-slate-500 font-medium mt-0.5">
+                          {study.testimonial.role}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* 3. Related Capabilities Links (Full-Width) */}
+          <SectionReveal>
+            <div className="pt-8 border-t border-slate-200">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 font-display text-center">
+                Related Capabilities
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { title: "Dedicated Software Teams", href: "/services/dedicated-teams" },
+                  { title: "Atlassian App Development & QA", href: "/services/atlassian" },
+                  { title: "Software QA & Automation Testing", href: "/services/qa" },
+                ].map((srv, sIdx) => (
+                  <Link
+                    key={sIdx}
+                    href={srv.href}
+                    className="group p-4 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-blue-300 transition-all flex items-center justify-between text-sm font-semibold text-slate-800 shadow-sm"
+                  >
+                    <span>{srv.title}</span>
+                    <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </SectionReveal>
+
         </div>
       </section>
+
+      {/* Full-Bleed Unified Pre-Footer CTA */}
+      <UnifiedCTA
+        eyebrow="NEED A DEDICATED TEAM FOR YOUR ATLASSIAN APP?"
+        title={
+          <>
+            Need a Long-Term Team for <span className="text-[var(--brand-blue)]">Your Atlassian App?</span>
+          </>
+        }
+        description="Discuss your Jira app development, QA, automation, or long-term engineering requirements with TECUNIQUE."
+        primaryButtonText="Discuss Your Atlassian App Needs"
+        primaryButtonLink="/contact"
+        secondaryButtonText="Explore Atlassian Services"
+        secondaryButtonLink="/services/atlassian"
+      />
     </div>
   )
 }
