@@ -170,122 +170,49 @@ export default async function CaseStudyPage({ params }: Props) {
       <section className="py-12 lg:py-16 bg-white">
         <div className="mx-auto max-w-5xl px-6 lg:px-8 space-y-16">
 
-          {/* ─── Upper Section: 2-Column Story + Sidebar ─── */}
+          {/* ─── Upper Section 1: Story Narrative + At a Glance ─── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-
-            {/* Left Column: Narrative & Engagement */}
+            {/* Left Column: The Product, The Challenge, Why TECUNIQUE */}
             <div className="lg:col-span-8 space-y-10">
               {study.sections && study.sections.length > 0 && (
                 <div className="space-y-10">
-                  {study.sections.map((section: any, index: number) => {
-                    const isWorkingRelationship = section.title.toLowerCase().includes("working relationship")
-                    const isEngagementSection = section.title.toLowerCase().includes("engagement")
+                  {study.sections
+                    .filter((section: any) => {
+                      const title = section.title.toLowerCase()
+                      return !title.includes("engagement") && !title.includes("working relationship")
+                    })
+                    .map((section: any, index: number) => {
+                      const paragraphs = (section.content || "")
+                        .replace(/\\r\\n/g, "\n")
+                        .replace(/\\n/g, "\n")
+                        .replace(/\\r/g, "\n")
+                        .split(/\n\s*\n/)
+                        .map((p: string) => p.trim())
+                        .filter(Boolean)
 
-                    // Special custom presentation for "The TECUNIQUE Engagement" if engagementBlocks are available
-                    if (isEngagementSection && study.engagementBlocks && study.engagementBlocks.length > 0) {
                       return (
                         <SectionReveal key={index}>
-                          <div className="space-y-6">
+                          <div className="space-y-3">
                             <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
                               {section.title}
                             </h2>
-
-                            {/* 4 Capability Cards */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                              {study.engagementBlocks.map((block: any, bIdx: number) => (
-                                <div
-                                  key={bIdx}
-                                  className="rounded-2xl p-5 border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 transition-all shadow-sm flex flex-col justify-between"
-                                >
-                                  <div>
-                                    <div className="flex items-center justify-between mb-2.5">
-                                      <span
-                                        className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
-                                        style={{ background: `${primaryColor}12`, color: primaryColor }}
-                                      >
-                                        {block.scope}
-                                      </span>
-                                    </div>
-                                    <h3 className="font-bold text-slate-900 text-base mb-2">
-                                      {block.title}
-                                    </h3>
-                                    <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
-                                      {block.description}
-                                    </p>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-
-                            {/* Scope Clarification Badge */}
-                            <div className="bg-blue-50/60 border border-blue-200/60 rounded-xl p-4 text-xs md:text-sm text-slate-700 flex items-center justify-between flex-wrap gap-2">
-                              <span className="font-semibold text-blue-900">Scope at a glance:</span>
-                              <div className="flex items-center gap-4 flex-wrap text-xs">
-                                <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
-                                  <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
-                                  JMWE Cloud: <strong>Development + QA</strong>
-                                </span>
-                                <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
-                                  <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
-                                  JMWE Data Center: <strong>QA</strong>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </SectionReveal>
-                      )
-                    }
-
-                    // Special editorial callout styling for "Building the Working Relationship"
-                    if (isWorkingRelationship) {
-                      return (
-                        <SectionReveal key={index}>
-                          <div className="rounded-2xl p-6 md:p-8 bg-gradient-to-br from-slate-50 to-blue-50/40 border border-slate-200 shadow-sm space-y-4">
-                            <h2 className="text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5">
-                              <Sparkles className="h-5 w-5 text-blue-600" />
-                              {section.title}
-                            </h2>
-                            <div className="text-slate-700 leading-relaxed space-y-3 text-base">
-                              {section.content
-                                ?.split("\n\n")
-                                .map((para: string, pIdx: number) => (
-                                  <p key={pIdx} className="leading-relaxed">
-                                    {para}
-                                  </p>
-                                ))}
-                            </div>
-                          </div>
-                        </SectionReveal>
-                      )
-                    }
-
-                    // Standard editorial section
-                    return (
-                      <SectionReveal key={index}>
-                        <div className="space-y-3">
-                          <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
-                            {section.title}
-                          </h2>
-                          <div className="text-slate-600 leading-relaxed space-y-3 text-base">
-                            {section.content
-                              ?.split("\n\n")
-                              .map((para: string, pIdx: number) => (
-                                <p key={pIdx} className="leading-relaxed">
+                            <div className="text-slate-600 leading-relaxed space-y-3 text-base">
+                              {paragraphs.map((para: string, pIdx: number) => (
+                                <p key={pIdx} className="leading-relaxed whitespace-pre-line">
                                   {para}
                                 </p>
                               ))}
+                            </div>
                           </div>
-                        </div>
-                      </SectionReveal>
-                    )
-                  })}
+                        </SectionReveal>
+                      )
+                    })}
                 </div>
               )}
             </div>
 
-            {/* Right Sidebar: At a Glance + Partnership Milestones */}
-            <div className="lg:col-span-4 space-y-8">
-              {/* At a Glance */}
+            {/* Right Column: At a Glance */}
+            <div className="lg:col-span-4">
               <SectionReveal>
                 <div className="rounded-3xl border border-slate-200 bg-slate-50/80 p-6 md:p-7 shadow-sm space-y-5">
                   <h3 className="text-base font-bold text-slate-900 font-display uppercase tracking-wider text-slate-400 text-xs">
@@ -361,8 +288,68 @@ export default async function CaseStudyPage({ params }: Props) {
                   </div>
                 </div>
               </SectionReveal>
+            </div>
+          </div>
 
-              {/* Partnership Milestones */}
+          {/* ─── Upper Section 2: The TECUNIQUE Engagement + Partnership Milestones (Exact Same Line) ─── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            {/* Left Column: The TECUNIQUE Engagement */}
+            <div className="lg:col-span-8 space-y-6">
+              <SectionReveal>
+                <div className="space-y-6">
+                  <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
+                    The TECUNIQUE Engagement
+                  </h2>
+
+                  {/* 4 Capability Cards */}
+                  {study.engagementBlocks && study.engagementBlocks.length > 0 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {study.engagementBlocks.map((block: any, bIdx: number) => (
+                        <div
+                          key={bIdx}
+                          className="rounded-2xl p-5 border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 transition-all shadow-sm flex flex-col justify-between"
+                        >
+                          <div>
+                            <div className="flex items-center justify-between mb-2.5">
+                              <span
+                                className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
+                                style={{ background: `${primaryColor}12`, color: primaryColor }}
+                              >
+                                {block.scope}
+                              </span>
+                            </div>
+                            <h3 className="font-bold text-slate-900 text-base mb-2">
+                              {block.title}
+                            </h3>
+                            <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                              {block.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Scope Clarification Badge */}
+                  <div className="bg-blue-50/60 border border-blue-200/60 rounded-xl p-4 text-xs md:text-sm text-slate-700 flex items-center justify-between flex-wrap gap-2">
+                    <span className="font-semibold text-blue-900">Scope at a glance:</span>
+                    <div className="flex items-center gap-4 flex-wrap text-xs">
+                      <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+                        JMWE Cloud: <strong>Development + QA</strong>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 font-medium text-slate-800">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+                        JMWE Data Center: <strong>QA</strong>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </SectionReveal>
+            </div>
+
+            {/* Right Column: Partnership Milestones */}
+            <div className="lg:col-span-4">
               <SectionReveal>
                 <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 shadow-sm space-y-4">
                   <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-display">
@@ -406,37 +393,38 @@ export default async function CaseStudyPage({ params }: Props) {
           {study.techStack && study.techStack.length > 0 && (
             <SectionReveal>
               <div className="space-y-6 pt-6 border-t border-slate-100">
-                <div className="text-center max-w-2xl mx-auto">
-                  <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900 mb-2">
+                <div>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
+                    <Users className="h-6 w-6 text-blue-600 shrink-0" />
                     Technology & QA Stack
                   </h2>
-                  <p className="text-sm text-slate-500 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                     Technologies and Atlassian platforms used across the JMWE Cloud development and JMWE Cloud/Data Center QA engagement.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                   {study.techStack.map((group: any, gIdx: number) => {
                     const Icon = gIdx === 0 ? Code2 : gIdx === 1 ? Layers : TestTube2
                     return (
                       <div
                         key={gIdx}
-                        className="rounded-2xl p-6 border border-slate-200/90 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                        className="rounded-2xl p-5 sm:p-6 border border-slate-200/90 bg-white shadow-xs hover:shadow-md transition-shadow flex flex-col"
                       >
-                        <div className="flex items-center gap-3 mb-5">
+                        <div className="flex items-center gap-2.5 mb-4">
                           <div
-                            className="h-9 w-9 rounded-xl flex items-center justify-center text-blue-600 shrink-0"
+                            className="h-8 w-8 rounded-lg flex items-center justify-center text-blue-600 shrink-0"
                             style={{ background: `${primaryColor}12` }}
                           >
-                            <Icon className="h-5 w-5" />
+                            <Icon className="h-4 w-4" />
                           </div>
-                          <h3 className="font-bold text-slate-900 text-base">{group.category}</h3>
+                          <h3 className="font-bold text-slate-900 text-sm sm:text-base">{group.category}</h3>
                         </div>
-                        <ul className="space-y-2.5 mt-auto">
+                        <ul className="space-y-2 mt-auto">
                           {group.items.map((item: string, iIdx: number) => (
                             <li
                               key={iIdx}
-                              className="text-sm text-slate-600 flex items-center gap-2.5 font-medium"
+                              className="text-xs sm:text-sm text-slate-600 flex items-center gap-2 font-medium"
                             >
                               <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
                               {item}
@@ -451,51 +439,55 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* 2. Client Perspective (Modern Premium Card) */}
+          {/* 2. Client Perspective (Full-Width Sleek Dark Card) */}
           {study.testimonial && (
             <SectionReveal>
-              <div className="pt-2">
+              <div className="w-full rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-800 bg-[#0b1329] text-white relative overflow-hidden shadow-xl">
+                {/* Decorative Dot Matrix on the right */}
                 <div
-                  className="max-w-3xl mx-auto rounded-3xl p-8 md:p-12 border border-slate-200/90 shadow-[0_10px_35px_rgba(37,99,235,0.06)] relative overflow-hidden bg-gradient-to-br from-slate-50/80 via-white to-blue-50/40 text-slate-900"
-                >
-                  {/* Decorative subtle ambient quote icon in background */}
-                  <div className="absolute top-6 right-8 text-blue-100/60 pointer-events-none select-none">
-                    <svg className="w-20 h-20 fill-current opacity-60" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+                  className="absolute right-0 top-0 bottom-0 w-1/3 pointer-events-none opacity-25"
+                  style={{
+                    backgroundImage: "radial-gradient(#38bdf8 1.5px, transparent 1.5px)",
+                    backgroundSize: "16px 16px",
+                    maskImage: "linear-gradient(to right, transparent, black)",
+                    WebkitMaskImage: "linear-gradient(to right, transparent, black)",
+                  }}
+                />
+
+                <div className="relative z-10 space-y-4">
+                  {/* Eyebrow */}
+                  <span className="block text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400">
+                    CLIENT PERSPECTIVE
+                  </span>
+
+                  {/* 5 Stars */}
+                  <div className="flex gap-1.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-amber-400 text-amber-400" />
+                    ))}
                   </div>
 
-                  <div className="flex flex-col items-center text-center mb-6 relative z-10">
-                    <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200/60 px-3 py-1 rounded-full mb-3 shadow-xs">
-                      Client Perspective
-                    </span>
-                    <div className="flex gap-1.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400 drop-shadow-xs" />
-                      ))}
-                    </div>
-                  </div>
-
-                  <blockquote className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-800 leading-relaxed italic text-center mb-8 font-normal relative z-10">
+                  {/* Quote */}
+                  <blockquote className="text-sm sm:text-base md:text-[15px] text-slate-200 leading-relaxed italic max-w-4xl font-normal pt-1">
                     &ldquo;{study.testimonial.quote}&rdquo;
                   </blockquote>
 
-                  <div className="flex items-center justify-center gap-4 pt-6 border-t border-slate-200/80 relative z-10">
+                  {/* Author */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
                     <div
-                      className="flex h-12 w-12 items-center justify-center rounded-full text-white text-base font-bold shrink-0 shadow-md"
-                      style={{ background: `linear-gradient(135deg, ${primaryColor}, #4f46e5)` }}
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-white text-xs font-bold shrink-0 shadow-md bg-blue-600"
                     >
                       {study.testimonial.author
                         .split(" ")
                         .map((n: string) => n[0])
                         .join("")}
                     </div>
-                    <div className="text-left">
-                      <p className="text-base font-bold text-slate-900 leading-tight">
+                    <div>
+                      <p className="text-sm font-bold text-white leading-tight">
                         {study.testimonial.author}
                       </p>
                       {study.testimonial.role && (
-                        <p className="text-xs text-slate-500 font-medium mt-0.5">
+                        <p className="text-xs text-slate-400 font-medium mt-0.5">
                           {study.testimonial.role}
                         </p>
                       )}
@@ -508,8 +500,9 @@ export default async function CaseStudyPage({ params }: Props) {
 
           {/* 3. Related Capabilities Links (Full-Width) */}
           <SectionReveal>
-            <div className="pt-8 border-t border-slate-200">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 font-display text-center">
+            <div className="pt-6 border-t border-slate-200">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 font-display flex items-center gap-2">
+                <Users className="h-3.5 w-3.5 text-blue-600" />
                 Related Capabilities
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -521,7 +514,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   <Link
                     key={sIdx}
                     href={srv.href}
-                    className="group p-4 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-blue-300 transition-all flex items-center justify-between text-sm font-semibold text-slate-800 shadow-sm"
+                    className="group p-4 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-blue-300 transition-all flex items-center justify-between text-sm font-semibold text-slate-800 shadow-xs hover:shadow-sm"
                   >
                     <span>{srv.title}</span>
                     <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-1" />
@@ -534,20 +527,40 @@ export default async function CaseStudyPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Full-Bleed Unified Pre-Footer CTA */}
-      <UnifiedCTA
-        eyebrow="NEED A DEDICATED TEAM FOR YOUR ATLASSIAN APP?"
-        title={
-          <>
-            Need a Long-Term Team for <span className="text-[var(--brand-blue)]">Your Atlassian App?</span>
-          </>
-        }
-        description="Discuss your Jira app development, QA, automation, or long-term engineering requirements with TECUNIQUE."
-        primaryButtonText="Discuss Your Atlassian App Needs"
-        primaryButtonLink="/contact"
-        secondaryButtonText="Explore Atlassian Services"
-        secondaryButtonLink="/services/atlassian"
-      />
+      {/* Slim & Short Pre-Footer CTA Section */}
+      <section className="bg-slate-50 border-t border-slate-200/80 py-10 md:py-12">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <SectionReveal>
+            <div className="rounded-2xl border border-blue-100/90 bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/60 p-6 md:p-8 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="space-y-1.5 text-center md:text-left">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Atlassian App Engineering
+                </span>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900 tracking-tight">
+                  Need a Long-Term Team for Your Atlassian App?
+                </h3>
+                <p className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed">
+                  Discuss your Jira app development, QA, automation, or long-term engineering requirements with TECUNIQUE.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
+                <Button
+                  size="default"
+                  className="rounded-xl px-5 h-11 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow-xs transition-all group w-full sm:w-auto"
+                  asChild
+                >
+                  <Link href="/contact">
+                    Discuss Your Atlassian App Needs
+                    <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
     </div>
   )
 }
