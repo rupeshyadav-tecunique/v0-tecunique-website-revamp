@@ -85,12 +85,11 @@ export default async function CaseStudyPage({ params }: Props) {
 
   const primaryColor = study.color || "#2563eb"
 
-  // Filter upper sections (e.g. The Product, The Challenge, How Relationship Started, Why TECUNIQUE)
+  // Filter upper sections (e.g. The Product, The Challenge, Why TECUNIQUE, Building the Working Relationship, How Relationship Started)
   const upperSections = (study.sections || []).filter((section: any) => {
     const title = section.title.toLowerCase()
     return (
       !title.includes("engagement") &&
-      !title.includes("working relationship") &&
       !title.includes("automation") &&
       !title.includes("migration") &&
       !title.includes("working as part") &&
