@@ -1,208 +1,264 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Clock, Users, TrendingUp, Star, ArrowRight } from "lucide-react"
-import clientPromise from "@/lib/db"
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react"
+import { SectionReveal } from "@/components/ui/section-reveal"
 
-async function getCaseStudies() {
-  try {
-    const client = await clientPromise
-    const db = client.db("tecunique")
-    const dbCaseStudies = await db.collection("case-studies").find({}).sort({ createdAt: -1 }).toArray()
-    
-    return dbCaseStudies.map(study => ({
-      ...study,
-      _id: study._id.toString(),
-      createdAt: study.createdAt?.toISOString(),
-    }))
-  } catch (e) {
-    console.error(e)
-    return []
-  }
+interface CaseStudyItem {
+  id: string
+  company: string
+  logo?: string
+  initials: string
+  color: string
+  featured?: boolean
+  industry: string
+  title: string
+  description: string
+  primaryService: string
+  highlight: string
+  filters: string[]
+  href: string
 }
 
-export async function CaseStudiesList() {
-  const caseStudies = await getCaseStudies()
-  
+const CASE_STUDIES: CaseStudyItem[] = [
+  {
+    id: "oppscience",
+    company: "OPPSCIENCE",
+    logo: "/images/companies/oppscience.svg",
+    initials: "OS",
+    color: "#0284c7",
+    featured: true,
+    industry: "Intelligence & Investigation Software",
+    title: "From Bee4sense to SPECTRA: Scaling a Long-Term Product Engineering & QA Team",
+    description:
+      "A long-term embedded engineering and QA team supporting product evolution from Bee4sense to SPECTRA, test automation, release readiness, product support, and ongoing engineering collaboration.",
+    primaryService: "Product Engineering & QA",
+    highlight: "12 dedicated development & QA professionals",
+    filters: ["Dedicated Teams", "Product Engineering", "QA & Automation"],
+    href: "/case-studies/oppscience",
+  },
+  {
+    id: "skyselect",
+    company: "SkySelect",
+    logo: "/images/companies/skyselect.svg",
+    initials: "SS",
+    color: "#0284c7",
+    featured: true,
+    industry: "Aviation Procurement Technology",
+    title: "From 7 to 60+: Building and Transitioning SkySelect’s India Team",
+    description:
+      "TECUNIQUE provided the recruitment, employment, and local operating structure that helped SkySelect establish its India operation, scale from approximately 7 to more than 60 professionals, and later transition the team to SkySelect India.",
+    primaryService: "Dedicated Teams / India Team Setup",
+    highlight: "~7 → 60+ professionals",
+    filters: ["Dedicated Teams"],
+    href: "/case-studies/skyselect",
+  },
+  {
+    id: "innovalog",
+    company: "Innovalog",
+    logo: "/images/companies/innovalog.png",
+    initials: "IN",
+    color: "#2563eb",
+    featured: true,
+    industry: "Atlassian Marketplace",
+    title: "Scaling Jira App Development with a Long-Term Development & QA Team",
+    description:
+      "Long-term engineering and QA support for JMWE, covering Cloud development, Cloud and Data Center QA, test automation, and Tier-3 technical support.",
+    primaryService: "Atlassian App Development & QA",
+    highlight: "Cloud Development + Cloud & Data Center QA",
+    filters: ["Atlassian Apps", "QA & Automation", "Dedicated Teams"],
+    href: "/case-studies/innovalog",
+  },
+  {
+    id: "qotilabs",
+    company: "Qotilabs",
+    logo: "/images/companies/quotilabs.png",
+    initials: "QL",
+    color: "#f43f5e",
+    featured: true,
+    industry: "Atlassian Marketplace",
+    title: "Scaling Product Quality for Rich Filters with a Dedicated QA Team",
+    description:
+      "Dedicated QA engineering supporting functional and regression testing, test automation, release validation, and Data Center-to-Cloud migration across Qotilabs’ Atlassian apps.",
+    primaryService: "QA & Automation",
+    highlight: "Dedicated QA partnership since 2021",
+    filters: ["QA & Automation", "Atlassian Apps", "Dedicated Teams"],
+    href: "/case-studies/qotilabs",
+  },
+  {
+    id: "customermatrix",
+    company: "CustomerMatrix",
+    logo: "/images/companies/customer_matrix.webp",
+    initials: "CM",
+    color: "#8b5cf6",
+    industry: "Enterprise AI / Cognitive Computing",
+    title: "Extending Product Engineering & QA Capacity for an Enterprise AI Platform",
+    description:
+      "A multidisciplinary dedicated team supporting CustomerMatrix across software development, QA and automation, DevOps, and ongoing product engineering for its cognitive computing platform.",
+    primaryService: "Product Engineering & QA",
+    highlight: "Development + QA + DevOps",
+    filters: ["Dedicated Teams", "Product Engineering", "QA & Automation"],
+    href: "/case-studies/customermatrix",
+  },
+  {
+    id: "polyspot",
+    company: "PolySpot",
+    logo: "/images/companies/polyspot.webp",
+    initials: "PS",
+    color: "#0ea5e9",
+    industry: "Enterprise Search Technology",
+    title: "Building a Dedicated Engineering Team for an Enterprise Search Platform",
+    description:
+      "A multidisciplinary software engineering and QA team supporting the development and evolution of PolySpot’s enterprise search platform alongside its France-based product organization.",
+    primaryService: "Dedicated Software Teams",
+    highlight: "Java + GWT product engineering",
+    filters: ["Dedicated Teams", "Product Engineering", "QA & Automation"],
+    href: "/case-studies/polyspot",
+  },
+  {
+    id: "appfire",
+    company: "Appfire",
+    initials: "AF",
+    color: "#f97316",
+    industry: "Atlassian Ecosystem",
+    title: "Supporting Atlassian App Engineering & QA Across Appfire Products",
+    description:
+      "Dedicated software engineering and QA support across Atlassian Marketplace products, including work around JMWE and JMCF as TECUNIQUE engineers collaborated with Appfire product teams.",
+    primaryService: "Atlassian App Development & QA",
+    highlight: "JMWE + JMCF",
+    filters: ["Atlassian Apps", "Dedicated Teams", "QA & Automation"],
+    href: "/case-studies/appfire",
+  },
+]
+
+const FILTER_OPTIONS = [
+  "All",
+  "Dedicated Teams",
+  "Product Engineering",
+  "QA & Automation",
+  "Atlassian Apps",
+]
+
+export function CaseStudiesList() {
+  const [activeFilter, setActiveFilter] = useState("All")
+
+  const filteredStudies = CASE_STUDIES.filter((study) => {
+    if (activeFilter === "All") return true
+    return study.filters.includes(activeFilter)
+  })
+
   return (
-    <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
-        {caseStudies.map((study: any) => (
-          <article
-            key={study.id}
-            id={study.id}
-            className="group relative rounded-3xl border border-border/60 bg-white overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 scroll-mt-24"
-          >
-            {/* Top accent bar */}
-            <div className={`h-1.5 w-full bg-gradient-to-r ${study.gradient}`} />
+    <section className="py-12 lg:py-16 bg-white">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 space-y-10">
+        {/* Filter / Navigation Bar (Horizontally scrollable on mobile) */}
+        <SectionReveal>
+          <div className="flex items-center justify-start sm:justify-center overflow-x-auto whitespace-nowrap scrollbar-none pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 gap-2">
+            {FILTER_OPTIONS.map((filter) => {
+              const isSelected = activeFilter === filter
+              return (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    isSelected
+                      ? "bg-slate-900 text-white shadow-xs"
+                      : "bg-slate-100/80 text-slate-600 hover:bg-slate-200/70 hover:text-slate-900"
+                  }`}
+                >
+                  {filter}
+                </button>
+              )
+            })}
+          </div>
+        </SectionReveal>
 
-            <div className="grid grid-cols-1 gap-0 lg:grid-cols-5">
-
-              {/* Left panel — Company + Meta */}
-              <div
-                className="lg:col-span-2 p-8 lg:p-10 flex flex-col justify-between"
-                style={{ background: `linear-gradient(160deg, ${study.color}08 0%, ${study.color}04 100%)` }}
-              >
-                <div>
-                  {/* Company avatar + name */}
-                  <div className="flex items-center gap-4 mb-6">
-                    {study.logo ? (
-                      <div className="relative h-14 w-14 shrink-0 rounded-xl bg-white border border-border shadow-sm p-1.5 flex items-center justify-center overflow-hidden">
-                        <Image src={study.logo} alt={study.company} fill className="object-contain p-1.5" sizes="56px" />
+        {/* 2-Column Case Studies Library Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          {filteredStudies.map((study) => (
+            <SectionReveal key={study.id} className="h-full">
+              <article className="group h-full rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-7 shadow-2xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between">
+                {/* Upper Body (Logo, Title, Description) */}
+                <div className="flex-1 flex flex-col">
+                  {/* Card Header: Uniform Logo Container + Industry + Featured Tag */}
+                  <div className="flex items-center justify-between gap-3 mb-5">
+                    <div className="flex items-center gap-3 min-w-0">
+                      {study.logo ? (
+                        <div className="relative h-12 w-12 shrink-0 rounded-xl bg-white border border-slate-200/80 shadow-2xs p-1.5 flex items-center justify-center overflow-hidden">
+                          <Image
+                            src={study.logo}
+                            alt={study.company}
+                            fill
+                            className="object-contain p-1"
+                            sizes="48px"
+                          />
+                        </div>
+                      ) : (
+                        <div
+                          className="flex h-12 w-12 items-center justify-center rounded-xl text-white font-display text-base font-extrabold shrink-0 shadow-2xs"
+                          style={{ background: study.color }}
+                        >
+                          {study.initials}
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block leading-tight truncate">
+                          {study.industry}
+                        </span>
+                        <span className="text-xs font-bold text-slate-900 block truncate">
+                          {study.company}
+                        </span>
                       </div>
-                    ) : (
-                      <div
-                        className="flex h-14 w-14 items-center justify-center rounded-xl text-white font-display text-lg font-extrabold shrink-0 shadow-sm"
-                        style={{ background: `linear-gradient(135deg, ${study.color}, ${study.color}cc)` }}
-                      >
-                        {study.initials}
-                      </div>
-                    )}
-                    <div>
-                      <h2 className="font-display text-2xl font-bold text-foreground">
-                        {study.company}
-                      </h2>
-                      <p className="text-sm text-muted-foreground">{study.industry}</p>
                     </div>
-                  </div>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {study.tags.map((tag: string) => (
-                      <span
-                        key={tag}
-                        className="rounded-full px-3 py-1 text-xs font-semibold border"
-                        style={{
-                          color: study.color,
-                          borderColor: `${study.color}30`,
-                          background: `${study.color}0a`,
-                        }}
-                      >
-                        {tag}
+                    {study.featured && (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-200/70 px-2.5 py-0.5 rounded-md shrink-0">
+                        <Sparkles className="h-2.5 w-2.5" />
+                        Featured
                       </span>
-                    ))}
+                    )}
                   </div>
 
-                  <p className="text-base font-medium text-foreground leading-relaxed italic">
-                    &ldquo;{study.tagline}&rdquo;
+                  {/* Title with min-height for uniform row alignment */}
+                  <h3 className="text-lg sm:text-xl font-display font-bold text-slate-900 leading-snug mb-2.5 group-hover:text-blue-600 transition-colors sm:min-h-[56px] flex items-start">
+                    <Link href={study.href}>{study.title}</Link>
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 flex-1">
+                    {study.description}
                   </p>
                 </div>
 
-                {/* Meta info */}
-                <div className="mt-8 space-y-3 border-t border-border/50 pt-6">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4 shrink-0" style={{ color: study.color }} />
-                    <span>Partnership: <span className="font-semibold text-foreground">{study.partnership}</span></span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <Users className="h-4 w-4 shrink-0" style={{ color: study.color }} />
-                    <span>Service: <span className="font-semibold text-foreground">{study.category}</span></span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <TrendingUp className="h-4 w-4 shrink-0" style={{ color: study.color }} />
-                    <span>Location: <span className="font-semibold text-foreground">{study.location}</span></span>
-                  </div>
-                </div>
-              </div>
+                {/* Bottom Section: Primary Service + Highlight Pill + Read Case Study Link */}
+                <div className="pt-4 border-t border-slate-100 mt-auto flex flex-col justify-between gap-4">
+                  <div className="space-y-2 min-h-[58px] flex flex-col justify-center">
+                    <div className="text-xs text-slate-500 font-medium flex items-center gap-1.5 leading-none">
+                      <span>Primary Service:</span>
+                      <strong className="text-slate-800 font-semibold">{study.primaryService}</strong>
+                    </div>
 
-              {/* Right panel — Details */}
-              <div className="lg:col-span-3 p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-border/50">
-
-                {/* Challenge & Solution */}
-                <div className="space-y-6 mb-8">
-                  <div>
-                    <h3 className="font-display text-sm font-bold uppercase tracking-widest text-muted-foreground mb-3">
-                      The Challenge
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
-                      {study.description}
-                    </p>
+                    <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 bg-blue-50/80 border border-blue-200/60 px-2.5 py-1 rounded-lg w-fit">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                      <span>{study.highlight}</span>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-display text-sm font-bold uppercase tracking-widest text-muted-foreground mb-3">
-                      Our Solution
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">
-                      {study.solution}
-                    </p>
-                  </div>
-                </div>
 
-                {/* Results grid */}
-                <div className="grid grid-cols-2 gap-1.5 mb-8 sm:grid-cols-4">
-                  {study.results.map((result: any) => (
-                    <div
-                      key={result.label}
-                      className="rounded-2xl py-6 px-4 flex flex-col items-center justify-center text-center border border-border/50 min-h-[120px] transition-colors hover:border-border"
-                      style={{ background: `${study.color}06` }}
+                  <div className="pt-1">
+                    <Link
+                      href={study.href}
+                      className="inline-flex items-center text-xs sm:text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors group/link"
                     >
-                      <p
-                        className="font-display text-[18px] font-extrabold leading-[1.1] mb-2"
-                        style={{ color: study.color }}
-                      >
-                        {result.metric}
-                      </p>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/80 leading-none">
-                        {result.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Testimonial */}
-                {study.testimonial && (
-                  <div
-                    className="rounded-2xl p-5 border mb-8"
-                    style={{
-                      borderColor: `${study.color}25`,
-                      background: `${study.color}05`,
-                    }}
-                  >
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <p className="text-sm text-foreground leading-relaxed italic">
-                      &ldquo;{study.testimonial.quote}&rdquo;
-                    </p>
-                    <div className="mt-3 flex items-center gap-3">
-                      <div
-                        className="flex h-8 w-8 items-center justify-center rounded-full text-white text-xs font-bold shrink-0"
-                        style={{ background: `linear-gradient(135deg, ${study.color}, ${study.color}99)` }}
-                      >
-                        {study.testimonial.author.split(" ").map((n: string) => n[0]).join("")}
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-foreground leading-none">
-                          {study.testimonial.author}
-                        </p>
-                        <p className="text-[11px] text-muted-foreground mt-0.5">
-                          {study.testimonial.role}
-                        </p>
-                      </div>
-                    </div>
+                      Read Case Study
+                      <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                    </Link>
                   </div>
-                )}
-
-                {/* Read More Button */}
-                <div className="flex justify-end mt-4 lg:mt-0">
-                  <Link
-                    href={`/case-studies/${study.id}`}
-                    className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:gap-3"
-                    style={{
-                      background: study.color,
-                      color: "white",
-                      boxShadow: `0 4px 14px ${study.color}40`,
-                    }}
-                  >
-                    Read Full Case Study
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
                 </div>
-              </div>
-            </div>
-          </article>
-        ))}
+              </article>
+            </SectionReveal>
+          ))}
+        </div>
       </div>
     </section>
   )

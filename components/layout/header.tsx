@@ -110,7 +110,7 @@ export function Header() {
 
           <Button size="default" className="rounded-xl px-5 h-10 group" asChild>
             <Link href="/contact">
-              Let's Talk
+              Discuss Your Requirement
               <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
@@ -195,7 +195,7 @@ export function Header() {
             <div className="pt-3 pb-1">
               <Button size="default" className="w-full rounded-xl h-12 group" asChild>
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Let's Talk
+                  Discuss Your Requirement
                   <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
