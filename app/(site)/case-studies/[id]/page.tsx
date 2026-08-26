@@ -29,6 +29,11 @@ import {
   Briefcase,
   Sliders,
   Plane,
+  GitBranch,
+  Terminal,
+  Cpu,
+  Database,
+  Search,
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import clientPromise from "@/lib/db"
@@ -80,6 +85,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? "OPPSCIENCE Product Engineering & QA Case Study"
         : study.id === "skyselect"
         ? "SkySelect India Team Build & Transition Case Study"
+        : study.id === "extensi"
+        ? "Team Hub QA Automation Case Study | TECUNIQUE"
+        : study.id === "customermatrix"
+        ? "CustomerMatrix Dedicated Engineering Team Case Study | TECUNIQUE"
         : `${study.company} Case Study`),
     description:
       study.metaDescription ||
@@ -116,6 +125,8 @@ export default async function CaseStudyPage({ params }: Props) {
       !title.includes("continuity") &&
       !title.includes("planned transition") &&
       !title.includes("demonstrates") &&
+      !title.includes("dedicated automation team") &&
+      !title.includes("productivity & time-bound") &&
       !title.includes("more than additional") &&
       !title.includes("conclusion")
     )
@@ -128,6 +139,8 @@ export default async function CaseStudyPage({ params }: Props) {
       title.includes("continuity") ||
       title.includes("planned transition") ||
       title.includes("demonstrates") ||
+      title.includes("dedicated automation team") ||
+      title.includes("productivity & time-bound") ||
       title.includes("working as part") ||
       title.includes("supporting frequent") ||
       title.includes("new chapter")
@@ -296,8 +309,14 @@ export default async function CaseStudyPage({ params }: Props) {
                         )}
                         {study.atAGlance.product && (
                           <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Product</p>
+                            <p className="text-xs text-slate-500 font-medium">Product / Platform</p>
                             <p className="text-sm font-bold text-slate-900 mt-0.5">{study.atAGlance.product}</p>
+                          </div>
+                        )}
+                        {study.atAGlance.ecosystem && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Ecosystem</p>
+                            <p className="text-sm font-semibold text-slate-900 mt-0.5">{study.atAGlance.ecosystem}</p>
                           </div>
                         )}
                         {study.atAGlance.productJourney && (
@@ -324,8 +343,8 @@ export default async function CaseStudyPage({ params }: Props) {
                         )}
                         {study.atAGlance.teamComposition && (
                           <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Team Composition</p>
-                            <p className="text-xs font-semibold text-slate-900 mt-0.5">{study.atAGlance.teamComposition}</p>
+                            <p className="text-xs text-slate-500 font-medium">Team Capabilities</p>
+                            <p className="text-xs font-semibold text-slate-900 mt-0.5 leading-snug">{study.atAGlance.teamComposition}</p>
                           </div>
                         )}
                         {study.atAGlance.teamSize && (
@@ -340,10 +359,42 @@ export default async function CaseStudyPage({ params }: Props) {
                             {study.atAGlance.engagement}
                           </p>
                         </div>
+                        {study.atAGlance.relationship && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Engagement Period</p>
+                            <p className="text-sm font-semibold text-slate-900 mt-0.5">
+                              {study.atAGlance.relationship}
+                            </p>
+                          </div>
+                        )}
+                        {study.atAGlance.coreAutomation && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Core Automation Stack</p>
+                            <p className="text-xs font-bold text-slate-900 mt-0.5">
+                              {study.atAGlance.coreAutomation}
+                            </p>
+                          </div>
+                        )}
+                        {study.atAGlance.aiAssisted && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">AI-Assisted Engineering</p>
+                            <p className="text-xs font-medium text-slate-700 mt-0.5">
+                              {study.atAGlance.aiAssisted}
+                            </p>
+                          </div>
+                        )}
+                        {study.atAGlance.workflow && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Engineering Workflow</p>
+                            <p className="text-xs font-medium text-slate-700 mt-0.5">
+                              {study.atAGlance.workflow}
+                            </p>
+                          </div>
+                        )}
                         {study.atAGlance.clientControl && (
                           <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Client Control</p>
-                            <p className="text-xs font-medium text-slate-700 mt-0.5 leading-relaxed">
+                            <p className="text-xs text-slate-500 font-medium">Working Model</p>
+                            <p className="text-xs font-semibold text-slate-800 mt-0.5 leading-relaxed">
                               {study.atAGlance.clientControl}
                             </p>
                           </div>
@@ -364,21 +415,15 @@ export default async function CaseStudyPage({ params }: Props) {
                             </p>
                           </div>
                         )}
-                        {study.atAGlance.relationship && (
+                        {study.atAGlance.location && (
                           <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Relationship</p>
-                            <p className="text-sm font-semibold text-slate-900 mt-0.5">
-                              {study.atAGlance.relationship}
-                            </p>
+                            <p className="text-xs text-slate-500 font-medium">Client Locations</p>
+                            <p className="text-sm font-semibold text-slate-900 mt-0.5">{study.atAGlance.location}</p>
                           </div>
                         )}
-                        <div className="pb-2.5 border-b border-slate-200/60">
-                          <p className="text-xs text-slate-500 font-medium">Location</p>
-                          <p className="text-xs font-semibold text-slate-900 mt-0.5">{study.atAGlance.location}</p>
-                        </div>
                         {study.atAGlance.milestone && (
                           <div>
-                            <p className="text-xs text-blue-600 font-bold uppercase tracking-wider">Key Milestone</p>
+                            <p className="text-xs text-blue-600 font-bold uppercase tracking-wider">Business Milestone</p>
                             <p className="text-xs font-bold text-slate-900 mt-0.5 leading-snug">
                               {study.atAGlance.milestone}
                             </p>
@@ -421,7 +466,7 @@ export default async function CaseStudyPage({ params }: Props) {
                 </div>
               </SectionReveal>
 
-              {/* Secondary Testimonial Card (Mickael Augello, CTO) */}
+              {/* Secondary Testimonial Card */}
               {study.secondaryTestimonial && (
                 <SectionReveal>
                   <div className="rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 p-5 shadow-xs space-y-2.5">
@@ -455,147 +500,586 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          {/* ─── Upper Section 2: Engagement Capability Blocks + Milestones (Same Line) ─── */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            {/* Left Column: Engagement Model Cards */}
-            <div className="lg:col-span-8 space-y-5">
-              <SectionReveal>
-                <div className="space-y-5">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
-                      {study.id === "oppscience"
-                        ? "The TECUNIQUE Dedicated Team"
-                        : study.id === "skyselect"
-                        ? "The Engagement Model"
-                        : "The TECUNIQUE Engagement"}
-                    </h2>
-                    {study.id === "oppscience" && (
-                      <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
-                        A 12-Member Development & QA Team Integrated into OPPSCIENCE
-                      </p>
-                    )}
-                    {study.id === "skyselect" && (
-                      <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
-                        A Build–Operate–Transition Approach
-                      </p>
-                    )}
-                  </div>
+          {/* ─── Upper Section 2: Engagement Capability Blocks / Phases + Milestones ─── */}
+          {(study.engagementBlocks || study.engagementPhases) && (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+              {/* Left Column: Engagement Model / Phases */}
+              <div className="lg:col-span-8 space-y-5">
+                <SectionReveal>
+                  <div className="space-y-5">
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-display font-bold text-slate-900">
+                        {study.id === "oppscience"
+                          ? "The TECUNIQUE Dedicated Team"
+                          : study.id === "skyselect"
+                          ? "The Engagement Model"
+                          : study.id === "extensi"
+                          ? "From Foundation to Scaled Automation"
+                          : "The TECUNIQUE Engagement"}
+                      </h2>
+                      {study.id === "oppscience" && (
+                        <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
+                          A 12-Member Development & QA Team Integrated into OPPSCIENCE
+                        </p>
+                      )}
+                      {study.id === "skyselect" && (
+                        <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
+                          A Build–Operate–Transition Approach
+                        </p>
+                      )}
+                      {study.id === "extensi" && (
+                        <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
+                          A Two-Stage Automation Scaling Approach
+                        </p>
+                      )}
+                    </div>
 
-                  {/* Capability Blocks (2x2 Cards) */}
-                  {study.engagementBlocks && study.engagementBlocks.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                      {study.engagementBlocks.map((block: any, bIdx: number) => {
-                        const isLastOdd =
-                          study.engagementBlocks.length % 2 !== 0 &&
-                          bIdx === study.engagementBlocks.length - 1
-                        return (
+                    {/* eXtensi Two-Stage Phases */}
+                    {study.engagementPhases && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {study.engagementPhases.map((phase: any, pIdx: number) => (
                           <div
-                            key={bIdx}
-                            className={`rounded-2xl p-4.5 border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 transition-all shadow-2xs flex flex-col justify-between ${
-                              isLastOdd ? "sm:col-span-2" : ""
-                            }`}
+                            key={pIdx}
+                            className="rounded-2xl p-5 border border-slate-200 bg-slate-50/70 hover:bg-white transition-all shadow-2xs flex flex-col justify-between"
                           >
                             <div>
-                              <div className="flex items-center justify-between mb-2">
-                                <span
-                                  className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
-                                  style={{ background: `${primaryColor}12`, color: primaryColor }}
-                                >
-                                  {block.scope}
-                                </span>
-                              </div>
-                              <h3 className="font-bold text-slate-900 text-sm md:text-base mb-1.5">
-                                {block.title}
+                              <span className="text-[11px] font-bold font-mono text-blue-600 mb-1 block">
+                                {phase.phase}
+                              </span>
+                              <h3 className="font-bold text-slate-900 text-base mb-1.5">
+                                {phase.title}
                               </h3>
                               <p className="text-xs text-slate-600 leading-relaxed">
-                                {block.description}
+                                {phase.desc}
                               </p>
                             </div>
                           </div>
-                        )
-                      })}
-                    </div>
-                  )}
+                        ))}
+                      </div>
+                    )}
 
-                  {/* Explicit Responsibility Boundary Callout (for SkySelect) */}
-                  {study.responsibilityCallout && (
-                    <div className="rounded-2xl border border-blue-200/80 bg-gradient-to-r from-blue-50/90 via-sky-50/50 to-white p-4.5 shadow-2xs space-y-1.5">
-                      <div className="flex items-center gap-2 text-blue-700">
-                        <ShieldCheck className="h-4.5 w-4.5 shrink-0" />
-                        <h4 className="text-xs md:text-sm font-bold tracking-tight">
-                          {study.responsibilityCallout.title}
-                        </h4>
+                    {/* Standard Capability Blocks (2x2 Cards) */}
+                    {study.engagementBlocks && study.engagementBlocks.length > 0 && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        {study.engagementBlocks.map((block: any, bIdx: number) => {
+                          const isLastOdd =
+                            study.engagementBlocks.length % 2 !== 0 &&
+                            bIdx === study.engagementBlocks.length - 1
+                          return (
+                            <div
+                              key={bIdx}
+                              className={`rounded-2xl p-4.5 border border-slate-200/80 bg-slate-50/70 hover:bg-white hover:border-slate-300 transition-all shadow-2xs flex flex-col justify-between ${
+                                isLastOdd ? "sm:col-span-2" : ""
+                              }`}
+                            >
+                              <div>
+                                <div className="flex items-center justify-between mb-2">
+                                  <span
+                                    className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md"
+                                    style={{ background: `${primaryColor}12`, color: primaryColor }}
+                                  >
+                                    {block.scope}
+                                  </span>
+                                </div>
+                                <h3 className="font-bold text-slate-900 text-sm md:text-base mb-1.5">
+                                  {block.title}
+                                </h3>
+                                <p className="text-xs text-slate-600 leading-relaxed">
+                                  {block.description}
+                                </p>
+                              </div>
+                            </div>
+                          )
+                        })}
                       </div>
-                      <p className="text-xs text-slate-700 leading-relaxed">
-                        {study.responsibilityCallout.content}
-                      </p>
-                    </div>
-                  )}
+                    )}
 
-                  {/* Compact Embedded Leadership Callout Band for OPPSCIENCE */}
-                  {study.embeddedLeadership && (
-                    <div className="rounded-2xl border border-blue-200/80 bg-gradient-to-r from-blue-50/90 via-sky-50/50 to-white p-4.5 shadow-2xs space-y-2">
-                      <div className="flex items-center gap-2 text-blue-700">
-                        <ShieldCheck className="h-4.5 w-4.5 shrink-0" />
-                        <h4 className="text-xs md:text-sm font-bold tracking-tight">
-                          {study.embeddedLeadership.title} & Mixed Squads
-                        </h4>
+                    {/* Explicit Responsibility Boundary Callout (for SkySelect) */}
+                    {study.responsibilityCallout && (
+                      <div className="rounded-2xl border border-blue-200/80 bg-gradient-to-r from-blue-50/90 via-sky-50/50 to-white p-4.5 shadow-2xs space-y-1.5">
+                        <div className="flex items-center gap-2 text-blue-700">
+                          <ShieldCheck className="h-4.5 w-4.5 shrink-0" />
+                          <h4 className="text-xs md:text-sm font-bold tracking-tight">
+                            {study.responsibilityCallout.title}
+                          </h4>
+                        </div>
+                        <p className="text-xs text-slate-700 leading-relaxed">
+                          {study.responsibilityCallout.content}
+                        </p>
                       </div>
-                      <p className="text-xs text-slate-700 leading-relaxed">
-                        {study.embeddedLeadership.description}
-                      </p>
-                      <div className="pt-1">
-                        <span className="inline-block text-[11px] md:text-xs font-semibold text-blue-950 bg-white/90 border border-blue-200/70 px-3 py-1 rounded-lg">
-                          {study.embeddedLeadership.tagline}
-                        </span>
+                    )}
+
+                    {/* Compact Embedded Leadership Callout Band for OPPSCIENCE */}
+                    {study.embeddedLeadership && (
+                      <div className="rounded-2xl border border-blue-200/80 bg-gradient-to-r from-blue-50/90 via-sky-50/50 to-white p-4.5 shadow-2xs space-y-2">
+                        <div className="flex items-center gap-2 text-blue-700">
+                          <ShieldCheck className="h-4.5 w-4.5 shrink-0" />
+                          <h4 className="text-xs md:text-sm font-bold tracking-tight">
+                            {study.embeddedLeadership.title} & Mixed Squads
+                          </h4>
+                        </div>
+                        <p className="text-xs text-slate-700 leading-relaxed">
+                          {study.embeddedLeadership.description}
+                        </p>
+                        <div className="pt-1">
+                          <span className="inline-block text-[11px] md:text-xs font-semibold text-blue-950 bg-white/90 border border-blue-200/70 px-3 py-1 rounded-lg">
+                            {study.embeddedLeadership.tagline}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              </SectionReveal>
+                    )}
+                  </div>
+                </SectionReveal>
+              </div>
+
+              {/* Right Column: Partnership Milestones */}
+              <div className="lg:col-span-4">
+                <SectionReveal>
+                  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm space-y-3.5">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-display">
+                      Engagement Milestones
+                    </h3>
+
+                    {study.milestones && study.milestones.length > 0 ? (
+                      <div className="space-y-3">
+                        {study.milestones.map((m: any, mIdx: number) => (
+                          <div key={mIdx} className="border-l-2 border-blue-500 pl-3 py-0.5 space-y-0.5">
+                            <p className="text-xs font-bold text-slate-900">{m.title}</p>
+                            <p className="text-[11px] text-slate-600 leading-relaxed">{m.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-2">
+                        {study.results?.map((result: any) => (
+                          <div
+                            key={result.label}
+                            className="rounded-xl p-3 flex flex-col items-center justify-center text-center bg-slate-50 border border-slate-100"
+                          >
+                            <p className="font-display text-base font-extrabold text-blue-600 mb-0.5">
+                              {result.metric}
+                            </p>
+                            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                              {result.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </SectionReveal>
+              </div>
             </div>
+          )}
 
-            {/* Right Column: Partnership Milestones */}
-            <div className="lg:col-span-4">
-              <SectionReveal>
-                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm space-y-3.5">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 font-display">
-                    Engagement Milestones
-                  </h3>
+          {/* ─── CustomerMatrix Specific: Recruitment & Client Selection Flow ─── */}
+          {study.selectionFlow && (
+            <SectionReveal>
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
+                    <UserCheck className="h-5 w-5 text-blue-600 shrink-0" />
+                    Client-Selected Dedicated Talent
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                    TECUNIQUE recruited. CustomerMatrix validated.
+                  </p>
+                </div>
 
-                  {study.milestones && study.milestones.length > 0 ? (
-                    <div className="space-y-3">
-                      {study.milestones.map((m: any, mIdx: number) => (
-                        <div key={mIdx} className="border-l-2 border-blue-500 pl-3 py-0.5 space-y-0.5">
-                          <p className="text-xs font-bold text-slate-900">{m.title}</p>
-                          <p className="text-[11px] text-slate-600 leading-relaxed">{m.description}</p>
+                <div className="rounded-3xl border border-slate-200/90 bg-slate-50/70 p-6 md:p-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+                    {study.selectionFlow.map((stepItem: any, sIdx: number) => (
+                      <div
+                        key={sIdx}
+                        className="rounded-2xl border border-slate-200 bg-white p-4 shadow-2xs flex flex-col justify-between group hover:border-blue-200 transition-colors"
+                      >
+                        <div>
+                          <span className="text-xs font-bold text-blue-600 font-mono mb-1 block">
+                            Step {stepItem.step}
+                          </span>
+                          <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-1">
+                            {stepItem.title}
+                          </h4>
+                        </div>
+                        <p className="text-[11px] text-slate-500 leading-relaxed mt-2">
+                          {stepItem.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-slate-500 italic mt-4 text-center sm:text-left">
+                    This gave CustomerMatrix direct control over technical selection while TECUNIQUE managed the local recruitment and employment process in India.
+                  </p>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── CustomerMatrix Specific: 6 -> 18 Multidisciplinary Team Growth & Breakdown ─── */}
+          {study.teamGrowthMetric && study.teamBreakdown && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div className="rounded-3xl border border-blue-100 bg-gradient-to-r from-blue-50/90 via-sky-50/40 to-white p-6 md:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
+                  <div className="space-y-1 text-center sm:text-left">
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-600 font-display">
+                      Multidisciplinary Team Growth
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900">
+                      Growing from 6 to 18 Dedicated Professionals
+                    </h3>
+                    <p className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed">
+                      {study.teamGrowthMetric.description}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-blue-200/80 bg-white p-4 sm:p-5 text-center shadow-xs shrink-0 min-w-[150px]">
+                    <p className="text-3xl sm:text-4xl font-extrabold text-blue-600 font-display tracking-tight">
+                      {study.teamGrowthMetric.start} → {study.teamGrowthMetric.end}
+                    </p>
+                    <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mt-1">
+                      {study.teamGrowthMetric.label}
+                    </p>
+                  </div>
+                </div>
+
+                {/* 5-Discipline Breakdown Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {study.teamBreakdown.map((item: any, idx: number) => (
+                    <div
+                      key={idx}
+                      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs space-y-2 flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-xs font-bold text-slate-900 font-display">
+                            {item.discipline}
+                          </span>
+                          <span className="text-xs font-bold text-blue-600 bg-blue-50 border border-blue-200/70 px-2 py-0.5 rounded-md">
+                            {item.count} Members
+                          </span>
+                        </div>
+                        <p className="text-[11px] font-semibold text-blue-600 mb-2">
+                          {item.roles}
+                        </p>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── CustomerMatrix Specific: Management Model Visual Flow ─── */}
+          {study.managementModel && (
+            <SectionReveal>
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
+                    <Workflow className="h-5 w-5 text-blue-600 shrink-0" />
+                    Cross-Border Engineering Management Model
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                    Integrated India–France Scrum collaboration with shared delivery responsibility.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200/90 bg-white p-6 md:p-8 space-y-4 shadow-2xs">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Leadership & Direction</span>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">CustomerMatrix France R&D</h4>
+                      <p className="text-[11px] text-slate-600">Product priorities · Engineering direction · Overall management</p>
+                    </div>
+
+                    <div className="rounded-2xl border border-blue-200 bg-blue-50/50 p-4 space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 block">Local Coordination</span>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">India Team Leads</h4>
+                      <p className="text-[11px] text-slate-600">Day-to-day coordination · Technical & QA leadership · Team responsibilities</p>
+                    </div>
+
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 space-y-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Operations & HR</span>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">TECUNIQUE Leadership & HR</h4>
+                      <p className="text-[11px] text-slate-600">Performance management · Employment · Appraisals · Team continuity</p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border border-blue-100 bg-blue-50/70 p-3.5 text-center text-xs text-blue-900 font-medium">
+                    {study.managementModel.callout}
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── CustomerMatrix Specific: Product Engineering & QA Responsibilities ─── */}
+          {study.productEngineeringAreas && study.qaCapabilities && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                {/* Product Engineering Areas */}
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <Code2 className="h-5 w-5 text-blue-600 shrink-0" />
+                      Product Engineering Responsibilities
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                      TECUNIQUE developers contributed across both frontend and backend platform layers.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    {study.productEngineeringAreas.map((area: any, aIdx: number) => (
+                      <div
+                        key={aIdx}
+                        className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs space-y-1 hover:border-blue-300 transition-colors"
+                      >
+                        <h4 className="text-xs font-bold text-slate-900">{area.title}</h4>
+                        <p className="text-[11px] text-slate-500 leading-snug">{area.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* QA Across Release Lifecycle */}
+                <div className="space-y-3 pt-4 border-t border-slate-100">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <TestTube2 className="h-5 w-5 text-blue-600 shrink-0" />
+                      QA Across the Release Lifecycle
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                      Quality engineering spanning manual validation, automation, performance testing, and defect investigation.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    {study.qaCapabilities.map((qa: any, qIdx: number) => (
+                      <div
+                        key={qIdx}
+                        className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs space-y-1 hover:border-blue-300 transition-colors"
+                      >
+                        <h4 className="text-xs font-bold text-slate-900">{qa.title}</h4>
+                        <p className="text-[11px] text-slate-500 leading-snug">{qa.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {study.qaTools && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
+                      {study.qaTools.map((tool: any, tIdx: number) => (
+                        <div key={tIdx} className="rounded-xl bg-slate-50 border border-slate-200/80 p-3 text-center">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-0.5">{tool.category}</span>
+                          <span className="text-xs font-bold text-slate-800">{tool.tools}</span>
                         </div>
                       ))}
                     </div>
-                  ) : (
-                    <div className="grid grid-cols-2 gap-2">
-                      {study.results?.map((result: any) => (
-                        <div
-                          key={result.label}
-                          className="rounded-xl p-3 flex flex-col items-center justify-center text-center bg-slate-50 border border-slate-100"
-                        >
-                          <p className="font-display text-base font-extrabold text-blue-600 mb-0.5">
-                            {result.metric}
-                          </p>
-                          <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
-                            {result.label}
-                          </p>
+                  )}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── CustomerMatrix Specific: AWS & DevOps + Data Engineering & Data Analysis ─── */}
+          {study.devopsCapabilities && study.dataCapabilities && (
+            <SectionReveal>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-6 border-t border-slate-100">
+                {/* AWS & DevOps Engineering Panel */}
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 space-y-4 shadow-2xs flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-blue-600">
+                      <Cloud className="h-5 w-5 shrink-0" />
+                      <h3 className="text-lg font-bold text-slate-900 font-display">AWS & DevOps Engineering</h3>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Expanding into cloud delivery and infrastructure automation with operational responsibility across environments.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                      {study.devopsCapabilities.map((d: any, dIdx: number) => (
+                        <div key={dIdx} className="rounded-xl bg-slate-50 border border-slate-200/70 p-3 space-y-0.5">
+                          <h4 className="text-xs font-bold text-slate-900">{d.title}</h4>
+                          <p className="text-[11px] text-slate-500 leading-snug">{d.desc}</p>
                         </div>
                       ))}
                     </div>
+                  </div>
+                </div>
+
+                {/* Data Engineering & Data Analysis Panel */}
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-7 space-y-4 shadow-2xs flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-blue-600">
+                      <Database className="h-5 w-5 shrink-0" />
+                      <h3 className="text-lg font-bold text-slate-900 font-display">Data Engineering & Data Analysis</h3>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Turning diverse multi-source information into standardized, enriched product data.
+                    </p>
+                    <div className="space-y-3 pt-1">
+                      <div className="rounded-xl bg-slate-50 border border-slate-200/70 p-3.5 space-y-1">
+                        <h4 className="text-xs font-bold text-slate-900">{study.dataCapabilities.engineeringTitle}</h4>
+                        <p className="text-[11px] text-slate-600 leading-relaxed">{study.dataCapabilities.engineeringDesc}</p>
+                      </div>
+                      <div className="rounded-xl bg-slate-50 border border-slate-200/70 p-3.5 space-y-1">
+                        <h4 className="text-xs font-bold text-slate-900">{study.dataCapabilities.analysisTitle}</h4>
+                        <p className="text-[11px] text-slate-600 leading-relaxed">{study.dataCapabilities.analysisDesc}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── eXtensi Signature Section: AI-Assisted QA Automation Workflow (6 Steps) ─── */}
+          {study.aiWorkflowSteps && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                    <Bot className="h-6 w-6 text-blue-600 shrink-0" />
+                    An AI-Assisted QA Automation Workflow
+                  </h2>
+                  <p className="text-sm text-slate-600 leading-relaxed max-w-3xl">
+                    How AI acceleration was integrated into the QA automation process while preserving complete human engineering control over quality, verification, and code delivery.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200/90 bg-slate-50/70 p-6 md:p-8 space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {study.aiWorkflowSteps.map((stepItem: any, sIdx: number) => (
+                      <div
+                        key={sIdx}
+                        className="rounded-2xl border border-slate-200 bg-white p-4.5 shadow-2xs flex flex-col justify-between group hover:border-blue-300 transition-colors"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-xs font-bold text-blue-600 font-mono">
+                              Step {stepItem.step}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-bold text-slate-900 mb-0.5">
+                            {stepItem.title}
+                          </h4>
+                          <p className="text-[11px] font-semibold text-blue-600 mb-2">
+                            {stepItem.subtitle}
+                          </p>
+                          <p className="text-xs text-slate-600 leading-relaxed">
+                            {stepItem.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Human Engineering Control Callout */}
+                  {study.humanControlCallout && (
+                    <div className="rounded-2xl border border-blue-200 bg-white p-5 shadow-2xs space-y-2">
+                      <div className="flex items-center gap-2 text-blue-700">
+                        <ShieldCheck className="h-5 w-5 shrink-0" />
+                        <h4 className="text-sm font-bold tracking-tight">
+                          {study.humanControlCallout.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-slate-700 leading-relaxed">
+                        {study.humanControlCallout.content}
+                      </p>
+                    </div>
                   )}
                 </div>
-              </SectionReveal>
-            </div>
-          </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── eXtensi Engineering Workflow & Tools (5 Cards) ─── */}
+          {study.workflowTools && (
+            <SectionReveal>
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
+                    <Workflow className="h-5 w-5 text-blue-600 shrink-0" />
+                    Engineering Workflow & Tools
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
+                    Integrated directly with eXtensi’s existing development, version control, and continuous integration pipeline.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+                  {study.workflowTools.map((tool: any, tIdx: number) => (
+                    <div
+                      key={tIdx}
+                      className="rounded-2xl border border-slate-200 bg-white p-4 shadow-2xs space-y-1.5 flex flex-col justify-between hover:border-blue-300 transition-colors"
+                    >
+                      <div>
+                        <div className="h-7 w-7 rounded-lg flex items-center justify-center bg-blue-50 text-blue-600 mb-2">
+                          {tIdx === 0 ? (
+                            <Layers className="h-3.5 w-3.5" />
+                          ) : tIdx === 1 ? (
+                            <Code2 className="h-3.5 w-3.5" />
+                          ) : tIdx === 2 ? (
+                            <Bot className="h-3.5 w-3.5" />
+                          ) : tIdx === 3 ? (
+                            <GitBranch className="h-3.5 w-3.5" />
+                          ) : (
+                            <Server className="h-3.5 w-3.5" />
+                          )}
+                        </div>
+                        <h4 className="text-xs font-bold text-slate-900">{tool.name}</h4>
+                        <p className="text-[10px] font-semibold text-blue-600 mb-1">{tool.role}</p>
+                        <p className="text-[11px] text-slate-500 leading-relaxed">{tool.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── eXtensi Main Outcome: ~300 Tests & 100% Planned Coverage ─── */}
+          {study.outcomeMetric && (
+            <SectionReveal>
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div className="rounded-3xl border border-blue-100 bg-gradient-to-r from-blue-50/90 via-sky-50/40 to-white p-6 md:p-8 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="space-y-1.5 text-center md:text-left">
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-600 font-display">
+                      Main Outcome
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900">
+                      Scaling Team Hub to Close to 300 Automated Tests
+                    </h3>
+                    <p className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed">
+                      {study.outcomeMetric.desc}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-3 shrink-0">
+                    <div className="rounded-2xl border border-blue-200/80 bg-white p-4 text-center shadow-xs min-w-[120px]">
+                      <p className="text-3xl font-extrabold text-blue-600 font-display tracking-tight">
+                        {study.outcomeMetric.primaryMetric}
+                      </p>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mt-0.5">
+                        {study.outcomeMetric.primaryLabel}
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-blue-200/80 bg-white p-4 text-center shadow-xs min-w-[120px]">
+                      <p className="text-3xl font-extrabold text-blue-600 font-display tracking-tight">
+                        {study.outcomeMetric.secondaryMetric}
+                      </p>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mt-0.5">
+                        {study.outcomeMetric.secondaryLabel}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
 
           {/* ─── SkySelect Specific Feature: Rapid Growth & Two Teams ─── */}
-          {study.teamGrowthMetric && study.teamCategories && (
+          {study.id === "skyselect" && study.teamGrowthMetric && study.teamCategories && (
             <SectionReveal>
               <div className="space-y-6 pt-6 border-t border-slate-100">
                 {/* 7 -> 60+ Main Proof Point Banner */}
@@ -650,46 +1134,6 @@ export default async function CaseStudyPage({ params }: Props) {
                       </p>
                     </div>
                   ))}
-                </div>
-              </div>
-            </SectionReveal>
-          )}
-
-          {/* ─── SkySelect Specific Feature: Recruitment & Client Selection Flow ─── */}
-          {study.selectionFlow && (
-            <SectionReveal>
-              <div className="space-y-4 pt-6 border-t border-slate-100">
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
-                    <UserCheck className="h-5 w-5 text-blue-600 shrink-0" />
-                    Recruitment & Client Selection
-                  </h2>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                    TECUNIQUE recruited. SkySelect selected and managed.
-                  </p>
-                </div>
-
-                <div className="rounded-3xl border border-slate-200/90 bg-slate-50/70 p-6 md:p-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
-                    {study.selectionFlow.map((stepItem: any, sIdx: number) => (
-                      <div
-                        key={sIdx}
-                        className="rounded-2xl border border-slate-200 bg-white p-4 shadow-2xs flex flex-col justify-between group hover:border-blue-200 transition-colors"
-                      >
-                        <div>
-                          <span className="text-xs font-bold text-blue-600 font-mono mb-1 block">
-                            Step {stepItem.step}
-                          </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-slate-900 mb-1">
-                            {stepItem.title}
-                          </h4>
-                        </div>
-                        <p className="text-[11px] text-slate-500 leading-relaxed mt-2">
-                          {stepItem.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             </SectionReveal>
@@ -771,17 +1215,17 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* ─── OPPSCIENCE Technology Evolution (Single 5-Column Container) ─── */}
-          {study.id === "oppscience" && study.techStack && (
+          {/* ─── OPPSCIENCE & CustomerMatrix Technology Evolution (Single 5-Column Container) ─── */}
+          {(study.id === "oppscience" || study.id === "customermatrix") && study.techStack && (
             <SectionReveal>
               <div className="space-y-4 pt-6 border-t border-slate-100">
                 <div>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
                     <Server className="h-6 w-6 text-blue-600 shrink-0" />
-                    Technology Evolution
+                    Technology Evolution Across the Platform
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                    An engineering stack that evolved alongside the platform across frameworks, infrastructure, and deployment models.
+                    Over the engagement, the platform architecture evolved across frameworks, enterprise search, frontend approaches, and cloud infrastructure.
                   </p>
                 </div>
 
@@ -789,7 +1233,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 lg:divide-x divide-slate-100">
                     {study.techStack.map((group: any, gIdx: number) => {
                       const Icon =
-                        gIdx === 0 ? Code2 : gIdx === 1 ? Server : gIdx === 2 ? Layers : gIdx === 3 ? Cloud : TestTube2
+                        gIdx === 0 ? Code2 : gIdx === 1 ? Search : gIdx === 2 ? Layers : gIdx === 3 ? Cloud : Server
                       return (
                         <div
                           key={gIdx}
@@ -974,53 +1418,55 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* ─── Innovalog / Generic 3-Card Tech Stack Fallback ─── */}
-          {study.id === "innovalog" && study.techStack && study.techStack.length > 0 && (
+          {/* ─── Generic / eXtensi / Innovalog Technology Stack Cards ─── */}
+          {(study.id === "innovalog" || study.id === "extensi") && study.techStack && study.techStack.length > 0 && (
             <SectionReveal>
               <div className="space-y-6 pt-6 border-t border-slate-100">
                 <div>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
                     <Users className="h-6 w-6 text-blue-600 shrink-0" />
-                    Technology & QA Stack
+                    Technology & Tools
                   </h2>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                    Product technologies, Atlassian platforms, and QA tools used across the {study.company} engagement.
+                    Frameworks, platforms, AI tools, and CI pipelines utilized across the {study.company} engagement.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className={`grid grid-cols-1 ${study.techStack.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3"} gap-4`}>
                   {study.techStack.map((group: any, gIdx: number) => {
-                    const Icon = gIdx === 0 ? Code2 : gIdx === 1 ? Layers : TestTube2
+                    const Icon = gIdx === 0 ? Code2 : gIdx === 1 ? Bot : gIdx === 2 ? GitBranch : Layers
                     return (
                       <div
                         key={gIdx}
-                        className="rounded-2xl p-5 sm:p-6 border border-slate-200/90 bg-white shadow-xs hover:shadow-md transition-shadow flex flex-col"
+                        className="rounded-2xl p-5 border border-slate-200/90 bg-white shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
                       >
-                        <div className="flex items-center gap-2.5 mb-4">
-                          <div
-                            className="h-8 w-8 rounded-lg flex items-center justify-center text-blue-600 shrink-0"
-                            style={{ background: `${primaryColor}12` }}
-                          >
-                            <Icon className="h-4 w-4" />
-                          </div>
-                          <div>
-                            <h3 className="font-bold text-slate-900 text-sm sm:text-base">{group.category}</h3>
-                            {group.subtitle && (
-                              <p className="text-[11px] text-slate-400 font-medium">{group.subtitle}</p>
-                            )}
-                          </div>
-                        </div>
-                        <ul className="space-y-2 mt-auto">
-                          {group.items.map((item: string, iIdx: number) => (
-                            <li
-                              key={iIdx}
-                              className="text-xs sm:text-sm text-slate-600 flex items-center gap-2 font-medium"
+                        <div>
+                          <div className="flex items-center gap-2.5 mb-3">
+                            <div
+                              className="h-8 w-8 rounded-lg flex items-center justify-center text-blue-600 shrink-0"
+                              style={{ background: `${primaryColor}12` }}
                             >
-                              <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
+                              <Icon className="h-4 w-4" />
+                            </div>
+                            <div>
+                              <h3 className="font-bold text-slate-900 text-sm leading-tight">{group.category}</h3>
+                              {group.subtitle && (
+                                <p className="text-[10px] text-slate-400 font-medium mt-0.5">{group.subtitle}</p>
+                              )}
+                            </div>
+                          </div>
+                          <ul className="space-y-1.5 mt-2">
+                            {group.items.map((item: string, iIdx: number) => (
+                              <li
+                                key={iIdx}
+                                className="text-xs text-slate-700 flex items-center gap-2 font-medium"
+                              >
+                                <span className="h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     )
                   })}
@@ -1177,9 +1623,19 @@ export default async function CaseStudyPage({ params }: Props) {
                     ))}
                   </div>
 
-                  {/* Quote */}
+                  {/* Quote with highlighted callout phrases if applicable */}
                   <blockquote className="text-sm sm:text-base md:text-[15px] text-slate-200 leading-relaxed italic max-w-4xl font-normal pt-1 whitespace-pre-line">
-                    &ldquo;{study.testimonial.quote}&rdquo;
+                    {study.id === "customermatrix" ? (
+                      <>
+                        &ldquo;Along my time at CustomerMatrix as CTO, it has been a pleasure to work with TECUNIQUE as a contractor and even more as a partner. I always considered the TECUNIQUE consultants as{" "}
+                        <span className="text-sky-300 font-semibold not-italic underline decoration-sky-400/50 decoration-2 underline-offset-4">
+                          a natural extension of my team
+                        </span>
+                        . The Indian squad has been very professional, committed, and easy to work with in software development, QA, or data quality. The contribution and facility to adapt have been key to reaching the objectives of my R&D group in an ever-changing startup world. I want to thank all the people onboarded at that time for that. All the best to all of you.&rdquo;
+                      </>
+                    ) : (
+                      <>&ldquo;{study.testimonial.quote}&rdquo;</>
+                    )}
                   </blockquote>
 
                   {/* Author */}
@@ -1216,7 +1672,7 @@ export default async function CaseStudyPage({ params }: Props) {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                 {(
                   study.relatedServices || [
-                    { title: "Dedicated Software Teams", href: "/services/dedicated-teams" },
+                    { title: "Dedicated Software Teams", href: "/services/dedicated-teams", primary: true },
                     { title: "Product Engineering & Custom Software", href: "/services/product-engineering" },
                     { title: "Software QA & Automation Testing", href: "/services/qa" },
                   ]
