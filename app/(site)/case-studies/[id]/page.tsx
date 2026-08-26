@@ -128,13 +128,26 @@ export default async function CaseStudyPage({ params }: Props) {
       !title.includes("dedicated automation team") &&
       !title.includes("productivity & time-bound") &&
       !title.includes("more than additional") &&
+      !title.includes("across the product lifecycle") &&
       !title.includes("conclusion")
     )
   })
 
-  // Concluding / Deeper narrative sections before testimonial/CTA
+  // Specific lifecycle section for CustomerMatrix
+  const lifecycleSection = (study.sections || []).find((s: any) =>
+    s.title.toLowerCase().includes("across the product lifecycle")
+  )
+
+  // Specific continuity section for CustomerMatrix
+  const continuitySection = (study.sections || []).find((s: any) =>
+    s.title.toLowerCase().includes("team & relationship continuity") ||
+    s.title.toLowerCase().includes("continuity")
+  )
+
+  // Concluding / Deeper narrative sections before testimonial/CTA (for other case studies)
   const concludingSections = (study.sections || []).filter((section: any) => {
     const title = section.title.toLowerCase()
+    if (study.id === "customermatrix") return false // CustomerMatrix handles them in dedicated slots
     return (
       title.includes("continuity") ||
       title.includes("planned transition") ||
@@ -500,8 +513,8 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          {/* ─── Upper Section 2: Engagement Capability Blocks / Phases + Milestones ─── */}
-          {(study.engagementBlocks || study.engagementPhases) && (
+          {/* ─── Upper Section 2: Engagement Capability Blocks / Phases + Milestones (for non-CustomerMatrix) ─── */}
+          {study.id !== "customermatrix" && (study.engagementBlocks || study.engagementPhases) && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
               {/* Left Column: Engagement Model / Phases */}
               <div className="lg:col-span-8 space-y-5">
@@ -877,6 +890,38 @@ export default async function CaseStudyPage({ params }: Props) {
                       ))}
                     </div>
                   )}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── CustomerMatrix Specific: Across the Product Lifecycle Narrative ─── */}
+          {study.id === "customermatrix" && lifecycleSection && (
+            <SectionReveal>
+              <div className="space-y-3 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900">
+                    {lifecycleSection.title}
+                  </h2>
+                  {lifecycleSection.subtitle && (
+                    <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
+                      {lifecycleSection.subtitle}
+                    </p>
+                  )}
+                </div>
+                <div className="text-slate-600 leading-relaxed space-y-3 text-base pt-1">
+                  {(lifecycleSection.content || "")
+                    .replace(/\\r\\n/g, "\n")
+                    .replace(/\\n/g, "\n")
+                    .replace(/\\r/g, "\n")
+                    .split(/\n\s*\n/)
+                    .map((p: string) => p.trim())
+                    .filter(Boolean)
+                    .map((para: string, pIdx: number) => (
+                      <p key={pIdx} className="leading-relaxed whitespace-pre-line">
+                        {para}
+                      </p>
+                    ))}
                 </div>
               </div>
             </SectionReveal>
@@ -1284,6 +1329,38 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
+          {/* ─── CustomerMatrix Specific: Team & Relationship Continuity Narrative ─── */}
+          {study.id === "customermatrix" && continuitySection && (
+            <SectionReveal>
+              <div className="space-y-3 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900">
+                    {continuitySection.title}
+                  </h2>
+                  {continuitySection.subtitle && (
+                    <p className="text-xs font-semibold uppercase tracking-wider text-blue-600 mt-0.5">
+                      {continuitySection.subtitle}
+                    </p>
+                  )}
+                </div>
+                <div className="text-slate-600 leading-relaxed space-y-3 text-base pt-1">
+                  {(continuitySection.content || "")
+                    .replace(/\\r\\n/g, "\n")
+                    .replace(/\\n/g, "\n")
+                    .replace(/\\r/g, "\n")
+                    .split(/\n\s*\n/)
+                    .map((p: string) => p.trim())
+                    .filter(Boolean)
+                    .map((para: string, pIdx: number) => (
+                      <p key={pIdx} className="leading-relaxed whitespace-pre-line">
+                        {para}
+                      </p>
+                    ))}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
           {/* ─── OPPSCIENCE QA Automation Evolution ─── */}
           {study.id === "oppscience" && study.automationEvolution && (
             <SectionReveal>
@@ -1556,7 +1633,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* ─── Concluding Narrative Sections ─── */}
+          {/* ─── Concluding Narrative Sections (for other case studies) ─── */}
           {concludingSections.length > 0 && (
             <div className="space-y-6 pt-6 border-t border-slate-100">
               {concludingSections.map((section: any, index: number) => {
