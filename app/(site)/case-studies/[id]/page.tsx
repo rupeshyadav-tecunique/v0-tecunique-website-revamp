@@ -38,6 +38,9 @@ import {
   Headphones,
   GitMerge,
   Calendar,
+  CheckSquare,
+  Wrench,
+  Award,
 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import clientPromise from "@/lib/db"
@@ -95,6 +98,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? "CustomerMatrix Dedicated Engineering Team Case Study | TECUNIQUE"
         : study.id === "polyspot"
         ? "PolySpot Dedicated Engineering Team Case Study | TECUNIQUE"
+        : study.id === "appfire"
+        ? "Appfire Engineering & QA Case Study | TECUNIQUE"
         : `${study.company} Case Study`),
     description:
       study.metaDescription ||
@@ -129,6 +134,7 @@ export default async function CaseStudyPage({ params }: Props) {
       !title.includes("supporting frequent") &&
       !title.includes("new chapter") &&
       !title.includes("continuity") &&
+      !title.includes("preserving product knowledge") &&
       !title.includes("planned transition") &&
       !title.includes("demonstrates") &&
       !title.includes("dedicated automation team") &&
@@ -164,7 +170,7 @@ export default async function CaseStudyPage({ params }: Props) {
   // Concluding / Deeper narrative sections before testimonial/CTA (for other case studies)
   const concludingSections = (study.sections || []).filter((section: any) => {
     const title = section.title.toLowerCase()
-    if (study.id === "customermatrix" || study.id === "polyspot") return false // Handled in dedicated slots
+    if (study.id === "customermatrix" || study.id === "polyspot" || study.id === "appfire") return false // Handled in dedicated slots
     return (
       title.includes("continuity") ||
       title.includes("planned transition") ||
@@ -216,7 +222,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <SectionReveal>
             <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
               {/* Company Logo/Initials */}
-              {study.logo ? (
+              {study.logo && study.id !== "appfire" ? (
                 <div className="relative h-20 w-20 md:h-28 md:w-28 shrink-0 rounded-2xl bg-white border border-slate-200/80 shadow-sm p-3 flex items-center justify-center overflow-hidden">
                   <Image
                     src={study.logo}
@@ -231,7 +237,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   className="flex h-20 w-20 md:h-28 md:w-28 items-center justify-center rounded-2xl text-white font-display text-3xl md:text-4xl font-extrabold shrink-0 shadow-sm"
                   style={{ background: `linear-gradient(135deg, ${primaryColor}, ${primaryColor}cc)` }}
                 >
-                  {study.initials}
+                  {study.initials || "AF"}
                 </div>
               )}
 
@@ -337,16 +343,28 @@ export default async function CaseStudyPage({ params }: Props) {
                             <p className="text-sm font-semibold text-slate-900 mt-0.5">{study.atAGlance.industry}</p>
                           </div>
                         )}
-                        {study.atAGlance.product && (
-                          <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Product / Platform</p>
-                            <p className="text-sm font-bold text-slate-900 mt-0.5">{study.atAGlance.product}</p>
-                          </div>
-                        )}
                         {study.atAGlance.ecosystem && (
                           <div className="pb-2.5 border-b border-slate-200/60">
                             <p className="text-xs text-slate-500 font-medium">Ecosystem</p>
                             <p className="text-sm font-semibold text-slate-900 mt-0.5">{study.atAGlance.ecosystem}</p>
+                          </div>
+                        )}
+                        {study.atAGlance.primaryProducts && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Primary Products</p>
+                            <p className="text-sm font-bold text-slate-900 mt-0.5">{study.atAGlance.primaryProducts}</p>
+                          </div>
+                        )}
+                        {study.atAGlance.additionalProducts && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Additional Product Relationship</p>
+                            <p className="text-sm font-semibold text-slate-900 mt-0.5">{study.atAGlance.additionalProducts}</p>
+                          </div>
+                        )}
+                        {study.atAGlance.product && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Product / Platform</p>
+                            <p className="text-sm font-bold text-slate-900 mt-0.5">{study.atAGlance.product}</p>
                           </div>
                         )}
                         {study.atAGlance.productJourney && (
@@ -371,24 +389,38 @@ export default async function CaseStudyPage({ params }: Props) {
                             </p>
                           </div>
                         )}
+                        {study.atAGlance.teamSize && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Peak Team</p>
+                            <p className="text-sm font-bold text-slate-900 mt-0.5">{study.atAGlance.teamSize}</p>
+                          </div>
+                        )}
+                        {study.atAGlance.capabilities && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Capabilities</p>
+                            <p className="text-xs font-semibold text-slate-900 mt-0.5 leading-snug">{study.atAGlance.capabilities}</p>
+                          </div>
+                        )}
+                        {study.atAGlance.cloudEvolution && (
+                          <div className="pb-2.5 border-b border-slate-200/60">
+                            <p className="text-xs text-slate-500 font-medium">Cloud Evolution</p>
+                            <p className="text-xs font-semibold text-slate-900 mt-0.5 leading-snug font-mono text-blue-700">{study.atAGlance.cloudEvolution}</p>
+                          </div>
+                        )}
                         {study.atAGlance.teamComposition && (
                           <div className="pb-2.5 border-b border-slate-200/60">
                             <p className="text-xs text-slate-500 font-medium">Capabilities</p>
                             <p className="text-xs font-semibold text-slate-900 mt-0.5 leading-snug">{study.atAGlance.teamComposition}</p>
                           </div>
                         )}
-                        {study.atAGlance.teamSize && (
+                        {study.atAGlance.engagement && (
                           <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Current Team</p>
-                            <p className="text-sm font-bold text-slate-900 mt-0.5">{study.atAGlance.teamSize}</p>
+                            <p className="text-xs text-slate-500 font-medium">Engagement Model</p>
+                            <p className="text-xs font-semibold text-slate-800 mt-0.5 leading-snug">
+                              {study.atAGlance.engagement}
+                            </p>
                           </div>
                         )}
-                        <div className="pb-2.5 border-b border-slate-200/60">
-                          <p className="text-xs text-slate-500 font-medium">Engagement Model</p>
-                          <p className="text-xs font-semibold text-slate-800 mt-0.5 leading-snug">
-                            {study.atAGlance.engagement}
-                          </p>
-                        </div>
                         {study.atAGlance.relationship && (
                           <div className="pb-2.5 border-b border-slate-200/60">
                             <p className="text-xs text-slate-500 font-medium">Engagement Period</p>
@@ -405,27 +437,11 @@ export default async function CaseStudyPage({ params }: Props) {
                             </p>
                           </div>
                         )}
-                        {study.atAGlance.coreAutomation && (
+                        {study.atAGlance.workingModel && (
                           <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Core Automation Stack</p>
-                            <p className="text-xs font-bold text-slate-900 mt-0.5">
-                              {study.atAGlance.coreAutomation}
-                            </p>
-                          </div>
-                        )}
-                        {study.atAGlance.aiAssisted && (
-                          <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">AI-Assisted Engineering</p>
-                            <p className="text-xs font-medium text-slate-700 mt-0.5">
-                              {study.atAGlance.aiAssisted}
-                            </p>
-                          </div>
-                        )}
-                        {study.atAGlance.workflow && (
-                          <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Engineering Workflow</p>
-                            <p className="text-xs font-medium text-slate-700 mt-0.5">
-                              {study.atAGlance.workflow}
+                            <p className="text-xs text-slate-500 font-medium">Working Model</p>
+                            <p className="text-xs font-semibold text-slate-800 mt-0.5 leading-relaxed">
+                              {study.atAGlance.workingModel}
                             </p>
                           </div>
                         )}
@@ -434,22 +450,6 @@ export default async function CaseStudyPage({ params }: Props) {
                             <p className="text-xs text-slate-500 font-medium">Working Model</p>
                             <p className="text-xs font-semibold text-slate-800 mt-0.5 leading-relaxed">
                               {study.atAGlance.clientControl}
-                            </p>
-                          </div>
-                        )}
-                        {study.atAGlance.tecuniqueScope && (
-                          <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">TECUNIQUE Scope</p>
-                            <p className="text-[11px] font-medium text-slate-600 mt-0.5 leading-relaxed">
-                              {study.atAGlance.tecuniqueScope}
-                            </p>
-                          </div>
-                        )}
-                        {study.atAGlance.coreAreas && (
-                          <div className="pb-2.5 border-b border-slate-200/60">
-                            <p className="text-xs text-slate-500 font-medium">Core Areas</p>
-                            <p className="text-xs font-medium text-slate-700 mt-0.5 leading-relaxed">
-                              {study.atAGlance.coreAreas}
                             </p>
                           </div>
                         )}
@@ -538,8 +538,8 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           </div>
 
-          {/* ─── Upper Section 2: Engagement Capability Blocks / Phases + Milestones (for non-CustomerMatrix / non-PolySpot) ─── */}
-          {study.id !== "customermatrix" && study.id !== "polyspot" && (study.engagementBlocks || study.engagementPhases) && (
+          {/* ─── Upper Section 2: Engagement Capability Blocks / Phases + Milestones (for non-CustomerMatrix / non-PolySpot / non-Appfire) ─── */}
+          {study.id !== "customermatrix" && study.id !== "polyspot" && study.id !== "appfire" && (study.engagementBlocks || study.engagementPhases) && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
               {/* Left Column: Engagement Model / Phases */}
               <div className="lg:col-span-8 space-y-5">
@@ -708,6 +708,444 @@ export default async function CaseStudyPage({ params }: Props) {
                 </SectionReveal>
               </div>
             </div>
+          )}
+
+          {/* ─── Appfire Specific: Continuity & 7-Person Focused Team Structure ─── */}
+          {study.id === "appfire" && study.teamStructure && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                {/* Preserving Knowledge Narrative */}
+                <div className="space-y-2.5">
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5">
+                    <ShieldCheck className="h-5 w-5 text-amber-600 shrink-0" />
+                    Preserving Product Knowledge Through the Transition
+                  </h2>
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
+                    Keeping an Experienced Team Around JMWE & JMCF
+                  </p>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                    The transition to Appfire preserved years of accumulated knowledge around JMWE and JMCF rather than resetting the engineering relationship after the acquisition. TECUNIQUE developers and QA engineers already understood the products, their Cloud and Data Center variants, existing automation suites, release processes and complex Jira workflow behaviour. That continuity allowed the team to continue contributing immediately while adapting to Appfire’s broader engineering processes and organizational structure.
+                  </p>
+                </div>
+
+                {/* Team Structure Banner & Breakdown */}
+                <div className="rounded-3xl border border-amber-100 bg-gradient-to-r from-amber-50/80 via-orange-50/30 to-white p-6 md:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
+                  <div className="space-y-1 text-center sm:text-left">
+                    <span className="text-xs font-bold uppercase tracking-widest text-amber-600 font-display">
+                      Team Structure
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-display font-bold text-slate-900">
+                      {study.teamStructure.title}
+                    </h3>
+                    <p className="text-xs md:text-sm text-slate-600 max-w-xl leading-relaxed">
+                      {study.teamStructure.description}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-amber-200/80 bg-white p-4 sm:p-5 text-center shadow-xs shrink-0 min-w-[150px]">
+                    <p className="text-3xl sm:text-4xl font-extrabold text-amber-600 font-display tracking-tight">
+                      7
+                    </p>
+                    <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-500 mt-1">
+                      Dedicated Professionals at Peak
+                    </p>
+                  </div>
+                </div>
+
+                {/* 2-Discipline Breakdown Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {study.teamStructure.breakdown.map((item: any, idx: number) => (
+                    <div
+                      key={idx}
+                      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs space-y-2 flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                          <span className="text-xs sm:text-sm font-bold text-slate-900 font-display">
+                            {item.discipline}
+                          </span>
+                          <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-md">
+                            {item.count}
+                          </span>
+                        </div>
+                        <p className="text-xs font-semibold text-amber-600 mb-2">
+                          {item.roles}
+                        </p>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: Architecture & Software Development + Cloud & Forge Evolution ─── */}
+          {study.id === "appfire" && study.devCapabilities && study.cloudEvolution && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <Code2 className="h-5 w-5 text-amber-600 shrink-0" />
+                      Architecture & Software Development
+                    </h2>
+                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
+                      Working Across the Product, Not Only Individual Features
+                    </p>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    TECUNIQUE software engineers contributed across core services, technical design, APIs, UI modules, and Atlassian Marketplace delivery requirements.
+                  </p>
+                </div>
+
+                {/* 8 Dev Capability Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                  {study.devCapabilities.map((dev: any, dIdx: number) => (
+                    <div
+                      key={dIdx}
+                      className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs space-y-1 hover:border-amber-300 transition-colors"
+                    >
+                      <h4 className="text-xs font-bold text-slate-900">{dev.title}</h4>
+                      <p className="text-[11px] text-slate-500 leading-snug">{dev.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Senior Architect Progression Callout */}
+                {study.architectProgression && (
+                  <div className="rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50/70 via-white to-orange-50/50 p-5 shadow-2xs space-y-1.5">
+                    <div className="flex items-center gap-2 text-amber-700">
+                      <Award className="h-4.5 w-4.5 shrink-0" />
+                      <h4 className="text-xs sm:text-sm font-bold tracking-tight">
+                        {study.architectProgression.title}
+                      </h4>
+                    </div>
+                    <p className="text-xs text-slate-700 leading-relaxed">
+                      {study.architectProgression.content}
+                    </p>
+                  </div>
+                )}
+
+                {/* Dual Cloud & Forge Evolution Cards */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pt-2">
+                  <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs space-y-2">
+                    <div className="flex items-center gap-2 text-amber-600">
+                      <Cloud className="h-4.5 w-4.5 shrink-0" />
+                      <h3 className="text-sm font-bold text-slate-900 font-display">
+                        {study.cloudEvolution.forgeTitle}
+                      </h3>
+                    </div>
+                    <p className="text-[11px] font-semibold text-amber-600">
+                      {study.cloudEvolution.forgeSubtitle}
+                    </p>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {study.cloudEvolution.forgeDesc}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs space-y-2">
+                    <div className="flex items-center gap-2 text-amber-600">
+                      <Server className="h-4.5 w-4.5 shrink-0" />
+                      <h3 className="text-sm font-bold text-slate-900 font-display">
+                        {study.cloudEvolution.migrationTitle}
+                      </h3>
+                    </div>
+                    <p className="text-[11px] font-semibold text-amber-600">
+                      {study.cloudEvolution.migrationSubtitle}
+                    </p>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {study.cloudEvolution.migrationDesc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: QA Across Cloud, Data Center & Releases ─── */}
+          {study.id === "appfire" && study.qaCapabilities && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <TestTube2 className="h-5 w-5 text-amber-600 shrink-0" />
+                      QA Across Cloud, Data Center & Releases
+                    </h2>
+                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
+                      Quality Engineering Throughout the Release Lifecycle
+                    </p>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    QA represented a major part of the Appfire engagement, covering both Cloud and Data Center versions across planning, regression, and release readiness.
+                  </p>
+                </div>
+
+                {/* 9 QA Capability Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {study.qaCapabilities.map((qa: any, qIdx: number) => (
+                    <div
+                      key={qIdx}
+                      className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-2xs space-y-1 hover:border-amber-300 transition-colors"
+                    >
+                      <h4 className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-amber-600 shrink-0" />
+                        {qa.title}
+                      </h4>
+                      <p className="text-[11px] text-slate-500 leading-snug">{qa.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Post-Migration QA Callout */}
+                {study.postMigrationQa && (
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4.5 space-y-1.5 shadow-2xs">
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">
+                      {study.postMigrationQa.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {study.postMigrationQa.desc}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: Specialized JMWE Automation & Technical Stack ─── */}
+          {study.id === "appfire" && study.automationSection && study.automationStack && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <Workflow className="h-5 w-5 text-amber-600 shrink-0" />
+                      {study.automationSection.title}
+                    </h2>
+                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
+                      {study.automationSection.subtitle}
+                    </p>
+                  </div>
+                  <div className="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2 whitespace-pre-line">
+                    {study.automationSection.desc}
+                  </div>
+                </div>
+
+                {/* Automation Framework Ownership */}
+                <div className="rounded-2xl border border-amber-200/80 bg-white p-5 shadow-2xs space-y-2">
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2">
+                    <Wrench className="h-4 w-4 text-amber-600" />
+                    {study.automationSection.frameworkTitle}
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {study.automationSection.frameworkDesc}
+                  </p>
+                </div>
+
+                {/* 8-Card Specialized Automation Stack */}
+                <div className="rounded-3xl border border-slate-200/90 bg-slate-50/70 p-5 md:p-6 space-y-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+                    Specialized Automation & Delivery Toolset
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {study.automationStack.map((toolItem: any, tIdx: number) => (
+                      <div
+                        key={tIdx}
+                        className="rounded-xl border border-slate-200 bg-white p-3 text-center shadow-2xs space-y-0.5"
+                      >
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+                          {toolItem.category}
+                        </span>
+                        <span className="text-xs font-bold text-slate-900 font-mono">
+                          {toolItem.tool}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: L3 Technical Support ─── */}
+          {study.id === "appfire" && study.l3Support && (
+            <SectionReveal>
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div className="rounded-3xl border border-amber-200/80 bg-gradient-to-r from-amber-50/90 via-orange-50/40 to-white p-6 md:p-8 shadow-xs space-y-4">
+                  <div>
+                    <div className="flex items-center gap-2 text-amber-700 mb-1">
+                      <Headphones className="h-5 w-5 shrink-0" />
+                      <h3 className="text-lg md:text-xl font-display font-bold text-slate-900">
+                        {study.l3Support.title}
+                      </h3>
+                    </div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 mb-2">
+                      {study.l3Support.subtitle}
+                    </p>
+                    <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                      {study.l3Support.desc}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                    {study.l3Support.responsibilities.map((resp: string, rIdx: number) => (
+                      <div
+                        key={rIdx}
+                        className="rounded-xl bg-white border border-amber-200/60 p-3 flex items-start gap-2 shadow-2xs"
+                      >
+                        <CheckCircle2 className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                        <span className="text-xs text-slate-700 leading-snug">{resp}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-xs text-slate-700 italic pt-2 border-t border-amber-200/60 font-medium">
+                    {study.l3Support.closing}
+                  </p>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: Embedded Working Model & Specialized QA Recruitment ─── */}
+          {study.id === "appfire" && study.workingModel && study.recruitment && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                {/* Embedded Model */}
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <Users className="h-5 w-5 text-amber-600 shrink-0" />
+                      {study.workingModel.title}
+                    </h2>
+                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
+                      {study.workingModel.subtitle}
+                    </p>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {study.workingModel.desc}
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
+                    {study.workingModel.processCards.map((pCard: any, pIdx: number) => (
+                      <div
+                        key={pIdx}
+                        className="rounded-2xl border border-slate-200 bg-white p-4 shadow-2xs space-y-1 hover:border-amber-300 transition-colors"
+                      >
+                        <span className="text-xs font-bold text-amber-600 font-mono block">
+                          {pCard.title}
+                        </span>
+                        <h4 className="text-xs font-bold text-slate-900">{pCard.role}</h4>
+                        <p className="text-[11px] text-slate-500 leading-snug">{pCard.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Specialized QA Recruitment */}
+                <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-2xs space-y-2">
+                  <div className="flex items-center gap-2 text-amber-700">
+                    <UserCheck className="h-4.5 w-4.5 shrink-0" />
+                    <h4 className="text-xs sm:text-sm font-bold tracking-tight">
+                      {study.recruitment.title}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {study.recruitment.desc}
+                  </p>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: Rich Filters Expansion & 4 Main Value Pillars ─── */}
+          {study.id === "appfire" && study.richFiltersExpansion && study.mainValues && (
+            <SectionReveal>
+              <div className="space-y-6 pt-6 border-t border-slate-100">
+                {/* Rich Filters Expansion */}
+                <div className="rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50/80 via-orange-50/40 to-white p-5 shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="space-y-1 text-center sm:text-left">
+                    <h4 className="text-sm font-bold text-slate-900">
+                      {study.richFiltersExpansion.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 max-w-xl leading-relaxed">
+                      {study.richFiltersExpansion.desc}
+                    </p>
+                  </div>
+                  <Link
+                    href={study.richFiltersExpansion.linkHref}
+                    className="inline-flex items-center text-xs font-bold text-amber-700 bg-white border border-amber-300 px-3.5 py-2 rounded-xl hover:bg-amber-50 shadow-2xs shrink-0 transition-colors"
+                  >
+                    {study.richFiltersExpansion.linkText}
+                  </Link>
+                </div>
+
+                {/* 4 Main Value Pillars */}
+                <div className="space-y-3 pt-2">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                      <Award className="h-5 w-5 text-amber-600 shrink-0" />
+                      What the Long-Term Team Brought
+                    </h2>
+                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
+                      Main Value Delivered to Appfire
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {study.mainValues.map((val: any, vIdx: number) => (
+                      <div
+                        key={vIdx}
+                        className="rounded-2xl border border-slate-200 bg-white p-5 shadow-2xs space-y-1.5 hover:border-amber-300 transition-colors"
+                      >
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-amber-600 shrink-0" />
+                          {val.title}
+                        </h4>
+                        <p className="text-xs text-slate-600 leading-relaxed">
+                          {val.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          )}
+
+          {/* ─── Appfire Specific: Compact Engagement Timeline ─── */}
+          {study.id === "appfire" && study.timeline && (
+            <SectionReveal>
+              <div className="space-y-4 pt-6 border-t border-slate-100">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1.5">
+                    <Calendar className="h-5 w-5 text-amber-600 shrink-0" />
+                    Engagement Timeline
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                    Key milestones across the Appfire partnership lifecycle (Nov 2020 – April 2025).
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-xs">
+                  <div className="space-y-4">
+                    {study.timeline.map((item: any, tIdx: number) => (
+                      <div key={tIdx} className="flex items-start gap-4 pb-3 last:pb-0 border-b last:border-0 border-slate-100">
+                        <span className="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md shrink-0">
+                          {item.year}
+                        </span>
+                        <div>
+                          <h4 className="text-xs sm:text-sm font-bold text-slate-900">{item.title}</h4>
+                          <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed mt-0.5">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
           )}
 
           {/* ─── PolySpot Specific: GWT Engineering Challenge & Rebuilt Product Interfaces ─── */}
@@ -888,7 +1326,7 @@ export default async function CaseStudyPage({ params }: Props) {
                           key={cIdx}
                           className="text-xs font-semibold text-sky-900 bg-sky-50 border border-sky-200/70 px-3 py-1 rounded-lg flex items-center gap-1.5"
                         >
-                          <CheckCircle2 className="h-3 w-3 text-sky-600 shrink-0" />
+                          <CheckCircle2 className="h-3.5 w-3.5 text-sky-600 shrink-0" />
                           {c}
                         </span>
                       ))}
@@ -1618,37 +2056,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* ─── PolySpot Specific: Multiple Product Releases Narrative ─── */}
-          {study.id === "polyspot" && polyspotReleasesSection && (
-            <SectionReveal>
-              <div className="space-y-3 pt-6 border-t border-slate-100">
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900">
-                    {polyspotReleasesSection.title}
-                  </h2>
-                  {polyspotReleasesSection.subtitle && (
-                    <p className="text-xs font-semibold uppercase tracking-wider text-sky-600 mt-0.5">
-                      {polyspotReleasesSection.subtitle}
-                    </p>
-                  )}
-                </div>
-                <div className="text-slate-600 leading-relaxed space-y-3 text-base pt-1">
-                  {(polyspotReleasesSection.content || "")
-                    .replace(/\\r\\n/g, "\n")
-                    .replace(/\\n/g, "\n")
-                    .replace(/\\r/g, "\n")
-                    .split(/\n\s*\n/)
-                    .map((p: string) => p.trim())
-                    .filter(Boolean)
-                    .map((para: string, pIdx: number) => (
-                      <p key={pIdx} className="leading-relaxed whitespace-pre-line">
-                        {para}
-                      </p>
-                    ))}
-                </div>
-              </div>
-            </SectionReveal>
-          )}
+
 
           {/* ─── PolySpot Specific: End of Product Lifecycle Narrative ─── */}
           {study.id === "polyspot" && polyspotLifecycleEndSection && (
@@ -2161,6 +2569,18 @@ export default async function CaseStudyPage({ params }: Props) {
                         </span>
                         . I express my sincere appreciation for TECUNIQUE's relentless efforts over the years and emphasize their importance in continued partnership over the years.&rdquo;
                       </>
+                    ) : study.id === "appfire" ? (
+                      <>
+                        &ldquo;Since 2020, Appfire and TECUNIQUE have been engaged in business, and throughout this period, the TECUNIQUE team has consistently impressed us with their exceptional services.{" "}
+                        <span className="text-amber-300 font-semibold not-italic underline decoration-amber-400/50 decoration-2 underline-offset-4">
+                          Their expertise and dedication in architectural design, development, and quality assurance have been very valuable to our team.
+                        </span>{" "}
+                        Additionally, their HR team has demonstrated a tried-and-true process for{" "}
+                        <span className="text-amber-200 font-semibold not-italic">
+                          recruiting the ideal QA engineers for our intricate products
+                        </span>
+                        .&rdquo;
+                      </>
                     ) : (
                       <>&ldquo;{study.testimonial.quote}&rdquo;</>
                     )}
@@ -2168,7 +2588,10 @@ export default async function CaseStudyPage({ params }: Props) {
 
                   {/* Author */}
                   <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full text-white text-xs font-bold shrink-0 shadow-md bg-sky-600">
+                    <div
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-white text-xs font-bold shrink-0 shadow-md"
+                      style={{ background: primaryColor }}
+                    >
                       {study.testimonial.author
                         .split(" ")
                         .map((n: string) => n[0])

@@ -138,12 +138,12 @@ const CASE_STUDIES: CaseStudyItem[] = [
     initials: "AF",
     color: "#f97316",
     industry: "Atlassian Ecosystem",
-    title: "Supporting Atlassian App Engineering & QA Across Appfire Products",
+    title: "Extending a Long-Term Atlassian Engineering Partnership Across Development, QA & Automation",
     description:
-      "Dedicated software engineering and QA support across Atlassian Marketplace products, including work around JMWE and JMCF as TECUNIQUE engineers collaborated with Appfire product teams.",
+      "A long-term Appfire engagement spanning architecture, product development, specialized Jira automation, Cloud and Forge evolution, L3 support and recruitment of experienced QA talent.",
     primaryService: "Atlassian App Development & QA",
-    highlight: "JMWE + JMCF",
-    filters: ["Atlassian Apps", "Dedicated Teams", "QA & Automation"],
+    highlight: "Architecture · Development · Specialized QA",
+    filters: ["Atlassian Apps", "QA & Automation", "Dedicated Teams"],
     href: "/case-studies/appfire",
   },
 ]
