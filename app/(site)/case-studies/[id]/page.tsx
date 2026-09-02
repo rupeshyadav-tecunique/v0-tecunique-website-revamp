@@ -122,6 +122,12 @@ export default async function CaseStudyPage({ params }: Props) {
   // Filter upper narrative sections
   const upperSections = (study.sections || []).filter((section: any) => {
     const title = section.title.toLowerCase()
+    if (study.id === "appfire") {
+      return (
+        title.includes("how the appfire relationship began") ||
+        title.includes("preserving product knowledge")
+      )
+    }
     return (
       !title.includes("engagement") &&
       !title.includes("dedicated team") &&
@@ -710,24 +716,10 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
           )}
 
-          {/* ─── Appfire Specific: Continuity & 7-Person Focused Team Structure ─── */}
+          {/* ─── Appfire Specific: 7-Person Focused Team Structure ─── */}
           {study.id === "appfire" && study.teamStructure && (
             <SectionReveal>
               <div className="space-y-6 pt-6 border-t border-slate-100">
-                {/* Preserving Knowledge Narrative */}
-                <div className="space-y-2.5">
-                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5">
-                    <ShieldCheck className="h-5 w-5 text-amber-600 shrink-0" />
-                    Preserving Product Knowledge Through the Transition
-                  </h2>
-                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-600">
-                    Keeping an Experienced Team Around JMWE & JMCF
-                  </p>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
-                    The transition to Appfire preserved years of accumulated knowledge around JMWE and JMCF rather than resetting the engineering relationship after the acquisition. TECUNIQUE developers and QA engineers already understood the products, their Cloud and Data Center variants, existing automation suites, release processes and complex Jira workflow behaviour. That continuity allowed the team to continue contributing immediately while adapting to Appfire’s broader engineering processes and organizational structure.
-                  </p>
-                </div>
-
                 {/* Team Structure Banner & Breakdown */}
                 <div className="rounded-3xl border border-amber-100 bg-gradient-to-r from-amber-50/80 via-orange-50/30 to-white p-6 md:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
                   <div className="space-y-1 text-center sm:text-left">
@@ -1148,23 +1140,21 @@ export default async function CaseStudyPage({ params }: Props) {
             </SectionReveal>
           )}
 
-          {/* ─── PolySpot Specific: GWT Engineering Challenge & Rebuilt Product Interfaces ─── */}
-          {study.id === "polyspot" && study.gwtChallenge && study.productAreas && (
+          {/* ─── PolySpot Specific: GWT Engineering & Rebuilt Product Interfaces (Full-Width) ─── */}
+          {study.id === "polyspot" && study.productAreas && (
             <SectionReveal>
               <div className="space-y-6 pt-6 border-t border-slate-100">
-                <div className="space-y-3">
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
-                      <Code2 className="h-5 w-5 text-sky-600 shrink-0" />
-                      {study.gwtChallenge.title}
-                    </h2>
-                    <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-sky-600">
-                      {study.gwtChallenge.subtitle}
-                    </p>
-                  </div>
-                  <div className="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2 whitespace-pre-line">
-                    {study.gwtChallenge.content}
-                  </div>
+                <div className="space-y-2">
+                  <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 flex items-center gap-2.5 mb-1">
+                    <Code2 className="h-5 w-5 text-sky-600 shrink-0" />
+                    Product Engineering & Interface Modernization
+                  </h2>
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-sky-600">
+                    What the Team Built Around the GWT Architecture
+                  </p>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    The engineering team developed and maintained key user-facing modules, custom framework components, and platform delivery tools:
+                  </p>
                 </div>
 
                 {/* 5 Product Area Cards */}
@@ -1180,7 +1170,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   ))}
                 </div>
 
-                {study.gwtChallenge.stackEvolutionNote && (
+                {study.gwtChallenge?.stackEvolutionNote && (
                   <div className="rounded-xl bg-slate-50 border border-slate-200/80 p-3.5 text-xs text-slate-600 leading-relaxed">
                     <span className="font-semibold text-slate-900">Frontend Stack Evolution: </span>
                     {study.gwtChallenge.stackEvolutionNote}
