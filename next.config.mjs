@@ -33,13 +33,40 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Redirect www to non-www (or flip if you prefer www)
-      {
-        source: '/(.*)',
-        has: [{ type: 'host', value: 'www.tecunique.com' }],
-        destination: 'https://tecunique.com/:path*',
-        permanent: true,
-      },
+      // ─── Legacy Services ───
+      { source: '/dedicated-teams', destination: '/services/dedicated-teams', permanent: true },
+      { source: '/services/offshore-development-center', destination: '/services/dedicated-teams', permanent: true },
+      { source: '/services/dedicated-development-team', destination: '/services/dedicated-teams', permanent: true },
+      { source: '/product-engineering', destination: '/services/product-engineering', permanent: true },
+      { source: '/services/custom-software-development', destination: '/services/product-engineering', permanent: true },
+      { source: '/software-testing-qa', destination: '/services/qa', permanent: true },
+      { source: '/services/qa-automation', destination: '/services/qa', permanent: true },
+      { source: '/services/software-testing', destination: '/services/qa', permanent: true },
+      { source: '/atlassian-development', destination: '/services/atlassian', permanent: true },
+      { source: '/services/atlassian-apps', destination: '/services/atlassian', permanent: true },
+      { source: '/services/jira-app-development', destination: '/services/atlassian', permanent: true },
+
+      // ─── Legacy Singular Case Study Routes ───
+      { source: '/case-study/oppscience', destination: '/case-studies/oppscience', permanent: true },
+      { source: '/case-study/skyselect', destination: '/case-studies/skyselect', permanent: true },
+      { source: '/case-study/innovalog', destination: '/case-studies/innovalog', permanent: true },
+      { source: '/case-study/qotilabs', destination: '/case-studies/qotilabs', permanent: true },
+      { source: '/case-study/extensi', destination: '/case-studies/extensi', permanent: true },
+      { source: '/case-study/customermatrix', destination: '/case-studies/customermatrix', permanent: true },
+      { source: '/case-study/polyspot', destination: '/case-studies/polyspot', permanent: true },
+      { source: '/case-study/appfire', destination: '/case-studies/appfire', permanent: true },
+      { source: '/case-studies/jmwe', destination: '/case-studies/innovalog', permanent: true },
+      { source: '/case-studies/rich-filters', destination: '/case-studies/qotilabs', permanent: true },
+      { source: '/case-studies/team-hub', destination: '/case-studies/extensi', permanent: true },
+
+      // ─── Legacy Navigation & Contact ───
+      { source: '/contact-us', destination: '/contact', permanent: true },
+      { source: '/about-us', destination: '/about', permanent: true },
+      { source: '/jobs', destination: '/careers', permanent: true },
+      { source: '/careers/openings', destination: '/careers', permanent: true },
+      { source: '/legal/privacy-policy', destination: '/privacy-policy', permanent: true },
+      { source: '/legal/terms-of-service', destination: '/terms-of-service', permanent: true },
+      { source: '/legal/cookie-policy', destination: '/cookie-policy', permanent: true },
     ]
   },
 }

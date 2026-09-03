@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope, Sora, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const manrope = Manrope({ 
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono'
 })
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://tecunique.com'
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.tecunique.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -99,6 +100,28 @@ export default function RootLayout({
       <body className="font-sans antialiased min-h-screen flex flex-col">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </body>
     </html>
   )

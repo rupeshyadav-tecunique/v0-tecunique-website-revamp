@@ -189,8 +189,75 @@ export default async function CaseStudyPage({ params }: Props) {
     )
   })
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.tecunique.com'
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": baseUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Case Studies",
+        "item": `${baseUrl}/case-studies`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": `${study.company} Case Study`,
+        "item": `${baseUrl}/case-studies/${study.id}`
+      }
+    ]
+  }
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": study.heroTitle || `${study.company} Case Study`,
+    "description": study.heroSubtitle || study.tagline || study.description,
+    "url": `${baseUrl}/case-studies/${study.id}`,
+    "author": {
+      "@type": "Organization",
+      "name": "TECUNIQUE Private Limited",
+      "url": baseUrl
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TECUNIQUE Private Limited",
+      "url": baseUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${baseUrl}/images/logos/tecunique-icon-modern-refresh.svg`
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/case-studies/${study.id}`
+    },
+    "about": {
+      "@type": "Organization",
+      "name": study.company
+    }
+  }
+
   return (
     <div className="flex flex-col w-full bg-slate-50 min-h-screen">
+      {/* Structured Data / JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 bg-white border-b border-slate-100"

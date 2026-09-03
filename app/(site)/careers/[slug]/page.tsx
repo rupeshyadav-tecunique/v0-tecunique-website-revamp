@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -58,8 +58,43 @@ export default async function JobPage({ params }: JobPageProps) {
     notFound()
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.tecunique.com'
+
+  const jobPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": (job as any).title,
+    "description": (job as any).description,
+    "datePosted": (job as any).postedDate || new Date().toISOString(),
+    "employmentType": (job as any).type?.toLowerCase().includes("part") ? "PART_TIME" : "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "TECUNIQUE Private Limited",
+      "sameAs": baseUrl,
+      "logo": `${baseUrl}/images/logos/tecunique-icon-modern-refresh.svg`
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1002, Neptune Edge, Sarabhai Campus",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "postalCode": "390007",
+        "addressCountry": "IN"
+      }
+    },
+    "experienceRequirements": (job as any).experience || "Relevant experience"
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
+      {/* JobPosting Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+      />
+
       {/* Header */}
       <section className="bg-gradient-to-b from-muted/50 to-background pt-16 pb-12">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
