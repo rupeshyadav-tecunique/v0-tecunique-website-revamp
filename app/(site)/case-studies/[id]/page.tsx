@@ -2534,12 +2534,14 @@ export default async function CaseStudyPage({ params }: Props) {
                     CLIENT PERSPECTIVE
                   </span>
 
-                  {/* 5 Stars */}
-                  <div className="flex gap-1.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
+                  {/* 5 Stars (only where verified) */}
+                  {study.id !== "customermatrix" && (
+                    <div className="flex gap-1.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                  )}
 
                   {/* Quote with highlighted callout phrases if applicable */}
                   <blockquote className="text-sm sm:text-base md:text-[15px] text-slate-200 leading-relaxed italic max-w-4xl font-normal pt-1 whitespace-pre-line">

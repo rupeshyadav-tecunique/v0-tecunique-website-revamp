@@ -98,7 +98,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     description:
       "A dedicated QA automation engineer worked within eXtensi’s existing framework and development workflow, combining Playwright + TypeScript with AI-assisted test design and automation development to scale coverage for Team Hub for Confluence.",
     primaryService: "QA & Automation",
-    highlight: "~300 tests · 100% planned coverage",
+    highlight: "~300 tests · 100% planned test coverage achieved",
     filters: ["QA & Automation", "Atlassian Apps", "Dedicated Teams"],
     href: "/case-studies/extensi",
   },

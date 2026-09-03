@@ -30,7 +30,7 @@ export function AutomationCapability() {
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.1]" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">Automation QA for Faster, Safer Releases</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">Automation QA for Faster, More Repeatable Release Testing</h2>
           <p className="text-white/80 text-lg leading-relaxed">
             We design and maintain automated test coverage for repeatable product workflows, helping reduce manual regression effort and provide faster feedback during release cycles.
           </p>
