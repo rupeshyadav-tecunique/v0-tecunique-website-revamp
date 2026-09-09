@@ -1,11 +1,11 @@
-﻿import CaseStudyForm from "@/components/pages/admin/case-study-form"
+import CaseStudyForm from "@/components/pages/admin/case-study-form"
 import { Card } from "@/components/ui/card"
 import clientPromise from "@/lib/db"
 import { notFound } from "next/navigation"
 
 export const dynamic = "force-dynamic"
 
-async function getCaseStudy(id: string) {
+async function getCaseStudy(id: string): Promise<any> {
   try {
     const client = await clientPromise
     const db = client.db("tecunique")
@@ -32,10 +32,12 @@ export default async function EditCaseStudy({ params }: { params: Promise<{ id: 
     notFound()
   }
 
+  const clientName = study.company || study.client || study.title || "Case Study"
+
   return (
     <div className="space-y-8 max-w-4xl mx-auto">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">Edit Case Study: {study.client}</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">Edit Case Study: {clientName}</h1>
         <p className="text-muted-foreground mt-2">Update the information below.</p>
       </div>
 

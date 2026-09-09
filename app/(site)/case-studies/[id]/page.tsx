@@ -61,7 +61,7 @@ export async function generateStaticParams() {
   }
 }
 
-async function getCaseStudy(id: string) {
+async function getCaseStudy(id: string): Promise<any> {
   try {
     const client = await clientPromise
     const db = client.db("tecunique")

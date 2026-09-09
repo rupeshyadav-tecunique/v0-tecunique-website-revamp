@@ -1,8 +1,8 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import clientPromise from "@/lib/db"
 import BlogList from "@/components/pages/blog/blog-list"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import { Sparkles } from "lucide-react"
+import { UnifiedCTA } from "@/components/pages/services/unified-cta"
 
 export const metadata: Metadata = {
   title: "Blog & Articles",
@@ -71,6 +71,14 @@ export default async function BlogPage() {
       </section>
 
       {/* CTA Section */}
-          </>
+      <UnifiedCTA
+        eyebrow="Want to explore engineering collaboration?"
+        title={<>Let's Build Your <span className="text-brand-blue">Next Product Milestone</span></>}
+        description="Connect with our software engineering, QA automation, and dedicated team specialists to discuss your roadmap."
+        primaryButtonText="Discuss Your Project"
+        secondaryButtonText="Explore Case Studies"
+        secondaryButtonLink="/case-studies"
+      />
+    </>
   )
 }

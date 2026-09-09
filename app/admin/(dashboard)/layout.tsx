@@ -1,14 +1,16 @@
-﻿import { cookies } from "next/headers"
+import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import { AdminSidebar } from "@/components/pages/admin/sidebar"
 import { User } from "lucide-react"
+import { verifyAdminToken } from "@/lib/auth"
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies()
   const token = cookieStore.get("admin_token")?.value
+  const session = await verifyAdminToken(token)
 
   // Server-side protection
-  if (!token) {
+  if (!session) {
     redirect("/admin/login")
   }
 
@@ -19,7 +21,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <header className="hidden md:flex h-16 border-b border-border/60 bg-white sticky top-0 z-40 items-center justify-end px-10">
           <div className="flex items-center gap-4">
             <div className="flex flex-col items-end mr-2">
-              <span className="text-sm font-semibold">Admin User</span>
+              <span className="text-sm font-semibold">{session.username || "Admin User"}</span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">TecUnique Admin</span>
             </div>
             <div className="h-10 w-10 rounded-full bg-muted border border-border/60 flex items-center justify-center overflow-hidden">

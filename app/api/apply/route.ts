@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { escapeHtml, sanitizeHeader } from '@/lib/security';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -7,18 +8,48 @@ export async function POST(req: Request) {
   try {
     const formData = await req.formData();
     
-    const jobTitle = formData.get('jobTitle') as string;
-    const firstName = formData.get('firstName') as string;
-    const lastName = formData.get('lastName') as string;
-    const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string;
-    const linkedin = formData.get('linkedin') as string;
-    const coverLetter = formData.get('coverLetter') as string;
+    const rawJobTitle = formData.get('jobTitle') as string;
+    const rawFirstName = formData.get('firstName') as string;
+    const rawLastName = formData.get('lastName') as string;
+    const rawEmail = formData.get('email') as string;
+    const rawPhone = formData.get('phone') as string;
+    const rawLinkedin = formData.get('linkedin') as string;
+    const rawCoverLetter = formData.get('coverLetter') as string;
     const resume = formData.get('resume') as File | null;
 
-    if (!jobTitle || !firstName || !lastName || !email || !phone || !coverLetter || !resume) {
+    if (!rawJobTitle || !rawFirstName || !rawLastName || !rawEmail || !rawPhone || !rawCoverLetter || !resume) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
+
+    // Server-side file validation
+    const allowedExtensions = ['.pdf', '.doc', '.docx'];
+    const fileName = resume.name.toLowerCase();
+    const hasValidExt = allowedExtensions.some(ext => fileName.endsWith(ext));
+    
+    const allowedMimeTypes = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'application/octet-stream'
+    ];
+    const hasValidMime = allowedMimeTypes.includes(resume.type) || (resume.type === '' && hasValidExt);
+
+    if (!hasValidExt || !hasValidMime) {
+      return NextResponse.json({ error: 'Invalid file type. Only PDF and Word documents (.pdf, .doc, .docx) are allowed.' }, { status: 400 });
+    }
+
+    // 10MB maximum file size limit
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+    if (resume.size > MAX_FILE_SIZE) {
+      return NextResponse.json({ error: 'File size exceeds the 10MB limit.' }, { status: 400 });
+    }
+
+    const jobTitle = sanitizeHeader(rawJobTitle);
+    const firstName = sanitizeHeader(rawFirstName);
+    const lastName = sanitizeHeader(rawLastName);
+    const email = sanitizeHeader(rawEmail);
+    const phone = sanitizeHeader(rawPhone);
+    const linkedin = sanitizeHeader(rawLinkedin);
 
     // Convert resume file to buffer for Resend attachment
     const bytes = await resume.arrayBuffer();
@@ -28,24 +59,61 @@ export async function POST(req: Request) {
       process.env.HR_EMAIL_ADDRESS || 
       process.env.CONTACT_RECEIVER_EMAILS || 
       'rupesh.yadav@tecunique.com'
-    ).split(',');
+    ).split(',').map(e => e.trim()).filter(Boolean);
+
+    // Escape all user inputs before interpolating into HTML email
+    const safeJobTitle = escapeHtml(jobTitle);
+    const safeFirstName = escapeHtml(firstName);
+    const safeLastName = escapeHtml(lastName);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(phone);
+    const safeLinkedin = escapeHtml(linkedin);
+    const safeCoverLetter = escapeHtml(rawCoverLetter);
 
     const { data, error } = await resend.emails.send({
       from: process.env.EMAIL_FROM_ADDRESS || 'Careers <noreply@tecunique.com>',
       to: receivers,
+      replyTo: email,
       subject: `New Job Application: ${jobTitle} - ${firstName} ${lastName}`,
       html: `
-        <h2>New Job Application Received</h2>
-        <p><strong>Position:</strong> ${jobTitle}</p>
-        <p><strong>Applicant Name:</strong> ${firstName} ${lastName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        ${linkedin ? `<p><strong>LinkedIn:</strong> <a href="${linkedin}">${linkedin}</a></p>` : ''}
-        
-        <h3>Cover Letter:</h3>
-        <div style="white-space: pre-wrap; padding: 15px; background: #f4f4f5; border-radius: 8px;">${coverLetter}</div>
-        
-        <p><em>The applicant's resume is attached to this email.</em></p>
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #1e293b; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+          <h2 style="color: #0f172a; margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #6366f1;">New Job Application Received</h2>
+          
+          <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+            <tr>
+              <td style="padding: 8px 0; color: #64748b; font-weight: 600; width: 140px;">Position:</td>
+              <td style="padding: 8px 0; color: #0f172a; font-weight: bold;">${safeJobTitle}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #64748b; font-weight: 600;">Applicant:</td>
+              <td style="padding: 8px 0; color: #0f172a; font-weight: 500;">${safeFirstName} ${safeLastName}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #64748b; font-weight: 600;">Email:</td>
+              <td style="padding: 8px 0;"><a href="mailto:${safeEmail}" style="color: #6366f1; text-decoration: none;">${safeEmail}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #64748b; font-weight: 600;">Phone:</td>
+              <td style="padding: 8px 0; color: #0f172a;">${safePhone}</td>
+            </tr>
+            ${linkedin ? `
+            <tr>
+              <td style="padding: 8px 0; color: #64748b; font-weight: 600;">LinkedIn:</td>
+              <td style="padding: 8px 0;"><a href="${safeLinkedin}" target="_blank" style="color: #0284c7; text-decoration: none;">${safeLinkedin}</a></td>
+            </tr>
+            ` : ''}
+          </table>
+          
+          <h3 style="color: #0f172a; margin-top: 20px; margin-bottom: 8px;">Cover Letter:</h3>
+          <div style="white-space: pre-wrap; padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; color: #334155; line-height: 1.6;">${safeCoverLetter}</div>
+          
+          <p style="margin-top: 20px; color: #64748b; font-size: 13px;">
+            📎 <em>The applicant's resume (${escapeHtml(resume.name)}) is attached to this email.</em>
+          </p>
+          <p style="margin-top: 20px; font-size: 12px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 12px;">
+            Submitted via TECUNIQUE Careers Portal · Direct reply is enabled
+          </p>
+        </div>
       `,
       attachments: [
         {

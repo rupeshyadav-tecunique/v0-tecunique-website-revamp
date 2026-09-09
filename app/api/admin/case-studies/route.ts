@@ -2,14 +2,16 @@ import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import clientPromise from '@/lib/db'
 import { nanoid } from 'nanoid'
+import { verifyAdminToken } from '@/lib/auth'
 
 export async function POST(req: Request) {
   try {
     const cookieStore = await cookies()
     const token = cookieStore.get('admin_token')?.value
+    const session = await verifyAdminToken(token)
     
     // Auth check
-    if (!token) {
+    if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 

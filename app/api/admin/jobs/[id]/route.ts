@@ -2,6 +2,7 @@ import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import clientPromise from '@/lib/db'
 import { ObjectId } from 'mongodb'
+import { verifyAdminToken } from '@/lib/auth'
 
 export async function DELETE(
   req: Request,
@@ -10,8 +11,9 @@ export async function DELETE(
   try {
     const cookieStore = await cookies()
     const token = cookieStore.get('admin_token')?.value
+    const session = await verifyAdminToken(token)
     
-    if (!token) {
+    if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -43,8 +45,9 @@ export async function PATCH(
   try {
     const cookieStore = await cookies()
     const token = cookieStore.get('admin_token')?.value
+    const session = await verifyAdminToken(token)
     
-    if (!token) {
+    if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 

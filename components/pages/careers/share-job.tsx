@@ -80,7 +80,7 @@ export function ShareJob({ title, url, label, className }: ShareJobProps) {
             className={cn("rounded-xl px-6 font-semibold cursor-pointer", className)}
             onClick={(e) => {
               // On mobile, try native share first
-              if (typeof navigator !== 'undefined' && navigator.share && /Android|iPhone/i.test(navigator.userAgent)) {
+              if (typeof navigator !== 'undefined' && 'share' in navigator && /Android|iPhone/i.test(navigator.userAgent)) {
                 e.preventDefault()
                 handleShare()
               }

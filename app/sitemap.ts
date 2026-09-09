@@ -61,7 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const client = await clientPromise
     const db = client.db("tecunique")
     const blogs = await db.collection("blogs").find(
-      { status: { $ne: 'draft' } },
+      { isDraft: { $ne: true } },
       { projection: { slug: 1, date: 1, updatedAt: 1 } }
     ).toArray()
 
@@ -81,7 +81,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const client = await clientPromise
     const db = client.db("tecunique")
     const jobs = await db.collection("jobs").find(
-      { status: { $ne: 'closed' } },
+      { isActive: { $ne: false } },
       { projection: { slug: 1, postedDate: 1, updatedAt: 1 } }
     ).toArray()
 
