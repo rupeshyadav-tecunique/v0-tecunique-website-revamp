@@ -26,14 +26,17 @@ async function getJob(slug: string) {
     const client = await clientPromise
     const db = client.db("tecunique")
     const dbJob = await db.collection("jobs").findOne({ slug })
-    return dbJob ? {
-      ...dbJob,
-      _id: dbJob._id.toString(),
-      createdAt: dbJob.createdAt?.toISOString(),
-    } : null
+    if (dbJob) {
+      return {
+        ...dbJob,
+        _id: dbJob._id.toString(),
+        createdAt: dbJob.createdAt?.toISOString(),
+      }
+    }
   } catch (e) {
-    return null
+    // Fall back to static jobs
   }
+  return getStaticJob(slug) || null
 }
 
 export async function generateMetadata({ params }: JobPageProps): Promise<Metadata> {
@@ -169,11 +172,7 @@ export default async function JobPage({ params }: JobPageProps) {
                   Interested in this role? Please click below to fill out the application form and attach your updated resume.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <ApplicationModal jobTitle={(job as any).title}>
-                    <Button size="lg" className="rounded-xl px-8">
-                      Apply Now
-                    </Button>
-                  </ApplicationModal>
+                  <ApplicationModal jobTitle={(job as any).title} />
                   <ShareJob title={(job as any).title} />
                 </div>
               </div>
@@ -205,6 +204,10 @@ export default async function JobPage({ params }: JobPageProps) {
                       <p className="text-sm font-medium">{(job as any).experience}</p>
                     </div>
                   </div>
+                </div>
+
+                <div className="pt-6">
+                  <ApplicationModal jobTitle={(job as any).title} className="w-full justify-center" />
                 </div>
                 
                 <hr className="my-6 border-border/50" />

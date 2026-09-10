@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     const safeMessage = escapeHtml(rawMessage);
 
     const { data, error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM_ADDRESS || 'Contact Form <noreply@tecunique.com>',
+      from: process.env.EMAIL_FROM_ADDRESS || 'TecUnique Contact <onboarding@resend.dev>',
       to: receivers,
       replyTo: email,
       subject: `New Inquiry from ${senderName}`,
@@ -74,10 +74,13 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error("Resend send error:", error);
-      return NextResponse.json({ error }, { status: 500 });
+      const errorMessage = typeof error === 'object' && error !== null && 'message' in error 
+        ? String((error as any).message) 
+        : 'Failed to send message. Please try again or email us directly.';
+      return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
 
-    return NextResponse.json(data);
+    return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
     console.error("Contact API Error:", error);
     return NextResponse.json({ error: (error as Error).message }, { status: 500 });

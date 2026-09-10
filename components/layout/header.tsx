@@ -10,6 +10,7 @@ import { navigation } from "@/lib/data/layout.data"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -19,9 +20,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Close mobile menu on route change
+  // Close mobile menu and any open dropdown on route change
   useEffect(() => {
     setMobileMenuOpen(false)
+    setOpenDropdown(null)
   }, [pathname])
 
   // Hide header on admin pages
@@ -36,7 +38,7 @@ export function Header() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group" onClick={() => setOpenDropdown(null)}>
           <Image
             src="/images/logos/tecunique-logo-modern-refresh.svg"
             alt="TecUnique Logo"
@@ -55,31 +57,46 @@ export function Header() {
                 ? pathname === "/"
                 : pathname.startsWith(item.href)
 
+              const isDropdownOpen = openDropdown === item.name
+
               if (item.children) {
                 return (
-                  <div key={item.name} className="relative group">
+                  <div 
+                    key={item.name} 
+                    className="relative"
+                    onMouseEnter={() => setOpenDropdown(item.name)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
                     <Link
                       href={item.href}
                       className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${isActive
                         ? "text-primary bg-accent"
                         : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
                         }`}
+                      onClick={() => setOpenDropdown(null)}
                     >
                       {item.name}
-                      <ChevronDown className="h-3 w-3 opacity-70 transition-transform group-hover:rotate-180" />
+                      <ChevronDown className={`h-3 w-3 opacity-70 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
                       {isActive && (
                         <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-primary" />
                       )}
                     </Link>
 
                     {/* Dropdown menu */}
-                    <div className="absolute right-0 lg:left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                    <div 
+                      className={`absolute right-0 lg:left-0 top-full pt-2 transition-all duration-200 z-50 ${
+                        isDropdownOpen 
+                          ? "opacity-100 translate-y-0 pointer-events-auto" 
+                          : "opacity-0 translate-y-2 pointer-events-none"
+                      }`}
+                    >
                       <div className="w-64 rounded-xl bg-white p-2 shadow-xl ring-1 ring-black/5 border border-slate-100">
                         {item.children.map((child) => (
                           <Link
                             key={child.name}
                             href={child.href}
                             className="block rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors"
+                            onClick={() => setOpenDropdown(null)}
                           >
                             {child.name}
                           </Link>
@@ -98,6 +115,7 @@ export function Header() {
                     ? "text-primary bg-accent"
                     : "text-foreground/70 hover:text-foreground hover:bg-accent/60"
                     }`}
+                  onClick={() => setOpenDropdown(null)}
                 >
                   {item.name}
                   {isActive && (
@@ -109,7 +127,7 @@ export function Header() {
           </div>
 
           <Button size="default" className="rounded-xl px-5 h-10 group" asChild>
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => setOpenDropdown(null)}>
               Let's Talk
               <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

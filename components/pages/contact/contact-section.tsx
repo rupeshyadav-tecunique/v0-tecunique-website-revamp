@@ -87,12 +87,19 @@ export function ContactSection() {
 
                     {/* Details */}
                     <div className="relative flex-1 flex flex-col gap-3 xl:gap-2.5 text-sm text-muted-foreground w-full xl:border-l xl:border-border/60 xl:pl-5">
-                      <div className="flex gap-3 items-start group/item">
+                      <a 
+                        href={office.mapUrl || `https://maps.google.com/?q=${encodeURIComponent(office.address)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex gap-3 items-start group/item cursor-pointer text-muted-foreground"
+                      >
                         <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-[var(--brand-blue)] text-white group-hover/item:bg-[var(--brand-blue-hover)]' : 'bg-[var(--tangerine)]/10 text-[var(--tangerine)] group-hover/item:bg-[var(--tangerine)] group-hover/item:text-white'}`}>
                           <MapPin className="w-3.5 h-3.5" />
                         </div>
-                        <p className={`leading-relaxed pt-0.5 pr-2 ${isIndia ? 'text-[var(--neutral-slate-700)] font-medium' : ''}`}>{office.address}</p>
-                      </div>
+                        <span className={`leading-relaxed pt-0.5 pr-2 group-hover/item:text-foreground font-medium transition-colors ${isIndia ? 'text-[var(--neutral-slate-700)]' : ''}`}>
+                          {office.address}
+                        </span>
+                      </a>
                       
                       <div className="flex gap-3 items-center group/item">
                         <div className={`p-2 xl:p-1.5 rounded-lg transition-colors duration-300 shrink-0 ${isIndia ? 'bg-[var(--brand-blue)] text-white group-hover/item:bg-[var(--brand-blue-hover)]' : 'bg-[var(--tangerine)]/10 text-[var(--tangerine)] group-hover/item:bg-[var(--tangerine)] group-hover/item:text-white'}`}>

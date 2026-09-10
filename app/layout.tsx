@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Manrope, Sora, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
+import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 
 const manrope = Manrope({ 
@@ -99,6 +100,7 @@ export default function RootLayout({
     <html lang="en" className={`${manrope.variable} ${sora.variable} ${geistMono.variable} bg-background`}>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         {children}
+        <Toaster richColors position="top-right" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>

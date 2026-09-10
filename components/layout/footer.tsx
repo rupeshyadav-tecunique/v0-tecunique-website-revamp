@@ -53,10 +53,16 @@ export function Footer() {
                   <span>+91 915 746 0525</span>
                 </a>
               </div>
-              <div className="flex items-start gap-2 text-sm text-slate-600">
-                <MapPin className="h-4 w-4 mt-0.5 text-slate-400 shrink-0" aria-hidden="true" />
+              <a 
+                href="https://maps.google.com/?q=1002,+Neptune+Edge,+Sarabhai+Campus,+Vadodara+%E2%80%93+390+007,+Gujarat,+India"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Open headquarters in Google Maps"
+                className="flex items-start gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors"
+              >
+                <MapPin className="h-4 w-4 mt-0.5 text-slate-400 shrink-0 group-hover:text-primary" aria-hidden="true" />
                 <span>1002, Neptune Edge, Sarabhai Campus, Vadodara – 390 007, Gujarat, India</span>
-              </div>
+              </a>
             </div>
 
             {/* Social and Review icons */}

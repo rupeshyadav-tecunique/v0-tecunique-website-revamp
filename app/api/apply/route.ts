@@ -21,6 +21,27 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
+    // Server-side email format validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(rawEmail.trim())) {
+      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+    }
+
+    // Server-side phone format validation
+    const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,15}$/;
+    if (!phoneRegex.test(rawPhone.trim())) {
+      return NextResponse.json({ error: 'Please enter a valid phone number (digits and standard formatting only).' }, { status: 400 });
+    }
+
+    // Server-side LinkedIn format validation (if provided)
+    if (rawLinkedin && rawLinkedin.trim().length > 0) {
+      const linkedinTrimmed = rawLinkedin.trim();
+      const urlRegex = /^(https?:\/\/)?([\w.-]+\.[a-z]{2,})(\/\S*)?$/i;
+      if (!urlRegex.test(linkedinTrimmed)) {
+        return NextResponse.json({ error: 'Please enter a valid URL for your LinkedIn profile.' }, { status: 400 });
+      }
+    }
+
     // Server-side file validation
     const allowedExtensions = ['.pdf', '.doc', '.docx'];
     const fileName = resume.name.toLowerCase();
@@ -71,7 +92,7 @@ export async function POST(req: Request) {
     const safeCoverLetter = escapeHtml(rawCoverLetter);
 
     const { data, error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM_ADDRESS || 'Careers <noreply@tecunique.com>',
+      from: process.env.EMAIL_FROM_ADDRESS || 'TecUnique Careers <onboarding@resend.dev>',
       to: receivers,
       replyTo: email,
       subject: `New Job Application: ${jobTitle} - ${firstName} ${lastName}`,
@@ -125,12 +146,15 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error("Resend error:", error);
-      return NextResponse.json({ error }, { status: 500 });
+      const errorMessage = typeof error === 'object' && error !== null && 'message' in error 
+        ? String((error as any).message) 
+        : 'Failed to send application email. Please try again or contact us directly.';
+      return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
 
-    return NextResponse.json(data);
+    return NextResponse.json({ success: true, id: data?.id });
   } catch (error) {
     console.error("Apply API Error:", error);
-    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message || 'Server error processing application' }, { status: 500 });
   }
 }
