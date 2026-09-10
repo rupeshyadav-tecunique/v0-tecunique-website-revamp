@@ -36,7 +36,7 @@ export const footerLinks: Record<"company" | "services" | "legal", FooterLink[]>
     { name: "Contact", href: "/contact" },
   ],
   services: [
-    { name: "Dedicated Teams", href: "/services/dedicated-teams" },
+    { name: "Dedicated Software Teams", href: "/services/dedicated-teams" },
     { name: "Product Engineering", href: "/services/product-engineering" },
     { name: "QA & Automation", href: "/services/qa" },
     { name: "Atlassian App Engineering", href: "/services/atlassian" },

@@ -30,6 +30,7 @@ interface ContactFormErrors {
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [hasSubmitted, setHasSubmitted] = useState(false)
   const [serverError, setServerError] = useState<string | null>(null)
   
   const [formData, setFormData] = useState({
@@ -41,7 +42,6 @@ export function ContactForm() {
   })
 
   const [errors, setErrors] = useState<ContactFormErrors>({})
-  const [touched, setTouched] = useState<Record<string, boolean>>({})
 
   const validateField = (name: string, value: string): string | undefined => {
     const trimmed = (value || "").trim()
@@ -77,12 +77,6 @@ export function ContactForm() {
     })
 
     setErrors(newErrors)
-    setTouched({
-      name: true,
-      email: true,
-      message: true
-    })
-
     return Object.keys(newErrors).length === 0
   }
 
@@ -91,22 +85,16 @@ export function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }))
     setServerError(null)
 
-    if (touched[name]) {
+    if (hasSubmitted) {
       const err = validateField(name, value)
       setErrors(prev => ({ ...prev, [name]: err }))
     }
   }
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setTouched(prev => ({ ...prev, [name]: true }))
-    const err = validateField(name, value)
-    setErrors(prev => ({ ...prev, [name]: err }))
-  }
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setServerError(null)
+    setHasSubmitted(true)
 
     const formElement = e.currentTarget
     const formValues = new FormData(formElement)
@@ -181,6 +169,7 @@ export function ContactForm() {
           className="mt-6 rounded-xl"
           onClick={() => {
             setIsSubmitted(false)
+            setHasSubmitted(false)
             setFormData({
               name: "",
               email: "",
@@ -189,7 +178,6 @@ export function ContactForm() {
               message: ""
             })
             setErrors({})
-            setTouched({})
           }}
         >
           Send Another Message
@@ -214,12 +202,11 @@ export function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleInputChange}
-          onBlur={handleBlur}
           placeholder="John Doe"
           disabled={isSubmitting}
-          className={cn(touched.name && errors.name && "border-destructive focus-visible:ring-destructive/30")}
+          className={cn(hasSubmitted && errors.name && "border-destructive focus-visible:ring-destructive/30")}
         />
-        {touched.name && errors.name && (
+        {hasSubmitted && errors.name && (
           <p className="text-xs text-destructive flex items-center gap-1 mt-1">
             <AlertCircle className="h-3.5 w-3.5 shrink-0" />
             {errors.name}
@@ -235,12 +222,11 @@ export function ContactForm() {
           type="email"
           value={formData.email}
           onChange={handleInputChange}
-          onBlur={handleBlur}
           placeholder="john@company.com"
           disabled={isSubmitting}
-          className={cn(touched.email && errors.email && "border-destructive focus-visible:ring-destructive/30")}
+          className={cn(hasSubmitted && errors.email && "border-destructive focus-visible:ring-destructive/30")}
         />
-        {touched.email && errors.email && (
+        {hasSubmitted && errors.email && (
           <p className="text-xs text-destructive flex items-center gap-1 mt-1">
             <AlertCircle className="h-3.5 w-3.5 shrink-0" />
             {errors.email}
@@ -298,13 +284,12 @@ export function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleInputChange}
-          onBlur={handleBlur}
           placeholder="Tell us about your product, team requirements, or current engineering challenge..."
           rows={5}
           disabled={isSubmitting}
-          className={cn("resize-none", touched.message && errors.message && "border-destructive focus-visible:ring-destructive/30")}
+          className={cn("resize-none", hasSubmitted && errors.message && "border-destructive focus-visible:ring-destructive/30")}
         />
-        {touched.message && errors.message && (
+        {hasSubmitted && errors.message && (
           <p className="text-xs text-destructive flex items-center gap-1 mt-1">
             <AlertCircle className="h-3.5 w-3.5 shrink-0" />
             {errors.message}

@@ -51,6 +51,7 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
   const [open, setOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [hasSubmitted, setHasSubmitted] = useState(false)
   const [serverError, setServerError] = useState<string | null>(null)
   
   const [formData, setFormData] = useState<FormDataState>({
@@ -65,7 +66,6 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
   const [file, setFile] = useState<File | null>(null)
   const [fileName, setFileName] = useState<string | null>(null)
   const [errors, setErrors] = useState<FieldErrors>({})
-  const [touched, setTouched] = useState<Record<string, boolean>>({})
 
   const validateField = (name: keyof FormDataState | "resume", value: string | File | null): string | undefined => {
     switch (name) {
@@ -120,16 +120,6 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
     })
 
     setErrors(newErrors)
-    setTouched({
-      firstName: true,
-      lastName: true,
-      email: true,
-      phone: true,
-      linkedin: true,
-      coverLetter: true,
-      resume: true
-    })
-
     return Object.keys(newErrors).length === 0
   }
 
@@ -138,17 +128,10 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
     setFormData(prev => ({ ...prev, [name]: value }))
     setServerError(null)
 
-    if (touched[name]) {
+    if (hasSubmitted) {
       const err = validateField(name as keyof FormDataState, value)
       setErrors(prev => ({ ...prev, [name]: err }))
     }
-  }
-
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setTouched(prev => ({ ...prev, [name]: true }))
-    const err = validateField(name as keyof FormDataState, value)
-    setErrors(prev => ({ ...prev, [name]: err }))
   }
 
   const handleOpenChange = (newOpen: boolean) => {
@@ -158,7 +141,7 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
         setIsSuccess(false)
         setServerError(null)
         setErrors({})
-        setTouched({})
+        setHasSubmitted(false)
         setFile(null)
         setFileName(null)
         setFormData({
@@ -182,7 +165,9 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
       
       if (!isExtValid) {
         const msg = "Invalid file type. Only .pdf, .doc, and .docx files are allowed."
-        setErrors(prev => ({ ...prev, resume: msg }))
+        if (hasSubmitted) {
+          setErrors(prev => ({ ...prev, resume: msg }))
+        }
         toast.error(msg)
         e.target.value = ''
         setFile(null)
@@ -192,7 +177,9 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
 
       if (selectedFile.size > 5 * 1024 * 1024) {
         const msg = "File is too large. Maximum size is 5MB."
-        setErrors(prev => ({ ...prev, resume: msg }))
+        if (hasSubmitted) {
+          setErrors(prev => ({ ...prev, resume: msg }))
+        }
         toast.error(msg)
         e.target.value = ''
         setFile(null)
@@ -202,19 +189,25 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
 
       setFile(selectedFile)
       setFileName(selectedFile.name)
-      setErrors(prev => ({ ...prev, resume: undefined }))
+      if (hasSubmitted) {
+        setErrors(prev => ({ ...prev, resume: undefined }))
+      }
     } else {
       setFile(null)
       setFileName(null)
+      if (hasSubmitted) {
+        setErrors(prev => ({ ...prev, resume: "Please upload your resume (PDF, DOC, DOCX)." }))
+      }
     }
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setServerError(null)
+    setHasSubmitted(true)
 
     if (!validateAll()) {
-      toast.error("Please fix the errors in the form before submitting.")
+      toast.error("Please fill in all required fields correctly.")
       return
     }
 
@@ -314,12 +307,11 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                       name="firstName" 
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      onBlur={handleBlur}
                       placeholder="John" 
                       disabled={isSubmitting} 
-                      className={cn(touched.firstName && errors.firstName && "border-destructive focus-visible:ring-destructive/30")}
+                      className={cn(hasSubmitted && errors.firstName && "border-destructive focus-visible:ring-destructive/30")}
                     />
-                    {touched.firstName && errors.firstName && (
+                    {hasSubmitted && errors.firstName && (
                       <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                         <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                         {errors.firstName}
@@ -333,12 +325,11 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                       name="lastName" 
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      onBlur={handleBlur}
                       placeholder="Doe" 
                       disabled={isSubmitting} 
-                      className={cn(touched.lastName && errors.lastName && "border-destructive focus-visible:ring-destructive/30")}
+                      className={cn(hasSubmitted && errors.lastName && "border-destructive focus-visible:ring-destructive/30")}
                     />
-                    {touched.lastName && errors.lastName && (
+                    {hasSubmitted && errors.lastName && (
                       <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                         <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                         {errors.lastName}
@@ -356,12 +347,11 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                       type="email" 
                       value={formData.email}
                       onChange={handleInputChange}
-                      onBlur={handleBlur}
                       placeholder="john@example.com" 
                       disabled={isSubmitting} 
-                      className={cn(touched.email && errors.email && "border-destructive focus-visible:ring-destructive/30")}
+                      className={cn(hasSubmitted && errors.email && "border-destructive focus-visible:ring-destructive/30")}
                     />
-                    {touched.email && errors.email && (
+                    {hasSubmitted && errors.email && (
                       <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                         <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                         {errors.email}
@@ -376,12 +366,11 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                       type="tel" 
                       value={formData.phone}
                       onChange={handleInputChange}
-                      onBlur={handleBlur}
                       placeholder="+1 (555) 000-0000" 
                       disabled={isSubmitting} 
-                      className={cn(touched.phone && errors.phone && "border-destructive focus-visible:ring-destructive/30")}
+                      className={cn(hasSubmitted && errors.phone && "border-destructive focus-visible:ring-destructive/30")}
                     />
-                    {touched.phone && errors.phone && (
+                    {hasSubmitted && errors.phone && (
                       <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                         <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                         {errors.phone}
@@ -398,12 +387,11 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                     type="url" 
                     value={formData.linkedin}
                     onChange={handleInputChange}
-                    onBlur={handleBlur}
                     placeholder="https://linkedin.com/in/johndoe" 
                     disabled={isSubmitting} 
-                    className={cn(touched.linkedin && errors.linkedin && "border-destructive focus-visible:ring-destructive/30")}
+                    className={cn(hasSubmitted && errors.linkedin && "border-destructive focus-visible:ring-destructive/30")}
                   />
-                  {touched.linkedin && errors.linkedin && (
+                  {hasSubmitted && errors.linkedin && (
                     <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                       <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                       {errors.linkedin}
@@ -418,12 +406,11 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                     name="coverLetter" 
                     value={formData.coverLetter}
                     onChange={handleInputChange}
-                    onBlur={handleBlur}
                     placeholder="Tell us why you're a great fit for this role..." 
-                    className={cn("min-h-[110px] resize-none", touched.coverLetter && errors.coverLetter && "border-destructive focus-visible:ring-destructive/30")}
+                    className={cn("min-h-[110px] resize-none", hasSubmitted && errors.coverLetter && "border-destructive focus-visible:ring-destructive/30")}
                     disabled={isSubmitting}
                   />
-                  {touched.coverLetter && errors.coverLetter && (
+                  {hasSubmitted && errors.coverLetter && (
                     <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                       <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                       {errors.coverLetter}
@@ -439,14 +426,14 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                       className={cn(
                         "flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-border bg-muted/50 px-4 text-sm font-medium transition-colors hover:bg-muted",
                         isSubmitting && "opacity-50 pointer-events-none",
-                        touched.resume && errors.resume && "border-destructive bg-destructive/5 text-destructive"
+                        hasSubmitted && errors.resume && "border-destructive bg-destructive/5 text-destructive"
                       )}
                     >
-                      <Paperclip className={cn("h-4 w-4", touched.resume && errors.resume ? "text-destructive" : "text-muted-foreground")} />
+                      <Paperclip className={cn("h-4 w-4", hasSubmitted && errors.resume ? "text-destructive" : "text-muted-foreground")} />
                       {fileName ? (
                         <span className="text-foreground truncate max-w-[220px] font-medium">{fileName}</span>
                       ) : (
-                        <span className={cn(touched.resume && errors.resume ? "text-destructive" : "text-muted-foreground")}>
+                        <span className={cn(hasSubmitted && errors.resume ? "text-destructive" : "text-muted-foreground")}>
                           Upload Resume (PDF, DOCX)
                         </span>
                       )}
@@ -461,7 +448,7 @@ export function ApplicationModal({ jobTitle, children, className }: ApplicationM
                       disabled={isSubmitting}
                     />
                   </div>
-                  {touched.resume && errors.resume ? (
+                  {hasSubmitted && errors.resume ? (
                     <p className="text-xs text-destructive flex items-center gap-1 mt-1">
                       <AlertCircle className="h-3.5 w-3.5 shrink-0" />
                       {errors.resume}
