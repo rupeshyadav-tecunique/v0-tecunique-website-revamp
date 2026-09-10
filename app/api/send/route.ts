@@ -8,20 +8,33 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     
-    // Support both single "name" field and "firstName / lastName" fields
-    const senderName = sanitizeHeader(
-      body.name || 
-      [body.firstName, body.lastName].filter(Boolean).join(' ') || 
-      'Website Visitor'
-    );
-    const email = sanitizeHeader(body.email);
-    const company = sanitizeHeader(body.company);
-    const service = sanitizeHeader(body.service);
-    const rawMessage = body.message || '';
+    const rawName = String(body.name || [body.firstName, body.lastName].filter(Boolean).join(' ') || '').trim();
+    const rawEmail = String(body.email || '').trim();
+    const rawCompany = String(body.company || '').trim();
+    const rawService = String(body.service || '').trim();
+    const rawMessage = String(body.message || '').trim();
 
-    if (!email || !rawMessage) {
-      return NextResponse.json({ error: 'Email and message are required' }, { status: 400 });
+    if (!rawName || rawName.length < 2) {
+      return NextResponse.json({ error: 'Please enter your name (minimum 2 characters).' }, { status: 400 });
     }
+
+    if (!rawEmail) {
+      return NextResponse.json({ error: 'Work email is required.' }, { status: 400 });
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(rawEmail)) {
+      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+    }
+
+    if (!rawMessage || rawMessage.length < 10) {
+      return NextResponse.json({ error: 'Please enter a meaningful message (minimum 10 characters).' }, { status: 400 });
+    }
+
+    const senderName = sanitizeHeader(rawName);
+    const email = sanitizeHeader(rawEmail);
+    const company = sanitizeHeader(rawCompany);
+    const service = sanitizeHeader(rawService);
 
     const receivers = (
       process.env.CONTACT_RECEIVER_EMAILS || 
