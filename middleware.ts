@@ -31,9 +31,25 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  if (pathname.startsWith('/api/admin')) {
+    // Allow login endpoint
+    if (pathname === '/api/admin/auth') {
+      return NextResponse.next()
+    }
+
+    const token = request.cookies.get('admin_token')?.value
+    const validPayload = await verifyAdminToken(token)
+
+    if (!validPayload) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    return NextResponse.next()
+  }
+
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/admin', '/admin/:path*'],
+  matcher: ['/admin', '/admin/:path*', '/api/admin/:path*'],
 }

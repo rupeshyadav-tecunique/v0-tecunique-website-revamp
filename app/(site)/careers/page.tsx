@@ -1,10 +1,11 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { CareersHero } from "@/components/pages/careers/hero-section"
 import { CareersBenefits } from "@/components/pages/careers/benefits-section"
 import { CareersStats } from "@/components/pages/careers/stats-section"
 import { CareersOpenings } from "@/components/pages/careers/openings-section"
 import { CareersLife } from "@/components/pages/careers/life-section"
 import clientPromise from "@/lib/db"
+import { jobs as staticJobs } from "@/lib/jobs-data"
 
 export const metadata: Metadata = {
   title: "Careers | TECUNIQUE",
@@ -17,15 +18,25 @@ async function getJobs() {
     const db = client.db("tecunique")
     const dbJobs = await db.collection("jobs").find({ isActive: true }).sort({ createdAt: -1 }).toArray()
 
-    return dbJobs.map(job => ({
-      ...job,
-      _id: job._id.toString(),
-      createdAt: job.createdAt?.toISOString(),
-    }))
+    if (dbJobs.length > 0) {
+      return dbJobs.map(job => ({
+        ...job,
+        _id: job._id.toString(),
+        createdAt: job.createdAt instanceof Date 
+          ? job.createdAt.toISOString() 
+          : (job.createdAt ? String(job.createdAt) : new Date().toISOString()),
+      }))
+    }
   } catch (e) {
-    console.error(e)
-    return []
+    console.warn("MongoDB unavailable or error fetching jobs, using static fallback:", e)
   }
+
+  // Fallback to static jobs from jobs-data.ts
+  return staticJobs.map(job => ({
+    ...job,
+    _id: job.id,
+    isActive: true,
+  }))
 }
 
 export default async function CareersPage() {

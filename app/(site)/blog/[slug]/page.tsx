@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { getBlogPost as getStaticBlogPost, getRecentPosts } from "@/lib/blog-data"
+import { getBlogPost as getStaticBlogPost, getRecentPosts, blogPosts as staticBlogPosts } from "@/lib/blog-data"
 import { CalendarDays, Clock, ArrowLeft, ArrowRight, User } from "lucide-react"
 import clientPromise from "@/lib/db"
 
@@ -12,24 +12,59 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
 
-async function getBlogPost(slug: string) {
-  // Check MongoDB
+async function getBlogPost(rawSlug: string | undefined | null) {
+  if (!rawSlug) return null
+  const decodedSlug = decodeURIComponent(rawSlug).trim()
+  const lowerSlug = decodedSlug.toLowerCase()
+
+  // Try MongoDB
   try {
     const client = await clientPromise
     const db = client.db("tecunique")
-    const dbPost = await db.collection("blogs").findOne({ slug })
-    return dbPost ? {
-      ...dbPost,
-      _id: dbPost._id.toString(),
-      createdAt: dbPost.createdAt?.toISOString(),
-    } : null
+
+    // Check exact match, lowercase match, or variations
+    let dbPost = await db.collection("blogs").findOne({ slug: decodedSlug })
+    if (!dbPost && decodedSlug !== lowerSlug) {
+      dbPost = await db.collection("blogs").findOne({ slug: lowerSlug })
+    }
+    if (!dbPost && lowerSlug.includes("-and-")) {
+      dbPost = await db.collection("blogs").findOne({ slug: lowerSlug.replace(/-and-/g, "-") })
+    }
+    if (!dbPost && !lowerSlug.includes("-and-")) {
+      dbPost = await db.collection("blogs").findOne({ slug: lowerSlug.replace(/-autonomous-self-/, "-autonomous-and-self-") })
+    }
+    if (!dbPost) {
+      // Also try by string id (e.g. /blog/1)
+      dbPost = await db.collection("blogs").findOne({ id: decodedSlug })
+    }
+
+    if (dbPost) {
+      return {
+        ...dbPost,
+        _id: dbPost._id.toString(),
+        createdAt: dbPost.createdAt instanceof Date 
+          ? dbPost.createdAt.toISOString() 
+          : (dbPost.createdAt ? String(dbPost.createdAt) : new Date().toISOString()),
+      }
+    }
   } catch (e) {
-    return null
+    console.error("Error retrieving blog post from database:", e)
   }
+
+  // Fall back to static blog posts
+  const staticPost = getStaticBlogPost(decodedSlug) || 
+    getStaticBlogPost(lowerSlug) || 
+    getStaticBlogPost(lowerSlug.replace(/-and-/g, "-")) ||
+    getStaticBlogPost(lowerSlug.replace(/-autonomous-self-/, "-autonomous-and-self-")) ||
+    staticBlogPosts.find(p => p.id === decodedSlug) ||
+    null
+
+  return staticPost
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params
+  const resolvedParams = await params
+  const slug = resolvedParams?.slug
   const post = await getBlogPost(slug)
 
   if (!post) {
@@ -45,7 +80,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
+  const resolvedParams = await params
+  const slug = resolvedParams?.slug
   const post = await getBlogPost(slug)
 
   if (!post) {

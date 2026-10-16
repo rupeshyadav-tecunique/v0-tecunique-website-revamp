@@ -138,7 +138,7 @@ export default function JobTable({ jobs }: { jobs: any[] }) {
               ))
             ) : (
               <tr>
-                <td colSpan={5} className="px-6 py-12 text-center text-muted-foreground">
+                <td colSpan={6} className="px-6 py-12 text-center text-muted-foreground">
                   No job openings found matching your search.
                 </td>
               </tr>

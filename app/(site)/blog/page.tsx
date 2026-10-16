@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import clientPromise from "@/lib/db"
+import { blogPosts as staticBlogs } from "@/lib/blog-data"
 import BlogList from "@/components/pages/blog/blog-list"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import { UnifiedCTA } from "@/components/pages/services/unified-cta"
@@ -15,17 +16,23 @@ async function getBlogs() {
     const db = client.db("tecunique")
     const dbBlogs = await db.collection("blogs").find({ isDraft: false }).sort({ createdAt: -1 }).toArray()
     
-    // Convert Mongo objects to plain JS objects (serializable)
-    return dbBlogs.map(blog => ({
-      ...blog,
-      _id: blog._id.toString(),
-      createdAt: blog.createdAt?.toISOString(),
-      date: blog.date || new Date().toISOString()
-    }))
+    if (dbBlogs.length > 0) {
+      return dbBlogs.map(blog => ({
+        ...blog,
+        _id: blog._id.toString(),
+        createdAt: blog.createdAt?.toISOString(),
+        date: blog.date || new Date().toISOString()
+      }))
+    }
   } catch (e) {
-    console.error(e)
-    return []
+    console.warn("MongoDB unavailable or empty for blogs, using static fallback:", e)
   }
+
+  // Fallback to static articles from blog-data.ts
+  return staticBlogs.map(blog => ({
+    ...blog,
+    _id: blog.id,
+  }))
 }
 
 export default async function BlogPage() {

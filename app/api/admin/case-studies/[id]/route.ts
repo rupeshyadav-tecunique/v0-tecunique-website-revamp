@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import clientPromise from '@/lib/db'
+import { ObjectId } from 'mongodb'
 import { verifyAdminToken } from '@/lib/auth'
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
@@ -17,8 +18,11 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const client = await clientPromise
     const db = client.db("tecunique")
 
+    const isHexObjectId = ObjectId.isValid(id) && new ObjectId(id).toString() === id
+    const filter = isHexObjectId ? { $or: [{ _id: new ObjectId(id) }, { id }] } : { id }
+
     const result = await db.collection("case-studies").updateOne(
-      { id },
+      filter,
       { $set: updateData }
     )
 
@@ -33,6 +37,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
   }
 }
 
+export const PATCH = PUT
+
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const cookieStore = await cookies()
@@ -45,7 +51,10 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     const client = await clientPromise
     const db = client.db("tecunique")
 
-    const result = await db.collection("case-studies").deleteOne({ id })
+    const isHexObjectId = ObjectId.isValid(id) && new ObjectId(id).toString() === id
+    const filter = isHexObjectId ? { $or: [{ _id: new ObjectId(id) }, { id }] } : { id }
+
+    const result = await db.collection("case-studies").deleteOne(filter)
 
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: 'Not Found' }, { status: 404 })

@@ -3,7 +3,18 @@
  * Works seamlessly in both Next.js middleware (Edge) and Route Handlers (Node.js).
  */
 
-const SECRET_KEY = process.env.ADMIN_JWT_SECRET || process.env.SESSION_SECRET || 'tecunique-admin-super-secret-key-2026-production';
+function getSecretKey(): string {
+  const envSecret = process.env.ADMIN_JWT_SECRET || process.env.SESSION_SECRET;
+  if (!envSecret) {
+    if (process.env.NODE_ENV === 'production') {
+      console.warn(
+        '[SECURITY WARNING]: ADMIN_JWT_SECRET is not set in environment variables. Set this variable to secure admin JWT tokens in production.'
+      );
+    }
+    return 'tecunique-admin-super-secret-key-2026-production';
+  }
+  return envSecret;
+}
 
 function base64UrlEncode(bytes: Uint8Array): string {
   let binary = '';
@@ -41,7 +52,7 @@ async function getCryptoKey(): Promise<CryptoKey> {
   const enc = new TextEncoder();
   return crypto.subtle.importKey(
     'raw',
-    enc.encode(SECRET_KEY),
+    enc.encode(getSecretKey()),
     { name: 'HMAC', hash: 'SHA-256' },
     false,
     ['sign', 'verify']

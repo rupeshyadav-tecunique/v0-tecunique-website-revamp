@@ -21,12 +21,10 @@ export async function DELETE(
     const client = await clientPromise
     const db = client.db("tecunique")
     
-    // Try to delete by _id first, then by the custom string id
-    let result = await db.collection("blogs").deleteOne({ _id: new ObjectId(id) })
-    
-    if (result.deletedCount === 0) {
-      result = await db.collection("blogs").deleteOne({ id: id })
-    }
+    const isHexObjectId = ObjectId.isValid(id) && new ObjectId(id).toString() === id
+    const filter = isHexObjectId ? { $or: [{ _id: new ObjectId(id) }, { id }] } : { id }
+
+    const result = await db.collection("blogs").deleteOne(filter)
 
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
@@ -54,23 +52,26 @@ export async function PATCH(
 
     const { id } = await params
     const updateData = await req.json()
+    delete updateData._id // Prevent modifying immutable MongoDB _id
+
     const client = await clientPromise
     const db = client.db("tecunique")
     
-    let result = await db.collection("blogs").updateOne(
-      { _id: new ObjectId(id) },
+    const isHexObjectId = ObjectId.isValid(id) && new ObjectId(id).toString() === id
+    const filter = isHexObjectId ? { $or: [{ _id: new ObjectId(id) }, { id }] } : { id }
+
+    const result = await db.collection("blogs").updateOne(
+      filter,
       { $set: updateData }
     )
 
     if (result.matchedCount === 0) {
-      result = await db.collection("blogs").updateOne(
-        { id: id },
-        { $set: updateData }
-      )
+      return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
     }
 
     return NextResponse.json({ success: true })
   } catch (error) {
+    console.error("Blog Patch Error:", error)
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }

@@ -20,12 +20,11 @@ export async function DELETE(
     const { id } = await params
     const client = await clientPromise
     const db = client.db("tecunique")
-    
-    let result = await db.collection("jobs").deleteOne({ _id: new ObjectId(id) })
-    
-    if (result.deletedCount === 0) {
-      result = await db.collection("jobs").deleteOne({ id: id })
-    }
+
+    const isHexObjectId = ObjectId.isValid(id) && new ObjectId(id).toString() === id
+    const filter = isHexObjectId ? { $or: [{ _id: new ObjectId(id) }, { id }] } : { id }
+
+    const result = await db.collection("jobs").deleteOne(filter)
 
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: 'Job not found' }, { status: 404 })
@@ -53,23 +52,26 @@ export async function PATCH(
 
     const { id } = await params
     const updateData = await req.json()
+    delete updateData._id // Prevent modifying immutable MongoDB _id
+
     const client = await clientPromise
     const db = client.db("tecunique")
-    
-    let result = await db.collection("jobs").updateOne(
-      { _id: new ObjectId(id) },
+
+    const isHexObjectId = ObjectId.isValid(id) && new ObjectId(id).toString() === id
+    const filter = isHexObjectId ? { $or: [{ _id: new ObjectId(id) }, { id }] } : { id }
+
+    const result = await db.collection("jobs").updateOne(
+      filter,
       { $set: updateData }
     )
 
     if (result.matchedCount === 0) {
-      result = await db.collection("jobs").updateOne(
-        { id: id },
-        { $set: updateData }
-      )
+      return NextResponse.json({ error: 'Job not found' }, { status: 404 })
     }
 
     return NextResponse.json({ success: true })
   } catch (error) {
+    console.error("Job Patch Error:", error)
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }

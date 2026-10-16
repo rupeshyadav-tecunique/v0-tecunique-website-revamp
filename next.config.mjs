@@ -57,9 +57,15 @@ const nextConfig = {
       { source: '/case-studies/team-hub', destination: '/case-studies/extensi', permanent: true },
 
       // ─── Legacy Navigation & Contact ───
+      { source: '/blogs', destination: '/blog', permanent: true },
+      { source: '/blogs/:slug*', destination: '/blog/:slug*', permanent: true },
+      { source: '/blog/embracing-autonomous-self-organized-professionals', destination: '/blog/embracing-autonomous-and-self-organized-professionals', permanent: true },
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/about-us', destination: '/about', permanent: true },
       { source: '/jobs', destination: '/careers', permanent: true },
+      { source: '/jobs/:slug*', destination: '/careers/:slug*', permanent: true },
+      { source: '/job', destination: '/careers', permanent: true },
+      { source: '/job/:slug*', destination: '/careers/:slug*', permanent: true },
       { source: '/careers/openings', destination: '/careers', permanent: true },
       { source: '/legal/privacy-policy', destination: '/privacy-policy', permanent: true },
       { source: '/legal/terms-of-service', destination: '/terms-of-service', permanent: true },

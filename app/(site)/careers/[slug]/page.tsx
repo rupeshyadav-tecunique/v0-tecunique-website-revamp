@@ -20,27 +20,64 @@ interface JobPageProps {
   params: Promise<{ slug: string }>
 }
 
-async function getJob(slug: string) {
+async function getJob(rawSlug: string | undefined | null) {
+  if (!rawSlug) return null
+  const decodedSlug = decodeURIComponent(rawSlug).trim()
+  const lowerSlug = decodedSlug.toLowerCase()
+
+  // Common slug alias mapping between static data and DB
+  const slugAliases: Record<string, string> = {
+    'qa-engineer': 'quality-assurance-engineer',
+    'quality-assurance-engineer': 'qa-engineer',
+    'senior-full-stack-developer': 'senior-full-stack-test',
+    'senior-full-stack-test': 'senior-full-stack-developer',
+  }
+  const alias = slugAliases[lowerSlug]
+
   // Check MongoDB
   try {
     const client = await clientPromise
     const db = client.db("tecunique")
-    const dbJob = await db.collection("jobs").findOne({ slug })
+
+    // Check by exact slug, lowercase slug, alias, or string id
+    let dbJob = await db.collection("jobs").findOne({ slug: decodedSlug })
+    if (!dbJob && decodedSlug !== lowerSlug) {
+      dbJob = await db.collection("jobs").findOne({ slug: lowerSlug })
+    }
+    if (!dbJob && alias) {
+      dbJob = await db.collection("jobs").findOne({ slug: alias })
+    }
+    if (!dbJob) {
+      // Also try by string id (e.g. /careers/1, /careers/2, /careers/3)
+      dbJob = await db.collection("jobs").findOne({ id: decodedSlug })
+    }
+
     if (dbJob) {
       return {
         ...dbJob,
         _id: dbJob._id.toString(),
-        createdAt: dbJob.createdAt?.toISOString(),
+        createdAt: dbJob.createdAt instanceof Date 
+          ? dbJob.createdAt.toISOString() 
+          : (dbJob.createdAt ? String(dbJob.createdAt) : new Date().toISOString()),
       }
     }
   } catch (e) {
-    // Fall back to static jobs
+    console.error("Error retrieving job from database:", e)
   }
-  return getStaticJob(slug) || null
+
+  // Fall back to static jobs
+  const staticJob = getStaticJob(decodedSlug) || 
+    getStaticJob(lowerSlug) || 
+    (alias ? getStaticJob(alias) : undefined) ||
+    staticJobs.find(j => j.id === decodedSlug) || 
+    null
+
+  return staticJob
 }
 
 export async function generateMetadata({ params }: JobPageProps): Promise<Metadata> {
-  const { slug } = await params
+  const resolvedParams = await params
+  const slug = resolvedParams?.slug
   const job = await getJob(slug)
 
   if (!job) {
@@ -54,7 +91,8 @@ export async function generateMetadata({ params }: JobPageProps): Promise<Metada
 }
 
 export default async function JobPage({ params }: JobPageProps) {
-  const { slug } = await params
+  const resolvedParams = await params
+  const slug = resolvedParams?.slug
   const job = await getJob(slug)
 
   if (!job) {
