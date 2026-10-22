@@ -43,23 +43,37 @@ CONTACT_RECEIVER_EMAILS=info@tecunique.com
 NODE_ENV=development
 ```
 
-## 🗄️ Database Seeding
+## 📚 Documentation & Guides
 
-To initialize the database with default blogs, job openings, and the admin user, run:
+For in-depth developer handover, architecture, and deployment procedures, refer to the documentation:
+
+* **[Knowledge Transfer & Architecture Handover](docs/KNOWLEDGE_TRANSFER.md)**: Full architecture breakdown, database schemas, authentication flow, static fallback strategy, and code organization.
+* **[Production Deployment Runbook](docs/DEPLOYMENT_GUIDE.md)**: Step-by-step production deployment on Vercel/VPS, DNS setup, Resend verification, smoke-test checklist, and rollback procedures.
+
+---
+
+## 🗄️ Database Initialization
+
+To initialize the MongoDB database, create unique indexes on collections (`admins`, `blogs`, `jobs`, `case-studies`), and provision the initial administrator account, run:
 
 ```bash
 node scripts/init-db.mjs
 ```
 
-> **Note**: Ensure your `MONGODB_URI` is correctly set before running the script.
+> **Note**: Ensure `MONGODB_URI` is set in your `.env.local` or environment before running.
+
+---
 
 ## 🔐 Administrative Access
 
-Access the admin dashboard at `/admin`.
+Access the CMS admin dashboard at `/admin`.
 
-- **Username**: Managed via the `admins` collection.
-- **Password**: Securely stored in the database.
-- **Session Timeout**: Configured for 2 hours for enhanced security.
+- **Login Route**: `/admin/login`
+- **Default Username**: `admin`
+- **Session Security**: Edge-compatible HMAC-SHA256 JWT, stored in an HTTP-only secure cookie with a 2-hour sliding window.
+- **Password Storage**: Passwords are automatically hashed with bcrypt (`10` rounds).
+
+---
 
 ## 📈 Getting Started
 
@@ -68,15 +82,30 @@ Access the admin dashboard at `/admin`.
    npm install
    ```
 
-2. **Run the development server**:
+2. **Configure environment**:
+   ```bash
+   cp .env.example .env.local
+   # Fill in MONGODB_URI and RESEND_API_KEY
+   ```
+
+3. **Initialize database**:
+   ```bash
+   node scripts/init-db.mjs
+   ```
+
+4. **Run the development server**:
    ```bash
    npm run dev
    ```
+   Open [http://localhost:3001](http://localhost:3001) in your browser.
 
-3. **Build for production**:
+5. **Type-check & build**:
    ```bash
+   npx tsc --noEmit
    npm run build
    ```
+
+---
 
 ## 📄 License
 
