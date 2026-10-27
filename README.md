@@ -52,6 +52,21 @@ For in-depth developer handover, architecture, and deployment procedures, refer 
 
 ---
 
+## 🧠 Assisted Workspace Skills (For Non-Tech & Content Editors)
+
+The project includes pre-configured **AI Assistant Skills** located in `.agents/skills/`. When working with Antigravity or an AI pair-programmer, you can simply ask the assistant to perform any of these tasks:
+
+| Skill | What It Does & When to Use |
+| :--- | :--- |
+| **`modify-site-content`** | Update copy, hero headings, office addresses, phone numbers, or testimonials. |
+| **`manage-blog-posts`** | Publish new technical articles, edit existing posts, or update markdown formatting. |
+| **`manage-job-openings`** | Post new job openings, edit descriptions/requirements, or toggle active hiring status. |
+| **`manage-case-studies`** | Add new client case studies, update company logos, metrics, and filter tags. |
+| **`update-navigation-and-links`** | Add or reorder navbar links, dropdown items, footer columns, and external review badges. |
+| **`deploy-and-verify-website`** | Step-by-step verification, running builds, pushing to GitHub, and checking live Vercel deployments. |
+
+---
+
 ## 🗄️ Database Initialization
 
 To initialize the MongoDB database, create unique indexes on collections (`admins`, `blogs`, `jobs`, `case-studies`), and provision the initial administrator account, run:

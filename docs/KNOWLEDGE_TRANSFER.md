@@ -209,11 +209,11 @@ interface CaseStudyDocument {
 A key architectural feature of this codebase is **Graceful Degradation**:
 1. **Blogs**:
    - Both `/blog` and `/blog/[slug]` first query MongoDB Atlas.
-   - If MongoDB is unreachable, empty, or fails to connect, the application automatically falls back to curated static articles in [`lib/blog-data.ts`](file:///c:/Users/Rupesh%20Yadav/Desktop/projects/tecunique/v0-tecunique-website-revamp/lib/blog-data.ts).
+   - If MongoDB is unreachable, empty, or fails to connect, the application automatically falls back to curated static articles in [`lib/blog-data.ts`](../lib/blog-data.ts).
    - Slugs support fuzzy variations (e.g. `with-and` vs `without-and`) and numeric ID lookups (`/blog/1`).
 2. **Careers**:
    - Both `/careers` and `/careers/[slug]` first query MongoDB Atlas.
-   - If offline or empty, they fall back to [`lib/jobs-data.ts`](file:///c:/Users/Rupesh%20Yadav/Desktop/projects/tecunique/v0-tecunique-website-revamp/lib/jobs-data.ts).
+   - If offline or empty, they fall back to [`lib/jobs-data.ts`](../lib/jobs-data.ts).
    - Slugs support aliases (e.g. `qa-engineer` vs `quality-assurance-engineer`).
 
 **Benefit**: The marketing website never crashes or displays a blank page during database maintenance or network blips.
@@ -223,7 +223,7 @@ A key architectural feature of this codebase is **Graceful Degradation**:
 ## 8. Common Maintenance Workflows
 
 ### 8.1 Adding or Modifying Navigation / Footer Links
-* Edit [`lib/data/layout.data.ts`](file:///c:/Users/Rupesh%20Yadav/Desktop/projects/tecunique/v0-tecunique-website-revamp/lib/data/layout.data.ts):
+* Edit [`lib/data/layout.data.ts`](../lib/data/layout.data.ts):
   - `navigation`: Top navbar links, dropdown children, and labels.
   - `footerLinks`: Footer columns for Company, Services, and Legal.
   - `reviewLinks`: External review profiles (Glassdoor, AmbitionBox, Clutch, GoodFirms).
@@ -256,7 +256,7 @@ reset();
 ```
 
 ### 8.4 Adding a Legacy Route 301 Redirect
-Edit the `redirects()` array in [`next.config.mjs`](file:///c:/Users/Rupesh%20Yadav/Desktop/projects/tecunique/v0-tecunique-website-revamp/next.config.mjs):
+Edit the `redirects()` array in [`next.config.mjs`](../next.config.mjs):
 ```javascript
 { source: '/old-path', destination: '/new-path', permanent: true },
 ```
