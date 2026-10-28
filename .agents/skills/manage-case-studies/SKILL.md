@@ -11,16 +11,23 @@ This skill guides you through updating or adding client case studies (e.g., OPPS
 
 ---
 
-## 1. Where Case Studies Are Defined
+## Method 1: Using the Admin CMS (Recommended)
 
-The case studies portfolio is driven by:
-* **Listing Page & Cards Grid**: [`components/pages/case-studies/case-studies-list.tsx`](../../../components/pages/case-studies/case-studies-list.tsx)
-* **Dedicated Case Study Pages**: [`app/(site)/case-studies/[id]/page.tsx`](../../../app/(site)/case-studies/[id]/page.tsx)
-* **Company Logos**: Located in `public/images/companies/` (e.g., `oppscience.svg`, `skyselect.svg`).
+1. Navigate to **Manage Case Studies** in the Admin panel (`/admin/case-studies`).
+2. Click **+ Add Case Study** (`/admin/case-studies/new`).
+3. Fill out:
+   - **ID (URL Slug)**: e.g. `oppscience` (auto-generated from client name).
+   - **Client Name**: Company name.
+   - **Brand Color**: Hex color code picker.
+   - **Industry & Service Category**: e.g., `Fintech`, `Dedicated Teams`.
+   - **Tagline & Challenge Description**.
+   - **Key Results**: Add rows for metrics (e.g. `40+ engineers`, `98% retention`).
+   - **Content Sections & Testimonials**.
+4. Click **Save Case Study**. It will immediately be saved to the database.
 
 ---
 
-## 2. Adding or Editing a Case Study Card
+## Method 2: Adding or Editing a Case Study in Code
 
 Open [`components/pages/case-studies/case-studies-list.tsx`](../../../components/pages/case-studies/case-studies-list.tsx).
 Find the `CASE_STUDIES` array:

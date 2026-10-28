@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Plus, Trash2 } from "lucide-react"
+import { toast } from "sonner"
 
 export default function CaseStudyForm({ initialData = null }: { initialData?: any }) {
   const router = useRouter()
@@ -16,22 +17,30 @@ export default function CaseStudyForm({ initialData = null }: { initialData?: an
 
   const [formData, setFormData] = useState({
     id: initialData?.id || "",
-    client: initialData?.client || "",
+    client: initialData?.client || initialData?.company || "",
     color: initialData?.color || defaultAccentColor,
     industry: initialData?.industry || "",
     partnership: initialData?.partnership || "",
-    category: initialData?.category || "",
+    category: initialData?.category || initialData?.primaryService || "",
     location: initialData?.location || "",
     description: initialData?.description || "",
-    tagline: initialData?.tagline || "",
-    tags: initialData?.tags?.join(", ") || "",
-    results: initialData?.results || [{ metric: "", label: "" }],
-    sections: initialData?.sections || [{ title: "", content: "" }],
-    testimonials: initialData?.testimonials || [{ quote: "", author: "", role: "" }],
+    tagline: initialData?.tagline || initialData?.title || "",
+    tags: initialData?.tags?.join(", ") || (Array.isArray(initialData?.filters) ? initialData.filters.join(", ") : ""),
+    results: initialData?.results?.length ? initialData.results : [{ metric: "", label: "" }],
+    sections: initialData?.sections?.length ? initialData.sections : [{ title: "", content: "" }],
+    testimonials: initialData?.testimonials?.length ? initialData.testimonials : [{ quote: "", author: "", role: "" }],
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    setFormData(prev => {
+      const next = { ...prev, [name]: value }
+      // Auto-generate slug from client name if adding a new case study and id is empty
+      if (!isEditing && name === "client" && !prev.id) {
+        next.id = value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+      }
+      return next
+    })
   }
 
   const handleArrayChange = (field: string, index: number, key: string, value: string) => {
@@ -55,9 +64,13 @@ export default function CaseStudyForm({ initialData = null }: { initialData?: an
     setLoading(true)
 
     try {
+      const parsedTags = formData.tags.split(",").map((t: string) => t.trim()).filter(Boolean)
       const payload = {
         ...formData,
-        tags: formData.tags.split(",").map((t: string) => t.trim()).filter(Boolean),
+        company: formData.client, // Sync company with client
+        title: formData.tagline || formData.description,
+        filters: parsedTags,
+        tags: parsedTags,
       }
 
       const url = isEditing ? `/api/admin/case-studies/${formData.id}` : "/api/admin/case-studies"
@@ -69,13 +82,17 @@ export default function CaseStudyForm({ initialData = null }: { initialData?: an
         body: JSON.stringify(payload),
       })
 
-      if (!res.ok) throw new Error("Failed to save")
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        throw new Error(errorData.error || "Failed to save case study")
+      }
 
+      toast.success(isEditing ? "Case study updated successfully!" : "Case study created successfully!")
       router.push("/admin/case-studies")
       router.refresh()
-    } catch (error) {
+    } catch (error: any) {
       console.error(error)
-      alert("Failed to save case study")
+      toast.error(error.message || "Failed to save case study")
     } finally {
       setLoading(false)
     }
