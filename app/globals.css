@@ -640,3 +640,23 @@
     font-family: var(--font-sora), system-ui, sans-serif;
   }
 }
+
+/* Universal In-Place Visual Editor Styles */
+.universal-editable-hover {
+  outline: 2px dashed rgba(63, 99, 200, 0.7) !important;
+  outline-offset: 3px !important;
+  background-color: rgba(63, 99, 200, 0.05) !important;
+  border-radius: 4px !important;
+  cursor: text !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+.universal-editing-active {
+  outline: 2px solid var(--brand-blue, #3F63C8) !important;
+  outline-offset: 3px !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px !important;
+  cursor: text !important;
+}

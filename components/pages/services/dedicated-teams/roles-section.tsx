@@ -1,5 +1,6 @@
 import { Code2, Layers, FileCheck, ShieldCheck, Cloud, HeadphonesIcon, Users } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const teamRoles = [
   {
@@ -40,18 +41,38 @@ const teamRoles = [
   }
 ]
 
-export function DedicatedTeamsRoles() {
+interface DedicatedTeamsRolesProps {
+  content?: any
+}
+
+export function DedicatedTeamsRoles({ content }: DedicatedTeamsRolesProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-[var(--neutral-slate-50)] border-t border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-violet-strong)] border border-[var(--surface-violet-strong)] mb-6">
             <Users className="h-4 w-4 text-brand-purple" />
-            <span className="text-sm font-semibold text-brand-purple">Team Composition</span>
+            <span className="text-sm font-semibold text-brand-purple">
+              <InlineText
+                page="services-dedicated-teams"
+                field="rolesBadge"
+                defaultValue={content?.rolesBadge || "Team Composition"}
+              />
+            </span>
           </div>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">Build the Team You Need</h2>
+          <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
+            <InlineText
+              page="services-dedicated-teams"
+              field="rolesTitle"
+              defaultValue={content?.rolesTitle || "Build the Team You Need"}
+            />
+          </h2>
           <p className="text-xl text-muted-foreground">
-            Assemble a full-time, dedicated team across engineering, QA, DevOps, and support roles.
+            <InlineText
+              page="services-dedicated-teams"
+              field="rolesSubtitle"
+              defaultValue={content?.rolesSubtitle || "Assemble a full-time, dedicated team across engineering, QA, DevOps, and support roles."}
+            />
           </p>
         </SectionReveal>
 
@@ -68,8 +89,21 @@ export function DedicatedTeamsRoles() {
                 </div>
                 
                 <div className="relative z-10 flex flex-col flex-1 w-full">
-                  <h3 className="font-bold text-foreground mb-3 text-xl">{role.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{role.description}</p>
+                  <h3 className="font-bold text-foreground mb-3 text-xl">
+                    <InlineText
+                      page="services-dedicated-teams"
+                      field={`roles_${i}_title`}
+                      defaultValue={content?.[`roles_${i}_title`] || role.title}
+                    />
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    <InlineText
+                      page="services-dedicated-teams"
+                      field={`roles_${i}_desc`}
+                      multiline
+                      defaultValue={content?.[`roles_${i}_desc`] || role.description}
+                    />
+                  </p>
                 </div>
               </div>
             </SectionReveal>

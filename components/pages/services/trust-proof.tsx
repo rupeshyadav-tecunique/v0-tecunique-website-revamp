@@ -1,22 +1,42 @@
 import { ShieldCheck } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { ServicesHubContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
-export function ServicesTrustProof() {
+interface ServicesTrustProofProps {
+  content?: Partial<ServicesHubContent> & Record<string, any>
+}
+
+export function ServicesTrustProof({ content }: ServicesTrustProofProps = {}) {
+  const trustProofBadge = content?.trustProofBadge || "Trusted Partners"
+  const trustProofTitle = content?.trustProofTitle || "Built Through Long-Term Client Relationships"
+  const trustProofSubtitle =
+    content?.trustProofSubtitle ||
+    "TECUNIQUE has supported international software companies across Atlassian apps, product engineering, QA, data platforms, and offshore development teams."
+
   return (
     <section className="py-24 bg-slate-50 relative border-t border-slate-200">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-16">
           <SectionReveal>
-            <span className="section-pill mb-6 mx-auto inline-flex">
+            <span className="section-pill mb-6 mx-auto inline-flex items-center gap-1.5">
               <ShieldCheck className="h-4 w-4" />
-              Trusted Partners
+              <InlineText page="services" field="trustProofBadge" initialValue={trustProofBadge} />
             </span>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-display mb-6">
-              Built Through Long-Term Client Relationships
-            </h2>
-            <p className="text-lg text-slate-600">
-              TECUNIQUE has supported international software companies across Atlassian apps, product engineering, QA, data platforms, and offshore development teams.
-            </p>
+            <InlineText
+              page="services"
+              field="trustProofTitle"
+              initialValue={trustProofTitle}
+              as="h2"
+              className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl font-display mb-6 block"
+            />
+            <InlineText
+              page="services"
+              field="trustProofSubtitle"
+              initialValue={trustProofSubtitle}
+              as="p"
+              className="text-lg text-slate-600 block"
+            />
           </SectionReveal>
         </div>
 

@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const steps = [
   {
@@ -34,20 +35,41 @@ const steps = [
   }
 ]
 
-export function QAHowWeWork() {
+interface QAHowWeWorkProps {
+  content?: any
+}
+
+export function QAHowWeWork({ content }: QAHowWeWorkProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-white relative overflow-hidden border-y border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="mx-auto max-w-2xl text-center mb-16 lg:mb-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-blue-strong)]/30 border border-[var(--surface-blue-strong)] mb-6">
             <CheckCircle2 className="h-4 w-4 text-[var(--brand-blue)]" />
-            <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">How We Work</span>
+            <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">
+              <InlineText
+                page="services-qa"
+                field="howWeWorkBadge"
+                defaultValue={content?.howWeWorkBadge || "How We Work"}
+              />
+            </span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold font-display text-foreground mb-6">
-            Our QA Workflow
+            <InlineText
+              page="services-qa"
+              field="howWeWorkTitle"
+              defaultValue={content?.howWeWorkTitle || "Our QA Workflow"}
+            />
           </h2>
-          <p className="text-lg text-muted-foreground">
-            A practical QA collaboration model designed to align testing with your product, release process, and engineering workflow.
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            <InlineText
+              page="services-qa"
+              field="howWeWorkSubtitle"
+              defaultValue={
+                content?.howWeWorkSubtitle ||
+                "A practical QA collaboration model designed to align testing with your product, release process, and engineering workflow."
+              }
+            />
           </p>
         </SectionReveal>
 
@@ -64,12 +86,25 @@ export function QAHowWeWork() {
                     
                     {/* Content */}
                     <div className={`flex-1 w-full pl-20 md:pl-0 ${isEven ? 'md:text-left' : 'md:text-right'}`}>
-                      <h3 className="text-2xl font-bold text-foreground mb-3">{step.title}</h3>
-                      <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
+                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                        <InlineText
+                          page="services-qa"
+                          field={`qa_step_${index}_title`}
+                          defaultValue={content?.[`qa_step_${index}_title`] || step.title}
+                        />
+                      </h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">
+                        <InlineText
+                          page="services-qa"
+                          field={`qa_step_${index}_desc`}
+                          multiline
+                          defaultValue={content?.[`qa_step_${index}_desc`] || step.description}
+                        />
+                      </p>
                     </div>
 
                     {/* Number / Node */}
-                    <div className="absolute left-0 md:left-1/2 top-0 md:top-2 md:-translate-x-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-[var(--surface-blue)] z-10 shadow-sm text-[var(--brand-blue)] font-display text-xl font-bold">
+                    <div className="absolute left-0 md:left-1/2 top-0 md:top-2 md:-translate-x-1/2 flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-[var(--surface-blue)] z-10 shadow-sm text-brand-blue font-display text-xl font-bold">
                       {step.step}
                     </div>
 

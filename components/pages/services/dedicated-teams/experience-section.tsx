@@ -1,16 +1,34 @@
 import Image from "next/image"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import { Code, ShieldCheck, BookOpen } from "lucide-react"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
-export function DedicatedTeamsExperience() {
+interface DedicatedTeamsExperienceProps {
+  content?: any
+}
+
+export function DedicatedTeamsExperience({ content }: DedicatedTeamsExperienceProps = {}) {
   return (
     <>
       <section className="py-24 lg:py-32 bg-[var(--neutral-slate-50)] border-t border-[var(--neutral-slate-200)]/50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionReveal className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">Built Through Long-Term Client Relationships</h2>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
+              <InlineText
+                page="services-dedicated-teams"
+                field="expTitle"
+                defaultValue={content?.expTitle || "Built Through Long-Term Client Relationships"}
+              />
+            </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              TECUNIQUE has supported international software companies through long-term development, QA, automation, support, and product maintenance engagements across Atlassian apps, product engineering, data platforms, and offshore teams.
+              <InlineText
+                page="services-dedicated-teams"
+                field="expSubtitle"
+                defaultValue={
+                  content?.expSubtitle ||
+                  "TECUNIQUE has supported international software companies through long-term development, QA, automation, support, and product maintenance engagements across Atlassian apps, product engineering, data platforms, and offshore teams."
+                }
+              />
             </p>
           </SectionReveal>
 
@@ -79,13 +97,29 @@ export function DedicatedTeamsExperience() {
                 {/* Right Side: Content */}
                 <div className="flex flex-col w-full text-center md:text-left">
                   <div className="inline-flex items-center self-center md:self-start gap-2 px-3 py-1 rounded-full bg-[var(--surface-blue)] text-brand-blue text-sm font-semibold mb-6">
-                    Client Relationship Highlight
+                    <InlineText
+                      page="services-dedicated-teams"
+                      field="expBadge"
+                      defaultValue={content?.expBadge || "Client Relationship Highlight"}
+                    />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                    Long-Term Development & QA Collaboration
+                    <InlineText
+                      page="services-dedicated-teams"
+                      field="expHighlightTitle"
+                      defaultValue={content?.expHighlightTitle || "Long-Term Development & QA Collaboration"}
+                    />
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                    Our long-term collaboration with Innovalog included dedicated development and QA support for Atlassian Marketplace products, helping retain product knowledge and maintain engineering continuity over time.
+                    <InlineText
+                      page="services-dedicated-teams"
+                      field="expHighlightDesc"
+                      multiline
+                      defaultValue={
+                        content?.expHighlightDesc ||
+                        "Our long-term collaboration with Innovalog included dedicated development and QA support for Atlassian Marketplace products, helping retain product knowledge and maintain engineering continuity over time."
+                      }
+                    />
                   </p>
 
                   {/* Tags */}

@@ -1,5 +1,6 @@
 import { CheckCircle2, Lock, Cpu, Infinity } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const atlassianCapabilities = [
   {
@@ -24,14 +25,32 @@ const atlassianCapabilities = [
   }
 ]
 
-export function QAAtlassian() {
+interface QAAtlassianProps {
+  content?: any
+}
+
+export function QAAtlassian({ content }: QAAtlassianProps = {}) {
   return (
     <section className="py-24 bg-white relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">Atlassian App QA Experience</h2>
-          <p className="text-lg text-muted-foreground">
-            Our experience includes long-term QA and automation support for Jira Marketplace apps, covering workflow validation, regression testing, release testing, and automated test coverage. Tooling and frameworks used across relevant engagements have included ACLI, GINT, Groovy, Gradle, Playwright, and Selenium.
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">
+            <InlineText
+              page="services-qa"
+              field="atlassianQATitle"
+              defaultValue={content?.atlassianQATitle || "Atlassian App QA Experience"}
+            />
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            <InlineText
+              page="services-qa"
+              field="atlassianQASubtitle"
+              multiline
+              defaultValue={
+                content?.atlassianQASubtitle ||
+                "Our experience includes long-term QA and automation support for Jira Marketplace apps, covering workflow validation, regression testing, release testing, and automated test coverage. Tooling and frameworks used across relevant engagements have included ACLI, GINT, Groovy, Gradle, Playwright, and Selenium."
+              }
+            />
           </p>
         </SectionReveal>
 
@@ -40,8 +59,21 @@ export function QAAtlassian() {
             <SectionReveal key={card.title} delay={index * 100}>
               <div className="h-full bg-[var(--neutral-slate-50)] border border-[var(--neutral-slate-100)] rounded-3xl p-8 hover:shadow-xl hover:border-[var(--brand-blue)]/20 transition-all duration-300">
                 <card.icon className="h-8 w-8 text-[var(--brand-blue)] mb-6" />
-                <h3 className="text-xl font-bold text-foreground mb-3">{card.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">{card.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  <InlineText
+                    page="services-qa"
+                    field={`atl_qa_${index}_title`}
+                    defaultValue={content?.[`atl_qa_${index}_title`] || card.title}
+                  />
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  <InlineText
+                    page="services-qa"
+                    field={`atl_qa_${index}_desc`}
+                    multiline
+                    defaultValue={content?.[`atl_qa_${index}_desc`] || card.description}
+                  />
+                </p>
               </div>
             </SectionReveal>
           ))}

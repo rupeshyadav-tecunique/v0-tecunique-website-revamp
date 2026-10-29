@@ -5,7 +5,21 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
-export function ServicesHero() {
+import { ServicesHubContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+
+interface ServicesHeroProps {
+  content?: Partial<ServicesHubContent>
+}
+
+export function ServicesHero({ content }: ServicesHeroProps = {}) {
+  const badge = content?.badge || "Software Services"
+  const title = content?.title || "Build, Scale, and Support"
+  const titleHighlight = content?.titleHighlight || "Your Software Products"
+  const subtitle =
+    content?.subtitle ||
+    "Extend your engineering capacity with dedicated teams in India across product engineering, QA & automation, software support, and Atlassian app development."
+
   const scrollToServices = () => {
     const el = document.getElementById("services")
     if (el) {
@@ -25,17 +39,23 @@ export function ServicesHero() {
         <SectionReveal className="mx-auto max-w-4xl flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-sm font-semibold mb-8 shadow-sm">
             <Sparkles className="h-4 w-4" />
-            Software Services
+            <InlineText page="services" field="badge" initialValue={badge} />
           </div>
 
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-            Build, Scale, and Support <br className="hidden md:block" />
-            <span className="text-brand-blue">Your Software Products</span>
+            <InlineText page="services" field="title" initialValue={title} as="span" /> <br className="hidden md:block" />
+            <span className="text-brand-blue">
+              <InlineText page="services" field="titleHighlight" initialValue={titleHighlight} as="span" />
+            </span>
           </h1>
 
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Extend your engineering capacity with dedicated teams in India across product engineering, QA & automation, software support, and Atlassian app development.
-          </p>
+          <InlineText
+            page="services"
+            field="subtitle"
+            initialValue={subtitle}
+            as="p"
+            className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed block"
+          />
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <Button

@@ -32,8 +32,22 @@ const propositions = [
   },
 ]
 
-export function WhyUsSection() {
+import { HomePageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+
+interface WhyUsSectionProps {
+  content?: Partial<HomePageContent>
+}
+
+export function WhyUsSection({ content }: WhyUsSectionProps = {}) {
   const sectionRef = useScrollReveal()
+
+  const whyUsBadge = content?.whyUsBadge || "Why Choose Us"
+  const whyUsTitle = content?.whyUsTitle || "Trusted Software Services Since"
+  const whyUsHighlight = content?.whyUsHighlight || "2010"
+  const whyUsDescription =
+    content?.whyUsDescription ||
+    "Since 2010, TECUNIQUE has helped software companies build and extend engineering capacity in India across software development, QA, automation, and product support. We focus on practical execution, transparent collaboration, and long-term team continuity."
 
   return (
     <section
@@ -44,48 +58,67 @@ export function WhyUsSection() {
 
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center reveal">
-          <span className="section-pill mb-6 inline-flex">
-            <Sparkles className="h-3 w-3" />
-            Why Choose Us
+          <span className="section-pill mb-6 inline-flex items-center gap-1.5">
+            <Sparkles className="h-3 w-3 shrink-0" />
+            <InlineText page="home" field="whyUsBadge" initialValue={whyUsBadge} />
           </span>
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">
-            Trusted Software Services Since{" "}
-            <span className="gradient-text">2010</span>
+            <InlineText page="home" field="whyUsTitle" initialValue={whyUsTitle} as="span" />{" "}
+            <span className="gradient-text">
+              <InlineText page="home" field="whyUsHighlight" initialValue={whyUsHighlight} as="span" />
+            </span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Since 2010, TECUNIQUE has helped software companies build and extend engineering capacity in India across software development, QA, automation, and product support. We focus on practical execution, transparent collaboration, and long-term team continuity.
-          </p>
+          <InlineText
+            page="home"
+            field="whyUsDescription"
+            initialValue={whyUsDescription}
+            as="p"
+            className="mt-6 text-lg text-muted-foreground leading-relaxed block"
+          />
         </div>
 
         {/* Propositions Grid */}
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {propositions.map((item, i) => (
-            <div
-              key={item.title}
-              className="reveal group relative flex flex-col rounded-2xl border border-border/60 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              {/* Top Accent Line */}
-              <div
-                className="absolute top-0 left-0 w-full h-1"
-                style={{ background: item.color, opacity: 0.8 }}
-              />
+          {propositions.map((item, i) => {
+            const cardTitle = (content as any)?.[`why_${i}_title`] || item.title
+            const cardDesc = (content as any)?.[`why_${i}_desc`] || item.description
 
+            return (
               <div
-                className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110"
-                style={{ background: `${item.color}15` }}
+                key={item.title}
+                className="reveal group relative flex flex-col rounded-2xl border border-border/60 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden"
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <item.icon className="h-7 w-7" style={{ color: item.color }} />
-              </div>
+                {/* Top Accent Line */}
+                <div
+                  className="absolute top-0 left-0 w-full h-1"
+                  style={{ background: item.color, opacity: 0.8 }}
+                />
 
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                {item.title}
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed flex-1">
-                {item.description}
-              </p>
-            </div>
-          ))}
+                <div
+                  className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: `${item.color}15` }}
+                >
+                  <item.icon className="h-7 w-7" style={{ color: item.color }} />
+                </div>
+
+                <InlineText
+                  page="home"
+                  field={`why_${i}_title`}
+                  initialValue={cardTitle}
+                  as="h3"
+                  className="font-display text-xl font-bold text-foreground mb-3 block"
+                />
+                <InlineText
+                  page="home"
+                  field={`why_${i}_desc`}
+                  initialValue={cardDesc}
+                  as="p"
+                  className="text-base text-muted-foreground leading-relaxed flex-1 block"
+                />
+              </div>
+            )
+          })}
         </div>
 
         {/* CTA */}

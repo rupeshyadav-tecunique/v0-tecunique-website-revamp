@@ -58,7 +58,11 @@ async function initDatabase() {
 
     // Case Studies: unique id index
     await db.collection('case-studies').createIndex({ id: 1 }, { unique: true, sparse: true });
-    console.log('  ✔ Index created: case-studies.id (unique)\n');
+    console.log('  ✔ Index created: case-studies.id (unique)');
+
+    // Pages: unique slug index
+    await db.collection('pages').createIndex({ slug: 1 }, { unique: true });
+    console.log('  ✔ Index created: pages.slug (unique)\n');
 
     // ─── 2. Ensure Default Admin User ──────────────────────────────────────────
     console.log('\x1b[34m[INFO]\x1b[0m Checking admin account...');

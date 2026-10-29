@@ -1,5 +1,6 @@
 import { SearchCheck, Clock, MapPin, Code2, Cloud, CheckCircle2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const whyChooseUs = [
   {
@@ -34,7 +35,11 @@ const whyChooseUs = [
   }
 ]
 
-export function DedicatedTeamsBenefits() {
+interface DedicatedTeamsBenefitsProps {
+  content?: any
+}
+
+export function DedicatedTeamsBenefits({ content }: DedicatedTeamsBenefitsProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -44,13 +49,30 @@ export function DedicatedTeamsBenefits() {
             <SectionReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 mb-6">
                 <CheckCircle2 className="h-4 w-4 text-indigo-700" />
-                <span className="text-sm font-semibold text-indigo-900">Why Choose Us</span>
+                <span className="text-sm font-semibold text-indigo-900">
+                  <InlineText
+                    page="services-dedicated-teams"
+                    field="benefitsBadge"
+                    defaultValue={content?.benefitsBadge || "Why Choose Us"}
+                  />
+                </span>
               </div>
               <h2 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6 leading-tight">
-                Why Companies Choose TECUNIQUE for Dedicated Teams
+                <InlineText
+                  page="services-dedicated-teams"
+                  field="benefitsTitle"
+                  defaultValue={content?.benefitsTitle || "Why Companies Choose TECUNIQUE for Dedicated Teams"}
+                />
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                A dedicated team model built around client-selected talent, direct collaboration, operational support in India, and long-term continuity.
+                <InlineText
+                  page="services-dedicated-teams"
+                  field="benefitsSubtitle"
+                  defaultValue={
+                    content?.benefitsSubtitle ||
+                    "A dedicated team model built around client-selected talent, direct collaboration, operational support in India, and long-term continuity."
+                  }
+                />
               </p>
             </SectionReveal>
           </div>
@@ -64,8 +86,21 @@ export function DedicatedTeamsBenefits() {
                     <item.icon className="h-7 w-7" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      <InlineText
+                        page="services-dedicated-teams"
+                        field={`benefit_${i}_title`}
+                        defaultValue={content?.[`benefit_${i}_title`] || item.title}
+                      />
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      <InlineText
+                        page="services-dedicated-teams"
+                        field={`benefit_${i}_desc`}
+                        multiline
+                        defaultValue={content?.[`benefit_${i}_desc`] || item.description}
+                      />
+                    </p>
                   </div>
                 </div>
               </SectionReveal>

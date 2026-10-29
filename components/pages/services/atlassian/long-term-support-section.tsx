@@ -1,5 +1,7 @@
 import { TrendingUp, HeadphonesIcon, RefreshCw, Layers } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+import { InlineImage } from "@/components/admin/visual-editor/inline-image"
 
 const supportItems = [
   {
@@ -24,7 +26,11 @@ const supportItems = [
   }
 ]
 
-export function AtlassianLongTermSupport() {
+interface AtlassianLongTermSupportProps {
+  content?: any
+}
+
+export function AtlassianLongTermSupport({ content }: AtlassianLongTermSupportProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-slate-50/80">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -32,10 +38,22 @@ export function AtlassianLongTermSupport() {
           {/* Left Content */}
           <SectionReveal>
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-blue mb-6">
-              Long-Term Support for Marketplace Products
+              <InlineText
+                page="services-atlassian"
+                field="ltsTitle"
+                defaultValue={content?.ltsTitle || "Long-Term Support for Marketplace Products"}
+              />
             </h2>
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Atlassian Marketplace products often require ongoing engineering after the initial release. We support enhancements, issue resolution, compatibility changes, release cycles, and long-term product maintenance.
+              <InlineText
+                page="services-atlassian"
+                field="ltsSubtitle"
+                multiline
+                defaultValue={
+                  content?.ltsSubtitle ||
+                  "Atlassian Marketplace products often require ongoing engineering after the initial release. We support enhancements, issue resolution, compatibility changes, release cycles, and long-term product maintenance."
+                }
+              />
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -47,8 +65,21 @@ export function AtlassianLongTermSupport() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                    <h4 className="font-semibold text-slate-900 mb-1">
+                      <InlineText
+                        page="services-atlassian"
+                        field={`lts_item_${index}_title`}
+                        defaultValue={content?.[`lts_item_${index}_title`] || item.title}
+                      />
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      <InlineText
+                        page="services-atlassian"
+                        field={`lts_item_${index}_desc`}
+                        multiline
+                        defaultValue={content?.[`lts_item_${index}_desc`] || item.description}
+                      />
+                    </p>
                   </div>
                 </div>
               ))}
@@ -58,9 +89,12 @@ export function AtlassianLongTermSupport() {
           {/* Right Image */}
           <SectionReveal delay={200} direction="right" className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-200">
-              <img
-                src="/images/about/about-5.png"
+              <InlineImage
+                page="services-atlassian"
+                field="ltsImage"
+                initialSrc={content?.ltsImage || "/images/about/about-5.png"}
                 alt="Long-term Support"
+                fill
                 className="w-full h-full object-cover"
               />
             </div>

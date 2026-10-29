@@ -1,21 +1,52 @@
 import { SectionReveal } from "@/components/ui/section-reveal"
 import { PenLine, Quote, Users, HeartHandshake, RefreshCw } from "lucide-react"
+import { AboutPageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
-export function AboutFounder() {
+interface AboutFounderProps {
+  content?: Partial<AboutPageContent>
+}
+
+export function AboutFounder({ content }: AboutFounderProps = {}) {
+  const founderTitle = content?.founderTitle || "Founder-Led, Relationship-Driven"
+  const founderPara1 =
+    content?.founderPara1 ||
+    "TECUNIQUE has been built with a long-term view: create stable engineering teams, keep communication transparent, and focus on meaningful client relationships."
+  const founderPara2 =
+    content?.founderPara2 ||
+    "Our goal is to be a dependable engineering partner for software companies that value continuity, practical execution, and people who stay with the product long enough to understand it deeply."
+  const founderName = content?.founderName || "Jaydeep Chhasatia"
+  const founderRole = content?.founderRole || "Founder / CEO, TECUNIQUE"
+  const founderQuote =
+    content?.founderQuote ||
+    '"For me, a good client relationship means clear accountability, straightforward communication, and being accessible when an important decision or issue needs attention."'
+
   return (
     <section className="py-24 lg:py-32 bg-slate-50 border-y border-slate-200/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-8">
-            Founder-Led, Relationship-Driven
-          </h2>
+          <InlineText
+            page="about"
+            field="founderTitle"
+            initialValue={founderTitle}
+            as="h2"
+            className="font-display text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-8 block"
+          />
           <div className="text-xl text-slate-600 leading-relaxed space-y-6">
-            <p>
-              TECUNIQUE has been built with a long-term view: create stable engineering teams, keep communication transparent, and focus on meaningful client relationships.
-            </p>
-            <p>
-              Our goal is to be a dependable engineering partner for software companies that value continuity, practical execution, and people who stay with the product long enough to understand it deeply.
-            </p>
+            <InlineText
+              page="about"
+              field="founderPara1"
+              initialValue={founderPara1}
+              as="p"
+              className="block"
+            />
+            <InlineText
+              page="about"
+              field="founderPara2"
+              initialValue={founderPara2}
+              as="p"
+              className="block"
+            />
           </div>
         </SectionReveal>
 
@@ -35,16 +66,32 @@ export function AboutFounder() {
                     Founder Note
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-slate-900 mb-1">Jaydeep Chhasatia</h3>
-                  <p className="text-sm text-slate-500 font-medium mb-5">Founder / CEO, TECUNIQUE</p>
+                  <InlineText
+                    page="about"
+                    field="founderName"
+                    initialValue={founderName}
+                    as="h3"
+                    className="text-2xl font-extrabold text-slate-900 mb-1 block"
+                  />
+                  <InlineText
+                    page="about"
+                    field="founderRole"
+                    initialValue={founderRole}
+                    as="p"
+                    className="text-sm text-slate-500 font-medium mb-5 block"
+                  />
 
                   <div className="w-8 h-0.5 bg-indigo-100 mb-6"></div>
 
                   <div className="flex gap-3">
                     <Quote className="w-8 h-8 text-indigo-200 fill-indigo-200 shrink-0" />
-                    <p className="text-slate-700 italic font-medium leading-relaxed text-[15px] pt-1">
-                      "For me, a good client relationship means clear accountability, straightforward communication, and being accessible when an important decision or issue needs attention."
-                    </p>
+                    <InlineText
+                      page="about"
+                      field="founderQuote"
+                      initialValue={founderQuote}
+                      as="p"
+                      className="text-slate-700 italic font-medium leading-relaxed text-[15px] pt-1 block"
+                    />
                   </div>
                 </div>
               </div>

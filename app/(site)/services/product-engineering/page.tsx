@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { ProductEngineeringHero } from "@/components/pages/services/product-engineering/hero-section"
 import { WhatWeBuild } from "@/components/pages/services/product-engineering/what-we-build-section"
 import { EngineeringCapabilities } from "@/components/pages/services/product-engineering/engineering-capabilities-section"
@@ -14,24 +14,27 @@ export const metadata: Metadata = {
   description: "TECUNIQUE supports software product companies with custom development, product enhancements, backend systems, API integrations, cloud engineering, QA automation, and long-term product maintenance through engineering teams in India.",
 }
 
-export default function ProductEngineeringPage() {
+import { getPageContent } from "@/lib/services/page-content.service"
+import { ServicePageContent } from "@/lib/data/pages-content.data"
+
+export default async function ProductEngineeringPage() {
+  const content = await getPageContent<ServicePageContent>("services-product-engineering")
+
   return (
     <div className="flex flex-col w-full bg-slate-50">
-      <ProductEngineeringHero />
-      <WhatWeBuild />
-      <EngineeringCapabilities />
-      <EnhancementModernization />
-      <IntegrationsBackend />
-      <ProductEngineeringHowWeWork />
-      <TechStack />
-      <ProductEngineeringExperience />
+      <ProductEngineeringHero content={content} />
+      <WhatWeBuild content={content} />
+      <EngineeringCapabilities content={content} />
+      <EnhancementModernization content={content} />
+      <IntegrationsBackend content={content} />
+      <ProductEngineeringHowWeWork content={content} />
+      <TechStack content={content} />
+      <ProductEngineeringExperience content={content} />
       <UnifiedCTA 
-        title={<>Need <span className="text-brand-blue">Product Engineering</span> Support?</>}
-        description={<>
-          <strong className="block text-xl text-foreground font-semibold mb-4">Build, Enhance, and Support Your Software Product</strong>
-          Whether you're developing new functionality, improving an existing platform, or adding long-term engineering capacity, TECUNIQUE can support development, integrations, QA, and ongoing maintenance.
-        </>}
-        primaryButtonText="Discuss Your Product Requirements"
+        page="services-product-engineering"
+        title={content?.ctaTitle || "Need Product Engineering Support?"}
+        description={content?.ctaDescription || "Whether you're developing new functionality, improving an existing platform, or adding long-term engineering capacity, TECUNIQUE can support development, integrations, QA, and ongoing maintenance."}
+        primaryButtonText={content?.primaryButtonText || "Discuss Your Product Requirements"}
         secondaryButtonText="Explore Dedicated Teams"
         secondaryButtonLink="/services/dedicated-teams"
       />

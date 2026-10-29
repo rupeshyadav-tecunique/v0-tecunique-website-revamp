@@ -11,7 +11,8 @@ import {
   Menu,
   X,
   User,
-  FolderKanban
+  FolderKanban,
+  FileEdit
 } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -19,6 +20,7 @@ import Image from "next/image"
 
 const menuItems = [
   { name: "Overview", href: "/admin", icon: LayoutDashboard },
+  { name: "Edit Pages", href: "/admin/pages", icon: FileEdit },
   { name: "Manage Blogs", href: "/admin/blog", icon: FileText },
   { name: "Manage Careers", href: "/admin/jobs", icon: Briefcase },
   { name: "Manage Case Studies", href: "/admin/case-studies", icon: FolderKanban },

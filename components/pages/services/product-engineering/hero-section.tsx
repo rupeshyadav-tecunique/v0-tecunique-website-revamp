@@ -2,7 +2,21 @@ import Link from "next/link"
 import { ArrowRight, Code2, AppWindow, Database, Zap, Cloud, Wrench, Search, BoxSelect, Infinity, GitPullRequest, GitMerge, ServerCog } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 
-export function ProductEngineeringHero() {
+import { ServicePageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+
+interface ProductEngineeringHeroProps {
+  content?: Partial<ServicePageContent>
+}
+
+export function ProductEngineeringHero({ content }: ProductEngineeringHeroProps = {}) {
+  const badge = content?.badge || "PRODUCT ENGINEERING"
+  const title = content?.title || "Build and Scale"
+  const titleHighlight = content?.titleHighlight || "Custom Software Products"
+  const subtitle =
+    content?.subtitle ||
+    "Design, develop, enhance, and maintain web applications, backend systems, integrations, and cloud-ready platforms with experienced engineering teams."
+
   return (
     <section
       className="brand-hero-blue-bg relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-white"
@@ -19,17 +33,23 @@ export function ProductEngineeringHero() {
           {/* Left Column - Content */}
           <SectionReveal direction="left">
             <div className="mb-4 text-brand-blue font-bold text-sm tracking-widest uppercase">
-              PRODUCT ENGINEERING
+              <InlineText page="services-product-engineering" field="badge" initialValue={badge} />
             </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1] text-balance mb-6">
-              Build and Scale <br className="hidden lg:block"/>
-              <span className="text-brand-blue">Custom Software Products</span>
+              <InlineText page="services-product-engineering" field="title" initialValue={title} as="span" /> <br className="hidden lg:block"/>
+              <span className="text-brand-blue">
+                <InlineText page="services-product-engineering" field="titleHighlight" initialValue={titleHighlight} as="span" />
+              </span>
             </h1>
             
-            <p className="mt-4 text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Design, develop, enhance, and maintain web applications, backend systems, integrations, and cloud-ready platforms with experienced engineering teams.
-            </p>
+            <InlineText
+              page="services-product-engineering"
+              field="subtitle"
+              initialValue={subtitle}
+              as="p"
+              className="mt-4 text-xl text-muted-foreground leading-relaxed max-w-2xl block"
+            />
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link 

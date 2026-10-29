@@ -1,5 +1,6 @@
 import { CheckSquare, Search, BoxSelect, RefreshCcw, LayoutTemplate, ShieldCheck } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const qaServices = [
   {
@@ -34,13 +35,29 @@ const qaServices = [
   }
 ]
 
-export function QAServices() {
+interface QAServicesProps {
+  content?: any
+}
+
+export function QAServices({ content }: QAServicesProps = {}) {
   return (
     <section className="py-24 bg-white relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-[var(--brand-blue)] uppercase mb-3">QA SERVICES WE PROVIDE</h2>
-          <h3 className="text-3xl sm:text-4xl font-bold font-display text-foreground">Comprehensive Testing Coverage</h3>
+          <h2 className="text-sm font-bold tracking-widest text-[var(--brand-blue)] uppercase mb-3">
+            <InlineText
+              page="services-qa"
+              field="qaServicesEyebrow"
+              defaultValue={content?.qaServicesEyebrow || "QA SERVICES WE PROVIDE"}
+            />
+          </h2>
+          <h3 className="text-3xl sm:text-4xl font-bold font-display text-foreground">
+            <InlineText
+              page="services-qa"
+              field="qaServicesTitle"
+              defaultValue={content?.qaServicesTitle || "Comprehensive Testing Coverage"}
+            />
+          </h3>
         </SectionReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -50,8 +67,21 @@ export function QAServices() {
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--surface-blue-strong)]/40 text-[var(--brand-blue)] mb-6 group-hover:scale-110 group-hover:bg-[var(--brand-blue)] group-hover:text-white transition-all duration-300">
                   <service.icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  <InlineText
+                    page="services-qa"
+                    field={`qa_service_${index}_title`}
+                    defaultValue={content?.[`qa_service_${index}_title`] || service.title}
+                  />
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <InlineText
+                    page="services-qa"
+                    field={`qa_service_${index}_desc`}
+                    multiline
+                    defaultValue={content?.[`qa_service_${index}_desc`] || service.description}
+                  />
+                </p>
               </div>
             </SectionReveal>
           ))}

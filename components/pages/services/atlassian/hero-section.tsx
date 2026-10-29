@@ -1,9 +1,23 @@
-﻿import Link from "next/link"
+import Link from "next/link"
 import { Layers, ArrowRight } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
 import { HeroAtlassianVisual } from "@/components/pages/home/hero-atlassian-visual"
 
-export function AtlassianHero() {
+import { ServicePageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+
+interface AtlassianHeroProps {
+  content?: Partial<ServicePageContent>
+}
+
+export function AtlassianHero({ content }: AtlassianHeroProps = {}) {
+  const badge = content?.badge || "ATLASSIAN APP DEVELOPMENT & QA"
+  const title = content?.title || "Build, Test, and Support Jira Apps"
+  const titleHighlight = content?.titleHighlight || "Dedicated Engineering Teams"
+  const subtitle =
+    content?.subtitle ||
+    "TECUNIQUE helps Atlassian Marketplace vendors and software product companies develop, test, automate, modernize, and maintain Jira apps with dedicated engineering and QA teams."
+
   return (
     <section className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 bg-slate-50/50">
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -16,17 +30,23 @@ export function AtlassianHero() {
           <SectionReveal direction="left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-brand-blue text-sm font-semibold mb-8 shadow-sm tracking-widest uppercase">
               <Layers className="h-4 w-4" />
-              ATLASSIAN APP DEVELOPMENT & QA
+              <InlineText page="services-atlassian" field="badge" initialValue={badge} />
             </div>
             
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
-              Build, Test, and Support Jira Apps <br className="hidden xl:block"/>
-              <span className="whitespace-nowrap">with <span className="text-brand-blue">Dedicated</span></span> <span className="text-brand-blue">Engineering Teams</span>
+              <InlineText page="services-atlassian" field="title" initialValue={title} as="span" /> <br className="hidden xl:block"/>
+              <span className="text-brand-blue">
+                <InlineText page="services-atlassian" field="titleHighlight" initialValue={titleHighlight} as="span" />
+              </span>
             </h1>
             
-            <p className="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-              TECUNIQUE helps Atlassian Marketplace vendors and software product companies develop, test, automate, modernize, and maintain Jira apps with dedicated engineering and QA teams.
-            </p>
+            <InlineText
+              page="services-atlassian"
+              field="subtitle"
+              initialValue={subtitle}
+              as="p"
+              className="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed block"
+            />
             
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link 

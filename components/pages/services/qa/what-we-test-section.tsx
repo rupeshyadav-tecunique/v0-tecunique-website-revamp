@@ -1,5 +1,6 @@
 import { LayoutGrid, Cloud, Code2, PlaySquare, CheckCircle2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const testTargets = [
   {
@@ -24,7 +25,11 @@ const testTargets = [
   }
 ]
 
-export function WhatWeTest() {
+interface WhatWeTestProps {
+  content?: any
+}
+
+export function WhatWeTest({ content }: WhatWeTestProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -35,13 +40,30 @@ export function WhatWeTest() {
             <SectionReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-blue-strong)]/30 border border-[var(--surface-blue-strong)] mb-6">
                 <CheckCircle2 className="h-4 w-4 text-[var(--brand-blue)]" />
-                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">What We Test</span>
+                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">
+                  <InlineText
+                    page="services-qa"
+                    field="whatWeTestBadge"
+                    defaultValue={content?.whatWeTestBadge || "What We Test"}
+                  />
+                </span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6 leading-tight">
-                Testing Built Around Real Product Workflows
+                <InlineText
+                  page="services-qa"
+                  field="whatWeTestTitle"
+                  defaultValue={content?.whatWeTestTitle || "Testing Built Around Real Product Workflows"}
+                />
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                We test the applications, integrations, and experiences your users rely on every day—across web, SaaS, APIs, and Atlassian / Jira ecosystems.
+                <InlineText
+                  page="services-qa"
+                  field="whatWeTestSubtitle"
+                  defaultValue={
+                    content?.whatWeTestSubtitle ||
+                    "We test the applications, integrations, and experiences your users rely on every day—across web, SaaS, APIs, and Atlassian / Jira ecosystems."
+                  }
+                />
               </p>
             </SectionReveal>
           </div>
@@ -55,8 +77,21 @@ export function WhatWeTest() {
                     <target.icon className="h-7 w-7" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[var(--brand-blue)] transition-colors">{target.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{target.description}</p>
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[var(--brand-blue)] transition-colors">
+                      <InlineText
+                        page="services-qa"
+                        field={`target_${index}_title`}
+                        defaultValue={content?.[`target_${index}_title`] || target.title}
+                      />
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      <InlineText
+                        page="services-qa"
+                        field={`target_${index}_desc`}
+                        multiline
+                        defaultValue={content?.[`target_${index}_desc`] || target.description}
+                      />
+                    </p>
                   </div>
                 </div>
               </SectionReveal>

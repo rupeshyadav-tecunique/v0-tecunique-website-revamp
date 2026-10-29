@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Layout, Server, Zap, Cloud, Database, Wrench, ShieldCheck, ChevronDown } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const capabilities = [
   {
@@ -37,7 +38,11 @@ const capabilities = [
   }
 ]
 
-export function EngineeringCapabilities() {
+interface EngineeringCapabilitiesProps {
+  content?: any
+}
+
+export function EngineeringCapabilities({ content }: EngineeringCapabilitiesProps = {}) {
   const [openIndex, setOpenIndex] = useState<number>(0)
 
   return (
@@ -49,56 +54,85 @@ export function EngineeringCapabilities() {
             <SectionReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-blue-strong)]/30 border border-[var(--surface-blue-strong)] mb-6">
                 <ShieldCheck className="h-4 w-4 text-[var(--brand-blue)]" />
-                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">Expertise</span>
+                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">
+                  <InlineText
+                    page="services-product-engineering"
+                    field="engCapBadge"
+                    defaultValue={content?.engCapBadge || "Expertise"}
+                  />
+                </span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl font-display mb-6">
-                Engineering Capabilities We Provide
+                <InlineText
+                  page="services-product-engineering"
+                  field="engCapTitle"
+                  defaultValue={content?.engCapTitle || "Engineering Capabilities We Provide"}
+                />
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                Our teams support full-stack product development across frontend, backend, APIs and integrations, cloud environments, databases, and long-term maintenance.
+                <InlineText
+                  page="services-product-engineering"
+                  field="engCapSubtitle"
+                  multiline
+                  defaultValue={
+                    content?.engCapSubtitle ||
+                    "Our teams support full-stack product development across frontend, backend, APIs and integrations, cloud environments, databases, and long-term maintenance."
+                  }
+                />
               </p>
             </SectionReveal>
           </div>
-          
-          <div className="lg:col-span-7">
-            <SectionReveal delay={100}>
-              <div className="flex flex-col gap-4">
-                {capabilities.map((cap, index) => {
-                  const isOpen = openIndex === index
-                  return (
-                    <div 
-                      key={cap.title} 
-                      className={`border border-border/60 rounded-2xl overflow-hidden transition-all duration-300 bg-white shadow-sm hover:border-[var(--brand-blue)]/30 ${isOpen ? 'ring-1 ring-[var(--brand-blue)]/20' : ''}`}
-                    >
-                      <button
-                        onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                        className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? 'bg-[var(--brand-blue)] text-white' : 'bg-[var(--surface-blue)] text-[var(--brand-blue)]'}`}>
-                            <cap.icon className="h-6 w-6" />
-                          </div>
-                          <h3 className={`text-xl font-bold transition-colors ${isOpen ? 'text-[var(--brand-blue)]' : 'text-foreground'}`}>
-                            {cap.title}
-                          </h3>
+
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            {capabilities.map((item, index) => {
+              const isOpen = openIndex === index
+              return (
+                <SectionReveal key={item.title} delay={index * 50}>
+                  <div 
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    className={`rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer ${
+                      isOpen 
+                        ? "bg-white border-[var(--brand-blue)]/30 shadow-lg ring-1 ring-[var(--brand-blue)]/10" 
+                        : "bg-white/60 border-border/60 hover:bg-white hover:border-border"
+                    }`}
+                  >
+                    <div className="p-6 sm:p-8 flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-5">
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${
+                          isOpen 
+                            ? "bg-[var(--brand-blue)] text-white" 
+                            : "bg-[var(--surface-blue)] text-[var(--brand-blue)]"
+                        }`}>
+                          <item.icon className="h-6 w-6" />
                         </div>
-                        <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-                      </button>
-                      
-                      <div 
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
-                      >
-                        <div className="p-6 pt-0 pl-[5.5rem]">
-                          <p className="text-muted-foreground leading-relaxed text-lg">
-                            {cap.description}
-                          </p>
-                        </div>
+                        <h3 className="text-xl font-bold font-display text-foreground">
+                          <InlineText
+                            page="services-product-engineering"
+                            field={`cap_${index}_title`}
+                            defaultValue={content?.[`cap_${index}_title`] || item.title}
+                          />
+                        </h3>
                       </div>
+                      <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isOpen ? "rotate-180 text-[var(--brand-blue)]" : ""}`} />
                     </div>
-                  )
-                })}
-              </div>
-            </SectionReveal>
+
+                    {isOpen && (
+                      <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0">
+                        <div className="h-px w-full bg-border/40 mb-5" />
+                        <p className="text-muted-foreground leading-relaxed text-base">
+                          <InlineText
+                            page="services-product-engineering"
+                            field={`cap_${index}_desc`}
+                            multiline
+                            defaultValue={content?.[`cap_${index}_desc`] || item.description}
+                          />
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </SectionReveal>
+              )
+            })}
           </div>
 
         </div>

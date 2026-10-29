@@ -71,10 +71,24 @@ const testimonialSlides = [
   }
 ]
 
-export function TestimonialsSection() {
+import { HomePageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+
+interface TestimonialsSectionProps {
+  content?: Partial<HomePageContent> & Record<string, any>
+}
+
+export function TestimonialsSection({ content }: TestimonialsSectionProps = {}) {
   const [current, setCurrent] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
   const sectionRef = useScrollReveal()
+
+  const testimonialBadge = content?.testimonialBadge || "Client Success"
+  const testimonialTitle = content?.testimonialTitle || "Trusted Through"
+  const testimonialHighlight = content?.testimonialHighlight || "Long-Term"
+  const testimonialSubtitle =
+    content?.testimonialSubtitle ||
+    "Our work has grown through long-term engineering partnerships across dedicated teams, product engineering, QA & automation, and Atlassian app development."
 
   const goTo = useCallback((index: number) => {
     if (index === current) return
@@ -104,16 +118,24 @@ export function TestimonialsSection() {
 
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center reveal mb-16">
-          <span className="section-pill mb-6 inline-flex">
+          <span className="section-pill mb-6 inline-flex items-center gap-1.5">
             <Star className="h-3 w-3 fill-current" />
-            Client Success
+            <InlineText page="home" field="testimonialBadge" initialValue={testimonialBadge} />
           </span>
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl mb-6">
-            Trusted Through <span className="gradient-text">Long-Term</span> Client Relationships
+            <InlineText page="home" field="testimonialTitle" initialValue={testimonialTitle} as="span" />{" "}
+            <span className="gradient-text">
+              <InlineText page="home" field="testimonialHighlight" initialValue={testimonialHighlight} as="span" />
+            </span>{" "}
+            Client Relationships
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Our work has grown through long-term engineering partnerships across dedicated teams, product engineering, QA & automation, and Atlassian app development.
-          </p>
+          <InlineText
+            page="home"
+            field="testimonialSubtitle"
+            initialValue={testimonialSubtitle}
+            as="p"
+            className="text-lg text-muted-foreground leading-relaxed block"
+          />
         </div>
 
         {/* Carousel Container */}

@@ -1,17 +1,33 @@
 import { Store, Cloud, Users, RefreshCcw } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
-export function AtlassianTargetAudience() {
+interface AtlassianTargetAudienceProps {
+  content?: any
+}
+
+export function AtlassianTargetAudience({ content }: AtlassianTargetAudienceProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-slate-50/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-16">
           <SectionReveal>
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-blue mb-4">
-              Built for Atlassian App Vendors
+              <InlineText
+                page="services-atlassian"
+                field="audienceTitle"
+                defaultValue={content?.audienceTitle || "Built for Atlassian App Vendors"}
+              />
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl">
-              Engineering and QA support for teams building, maintaining, and evolving Jira apps and Atlassian Marketplace products.
+              <InlineText
+                page="services-atlassian"
+                field="audienceSubtitle"
+                defaultValue={
+                  content?.audienceSubtitle ||
+                  "Engineering and QA support for teams building, maintaining, and evolving Jira apps and Atlassian Marketplace products."
+                }
+              />
             </p>
           </SectionReveal>
         </div>
@@ -24,9 +40,23 @@ export function AtlassianTargetAudience() {
                 <div className="mb-6">
                   <Store className="h-8 w-8 text-brand-blue" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Marketplace App Vendors</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_0_title"
+                    defaultValue={content?.aud_card_0_title || "Marketplace App Vendors"}
+                  />
+                </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  For teams developing and maintaining Jira apps that need ongoing engineering, QA, automation, integration, and release support.
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_0_desc"
+                    multiline
+                    defaultValue={
+                      content?.aud_card_0_desc ||
+                      "For teams developing and maintaining Jira apps that need ongoing engineering, QA, automation, integration, and release support."
+                    }
+                  />
                 </p>
               </div>
             </SectionReveal>
@@ -41,9 +71,23 @@ export function AtlassianTargetAudience() {
                     <Cloud className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">SaaS / ISV Teams</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_1_title"
+                    defaultValue={content?.aud_card_1_title || "SaaS / ISV Teams"}
+                  />
+                </h3>
                 <p className="text-blue-100 leading-relaxed">
-                  For software companies integrating their products with Jira, Atlassian Cloud, or Marketplace app workflows.
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_1_desc"
+                    multiline
+                    defaultValue={
+                      content?.aud_card_1_desc ||
+                      "For software companies integrating their products with Jira, Atlassian Cloud, or Marketplace app workflows."
+                    }
+                  />
                 </p>
               </div>
             </SectionReveal>
@@ -56,9 +100,23 @@ export function AtlassianTargetAudience() {
                 <div className="mb-6">
                   <Users className="h-8 w-8 text-blue-400" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Product Engineering Leaders</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_2_title"
+                    defaultValue={content?.aud_card_2_title || "Product Engineering Leaders"}
+                  />
+                </h3>
                 <p className="text-slate-300 leading-relaxed">
-                  Add dedicated developers, QA engineers, and automation specialists who can work within your existing product and sprint processes.
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_2_desc"
+                    multiline
+                    defaultValue={
+                      content?.aud_card_2_desc ||
+                      "Add dedicated developers, QA engineers, and automation specialists who can work within your existing product and sprint processes."
+                    }
+                  />
                 </p>
               </div>
             </SectionReveal>
@@ -71,9 +129,23 @@ export function AtlassianTargetAudience() {
                 <div className="mb-6">
                   <RefreshCcw className="h-8 w-8 text-blue-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">App Modernization Teams</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_3_title"
+                    defaultValue={content?.aud_card_3_title || "App Modernization Teams"}
+                  />
+                </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Support existing apps through architecture improvements, Forge adoption, Connect-to-Forge modernization, and Cloud readiness work.
+                  <InlineText
+                    page="services-atlassian"
+                    field="aud_card_3_desc"
+                    multiline
+                    defaultValue={
+                      content?.aud_card_3_desc ||
+                      "Support existing apps through architecture improvements, Forge adoption, Connect-to-Forge modernization, and Cloud readiness work."
+                    }
+                  />
                 </p>
               </div>
             </SectionReveal>

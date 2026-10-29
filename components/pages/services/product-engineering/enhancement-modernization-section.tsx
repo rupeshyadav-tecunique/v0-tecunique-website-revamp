@@ -1,5 +1,6 @@
 import { Sparkles, Code, ArrowUpCircle, Clock3 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const enhancementPoints = [
   {
@@ -24,7 +25,11 @@ const enhancementPoints = [
   }
 ]
 
-export function EnhancementModernization() {
+interface EnhancementModernizationProps {
+  content?: any
+}
+
+export function EnhancementModernization({ content }: EnhancementModernizationProps = {}) {
   return (
     <section className="py-24 bg-white relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -33,10 +38,22 @@ export function EnhancementModernization() {
           <SectionReveal>
             <div className="max-w-xl">
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6">
-                Enhance Existing Products Without Losing Continuity
+                <InlineText
+                  page="services-product-engineering"
+                  field="modernizationTitle"
+                  defaultValue={content?.modernizationTitle || "Enhance Existing Products Without Losing Continuity"}
+                />
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground mb-8">
-                Many product companies do not need a one-time build. They need a stable engineering team that can understand the existing codebase, improve features, fix issues, modernize parts of the platform, and continue supporting the product over time.
+                <InlineText
+                  page="services-product-engineering"
+                  field="modernizationSubtitle"
+                  multiline
+                  defaultValue={
+                    content?.modernizationSubtitle ||
+                    "Many product companies do not need a one-time build. They need a stable engineering team that can understand the existing codebase, improve features, fix issues, modernize parts of the platform, and continue supporting the product over time."
+                  }
+                />
               </p>
             </div>
           </SectionReveal>
@@ -49,16 +66,25 @@ export function EnhancementModernization() {
                     <point.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-bold font-display text-foreground mb-2">
-                    {point.title}
+                    <InlineText
+                      page="services-product-engineering"
+                      field={`mod_point_${index}_title`}
+                      defaultValue={content?.[`mod_point_${index}_title`] || point.title}
+                    />
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1">
-                    {point.description}
+                    <InlineText
+                      page="services-product-engineering"
+                      field={`mod_point_${index}_desc`}
+                      multiline
+                      defaultValue={content?.[`mod_point_${index}_desc`] || point.description}
+                    />
                   </p>
                 </div>
               </SectionReveal>
             ))}
           </div>
-          
+
         </div>
       </div>
     </section>

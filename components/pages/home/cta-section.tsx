@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { ArrowRight, Shield, FileCheck, Clock3 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { HomePageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const trustBadges = [
   { icon: Shield, label: "NDA-Backed Engagements" },
@@ -10,8 +12,18 @@ const trustBadges = [
   { icon: Clock3, label: "Delivery Discipline" },
 ]
 
-export function CTASection() {
+interface CTASectionProps {
+  content?: Partial<HomePageContent>
+}
+
+export function CTASection({ content }: CTASectionProps = {}) {
   const sectionRef = useScrollReveal()
+
+  const ctaTitle = content?.ctaTitle || "Ready to Strengthen Your"
+  const ctaHighlight = content?.ctaHighlight || "Engineering"
+  const ctaDescription =
+    content?.ctaDescription ||
+    "Looking to build a dedicated team or strengthen your product engineering capacity? Let's discuss how TECUNIQUE can support your development, QA, automation, or Atlassian app needs."
 
   return (
     <section
@@ -40,12 +52,20 @@ export function CTASection() {
 
           {/* Main heading */}
           <h2 className="reveal font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-tight">
-            Ready to Strengthen Your <span className="gradient-text">Engineering</span> Team?
+            <InlineText page="home" field="ctaTitle" initialValue={ctaTitle} as="span" />{" "}
+            <span className="gradient-text">
+              <InlineText page="home" field="ctaHighlight" initialValue={ctaHighlight} as="span" />
+            </span>{" "}
+            Team?
           </h2>
 
-          <p className="reveal mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Looking to build a dedicated team or strengthen your product engineering capacity? Let's discuss how TECUNIQUE can support your development, QA, automation, or Atlassian app needs.
-          </p>
+          <InlineText
+            page="home"
+            field="ctaDescription"
+            initialValue={ctaDescription}
+            as="p"
+            className="reveal mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto block"
+          />
 
           {/* CTAs */}
           <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

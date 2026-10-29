@@ -1,7 +1,12 @@
 import { CheckCircle2, Building2, ArrowRight, Compass, Users } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
-export function DedicatedTeamsComparison() {
+interface DedicatedTeamsComparisonProps {
+  content?: any
+}
+
+export function DedicatedTeamsComparison({ content }: DedicatedTeamsComparisonProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-white text-slate-900 relative overflow-hidden">
       {/* Premium Background Effects */}
@@ -15,10 +20,21 @@ export function DedicatedTeamsComparison() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <SectionReveal className="mx-auto max-w-4xl text-center mb-20">
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl mb-6 text-slate-900">
-            A Clear Operating Model for Dedicated Teams
+            <InlineText
+              page="services-dedicated-teams"
+              field="compTitle"
+              defaultValue={content?.compTitle || "A Clear Operating Model for Dedicated Teams"}
+            />
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            You guide the product and delivery priorities. TECUNIQUE manages the operational responsibilities in India, so the team can work with stability and continuity.
+            <InlineText
+              page="services-dedicated-teams"
+              field="compSubtitle"
+              defaultValue={
+                content?.compSubtitle ||
+                "You guide the product and delivery priorities. TECUNIQUE manages the operational responsibilities in India, so the team can work with stability and continuity."
+              }
+            />
           </p>
         </SectionReveal>
 
@@ -29,11 +45,22 @@ export function DedicatedTeamsComparison() {
               <div className="h-14 w-14 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0">
                 <Compass className="h-7 w-7 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 leading-tight">Client-Led <br/>Direction</h3>
+              <h3 className="text-xl font-bold text-slate-900 leading-tight">
+                <InlineText
+                  page="services-dedicated-teams"
+                  field="comp_box1_title"
+                  defaultValue={content?.comp_box1_title || "Client-Led Direction"}
+                />
+              </h3>
             </div>
             
             <p className="text-sm text-slate-500 mb-8 pb-8 border-b border-slate-100 min-h-[80px]">
-              You stay in control of the product, priorities, and delivery expectations.
+              <InlineText
+                page="services-dedicated-teams"
+                field="comp_box1_desc"
+                multiline
+                defaultValue={content?.comp_box1_desc || "You stay in control of the product, priorities, and delivery expectations."}
+              />
             </p>
             
             <ul className="space-y-4">
@@ -59,11 +86,22 @@ export function DedicatedTeamsComparison() {
               <div className="h-14 w-14 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
                 <Users className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 leading-tight">Shared <br/>Collaboration</h3>
+              <h3 className="text-xl font-bold text-slate-900 leading-tight">
+                <InlineText
+                  page="services-dedicated-teams"
+                  field="comp_box2_title"
+                  defaultValue={content?.comp_box2_title || "Shared Collaboration"}
+                />
+              </h3>
             </div>
             
             <p className="text-sm text-slate-500 mb-8 pb-8 border-b border-slate-100 min-h-[80px]">
-              The dedicated team works directly with your tools, communication channels, and sprint process.
+              <InlineText
+                page="services-dedicated-teams"
+                field="comp_box2_desc"
+                multiline
+                defaultValue={content?.comp_box2_desc || "The dedicated team works directly with your tools, communication channels, and sprint process."}
+              />
             </p>
             
             <ul className="space-y-4">
@@ -91,11 +129,22 @@ export function DedicatedTeamsComparison() {
                 <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0">
                   <Building2 className="h-7 w-7 text-blue-700" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 leading-tight">TECUNIQUE-Managed <br/>Operations</h3>
+                <h3 className="text-xl font-bold text-slate-900 leading-tight">
+                  <InlineText
+                    page="services-dedicated-teams"
+                    field="comp_box3_title"
+                    defaultValue={content?.comp_box3_title || "TECUNIQUE-Managed Operations"}
+                  />
+                </h3>
               </div>
               
               <p className="text-sm text-slate-500 mb-8 pb-8 border-b border-slate-200/60 min-h-[80px]">
-                We manage the employment, administration, and team continuity responsibilities in India.
+                <InlineText
+                  page="services-dedicated-teams"
+                  field="comp_box3_desc"
+                  multiline
+                  defaultValue={content?.comp_box3_desc || "We manage the employment, administration, and team continuity responsibilities in India."}
+                />
               </p>
               
               <ul className="space-y-4">

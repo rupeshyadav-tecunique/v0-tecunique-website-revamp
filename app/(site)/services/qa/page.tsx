@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import { QAHero } from "@/components/pages/services/qa/hero-section"
 import { WhatWeTest } from "@/components/pages/services/qa/what-we-test-section"
 import { QAServices } from "@/components/pages/services/qa/qa-services-section"
@@ -14,22 +14,28 @@ export const metadata: Metadata = {
   description: "TECUNIQUE supports software product companies with manual QA, regression testing, automation testing, Playwright, Selenium, API testing, CI/CD integration, release validation, and dedicated QA teams in India.",
 }
 
-export default function QAServicePage() {
+import { getPageContent } from "@/lib/services/page-content.service"
+import { ServicePageContent } from "@/lib/data/pages-content.data"
+
+export default async function QAServicePage() {
+  const content = await getPageContent<ServicePageContent>("services-qa")
+
   return (
     <div className="flex flex-col w-full bg-slate-50">
-      <QAHero />
-      <WhatWeTest />
-      <QAServices />
-      <AutomationCapability />
-      <QAForProductCompanies />
-      <QAAtlassian />
-      <QAHowWeWork />
-      <QAExperience />
+      <QAHero content={content} />
+      <WhatWeTest content={content} />
+      <QAServices content={content} />
+      <AutomationCapability content={content} />
+      <QAForProductCompanies content={content} />
+      <QAAtlassian content={content} />
+      <QAHowWeWork content={content} />
+      <QAExperience content={content} />
       <UnifiedCTA 
-        eyebrow="NEED QA OR AUTOMATION CAPACITY?"
-        title={<>Strengthen Your Product Quality with the <span className="text-[var(--brand-blue)]">Right QA Team</span></>}
-        description="Whether you need manual testing, regression coverage, automation QA, API testing, release validation, or long-term QA support, we can help structure the right engagement for your product."
-        primaryButtonText="Discuss Your QA Requirements"
+        page="services-qa"
+        eyebrow={content?.ctaEyebrow || "NEED QA OR AUTOMATION CAPACITY?"}
+        title={content?.ctaTitle || "Strengthen Your Product Quality with the Right QA Team"}
+        description={content?.ctaDescription || "Whether you need manual testing, regression coverage, automation QA, API testing, release validation, or long-term QA support, we can help structure the right engagement for your product."}
+        primaryButtonText={content?.primaryButtonText || "Discuss Your QA Requirements"}
         primaryButtonLink="/contact"
         secondaryButtonText="Explore Dedicated Teams"
         secondaryButtonLink="/services/dedicated-teams"

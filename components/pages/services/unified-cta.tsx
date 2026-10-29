@@ -2,8 +2,10 @@ import Link from "next/link"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 interface UnifiedCTAProps {
+  page?: string;
   title?: React.ReactNode;
   description?: React.ReactNode;
   primaryButtonText?: string;
@@ -14,6 +16,7 @@ interface UnifiedCTAProps {
 }
 
 export function UnifiedCTA({
+  page,
   title = (
     <>
       Let's Build Something <span className="text-brand-blue">Great Together</span>
@@ -38,21 +41,51 @@ export function UnifiedCTA({
         <SectionReveal>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[var(--neutral-slate-200)] mb-8 shadow-sm">
             <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">{eyebrow || "Ready to scale your software capabilities?"}</span>
+            <span className="text-sm font-medium text-muted-foreground">
+              {page && typeof eyebrow === "string" ? (
+                <InlineText page={page} field="ctaEyebrow" initialValue={eyebrow} />
+              ) : (
+                eyebrow || "Ready to scale your software capabilities?"
+              )}
+            </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 tracking-tight max-w-3xl mx-auto leading-tight">
-            {title}
-          </h2>
+          {page && typeof title === "string" ? (
+            <InlineText
+              page={page}
+              field="ctaTitle"
+              initialValue={title}
+              as="h2"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 tracking-tight max-w-3xl mx-auto leading-tight block"
+            />
+          ) : (
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground mb-6 tracking-tight max-w-3xl mx-auto leading-tight">
+              {title}
+            </h2>
+          )}
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            {description}
-          </p>
+          {page && typeof description === "string" ? (
+            <InlineText
+              page={page}
+              field="ctaDescription"
+              initialValue={description}
+              as="p"
+              className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed block"
+            />
+          ) : (
+            <div className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              {description}
+            </div>
+          )}
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" className="rounded-full px-8 h-14 text-base group bg-primary hover:bg-primary/90 text-white border-none w-full sm:w-auto transition-all hover:scale-105 shadow-brand-button" asChild>
               <Link href="/contact">
-                {primaryButtonText}
+                {page ? (
+                  <InlineText page={page} field="primaryButtonText" initialValue={primaryButtonText} />
+                ) : (
+                  primaryButtonText
+                )}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

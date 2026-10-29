@@ -1,6 +1,6 @@
 import { Code2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
-import Image from "next/image"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const techCategories = [
   {
@@ -61,7 +61,11 @@ const techCategories = [
   }
 ]
 
-export function TechStack() {
+interface TechStackProps {
+  content?: any
+}
+
+export function TechStack({ content }: TechStackProps = {}) {
   return (
     <section className="py-24 bg-white relative border-t border-border/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -69,13 +73,30 @@ export function TechStack() {
           <SectionReveal>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--neutral-slate-100)] border border-[var(--neutral-slate-200)] mb-6">
               <Code2 className="h-4 w-4 text-[var(--neutral-slate-700)]" />
-              <span className="text-sm font-semibold text-foreground">Technology Stack</span>
+              <span className="text-sm font-semibold text-foreground">
+                <InlineText
+                  page="services-product-engineering"
+                  field="techBadge"
+                  defaultValue={content?.techBadge || "Technology Stack"}
+                />
+              </span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6">
-              Technology Stack We Work With
+              <InlineText
+                page="services-product-engineering"
+                field="techTitle"
+                defaultValue={content?.techTitle || "Technology Stack We Work With"}
+              />
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Our teams work across a practical mix of frontend, backend, database, cloud, QA automation, and Atlassian technologies depending on the product and engagement.
+              <InlineText
+                page="services-product-engineering"
+                field="techSubtitle"
+                defaultValue={
+                  content?.techSubtitle ||
+                  "Our teams work across a practical mix of frontend, backend, database, cloud, QA automation, and Atlassian technologies depending on the product and engagement."
+                }
+              />
             </p>
           </SectionReveal>
         </div>

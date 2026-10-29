@@ -9,8 +9,33 @@ import { Button } from "@/components/ui/button"
 import { WordRotate } from "@/components/ui/word-rotate"
 
 
-export function HeroSection() {
+import { HomePageContent } from "@/lib/data/pages-content.data"
+
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
+
+interface HeroSectionProps {
+  content?: Partial<HomePageContent>
+}
+
+export function HeroSection({ content }: HeroSectionProps = {}) {
   const heroRef = useRef<HTMLElement>(null)
+
+  const heroBadge = content?.heroBadge || "15+ Years in Software Services"
+  const heroTitle = content?.heroTitle || "Trusted Software Engineering"
+  const heroHighlight = content?.heroHighlight || "Dedicated Teams"
+  const rotatingWords = content?.rotatingWords?.length
+    ? content.rotatingWords
+    : ["Dedicated Teams", "Product Engineering", "QA Automation", "Cloud Solutions", "Atlassian Apps"]
+  const heroSubtitle =
+    content?.heroSubtitle ||
+    "Scale with confidence. TECUNIQUE helps software companies build dedicated development, QA, automation, and support teams in India — with proven experience across product engineering, cloud solutions, and Atlassian apps."
+  const stats = content?.stats?.length
+    ? content.stats
+    : [
+        { number: "15+", label: "Years in Software Services" },
+        { number: "Strong", label: "Team Continuity" },
+        { number: "Long-Term", label: "Client Relationships" },
+      ]
 
   useEffect(() => {
     const el = heroRef.current
@@ -44,7 +69,7 @@ export function HeroSection() {
           className="brand-orb-blue absolute top-1/2 -right-48 h-[500px] w-[500px] rounded-full opacity-30 animate-blob"
           style={{
             animationDelay: "4s",
-            animationDuration: "16s",
+            animationDuration: "18s",
           }}
         />
         <div
@@ -66,17 +91,17 @@ export function HeroSection() {
           {/* Left — Text content */}
           <div className="relative">
             {/* Badge pill */}
-            <div className="hero-reveal mb-2 inline-flex">
-              <span className="section-pill">
-                <Sparkles className="h-3 w-3" />
-                15+ Years in Software Services
+            <div className="hero-reveal mb-2 inline-flex items-center">
+              <span className="section-pill inline-flex items-center gap-1.5">
+                <Sparkles className="h-3 w-3 shrink-0" />
+                <InlineText page="home" field="heroBadge" initialValue={heroBadge} />
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="hero-reveal font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl leading-tight">
-              Trusted Software Engineering <br className="hidden sm:block" />
-              & <span className="text-brand-blue">Dedicated Teams</span>
+              <InlineText page="home" field="heroTitle" initialValue={heroTitle} as="span" /> <br className="hidden sm:block" />
+              & <span className="text-brand-blue"><InlineText page="home" field="heroHighlight" initialValue={heroHighlight} as="span" /></span>
             </h1>
 
             {/* Dynamic Expertise */}
@@ -84,36 +109,51 @@ export function HeroSection() {
               <span className="text-muted-foreground">Specializing in</span>
 
               {/* Screen reader text (reads the full sentence naturally with the visible text) */}
-              <span className="sr-only">Dedicated Teams, Product Engineering, QA Automation, Cloud Solutions, and Atlassian Apps.</span>
+              <span className="sr-only">{rotatingWords.join(", ")}</span>
 
               {/* Visual rotating text */}
               <div aria-hidden="true">
                 <WordRotate
-                  words={["Dedicated Teams", "Product Engineering", "QA Automation", "Cloud Solutions", "Atlassian Apps"]}
+                  words={rotatingWords}
                   className="gradient-text"
                 />
               </div>
             </div>
 
             {/* Subheadline */}
-            <p className="hero-reveal mt-2 text-sm leading-relaxed text-muted-foreground lg:text-base max-w-lg">
-              Scale with confidence. TECUNIQUE helps software companies build dedicated development, QA, automation, and support teams in India — with proven experience across product engineering, cloud solutions, and Atlassian apps.
-            </p>
+            <InlineText
+              page="home"
+              field="heroSubtitle"
+              initialValue={heroSubtitle}
+              as="p"
+              className="hero-reveal mt-2 text-sm leading-relaxed text-muted-foreground lg:text-base max-w-lg block"
+            />
 
             {/* Metrics Trust Badges */}
-            <div className="hero-reveal mt-4 grid grid-cols-3 gap-2 max-w-md">
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-xl font-black text-foreground">15+</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Years in Software Services</div>
-              </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-xl font-black text-foreground">Strong</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Team Continuity</div>
-              </div>
-              <div className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
-                <div className="text-xl font-black text-foreground">Long-Term</div>
-                <div className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5">Client Relationships</div>
-              </div>
+            <div className={`hero-reveal mt-4 grid gap-2 max-w-md ${stats.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
+              {stats.map((stat, idx) => {
+                const statNumber = (content as any)?.[`stat_${idx}_num`] || stat.number
+                const statLabel = (content as any)?.[`stat_${idx}_label`] || stat.label
+
+                return (
+                  <div key={idx} className="bg-white/50 backdrop-blur-sm rounded-xl p-2 border border-border/50 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <InlineText
+                      page="home"
+                      field={`stat_${idx}_num`}
+                      initialValue={statNumber}
+                      as="div"
+                      className="text-xl font-black text-foreground"
+                    />
+                    <InlineText
+                      page="home"
+                      field={`stat_${idx}_label`}
+                      initialValue={statLabel}
+                      as="div"
+                      className="text-[9px] text-muted-foreground font-bold uppercase tracking-wider mt-0.5"
+                    />
+                  </div>
+                )
+              })}
             </div>
 
             {/* CTAs */}

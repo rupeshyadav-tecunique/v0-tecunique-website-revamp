@@ -1,5 +1,6 @@
 import { AppWindow, CloudCog, Database, RefreshCcw, LayoutTemplate } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const buildAreas = [
   {
@@ -24,7 +25,11 @@ const buildAreas = [
   }
 ]
 
-export function WhatWeBuild() {
+interface WhatWeBuildProps {
+  content?: any
+}
+
+export function WhatWeBuild({ content }: WhatWeBuildProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -35,13 +40,31 @@ export function WhatWeBuild() {
             <SectionReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-blue-strong)]/30 border border-[var(--surface-blue-strong)] mb-6">
                 <LayoutTemplate className="h-4 w-4 text-[var(--brand-blue)]" />
-                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">What We Build</span>
+                <span className="text-sm font-semibold text-[var(--brand-blue-hover)]">
+                  <InlineText
+                    page="services-product-engineering"
+                    field="whatWeBuildBadge"
+                    defaultValue={content?.whatWeBuildBadge || "What We Build"}
+                  />
+                </span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-display mb-6 leading-tight">
-                Software Built Around Product Goals
+                <InlineText
+                  page="services-product-engineering"
+                  field="whatWeBuildTitle"
+                  defaultValue={content?.whatWeBuildTitle || "Software Built Around Product Goals"}
+                />
               </h2>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                We support product companies that need dependable engineering capacity for new development, product enhancements, integrations, maintenance, and platform evolution. Our teams work within the product context, existing architecture, and roadmap so development stays aligned with long-term priorities.
+                <InlineText
+                  page="services-product-engineering"
+                  field="whatWeBuildSubtitle"
+                  multiline
+                  defaultValue={
+                    content?.whatWeBuildSubtitle ||
+                    "We support product companies that need dependable engineering capacity for new development, product enhancements, integrations, maintenance, and platform evolution. Our teams work within the product context, existing architecture, and roadmap so development stays aligned with long-term priorities."
+                  }
+                />
               </p>
             </SectionReveal>
           </div>
@@ -55,8 +78,21 @@ export function WhatWeBuild() {
                     <area.icon className="h-7 w-7" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[var(--brand-blue-hover)] transition-colors">{area.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[var(--brand-blue-hover)] transition-colors">
+                      <InlineText
+                        page="services-product-engineering"
+                        field={`area_${index}_title`}
+                        defaultValue={content?.[`area_${index}_title`] || area.title}
+                      />
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      <InlineText
+                        page="services-product-engineering"
+                        field={`area_${index}_desc`}
+                        multiline
+                        defaultValue={content?.[`area_${index}_desc`] || area.description}
+                      />
+                    </p>
                   </div>
                 </div>
               </SectionReveal>

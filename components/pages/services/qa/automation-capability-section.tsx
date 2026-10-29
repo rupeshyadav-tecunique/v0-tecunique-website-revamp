@@ -1,5 +1,6 @@
 import { FileCode2, GitMerge, ServerCog, TestTube2 } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const automationCards = [
   {
@@ -24,15 +25,33 @@ const automationCards = [
   }
 ]
 
-export function AutomationCapability() {
+interface AutomationCapabilityProps {
+  content?: any
+}
+
+export function AutomationCapability({ content }: AutomationCapabilityProps = {}) {
   return (
     <section className="py-24 bg-[var(--brand-blue)] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.1]" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <SectionReveal className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">Automation QA for Faster, More Repeatable Release Testing</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold font-display text-white mb-6">
+            <InlineText
+              page="services-qa"
+              field="automationTitle"
+              defaultValue={content?.automationTitle || "Automation QA for Faster, More Repeatable Release Testing"}
+            />
+          </h2>
           <p className="text-white/80 text-lg leading-relaxed">
-            We design and maintain automated test coverage for repeatable product workflows, helping reduce manual regression effort and provide faster feedback during release cycles.
+            <InlineText
+              page="services-qa"
+              field="automationSubtitle"
+              multiline
+              defaultValue={
+                content?.automationSubtitle ||
+                "We design and maintain automated test coverage for repeatable product workflows, helping reduce manual regression effort and provide faster feedback during release cycles."
+              }
+            />
           </p>
         </SectionReveal>
 
@@ -43,8 +62,21 @@ export function AutomationCapability() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 text-white mb-6">
                   <card.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+                <h3 className="text-lg font-bold text-white mb-3">
+                  <InlineText
+                    page="services-qa"
+                    field={`auto_card_${index}_title`}
+                    defaultValue={content?.[`auto_card_${index}_title`] || card.title}
+                  />
+                </h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  <InlineText
+                    page="services-qa"
+                    field={`auto_card_${index}_desc`}
+                    multiline
+                    defaultValue={content?.[`auto_card_${index}_desc`] || card.description}
+                  />
+                </p>
               </div>
             </SectionReveal>
           ))}

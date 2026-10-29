@@ -1,5 +1,6 @@
 import { ServerCog, Network, DatabaseZap, LockKeyhole, Blocks } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const backendServices = [
   {
@@ -24,7 +25,11 @@ const backendServices = [
   }
 ]
 
-export function IntegrationsBackend() {
+interface IntegrationsBackendProps {
+  content?: any
+}
+
+export function IntegrationsBackend({ content }: IntegrationsBackendProps = {}) {
   return (
     <section className="py-24 bg-[var(--brand-blue)] relative overflow-hidden">
       {/* Background Pattern */}
@@ -35,13 +40,29 @@ export function IntegrationsBackend() {
           <SectionReveal>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/80 ring-1 ring-inset ring-white/20 mb-6 text-sm font-medium backdrop-blur-sm">
               <Blocks className="h-4 w-4" />
-              Core Infrastructure
+              <InlineText
+                page="services-product-engineering"
+                field="backendBadge"
+                defaultValue={content?.backendBadge || "Core Infrastructure"}
+              />
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-6">
-              Backend Systems & Integrations That Keep Your Product Connected
+              <InlineText
+                page="services-product-engineering"
+                field="backendTitle"
+                defaultValue={content?.backendTitle || "Backend Systems & Integrations That Keep Your Product Connected"}
+              />
             </h2>
             <p className="text-lg leading-8 text-white/80">
-              We help product teams build and maintain the backend services and integrations that keep software products connected, reliable, and useful.
+              <InlineText
+                page="services-product-engineering"
+                field="backendSubtitle"
+                multiline
+                defaultValue={
+                  content?.backendSubtitle ||
+                  "We help product teams build and maintain the backend services and integrations that keep software products connected, reliable, and useful."
+                }
+              />
             </p>
           </SectionReveal>
         </div>
@@ -55,10 +76,19 @@ export function IntegrationsBackend() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold font-display text-white mb-3">
-                    {service.title}
+                    <InlineText
+                      page="services-product-engineering"
+                      field={`backend_srv_${index}_title`}
+                      defaultValue={content?.[`backend_srv_${index}_title`] || service.title}
+                    />
                   </h3>
                   <p className="text-white/80 leading-relaxed text-base">
-                    {service.description}
+                    <InlineText
+                      page="services-product-engineering"
+                      field={`backend_srv_${index}_desc`}
+                      multiline
+                      defaultValue={content?.[`backend_srv_${index}_desc`] || service.description}
+                    />
                   </p>
                 </div>
               </div>

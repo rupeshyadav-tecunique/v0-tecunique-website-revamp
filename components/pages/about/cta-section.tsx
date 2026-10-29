@@ -1,8 +1,19 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { AboutPageContent } from "@/lib/data/pages-content.data"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
-export function AboutCTA() {
+interface AboutCTAProps {
+  content?: Partial<AboutPageContent>
+}
+
+export function AboutCTA({ content }: AboutCTAProps = {}) {
+  const ctaTitle = content?.ctaTitle || "Looking for a long-term engineering partner?"
+  const ctaDescription =
+    content?.ctaDescription ||
+    "Whether you need a dedicated team, QA & automation, Atlassian app engineering, or additional product engineering capacity, TECUNIQUE can help you build a stable team in India."
+
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Abstract Background Patterns */}
@@ -21,12 +32,20 @@ export function AboutCTA() {
 
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center z-10">
         <SectionReveal>
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-8">
-            Looking for a long-term engineering partner?
-          </h2>
-          <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-12">
-            Whether you need a dedicated team, QA & automation, Atlassian app engineering, or additional product engineering capacity, TECUNIQUE can help you build a stable team in India.
-          </p>
+          <InlineText
+            page="about"
+            field="ctaTitle"
+            initialValue={ctaTitle}
+            as="h2"
+            className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-8 block"
+          />
+          <InlineText
+            page="about"
+            field="ctaDescription"
+            initialValue={ctaDescription}
+            as="p"
+            className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-12 block"
+          />
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"

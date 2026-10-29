@@ -11,7 +11,23 @@ This skill is a fast reference for editing any visible text, contact info, testi
 
 ---
 
-## 1. Quick File Map: Where does each piece of content live?
+## Method 1: Using the Admin CMS (No Code Required — Ideal for CEO & Marketing)
+
+1. Log into the Admin Portal at [http://localhost:3001/admin/login](http://localhost:3001/admin/login) (or `https://www.tecunique.com/admin/login` on production).
+2. In the sidebar, click **Edit Pages** (`/admin/pages`).
+3. Select the page you wish to modify:
+   - **Homepage**: Change hero headline, highlighted blue text, dynamic rotating keywords, subheadline, and trust metrics.
+   - **About Us**: Change headline, tagline, full story narrative, and update the featured story image URL (`/images/about/about-4.png`).
+   - **Services Hub**: Change the overview title, subtitle, and bottom call to action banner.
+   - **Service Pages** (`Dedicated Teams`, `QA & Automation`, `Atlassian Apps`, `Product Engineering`): Change hero badges, headlines, subheadings, and bottom CTA buttons.
+4. Click **Publish Page Changes** — updates go live immediately!
+5. If you ever want to revert back to original website copy, click **Reset Defaults**.
+
+---
+
+## Method 2: Editing Directly in Code
+
+### Quick File Map: Where does each piece of content live?
 
 | What do you want to change? | File to edit |
 | :--- | :--- |

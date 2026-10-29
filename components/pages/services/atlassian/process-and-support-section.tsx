@@ -1,4 +1,5 @@
 import { SectionReveal } from "@/components/ui/section-reveal"
+import { InlineText } from "@/components/admin/visual-editor/inline-text"
 
 const processSteps = [
   {
@@ -23,17 +24,32 @@ const processSteps = [
   }
 ]
 
-export function AtlassianProcessAndSupport() {
+interface AtlassianProcessAndSupportProps {
+  content?: any
+}
+
+export function AtlassianProcessAndSupport({ content }: AtlassianProcessAndSupportProps = {}) {
   return (
     <section className="py-24 lg:py-32 bg-slate-50/50">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <SectionReveal>
             <h2 className="text-3xl sm:text-4xl font-bold font-display text-brand-blue mb-6">
-              Dedicated Teams for Atlassian App Work
+              <InlineText
+                page="services-atlassian"
+                field="processTitle"
+                defaultValue={content?.processTitle || "Dedicated Teams for Atlassian App Work"}
+              />
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Build a dedicated engineering and QA team that works within your tools, product processes, and release priorities.
+              <InlineText
+                page="services-atlassian"
+                field="processSubtitle"
+                defaultValue={
+                  content?.processSubtitle ||
+                  "Build a dedicated engineering and QA team that works within your tools, product processes, and release priorities."
+                }
+              />
             </p>
           </SectionReveal>
         </div>
@@ -45,8 +61,21 @@ export function AtlassianProcessAndSupport() {
                 <div className="text-4xl font-light text-slate-300 mb-6 group-hover:text-brand-blue transition-colors">
                   {card.step}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{card.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{card.description}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  <InlineText
+                    page="services-atlassian"
+                    field={`atl_step_${index}_title`}
+                    defaultValue={content?.[`atl_step_${index}_title`] || card.title}
+                  />
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  <InlineText
+                    page="services-atlassian"
+                    field={`atl_step_${index}_desc`}
+                    multiline
+                    defaultValue={content?.[`atl_step_${index}_desc`] || card.description}
+                  />
+                </p>
               </div>
             </SectionReveal>
           ))}
