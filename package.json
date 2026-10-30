@@ -6,6 +6,9 @@
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
+    "package:cpanel": "node scripts/package-cpanel.mjs",
+    "deploy:remote": "node scripts/deploy-remote.mjs",
+    "init-db": "node scripts/init-db.mjs",
     "lint": "eslint ."
   },
   "dependencies": {

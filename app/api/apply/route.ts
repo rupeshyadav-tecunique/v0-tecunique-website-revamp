@@ -79,7 +79,7 @@ export async function POST(req: Request) {
     const receivers = (
       process.env.HR_EMAIL_ADDRESS || 
       process.env.CONTACT_RECEIVER_EMAILS || 
-      'rupesh.yadav@tecunique.com'
+      'hr@tecunique.com'
     ).split(',').map(e => e.trim()).filter(Boolean);
 
     // Escape all user inputs before interpolating into HTML email
