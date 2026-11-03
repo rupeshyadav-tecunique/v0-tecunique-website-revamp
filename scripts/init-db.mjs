@@ -14,6 +14,7 @@ import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -28,6 +29,17 @@ if (!uri) {
   console.error('\x1b[31m[ERROR]\x1b[0m MONGODB_URI is not set in environment or .env.local.');
   console.error('Please configure your MongoDB connection string before running this script.');
   process.exit(1);
+}
+
+function loadJson(relativePath) {
+  try {
+    const fullPath = resolve(__dirname, relativePath);
+    if (!fs.existsSync(fullPath)) return [];
+    return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+  } catch (err) {
+    console.warn(`[WARN] Failed to read ${relativePath}:`, err.message);
+    return [];
+  }
 }
 
 async function initDatabase() {
@@ -89,19 +101,79 @@ async function initDatabase() {
       console.log(`  ℹ Admins collection already has ${adminCount} user(s). Skipping creation.\n`);
     }
 
-    // ─── 3. Check Blogs Collection ─────────────────────────────────────────────
-    const blogsCount = await db.collection('blogs').countDocuments();
-    console.log(`\x1b[34m[INFO]\x1b[0m Blogs collection status: ${blogsCount} post(s) present.`);
+    // ─── 3. Seed Case Studies ──────────────────────────────────────────────────
+    console.log('\x1b[34m[INFO]\x1b[0m Checking & seeding Case Studies...');
+    const caseStudiesData = loadJson('../lib/data/case-studies.json');
+    let seededCaseStudies = 0;
 
-    // ─── 4. Check Jobs Collection ──────────────────────────────────────────────
-    const jobsCount = await db.collection('jobs').countDocuments();
-    console.log(`\x1b[34m[INFO]\x1b[0m Jobs collection status: ${jobsCount} opening(s) present.`);
+    for (const study of caseStudiesData) {
+      const result = await db.collection('case-studies').updateOne(
+        { id: study.id },
+        {
+          $setOnInsert: {
+            ...study,
+            company: study.company || study.client,
+            title: study.title || study.heroTitle || study.client,
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+        },
+        { upsert: true }
+      );
+      if (result.upsertedCount > 0) seededCaseStudies++;
+    }
 
-    // ─── 5. Check Case Studies Collection ──────────────────────────────────────
-    const caseStudiesCount = await db.collection('case-studies').countDocuments();
-    console.log(`\x1b[34m[INFO]\x1b[0m Case Studies status: ${caseStudiesCount} case study(ies) present.\n`);
+    const totalCaseStudies = await db.collection('case-studies').countDocuments();
+    console.log(`  ✔ Case Studies: ${seededCaseStudies} newly seeded, ${totalCaseStudies} total in database.\n`);
 
-    console.log('\x1b[32m[DONE]\x1b[0m Database initialization complete. All collections and indexes are ready.');
+    // ─── 4. Seed Blogs Collection ──────────────────────────────────────────────
+    console.log('\x1b[34m[INFO]\x1b[0m Checking & seeding Blog posts...');
+    const blogsData = loadJson('../lib/data/blogs.json');
+    let seededBlogs = 0;
+
+    for (const blog of blogsData) {
+      const result = await db.collection('blogs').updateOne(
+        { slug: blog.slug },
+        {
+          $setOnInsert: {
+            ...blog,
+            createdAt: new Date(blog.date || Date.now()),
+            updatedAt: new Date(),
+          },
+        },
+        { upsert: true }
+      );
+      if (result.upsertedCount > 0) seededBlogs++;
+    }
+
+    const totalBlogs = await db.collection('blogs').countDocuments();
+    console.log(`  ✔ Blogs: ${seededBlogs} newly seeded, ${totalBlogs} total in database.\n`);
+
+    // ─── 5. Seed Jobs Collection ───────────────────────────────────────────────
+    console.log('\x1b[34m[INFO]\x1b[0m Checking & seeding Job openings...');
+    const jobsData = loadJson('../lib/data/jobs.json');
+    let seededJobs = 0;
+
+    for (const job of jobsData) {
+      const result = await db.collection('jobs').updateOne(
+        { slug: job.slug },
+        {
+          $setOnInsert: {
+            ...job,
+            isActive: true,
+            createdAt: new Date(job.postedDate || Date.now()),
+            updatedAt: new Date(),
+          },
+        },
+        { upsert: true }
+      );
+      if (result.upsertedCount > 0) seededJobs++;
+    }
+
+    const totalJobs = await db.collection('jobs').countDocuments();
+    console.log(`  ✔ Jobs: ${seededJobs} newly seeded, ${totalJobs} total in database.\n`);
+
+    console.log('\x1b[32m[DONE]\x1b[0m Database initialization complete. All collections, admin account, and seed data are ready!');
   } catch (error) {
     console.error('\x1b[31m[ERROR]\x1b[0m Database initialization failed:', error);
     process.exit(1);

@@ -45,32 +45,26 @@ import {
 import { SectionReveal } from "@/components/ui/section-reveal"
 import clientPromise from "@/lib/db"
 import { Button } from "@/components/ui/button"
+import { getStaticCaseStudy } from "@/lib/case-studies-data"
+
+export const dynamic = 'force-dynamic'
 
 interface Props {
   params: Promise<{ id: string }>
 }
 
-export async function generateStaticParams() {
-  try {
-    const client = await clientPromise
-    const db = client.db("tecunique")
-    const dbCaseStudies = await db.collection("case-studies").find({}, { projection: { id: 1 } }).toArray()
-    return dbCaseStudies.map((study) => ({ id: study.id }))
-  } catch (e) {
-    return []
-  }
-}
+
 
 async function getCaseStudy(id: string): Promise<any> {
   try {
     const client = await clientPromise
     const db = client.db("tecunique")
     const study = await db.collection("case-studies").findOne({ id })
-    if (!study) return null
-    return { ...study, _id: study._id.toString() }
+    if (study) return { ...study, _id: study._id.toString() }
   } catch (e) {
-    return null
+    console.warn("[CASE STUDY] DB fetch failed, falling back to static:", e)
   }
+  return getStaticCaseStudy(id)
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -1,0 +1,2276 @@
+[
+  {
+    "id": "oppscience",
+    "company": "OPPSCIENCE",
+    "product": "Bee4sense & SPECTRA Intelligence Platforms",
+    "logo": "/images/companies/oppscience.svg",
+    "industry": "Intelligence & Investigation Software",
+    "category": "Dedicated Engineering & QA Team",
+    "partnership": "Since February 2018 (Active)",
+    "location": "France",
+    "initials": "OS",
+    "color": "#0284c7",
+    "gradient": "from-sky-600 to-blue-700",
+    "eyebrow": "OPPSCIENCE / BEE4SENSE / SPECTRA",
+    "heroTitle": "From Bee4sense to SPECTRA: Scaling a Long-Term Product Engineering & QA Team",
+    "tagline": "From Bee4sense to SPECTRA: Scaling a Long-Term Product Engineering & QA Team",
+    "heroSubtitle": "How TECUNIQUE has worked alongside OPPSCIENCE since 2018, supporting product evolution through dedicated software engineering, QA, automation, release management, and deeply integrated engineering teams.",
+    "seoTitle": "OPPSCIENCE Product Engineering & QA Case Study",
+    "metaDescription": "See how TECUNIQUE has partnered with OPPSCIENCE since 2018, providing a 12-member dedicated engineering and QA team across Bee4sense, SPECTRA, QA automation, and release management.",
+    "atAGlance": {
+      "client": "OPPSCIENCE",
+      "relationship": "Since February 2018",
+      "engagement": "Dedicated Software Engineering & QA Team",
+      "teamSize": "12 dedicated development & QA professionals",
+      "productJourney": "Bee4sense → SPECTRA",
+      "coreAreas": "Product Engineering · QA & Automation · Release Management · Product Support",
+      "location": "France",
+      "milestone": "IDEMIA acquires 51% majority share — 2022"
+    },
+    "description": "OPPSCIENCE needed a long-term dedicated software engineering and QA team capable of deeply integrating into their engineering organization, evolving alongside their architecture from Bee4sense to SPECTRA, and driving release quality.",
+    "solution": "TECUNIQUE provides a 12-member dedicated team spanning software engineering, full-lifecycle QA, multi-generation test automation, release management, and cross-company squad leadership.",
+    "sections": [
+      {
+        "title": "The Product Journey",
+        "subtitle": "Turning Complex Data into Usable Knowledge",
+        "content": "OPPSCIENCE develops software for transforming large volumes of structured and unstructured information into knowledge that users can search, analyse, and act upon.\n\nWhen OPPSCIENCE was created in 2018, Bee4sense was its core technology platform, bringing together search, Natural Language Processing, graph technologies, and knowledge-management capabilities. Over time, the platform evolved through multiple releases and customer environments.\n\nAs OPPSCIENCE’s product direction became increasingly focused on investigation and intelligence workflows, engineering progressively shifted toward SPECTRA—a platform designed to help investigators and analysts work with complex information through advanced search, NLP, knowledge enrichment, relationship discovery, visualisation, and case collaboration."
+      },
+      {
+        "title": "A Relationship Built on Previous Experience",
+        "content": "TECUNIQUE’s relationship with the people behind OPPSCIENCE predates OPPSCIENCE itself. Gilles André and Guillaume Brejaud already knew TECUNIQUE through earlier experience with PolySpot and CustomerMatrix.\n\nWhen OPPSCIENCE needed to expand its engineering capacity in 2018, Gilles approached TECUNIQUE for a dedicated team of software development and QA engineers.\n\nThe OPPSCIENCE–TECUNIQUE engagement began in February 2018 around Bee4sense and has continued as the company’s products, architecture, engineering organization, and technology stack evolved."
+      },
+      {
+        "title": "From Bee4sense to SPECTRA: Supporting Product & Engineering Evolution",
+        "content": "When the engagement began, TECUNIQUE engineers worked primarily around Bee4sense, contributing across successive product versions and releases as the platform evolved.\n\nAs OPPSCIENCE increasingly focused on specialised investigation and intelligence workflows, engineering progressively shifted toward SPECTRA. TECUNIQUE engineers evolved with that transition, adapting to changes in architecture, technologies, workflows, and domain requirements.\n\nThis required more than implementing predefined tasks. Engineers needed to develop deeper product and domain understanding, adapt to changing technical decisions, and contribute to solutions alongside OPPSCIENCE’s own engineering teams.\n\nExisting Bee4sense environments continue to require maintenance and product support. TECUNIQUE engineers support deployment consultants through technical investigation, defect resolution, and minor releases where required."
+      },
+      {
+        "title": "Long-Term Team Continuity",
+        "content": "Several core TECUNIQUE engineers, including key QA members and engineering leadership, have remained involved for many years, preserving knowledge across Bee4sense, SPECTRA, architecture changes, release history, and evolving QA practices."
+      }
+    ],
+    "engagementBlocks": [
+      {
+        "title": "Software Engineering",
+        "description": "TECUNIQUE developers contribute to ongoing product development, enhancements, technical evolution, maintenance, and issue resolution across OPPSCIENCE’s platforms.",
+        "scope": "Product Development"
+      },
+      {
+        "title": "Quality Assurance",
+        "description": "Dedicated QA engineers support manual testing, automation, API testing, performance testing, release validation, and broader product-quality responsibilities.",
+        "scope": "Full Lifecycle QA"
+      },
+      {
+        "title": "Product Support & Triage",
+        "description": "The team provides technical investigation and engineering support around issues raised through deployment and customization activities.",
+        "scope": "Engineering Support"
+      },
+      {
+        "title": "Long-Term Product Knowledge",
+        "description": "Years of continuity have created deep understanding of the product architecture, workflows, technical history, customer contexts, and domain.",
+        "scope": "Continuous Context"
+      }
+    ],
+    "embeddedLeadership": {
+      "title": "Embedded Engineering Leadership",
+      "description": "One of TECUNIQUE’s long-standing engineers works as a Squad/Team Lead within OPPSCIENCE, leading a cross-company engineering team that includes both TECUNIQUE engineers and OPPSCIENCE developers.",
+      "tagline": "An integrated product engineering organization—not separate client and offshore teams working in isolation."
+    },
+    "techStack": [
+      {
+        "category": "Backend & Platform",
+        "subtitle": "Microservices, APIs & messaging",
+        "items": [
+          "Java",
+          "Python",
+          "Spring Boot",
+          "Quarkus",
+          "Kafka",
+          "Artemis",
+          "Keycloak"
+        ]
+      },
+      {
+        "category": "Search & Data",
+        "subtitle": "Indexing, NLP & graph engines",
+        "items": [
+          "Elasticsearch",
+          "Solr",
+          "Graph & Indexing Technologies"
+        ]
+      },
+      {
+        "category": "Frontend",
+        "subtitle": "UI frameworks across product versions",
+        "items": [
+          "GWT",
+          "Angular",
+          "Vue.js"
+        ]
+      },
+      {
+        "category": "Cloud & Infrastructure",
+        "subtitle": "Containerization & cloud operations",
+        "items": [
+          "AWS",
+          "Kubernetes",
+          "Docker",
+          "Terraform",
+          "Ansible",
+          "Prometheus"
+        ]
+      },
+      {
+        "category": "Engineering Delivery",
+        "subtitle": "Build, CI/CD & version control",
+        "items": [
+          "Bitbucket",
+          "Bamboo",
+          "Jenkins",
+          "CI/CD Pipelines"
+        ]
+      }
+    ],
+    "techStackNote": "The exact stack has evolved over time. TECUNIQUE engineers have continuously adapted as OPPSCIENCE’s architecture and engineering practices changed.",
+    "qaLifecycleGrid": [
+      {
+        "name": "Sanity Testing",
+        "desc": "Quick validation around new builds and code changes."
+      },
+      {
+        "name": "Functional Testing",
+        "desc": "Detailed validation of complex product behaviour."
+      },
+      {
+        "name": "Regression Testing",
+        "desc": "Protecting existing platform functionality as the product evolves."
+      },
+      {
+        "name": "Integration & E2E",
+        "desc": "Validating interconnected workflows across services and modules."
+      },
+      {
+        "name": "API Testing",
+        "desc": "Validating backend microservices and REST endpoints independently."
+      },
+      {
+        "name": "Automation Testing",
+        "desc": "Repeatable automated test suites across workflows and APIs."
+      },
+      {
+        "name": "Performance Testing",
+        "desc": "Performance and load testing using JMeter, with Grafana supporting results and log analysis."
+      },
+      {
+        "name": "Release Validation",
+        "desc": "Coordinating multi-version QA activities and release readiness."
+      }
+    ],
+    "automationEvolution": [
+      {
+        "phase": "01",
+        "title": "Earlier Automation",
+        "tools": "Java · Selenium · Cucumber",
+        "desc": "Foundational UI test automation for web workflows"
+      },
+      {
+        "phase": "02",
+        "title": "Angular UI Testing",
+        "tools": "Jasmine",
+        "desc": "Automated testing around Angular-based UI behaviour."
+      },
+      {
+        "phase": "03",
+        "title": "API Automation",
+        "tools": "REST Assured + Java",
+        "desc": "Automated validation of core backend services"
+      },
+      {
+        "phase": "04",
+        "title": "Python + Selenium",
+        "tools": "Python · Selenium",
+        "desc": "Evolution of browser-based regression automation."
+      },
+      {
+        "phase": "05",
+        "title": "Current Direction",
+        "tools": "Playwright + TypeScript",
+        "desc": "Current direction for end-to-end and API automation."
+      },
+      {
+        "phase": "06",
+        "title": "AI-Assisted QA Engineering",
+        "tools": "Codex · Claude Code",
+        "desc": "Assisting engineers with test-case generation and automation development."
+      }
+    ],
+    "operationalCards": [
+      {
+        "title": "Owning Release Quality",
+        "subtitle": "QA Responsibility Beyond Test Execution",
+        "desc": "OPPSCIENCE frequently manages multiple versions and releases moving through the delivery pipeline in parallel. Over time, the TECUNIQUE QA team has taken substantial responsibility for coordinating the validation required around these release cycles, including release planning from a QA perspective, regression coverage, validation across versions, fix verification, defect assessment, and supporting release-readiness decisions."
+      },
+      {
+        "title": "Product Support & Issue Triage",
+        "subtitle": "Supporting Teams Closest to Customer Deployments",
+        "desc": "TECUNIQUE does not directly manage customer deployments. OPPSCIENCE’s deployment and support consultants work with customer environments, while the TECUNIQUE team provides product-level technical support behind them—reproducing issues, reviewing logs, determining whether behaviour represents a product defect, providing context to developers, and validating fixes, including defect resolution for existing Bee4sense environments."
+      },
+      {
+        "title": "Performance & Observability",
+        "subtitle": "Load Testing & Result Visualization",
+        "desc": "The team has used JMeter extensively for performance and load-related testing. Grafana is now also used for visualising and analysing test results, logs, and operational information."
+      },
+      {
+        "title": "AI & NLP Quality Validation",
+        "subtitle": "Testing Product Capabilities Where Output Is Non-Binary",
+        "desc": "TECUNIQUE QA engineers also validate outputs from NLP-related capabilities, including relation extraction and image-description workflows, with testing processes involving tools such as Doccano and MLflow. This type of testing requires engineers to evaluate whether extracted or generated information behaves as expected within the product context, rather than relying only on conventional UI or API assertions."
+      }
+    ],
+    "milestones": [
+      {
+        "title": "2018 — Engagement Begins",
+        "description": "Dedicated development and QA support starts around Bee4sense."
+      },
+      {
+        "title": "Bee4sense Evolves",
+        "description": "TECUNIQUE engineers support successive versions and releases."
+      },
+      {
+        "title": "Product Direction Evolves",
+        "description": "Focus shifts to specialised investigation and intelligence workflows."
+      },
+      {
+        "title": "SPECTRA Emerges",
+        "description": "Engineering capacity and architecture evolve around the newer product direction."
+      },
+      {
+        "title": "2022 — IDEMIA Majority Share",
+        "description": "IDEMIA acquires a 51% majority share in OPPSCIENCE."
+      },
+      {
+        "title": "Dedicated Team Grows",
+        "description": "Engagement develops into a 12-member development and QA team."
+      },
+      {
+        "title": "Embedded Leadership",
+        "description": "A TECUNIQUE engineer leads a mixed OPPSCIENCE/TECUNIQUE squad."
+      },
+      {
+        "title": "Today",
+        "description": "Active engineering on SPECTRA + continued Bee4sense maintenance support."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "TECUNIQUE has been a reliable partner for many years, supporting our evolution from PolySpot to OppScience via CustomerMatrix. Quite unique in this sector, we have actually the same contacts for over 10 years!\n\nI am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team. Their consistent efforts to enhance our platform and deliver an exceptional experience to our customers have solidified our perception of TECUNIQUE not just as a service provider but as a true partner.",
+        "author": "Guillaume Brejaud",
+        "role": "OPPSCIENCE",
+        "highlighted": true
+      },
+      {
+        "quote": "TecUnique has been a key partner for OPPSCIENCE over the years.\n\nAs a CTO, I've collaborated with TecUnique on various projects for an extended duration.\n\nThey have consistently helped us delivering top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
+        "author": "Mickael Augello",
+        "role": "CTO, OPPSCIENCE"
+      }
+    ],
+    "testimonial": {
+      "quote": "TECUNIQUE has been a reliable partner for many years, supporting our evolution from PolySpot to OppScience via CustomerMatrix. Quite unique in this sector, we have actually the same contacts for over 10 years!\n\nI am genuinely grateful for the dedication and involvement displayed by the TECUNIQUE team. Their consistent efforts to enhance our platform and deliver an exceptional experience to our customers have solidified our perception of TECUNIQUE not just as a service provider but as a true partner.",
+      "author": "Guillaume Brejaud",
+      "role": "OPPSCIENCE"
+    },
+    "secondaryTestimonial": {
+      "quote": "TecUnique has been a key partner for OPPSCIENCE over the years.\n\nAs a CTO, I've collaborated with TecUnique on various projects for an extended duration.\n\nThey have consistently helped us delivering top-tier software, attributed not just to their excellent software testing but also their expertise in software engineering.",
+      "author": "Mickael Augello",
+      "role": "CTO, OPPSCIENCE"
+    },
+    "relatedServices": [
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams"
+      },
+      {
+        "title": "Product Engineering & Custom Software",
+        "href": "/services/product-engineering"
+      },
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      }
+    ],
+    "cta": {
+      "eyebrow": "NEED LONG-TERM ENGINEERING CAPACITY?",
+      "title": "Build a Dedicated Engineering & QA Team Around Your Product",
+      "description": "Whether you need developers, QA engineers, automation specialists, or a long-term team that can grow with your product, TECUNIQUE can help build and support the right engineering capacity in India.",
+      "buttonText": "Discuss Your Team Requirements",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore Dedicated Teams",
+      "secondaryHref": "/services/dedicated-teams"
+    },
+    "image": "/images/companies/oppscience.svg",
+    "client": "OPPSCIENCE"
+  },
+  {
+    "id": "skyselect",
+    "company": "SkySelect",
+    "product": "Aviation Procurement Platform & Operations",
+    "logo": "/images/companies/skyselect.svg",
+    "industry": "Aviation Procurement Technology",
+    "category": "Build · Operate · Transition",
+    "partnership": "Approx. 2-Year Engagement (Planned Transition)",
+    "location": "India & United States",
+    "initials": "SS",
+    "color": "#0284c7",
+    "gradient": "from-sky-500 to-blue-600",
+    "eyebrow": "SKYSELECT / INDIA TEAM SETUP",
+    "heroTitle": "From 7 to 60+: Building and Transitioning SkySelect’s India Team",
+    "tagline": "From 7 to 60+: Building and Transitioning SkySelect’s India Team",
+    "heroSubtitle": "How TECUNIQUE helped SkySelect establish and rapidly scale its India operation before its own local entity was ready—supporting recruitment, employment, HR, infrastructure, and operations through to the eventual team transition.",
+    "seoTitle": "SkySelect India Team Build & Transition Case Study",
+    "metaDescription": "See how TECUNIQUE helped SkySelect establish and rapidly scale its India technical and operations team from 7 to 60+ professionals before transitioning to SkySelect India.",
+    "atAGlance": {
+      "client": "SkySelect",
+      "industry": "Aviation Procurement Technology",
+      "engagement": "Build · Operate · Transition",
+      "duration": "Approximately 2 years",
+      "teamGrowth": "~7 → 60+ professionals",
+      "teamComposition": "Software Engineering · QA · Operations",
+      "clientControl": "SkySelect interviewed, selected members & managed delivery",
+      "tecuniqueScope": "Recruitment · Employment · Payroll · HR · Benefits · Infrastructure · Local Operations · Transition Support",
+      "location": "India operation supporting a US-led company",
+      "milestone": "Successful transfer to SkySelect India"
+    },
+    "description": "SkySelect wanted to build a substantial technical and business operations team in India quickly, but had not yet established its own Indian corporate entity.",
+    "solution": "TECUNIQUE provided a Build–Operate–Transition model, handling recruitment, employment, payroll, HR, benefits, infrastructure, and local administration while SkySelect selected talent and managed delivery.",
+    "sections": [
+      {
+        "title": "The Business Context",
+        "subtitle": "Technology and Operations for Aviation Procurement",
+        "content": "SkySelect provides procurement technology and services for airlines and Maintenance, Repair and Overhaul organisations (MROs), helping aviation purchasing teams manage sourcing, procurement, order tracking, and related supply-chain workflows.\n\nAs the business expanded, SkySelect wanted to establish a substantial team in India covering both software engineering and business operations."
+      },
+      {
+        "title": "How the Relationship Started",
+        "subtitle": "An Introduction Built on Previous Experience",
+        "content": "SkySelect had appointed Parag Mehta to establish and lead its India operation. Parag already knew TECUNIQUE well, having previously worked with the company as a Project Manager earlier in his career.\n\nWhen SkySelect began planning its India team, Parag introduced TECUNIQUE to SkySelect’s management in the USA. That existing familiarity opened the conversation around how TECUNIQUE could help SkySelect start recruiting and operating locally before its own Indian entity was ready."
+      },
+      {
+        "title": "The Challenge",
+        "subtitle": "Build the Team Now. Establish the Entity Later.",
+        "content": "SkySelect wanted to build its India operation quickly, but at that stage the company had not yet established its own Indian subsidiary.\n\nWaiting for the complete entity-formation process before recruiting would have delayed team building. At the same time, hiring without an established local employer created practical challenges around candidate attraction, employment contracts, payroll, statutory administration, employee benefits, HR, infrastructure, and day-to-day local operations.\n\nSkySelect therefore needed a local partner that could provide the recruitment and operating structure required to start immediately—while allowing SkySelect to retain control over who joined the team and how that team was managed."
+      },
+      {
+        "title": "A Planned Transition from the Start",
+        "content": "The eventual move to SkySelect India was not an unexpected end to the engagement. It was aligned with the longer-term operating model from the beginning.\n\nTECUNIQUE helped SkySelect enter India quickly, build and stabilize the organization, and operate the local team while the client prepared its own Indian entity.\n\nAfter approximately two years, once SkySelect India was established and the operation was fully functional, the team members were transferred to the new entity."
+      },
+      {
+        "title": "What This Engagement Demonstrates",
+        "content": "The SkySelect engagement demonstrates how TECUNIQUE can help an international company establish an India team before its own local entity is ready.\n\nSkySelect retained control over talent selection, team management, and delivery, while TECUNIQUE provided the recruitment, employment, and operational platform required to build, scale, and eventually transition the organization."
+      }
+    ],
+    "engagementBlocks": [
+      {
+        "title": "Recruit & Build",
+        "description": "TECUNIQUE sourced candidates, performed initial evaluation, coordinated recruitment, and helped SkySelect build the required technical and operations teams.",
+        "scope": "Talent Sourcing"
+      },
+      {
+        "title": "Client-Selected Talent",
+        "description": "SkySelect interviewed and selected the professionals who would join its team, retaining control over candidate approval and team composition.",
+        "scope": "Client Control"
+      },
+      {
+        "title": "Employ & Operate",
+        "description": "TECUNIQUE employed the selected professionals locally and managed payroll, HR administration, employee benefits, statutory requirements, infrastructure, and ongoing operational support.",
+        "scope": "Local Operations"
+      },
+      {
+        "title": "Transition Support",
+        "description": "Once SkySelect’s own Indian entity was ready and the team had become established, TECUNIQUE supported the transition of employees and local operating responsibility to SkySelect India.",
+        "scope": "Planned Transfer"
+      }
+    ],
+    "responsibilityCallout": {
+      "title": "Clear Responsibility Boundary",
+      "content": "SkySelect retained responsibility for candidate approval, team management, technical priorities, individual performance, and deliverables. TECUNIQUE was responsible for recruitment support, local employment, HR, payroll, infrastructure, and operational administration."
+    },
+    "teamGrowthMetric": {
+      "start": "~7",
+      "end": "60+",
+      "label": "Team Growth in ~1 Year",
+      "description": "From approximately 7 to more than 60 professionals across software engineering, quality assurance, and business operations."
+    },
+    "teamCategories": [
+      {
+        "type": "Technical Team",
+        "role": "Software Engineers & QA Specialists",
+        "desc": "Software engineers and QA specialists working on SkySelect’s in-house aviation procurement platform.",
+        "tech": "Development (.NET · C#) | QA Automation (Selenium · .NET)",
+        "note": "These technologies describe the SkySelect product environment in which the client-selected team worked. TECUNIQUE did not own the software roadmap or engineering-delivery outcomes."
+      },
+      {
+        "type": "Operations Team",
+        "role": "Aviation Procurement & Delivery Specialists",
+        "desc": "An India-based operations team supporting procurement, sourcing, and delivery activities for SkySelect’s airline and MRO customers.",
+        "tech": "Aviation Sourcing · Order Tracking · Procurement Operations",
+        "note": "The engagement went beyond building a software team: TECUNIQUE helped provide the local operating foundation for a broader SkySelect India organization."
+      }
+    ],
+    "selectionFlow": [
+      {
+        "step": "01",
+        "title": "Define Requirements",
+        "desc": "SkySelect identified the roles, domain skills, and capacity needed."
+      },
+      {
+        "step": "02",
+        "title": "Source & Evaluate",
+        "desc": "TECUNIQUE sourced candidates and conducted initial technical screening."
+      },
+      {
+        "step": "03",
+        "title": "Client Interview",
+        "desc": "SkySelect technical and operational leads interviewed candidates directly."
+      },
+      {
+        "step": "04",
+        "title": "Client Approval",
+        "desc": "SkySelect selected the exact professionals they wanted on the team."
+      },
+      {
+        "step": "05",
+        "title": "Local Onboarding",
+        "desc": "TECUNIQUE employed, equipped, and onboarded selected candidates in India."
+      }
+    ],
+    "operationalLayer": [
+      {
+        "title": "Recruitment",
+        "desc": "Candidate sourcing, initial evaluation, coordination, and onboarding."
+      },
+      {
+        "title": "Employment",
+        "desc": "Local employment structure, offer letters, and contracts."
+      },
+      {
+        "title": "Payroll",
+        "desc": "Salary processing, disbursements, and payroll administration."
+      },
+      {
+        "title": "HR Support",
+        "desc": "Ongoing HR administration, employee support, and engagement."
+      },
+      {
+        "title": "Benefits",
+        "desc": "Employee healthcare, benefits, and local arrangements."
+      },
+      {
+        "title": "Statutory Administration",
+        "desc": "Taxation, statutory filings, and employment administrative requirements."
+      },
+      {
+        "title": "Infrastructure",
+        "desc": "Workplace facilities, IT equipment, and operational setup."
+      },
+      {
+        "title": "Local Operations",
+        "desc": "Day-to-day administration needed to keep the India organization functioning."
+      }
+    ],
+    "lifecycleSteps": [
+      {
+        "phase": "01",
+        "title": "Introduction & Planning",
+        "desc": "Parag connects TECUNIQUE with SkySelect’s US management and the India team requirements are defined."
+      },
+      {
+        "phase": "02",
+        "title": "Recruit & Select",
+        "desc": "TECUNIQUE sources and evaluates candidates; SkySelect interviews and approves them."
+      },
+      {
+        "phase": "03",
+        "title": "Employ & Operate",
+        "desc": "TECUNIQUE provides the local employment, payroll, HR, benefits, infrastructure, and operational framework."
+      },
+      {
+        "phase": "04",
+        "title": "Scale (7 → 60+)",
+        "desc": "The India organization grows from approximately 7 to more than 60 professionals in roughly one year."
+      },
+      {
+        "phase": "05",
+        "title": "Establish SkySelect India",
+        "desc": "Once the team is stable and operational, SkySelect establishes its own Indian subsidiary with TECUNIQUE transition support."
+      },
+      {
+        "phase": "06",
+        "title": "Transfer the Team",
+        "desc": "Team members move from TECUNIQUE to SkySelect India, and the client assumes direct local employment and operating responsibility."
+      }
+    ],
+    "milestones": [
+      {
+        "title": "Engagement Begins",
+        "description": "SkySelect engages TECUNIQUE to help establish its initial India team."
+      },
+      {
+        "title": "Initial Team (~7 Professionals)",
+        "description": "First cohort onboarded to start technical and operational workflows."
+      },
+      {
+        "title": "Rapid Scaling to 60+",
+        "description": "Team expands to 60+ across engineering, QA, and operations in roughly one year."
+      },
+      {
+        "title": "Stable India Operation",
+        "description": "Client-managed team becomes fully functional under TECUNIQUE’s local structure."
+      },
+      {
+        "title": "SkySelect India Established",
+        "description": "SkySelect forms its own Indian corporate entity."
+      },
+      {
+        "title": "Team Transition",
+        "description": "Employees and operating responsibility transferred to SkySelect India."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams",
+        "primary": true
+      },
+      {
+        "title": "Product Engineering & Custom Software",
+        "href": "/services/product-engineering"
+      },
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      }
+    ],
+    "cta": {
+      "eyebrow": "BUILDING A TEAM IN INDIA?",
+      "title": "Start Building Your India Team Before Your Local Entity Is Ready",
+      "description": "TECUNIQUE can help you recruit, employ, and operate client-selected professionals in India while you retain control over the team, priorities, and delivery.",
+      "buttonText": "Discuss Your India Team Requirements",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore Dedicated Teams",
+      "secondaryHref": "/services/dedicated-teams"
+    },
+    "image": "/images/companies/skyselect.svg",
+    "client": "SkySelect"
+  },
+  {
+    "id": "innovalog",
+    "company": "Innovalog",
+    "product": "JMWE — Jira Misc Workflow Extensions",
+    "logo": "/images/companies/innovalog.png",
+    "industry": "Atlassian Marketplace",
+    "category": "Development, QA & Tier-3 Support",
+    "partnership": "Long-Term Engagement",
+    "location": "France",
+    "initials": "IN",
+    "color": "#2563eb",
+    "gradient": "from-blue-600 to-indigo-600",
+    "eyebrow": "INNOVALOG / JMWE",
+    "heroTitle": "Scaling Jira App Development with a Long-Term Development & QA Team",
+    "tagline": "Scaling Jira App Development with a Long-Term Development & QA Team",
+    "heroSubtitle": "How Innovalog expanded the engineering and QA capacity behind JMWE through a long-term collaboration with TECUNIQUE across JMWE Cloud development, Cloud and Data Center QA, automation, and Tier-3 technical support.",
+    "seoTitle": "JMWE Development & QA Case Study",
+    "metaDescription": "See how TECUNIQUE supported Innovalog with JMWE Cloud development, Cloud and Data Center QA, automation, and Tier-3 technical support through a long-term engineering partnership.",
+    "sourceAttribution": "This case study is based on a profile of David Fischer and Innovalog written by Inna Gordin and originally published by apps4agile. It has been adapted here to focus on the Innovalog–TECUNIQUE engineering partnership.",
+    "atAGlance": {
+      "client": "Innovalog",
+      "product": "JMWE — Jira Misc Workflow Extensions",
+      "ecosystem": "Atlassian Marketplace",
+      "engagement": "JMWE Cloud Development, Cloud & Data Center QA, QA Automation & Tier-3 Support",
+      "location": "France",
+      "milestone": "Innovalog / JMWE acquired by Appfire — October 2020"
+    },
+    "description": "As demand for JMWE grew, Innovalog needed to expand its development capacity while continuing to support an increasingly established app in the Atlassian Marketplace.",
+    "solution": "TECUNIQUE provided dedicated engineering and QA teams supporting ongoing JMWE Cloud development, Cloud and Data Center QA, Selenium test automation, and Tier-3 technical support.",
+    "sections": [
+      {
+        "title": "The Product & Founder",
+        "content": "David Fischer created Jira Misc Workflow Extensions (JMWE) in 2008 after identifying limitations in Jira workflow automation while working with engineering teams. What began as a free plugin grew into a commercial Atlassian Marketplace product focused on extending and automating Jira workflows."
+      },
+      {
+        "title": "The Challenge",
+        "content": "As demand for JMWE grew, Innovalog needed to expand its development capacity while continuing to support an increasingly established app in the Atlassian Marketplace.\n\nDavid was not simply looking for additional developers. He expected engineers to understand the product, communicate openly, question technical decisions when appropriate, and focus on solving the underlying customer problem. Quality assurance and advanced customer support were also important parts of the work."
+      },
+      {
+        "title": "Why TECUNIQUE",
+        "content": "David already knew TECUNIQUE from work at a previous company. When Innovalog needed additional development and QA capacity for JMWE, that existing familiarity made TECUNIQUE a natural option."
+      },
+      {
+        "title": "The TECUNIQUE Engagement",
+        "content": "TECUNIQUE partnered with Innovalog across four core capability areas:\n\n• JMWE Cloud Development: TECUNIQUE engineers supported the ongoing development and evolution of JMWE Cloud as Innovalog expanded the engineering capacity behind the product.\n\n• Cloud & Data Center Quality Assurance: TECUNIQUE provided QA support across both JMWE Cloud and JMWE Data Center, covering functional testing, regression testing, release validation, and ongoing product QA.\n\n• QA Automation: Automation testing formed an important part of the QA engagement, with Selenium and Java used to build and maintain repeatable automated test coverage.\n\n• Tier-3 Technical Support: TECUNIQUE also supported Tier-3 customer issues requiring deeper technical understanding of JMWE and its workflows.\n\nScope Summary: JMWE Cloud involved both Development and QA, while JMWE Data Center focused on Quality Assurance."
+      },
+      {
+        "title": "Building the Working Relationship",
+        "content": "The collaboration did not become effective overnight. As described in the original profile, TECUNIQUE initially needed time to adapt to David's working style and expectations.\n\nDavid expected engineers to communicate openly, challenge his proposed solutions when appropriate, and help ensure the team was solving customer problems in the best possible way. TECUNIQUE's willingness to adapt to those expectations became an important part of building an effective long-term collaboration."
+      }
+    ],
+    "engagementBlocks": [
+      {
+        "title": "JMWE Cloud Development",
+        "description": "TECUNIQUE engineers supported the ongoing development and evolution of JMWE Cloud as Innovalog expanded the engineering capacity behind the product.",
+        "scope": "Development & QA"
+      },
+      {
+        "title": "Cloud & Data Center Quality Assurance",
+        "description": "TECUNIQUE provided QA support across both JMWE Cloud and JMWE Data Center, covering functional testing, regression testing, release validation, and ongoing product QA.",
+        "scope": "Cloud & Data Center QA"
+      },
+      {
+        "title": "QA Automation",
+        "description": "Automation testing formed an important part of the QA engagement, with Selenium and Java used to build and maintain repeatable automated test coverage.",
+        "scope": "Selenium & Java"
+      },
+      {
+        "title": "Tier-3 Technical Support",
+        "description": "TECUNIQUE also supported Tier-3 customer issues requiring deeper technical understanding of JMWE and its workflows.",
+        "scope": "Advanced Product Support"
+      }
+    ],
+    "techStack": [
+      {
+        "category": "JMWE Cloud Development",
+        "items": [
+          "TypeScript",
+          "React.js",
+          "Node.js"
+        ]
+      },
+      {
+        "category": "Atlassian Platform & Ecosystem",
+        "items": [
+          "Jira Cloud",
+          "Jira Data Center",
+          "Atlassian Marketplace",
+          "Jira Workflow Extensions"
+        ]
+      },
+      {
+        "category": "QA & Automation",
+        "items": [
+          "Selenium",
+          "Java",
+          "Functional Testing",
+          "Regression Testing",
+          "Automated Regression Coverage"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "title": "Long-Term Product Support",
+        "description": "Development, QA and Tier-3 support around JMWE."
+      },
+      {
+        "title": "Product Growth",
+        "description": "JMWE continued growing in popularity during the Innovalog–TECUNIQUE collaboration."
+      },
+      {
+        "title": "Appfire Acquisition — 2020",
+        "description": "Innovalog / JMWE became part of Appfire in October 2020."
+      },
+      {
+        "title": "Product Continuity",
+        "description": "The long-term team retained deeper knowledge of JMWE as the product evolved."
+      }
+    ],
+    "results": [
+      {
+        "metric": "Cloud Dev",
+        "label": "JMWE Cloud Engineering"
+      },
+      {
+        "metric": "Full QA",
+        "label": "Cloud & Data Center"
+      },
+      {
+        "metric": "Automated",
+        "label": "Regression Coverage"
+      },
+      {
+        "metric": "Tier-3",
+        "label": "Advanced Support"
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Our top-selling and top-rated Jira app, JMWE, owes much of its success to our partnership with TECUNIQUE. Their dedicated engineers in both software development and QA seamlessly integrated into our company, playing a crucial role in our achievements. As a founder and CEO of Innovalog, I highly recommend them to any agile software company looking for a reliable partner, and am thankful for their tech-savvy and comprehensive support.",
+        "author": "David Fischer",
+        "role": "Founder & CEO, Innovalog"
+      }
+    ],
+    "testimonial": {
+      "quote": "Our top-selling and top-rated Jira app, JMWE, owes much of its success to our partnership with TECUNIQUE. Their dedicated engineers in both software development and QA seamlessly integrated into our company, playing a crucial role in our achievements. As a founder and CEO of Innovalog, I highly recommend them to any agile software company looking for a reliable partner, and am thankful for their tech-savvy and comprehensive support.",
+      "author": "David Fischer",
+      "role": "Founder & CEO, Innovalog"
+    },
+    "ecosystemTags": [
+      "Jira Cloud",
+      "Jira Data Center",
+      "Atlassian Marketplace",
+      "JMWE",
+      "Workflow Automation"
+    ],
+    "serviceTags": [
+      "JMWE Cloud Development",
+      "Cloud & Data Center Quality Assurance",
+      "QA Automation",
+      "Tier-3 Technical Support"
+    ],
+    "tags": [
+      "Atlassian Marketplace",
+      "Jira Cloud & Data Center",
+      "JMWE",
+      "Workflow Automation",
+      "QA Automation",
+      "Tier-3 Support"
+    ],
+    "relatedServices": [
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams"
+      },
+      {
+        "title": "Atlassian App Development & QA",
+        "href": "/services/atlassian"
+      },
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      }
+    ],
+    "cta": {
+      "title": "Need a Long-Term Team for Your Atlassian App?",
+      "description": "Discuss your Jira app development, QA, automation, or long-term engineering requirements with TECUNIQUE.",
+      "buttonText": "Discuss Your Atlassian App Needs",
+      "buttonHref": "/contact"
+    },
+    "image": "/images/companies/innovalog.png",
+    "client": "Innovalog"
+  },
+  {
+    "id": "qotilabs",
+    "company": "Qotilabs",
+    "product": "Rich Filters for Jira Dashboards and related Atlassian apps",
+    "logo": "/images/companies/quotilabs.png",
+    "industry": "Atlassian Marketplace",
+    "category": "Dedicated QA Engineering & Automation",
+    "partnership": "Since 2021 (Continuing Post-Acquisition)",
+    "location": "France",
+    "initials": "QL",
+    "color": "#f43f5e",
+    "gradient": "from-rose-500 to-pink-600",
+    "eyebrow": "QOTILABS / RICH FILTERS",
+    "heroTitle": "Scaling Product Quality for Rich Filters with a Dedicated QA Team",
+    "tagline": "Scaling Product Quality for Rich Filters with a Dedicated QA Team",
+    "heroSubtitle": "How Qotilabs expanded its QA capacity with TECUNIQUE to support product releases, test automation, Cloud migration, and the continued evolution of its Atlassian Marketplace apps.",
+    "seoTitle": "Rich Filters QA & Automation Case Study",
+    "metaDescription": "See how TECUNIQUE supported Qotilabs with dedicated QA engineering, automation, release validation, and Data Center-to-Cloud migration for Rich Filters and related Atlassian apps.",
+    "atAGlance": {
+      "client": "Qotilabs",
+      "product": "Rich Filters for Jira Dashboards and related Atlassian apps",
+      "ecosystem": "Atlassian Marketplace",
+      "engagement": "Dedicated QA Engineering, QA Automation & Cloud Migration Validation",
+      "relationship": "Started in early 2021",
+      "location": "France",
+      "milestone": "Qotilabs acquired by Appfire — 2023"
+    },
+    "description": "Qotilabs needed a dedicated Quality Assurance (QA) engineering team who not only excelled in software testing but were also self-organized, self-driven, and capable of providing valuable input to product development.",
+    "solution": "TECUNIQUE provided dedicated QA engineers supporting functional testing, regression, Java-based snapshot automation, Data Center-to-Cloud migration validation, and release validation across Qotilabs’ Atlassian apps.",
+    "sections": [
+      {
+        "title": "The Product",
+        "content": "Qotilabs, led by Dan Mihalache, developed Rich Filters for Jira Dashboards and other Atlassian Marketplace apps. Rich Filters evolved into an established Jira dashboard solution used by organizations across different industries and markets.\n\nProducts involved in the engagement included:\n• Rich Filters for Jira Dashboards\n• Shared Ownership for Dashboards / Filters\n• Collapsible Dashboard Sidebar"
+      },
+      {
+        "title": "How the Relationship Started",
+        "content": "By early 2021, Qotilabs wanted to strengthen the QA function supporting Rich Filters and its other Atlassian apps. Dan was looking for QA engineers who could work independently, understand the product deeply, and contribute useful feedback to the development team.\n\nDan knew David Fischer of Innovalog, who was already working successfully with TECUNIQUE. After discussing Qotilabs' QA requirements with David, TECUNIQUE was referred based on David's experience of the existing collaboration.\n\nQotilabs initially engaged one TECUNIQUE QA engineer. As the working relationship developed, the engagement expanded to include additional engineers."
+      },
+      {
+        "title": "The QA Challenge",
+        "content": "Qotilabs needed more than additional testing capacity. The engineers had to be self-organized, self-driven, able to understand complex product workflows, and comfortable contributing feedback as the products evolved.\n\nTheir responsibilities included test planning, designing test scenarios and test cases, functional and regression testing, defect management, release validation, test automation, and close collaboration with the product and development team."
+      },
+      {
+        "title": "The TECUNIQUE Engagement",
+        "content": "TECUNIQUE partnered with Qotilabs across five core capability areas:\n\n• Dedicated QA Engineering: Qotilabs initially engaged one TECUNIQUE QA engineer, with additional engineers added as the collaboration expanded.\n\n• Product & Release Testing: The QA team supported test planning, functional testing, regression testing, defect management, and recurring release validation across Qotilabs' Atlassian products.\n\n• QA Automation: Automation became an important part of the QA process, supporting repeatable sanity and regression validation as the products and release cycles evolved.\n\n• Cloud Migration QA: TECUNIQUE's QA engineers supported detailed validation as product capabilities were migrated from Jira Data Center to Cloud.\n\n• Embedded Product Collaboration: TECUNIQUE engineers worked closely with Qotilabs' developers and product team, contributing product feedback and operating as an integrated part of the client's delivery process rather than as a separate external testing function."
+      },
+      {
+        "title": "Building Repeatable Automation",
+        "content": "Rich Filters supported a large variety of dashboard configurations and widgets that needed to remain stable as the product evolved. Qotilabs used an in-house Java-based automation framework together with controlled test datasets and predefined dashboard configurations.\n\nThe automation generated dashboards and widgets using known datasets, captured snapshots of the resulting output, and automatically compared them against stored baseline snapshots. Differences could then be identified quickly following code changes.\n\nThis provided a practical way to perform recurring sanity validation and supported broader regression testing around frequent product updates."
+      },
+      {
+        "title": "Validating the Data Center to Cloud Migration",
+        "content": "As Qotilabs migrated product capabilities from Jira Data Center to Cloud, QA required detailed validation of the migrated functionality. The team needed to confirm that features available in the established Data Center product were correctly represented and behaved as expected in the Cloud version.\n\nTECUNIQUE's QA engineers tested migrated features in detail, reviewing functionality, usability, user experience, expected behaviour, and response behaviour against the existing Data Center implementation.\n\nThe team also performed regression testing across migrated and existing workflows, helping identify gaps or defects as the Cloud product evolved through successive releases."
+      },
+      {
+        "title": "Working as Part of the Qotilabs Team",
+        "content": "Over time, TECUNIQUE's QA engineers developed deeper knowledge of the products, customer workflows, release processes, and the expectations of the Qotilabs team.\n\nThe engineers worked closely with Qotilabs' developers and product stakeholders, participating in the ongoing product cycle rather than operating as a disconnected testing vendor.\n\nThis continuity allowed the QA team to contribute context and feedback as new features, migration work, automation coverage, and release requirements evolved."
+      },
+      {
+        "title": "Supporting Frequent, Confident Releases",
+        "content": "With dedicated QA embedded in the product cycle, Qotilabs could validate new features, regression coverage, and product updates through recurring release cycles.\n\nThe growing automation coverage provided quicker feedback following code changes, while the QA team's product knowledge supported detailed validation across ongoing development and Cloud migration work."
+      },
+      {
+        "title": "A New Chapter with Appfire",
+        "content": "In 2023, Qotilabs and its portfolio of Atlassian apps became part of Appfire.\n\nThe TECUNIQUE engagement continued following the acquisition, providing continuity around the products and the established QA collaboration."
+      }
+    ],
+    "engagementBlocks": [
+      {
+        "title": "Dedicated QA Engineering",
+        "description": "Qotilabs initially engaged one TECUNIQUE QA engineer, with additional engineers added as the collaboration expanded.",
+        "scope": "Dedicated Team"
+      },
+      {
+        "title": "Product & Release Testing",
+        "description": "The QA team supported test planning, functional testing, regression testing, defect management, and recurring release validation across Qotilabs' Atlassian products.",
+        "scope": "Functional & Regression"
+      },
+      {
+        "title": "QA Automation",
+        "description": "Automation became an important part of the QA process, supporting repeatable sanity and regression validation as the products and release cycles evolved.",
+        "scope": "Java & Test Framework"
+      },
+      {
+        "title": "Cloud Migration QA",
+        "description": "TECUNIQUE's QA engineers supported detailed validation as product capabilities were migrated from Jira Data Center to Cloud.",
+        "scope": "Data Center to Cloud"
+      },
+      {
+        "title": "Embedded Product Collaboration",
+        "description": "TECUNIQUE engineers worked closely with Qotilabs' developers and product team, contributing product feedback and operating as an integrated part of delivery.",
+        "scope": "Integrated Delivery"
+      }
+    ],
+    "automationWorkflow": [
+      {
+        "step": "01",
+        "title": "Fixed Test Dataset",
+        "desc": "Predefined data & dashboard configurations"
+      },
+      {
+        "step": "02",
+        "title": "Generate Dashboards & Widgets",
+        "desc": "Automated rendering of complex widgets"
+      },
+      {
+        "step": "03",
+        "title": "Capture Snapshots",
+        "desc": "Visual & data state snapshot capture"
+      },
+      {
+        "step": "04",
+        "title": "Compare Baseline",
+        "desc": "Automated diff against stored goldens"
+      },
+      {
+        "step": "05",
+        "title": "Identify Differences",
+        "desc": "Rapid feedback following code changes"
+      }
+    ],
+    "migrationSteps": [
+      {
+        "step": "01",
+        "title": "Understand Existing Data Center Behaviour",
+        "desc": "Identify existing functionality and workflows."
+      },
+      {
+        "step": "02",
+        "title": "Validate Migrated Cloud Features",
+        "desc": "Test corresponding Cloud features in detail."
+      },
+      {
+        "step": "03",
+        "title": "Compare the Product Experience",
+        "desc": "Review functionality, usability and expected behaviour."
+      },
+      {
+        "step": "04",
+        "title": "Regression & Release Validation",
+        "desc": "Re-test migrated and existing workflows as subsequent releases evolve."
+      }
+    ],
+    "techStack": [
+      {
+        "category": "Product / Application Stack",
+        "subtitle": "Qotilabs technologies tested",
+        "items": [
+          "TypeScript",
+          "React.js",
+          "Node.js"
+        ]
+      },
+      {
+        "category": "Atlassian & QA Collaboration",
+        "subtitle": "Workflow & documentation tools",
+        "items": [
+          "Jira Cloud & Data Center",
+          "Confluence Documentation",
+          "Atlassian Marketplace",
+          "Defects, Epics & User Stories"
+        ]
+      },
+      {
+        "category": "QA Automation",
+        "subtitle": "In-house testing stack",
+        "items": [
+          "Java",
+          "In-house Automation Framework",
+          "Fixed Test Datasets",
+          "Dashboard / Widget Generation",
+          "Snapshot & Baseline Comparison"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "title": "2021 — Engagement Begins",
+        "description": "Qotilabs starts working with TECUNIQUE with one dedicated QA engineer."
+      },
+      {
+        "title": "Team Expansion",
+        "description": "Additional engineering capacity is added as the relationship develops."
+      },
+      {
+        "title": "Automation Coverage Evolves",
+        "description": "Java-based repeatable automation becomes part of ongoing QA."
+      },
+      {
+        "title": "Cloud Migration Support",
+        "description": "TECUNIQUE QA engineers validate functionality as Qotilabs moves product capabilities from Data Center to Cloud."
+      },
+      {
+        "title": "2023 — Appfire Acquisition",
+        "description": "Qotilabs and its product portfolio become part of Appfire."
+      },
+      {
+        "title": "Collaboration Continues",
+        "description": "TECUNIQUE’s engagement continues after the acquisition."
+      }
+    ],
+    "results": [
+      {
+        "metric": "Since 2021",
+        "label": "Partnership Duration"
+      },
+      {
+        "metric": "End-to-End",
+        "label": "QA & Regression"
+      },
+      {
+        "metric": "Java-Based",
+        "label": "Snapshot Automation"
+      },
+      {
+        "metric": "DC to Cloud",
+        "label": "Migration QA"
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "The professionalism and expertise of TECUNIQUE’s QA consultants has played a key role in improving our operational efficiency and in delivering outstanding apps appreciated by thousands of customers.",
+        "author": "Dan Mihalache",
+        "role": "Founder & CEO, Qotilabs"
+      }
+    ],
+    "testimonial": {
+      "quote": "The professionalism and expertise of TECUNIQUE’s QA consultants has played a key role in improving our operational efficiency and in delivering outstanding apps appreciated by thousands of customers.",
+      "author": "Dan Mihalache",
+      "role": "Founder & CEO, Qotilabs"
+    },
+    "endClientsNote": "Rich Filters is trusted and used by engineering teams across global organizations including Amazon, Cisco, Boeing, Google, Samsung, BMW, Microsoft, Visa, and Ubisoft.",
+    "relatedServices": [
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      },
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams"
+      },
+      {
+        "title": "Atlassian App Development & QA",
+        "href": "/services/atlassian"
+      }
+    ],
+    "cta": {
+      "eyebrow": "SOFTWARE QA & AUTOMATION",
+      "title": "Need a Dedicated QA Team for Your Software Product?",
+      "description": "Discuss your product QA, automation, Cloud migration, or long-term testing requirements with TECUNIQUE.",
+      "buttonText": "Discuss Your QA Requirements",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore QA & Automation",
+      "secondaryHref": "/services/qa"
+    },
+    "image": "/images/companies/quotilabs.png",
+    "client": "Qotilabs"
+  },
+  {
+    "id": "extensi",
+    "company": "eXtensi",
+    "product": "Team Hub for Confluence",
+    "logo": "/images/companies/extensi.png",
+    "industry": "Atlassian / Confluence Apps",
+    "category": "Dedicated QA Automation Engineering",
+    "partnership": "October 2025 – June 2026",
+    "location": "Poland / Global",
+    "initials": "EX",
+    "color": "#0284c7",
+    "gradient": "from-sky-500 to-blue-600",
+    "eyebrow": "EXTENSI / TEAM HUB FOR CONFLUENCE",
+    "heroTitle": "Scaling Confluence Test Automation with Playwright, TypeScript & AI-Assisted Engineering",
+    "tagline": "Scaling Confluence Test Automation with Playwright, TypeScript & AI-Assisted Engineering",
+    "heroSubtitle": "How TECUNIQUE embedded dedicated QA automation expertise into eXtensi’s engineering workflow—enhancing its existing automation framework, collaborating closely with developers and stakeholders, and scaling automated coverage for Team Hub for Confluence through Playwright, TypeScript and AI-assisted engineering.",
+    "seoTitle": "Team Hub QA Automation Case Study | TECUNIQUE",
+    "metaDescription": "See how TECUNIQUE helped eXtensi enhance and scale Team Hub QA automation using Playwright, TypeScript, AI-assisted test design, Claude Code and engineer-led validation.",
+    "atAGlance": {
+      "client": "eXtensi",
+      "product": "Team Hub for Confluence",
+      "ecosystem": "Atlassian Marketplace / Confluence Cloud",
+      "engagement": "Dedicated QA Automation Engineering",
+      "relationship": "October 2025 – June 2026",
+      "coreAutomation": "Playwright · TypeScript",
+      "aiAssisted": "AI-assisted test design · Claude Code",
+      "workflow": "Jira · Bitbucket · Bamboo",
+      "milestone": "Close to 300 tests · 100% planned coverage"
+    },
+    "description": "eXtensi wanted to expand automated testing across Team Hub for Confluence without creating a disconnected parallel QA process, enhancing its existing Playwright + TypeScript framework and collaborating directly with its developers.",
+    "solution": "TECUNIQUE embedded a dedicated QA automation engineer who worked within eXtensi’s existing framework and Bitbucket/Bamboo delivery pipeline, using AI-assisted test design and Claude Code to scale test coverage to close to 300 tests with 100% planned coverage.",
+    "sections": [
+      {
+        "title": "Product Context",
+        "subtitle": "Team Hub for Confluence",
+        "content": "Team Hub for Confluence is an eXtensi app for Confluence Cloud designed to bring company communications and employee-engagement activities into a centralized experience within Confluence.\n\nAs the product evolved, eXtensi wanted to expand automated testing across its growing functional scope and strengthen the automation foundation supporting continued development."
+      },
+      {
+        "title": "The QA Challenge",
+        "subtitle": "Scaling Automated Coverage Without Creating a Parallel QA Process",
+        "content": "Team Hub had a substantial and growing set of functional scenarios requiring reliable automated coverage.\n\nHowever, the objective was not simply to create standalone automation scripts. eXtensi already had an existing automation framework and established development workflow. TECUNIQUE needed to understand that environment, work within it, improve it where necessary, and expand automated coverage without introducing a disconnected QA process.\n\nThe dedicated QA automation engineer also needed to work closely with eXtensi’s developers and stakeholders, interpret Jira user stories, understand evolving product behaviour, and ensure that automation remained aligned with actual development changes.\n\nWith a defined project timeframe, productivity and a repeatable automation workflow were also important."
+      },
+      {
+        "title": "Understanding & Improving the Existing Framework",
+        "subtitle": "Working with What Already Existed — Then Making It Better",
+        "content": "The engagement began with a detailed understanding of eXtensi’s existing automation setup, Team Hub functionality, development practices and testing workflow.\n\nRather than introducing a separate TECUNIQUE-owned framework, the dedicated engineer worked within eXtensi’s existing Playwright + TypeScript environment.\n\nAs the project progressed, the automation framework was enhanced and improved to better support the expanding Team Hub test suite, broader functional coverage and ongoing maintainability.\n\nThis improved foundation then supported progressive automation across the product’s functional scenarios."
+      },
+      {
+        "title": "Embedded in eXtensi’s Engineering Workflow",
+        "subtitle": "Day-to-Day Collaboration with Developers & Stakeholders",
+        "content": "The dedicated TECUNIQUE engineer worked closely with eXtensi’s developers and stakeholders on a day-to-day basis rather than operating as a separate external testing function.\n\nThe collaboration included reviewing Jira user stories, clarifying requirements and expected behaviour, understanding implementation changes, discussing relevant test scenarios, reviewing automation results, investigating issues, and coordinating how new tests should fit into the existing framework and delivery pipeline.\n\nThis allowed QA automation to remain connected to the product-development process instead of becoming a separate script-development activity."
+      },
+      {
+        "title": "Dedicated Automation Team",
+        "subtitle": "Dedicated Automation Engineering with Senior Support",
+        "content": "The engagement centred on a dedicated TECUNIQUE QA automation engineer who worked closely with eXtensi’s development team and stakeholders throughout the project.\n\nAdditional senior automation expertise was available for framework guidance, mentoring, reviews and technical problem solving where required.\n\nThis model provided continuity in day-to-day implementation while allowing the dedicated engineer to draw on broader TECUNIQUE automation expertise as the framework and test suite evolved."
+      },
+      {
+        "title": "Productivity & Time-Bound Delivery",
+        "subtitle": "Using AI to Increase Engineering Productivity",
+        "content": "A defining aspect of the engagement was the extensive use of AI across both test design and automation implementation.\n\nAI helped the engineer transform Jira user stories into structured test scenarios more efficiently, while Claude Code accelerated implementation of the reviewed scenarios in Playwright + TypeScript.\n\nBecause engineers continued to validate the generated output throughout the process, the team was able to increase productivity and delivery speed without removing human engineering oversight.\n\nThis approach helped complete the required automation scope within the defined project timeframe."
+      }
+    ],
+    "engagementPhases": [
+      {
+        "phase": "Phase 1",
+        "title": "Understand & Strengthen",
+        "desc": "The initial phase focused on understanding the application and existing automation architecture, validating the working approach, improving the Playwright + TypeScript framework, and establishing a strong foundation for larger-scale implementation."
+      },
+      {
+        "phase": "Phase 2",
+        "title": "Expand & Integrate",
+        "desc": "The subsequent phase focused on progressively expanding automated coverage across Team Hub while continuing to improve the framework. Tests were implemented in batches, reviewed, executed, committed into Bitbucket and integrated with Bamboo CI."
+      }
+    ],
+    "aiWorkflowSteps": [
+      {
+        "step": "01",
+        "title": "Jira User Story",
+        "subtitle": "Understand the requirement",
+        "desc": "The engineer reviews the Jira user story, acceptance criteria and expected application behaviour."
+      },
+      {
+        "step": "02",
+        "title": "AI-Assisted Test Design",
+        "subtitle": "Develop test coverage faster",
+        "desc": "AI is used extensively to help analyse the requirement and generate relevant functional test scenarios and test cases."
+      },
+      {
+        "step": "03",
+        "title": "Engineer Review",
+        "subtitle": "Validate and refine the tests",
+        "desc": "The QA automation engineer reviews the AI-generated test cases, refines them where needed and confirms that they accurately represent the user story and expected behaviour."
+      },
+      {
+        "step": "04",
+        "title": "Claude Code Automation",
+        "subtitle": "Accelerate implementation",
+        "desc": "Claude Code assists the engineer in converting approved test cases into Playwright + TypeScript automation within eXtensi’s existing framework."
+      },
+      {
+        "step": "05",
+        "title": "Engineer Validation",
+        "subtitle": "Review, execute and improve",
+        "desc": "The engineer reviews the generated code, corrects or improves it where necessary, executes the automation and verifies that the result behaves correctly."
+      },
+      {
+        "step": "06",
+        "title": "Commit & Integrate",
+        "subtitle": "Move validated automation into delivery",
+        "desc": "Only reviewed and validated automation is committed to Bitbucket and incorporated into eXtensi’s Bamboo CI workflow."
+      }
+    ],
+    "humanControlCallout": {
+      "title": "AI Accelerated the Engineer — It Did Not Replace the Engineer",
+      "content": "AI was used as an engineering accelerator throughout the project, but responsibility for quality remained with the QA automation engineer. The engineer remained responsible for understanding the requirement, evaluating generated test scenarios, reviewing automation code, correcting implementation issues, executing the tests, validating product behaviour and approving the code before it entered the client’s repository."
+    },
+    "workflowTools": [
+      {
+        "name": "Jira",
+        "role": "Requirements & Collaboration",
+        "desc": "User stories, acceptance criteria, requirement clarification and project progress."
+      },
+      {
+        "name": "Playwright + TypeScript",
+        "role": "Automation Engineering",
+        "desc": "Framework enhancement and implementation of Team Hub automated tests."
+      },
+      {
+        "name": "Claude Code",
+        "role": "AI-Assisted Development",
+        "desc": "Used extensively to accelerate automation implementation following test-case review."
+      },
+      {
+        "name": "Bitbucket",
+        "role": "Source Control",
+        "desc": "Reviewed and validated automation committed into eXtensi’s repository."
+      },
+      {
+        "name": "Bamboo",
+        "role": "Continuous Integration",
+        "desc": "Automation integrated into the client’s existing CI and engineering delivery process."
+      }
+    ],
+    "outcomeMetric": {
+      "primaryMetric": "~300",
+      "primaryLabel": "Automated Tests Built for Team Hub",
+      "secondaryMetric": "100%",
+      "secondaryLabel": "Of Planned Test Coverage Achieved",
+      "timeframe": "October 2025 – June 2026",
+      "desc": "Over approximately nine months, the Team Hub automation suite grew to close to 300 tests, with 100% of the planned test coverage achieved by the end of June 2026. The combination of framework enhancement, Playwright + TypeScript automation, close collaboration with eXtensi’s engineering team and extensive AI-assisted engineering helped the project progress efficiently through a substantial functional testing scope."
+    },
+    "techStack": [
+      {
+        "category": "Test Automation",
+        "subtitle": "Core Framework & Scripting",
+        "items": [
+          "Playwright",
+          "TypeScript"
+        ]
+      },
+      {
+        "category": "AI-Assisted Engineering",
+        "subtitle": "Productivity & Implementation",
+        "items": [
+          "Claude Code",
+          "AI-Assisted Test Design"
+        ]
+      },
+      {
+        "category": "Engineering & Delivery",
+        "subtitle": "Source, CI & Project Tracking",
+        "items": [
+          "Jira",
+          "Bitbucket",
+          "Bamboo"
+        ]
+      },
+      {
+        "category": "Platform & Ecosystem",
+        "subtitle": "Atlassian App Hosting",
+        "items": [
+          "Confluence Cloud",
+          "Atlassian Marketplace"
+        ]
+      }
+    ],
+    "milestones": [
+      {
+        "title": "October 2025 — Engagement Begins",
+        "description": "Dedicated QA automation work starts around Team Hub for Confluence."
+      },
+      {
+        "title": "Understand & Improve",
+        "description": "Existing framework, application and engineering workflow studied and enhanced."
+      },
+      {
+        "title": "Scale Automation",
+        "description": "Functional scenarios progressively converted into Playwright + TypeScript tests."
+      },
+      {
+        "title": "AI-Assisted Engineering",
+        "description": "AI used extensively for test design and Claude Code-assisted automation implementation."
+      },
+      {
+        "title": "June 2026 — ~300 Tests & 100% Coverage",
+        "description": "Defined Team Hub testing scope completed with 100% planned coverage achieved."
+      }
+    ],
+    "relatedServices": [
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa",
+        "primary": true
+      },
+      {
+        "title": "Atlassian App Development & QA",
+        "href": "/services/atlassian"
+      },
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams"
+      }
+    ],
+    "cta": {
+      "eyebrow": "NEED TO SCALE YOUR TEST AUTOMATION?",
+      "title": "Accelerate QA Automation with Playwright & AI-Assisted Engineering",
+      "description": "Build reliable automated test coverage with experienced QA engineers who can work within your existing framework, collaborate with your development team, and use modern automation and AI-assisted engineering practices.",
+      "buttonText": "Discuss Your QA Requirements",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore QA & Automation",
+      "secondaryHref": "/services/qa"
+    },
+    "image": "/images/companies/extensi.png",
+    "client": "eXtensi"
+  },
+  {
+    "id": "customermatrix",
+    "company": "CustomerMatrix",
+    "product": "Cognitive Computing & Data Enrichment Platform",
+    "logo": "/images/companies/customer_matrix.webp",
+    "industry": "Cognitive Computing & Data Enrichment",
+    "category": "Dedicated Product Engineering Team",
+    "partnership": "June 2013 – December 2017",
+    "location": "New York, USA · Paris, France",
+    "initials": "CM",
+    "color": "#8b5cf6",
+    "gradient": "from-violet-600 to-indigo-600",
+    "eyebrow": "CUSTOMERMATRIX / COGNITIVE COMPUTING PLATFORM",
+    "heroTitle": "Scaling a Multidisciplinary Product Engineering Team from 6 to 18 Professionals",
+    "tagline": "Scaling a Multidisciplinary Product Engineering Team from 6 to 18 Professionals",
+    "heroSubtitle": "How TECUNIQUE built and evolved an integrated development, QA, DevOps and data team for CustomerMatrix—working alongside its France-based R&D organization across product development, testing, releases, cloud infrastructure and ongoing support.",
+    "seoTitle": "CustomerMatrix Dedicated Engineering Team Case Study | TECUNIQUE",
+    "metaDescription": "See how TECUNIQUE built and scaled a dedicated CustomerMatrix product engineering team from 6 to 18 professionals across development, QA, AWS DevOps and data engineering.",
+    "atAGlance": {
+      "client": "CustomerMatrix",
+      "product": "Cognitive Computing & Data Enrichment",
+      "ecosystem": "Enterprise CRM, KYC & Workflow Enrichment",
+      "engagement": "Dedicated Product Engineering Team",
+      "relationship": "June 2013 – December 2017",
+      "teamGrowth": "6 → 18 professionals",
+      "teamComposition": "Development · QA · DevOps · Data Engineering · Data Analysis",
+      "clientControl": "Integrated India–France Scrum Teams",
+      "location": "New York, USA · Paris, France",
+      "milestone": "CustomerMatrix acquired by Medtech Group — December 2017"
+    },
+    "description": "CustomerMatrix developed a cognitive computing and data-enrichment platform designed to help enterprises connect and enrich information across existing CRM, contact-centre and KYC workflows.",
+    "solution": "TECUNIQUE built and evolved a dedicated multidisciplinary team around CustomerMatrix’s platform, growing from 6 to 18 professionals across software development, QA, AWS DevOps, data engineering and data analysis.",
+    "sections": [
+      {
+        "title": "CustomerMatrix & How the Partnership Began",
+        "subtitle": "Cognitive Computing & Previous Collaboration",
+        "content": "CustomerMatrix developed a cognitive computing and data-enrichment platform designed to help enterprises connect and enrich information across existing CRM, contact-centre and KYC workflows. The company was headquartered in New York, with its R&D organization in Paris, and worked with large enterprise customers across financial services, insurance and other industries.\n\nGilles André, Co-Founder and CTO of CustomerMatrix at the beginning of the engagement, already knew TECUNIQUE through previous collaboration around PolySpot. When CustomerMatrix needed to establish additional engineering capacity around its product, Gilles approached TECUNIQUE to build a dedicated team.\n\nThe engagement began in June 2013 with six professionals—2 Software Engineers working alongside CustomerMatrix developers and 4 QA Engineers providing testing capacity under the France-led QA organization—and subsequently expanded as product and architecture requirements evolved."
+      },
+      {
+        "title": "Across the Product Lifecycle",
+        "subtitle": "Releases, Validation & Ongoing Technical Support",
+        "content": "Across four-and-a-half years, the dedicated team contributed throughout the product and release lifecycle across multiple versions of CustomerMatrix.\n\nQA engineers conducted comprehensive functional, regression, API and load testing ahead of major rollouts, while also providing the first level of technical support after releases by reproducing reported customer issues, analysing system behaviour, and gathering diagnostic data.\n\nCases requiring deeper technical investigation were escalated directly to TECUNIQUE and France developers for root-cause resolution. This gave the team end-to-end responsibility across development, release validation and ongoing post-release stability."
+      },
+      {
+        "title": "Team & Relationship Continuity",
+        "subtitle": "Knowledge Retention & Evolution into OPPSCIENCE",
+        "content": "Most TECUNIQUE professionals who joined CustomerMatrix remained with the team throughout the engagement. This strong continuity allowed developers, QA engineers and DevOps specialists to build deep, retained knowledge of the platform architecture, data models and working practices.\n\nWhen the CustomerMatrix engagement concluded in December 2017 following its business acquisition by Medtech Group, the relationship did not end. Most of the established TECUNIQUE development and QA team continued directly into a new dedicated engineering team supporting OPPSCIENCE.\n\nThis carried established working relationships, domain knowledge and engineering experience seamlessly into the next chapter of collaboration."
+      }
+    ],
+    "endClientsNote": "CustomerMatrix publicly referenced organizations including BNP Paribas, Allianz and Schneider Electric among its customers.",
+    "selectionFlow": [
+      {
+        "step": "01",
+        "title": "Source & Screen",
+        "desc": "TECUNIQUE identified suitable candidates, performed initial screening and conducted the first interview."
+      },
+      {
+        "step": "02",
+        "title": "Technical Evaluation",
+        "desc": "CustomerMatrix’s France-based team conducted subsequent technical interviews."
+      },
+      {
+        "step": "03",
+        "title": "Practical Assessment",
+        "desc": "Developers and automation engineers completed practical coding or technical tests where relevant."
+      },
+      {
+        "step": "04",
+        "title": "Final Selection",
+        "desc": "CustomerMatrix approved candidates who successfully completed the evaluation process."
+      },
+      {
+        "step": "05",
+        "title": "Employment & Onboarding",
+        "desc": "TECUNIQUE managed salary negotiation, joining, payroll, employment and ongoing HR administration."
+      }
+    ],
+    "teamGrowthMetric": {
+      "start": "6",
+      "end": "18",
+      "label": "Dedicated Professionals at Peak",
+      "description": "As CustomerMatrix expanded its product and engineering requirements, the TECUNIQUE team grew from its initial development and QA structure into a broader multidisciplinary product organization covering application engineering, specialized QA, AWS DevOps, data engineering and data analysis."
+    },
+    "teamBreakdown": [
+      {
+        "discipline": "Development",
+        "count": "5",
+        "roles": "Java · Angular · Full-stack · JavaScript/jQuery · GWT",
+        "desc": "Backend services, frontend modules, search integration, APIs, administrative features, and data enrichment."
+      },
+      {
+        "discipline": "Quality Assurance",
+        "count": "7",
+        "roles": "4 Manual QA · 1 Automation · 1 Performance · 1 Team Lead",
+        "desc": "Functional testing, Selenium/Cucumber automation, JMeter load testing, Postman API testing, and release validation."
+      },
+      {
+        "discipline": "AWS & DevOps",
+        "count": "2",
+        "roles": "AWS · Terraform · Ansible · Jenkins CI/CD",
+        "desc": "Cloud environment management, CI/CD pipelines, infrastructure as code, and operational monitoring."
+      },
+      {
+        "discipline": "Data Engineering",
+        "count": "2",
+        "roles": "Transformation & Enrichment Modules",
+        "desc": "Developing modules to ingest, standardize, and transform diverse multi-source enterprise data."
+      },
+      {
+        "discipline": "Data Analysis",
+        "count": "2",
+        "roles": "Structured Collection & Output Validation",
+        "desc": "Validating transformed outputs and verifying that processed data met quality requirements."
+      }
+    ],
+    "managementModel": {
+      "franceLeadership": "CustomerMatrix France Leadership (Product priorities · Engineering direction · Overall management)",
+      "indiaLeads": "India Team Leads (Day-to-day coordination · Technical/QA leadership · Team responsibilities)",
+      "tecuniqueLeadership": "TECUNIQUE Leadership & HR (Performance management · Employment · Appraisals · Team continuity · HR administration)",
+      "callout": "Delivery and performance responsibility was shared rather than operating as a purely client-managed staff augmentation model."
+    },
+    "productEngineeringAreas": [
+      {
+        "title": "Backend Services",
+        "desc": "Application and platform backend development using Java, Spring, and microservices architecture."
+      },
+      {
+        "title": "Frontend Modules",
+        "desc": "Development across evolving frontend frameworks and intuitive product interfaces (GWT, Angular, Vue.js)."
+      },
+      {
+        "title": "Search Modules",
+        "desc": "Search functionality and related platform capabilities across customer data."
+      },
+      {
+        "title": "Search & Indexing",
+        "desc": "High-performance indexing and query pipelines utilizing Solr, Lucene, and Elasticsearch."
+      },
+      {
+        "title": "APIs",
+        "desc": "Comprehensive application and platform API development for third-party integrations."
+      },
+      {
+        "title": "Administration Features",
+        "desc": "Administrative functionality supporting platform use, permissions, and tenant configuration."
+      },
+      {
+        "title": "Data Enrichment",
+        "desc": "Product features designed to transform and enrich information from multiple enterprise sources."
+      }
+    ],
+    "qaCapabilities": [
+      {
+        "title": "Functional & Regression Testing",
+        "desc": "Test planning, functional validation, and regression coverage across product releases."
+      },
+      {
+        "title": "Test Automation",
+        "desc": "Automated regression coverage using Selenium, Cucumber, TestNG, and Jasmine."
+      },
+      {
+        "title": "API Testing",
+        "desc": "API validation and endpoint contract verification using Postman."
+      },
+      {
+        "title": "Performance Testing",
+        "desc": "Performance, stress, and load testing using Apache JMeter."
+      },
+      {
+        "title": "Release Validation",
+        "desc": "Comprehensive validation and regression activities around releases and product versions."
+      },
+      {
+        "title": "Defect Investigation",
+        "desc": "First-level technical investigation, reproduction, and defect analysis."
+      },
+      {
+        "title": "Product Documentation",
+        "desc": "Dedicated maintenance of product and release documentation across versions."
+      }
+    ],
+    "qaTools": [
+      {
+        "category": "Functional / UI Automation",
+        "tools": "Selenium · Cucumber · TestNG · Jasmine"
+      },
+      {
+        "category": "API Testing",
+        "tools": "Postman"
+      },
+      {
+        "category": "Performance Testing",
+        "tools": "Apache JMeter"
+      },
+      {
+        "category": "Engineering Delivery",
+        "tools": "Jenkins CI/CD"
+      }
+    ],
+    "devopsCapabilities": [
+      {
+        "title": "AWS Environments",
+        "desc": "Management and support of cloud environments across development, staging, and production."
+      },
+      {
+        "title": "CI/CD Pipelines",
+        "desc": "Build and deployment pipeline responsibilities ensuring continuous delivery."
+      },
+      {
+        "title": "Deployments",
+        "desc": "Application and multi-environment deployment activities."
+      },
+      {
+        "title": "Infrastructure Automation",
+        "desc": "Infrastructure as Code utilizing Terraform and Ansible."
+      },
+      {
+        "title": "Monitoring & Observability",
+        "desc": "Monitoring, log aggregation, and operational visibility."
+      },
+      {
+        "title": "Environment Management",
+        "desc": "Ongoing infrastructure, security, and environment administration."
+      }
+    ],
+    "dataCapabilities": {
+      "engineeringTitle": "Data Engineering",
+      "engineeringDesc": "TECUNIQUE Data Engineers developed modules for transforming and integrating large volumes of diverse information arriving from different data sources into more uniform and standardized structures, alongside enrichment modules adding context and value.",
+      "analysisTitle": "Data Analysis",
+      "analysisDesc": "Data Analysts supported structured data collection based on defined guidelines and validated outputs produced by the transformation, integration, and enrichment modules to verify that processed information met quality and output requirements."
+    },
+    "techStack": [
+      {
+        "category": "Backend & Platform",
+        "subtitle": "Core Architecture",
+        "items": [
+          "Java",
+          "Spring",
+          "Spring Boot",
+          "Kafka",
+          "ZooKeeper"
+        ]
+      },
+      {
+        "category": "Search & Data",
+        "subtitle": "Enterprise Indexing",
+        "items": [
+          "Solr",
+          "Lucene",
+          "Elasticsearch"
+        ]
+      },
+      {
+        "category": "Frontend",
+        "subtitle": "UI Frameworks",
+        "items": [
+          "GWT",
+          "Angular",
+          "Vue.js",
+          "JavaScript",
+          "jQuery"
+        ]
+      },
+      {
+        "category": "Cloud & Infrastructure",
+        "subtitle": "DevOps & Automation",
+        "items": [
+          "AWS",
+          "Terraform",
+          "Ansible"
+        ]
+      },
+      {
+        "category": "Engineering & Delivery",
+        "subtitle": "CI / CD Pipeline",
+        "items": [
+          "Jenkins",
+          "CI/CD"
+        ]
+      }
+    ],
+    "techStackNote": "The technologies above evolved over time and should not be interpreted as one static stack used simultaneously throughout the engagement.",
+    "milestones": [
+      {
+        "title": "June 2013 — Dedicated Team Established",
+        "description": "Engagement begins with 2 developers and 4 QA engineers integrated into R&D."
+      },
+      {
+        "title": "Integrated R&D Model",
+        "description": "TECUNIQUE engineers work alongside CustomerMatrix France-based teams using Scrum."
+      },
+      {
+        "title": "Multidisciplinary Expansion",
+        "description": "Additional development, QA automation, performance, DevOps, and data capabilities added."
+      },
+      {
+        "title": "18 Professionals at Peak",
+        "description": "Multidisciplinary team covering development, QA, DevOps, data engineering, and data analysis."
+      },
+      {
+        "title": "Continuous Product Evolution",
+        "description": "Team supports multiple product releases across evolving architecture and frameworks."
+      },
+      {
+        "title": "December 2017 — Engagement Concludes",
+        "description": "Following acquisition by Medtech Group, the CustomerMatrix engagement completes."
+      },
+      {
+        "title": "Next Chapter — OPPSCIENCE",
+        "description": "Most of the established development and QA team continues into the new OPPSCIENCE dedicated team."
+      }
+    ],
+    "testimonial": {
+      "quote": "Along my time at CustomerMatrix as CTO, it has been a pleasure to work with TECUNIQUE as a contractor and even more as a partner. I always considered the TECUNIQUE consultants as a natural extension of my team. The Indian squad has been very professional, committed, and easy to work with in software development, QA, or data quality. The contribution and facility to adapt have been key to reaching the objectives of my R&D group in an ever-changing startup world. I want to thank all the people onboarded at that time for that. All the best to all of you.",
+      "author": "Christopher Favart",
+      "role": "Former CTO, CustomerMatrix"
+    },
+    "relatedServices": [
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams",
+        "primary": true
+      },
+      {
+        "title": "Product Engineering & Custom Software",
+        "href": "/services/product-engineering"
+      },
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      }
+    ],
+    "cta": {
+      "eyebrow": "NEED LONG-TERM ENGINEERING CAPACITY?",
+      "title": "Build a Multidisciplinary Engineering Team Around Your Product",
+      "description": "From developers and QA engineers to DevOps and specialized technical roles, TECUNIQUE can help build and support a dedicated India team that evolves with your product and engineering requirements.",
+      "buttonText": "Discuss Your Team Requirements",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore Dedicated Teams",
+      "secondaryHref": "/services/dedicated-teams"
+    },
+    "image": "/images/companies/customer_matrix.webp",
+    "client": "CustomerMatrix"
+  },
+  {
+    "id": "polyspot",
+    "company": "PolySpot",
+    "product": "Enterprise Search Platform",
+    "logo": "/images/companies/polyspot.webp",
+    "industry": "Enterprise Search Technology",
+    "category": "Dedicated Product Engineering Team",
+    "partnership": "April 2010 – June 2013",
+    "location": "Paris, France",
+    "initials": "PS",
+    "color": "#0ea5e9",
+    "gradient": "from-sky-600 to-blue-600",
+    "eyebrow": "POLYSPOT / ENTERPRISE SEARCH",
+    "heroTitle": "Building a Dedicated India R&D Team for PolySpot’s Enterprise Search Platform",
+    "tagline": "Building a Dedicated India R&D Team for PolySpot’s Enterprise Search Platform",
+    "heroSubtitle": "How TECUNIQUE built and scaled a cross-border development, QA and technical-documentation team for PolySpot—developing GWT expertise, rebuilding key product interfaces, supporting multiple releases and establishing engineering relationships that continued well beyond the original engagement.",
+    "seoTitle": "PolySpot Dedicated Engineering Team Case Study | TECUNIQUE",
+    "metaDescription": "See how TECUNIQUE built and scaled PolySpot’s India R&D team across GWT product development, QA automation, release management and technical documentation.",
+    "atAGlance": {
+      "client": "PolySpot",
+      "industry": "Enterprise Search Technology",
+      "product": "Enterprise Search Platform",
+      "engagement": "Dedicated Product Engineering Team",
+      "relationship": "April 2010 – June 2013",
+      "teamGrowth": "5 → 13 professionals",
+      "teamComposition": "Software Development · QA & Automation · Technical Writing · Product Support",
+      "clientControl": "Integrated France–India Agile/Scrum Team",
+      "coreTechnologies": "Java · GWT · JavaScript · jQuery · Angular",
+      "location": "Paris, France"
+    },
+    "description": "PolySpot developed an enterprise search platform designed to index, structure and deliver unified search across disparate enterprise systems and content repositories.",
+    "solution": "TECUNIQUE built and scaled an integrated India-based R&D team spanning GWT frontend development, Java backend engineering, QA automation, technical documentation and post-release support.",
+    "sections": [
+      {
+        "title": "How the Partnership Began",
+        "subtitle": "A Relationship Built on Previous R&D Experience",
+        "content": "Gilles André and Jaydeep Chhasatia had worked together since 2007 at Augure, where Jaydeep helped establish and lead the company’s India-based R&D organization.\n\nWhen Gilles later moved on from Augure and began working on a new technology venture, he approached Jaydeep again. The initial discussion in early 2010 concerned development around the new venture’s website and open-source community environment. It soon developed into a much broader requirement around PolySpot’s enterprise search product.\n\nPolySpot wanted to build an India-based R&D team that could work alongside its engineering organization in France, and Gilles approached Jaydeep to establish and manage that team. The dedicated PolySpot engagement began in April 2010."
+      },
+      {
+        "title": "Building Product Expertise Around an Emerging GWT Stack",
+        "subtitle": "From Technology Evaluation to Product Delivery",
+        "content": "One of PolySpot’s major early requirements was to redevelop significant parts of the product interface using Google Web Toolkit (GWT). At the time, engineers with strong hands-on GWT experience were relatively difficult to find.\n\nRather than wait for scarce ready-made specialists, TECUNIQUE recruited strong Java and JavaScript/jQuery engineers who could learn the technology and develop the required expertise.\n\nWorking together, the India and France engineering teams evaluated different GWT approaches, including SmartGWT and other available options. After technical evaluation, the teams decided to use standard GWT and develop customized widgets and framework components suited specifically to PolySpot’s product."
+      },
+      {
+        "title": "When PolySpot Reached the End of Its Product Lifecycle",
+        "subtitle": "The End of PolySpot — Not the End of the Relationship",
+        "content": "By June 2013, PolySpot reached the end of its product lifecycle after the business did not achieve the sales required to continue the product. The TECUNIQUE engagement therefore concluded.\n\nMost members of the established dedicated team subsequently continued into the CustomerMatrix engagement, preserving much of the engineering experience, product knowledge and working relationships developed through PolySpot."
+      }
+    ],
+    "gwtChallenge": {
+      "title": "Building Product Expertise Around an Emerging GWT Stack",
+      "subtitle": "From Technology Evaluation to Product Delivery",
+      "content": "One of PolySpot’s major early requirements was to redevelop significant parts of the product interface using Google Web Toolkit (GWT). At the time, engineers with strong hands-on GWT experience were relatively difficult to find.\n\nRather than wait for scarce ready-made specialists, TECUNIQUE recruited strong Java and JavaScript/jQuery engineers who could learn the technology and develop the required expertise.\n\nWorking together, the India and France engineering teams evaluated different GWT approaches, including SmartGWT and other available options. After technical evaluation, the teams decided to use standard GWT and develop customized widgets and framework components suited specifically to PolySpot’s product.",
+      "stackEvolutionNote": "As the product evolved, the UI and Administration modules gradually moved toward a hybrid frontend stack incorporating GWT, JavaScript, jQuery, and later Angular. Angular was introduced later in the product lifecycle and should not be presented as part of the original 2010 implementation."
+    },
+    "productAreas": [
+      {
+        "title": "UI Development",
+        "desc": "Development of the new product user interface using GWT and custom-built widgets."
+      },
+      {
+        "title": "Administration Interface",
+        "desc": "Development of the Administration UI as product functionality and enterprise features expanded."
+      },
+      {
+        "title": "Custom GWT Components",
+        "desc": "Creation of reusable widgets and framework components tailored to PolySpot’s requirements."
+      },
+      {
+        "title": "Product Installer",
+        "desc": "Development and ongoing management of the multi-platform product installer."
+      },
+      {
+        "title": "Backend Contribution",
+        "desc": "Participation in selected feature development and data pipelines within the backend search engine."
+      }
+    ],
+    "teamGrowthMetric": {
+      "start": "5",
+      "end": "13",
+      "label": "Dedicated Professionals at Peak",
+      "description": "The engagement started with a small multidisciplinary team and expanded as PolySpot’s product scope, release requirements and engineering organization grew."
+    },
+    "teamBreakdown": [
+      {
+        "discipline": "Software Development",
+        "count": "6 Developers",
+        "roles": "Java · GWT · JavaScript · jQuery · Angular",
+        "desc": "UI development, custom GWT widgets, Administration modules, product installer, and backend search engine features."
+      },
+      {
+        "discipline": "QA & Automation",
+        "count": "5 QA Engineers",
+        "roles": "Manual · Functional · Automation · Performance · Releases",
+        "desc": "Functional testing, sanity checks, regression suites, Selenium/Java test automation, and release validation."
+      },
+      {
+        "discipline": "Technical Writing",
+        "count": "1 Technical Writer",
+        "roles": "Product Docs · Release Notes · Installers · Upgrades",
+        "desc": "Creating and maintaining product documentation, installation guides, and multi-version upgrade procedures."
+      },
+      {
+        "discipline": "Local Team Management",
+        "count": "1 Local Manager",
+        "roles": "Day-to-day Coordination · Agile Delivery",
+        "desc": "Local development management, sprint coordination, and alignment with France engineering leadership."
+      }
+    ],
+    "teamEvolutionComparison": {
+      "initial": "Initial Team: 3 Developers · 1 QA Engineer · 1 Technical Writer",
+      "peak": "Peak Team: 6 Developers · 5 QA Engineers · 1 Technical Writer · 1 Local Manager"
+    },
+    "selectionFlow": [
+      {
+        "step": "01",
+        "title": "Source & Screen",
+        "desc": "TECUNIQUE identified suitable candidates and conducted the initial screening and interview process."
+      },
+      {
+        "step": "02",
+        "title": "Technical Evaluation",
+        "desc": "PolySpot’s engineering team conducted subsequent technical interviews and practical assessments where relevant."
+      },
+      {
+        "step": "03",
+        "title": "Client Approval",
+        "desc": "Candidates joined the dedicated team after completing the agreed evaluation process."
+      },
+      {
+        "step": "04",
+        "title": "Employment & Onboarding",
+        "desc": "TECUNIQUE managed salary negotiation, onboarding, employment, payroll and ongoing HR administration."
+      }
+    ],
+    "crossBorderModel": {
+      "title": "One Cross-Border R&D Organization",
+      "subtitle": "India and France Working as One Product Team",
+      "description": "During the first year, much of the engineering capacity was based at TECUNIQUE in India, with Eric Beaute providing technical leadership from France. As PolySpot grew, engineering capacity expanded on both sides, with the combined team following Agile/Scrum and participating in the same product-development process.",
+      "squads": "Initially operating as one unified team, the engineering organization later evolved into separate groups focused on UI & Administration and Backend Engine. During the second year, David Fischer joined PolySpot as CTO and worked directly with the TECUNIQUE team.",
+      "ceremonies": [
+        "Daily stand-ups",
+        "Story-point estimation",
+        "Sprint planning",
+        "Story grooming",
+        "Sprint reviews",
+        "Retrospectives"
+      ]
+    },
+    "qaCapabilities": [
+      {
+        "title": "Manual & Functional Testing",
+        "desc": "Functional validation across enterprise product features."
+      },
+      {
+        "title": "Sanity Testing",
+        "desc": "Focused verification around individual builds and release candidates."
+      },
+      {
+        "title": "UI Testing",
+        "desc": "Validation of frontend behavior, custom widgets, and user workflows."
+      },
+      {
+        "title": "Backend Testing",
+        "desc": "Validation of search indexing, data extraction, and backend query functionality."
+      },
+      {
+        "title": "Integration Testing",
+        "desc": "Validation across integrated product components and search modules."
+      },
+      {
+        "title": "End-to-End Testing",
+        "desc": "Testing complete user and product discovery workflows."
+      },
+      {
+        "title": "Regression Testing",
+        "desc": "Repeated validation across evolving releases and version branches."
+      },
+      {
+        "title": "Automation Testing",
+        "desc": "Automated regression test suite built and maintained using Selenium and Java."
+      },
+      {
+        "title": "Release Testing",
+        "desc": "Comprehensive validation and sign-off around major and minor releases."
+      }
+    ],
+    "releaseManagement": {
+      "title": "Release & Version Management",
+      "desc": "The QA team participated directly in release and version management using Bamboo. Testing, release validation and version-related activities were integrated directly into the engineering delivery process rather than operating as a downstream check.",
+      "tools": [
+        "Bamboo",
+        "Selenium",
+        "Java"
+      ]
+    },
+    "sideBySideCards": {
+      "docTitle": "Technical Documentation",
+      "docSubtitle": "Documentation Across Product Versions",
+      "docDesc": "A dedicated Technical Writer formed part of the PolySpot team from the beginning, creating and maintaining documentation that evolved alongside engineering changes:",
+      "docItems": [
+        "Product Documentation",
+        "Release Documentation & Release Notes",
+        "Installation Instructions",
+        "Upgrade Procedures Across Versions"
+      ],
+      "supportTitle": "Product Support",
+      "supportSubtitle": "Supporting the Product After Release",
+      "supportDesc": "The dedicated team participated directly in post-release technical support, bridging QA investigation with development fix validation:",
+      "supportItems": [
+        "Reproducing customer-reported issues",
+        "Analyzing application behavior and logs",
+        "Gathering relevant diagnostic data",
+        "Escalating to developers for deep root-cause fixes"
+      ],
+      "lifecycleTagline": "Development → QA → Release → Documentation → Product Support"
+    },
+    "techStack": [
+      {
+        "category": "Backend & Platform",
+        "subtitle": "Core Architecture",
+        "items": [
+          "Java",
+          "JEE"
+        ]
+      },
+      {
+        "category": "Frontend",
+        "subtitle": "UI Frameworks",
+        "items": [
+          "GWT",
+          "JavaScript",
+          "jQuery",
+          "Angular"
+        ]
+      },
+      {
+        "category": "UI Engineering",
+        "subtitle": "Component Architecture",
+        "items": [
+          "Custom GWT Widgets",
+          "Custom Framework Components"
+        ]
+      },
+      {
+        "category": "QA & Automation",
+        "subtitle": "Test Automation",
+        "items": [
+          "Selenium",
+          "Java"
+        ]
+      },
+      {
+        "category": "Engineering Delivery",
+        "subtitle": "CI & Versioning",
+        "items": [
+          "Bamboo",
+          "CI/CD"
+        ]
+      }
+    ],
+    "techStackNote": "The technology stack evolved over the course of the engagement. GWT formed the original frontend foundation, while JavaScript, jQuery and later Angular were introduced as the product evolved. Across the engagement, the team supported several major and minor releases as the product architecture, frontend technologies and testing practices evolved.",
+    "relationshipContinuity": {
+      "title": "One Engagement. Multiple Long-Term Relationships.",
+      "subtitle": "Relationship Continuity Across Companies",
+      "paths": [
+        {
+          "person": "Gilles André",
+          "role": "Co-Founder & CEO, PolySpot",
+          "flow": [
+            "PolySpot (2010–2013)",
+            "CustomerMatrix (2013–2017)",
+            "OPPSCIENCE (2017–Present)"
+          ],
+          "desc": "Gilles André’s experience working with TECUNIQUE through PolySpot led directly into the subsequent CustomerMatrix engagement and later continued again through OPPSCIENCE."
+        },
+        {
+          "person": "David Fischer",
+          "role": "CTO, PolySpot (Joined Year 2)",
+          "flow": [
+            "PolySpot (2011–2013)",
+            "Innovalog / JMWE (2014–Present)"
+          ],
+          "desc": "David Fischer joined PolySpot as CTO during the engagement and worked directly with the TECUNIQUE team. That experience later became the foundation for TECUNIQUE’s long-term collaboration with Innovalog around JMWE."
+        }
+      ],
+      "note": "These represent relationship-continuity paths established through shared engineering work, not corporate succession or ownership relationships."
+    },
+    "timeline": [
+      {
+        "year": "2007",
+        "title": "Gilles & Jaydeep Begin Working Together",
+        "desc": "Previous R&D relationship established at Augure where Jaydeep led the India R&D center."
+      },
+      {
+        "year": "Early 2010",
+        "title": "New Technology Venture",
+        "desc": "Gilles approaches Jaydeep regarding his new venture and engineering requirements."
+      },
+      {
+        "year": "April 2010",
+        "title": "PolySpot Dedicated Team Begins",
+        "desc": "Initial team of 3 developers, 1 QA engineer and 1 technical writer established in India."
+      },
+      {
+        "year": "2010–2011",
+        "title": "GWT Redevelopment & Product Foundations",
+        "desc": "New UI, Administration modules, custom widgets, and product installer developed."
+      },
+      {
+        "year": "2011–2012",
+        "title": "Team Expansion & Multidisciplinary Scale",
+        "desc": "Team grows from 5 to 13 professionals across development, QA, automation, and tech docs."
+      },
+      {
+        "year": "2012–2013",
+        "title": "Continuous Product Evolution & Releases",
+        "desc": "Multiple major and minor releases supported alongside post-release customer triage."
+      },
+      {
+        "year": "June 2013",
+        "title": "June 2013 — PolySpot Engagement Concludes",
+        "desc": "Most established TECUNIQUE team members continue into CustomerMatrix."
+      }
+    ],
+    "testimonial": {
+      "quote": "TECUNIQUE has been an integral part of our journey for PolySpot, and we are committed to further expanding our collaborative efforts. Our association with TECUNIQUE is not merely driven by financial considerations; it’s centered on the invaluable expertise and contributions that team brings to the table. We share the sentiment that, it’s not just about cost-effectiveness but about securing the right talent. I express my sincere appreciation for TECUNIQUE's relentless efforts over the years and emphasize their importance in continued partnership over the years.",
+      "author": "Gilles André",
+      "role": "Founder & CEO, PolySpot"
+    },
+    "relatedServices": [
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams",
+        "primary": true
+      },
+      {
+        "title": "Product Engineering & Custom Software",
+        "href": "/services/product-engineering"
+      },
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      }
+    ],
+    "cta": {
+      "eyebrow": "BUILDING A LONG-TERM PRODUCT TEAM?",
+      "title": "Build the Engineering Capacity Your Product Needs",
+      "description": "TECUNIQUE can help you recruit, build and support dedicated development and QA teams in India that work directly with your product organization and evolve as your engineering requirements change.",
+      "buttonText": "Discuss Your Team Requirements",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore Dedicated Teams",
+      "secondaryHref": "/services/dedicated-teams"
+    },
+    "image": "/images/companies/polyspot.webp",
+    "client": "PolySpot"
+  },
+  {
+    "id": "appfire",
+    "company": "Appfire",
+    "product": "JMWE & JMCF (Atlassian Marketplace Apps)",
+    "industry": "Atlassian Ecosystem",
+    "category": "Atlassian App Development & QA",
+    "partnership": "November 2020 – April 2025",
+    "location": "Boston, USA",
+    "initials": "AF",
+    "color": "#f97316",
+    "gradient": "from-amber-600 to-orange-600",
+    "eyebrow": "APPFIRE / ATLASSIAN APPS",
+    "heroTitle": "Extending a Long-Term Atlassian Engineering Partnership Across Development, QA & Automation",
+    "tagline": "Extending a Long-Term Atlassian Engineering Partnership Across Development, QA & Automation",
+    "heroSubtitle": "How TECUNIQUE continued an established engineering relationship after Appfire acquired Innovalog—supporting architecture, software development, specialized QA automation, Cloud and Forge evolution, L3 support and the recruitment of experienced QA talent across Appfire products.",
+    "seoTitle": "Appfire Engineering & QA Case Study | TECUNIQUE",
+    "metaDescription": "See how TECUNIQUE supported Appfire across Atlassian app architecture, development, specialized QA automation, Cloud and Forge evolution and L3 support.",
+    "atAGlance": {
+      "client": "Appfire",
+      "ecosystem": "Atlassian Marketplace",
+      "primaryProducts": "JMWE · JMCF",
+      "additionalProducts": "Rich Filters",
+      "relationship": "November 2020 – April 2025",
+      "teamSize": "7 dedicated professionals at peak",
+      "capabilities": "Architecture · Software Development · QA · Automation · L3 Support",
+      "cloudEvolution": "Server/Data Center → Cloud · Connect → Forge",
+      "workingModel": "Embedded Kanban Team"
+    },
+    "description": "Appfire is a leading provider of apps on the Atlassian Marketplace, offering enterprise workflow automation, data management, and reporting solutions used by millions of users worldwide.",
+    "solution": "TECUNIQUE provided long-term engineering continuity following Appfire’s acquisition of Innovalog, delivering senior architecture, full-stack development, specialized Jira automation, Cloud/Forge migration, L3 support and niche QA talent recruitment.",
+    "sections": [
+      {
+        "title": "How the Appfire Relationship Began",
+        "subtitle": "Continuity After the Innovalog Acquisition",
+        "content": "TECUNIQUE had already been working closely with Innovalog around Jira Miscellaneous Workflow Extensions (JMWE) and Jira Miscellaneous Custom Fields (JMCF) when Appfire acquired the Innovalog products in 2020.\n\nRather than rebuilding the engineering team from scratch, Appfire retained the established TECUNIQUE resources and product knowledge around the apps. Most of the Innovalog-era TECUNIQUE team continued directly into the Appfire engagement, giving the new organization continuity across development, QA, automation and the underlying product architecture.\n\nThe Appfire engagement formally began in November 2020."
+      },
+      {
+        "title": "Preserving Product Knowledge Through the Transition",
+        "subtitle": "Keeping an Experienced Team Around JMWE & JMCF",
+        "content": "The transition to Appfire preserved years of accumulated knowledge around JMWE and JMCF rather than resetting the engineering relationship after the acquisition.\n\nTECUNIQUE developers and QA engineers already understood the products, their Cloud and Data Center variants, existing automation suites, release processes and complex Jira workflow behaviour.\n\nThat continuity allowed the team to continue contributing immediately while adapting to Appfire’s broader engineering processes and organizational structure."
+      }
+    ],
+    "teamStructure": {
+      "title": "A Focused Development & QA Team",
+      "subtitle": "7 Dedicated Professionals at Peak",
+      "description": "The team remained relatively compact but highly specialized, combining senior software engineering with substantial QA and automation capability.",
+      "breakdown": [
+        {
+          "discipline": "Software Development",
+          "count": "2 Senior Engineers",
+          "roles": "2 Senior Software Engineers (1 later progressed to Senior Architect)",
+          "desc": "Product feature development, architecture design, API services, frontend UI modules, bug fixing, performance optimization, and Forge evolution."
+        },
+        {
+          "discipline": "Quality Assurance & Automation",
+          "count": "5 QA Professionals",
+          "roles": "1 QA Lead · 3 QA Engineers · 1 Specialized Automation Engineer",
+          "desc": "Test planning, functional & regression testing, Data Center to Cloud validation, specialized ACLI/GINT automation, and release sign-off."
+        }
+      ]
+    },
+    "devCapabilities": [
+      {
+        "title": "Feature Development",
+        "desc": "Implementation of new product functionality and workflow extensions."
+      },
+      {
+        "title": "Architecture & Design",
+        "desc": "Participation in architectural decisions, technical design, and system planning."
+      },
+      {
+        "title": "Backend & API Development",
+        "desc": "Product services, API endpoints, and scalable backend functionality."
+      },
+      {
+        "title": "Frontend Development",
+        "desc": "Development and continuous evolution of user-facing interfaces and configuration screens."
+      },
+      {
+        "title": "Bug Fixing",
+        "desc": "In-depth investigation, root-cause analysis, and resolution of complex product defects."
+      },
+      {
+        "title": "Performance Improvements",
+        "desc": "Optimization of application execution, indexing, and workflow response times."
+      },
+      {
+        "title": "Refactoring & Technical Debt",
+        "desc": "Improvement of existing codebases for long-term maintainability and modularity."
+      },
+      {
+        "title": "Marketplace & Release Work",
+        "desc": "Engineering delivery aligned with Atlassian Marketplace standards and release expectations."
+      }
+    ],
+    "architectProgression": {
+      "title": "From Senior Engineer to Senior Architect",
+      "subtitle": "Expanding Technical Responsibility",
+      "content": "As the engagement evolved, one of TECUNIQUE’s Senior Software Engineers progressed into a Senior Architect role. The role expanded beyond feature implementation into architecture decisions, technical design, code reviews, mentoring and planning around the product’s gradual Forge evolution. This progression reflected the level of product knowledge and engineering responsibility developed through the long-term engagement."
+    },
+    "cloudEvolution": {
+      "forgeTitle": "Gradual Connect → Forge Evolution",
+      "forgeSubtitle": "Modernizing the Cloud Architecture Incrementally",
+      "forgeDesc": "The move toward Forge was gradual rather than a full rewrite of the existing product. New functionality increasingly used Forge where appropriate, while selected existing Connect-based features were progressively migrated. TECUNIQUE engineers contributed through technical planning, architecture discussions, development of new Forge functionality, and migration of selected capabilities.",
+      "migrationTitle": "Server/Data Center → Cloud Migration",
+      "migrationSubtitle": "Migrating Product Functionality to Cloud",
+      "migrationDesc": "A separate engineering track involved moving selected functionality from the Server/Data Center versions of the products into Cloud. This required adapting existing functionality to the Cloud environment while considering platform behaviour, UX constraints, and API differences. TECUNIQUE developers contributed to the engineering implementation, while QA engineers provided detailed post-migration validation."
+    },
+    "qaCapabilities": [
+      {
+        "title": "Test Planning",
+        "desc": "Definition and organization of comprehensive testing requirements across features."
+      },
+      {
+        "title": "Functional & Regression",
+        "desc": "Validation across existing and newly introduced product behaviour."
+      },
+      {
+        "title": "Cloud & Data Center Validation",
+        "desc": "Testing across both deployment models and variant codebases."
+      },
+      {
+        "title": "Version Validation",
+        "desc": "Verification across multiple concurrent releases and product versions."
+      },
+      {
+        "title": "Fix Verification",
+        "desc": "Confirmation that resolved defects behaved correctly without regressions."
+      },
+      {
+        "title": "Release Regression",
+        "desc": "Broad regression coverage across complex Jira workflow operations prior to release."
+      },
+      {
+        "title": "Release Readiness",
+        "desc": "Rigorous assessment of product stability and readiness for deployment."
+      },
+      {
+        "title": "Sign-Off Recommendation",
+        "desc": "QA input and formal sign-off recommendations before customer rollout."
+      },
+      {
+        "title": "Marketplace Release Checks",
+        "desc": "Validation of release requirements and compatibility with Marketplace expectations."
+      }
+    ],
+    "postMigrationQa": {
+      "title": "Post-Migration QA: Validating Data Center → Cloud Functionality",
+      "desc": "When functionality was moved from Server/Data Center to Cloud, QA went beyond checking whether the feature simply existed in the new environment. The team compared behaviour across versions, validated usability and response differences, identified missing or inconsistent functionality, performed regression testing, and verified that migrated features behaved appropriately within the Cloud product."
+    },
+    "automationSection": {
+      "title": "Building Automation Around Complex Jira Workflows",
+      "subtitle": "Specialized JMWE Automation",
+      "desc": "JMWE required a specialized automation approach because many scenarios involved complex Jira workflow behaviour and configuration rather than only straightforward UI interactions.\n\nTECUNIQUE’s QA automation engineers worked with ACLI, GINT, Gradle and Groovy, using Selenium where browser-level UI automation was required. The automation covered both Cloud and Server/Data Center environments and supported Regression, Sanity and End-to-End testing.",
+      "frameworkTitle": "Designing, Extending & Maintaining the Framework",
+      "frameworkDesc": "TECUNIQUE’s role went beyond executing scripts within an existing framework. QA automation engineers designed, extended, maintained and improved the automation framework and test scripts over time as product requirements became more complex. This involved learning the specialized tooling in depth, solving configuration challenges, refining test structures, and collaborating with relevant stakeholders and ACLI developers."
+    },
+    "automationStack": [
+      {
+        "category": "Jira Automation",
+        "tool": "ACLI"
+      },
+      {
+        "category": "Test Framework",
+        "tool": "GINT"
+      },
+      {
+        "category": "Automation Logic",
+        "tool": "Groovy"
+      },
+      {
+        "category": "Build / Execution",
+        "tool": "Gradle"
+      },
+      {
+        "category": "UI Automation",
+        "tool": "Selenium"
+      },
+      {
+        "category": "Test Management",
+        "tool": "Xray"
+      },
+      {
+        "category": "Project Management",
+        "tool": "Jira"
+      },
+      {
+        "category": "Documentation",
+        "tool": "Confluence"
+      }
+    ],
+    "l3Support": {
+      "title": "L3 Technical Support: Deep Product Knowledge Applied to Customer Issues",
+      "subtitle": "Advanced Tier Technical Investigation",
+      "desc": "As product knowledge deepened, one TECUNIQUE QA automation engineer moved into a dedicated L3 Support role. The role involved investigating complex product issues that required deeper technical and Jira-specific understanding.",
+      "responsibilities": [
+        "Reproducing customer-reported issues in dedicated test environments",
+        "Analysing application and server logs to trace failure points",
+        "Investigating Jira configuration, permissions, and complex workflow behaviour",
+        "Determining whether issues originated from Jira core, the Appfire app, or client configuration",
+        "Coordinating with development engineers for root-cause resolution",
+        "Validating bug fixes and communicating technical findings to customer-facing support teams"
+      ],
+      "closing": "This allowed detailed product and automation knowledge built within QA to be applied directly to complex support scenarios."
+    },
+    "workingModel": {
+      "title": "Embedded in Appfire’s Engineering Organization",
+      "subtitle": "Working as Part of the Product Team",
+      "desc": "TECUNIQUE developers and QA engineers worked directly within Appfire’s engineering organization rather than operating as a separate external delivery unit. The team followed Kanban and participated in refinement, planning, product discussions, release meetings, architecture discussions, and code reviews.",
+      "processCards": [
+        {
+          "title": "Kanban",
+          "role": "Engineering Flow",
+          "desc": "Continuous delivery flow with agile backlog refinement and WIP management."
+        },
+        {
+          "title": "Jira",
+          "role": "Work Management",
+          "desc": "Issue tracking, sprint coordination, and cross-functional engineering management."
+        },
+        {
+          "title": "Confluence",
+          "role": "Documentation",
+          "desc": "Shared product specs, architecture diagrams, and release procedures."
+        },
+        {
+          "title": "Xray",
+          "role": "Test Management",
+          "desc": "Integrated test case repositories, test execution runs, and traceability."
+        }
+      ]
+    },
+    "recruitment": {
+      "title": "Recruitment of Specialized QA Talent",
+      "subtitle": "Finding the Right Engineers for Complex Products",
+      "desc": "As Appfire’s QA requirements expanded, TECUNIQUE continued recruiting specialized QA professionals for products with complex Atlassian workflows and testing requirements. TECUNIQUE sourced and initially screened candidates, Appfire conducted technical evaluation and approval, and TECUNIQUE managed employment, payroll, HR, and ongoing people administration."
+    },
+    "richFiltersExpansion": {
+      "title": "Relationship Expansion Through Rich Filters",
+      "subtitle": "Expanding Collaboration After the Qotilabs Acquisition",
+      "desc": "Appfire acquired Qotilabs in 2023, and the existing TECUNIQUE QA team supporting Rich Filters continued under Appfire.",
+      "linkText": "Read the Qotilabs / Rich Filters Case Study →",
+      "linkHref": "/case-studies/qotilabs"
+    },
+    "mainValues": [
+      {
+        "title": "Architecture & Development Capability",
+        "desc": "Senior engineers contributing beyond feature implementation into architecture, Forge modernization, and technical direction."
+      },
+      {
+        "title": "Specialized QA Automation",
+        "desc": "Deep automation expertise around complex Jira workflows, ACLI/GINT frameworks, and Cloud/Data Center variants."
+      },
+      {
+        "title": "Recruitment of Niche QA Talent",
+        "desc": "Proven ability to identify, evaluate, and recruit specialized QA engineers suited to intricate Atlassian products."
+      },
+      {
+        "title": "Long-Term Product Knowledge",
+        "desc": "Continuity of engineers familiar with products, workflows, architecture, automation test suites, and release processes."
+      }
+    ],
+    "timeline": [
+      {
+        "year": "Nov 2020",
+        "title": "Appfire Engagement Begins",
+        "desc": "Existing Innovalog TECUNIQUE team continues immediately following Appfire’s acquisition."
+      },
+      {
+        "year": "2021",
+        "title": "Engineering Continuity & Team Expansion",
+        "desc": "Development and QA continue across JMWE and JMCF; specialized QA and automation capacity grows."
+      },
+      {
+        "year": "2022",
+        "title": "Architecture Evolution & Senior Architect Progression",
+        "desc": "Senior engineering responsibility expands into architectural design, mentoring, and Forge planning."
+      },
+      {
+        "year": "2022–2023",
+        "title": "Cloud Migration & Gradual Forge Work",
+        "desc": "Server/Data Center functionality moves to Cloud while selected capabilities incrementally adopt Forge."
+      },
+      {
+        "year": "2023",
+        "title": "L3 Technical Support & Rich Filters Expansion",
+        "desc": "L3 technical support capability established; existing Rich Filters QA team continues under Appfire."
+      },
+      {
+        "year": "2025",
+        "title": "Engagement Concludes",
+        "desc": "The engagement concluded as Appfire evolved its internal engineering model."
+      }
+    ],
+    "testimonial": {
+      "quote": "Since 2020, Appfire and TECUNIQUE have been engaged in business, and throughout this period, the TECUNIQUE team has consistently impressed us with their exceptional services. Their expertise and dedication in architectural design, development, and quality assurance have been very valuable to our team. Additionally, their HR team has demonstrated a tried-and-true process for recruiting the ideal QA engineers for our intricate products.",
+      "author": "Ajay Singh",
+      "role": "Director – Product Engineering, Appfire"
+    },
+    "relatedServices": [
+      {
+        "title": "Atlassian App Development & QA",
+        "href": "/services/atlassian",
+        "primary": true
+      },
+      {
+        "title": "Software QA & Automation Testing",
+        "href": "/services/qa"
+      },
+      {
+        "title": "Dedicated Software Teams",
+        "href": "/services/dedicated-teams"
+      }
+    ],
+    "cta": {
+      "eyebrow": "BUILDING OR EVOLVING AN ATLASSIAN APP?",
+      "title": "Add the Engineering & QA Capacity Your Product Needs",
+      "description": "TECUNIQUE can support Atlassian app vendors with dedicated software engineers, QA specialists, automation expertise, Forge development and long-term product knowledge.",
+      "buttonText": "Discuss Your Atlassian App Needs",
+      "buttonHref": "/contact",
+      "secondaryText": "Explore Atlassian App Development & QA",
+      "secondaryHref": "/services/atlassian"
+    },
+    "client": "Appfire"
+  }
+]
