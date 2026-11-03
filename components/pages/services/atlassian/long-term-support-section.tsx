@@ -92,7 +92,7 @@ export function AtlassianLongTermSupport({ content }: AtlassianLongTermSupportPr
               <InlineImage
                 page="services-atlassian"
                 field="ltsImage"
-                initialSrc={content?.ltsImage || "/images/about/about-5.png"}
+                initialSrc={content?.ltsImage || "/images/about/about-5.webp"}
                 alt="Long-term Support"
                 fill
                 className="w-full h-full object-cover"

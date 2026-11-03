@@ -10,7 +10,7 @@ interface AboutStoryProps {
 
 export function AboutStory({ content }: AboutStoryProps = {}) {
   const storyTitle = content?.storyTitle || "Our Story"
-  const storyImage = content?.storyImage || "/images/about/about-4.png"
+  const storyImage = content?.storyImage || "/images/about/about-4.webp"
   const storyBadgeTitle = content?.storyBadgeTitle || "Built for Long-Term Product Work"
   const storyBadgeSubtitle = content?.storyBadgeSubtitle || "Stable engineering teams. Practical collaboration."
   const para0 =

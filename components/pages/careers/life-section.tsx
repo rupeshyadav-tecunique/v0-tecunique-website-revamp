@@ -17,7 +17,7 @@ export function CareersLife() {
           {/* Left Column - Large Image */}
           <div className="lg:w-[60%] relative w-full min-h-[400px] lg:min-h-[500px] rounded-xl lg:rounded-[1.5rem] overflow-hidden">
             <Image
-              src="/images/about/about-1.png"
+              src="/images/about/about-1.webp"
               alt="Life at TECUNIQUE team"
               fill
               className="object-cover"
@@ -42,7 +42,7 @@ export function CareersLife() {
             {/* Secondary Image */}
             <div className="relative w-full h-[180px] sm:h-[220px] rounded-xl lg:rounded-[1.25rem] overflow-hidden mb-8 shadow-sm">
               <Image
-                src="/images/about/about-2.png"
+                src="/images/about/about-2.webp"
                 alt="Collaborative work at TECUNIQUE"
                 fill
                 className="object-cover object-center"

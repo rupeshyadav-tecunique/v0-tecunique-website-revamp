@@ -351,11 +351,11 @@ export default function PageContentEditor({ slug, initialData, pageInfo }: PageC
                   id="storyImage"
                   value={formData.storyImage || ""}
                   onChange={(e) => handleFieldChange("storyImage", e.target.value)}
-                  placeholder="/images/about/about-4.png or https://..."
+                  placeholder="/images/about/about-4.webp or https://..."
                 />
               </div>
               <p className="text-[11px] text-muted-foreground">
-                You can use existing images like <code className="text-xs bg-muted px-1 py-0.5 rounded">/images/about/about-4.png</code>, <code className="text-xs bg-muted px-1 py-0.5 rounded">/images/about/about-1.png</code>, or any public image URL.
+                You can use existing images like <code className="text-xs bg-muted px-1 py-0.5 rounded">/images/about/about-4.webp</code>, <code className="text-xs bg-muted px-1 py-0.5 rounded">/images/about/about-1.webp</code>, or any public image URL.
               </p>
 
               {/* Live Image Preview */}

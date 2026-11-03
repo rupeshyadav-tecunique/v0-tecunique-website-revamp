@@ -107,7 +107,7 @@ export const defaultPagesContent: Record<string, any> = {
     description:
       "TECUNIQUE is a software engineering partner based in India, helping international software companies build dedicated development, QA, automation, support, and Atlassian app teams. Since 2010, we have focused on stable teams, practical execution, transparent collaboration, and long-term continuity.",
     storyTitle: "Our Story",
-    storyImage: "/images/about/about-4.png",
+    storyImage: "/images/about/about-4.webp",
     storyBadgeTitle: "Built for Long-Term Product Work",
     storyBadgeSubtitle: "Stable engineering teams. Practical collaboration.",
     storyParagraphs: [

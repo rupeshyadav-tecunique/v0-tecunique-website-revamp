@@ -64,7 +64,7 @@ const testimonialSlides = [
         name: "Gilles Andre",
         company: "POLYSPOT",
         category: "ODC Setup",
-        image: "/images/testimonial/gilles.jpg",
+        image: "/images/testimonial/gilles.webp",
         color: brand.violet
       }
     ]

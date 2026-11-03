@@ -9,10 +9,10 @@ import { Label } from "@/components/ui/label"
 import { X, Check, Image as ImageIcon } from "lucide-react"
 
 const presetImages = [
-  { label: "About Team Working", path: "/images/about/about-4.png" },
-  { label: "Engineering Collaboration", path: "/images/about/about-1.png" },
-  { label: "Office & Leadership", path: "/images/about/about-2.png" },
-  { label: "Development Lab", path: "/images/about/about-3.png" },
+  { label: "About Team Working", path: "/images/about/about-4.webp" },
+  { label: "Engineering Collaboration", path: "/images/about/about-1.webp" },
+  { label: "Office & Leadership", path: "/images/about/about-2.webp" },
+  { label: "Development Lab", path: "/images/about/about-3.webp" },
 ]
 
 export function ImageEditorModal() {
@@ -63,7 +63,7 @@ export function ImageEditorModal() {
               id="imgUrl"
               value={selectedUrl}
               onChange={(e) => setSelectedUrl(e.target.value)}
-              placeholder="e.g. /images/about/about-4.png or https://..."
+              placeholder="e.g. /images/about/about-4.webp or https://..."
             />
           </div>
 

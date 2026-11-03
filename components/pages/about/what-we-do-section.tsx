@@ -69,7 +69,7 @@ export function AboutWhatWeDo({ content }: AboutWhatWeDoProps = {}) {
   const howWeWorkSubtitle =
     content?.howWeWorkSubtitle ||
     "Our model is designed for clients who want more than outsourced tasks. We build dedicated teams that become familiar with the product, process, domain, and delivery expectations over time."
-  const howWeWorkImage = content?.howWeWorkImage || "/images/about/about-2.png"
+  const howWeWorkImage = content?.howWeWorkImage || "/images/about/about-2.webp"
 
   return (
     <>
