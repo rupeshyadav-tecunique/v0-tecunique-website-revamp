@@ -97,8 +97,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${sora.variable} ${geistMono.variable} bg-background`}>
-      <body className="font-sans antialiased min-h-screen flex flex-col">
+    <html lang="en" suppressHydrationWarning className={`${manrope.variable} ${sora.variable} ${geistMono.variable} bg-background`}>
+      <body suppressHydrationWarning className="font-sans antialiased min-h-screen flex flex-col">
         {children}
         <Toaster richColors position="top-right" />
         {process.env.NODE_ENV === 'production' && <Analytics />}
